@@ -21,6 +21,8 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
+\usepackage{tabularx}
+\usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{float}
 \usepackage[hidelinks]{hyperref}
@@ -150,16 +152,18 @@ $M/\bar M_{\mathrm{Pl}}$ & $\sqrt{8\pi}\,c_3^4$ & \num{\TFPTMOverMplNum} \\
 \newcommand{\TFPTAlphaAuditTable}{%
 \begin{table}[H]
 \centering
-\begin{tabular}{@{}llll@{}}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}lllX@{}}
 \toprule
 Case & $\alpha^{-1}_{\mathrm{pred}}$ & ppm vs CODATA 2022 & Note \\
 \midrule
 one-defect truncation (baseline) & \num[round-mode=places,round-precision=12]{\TFPTalphaInvSelfNum} & \num[round-mode=places,round-precision=6]{-0.037000} & $\delta_2=0$ \\
 two-defect template ($g=4$) & \num[round-mode=places,round-precision=12]{\TFPTalphaInvTwoDefNum} & \num[round-mode=places,round-precision=6]{\TFPTalphaPpmTwoDefNum} & $\delta_2=\delta_{\mathrm{top}}^2$ \\
 two-defect derived ($g=5$) & \num[round-mode=places,round-precision=12]{\TFPTalphaInvGOverFourNum} & \num[round-mode=places,round-precision=6]{\TFPTalphaPpmGOverFourNum} & $\delta_2=\frac54\,\delta_{\mathrm{top}}^2$ \\
-targeted match & \num[round-mode=places,round-precision=12]{\TFPTalphaInvCODATANum} & 0 & requires $\delta_2=\num[round-mode=figures,round-precision=6]{\TFPTdeltaTwoOptimalNum}$ \\
+targeted match & \num[round-mode=places,round-precision=9]{\TFPTalphaInvCODATANum} & 0 & requires $\delta_2=\num[round-mode=figures,round-precision=6]{\TFPTdeltaTwoOptimalNum}$ \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \caption{Fine-structure constant: baseline and two-defect refinements (suite default vs.\ theoryv3), plus the required second-order term for exact CODATA matching.}
 \end{table}%
 }
@@ -285,6 +289,9 @@ The baseline verification pipeline uses a minimal hierarchical UV texture in pow
 \mathrm{diag}(Y_u^{UV})=(\lambda^8,\lambda^4,1),\qquad \mathrm{diag}(Y_d^{UV})=(\lambda^4,\lambda^2,\lambda^2)
 \]
 Numerically (using the report values $\lambda=\num{0.2244599705189737}$), this is
+\begingroup
+\sisetup{round-mode=figures, round-precision=6}
+\setlength{\arraycolsep}{3pt}
 \[
 Y_u^{UV}=\begin{pmatrix}
 \num{6.4433424282582535e-06} & 0 & 0\\
@@ -297,6 +304,7 @@ Y_u^{UV}=\begin{pmatrix}
 \num{2.10569024e-05} & \num{2.03737406e-03} & \num{5.03393326e-02}
 \end{pmatrix}.
 \]
+\endgroup
 The down type texture is left rotated by a CKM proxy at the UV scale: $Y_d^{UV}=V_{UV}\,\mathrm{diag}(Y_d^{UV})$ (phase carried by $V_{UV}$).
 \end{tcolorbox}%
 }
@@ -415,7 +423,7 @@ Quantity & Expression & Value \\
 \midrule
 $\Omega_b$ (TFPT conjecture) & $(4\pi-1)\,\beta_{\mathrm{rad}}$ & \num{\TFPTOmegaBPred} \\
 $\Omega_b$ (Planck-derived ref) & $\Omega_b h^2 / h^2$ & \num{\TFPTOmegaBRef} \,$\pm$\,\num{\TFPTOmegaBRefSigma} \\
-z-score (ref) & $(\Omega_{b,\mathrm{pred}}-\Omega_{b,\mathrm{ref}})/\sigma$ & \num{\TFPTOmegaBZ} \\
+z-score (ref) & $(\Omega_{b,\mathrm{pred}}-\Omega_{b,\mathrm{ref}})/\sigma$ & \num[round-mode=places,round-precision=3]{\TFPTOmegaBZ} \\
 \bottomrule
 \end{tabular}
 \caption{Baryon density conjecture: numeric prediction and reference comparison.}
@@ -604,7 +612,7 @@ yield a cubic fixed-point equation (CFE) whose unique positive root is fixed by 
 A two-defect correction derived from SU(5) holonomy degeneracy ($g=3+2=5$) yields $\delta_2=\frac54\,\delta_{\mathrm{top}}^2$ and 
 $\alpha^{-1}(0)=\num[round-mode=places,round-precision=12]{\TFPTalphaInvGOverFourNum}$ (CODATA $z=\num[round-mode=places,round-precision=3]{\TFPTalphaZGOverFourNum}$). 
 The one-defect truncation baseline yields $\alpha^{-1}(0)=\num[round-mode=places,round-precision=10]{\TFPTalphaInvSelfNum}$ (a $-0.037$ ppm deviation, but excluded at CODATA precision) and is reported only for series control and sensitivity diagnostics.
-Under the declared MS$\overline{\mathrm{MS}}$-at-$M_Z$ comparison policy, this implies 
+Under the declared $\overline{\mathrm{MS}}$-at-$M_Z$ comparison policy, this implies 
 $\overline{\alpha}^{(5)}(M_Z)^{-1}=\num[round-mode=places,round-precision=6]{\TFPTalphaBarFiveInvMZPredNum}$ (PDG~2024 $z=\num[round-mode=places,round-precision=3]{\TFPTalphaBarFiveInvMZZ}$). 
 The same kernel fixes the axion--photon coupling $g_{a\gamma\gamma}=-4c_3$ and predicts cosmic birefringence 
 $\beta=\phiz/(4\pi)=\num[round-mode=places,round-precision=4]{\TFPTbetaDegNum}^\circ$, consistent with Planck PR4 observations at the 0.5--1.7$\sigma$ level.
@@ -676,7 +684,7 @@ c_3=\frac{1}{8\pi},\qquad
 Output & Value & Evidence (module) \\
 \midrule
 $\alpha^{-1}(0)$ (two-defect, $g=5$) & \num[round-mode=places,round-precision=12]{\TFPTalphaInvGOverFourNum} & \texttt{theoryv3/out/defect\_partition\_g5\_audit} \\
-$\overline{\alpha}^{(5)}(M_Z)^{-1}$ (MS$\overline{\mathrm{MS}}$ policy) & \num[round-mode=places,round-precision=6]{\TFPTalphaBarFiveInvMZPredNum} & \texttt{out/alpha\_precision\_audit} \\
+$\overline{\alpha}^{(5)}(M_Z)^{-1}$ ($\overline{\mathrm{MS}}$ policy) & \num[round-mode=places,round-precision=6]{\TFPTalphaBarFiveInvMZPredNum} & \texttt{out/alpha\_precision\_audit} \\
 $\beta_{\mathrm{deg}}$ (birefringence) & \num[round-mode=places,round-precision=4]{\TFPTbetaDegNum}$^\circ$ & \texttt{out/birefringence\_tomography} \\
 $\Omega_b$ (APS seam candidate) & \num[round-mode=places,round-precision=6]{\TFPTOmegaBPred} & \texttt{out/omega\_b\_conjecture\_scan} \\
 $\sin^2\theta_{13}$ (TM1/Z$_3$) & \num[round-mode=places,round-precision=6]{\TFPTsinSqThetaThirteen} & \texttt{out/pmns\_z3\_breaking} \\
@@ -976,20 +984,20 @@ See Appendix~\ref{app:48deriv} for the explicit sector count.
     
     % Top boundary
     \draw[thick, blue] (0,1) ellipse (2.2 and 0.3);
-    \node[blue, font=\footnotesize] at (3.2,1) {top boundary ($2\pi$)};
+    \node[blue, font=\footnotesize] at (3.1,1) {top boundary ($2\pi$)};
     
     % Bottom boundary
     \draw[thick, blue] (0,-1) ellipse (2.2 and 0.3);
-    \node[blue, font=\footnotesize] at (3.4,-1) {bottom boundary ($2\pi$)};
+    \node[blue, font=\footnotesize] at (3.1,-1) {bottom boundary ($2\pi$)};
     
     % Seam
     \draw[thick, green!60!black, dashed] (-2.5,0) -- (2.5,0);
-    \node[green!60!black, font=\footnotesize] at (3.5,0) {seam $\Gamma$ ($2\pi$)};
+    \node[green!60!black, font=\footnotesize] at (2.9,0) {seam $\Gamma$ ($2\pi$)};
     
     % Arrow showing M\"obius identification
     \draw[-{Stealth}, thick, red] (2.8,0.7) arc[start angle=40, end angle=-40, radius=0.8];
-    \node[red, font=\footnotesize] at (3.8,0.4) {M\"obius};
-    \node[red, font=\footnotesize] at (3.7,0.1) {twist};
+    \node[red, font=\footnotesize] at (3.35,0.55) {M\"obius};
+    \node[red, font=\footnotesize] at (3.35,0.25) {twist};
     
     % Total
     \node[font=\small] at (0,-1.8) {Total integrated curvature: $3 \times 2\pi = 6\pi$};
@@ -1403,7 +1411,9 @@ Convergence is rapid (typically 3--4 iterations).
 
 \begin{table}[H]
 \centering
-\begin{tabular}{@{}lccc@{}}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}lccX@{}}
 \toprule
 \textbf{Scenario} & $\alpha^{-1}$ & \textbf{Deviation from CODATA} & \textbf{Status}\\
 \midrule
@@ -1411,9 +1421,9 @@ Baseline (fixed $\phiz$) & 137.03650146 & $+3.67$ ppm & structural\\
 Self-consistent $\phiz(\alpha)$ & \num[round-mode=places,round-precision=10]{\TFPTalphaInvSelfNum} & $-0.037$ ppm & \textbf{closed-form defect reweighting (one-defect)}\\
 Two-defect refinement ($+\tfrac54\deltatop^2 e^{-4\alpha}$) & \num[round-mode=places,round-precision=12]{\TFPTalphaInvGOverFourNum} & $+\num[round-mode=places,round-precision=6]{\TFPTalphaPpmGOverFourNum}$ ppm & \textbf{derived (holonomy $g=5$)}\\
 Two-defect (suite diagnostic) ($+\deltatop^2 e^{-4\alpha}$) & \num[round-mode=places,round-precision=10]{\TFPTalphaInvTwoDefNum} & $\num[round-mode=places,round-precision=4]{\TFPTalphaPpmTwoDefNum}$ ppm & parameter-free template (diagnostic)\\
-CODATA 2022 & 137.03599918 & --- & reference\\
+CODATA 2022 & \num[round-mode=places,round-precision=9]{\TFPTalphaInvCODATANum} & --- & reference\\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \caption{Impact of geometric self-consistency on $\alpha$ prediction.}
 \label{tab:alpha}
 \end{table}
@@ -1472,13 +1482,13 @@ Although $-0.037$ ppm appears small, CODATA 2022 has $\sigma(\alpha^{-1})\simeq 
 %-----------------------------------------------------------------------------
 
 \begin{tcolorbox}[colback=yellow!3, colframe=yellow!60!black,
-    title={\textbf{Primary comparison observable: $\overline{\alpha}^{(5)}(M_Z)$ (MS$\overline{\mathrm{MS}}$)}}, fonttitle=\bfseries\small]
-\textbf{Why this matters:} Precision electroweak fits and PDG summaries use the MS$\overline{\mathrm{MS}}$ coupling at $M_Z$, $\overline{\alpha}^{(5)}(M_Z)$, as the comparison observable. CODATA $\alpha(0)$ is an on-shell/IR reference and is therefore treated as \emph{secondary diagnostic} once scheme and threshold bookkeeping is made explicit.
+    title={\textbf{Primary comparison observable: $\overline{\alpha}^{(5)}(M_Z)$ ($\overline{\mathrm{MS}}$)}}, fonttitle=\bfseries\small]
+\textbf{Why this matters:} Precision electroweak fits and PDG summaries use the $\overline{\mathrm{MS}}$ coupling at $M_Z$, $\overline{\alpha}^{(5)}(M_Z)$, as the comparison observable. CODATA $\alpha(0)$ is an on-shell/IR reference and is therefore treated as \emph{secondary diagnostic} once scheme and threshold bookkeeping is made explicit.
 
 \textbf{Declared policy (suite):}
 \begin{itemize}[leftmargin=1.5em, topsep=2pt, itemsep=1pt]
     \item \textbf{Primary reference:} $\overline{\alpha}^{(5)}(M_Z)^{-1} = \num{\TFPTalphaBarFiveInvMZRefNum} \pm \num{\TFPTalphaBarFiveInvMZRefSigma}$ (PDG 2024).
-    \item \textbf{Secondary diagnostic:} $\alpha^{-1}(0)=\num{\TFPTalphaInvCODATANum}$ (CODATA 2022).
+    \item \textbf{Secondary diagnostic:} $\alpha^{-1}(0)=\num[round-mode=places,round-precision=9]{\TFPTalphaInvCODATANum}$ (CODATA 2022).
 \end{itemize}
 
 \textbf{Result (from TFPT + declared running inputs):}
@@ -1822,7 +1832,7 @@ COMMANDER template & 0.16 & 0.05 & 0.2424 & 1.65\\
 \begin{axis}[
     width=11cm, height=6cm,
     ylabel={$\beta$ [degrees]},
-    symbolic x coords={Full-sky, Foreground-corr., COMMANDER, TFPT Theory},
+    symbolic x coords={Full-sky, Foreground-corr., COMMANDER},
     xtick=data,
     ymin=0, ymax=0.5,
     ytick={0, 0.1, 0.2, 0.3, 0.4, 0.5},
@@ -1841,11 +1851,8 @@ COMMANDER template & 0.16 & 0.05 & 0.2424 & 1.65\\
     \addlegendentry{Planck PR4}
     
     % Theory line
-    \addplot[thick, red, dashed, domain=0:4] coordinates {(Full-sky,0.2424) (Foreground-corr.,0.2424) (COMMANDER,0.2424) (TFPT Theory,0.2424)};
+    \addplot[thick, red, dashed, domain=0:3] coordinates {(Full-sky,0.2424) (Foreground-corr.,0.2424) (COMMANDER,0.2424)};
     \addlegendentry{$\beta_{\text{th}} = 0.2424^\circ$}
-    
-    % Theory point
-    \addplot[only marks, mark=*, mark size=5pt, red] coordinates {(TFPT Theory,0.2424)};
 \end{axis}
 \end{tikzpicture}
 \caption{Cosmic birefringence: TFPT prediction compared with Planck PR4 
@@ -2878,7 +2885,7 @@ $\alpha^{-1}_{\text{baseline}}$ & \num[round-mode=places,round-precision=9]{137.
 $\alpha^{-1}_{\text{TFPT}}$ (one-defect) & \num[round-mode=places,round-precision=12]{\TFPTalphaInvSelfNum}\\
 $\alpha^{-1}_{\text{TFPT}}$ (two-defect, $g=5$) & \num[round-mode=places,round-precision=12]{\TFPTalphaInvGOverFourNum}\\
 $\alpha^{-1}_{\text{TFPT}}$ (two-defect, suite diagnostic) & \num[round-mode=places,round-precision=12]{\TFPTalphaInvTwoDefNum}\\
-$\alpha^{-1}_{\text{CODATA 2022}}$ & \num[round-mode=places,round-precision=12]{\TFPTalphaInvCODATANum}\\
+$\alpha^{-1}_{\text{CODATA 2022}}$ & \num[round-mode=places,round-precision=9]{\TFPTalphaInvCODATANum}\\
 Accuracy (ppm; one-defect) & \num[round-mode=places,round-precision=6]{-0.03704}\\
 Accuracy (ppm; two-defect, $g=5$) & \num[round-mode=places,round-precision=6]{\TFPTalphaPpmGOverFourNum}\\
 Accuracy (ppm; two-defect, suite diagnostic) & \num[round-mode=places,round-precision=6]{\TFPTalphaPpmTwoDefNum}\\
@@ -3238,7 +3245,7 @@ This is a dashboard (independent Gaussians; simplified $r$ bound proxy), not a p
 \addplot[black!50, dashed] coordinates {(0.5,0) (4.5,0)};
 \end{groupplot}
 \end{tikzpicture}
-\caption{Engineering-mode dashboard plots from \texttt{global\_consistency\_test}: radar summary (left) and per-observable $\chi^2$ contributions excluding $\alpha$ (right).}
+\caption{Engineering-mode dashboard plots from \texttt{global\_consistency\_test}: $\chi^2$ contributions (left) and $z$-scores (right), both excluding $\alpha$.}
 \end{figure}
 
 %=============================================================================
@@ -3603,6 +3610,7 @@ $R^2$ effective-action and bounce-perturbation modules are implemented in the sh
 
 \begingroup
 \footnotesize
+\sisetup{round-mode=figures, round-precision=6}
 \renewcommand{\arraystretch}{1.15}
 
 % AUTO-GENERATED by tfpt_suite/export_prediction_ledger.py — inlined for standalone-paper build.
@@ -3642,7 +3650,7 @@ Observable & Formula / dependencies & Pred. & Ref. & $z$ & Status & Suite eviden
 \(\lambda\equiv |V_{us}|\) & \(\lambda=\sqrt{\varphi_0}\left(1-\frac{1}{2}\varphi_0\right)\) [Kernel] & \num{0.22445997051897373245511597747748194821840297007791297390969270711773328122860166} & \num{0.22501} $\pm$ \num{0.00068} & \num{-0.80886688386215815424120959193831144352504400306915601515778365039223348735049879} & P & \texttt{global\_consistency\_test}\\ \codepath{out/global_consistency_test/results.json}\\
 \(\sin^2\theta_{12}\) & TM1 sum rule from \(\sin^2\theta_{13}\) [Kernel+Grammar] & \num{0.31792771} & \num{0.307} $\pm$ \num{0.012} & \num{0.910642} & P & \texttt{pmns\_z3\_breaking}\\ \codepath{out/pmns_z3_breaking/results.json}\\
 \(\sin^2\theta_{13}\) & Identity + TM1 [Kernel+Grammar] & \num{0.02310844} & \num{0.02224} $\pm$ \num{0.00057} & \num{1.523570} & P & \texttt{pmns\_z3\_breaking}\\ \codepath{out/pmns_z3_breaking/results.json}\\
-\(g_{a\gamma\gamma}\) & \(g_{a\gamma\gamma}=-4c_3=-\frac{1}{2\pi}\) [Kernel] & \num{-0.15915494309189535} & --- & --- & P & \texttt{(algebraic)}\\ \codepath{paper kernel (no suite output file)}\\
+\(g_{a\gamma\gamma}\) & \(g_{a\gamma\gamma}=-4c_3=-\frac{1}{2\pi}\) [Kernel] & \num{-0.15915494309189535} & --- & --- & P & \texttt{(algebraic)}\newline \codepath{paper kernel (no suite output file)}\\
 \end{longtable}
 \endgroup
 
@@ -3987,6 +3995,7 @@ Under this explicit gate, the scalar bounce feature is CMB-low-$\ell$, while the
 
 \nextgroupplot[
     title={relative deviation (TT)},
+    title style={at={(0.5,0.97)}, yshift=-0.6ex},
     xlabel={$\ell$},
     ylabel={$\Delta D_\ell/D_{\ell,0}$},
     ymin=-1.0, ymax=10.5,
@@ -4016,6 +4025,7 @@ Under this explicit gate, the scalar bounce feature is CMB-low-$\ell$, while the
 
 \nextgroupplot[
     title={relative deviation (EE)},
+    title style={at={(0.5,0.97)}, yshift=-0.6ex},
     xlabel={$\ell$},
     ylabel={$\Delta D_\ell/D_{\ell,0}$},
     ymin=-1.0, ymax=16.5,
@@ -4063,11 +4073,12 @@ amplitude, providing a direct observational test of the bounce completion.
 % source: tfpt_suite/data/references.json (+ dereferenced global_reference*.json observables where applicable)
 
 \begingroup
-\footnotesize
-\setlength{\tabcolsep}{4pt}
+\scriptsize
+\sisetup{round-mode=figures, round-precision=6}
+\setlength{\tabcolsep}{3pt}
 \renewcommand{\_}{\string_\allowbreak}
 \Urlmuskip=0mu plus 1mu\relax
-\begin{longtable}{@{}p{0.24\textwidth}rrllp{0.34\textwidth}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedleft\arraybackslash}p{0.12\textwidth}>{\raggedleft\arraybackslash}p{0.10\textwidth}>{\raggedright\arraybackslash}p{0.10\textwidth}>{\raggedright\arraybackslash}p{0.12\textwidth}>{\raggedright\arraybackslash}p{0.28\textwidth}@{}}
 \caption{Reference ledger used by the TFPT suite (auto-generated).}\label{tab:reference-ledger}\\
 \toprule
 Key & Value & $\sigma$ & Units & Version & Source (stable key)\\

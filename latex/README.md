@@ -82,6 +82,13 @@
   - Made the CKM benchmark hygiene explicit: the suite currently uses an **external \(\delta_{\rm CKM}\)** override for benchmarking, and this is stated in the paper.
   - Marked the flagged low-\(\hat{k}\) bounce-transfer points visually (Wronskian diagnostic), to avoid “numerics shaky” reviewer impressions.
 
+## Changes applied (v2.5 layout polish) (Jan 2026)
+
+- Adjusted figure labels and captions for consistency (dashboard plot, birefringence categories, CMB deviation panels).
+- Wrapped wide tables and resized the reference ledger layout to prevent right-edge truncation.
+- Smoothed rounding/precision for CODATA references and summary z-scores.
+- Folded the kernel evidence line back into the prediction ledger row for cleaner rendering.
+
 ## Build
 
 Use your local TeX distribution (e.g. TeX Live / MacTeX):

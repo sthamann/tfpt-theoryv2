@@ -71,3 +71,12 @@
 - [x] **Global consistency**: add $\chi^2$ dashboard note explaining alpha-dominance and the “excluding alpha” total.
 - [x] **Torsion bounds**: add bounds table and clarify local-vacuum vs cosmological-torsion regimes.
 - [x] **Dark energy (Λ) candidate**: add discrete scan / torsion-condensate interface note (explicit mechanism gap).
+
+## v2.5 layout polish (Jan 2026)
+
+- [x] **Table width fixes**: wrap alpha tables and resize reference ledger columns to avoid right-edge truncation.
+- [x] **Birefringence plot cleanup**: remove out-of-category theory point; keep theory line with legend.
+- [x] **Caption/label consistency**: fix dashboard caption and tighten $\overline{\mathrm{MS}}$ wording.
+- [x] **Ledger hygiene**: fold stray kernel evidence line into the prediction ledger row.
+- [x] **Rounding consistency**: normalize CODATA precision and reduce over-precise z-score display.
+- [x] **Plot label alignment**: re-anchor relative-deviation titles in the CMB panel.
