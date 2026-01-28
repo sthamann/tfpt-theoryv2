@@ -1,0 +1,72 @@
+{
+  "checks": [
+    {
+      "check_id": "frequency_matches",
+      "detail": "nu_calc=15.76402318010866, nu_reported=15.76402318010866",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "omega_a_near_ref",
+      "detail": "Omega_a_h2=0.12275084115028702",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "axion_dm_audit",
+  "plot": {
+    "axion_summary_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/axion_dm_audit/axion_summary.png"
+  },
+  "results": {
+    "axion_claim": {
+      "f_a_GeV": 88639886850.34554,
+      "m_a_micro_eV": 65.1947598780055,
+      "nu_GHz": 15.76402318010866
+    },
+    "nu_calc_GHz": 15.76402318010866,
+    "plot": {
+      "axion_summary_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/axion_dm_audit/axion_summary.png"
+    },
+    "relic": {
+      "Omega_a_h2": 0.12275084115028702,
+      "fraction_of_dm": 1.022923676252392
+    },
+    "scenario": {
+      "scenario_id": "post_inflation_theta_rms_with_strings_dw_factor",
+      "strings_domain_walls_factor": 2.3333333333333335,
+      "theta_eff": 1.8137993642342178
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given inputs.",
+    "formulas": [
+      "nu_GHz = 0.24179893 * m_a_micro_eV"
+    ],
+    "gaps": [],
+    "inputs": [
+      "axion_dm_pipeline outputs (preferred)",
+      "axion_tfpt_v106.json (fallback)"
+    ],
+    "maturity": null,
+    "module_id": "axion_dm_audit",
+    "name": "Axion DM audit (frequency, relic fraction)",
+    "objective": [
+      "Expose the axion target frequency and relic fraction in a single audit."
+    ],
+    "outputs": [
+      "nu_GHz from m_a",
+      "Omega_a h^2",
+      "theta_eff and strings/domain-walls factor (if available)"
+    ],
+    "question": "Do the axion numbers map cleanly to a frequency and relic fraction?",
+    "references": [],
+    "validation": [
+      "frequency matches the m_a conversion",
+      "relic fraction is near Omega_DM reference"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

@@ -1,0 +1,71 @@
+{
+  "checks": [
+    {
+      "check_id": "delta2_is_derived_not_fitted",
+      "detail": "PASS: model_id=two_defect_partition_g5_over_4, delta2=0.000000018091459748867855014525576506215873427709357460729151458474190949106463016708746 (no continuous parameter)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "alpha_inv_0_within_2sigma",
+      "detail": "|z|=1.8646873709648436912911416183836040477419934032132112601562746554275798808614493 \u2264 2 (pred=137.03599921615843479026171751711397398605568500258186146747743646328176776397918, ref=137.035999177)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "results": {
+    "alpha_inv_0_diagnostic": {
+      "diff": "0.000000039158434790261717517113973986055685002581861467477436463281767763979177498090436",
+      "pred": "137.03599921615843479026171751711397398605568500258186146747743646328176776397918",
+      "ref_mean": "137.035999177",
+      "ref_sigma": "0.000000021",
+      "z": "1.8646873709648436912911416183836040477419934032132112601562746554275798808614493"
+    },
+    "delta2_derivation": {
+      "assumptions": [
+        "defect partition sector expansion is valid at the required order",
+        "two-defect occupancy retains the 1/2! combinatoric factor",
+        "there are g=5 discrete defect channels contributing in the two-defect sector"
+      ],
+      "delta2": "0.000000018091459748867855014525576506215873427709357460729151458474190949106463016708746",
+      "delta2_over_delta_top2": "1.25",
+      "delta_top": "0.00012030447954708205299788417891154719697454455297232339122853166568719135947912407",
+      "model_id": "two_defect_partition_g5_over_4",
+      "note": "\u03b4\u2082=(5/4)\u00b7\u03b4_top\u00b2 (discrete multiplicity g=5; no continuous fit parameter)"
+    }
+  },
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given TFPT constants and the fixed \u03b4\u2082 model.",
+    "formulas": [
+      "varphi0(\u03b1)=varphi_tree+\u03b4_top e^{-2\u03b1}+\u03b4\u2082 e^{-4\u03b1}",
+      "\u03b4\u2082=(5/4)\u00b7\u03b4_top\u00b2 (discrete multiplicity model; see report)"
+    ],
+    "gaps": [
+      "Publication-grade requires a first-principles topological/QFT derivation of the discrete multiplicity (g=5)."
+    ],
+    "inputs": [
+      "TFPT invariants (c3, varphi0_tree, delta_top) from tfpt_suite/constants.py",
+      "CODATA \u03b1^{-1}(0) reference (diagnostic) from tfpt_suite/data/global_reference.json"
+    ],
+    "maturity": null,
+    "module_id": "defect_partition_derivation",
+    "name": "Defect partition derivation (derive \u03b4\u2082 without fitting)",
+    "objective": [
+      "Turn the \u03b4\u2082 term from a debug target into an assumption-explicit discrete derivation candidate.",
+      "Provide a clear audit trail for why \u03b4\u2082 is not a free parameter."
+    ],
+    "outputs": [
+      "\u03b4\u2082 derivation record (model_id, assumptions, \u03b4\u2082 value)",
+      "diagnostic \u03b1^{-1}(0) value implied by the \u03b4\u2082 candidate (strict z-score vs CODATA)"
+    ],
+    "question": "Can the next defect-sector correction \u03b4\u2082 be generated from discrete defect combinatorics (not fitted), while improving \u03b1(0) metrology?",
+    "references": [],
+    "validation": [
+      "\u03b4\u2082 is produced by a discrete model choice (no continuous knob).",
+      "\u03b1^{-1}(0) implied by the \u03b4\u2082 candidate is within 5\u03c3 of CODATA (strict \u03c3) as a metrology gate."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

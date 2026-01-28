@@ -1,0 +1,34 @@
+Discrete complexity minimizer (bounded grammar search)
+
+mp.dps = 80
+max_cost = 8
+rel_tol = 1.0e-30
+magnitude_cap = 1000000.0
+explored_unique_total = 122800 (sum of unique numeric values explored per target; early-stop at first match cost)
+
+Targets and minimal-cost matching expressions:
+
+- beta_rad: target=0.0042312895113954151087468182088050163950728077266837257698944229030526732721556263
+  min_cost=5
+  * cost=5  expr=((varphi0)/(4))/(pi)  value=0.0042312895113954151087468182088050163950728077266837257698944229030526732721556263  symbolic_ok=True
+
+- M_over_Mpl: target=0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637
+  min_cost=5
+  * cost=5  expr=((c3)^3)*(sqrt(c3))  value=0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637  symbolic_ok=True
+
+- cabibbo_lambda: target=0.22445997051897373245511597747748194821840297007791297390969270711773328122860166
+  min_cost=8
+  * cost=8  expr=(((2)-(varphi0))*(sqrt(varphi0)))/(2)  value=0.22445997051897373245511597747748194821840297007791297390969270711773328122860166  symbolic_ok=True
+
+- delta_top_over_c3_4: target=48.0
+  min_cost=3
+  * cost=3  expr=(6)*(8)  value=48.0  symbolic_ok=True
+
+Checks:
+- all_targets_matched: PASS (all selected targets have at least one match within max_cost)
+- symbolic_verification_for_key_identities: PASS (symbolic verification succeeded for beta_rad and M_over_Mpl (at least one minimal match each))
+
+Notes:
+- This implements a deterministic, bounded search as a proxy for an MDL/description-length minimizer.
+- Numeric deduplication is used for performance; matches are additionally verified symbolically where feasible.
+- For larger grammars and many observables, the next step would be beam search + holdout + randomization tests (tasks.md).

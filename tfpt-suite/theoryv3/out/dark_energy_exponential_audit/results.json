@@ -1,0 +1,114 @@
+{
+  "checks": [
+    {
+      "check_id": "rho_L_within_tol",
+      "detail": "best=n=1/2, log10_mismatch=0.086476440564864926187156347994103908266699030555201620536919175137693565637834492",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "n_half_preferred",
+      "detail": "best=n=1/2",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "dark_energy_exponential_audit",
+  "plot": {
+    "rho_lambda_candidates_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/dark_energy_exponential_audit/rho_lambda_candidates.png"
+  },
+  "results": {
+    "alpha_inv_0": "137.03599921615843479026171751711397398605568500258186146747743646328176776397918",
+    "best": {
+      "label": "n=1/2",
+      "label_str": "n=1/2",
+      "log10_mismatch_rho_L": "0.086476440564864926187156347994103908266699030555201620536919175137693565637834492",
+      "norm_factor": "0.5",
+      "phi_star": "8.749452212956501022947291355808706589145013939854402624752897361715082295325407e-31",
+      "rho_L_GeV4": "2.060247122268795528691070560351946768145020625187219242978373038664026793360454e-47"
+    },
+    "best_label_str": "n=1/2",
+    "candidates": [
+      {
+        "label": "n=1",
+        "log10_mismatch_rho_L": "1.1176435420910598546677992309038681988060604952932325447047906693707391914598635",
+        "norm_factor": "1.0",
+        "phi_star": "1.7498904425913002045894582711617413178290027879708805249505794723430164590650814e-30",
+        "rho_L_GeV4": "3.2963953956300728459057128965631148290320330002995507887653968618624428693767263e-46"
+      },
+      {
+        "label": "n=1/sqrt(2)",
+        "log10_mismatch_rho_L": "0.51558355076309731023748426250763604368765443517896600408364862492533647668979732",
+        "norm_factor": "0.707106781186547461715008466853760182857513427734375",
+        "phi_star": "1.2373593982898372066166530610292014299317947171292995710107644692432019358180005e-30",
+        "rho_L_GeV4": "8.2409884890751791924715491752068602736606637752858859801756983894249389137727864e-47"
+      },
+      {
+        "label": "n=1/sqrt(3)",
+        "log10_mismatch_rho_L": "0.16340103265173521348268168991903007279867656916819870429556935529592119514142206",
+        "norm_factor": "0.57735026918962584208117050366126932203769683837890625",
+        "phi_star": "1.0102997180824406789056462191667319089930223541664503669137693270574128181578539e-30",
+        "rho_L_GeV4": "3.6626615507000829083367635594624968879058212854233328819736726564797063930073149e-47"
+      },
+      {
+        "label": "n=1/2",
+        "log10_mismatch_rho_L": "0.086476440564864926187156347994103908266699030555201620536919175137693565637834492",
+        "norm_factor": "0.5",
+        "phi_star": "8.749452212956501022947291355808706589145013939854402624752897361715082295325407e-31",
+        "rho_L_GeV4": "2.060247122268795528691070560351946768145020625187219242978373038664026793360454e-47"
+      },
+      {
+        "label": "n=1/3^(1/4)",
+        "log10_mismatch_rho_L": "0.64052228737139740198695527073908318409436141289349170854912280073706296268582548",
+        "norm_factor": "0.75983568565159254060148441567434929311275482177734375",
+        "phi_star": "1.329629204261529325257192481814218902788770411668458092815468754349834660857319e-30",
+        "rho_L_GeV4": "1.0987984652100242430412721537847256768764952553691263345551839605586679829130696e-46"
+      }
+    ],
+    "phi_star_base": "1.7498904425913002045894582711617413178290027879708805249505794723430164590650814e-30",
+    "plot": {
+      "rho_lambda_candidates_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/dark_energy_exponential_audit/rho_lambda_candidates.png"
+    },
+    "targets": {
+      "H0_km_s_Mpc": 67.36,
+      "Omega_L": 0.684608,
+      "rho_L_target": 2.514176465474032e-47
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (finite scan, no continuous tuning).",
+    "formulas": [
+      "phi_star_base = exp(-alpha_inv_0 / 2)",
+      "rho_L = (Mpl_bar * phi_star)^4",
+      "Omega_L = 1 - Omega_m - Omega_r",
+      "rho_L_target = 3 * Omega_L * H0^2 * Mpl_bar^2"
+    ],
+    "gaps": [],
+    "inputs": [
+      "alpha_inv_0 from g=5 delta2 model",
+      "k_calibration cosmology snapshot (Omega_m, Omega_r, H0)"
+    ],
+    "maturity": null,
+    "module_id": "dark_energy_exponential_audit",
+    "name": "Dark energy exponential audit (phi_star from exp(-alpha_inv/2))",
+    "objective": [
+      "Quantify the exponential suppression mechanism with explicit candidates.",
+      "Track mismatch against the cosmology target ledger."
+    ],
+    "outputs": [
+      "phi_star_base = exp(-alpha_inv_0/2)",
+      "rho_L for discrete normalization candidates",
+      "best candidate and log10 mismatch vs target"
+    ],
+    "question": "Is the dark energy scale explained by exp(-alpha_inv/2) with a discrete normalization?",
+    "references": [],
+    "validation": [
+      "best candidate within 0.5 dex of target",
+      "n=1/2 branch is preferred under current scan"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

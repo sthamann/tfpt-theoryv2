@@ -1,0 +1,85 @@
+PMNS full pipeline (Z3 Yukawa texture + seesaw κ EFT + thresholds; mt→μUV)
+
+flavor texture config: tfpt-suite/tfpt_suite/data/flavor_texture_v24.json (sha256=d58eaeead900b40d8bd3235d1d20d97845d23f74b6577614b28591c9785abaa3)
+thresholds file: tfpt-suite/tfpt_suite/data/rge_thresholds_v25.json (sha256=864896e83cf5b40b078ce461ba18d1aea34d800a13cf65405e49a8c3b7e5c834)
+lepton masses file: tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json (sha256=4c992c392766d6944c5bd53f4d91c369de53c8616513939e79b0ee1f890de386)
+SM inputs file: tfpt-suite/tfpt_suite/data/sm_inputs_mz.json (sha256=f46b08eb6c06c7b4b4a52f81f7f7ce63b5b9c5fcc2a1752418c82817f155bcfe)
+msbar_matching_map: used (path=tfpt-suite/out/msbar_matching_map/results.json, sha256=50d8c84f7dfc249014967237d42af634a0a3316e99939365db621419d67b7f57)
+PMNS reference file: tfpt-suite/tfpt_suite/data/pmns_reference.json (sha256=7db8de223af56cb38a9e59f8fa7d6598a00de53b2f2ca4333151da9f10a371ba)
+PMNS reference metadata: scale=MZ (91.1876 GeV), scheme=NuFIT 5.3 (2024) global fit; effective low-energy parameters; not a running MSbar coupling
+Scale policy: native comparison at mt (172.76 GeV); reference scale is reported from pmns_reference.json
+
+Flavor conventions:
+- delta_source = delta_star
+- delta_M (from tau/mu) = 0.6079090366343283
+- delta_star (from geometry) = 0.6088619920294742
+- delta_used = 0.6088619920294742
+- phase_mode = 2pi_delta
+- theta_baseline(delta_used) = 3.8255927224196866 rad
+- theta_used = 5.235987755982989 rad (scan_best=topology_theta_4, source=topology_phase_map)
+- zeta_used = exp(i theta_used) = (0.5000000000000001-0.8660254037844386j)
+- coefficients_rule = v107sm_fixed (source: update_tfptv1_07sm.tex (v1.07SM) + paper_v1_06_01_09_2025.tex (v1.06) conventions)
+- (a_u,a_d,a_e,a_nu,b) = (0.6666666666666666,1.0,1.0,1.103,1.0)
+- topology_phase_atoms (docking): source_module=chiral_index_three_cycles, status=used_for_delta_candidates
+- topology θ scan: enabled=True, candidates=6, max=6
+
+Thresholds (GeV):
+- MSigma=1000.0, MG8=18000000000.0, (MNR1,MNR2,MNR3)=(100000000000000.0,300000000000000.0,800000000000000.0), mu_uv=1e+16
+
+Gauge init (mt):
+- hypercharge convention: Q=T3+Y (SM); PyR@TE betas use gY≡g′.
+- g1_GUT(mt)=0.463095 -> gY(mt)=0.358712, g2(mt)=0.648334, g3(mt)=1.16763
+- SM boundary scheme: MSbar-ish inputs @ MZ; MZ→mt gauge running via PyR@TE beta functions (loop-truncated); mt pole→MSbar(mt) via QCD 2-loop
+- SM boundary @ mt cross-check: route_2loop(gY,g2,g3,yt)=(0.358712,0.648334,1.16763,0.940617), route_1loop=(0.358686,0.648206,1.16913,0.940468), diffs(2L-1L)=(ΔgY=2.57e-05,Δg2=1.29e-04,Δg3=-1.49e-03,Δyt=1.50e-04)
+
+Yukawa scaling at mt (sigma_max targets):
+- yt(mt) target = 0.940617 => y*_u=0.456523
+- yb(mt) target = 0.0166586 => y*_d=0.00804453
+- ytau(mt) target = 0.0102149 => y*_e=0.00493282
+- ynu3(mt) target = 1 => y*_nu=0.482153
+- neutrino κ/yN source = mechanism_bridge (config: flavor_texture_v24.json/neutrino_mechanism.kappa_source)
+- mechanism_bridge target scan best: delta0≈239.99999999999997°, eps≈5·(varphi0/6) (sign=-1), chi2≈3.2010784019183567
+
+PMNS at mt (Ye(mt), kappa_total(mt)):
+- best convention: ordering=NO, perm=[0, 1, 2], chi2=3.201078401918528
+- angles (deg): θ12=34.3225, θ13=8.7437, θ23=42.4612, δ=240.00
+- neutrino masses proxy (eV, in-best-order): [4.566704329295951e-19, 0.008602325267042629, 0.050000000000000024]
+
+PMNS at μUV (Ye(μUV), kappa(μUV)):
+- best convention: ordering=NO, perm=[0, 1, 2], chi2=11.427560720549947
+- angles (deg): θ12=34.3839, θ13=8.7900, θ23=45.1600, δ=239.65
+- neutrino masses proxy (eV, in-best-order): [2.648556714881193e-12, 0.013659287659473704, 0.07810413409744715]
+
+RG segments (explicit threshold bookkeeping):
+- segment [172.76, 1000] GeV: model=sm, delta_b3_active=False, active_cols=[False, False, False]
+- segment [1000, 1.8e+10] GeV: model=e8, delta_b3_active=False, active_cols=[False, False, False]
+  - MSigma: matched_1loop_log_only_identity (beta_source_switch(sm→e8)) Switch beta source SM→E8 at μ=MSigma (Sigma integrated in). Matching enabled (1-loop identity at μ=threshold).
+- segment [1.8e+10, 1e+14] GeV: model=e8, delta_b3_active=True, active_cols=[False, False, False]
+  - MG8: matched_1loop_log_only_identity (beta_patch(Δb3)) Apply Δb3 patch above MG8 (paper v1.06 note). Matching enabled (1-loop identity at μ=threshold).
+- segment [1e+14, 3e+14] GeV: model=e8, delta_b3_active=True, active_cols=[True, False, False]
+  - MNR1: matched_tree_level (kappa_matching+integrate_in_yN) Tree-level EFT matching at μ=MNRi: κ → κ - y_i y_i^T / MNRi, and yN column i is integrated in.
+- segment [3e+14, 8e+14] GeV: model=e8, delta_b3_active=True, active_cols=[True, True, False]
+  - MNR2: matched_tree_level (kappa_matching+integrate_in_yN) Tree-level EFT matching at μ=MNRi: κ → κ - y_i y_i^T / MNRi, and yN column i is integrated in.
+- segment [8e+14, 1e+16] GeV: model=e8, delta_b3_active=True, active_cols=[True, True, True]
+  - MNR3: matched_tree_level (kappa_matching+integrate_in_yN) Tree-level EFT matching at μ=MNRi: κ → κ - y_i y_i^T / MNRi, and yN column i is integrated in.
+
+Monte Carlo uncertainty propagation (μUV): N_success=12, N_failed=0 (cap=12)
+- χ²(μUV) = 11.4 ± 0.0843
+- angles@μUV (deg): θ12=34.3838±2.41e-04, θ13=8.7900±2.59e-04, θ23=45.1570±1.58e-02, δ=239.65±1.38e-03
+
+End-state snapshot (SM gY,g2,g3):
+- gY=0.446795, g2=0.567222, g3=0.554941, lambda=-0.755765
+- max|kappa|(mu_uv)=7.843e-16 GeV^-1
+
+Checks:
+- g1_gut_over_gY_convention: PASS (g1_GUT/gY=1.29099444873581 vs sqrt(5/3)=1.29099444873581)
+- no_convention_shopping_possible_under_fixed_rule: PASS (phase_selection_rule_mode=filter_only, pmns_convention_policy=mass_splitting_canonical)
+- sm_boundary_1loop_vs_2loop_close: PASS (diffs (2L-1L) @ mt: ΔgY=2.5723155397283648e-05, Δg2=0.00012867895065693524, Δg3=-0.0014918758850732683, Δyt=0.00014967384947628393)
+- pmns_unitary: PASS (max|U†U-I|(mt)=8.882e-16, max|U†U-I|(mu_uv)=1.554e-15)
+- kappa_symmetric: PASS (max|kappa-kappa^T|(mu_uv)=0.000e+00)
+- kappa_decouples_above_MNR3: PASS (max|kappa|(mu_uv)=7.843e-16 GeV^-1 (PASS expects ~0 after integrating-in all N_Ri))
+- threshold_matching_publication_grade: PASS (threshold_matching_ok=True, blocked_thresholds=[])
+- matching_mc_present: PASS (enabled=True, used=12, success=12, failed=0, min_success=9)
+- matching_map_used: PASS (msbar_matching_map used (path=tfpt-suite/out/msbar_matching_map/results.json))
+- reference_scale_documented: PASS (native_scale=mt (172.76 GeV), reference_scale=MZ (91.1876 GeV))
+- chi2_scale_consistency: PASS (chi2_mt=3.20108, chi2_uv=11.4276, ratio=3.56991 (max=10.0))

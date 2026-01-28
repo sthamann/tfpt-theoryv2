@@ -1,0 +1,63 @@
+Unconventional: threshold graph audit
+
+Purpose:
+- Provide an explicit, inspectable segment/threshold graph for the 2-loop RGE runner.
+- Compare matching disabled vs enabled bookkeeping (identity-at-threshold at 1-loop, but explicit).
+
+Threshold table: /Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/tfpt_suite/data/rge_thresholds_v25.json
+mt boundary: mt=172.76 GeV (from sm_boundary_conditions_at_mt, route_2loop)
+mu_uv: 1e+16 GeV
+
+Threshold nodes (sorted):
+- MSigma: 1000 GeV
+- MG8: 1.8e+10 GeV
+- MPhi: 8.86e+10 GeV
+- MNR1: 1e+14 GeV
+- MNR2: 3e+14 GeV
+- MNR3: 8e+14 GeV
+
+Edges (matching OFF):
+- [172.76 → 1000] model=sm_tfpt_2loop_v25 patches=[] thr_at_start=None matching_active=None
+- [1000 → 1.8e+10] model=e8_sigma_yN_2loop patches=[] thr_at_start=MSigma matching_active=False
+- [1.8e+10 → 1e+14] model=e8_sigma_yN_2loop patches=['delta_b3_g8'] thr_at_start=MG8 matching_active=False
+- [1e+14 → 3e+14] model=e8_sigma_yN_2loop patches=['delta_b3_g8'] thr_at_start=MNR1 matching_active=False
+- [3e+14 → 8e+14] model=e8_sigma_yN_2loop patches=['delta_b3_g8'] thr_at_start=MNR2 matching_active=False
+- [8e+14 → 1e+16] model=e8_sigma_yN_2loop patches=['delta_b3_g8'] thr_at_start=MNR3 matching_active=False
+
+Edges (matching ON):
+- [172.76 → 1000] model=sm_tfpt_2loop_v25 patches=[] thr_at_start=None matching_active=None
+- [1000 → 1.8e+10] model=e8_sigma_yN_2loop patches=[] thr_at_start=MSigma matching_active=True
+- [1.8e+10 → 1e+14] model=e8_sigma_yN_2loop patches=['delta_b3_g8'] thr_at_start=MG8 matching_active=True
+- [1e+14 → 3e+14] model=e8_sigma_yN_2loop patches=['delta_b3_g8'] thr_at_start=MNR1 matching_active=True
+- [3e+14 → 8e+14] model=e8_sigma_yN_2loop patches=['delta_b3_g8'] thr_at_start=MNR2 matching_active=True
+- [8e+14 → 1e+16] model=e8_sigma_yN_2loop patches=['delta_b3_g8'] thr_at_start=MNR3 matching_active=True
+
+Threshold finite-piece status (matching ON):
+- MSigma: identity_matching (gauge=matched_1loop_log_only_identity, yukawa=matched_1loop_log_only_identity, quartic=matched_1loop_log_only_identity)
+- MG8: identity_matching (gauge=matched_1loop_log_only_identity, yukawa=matched_1loop_log_only_identity, quartic=matched_1loop_log_only_identity)
+- MNR1: identity_matching (gauge=matched_1loop_log_only_identity, yukawa=matched_1loop_log_only_identity, quartic=matched_1loop_log_only_identity)
+- MNR2: identity_matching (gauge=matched_1loop_log_only_identity, yukawa=matched_1loop_log_only_identity, quartic=matched_1loop_log_only_identity)
+- MNR3: identity_matching (gauge=matched_1loop_log_only_identity, yukawa=matched_1loop_log_only_identity, quartic=matched_1loop_log_only_identity)
+
+Notes:
+- Matching at loop_order=1 is identity at μ=threshold (log-only), but still recorded explicitly when enabled.
+- Below MZ, the SM gauge-only runner applies finite 2-loop αs decoupling at heavy-quark thresholds when enabled (Gate-2 finite matching).
+- This module is an audit tool: it makes policies explicit and helps prevent silent threshold/matching drift.
+
+Below-MZ finite αs matching (2-loop decoupling) diagnostic:
+- mu_ref=MZ=91.1876 GeV, mb=4.18 GeV, mc=1.27 GeV
+- alpha_s(mc) matching OFF: 0.346914414
+- alpha_s(mc) matching ON:  0.347983505
+- delta alpha_s(mc) = +1.069e-03
+
+Checks:
+- threshold_table_loaded: PASS (nodes=[('MSigma', 1000.0), ('MG8', 18000000000.0), ('MPhi', 88600000000.0), ('MNR1', 100000000000000.0), ('MNR2', 300000000000000.0), ('MNR3', 800000000000000.0)])
+- segments_ordered_matching_off: PASS (segments=6)
+- segments_ordered_matching_on: PASS (segments=6)
+- segment_count_matches_expected: PASS (expected=6 from thresholds_in_range=['MSigma', 'MG8', 'MNR1', 'MNR2', 'MNR3']; got=6)
+- matching_off_marks_blocked_thresholds: PASS (publication_grade={'threshold_matching_ok': False, 'blocked_thresholds': ['MSigma', 'MG8', 'MNR1', 'MNR2', 'MNR3'], 'note': "Publication-grade threshold bookkeeping requires matching_active=True at each threshold boundary; if matching is disabled, segments are labeled 'continuous_by_assumption'."})
+- matching_on_is_publication_grade_bookkeeping: PASS (publication_grade={'threshold_matching_ok': True, 'blocked_thresholds': [], 'note': "Publication-grade threshold bookkeeping requires matching_active=True at each threshold boundary; if matching is disabled, segments are labeled 'continuous_by_assumption'."})
+- thresholds_marked_publication_grade: PASS (threshold_statuses=[{'threshold_id': 'MSigma', 'status': 'identity_matching', 'component_status': {'gauge': 'matched_1loop_log_only_identity', 'yukawa': 'matched_1loop_log_only_identity', 'quartic': 'matched_1loop_log_only_identity'}}, {'threshold_id': 'MG8', 'status': 'identity_matching', 'component_status': {'gauge': 'matched_1loop_log_only_identity', 'yukawa': 'matched_1loop_log_only_identity', 'quartic': 'matched_1loop_log_only_identity'}}, {'threshold_id': 'MNR1', 'status': 'identity_matching', 'component_status': {'gauge': 'matched_1loop_log_only_identity', 'yukawa': 'matched_1loop_log_only_identity', 'quartic': 'matched_1loop_log_only_identity'}}, {'threshold_id': 'MNR2', 'status': 'identity_matching', 'component_status': {'gauge': 'matched_1loop_log_only_identity', 'yukawa': 'matched_1loop_log_only_identity', 'quartic': 'matched_1loop_log_only_identity'}}, {'threshold_id': 'MNR3', 'status': 'identity_matching', 'component_status': {'gauge': 'matched_1loop_log_only_identity', 'yukawa': 'matched_1loop_log_only_identity', 'quartic': 'matched_1loop_log_only_identity'}}])
+- matching_on_no_blocked_thresholds: PASS (blocked_thresholds=[])
+- threshold_starts_have_explicit_matching_records_when_enabled: PASS (threshold_segments=5, matching_active_true=5)
+- below_mz_alpha3_matching_changes_alpha_s: PASS (alpha_s(mc) off=0.346914414, on=0.347983505, delta=+1.069e-03)

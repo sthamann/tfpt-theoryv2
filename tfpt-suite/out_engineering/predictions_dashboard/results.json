@@ -1,0 +1,220 @@
+{
+  "checks": [
+    {
+      "check_id": "predictions_are_finite",
+      "detail": "all core prediction values are finite",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "reference_loaded",
+      "detail": "loaded tfpt_suite/data/global_reference.json",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "results": {
+    "comparisons": {
+      "A_s_N56": {
+        "mean": "0.0000000020989031673",
+        "ppm": "-4150.6454924963309149139490401122174316113687728990212595696598686934815123145506",
+        "sigma": "0.00000000002938464434",
+        "sigma_floor": "0.0",
+        "sigma_theory": "0.0",
+        "z": "-0.29647467805764898160213003439885527348994189187882714815192466383904684207796011"
+      },
+      "alpha_bar5_inv_MZ_primary": {
+        "mean": "127.951",
+        "ppm": "-0.007420398453663976192569905268704910245270436080331697452537754691257827344394815",
+        "sigma": "0.009",
+        "sigma_floor": "0.0",
+        "sigma_theory": "0.0",
+        "z": "-0.00010549415583830660197950132767067355231028861854605789119440647227790336294918455"
+      },
+      "alpha_inv_0_selfconsistent": {
+        "mean": "137.035999177",
+        "ppm": "-0.037037101202604046334641968339095182025406625555948066961471526462227692903073795",
+        "sigma": "0.000000021",
+        "sigma_floor": "0.0",
+        "sigma_theory": "0.0",
+        "z": "-241.68648428183399065575555428123368671229940632263078436128347576127465934534425"
+      },
+      "alpha_inv_0_two_defect": {
+        "mean": "137.035999177",
+        "ppm": "-0.0071788173837323352413040312917307695904786165477907034361613291839588627323760663",
+        "sigma": "0.000000021",
+        "sigma_floor": "0.0",
+        "sigma_theory": "0.0",
+        "z": "-46.84554348042750406264892040478095183363830115614978177362166562343870452360679"
+      },
+      "beta_deg": {
+        "mean": "0.35",
+        "ppm": "-307328.48314020134716448137005853013580401393600431766877611274396941120366810576",
+        "sigma": "0.14",
+        "sigma_floor": "0.0",
+        "sigma_theory": "0.0",
+        "z": "-0.7683212078505033679112034251463253395100348400107941719402818599235280091702644"
+      },
+      "cabibbo_lambda": {
+        "mean": "0.2243",
+        "ppm": "713.19892542903457474800480375367016675421345480594698926753061851663499153660616",
+        "sigma": "0.0005",
+        "sigma_floor": "0.0",
+        "sigma_theory": "0.0",
+        "z": "0.31994103794746491023195495496389643680594015582594781938541423546656245720332152"
+      },
+      "n_s_N56": {
+        "mean": "0.9649",
+        "ppm": "-636.63147920583924314880890691855558681136461217298609774514013295234147135898651",
+        "sigma": "0.0042",
+        "sigma_floor": "0.0",
+        "sigma_theory": "0.0",
+        "z": "-0.14625850340136054421768707482993197278911564625850340136054421768707482993197288"
+      }
+    },
+    "inflation_scan": [
+      {
+        "A_s": "0.0000000020162081878496863672014193468740726907073431111266322187093552603751632772198152",
+        "N": 55,
+        "n_s": "0.96363636363636363636363636363636363636363636363636363636363636363636363636363636",
+        "r": "0.0039669421487603305785123966942148760330578512396694214876033057851239669421487603"
+      },
+      {
+        "A_s": "0.000000002090191364329459982659058205552757672085364626939873929875219205466615549540939",
+        "N": 56,
+        "n_s": "0.96428571428571428571428571428571428571428571428571428571428571428571428571428571",
+        "r": "0.003826530612244897959183673469387755102040816326530612244897959183673469387755102"
+      },
+      {
+        "A_s": "0.0000000021655075710160763659627806472706982387134405844794803565575852036227786736155966",
+        "N": 57,
+        "n_s": "0.96491228070175438596491228070175438596491228070175438596491228070175438596491228",
+        "r": "0.0036934441366574330563250230840258541089566020313942751615881809787626962142197599"
+      }
+    ],
+    "predictions": [
+      {
+        "depends_on": [
+          "TFPT \u03b1(0) (two-defect refinement)",
+          "\u0394\u03b1_had^(5)(MZ) (PDG input)",
+          "\u0394\u03b1_lept(MZ) (1-loop model)"
+        ],
+        "key": "alpha_bar5_inv_MZ_primary",
+        "label": "\u03b1\u0304^{(5)}(MZ)^{-1} (primary; MSbar-at-MZ via \u03b1(0)\u2192MZ running)",
+        "status": "primary comparison observable under the MSbar-at-MZ policy (TFPT \u03b1(0) + external SM/QED running inputs)",
+        "units": "dimensionless",
+        "value": "127.95099905055259745524058218448805096393802920740243308547897925034174949886973"
+      },
+      {
+        "depends_on": [
+          "c3, varphi0_tree, delta_top, b1, backreaction exponent k=2"
+        ],
+        "key": "alpha_inv_0_selfconsistent",
+        "label": "\u03b1^{-1}(0) (self-consistent, k=2; diagnostic)",
+        "status": "diagnostic IR/on-shell quantity (CFE + double-cover backreaction; interpreted as \u03b1(0))",
+        "units": "dimensionless",
+        "value": "137.03599410158383008148619622913336009409257904171246722475352841304700901323215"
+      },
+      {
+        "depends_on": [
+          "c3, varphi0_tree, delta_top, b1, k=2, \u03b42=\u03b4_top^2"
+        ],
+        "key": "alpha_inv_0_two_defect",
+        "label": "\u03b1^{-1}(0) (two-defect refinement, \u03b42=\u03b4_top^2; diagnostic)",
+        "status": "diagnostic refinement (parameter-free next term template)",
+        "units": "dimensionless",
+        "value": "137.0359981932435869110224146843726714996000114935956757208545827539450219077872"
+      },
+      {
+        "depends_on": [
+          "varphi0"
+        ],
+        "key": "beta_deg",
+        "label": "\u03b2 (cosmic birefringence, degrees)",
+        "status": "structural (\u0394a_top = varphi0, n=1)",
+        "units": "deg",
+        "value": "0.24243503090092952849243152047951445246859512239848881592836053961070607871616298"
+      },
+      {
+        "depends_on": [
+          "varphi0"
+        ],
+        "key": "cabibbo_lambda",
+        "label": "\u03bb (Cabibbo proxy)",
+        "status": "structural (from varphi0)",
+        "units": "dimensionless",
+        "value": "0.22445997051897373245511597747748194821840297007791297390969270711773328122860166"
+      },
+      {
+        "depends_on": [
+          "c3 via M/Mpl",
+          "N (e-folds)"
+        ],
+        "key": "n_s_N56",
+        "label": "n_s (Starobinsky R^2, N=56)",
+        "status": "derived (assumptions K1\u2013K3; N choice)",
+        "units": "dimensionless",
+        "value": "0.96428571428571428571428571428571428571428571428571428571428571428571428571428571"
+      },
+      {
+        "depends_on": [
+          "N (e-folds)"
+        ],
+        "key": "r_N56",
+        "label": "r (Starobinsky R^2, N=56)",
+        "status": "derived (assumptions K1\u2013K3; N choice)",
+        "units": "dimensionless",
+        "value": "0.003826530612244897959183673469387755102040816326530612244897959183673469387755102"
+      },
+      {
+        "depends_on": [
+          "c3 via M/Mpl",
+          "N (e-folds)"
+        ],
+        "key": "A_s_N56",
+        "label": "A_s (Starobinsky R^2, N=56)",
+        "status": "derived (assumptions K1\u2013K3; N choice)",
+        "units": "dimensionless",
+        "value": "0.000000002090191364329459982659058205552757672085364626939873929875219205466615549540939"
+      }
+    ],
+    "r_upper_bound_comparison": {
+      "cl": 0.95,
+      "passes": true,
+      "ratio": "0.068330903790087463556851311953352769679300291545189504373177842565597667638483965",
+      "upper_95": "0.056"
+    },
+    "reference_source": "tfpt_suite/data/global_reference.json"
+  },
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (algebraic; reference table is fixed input).",
+    "formulas": [
+      "\u03b2_deg = (180/\u03c0) * varphi0/(4\u03c0)",
+      "\u03bb = sqrt(varphi0)*(1 - varphi0/2)",
+      "Starobinsky: n_s=1-2/N, r=12/N^2, A_s\u2248N^2/(24\u03c0^2)*(M/Mpl)^2 with M/Mpl=sqrt(8\u03c0)c3^4"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT invariants from paper v2.5 (c3, varphi0)",
+      "Reference table (means/\u03c3): tfpt_suite/data/global_reference.json",
+      "Derived sectors: \u03b1 (via alpha_precision_audit logic), Starobinsky R^2 (via M/Mpl), RG fingerprints (via two-loop gauge running table)"
+    ],
+    "maturity": null,
+    "module_id": "predictions_dashboard",
+    "name": "Predictions dashboard (paper-ready: 5\u201310 key numbers + uncertainties/dependencies)",
+    "objective": [],
+    "outputs": [
+      "A compact predictions table (value + reference + z/ppm where applicable)",
+      "Explicit dependencies (e.g. N for inflation; structural assumptions flags)"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "All reported predictions are finite numbers",
+      "Reference values are loaded and z-scores are computable when \u03c3>0"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

@@ -1,0 +1,97 @@
+{
+  "checks": [
+    {
+      "check_id": "g_star_at_1MeV",
+      "detail": "g*(1 MeV)=10.75 (expected \u224810.75)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "g_star_below_me",
+      "detail": "g*(0.1 MeV)=3.36264 (expected \u22483.36)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "neff_marker_present",
+      "detail": "N_eff marker=3.046 (standard; placeholder for full likelihood)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "bbn_neff_sanity",
+  "plot": null,
+  "results": {
+    "electron_mass_GeV": 0.0005109989461,
+    "g_star_energy_points": [
+      {
+        "T_GeV": 0.0001,
+        "g_star_energy": 3.3626439059614333,
+        "note": "below m_e (e\u00b1 annihilated; T\u03bd/T=(4/11)^(1/3))"
+      },
+      {
+        "T_GeV": 0.0003,
+        "g_star_energy": 3.3626439059614333,
+        "note": "below m_e (e\u00b1 annihilated; T\u03bd/T=(4/11)^(1/3))"
+      },
+      {
+        "T_GeV": 0.0005,
+        "g_star_energy": 3.3626439059614333,
+        "note": "below m_e (e\u00b1 annihilated; T\u03bd/T=(4/11)^(1/3))"
+      },
+      {
+        "T_GeV": 0.001,
+        "g_star_energy": 10.75,
+        "note": "above m_e (e\u00b1 present; T\u03bd=T)"
+      },
+      {
+        "T_GeV": 0.003,
+        "g_star_energy": 10.75,
+        "note": "above m_e (e\u00b1 present; T\u03bd=T)"
+      },
+      {
+        "T_GeV": 0.01,
+        "g_star_energy": 10.75,
+        "note": "above m_e (e\u00b1 present; T\u03bd=T)"
+      }
+    ],
+    "inputs": {
+      "lepton_masses_file": "tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json",
+      "lepton_masses_sha256": "4c992c392766d6944c5bd53f4d91c369de53c8616513939e79b0ee1f890de386"
+    },
+    "neff_marker": 3.046
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given inputs.",
+    "formulas": [
+      "g_* = 2 + (7/8) g_e + (7/8) g_\\nu (T_\\nu/T)^4, with T_\\nu/T = 1 above m_e and (4/11)^{1/3} below"
+    ],
+    "gaps": [
+      "A publication-grade BBN module would integrate weak rates, nuclear network, and use a likelihood for (D/H, Y_p, N_eff)."
+    ],
+    "inputs": [
+      "Lepton masses: tfpt_suite/data/lepton_masses_pdg.json (electron mass threshold)"
+    ],
+    "maturity": null,
+    "module_id": "bbn_neff_sanity",
+    "name": "BBN / N_eff sanity (MeV-era g_* ledger; no full BBN simulation)",
+    "objective": [
+      "Provide a minimal BBN/N_eff sanity check without pretending to run a full BBN code.",
+      "Make the temperature conventions explicit (T is photon temperature; neutrino reheating applied below m_e)."
+    ],
+    "outputs": [
+      "g_*(T) energy-density ledger around the e\u00b1 annihilation threshold (MeV era)",
+      "N_eff baseline marker (3.046; placeholder for full BBN/CMB likelihood)"
+    ],
+    "question": "Is the MeV-era thermodynamic bookkeeping consistent (g_* before/after e\u00b1 annihilation; N_eff marker)?",
+    "references": [],
+    "validation": [
+      "g_*(T\u22481 MeV) \u2248 10.75 (photons + e\u00b1 + 3 neutrinos)",
+      "g_*(T\u226am_e) \u2248 3.36 (photons + reheated neutrinos)"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

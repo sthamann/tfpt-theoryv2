@@ -1,0 +1,93 @@
+{
+  "checks": [
+    {
+      "check_id": "finite_alpha3_matching_nontrivial",
+      "detail": "\u0394\u03b1_s(mc)=1.069e-03 (matching-on minus matching-off)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "alpha3_matching_invertible",
+      "detail": "down(up(alpha)) - alpha = 0.000e+00",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "matching_finite_pieces_EW_QED_present",
+      "detail": "\u0394\u03b1_total=0.06629644204122983631321957428385943695321073985639111010604467847449991743846326 (lept=0.03142092800460496831321957428385943695321073985639111010604467847449991743846326, had5=0.02768, extra=0.007195514036624868); alpha_bar5_inv_MZ(from alpha0)=127.95099999999999995091379770421674783329612966553202673731794505784319969841618",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "below_MZ_policy_explicit_and_applied",
+      "detail": "policy file=/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/alpha_running_pdg.json (\u0394\u03b1_had5 + leptonic 1-loop + \u0394\u03b1_extra)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "results": {
+    "alpha_running": {
+      "alpha_bar5_inv_MZ_from_alpha0": "127.95099999999999995091379770421674783329612966553202673731794505784319969841618",
+      "alpha_inv_0_ref": "137.035999177",
+      "delta_alpha_parts": {
+        "delta_alpha_extra_msbar": "0.007195514036624868",
+        "delta_alpha_had5": "0.02768",
+        "delta_alpha_lept_1loop": "0.03142092800460496831321957428385943695321073985639111010604467847449991743846326",
+        "delta_alpha_total": "0.06629644204122983631321957428385943695321073985639111010604467847449991743846326"
+      }
+    },
+    "alpha_s_mc": {
+      "delta": 0.0010690910333388537,
+      "no_matching": 0.3469144140881088,
+      "with_matching": 0.34798350512144766
+    },
+    "inputs": {
+      "alpha_running_pdg_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/alpha_running_pdg.json",
+      "global_reference_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference.json",
+      "sm_inputs_mz_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/sm_inputs_mz.json"
+    },
+    "invertibility": {
+      "alpha": 0.34798350512144766,
+      "alpha_back": 0.34798350512144766,
+      "alpha_up": 0.3473348623664315,
+      "error": 0.0
+    }
+  },
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given inputs.",
+    "formulas": [
+      "\u03b1_nf(\u03bc=m_Q) = \u03b1_{nf+1} [1 + (11/72)(\u03b1/\u03c0)^2]  (direction=down); inverse for direction=up",
+      "\u03b1\u0304(MZ) = \u03b1(0) / (1 - \u0394\u03b1_lept(MZ) - \u0394\u03b1_had^{(5)}(MZ) - \u0394\u03b1_extra)"
+    ],
+    "gaps": [
+      "Full publication-grade matching still requires systematic EW/QED finite pieces at all declared thresholds and a full below-MZ EFT policy; this module provides explicit proof points for both QCD (\u03b1_s) and QED/EW (\u03b1(0)\u2192\u03b1\u0304^(5)(MZ))."
+    ],
+    "inputs": [
+      "SM inputs at MZ: tfpt_suite/data/sm_inputs_mz.json",
+      "QED comparison-layer policy: tfpt_suite/data/alpha_running_pdg.json",
+      "reference table: tfpt_suite/data/global_reference.json"
+    ],
+    "maturity": null,
+    "module_id": "matching_finite_pieces",
+    "name": "Matching finite pieces (QCD \u03b1_s 2-loop decoupling + QED/EW \u03b1(0)\u2192\u03b1\u0304^(5)(MZ) bridge)",
+    "objective": [
+      "Provide a concrete 'finite piece exists' proof point (QCD \u03b1_s threshold at 2-loop).",
+      "Make it easy to audit what changes when matching is enabled."
+    ],
+    "outputs": [
+      "explicit demonstration of a nontrivial finite matching step (\u03b1_s 2-loop heavy-quark decoupling)",
+      "side-by-side \u03b1_s(\u03bc) values with/without finite matching at thresholds (QCD-only policy)",
+      "explicit \u03b1(0)\u2192\u03b1\u0304^(5)(MZ) renorm chain (QED leptonic 1-loop + \u0394\u03b1_had^(5) + explicit MSbar remainder)"
+    ],
+    "question": "Are finite matching pieces implemented explicitly (not silently), and are they numerically well-behaved?",
+    "references": [],
+    "validation": [
+      "finite \u03b1_s matching produces a non-zero step at heavy-quark thresholds at 2-loop",
+      "matching is invertible up\u2194down to numerical precision (metamorphic check)",
+      "QED/EW finite pieces are explicit and non-zero (\u0394\u03b1_lept, \u0394\u03b1_had, \u0394\u03b1_extra)"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

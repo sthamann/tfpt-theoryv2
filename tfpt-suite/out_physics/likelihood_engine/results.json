@@ -1,0 +1,278 @@
+{
+  "checks": [
+    {
+      "check_id": "likelihood_engine_runs",
+      "detail": "evaluated 2 dataset(s); logL_datasets=17.849145949002107",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "nuisance_handling_policy_explicit",
+      "detail": "policy={'kind': 'fixed', 'note': 'Initial policy: keep nuisance parameters fixed to declared reference values (explicitly stated). Upgrade paths: profiling or marginalization via sampling.', 'planck_2018': {'A_planck': 1.0, 'A_planck_policy': 'fixed', 'pivot_normalization': 'fixed_at_pivot', 'pivot_scalar_Mpc_inv': 0.05, 'note': 'Planck likelihoods use fixed calibration (A_planck=1) under the current policy. Pivot normalization is explicit and fixed for CAMB integration; upgrade path is profiling/marginalization.'}}",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "covariance_enabled_for_reference_tables",
+      "detail": "at least one multivariate covariance dataset evaluated",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "plugins_declared",
+      "detail": "plugins=2, enabled=0",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "planck_pliklite_included",
+      "detail": "not enabled / no logp (from tfpt-suite/out_physics/boltzmann_transfer/results.json)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "planck_lowl_included",
+      "detail": "not enabled / no logp (from tfpt-suite/out_physics/boltzmann_transfer/results.json)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "planck_lensing_included",
+      "detail": "not enabled / no logp (from tfpt-suite/out_physics/boltzmann_transfer/results.json)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "nufit_pmns_grid_plugin_active",
+      "detail": "disabled in likelihood spec",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "unified_score_all_sectors",
+      "detail": "all sectors contributing (alpha, flavor, cmb, dm)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "unified_score_p_value_reported",
+      "detail": "p\u22480.114327 (chi2=18.0451, dof=12)",
+      "passed": true,
+      "severity": "INFO"
+    }
+  ],
+  "module_id": "likelihood_engine",
+  "plot": null,
+  "results": {
+    "datasets": [
+      {
+        "chi2": 1.8038151508745435,
+        "dataset_id": "alpha_covariance_minimal",
+        "details": {
+          "covariance": [
+            [
+              2.0441e-14,
+              0.0
+            ],
+            [
+              0.0,
+              6.4e-05
+            ]
+          ],
+          "include_norm_constant": true,
+          "means": [
+            137.035999177,
+            127.93
+          ],
+          "p_value": 0.4057948366957973,
+          "predictions": {
+            "alpha_bar5_inv_MZ": 127.94051870737565,
+            "alpha_inv_0": 137.03599921615844
+          }
+        },
+        "dof": 2,
+        "kind": "multivariate_gaussian",
+        "labels": [
+          "alpha_inv_0",
+          "alpha_bar5_inv_MZ"
+        ],
+        "loglike": 17.849145949002107
+      },
+      {
+        "chi2": 0.0,
+        "dataset_id": "r_upper_95_proxy",
+        "details": {
+          "cl": 0.95,
+          "likelihood": "chi2_proxy",
+          "pred": 0.003826530612244898,
+          "upper": 0.056
+        },
+        "dof": 1,
+        "kind": "one_sided_upper",
+        "labels": [
+          "r"
+        ],
+        "loglike": -0.0
+      }
+    ],
+    "loglike_total": 17.849145949002107,
+    "loglike_total_datasets": 17.849145949002107,
+    "loglike_total_plugins": 0.0,
+    "nufit_pmns_grid": null,
+    "nuisance_policy": {
+      "kind": "fixed",
+      "note": "Initial policy: keep nuisance parameters fixed to declared reference values (explicitly stated). Upgrade paths: profiling or marginalization via sampling.",
+      "planck_2018": {
+        "A_planck": 1.0,
+        "A_planck_policy": "fixed",
+        "note": "Planck likelihoods use fixed calibration (A_planck=1) under the current policy. Pivot normalization is explicit and fixed for CAMB integration; upgrade path is profiling/marginalization.",
+        "pivot_normalization": "fixed_at_pivot",
+        "pivot_scalar_Mpc_inv": 0.05
+      }
+    },
+    "planck_pliklite_from_boltzmann_transfer": {
+      "lensing": {
+        "enabled": false,
+        "note": "set TFPT_ENABLE_PLANCK_LIKELIHOOD=1 to evaluate Planck lensing likelihood."
+      },
+      "lowl": {
+        "enabled": false,
+        "note": "set TFPT_ENABLE_PLANCK_LIKELIHOOD=1 to evaluate Planck low-\u2113 TT/EE."
+      },
+      "pliklite": {
+        "A_planck": 1.0,
+        "enabled": false,
+        "note": "set TFPT_ENABLE_PLANCK_LIKELIHOOD=1 to evaluate Planck likelihoods (Cobaya-native)."
+      }
+    },
+    "plugins": [
+      {
+        "enabled": false,
+        "kind": "cobaya",
+        "note": "Optional external Planck likelihood via Cobaya. Keep disabled by default; enable only when Cobaya + Planck likelihood/data are installed and configured.",
+        "plugin_id": "planck_2018_cobaya"
+      },
+      {
+        "chi2_column": "chi2",
+        "chi2_kind": "delta",
+        "distance_scales": {
+          "delta_cp_deg": 30.0,
+          "dm21_sq_eV2": 1e-05,
+          "dm3l_sq_eV2": 0.001,
+          "sin2_theta12": 0.02,
+          "sin2_theta13": 0.02,
+          "sin2_theta23": 0.02
+        },
+        "enabled": false,
+        "grid_file": "nufit_pmns_grid_v53_sk_atm_NO.txt.xz",
+        "interpolation": {
+          "k_nearest": 8,
+          "method": "inverse_distance"
+        },
+        "kind": "grid_chi2",
+        "normalize_delta_chi2": true,
+        "note": "Optional NuFIT interpolated chi2 grids for PMNS parameters (non-Gaussian). Expects a flat table with columns matching param_columns + chi2_column (header row optional). Supports .xz/.gz compressed files. Enable only when the NuFIT grid file is present.",
+        "ordering_policy": "from_pmns_full_pipeline",
+        "param_columns": [
+          "sin2_theta12",
+          "sin2_theta13",
+          "sin2_theta23",
+          "delta_cp_deg",
+          "dm21_sq_eV2",
+          "dm3l_sq_eV2"
+        ],
+        "plugin_id": "nufit_pmns_grid",
+        "pmns_scale": "mt"
+      }
+    ],
+    "predictions": {
+      "A_s": 2.09019136432946e-09,
+      "alpha_bar5_inv_MZ": 127.94051870737565,
+      "alpha_inv_0": 137.03599921615844,
+      "beta_deg": 0.24243503090092952,
+      "cabibbo_lambda": 0.22445997051897373,
+      "n_s": 0.9642857142857143,
+      "r": 0.003826530612244898
+    },
+    "predictions_source": "tfpt-suite/out_physics/global_consistency_test/results.json",
+    "spec_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/likelihood_datasets_v1.json",
+    "unified_score": {
+      "chi2_total": 18.045141257233023,
+      "components": [
+        {
+          "chi2": 1.8038151508745435,
+          "dof": 2,
+          "sector": "alpha",
+          "source": "likelihood_datasets_v1.json"
+        },
+        {
+          "chi2": 5.473120670327523,
+          "dof": 4,
+          "sector": "flavor_ckm",
+          "source": "tfpt-suite/out_physics/ckm_full_pipeline/results.json"
+        },
+        {
+          "chi2": 3.201078401918528,
+          "dof": 4,
+          "sector": "flavor_pmns",
+          "source": "tfpt-suite/out_physics/pmns_full_pipeline/results.json"
+        },
+        {
+          "chi2": 0.0,
+          "dof": 1,
+          "sector": "cmb",
+          "source": "r_upper_95_proxy"
+        },
+        {
+          "chi2": 7.56712703411243,
+          "dof": 1,
+          "omega_a_h2": 0.12275084115028702,
+          "omega_dm_h2_ref": 0.12,
+          "sector": "dm",
+          "sigma": 0.001,
+          "source": "tfpt-suite/out_physics/axion_dm_pipeline/results.json"
+        }
+      ],
+      "dof_total": 12,
+      "missing_sectors": [],
+      "p_value": 0.11432673592279935
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given the dataset spec + prediction providers.",
+    "formulas": [
+      "multivariate Gaussian: \u03c7\u00b2 = r\u1d40 C\u207b\u00b9 r, logL = -1/2 (\u03c7\u00b2 + log det C + n log 2\u03c0)",
+      "one-sided upper bound (proxy): \u03c7\u00b2=0 if x\u2264x_max else ((x-x_max)/x_max)\u00b2",
+      "grid \u03c7\u00b2: \u03c7\u00b2(\u03b8) interpolated from NuFIT grid; logL = -1/2 \u03c7\u00b2"
+    ],
+    "gaps": [
+      "External plugins (Planck likelihood, NuFIT chi2 grids) are not enabled by default; this module defines the contract and evaluates shipped datasets."
+    ],
+    "inputs": [
+      "dataset spec: tfpt_suite/data/likelihood_datasets_v1.json",
+      "predictions provider: global_consistency_test output (preferred) or direct prediction providers (future)"
+    ],
+    "maturity": null,
+    "module_id": "likelihood_engine",
+    "name": "Likelihood engine (covariance datasets + nuisance-policy contract; plugin-ready)",
+    "objective": [
+      "Provide a single unified dataset schema that can later host Planck (plugin) and NuFIT (grid chi2) without ad-hoc logic in each physics module."
+    ],
+    "outputs": [
+      "per-dataset chi2/logL summary (explicit covariance/bound handling)",
+      "total log-likelihood (sum of enabled datasets)",
+      "optional NuFIT PMNS grid logL (non-Gaussian, when enabled)"
+    ],
+    "question": "Can TFPT evaluate explicit covariances/bounds under a declared nuisance policy (upgrade path to Planck/NuFIT plugins)?",
+    "references": [],
+    "validation": [
+      "covariance_enabled_for_reference_tables: PASS if a covariance dataset is evaluated from the unified spec.",
+      "nuisance_handling_policy_explicit: PASS if nuisance_policy is present in the spec.",
+      "nufit_pmns_grid_plugin_active: INFO/WARN unless a NuFIT grid is enabled and evaluated."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

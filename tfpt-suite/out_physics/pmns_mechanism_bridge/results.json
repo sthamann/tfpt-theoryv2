@@ -1,0 +1,213 @@
+{
+  "checks": [
+    {
+      "check_id": "selected_variant_defined",
+      "detail": "selected=L_R23(+eps) (selection: min|\u0394\u03b4|, prefer \u0394\u03b823>0, then max \u0394\u03b823)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "kappa_symmetric",
+      "detail": "max|kappa-kappa^T|(mt)=0.000e+00",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "pmns_angles_reproduced_at_mt",
+      "detail": "max angle mismatch at mt = 2.274e-13 deg",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "kappa_factorization_recovers_kappa",
+      "detail": "max|kappa_rec-kappa|(mt)=9.872e-32 GeV^-1 (perm=(2, 0, 1), max|yN|=2.365e-01)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "kappa_decouples_above_MNR3_tree_level",
+      "detail": "max|kappa_above_MNR3|=1.120e-31 GeV^-1",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "pmns_angles_stable_under_kappa_running",
+      "detail": "max drift (mt\u21920.99 MNR1) = 9.192e-04 deg",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "pmns_mechanism_bridge",
+  "plot": null,
+  "results": {
+    "kappa_mt": {
+      "imag": [
+        [
+          -1.2132892357487883e-16,
+          -7.263578561723494e-17,
+          -3.745334990563163e-18
+        ],
+        [
+          -7.263578561723494e-17,
+          1.4300168686797882e-17,
+          6.423472498997604e-17
+        ],
+        [
+          -3.745334990563163e-18,
+          6.423472498997604e-17,
+          1.1076697948883612e-16
+        ]
+      ],
+      "real": [
+        [
+          5.598281481982638e-16,
+          -2.5760928381922894e-16,
+          -2.539084749384847e-16
+        ],
+        [
+          -2.5760928381922894e-16,
+          8.533129947235025e-17,
+          1.8265617482597565e-16
+        ],
+        [
+          -2.539084749384847e-16,
+          1.8265617482597565e-16,
+          8.804823966736363e-17
+        ]
+      ]
+    },
+    "kappa_running": {
+      "angles_deg_mt": {
+        "delta_cp_deg": 90.00000000000014,
+        "theta12_deg": 34.32252590392376,
+        "theta13_deg": 8.7436930084112,
+        "theta23_deg": 45.50775474136748
+      },
+      "angles_deg_mu_end": {
+        "delta_cp_deg": 90.00042562579651,
+        "theta12_deg": 34.322862565177964,
+        "theta13_deg": 8.743814467778675,
+        "theta23_deg": 45.50683556100288
+      },
+      "max_angle_drift_deg": 0.0009191803645975938,
+      "mu_end_GeV": 99000000000000.0,
+      "mu_start_GeV": 172.76
+    },
+    "neutrino_masses_input_eV": [
+      0.0,
+      0.008602325267042627,
+      0.05
+    ],
+    "reconstruction": {
+      "kappa_above_MNR1_maxabs_GeVinv": 6.864374142268043e-17,
+      "kappa_above_MNR2_maxabs_GeVinv": 6.864374142268043e-17,
+      "kappa_above_MNR3_maxabs_GeVinv": 1.1196926716435849e-31,
+      "kappa_rec_dev_GeVinv": 9.87158872678861e-32,
+      "maxabs_yN": 0.2365438189184023,
+      "perm": [
+        2,
+        0,
+        1
+      ],
+      "yN": {
+        "imag": [
+          [
+            -0.02448463071549561,
+            0.0,
+            -0.023987345554729297
+          ],
+          [
+            -0.03079721464174584,
+            0.0,
+            -0.18583179580001755
+          ],
+          [
+            -0.023189195309283237,
+            0.0,
+            0.20560494026634854
+          ]
+        ],
+        "real": [
+          [
+            0.23527320528956902,
+            0.0,
+            0.10200999665594114
+          ],
+          [
+            -0.11016830533760784,
+            0.0,
+            0.11528139198489327
+          ],
+          [
+            -0.1142214361188065,
+            0.0,
+            0.11243487749010794
+          ]
+        ]
+      }
+    },
+    "selected_variant": {
+      "angles_deg": {
+        "delta_cp_deg": 89.99999999999993,
+        "theta12_deg": 34.32252590392372,
+        "theta13_deg": 8.743693008411185,
+        "theta23_deg": 45.50775474136745
+      },
+      "delta_delta_deg": 0.0,
+      "delta_theta23_deg": 0.5077547413674566,
+      "name": "L_R23(+eps)"
+    },
+    "thresholds": {
+      "MNR": [
+        100000000000000.0,
+        300000000000000.0,
+        800000000000000.0
+      ]
+    },
+    "ye_texture": {
+      "delta_M": 0.6079090366343283,
+      "delta_source": "delta_star",
+      "delta_star": 0.6088619920294742,
+      "delta_used": 0.6088619920294742,
+      "phase_mode": "2pi_delta",
+      "theta_rad": 3.8255927224196866,
+      "y_star_e": 0.003510235259309804
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (no scan; fixed selection rule for the Z3-breaking variant).",
+    "formulas": [
+      "TM1 baseline: sin^2(theta13)=varphi0*exp(-5/6), sin^2(theta12)=(1/3)(1-2 sin^2 theta13), theta23=45\u00b0, \u03b4=90\u00b0",
+      "Z3-breaking scale: \u03b5=varphi0/6 (fixed; no new continuous parameter); discrete operator variants act on U_PMNS",
+      "Majorana EFT: m\u03bd=v^2 \u03ba; (Takagi) m\u03bd \u2248 U diag(m_i) U^T",
+      "Tree-level seesaw matching: \u03ba = \u03a3_i (y_i y_i^T)/M_i, with diagonal M_i at thresholds"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT varphi0, gamma(0)=5/6, epsilon=varphi0/6 (Z3-breaking scan constraints)",
+      "SM boundary at mt from tfpt_suite/data/sm_inputs_mz.json (v(mt), ytau(mt), g2(mt), lambda(mt))",
+      "charged-lepton Yukawa texture Ye(mt) from tfpt_suite/data/flavor_texture_v24.json (for Ue basis)",
+      "heavy-neutrino thresholds MNR1..3 from tfpt_suite/data/rge_thresholds_v25.json"
+    ],
+    "maturity": null,
+    "module_id": "pmns_mechanism_bridge",
+    "name": "PMNS mechanism bridge (Z3-breaking angles \u2192 \u03ba(mt) \u2192 yN+MNR reconstruction)",
+    "objective": [],
+    "outputs": [
+      "selected Z3-breaking variant angles (\u03b812, \u03b813, \u03b823, \u03b4CP)",
+      "reconstructed \u03ba(mt) consistent with those angles (and a minimal neutrino-mass spectrum choice)",
+      "a consistent (yN, MNR) factorization with \u03ba = yN M^{-1} yN^T and explicit \u03ba decoupling above MNR3",
+      "EFT \u03ba running (mt\u21920.99 MNR1) and angle stability diagnostic"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "Reconstructed \u03ba reproduces the selected angles at mt (numerical tolerance).",
+      "\u03ba is symmetric and decouples to ~0 above MNR3 under tree-level matching inversion."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

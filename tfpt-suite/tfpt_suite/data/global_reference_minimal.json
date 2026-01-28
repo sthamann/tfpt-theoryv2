@@ -1,0 +1,44 @@
+{
+  "note": "Minimal, citeable reference table (CODATA + Planck 2018 base-ΛCDM). Use this as a stable external-data anchor for TFPT modules.",
+  "observables": {
+    "alpha_inv_codata_2022": {
+      "mean": 137.035999177,
+      "sigma": 2.1e-8,
+      "units": "dimensionless",
+      "definition": "inverse fine-structure constant α^{-1}(0) in the Thomson limit",
+      "source": "NIST CODATA 2022: inverse fine-structure constant α^{-1}=137.035999177(21) (`https://physics.nist.gov/cgi-bin/cuu/Value?alphinv`)"
+    },
+    "alpha_bar5_inv_MZ": {
+      "mean": 127.930,
+      "sigma": 0.008,
+      "units": "dimensionless",
+      "definition": "inverse electromagnetic coupling ᾱ^{(5)}(MZ)^{-1} (secondary check; derived from α(0) via Δα)",
+      "source": "PDG 2024 electroweak review: α̂^{(5)}(MZ)^{-1} = 127.930 ± 0.008 (MSbar; see tfpt_suite/data/alpha_running_pdg.json)."
+    },
+    "omega_b_h2_planck2018": {
+      "mean": 0.02237,
+      "sigma": 0.00015,
+      "units": "dimensionless",
+      "source": "Planck 2018 results VI (2020), base-ΛCDM TT,TE,EE+lowE+lensing: Ω_b h^2 = 0.02237 ± 0.00015 (Table 2) (`https://arxiv.org/abs/1807.06209`)"
+    },
+    "H0_planck2018_km_s_Mpc": {
+      "mean": 67.36,
+      "sigma": 0.54,
+      "units": "km s^-1 Mpc^-1",
+      "source": "Planck 2018 results VI (2020), base-ΛCDM TT,TE,EE+lowE+lensing: H0 = 67.36 ± 0.54 (Table 2) (`https://arxiv.org/abs/1807.06209`)"
+    },
+    "n_s_planck2018": {
+      "mean": 0.9649,
+      "sigma": 0.0042,
+      "units": "dimensionless",
+      "source": "Planck 2018 results VI (2020), base-ΛCDM TT,TE,EE+lowE+lensing: n_s = 0.9649 ± 0.0042 (Table 2) (`https://arxiv.org/abs/1807.06209`)"
+    },
+    "ln10_As_planck2018": {
+      "mean": 3.044,
+      "sigma": 0.014,
+      "units": "dimensionless",
+      "source": "Planck 2018 results VI (2020), base-ΛCDM TT,TE,EE+lowE+lensing: ln(10^{10} A_s) = 3.044 ± 0.014 (Table 2) (`https://arxiv.org/abs/1807.06209`)"
+    }
+  }
+}
+

@@ -1,0 +1,20 @@
+Primordial spectrum builder (bounce injection)
+mode=physics
+bounce input: tfpt-suite/out_physics/bounce_perturbations/results.json
+k_calibration: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json
+
+Mapping policy:
+- a0/a_transition = 2.4485807685210785e+57 (from k_calibration expansion_budget_estimate (tfpt-suite/out_physics/k_calibration/results.json))
+- M ≈ 3.060e+13 GeV
+- k_bounce_s_raw (k_hat=M units) ≈ 2103.5507357951246
+- k_bounce_t_raw (k_hat=M units) ≈ 7.808039644294931
+
+Baseline primordial (TFPT/Starobinsky):
+- N=57, n_s=0.964912, A_s=2.1655e-09, r=0.003693, n_t=-0.000461681, pivot=0.05 1/Mpc
+
+Table:
+- k_Mpc^-1 range [1.526e-06, 4.110e-02] with 250 log points
+
+Checks:
+- bounce_feature_injection_wired: PASS (built P(k) tables from tfpt-suite/out_physics/bounce_perturbations/results.json)
+- k_range: PASS (k range [1.526e-06, 4.110e-02] Mpc^-1; points=250)

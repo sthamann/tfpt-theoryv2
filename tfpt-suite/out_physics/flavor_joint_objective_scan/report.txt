@@ -1,0 +1,33 @@
+Flavor joint objective scan (discrete aggregation)
+
+mode=physics
+
+PMNS: chi2_mt(best_convention) = 3.201078401918528
+Mass ratio penalty: chi2_mass_ratio = 0.7596523532654351
+CKM variants considered: 4
+Objective: chi2_ckm_refscale + 1.0 * chi2_pmns_mt + 1.0 * chi2_mass_ratio
+
+Best: {'label': 'topology_delta_cp_1', 's13_mode': 'A_lam3_times_1_minus_delta', 'delta_mode': 'external_delta_cp_override', 'chi2_ckm_refscale': 5.47312067032751, 'chi2_pmns_mt': 3.201078401918528, 'w_pmns': 1.0, 'w_mass_ratio': 1.0, 'chi2_mass_ratio': 0.7596523532654351, 'objective': 9.433851425511474}
+Joint diagnostic: chi2=9.433851425511474, dof~13, p≈0.7394445667780781
+Topology docking (pairs) = 14
+
+Top rows:
+- topology_delta_cp_1: objective=9.43385 (chi2_ckm=5.47312)
+- topology_delta_cp_2: objective=9.43385 (chi2_ckm=5.47312)
+- topology_delta_cp_4: objective=253.136 (chi2_ckm=249.175)
+- topology_delta_cp_3: objective=253.136 (chi2_ckm=249.175)
+
+Checks:
+- flavor_policy_present: PASS (policy from flavor_texture_v24.json)
+- phase_selection_rule_filter_only: PASS (topology + CKM phase selection are filter_only)
+- upstream_ckm_present: PASS (ckm_full_pipeline/results.json present)
+- upstream_pmns_present: PASS (pmns_full_pipeline/results.json present)
+- topology_phase_map_present: PASS (topology_phase_map/results.json present)
+- ckm_variants_present: PASS (4 CKM variants available)
+- topology_filter_applied: PASS (all CKM variants originate from topology_phase_map)
+- pmns_chi2_present: PASS (chi2_pmns_mt=3.201078401918528)
+- mass_ratio_anchor: PASS (delta_used=0.6088619920294742)
+- mass_ratio_penalty_computed: PASS (chi2_mass_ratio=0.759652)
+- joint_objective_computed: PASS (4 rows; best=topology_delta_cp_1)
+- joint_search_space_is_discrete: PASS (objective aggregates discrete upstream scans; no continuous fitter)
+- joint_pvalue_ok: PASS (p=0.7394445667780781 chi2=9.433851425511474 dof=13)

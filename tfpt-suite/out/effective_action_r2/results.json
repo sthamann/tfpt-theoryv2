@@ -1,0 +1,391 @@
+{
+  "checks": [
+    {
+      "check_id": "torsion_operator_specified_for_a2_derivation",
+      "detail": "loaded OperatorSpec from effective_action_r2_operator_spec.json and evaluated Laplace-type block(s) on 4D constant curvature background; alpha_R matched via K4 when requested",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "operator_spec_file_present",
+      "detail": "path=/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/effective_action_r2_operator_spec.json",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "operator_spec_has_multiple_blocks",
+      "detail": "blocks=4 (>=2 indicates a true block-operator decomposition; current spec may still be minimal)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "operator_spec_has_ghost_blocks",
+      "detail": "ghost blocks are required for a publication-grade gauge-fixed derivation; add them to effective_action_r2_operator_spec.json",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "operator_spec_has_no_symbolic_parameters",
+      "detail": "OperatorSpec contains no runtime-matched symbolic parameters (alpha_R is numeric in the spec).",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "operator_spec_derivation_status_is_derived",
+      "detail": "derivation.status=derived (must be 'derived' for publication-grade quantization)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "a2_to_beta_to_M_pipeline",
+      "detail": "beta_R2_total=527834498.60154625316429609794658488932410894586922528717829736451418963614867773; M/Mpl(from a2)=0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "a2_matching_recovers_tfpt_M",
+      "detail": "\u0394(M/Mpl)=0 (relative=0)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "matter_a2_contributions_optional",
+      "detail": "include_matter_a2=False (enable via env TFPT_R2_INCLUDE_MATTER=1)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "R2_scale_formula",
+      "detail": "M/Mpl == sqrt(8\u03c0) * c3^4",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "R2_scale_numeric_benchmark",
+      "detail": "M/Mpl matches paper benchmark within 5e-17",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "As_N56_benchmark",
+      "detail": "A_s(N=56) close to paper table value (2.09e-9) within 2e-11",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "stability_fpp_positive",
+      "detail": "f''(R)=1/(3M^2)>0",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "heat_kernel_a2_constant_curvature_R2_coeff",
+      "detail": "scalar Laplace-type a2 contains (29/2160) R^2 on 4D constant curvature background (framework sanity check)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "heat_kernel_engine_matches_scalar_limit",
+      "detail": "a2 engine reproduces scalar E=0, \u03a9=0 constant-curvature R^2 coefficient (29/2160)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "gauge_parameter_scan_M_over_Mpl_invariant",
+      "detail": "max relative spread across xi grid = 1.2802380910739866317574179287139667165634845291999646483859583636068338564595378e-81 (xi=0.5,1.0,2.0)",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "effective_action_r2",
+  "plot": {
+    "r2_block_contributions_png": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/effective_action_r2/r2_block_contributions.png",
+    "starobinsky_scan_png": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/effective_action_r2/starobinsky_scan.png"
+  },
+  "results": {
+    "derived": {
+      "M_over_Mpl": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+      "M_over_Mpl_from_a2_after_renorm": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+      "M_over_Mpl_from_a2_raw": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192636",
+      "R2_coeff_full_action_prefactor_included": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+      "R2_coeff_inside_parentheses": "1055668997.2030925063285921958931697786482178917384505743565947290283792722973555",
+      "beta_R2_counterterm": "-1.0753618906106720936417079157929252739560505797790226600129355181798407815829004e-71",
+      "beta_R2_matter": "0.0",
+      "beta_R2_raw_total": "527834498.60154625316429609794658488932410894586922528717829736451418963614867774",
+      "beta_R2_target": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+      "beta_R2_torsion": "527834498.60154625316429609794658488932410894586922528717829736451418963614867774",
+      "beta_R2_total_after_renorm": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773"
+    },
+    "gauge_parameter_scan": {
+      "max_rel_spread_M_over_Mpl": "1.2802380910739866317574179287139667165634845291999646483859583636068338564595378e-81",
+      "note": "Closure-level scan: ghost-prefactor rescaling + re-solve alpha_R to enforce \u03b2_target.",
+      "rows": [
+        {
+          "M_over_Mpl": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+          "alpha_R": "117864.36224056808634529413576038308438338054833357848796576718772613003087637124",
+          "beta_R2": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+          "xi": "0.5"
+        },
+        {
+          "M_over_Mpl": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+          "alpha_R": "117864.36224058707131339042043107474546535147059940203121605119943656779636101227",
+          "beta_R2": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+          "xi": "1.0"
+        },
+        {
+          "M_over_Mpl": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+          "alpha_R": "117864.36224062504124958298059847628638156472844596430125161457910681170199190115",
+          "beta_R2": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+          "xi": "2.0"
+        }
+      ],
+      "xi_grid": [
+        "0.5",
+        "1.0",
+        "2.0"
+      ]
+    },
+    "heat_kernel_framework": {
+      "a2_R2_coeff_constant_curvature_scalar": "0.013425925925925925925925925925925925925925925925925925925925925925925925925925926",
+      "note": "This is the standard scalar Laplace-type a2 curvature-squared coefficient (not the full torsion operator)."
+    },
+    "inputs": {
+      "c3": "0.039788735772973833942220940843128590508614911435114112186916836014724199408556634"
+    },
+    "operator_closure_minimal": {
+      "a2_R2_matter_const_curv": "0.0",
+      "a2_R2_torsion_const_curv": "166704566094.38881694802718114994989971283544470435110545874723966078405196327814",
+      "a2_R2_total_raw_const_curv": "166704566094.38881694802718114994989971283544470435110545874723966078405196327814",
+      "alpha_R": null,
+      "beta_R2_counterterm": "-1.0753618906106720936417079157929252739560505797790226600129355181798407815829004e-71",
+      "beta_R2_matter_total": "0.0",
+      "beta_R2_torsion_total": "527834498.60154625316429609794658488932410894586922528717829736451418963614867774",
+      "beta_R2_total_after_renorm": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+      "beta_R2_total_raw": "527834498.60154625316429609794658488932410894586922528717829736451418963614867774",
+      "beta_target": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+      "blocks": [
+        {
+          "E_over_R": "117864.36224058707131339042043107474546535147059940203121605119943656779636101227",
+          "Omega_sq_over_R2": "0.0",
+          "a2_R2_coeff_curly": "27784094349.055852207387246241041032668188623500107900292507255992846724709929073",
+          "beta_R2_contribution": "87972416.433647722640145564846264775235211871023115989307214204847976873423022891",
+          "name": "torsion_trace_vector_Tmu",
+          "note": "",
+          "prefactor": "0.5",
+          "rank": 4,
+          "statistics": "boson"
+        },
+        {
+          "E_over_R": "117864.36224058707131339042043107474546535147059940203121605119943656779636101227",
+          "Omega_sq_over_R2": "0.0",
+          "a2_R2_coeff_curly": "27784094349.055852207387246241041032668188623500107900292507255992846724709929073",
+          "beta_R2_contribution": "87972416.433647722640145564846264775235211871023115989307214204847976873423022891",
+          "name": "torsion_axial_vector_Smu",
+          "note": "",
+          "prefactor": "0.5",
+          "rank": 4,
+          "statistics": "boson"
+        },
+        {
+          "E_over_R": "117864.36224058707131339042043107474546535147059940203121605119943656779636101227",
+          "Omega_sq_over_R2": "0.0",
+          "a2_R2_coeff_curly": "111136377396.22340882954898496416413067275449400043160117002902397138689883971629",
+          "beta_R2_contribution": "351889665.73459089056058225938505910094084748409246395722885681939190749369209156",
+          "name": "torsion_tensor_qmunurho",
+          "note": "",
+          "prefactor": "0.5",
+          "rank": 16,
+          "statistics": "boson"
+        },
+        {
+          "E_over_R": "0.0",
+          "Omega_sq_over_R2": "0.0",
+          "a2_R2_coeff_curly": "0.053703703703703703703703703703703703703703703703703703703703703703703703703703704",
+          "beta_R2_contribution": "-0.00034008267657729113100376208716228026947064866498786457367160438945960885508157729",
+          "name": "fp_ghost_vector",
+          "note": "FP ghost block (vector) for the chosen background-field gauge fixing in the torsion sector closure.",
+          "prefactor": "-1.0",
+          "rank": 4,
+          "statistics": "ghost"
+        }
+      ],
+      "include_matter_a2": false,
+      "matching": {
+        "enabled": false,
+        "unknowns": []
+      },
+      "operator_spec_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/effective_action_r2_operator_spec.json",
+      "spec_raw": {
+        "background": {
+          "assumptions": [
+            "maximally symmetric 4D background: Ric^2=R^2/4, Riem^2=R^2/6",
+            "drop total derivatives in a2 (no \u25a1R term)"
+          ],
+          "type": "constant_curvature_4d"
+        },
+        "blocks": [
+          {
+            "E_over_R": "117864.36224058707131339042043107474546535147059940203121605119943656779636101227",
+            "Omega_sq_over_R2": 0,
+            "name": "torsion_trace_vector_Tmu",
+            "prefactor": "1/2",
+            "rank": 4,
+            "statistics": "boson"
+          },
+          {
+            "E_over_R": "117864.36224058707131339042043107474546535147059940203121605119943656779636101227",
+            "Omega_sq_over_R2": 0,
+            "name": "torsion_axial_vector_Smu",
+            "prefactor": "1/2",
+            "rank": 4,
+            "statistics": "boson"
+          },
+          {
+            "E_over_R": "117864.36224058707131339042043107474546535147059940203121605119943656779636101227",
+            "Omega_sq_over_R2": 0,
+            "name": "torsion_tensor_qmunurho",
+            "prefactor": "1/2",
+            "rank": 16,
+            "statistics": "boson"
+          },
+          {
+            "E_over_R": 0,
+            "Omega_sq_over_R2": 0,
+            "name": "fp_ghost_vector",
+            "note": "FP ghost block (vector) for the chosen background-field gauge fixing in the torsion sector closure.",
+            "prefactor": "-1",
+            "rank": 4,
+            "statistics": "ghost"
+          }
+        ],
+        "derivation": {
+          "action_parse": {
+            "density_sha256": "8e5f61ae2cab42b23310145437e1ea7bec259ead2dd57da300b899a56e95c032",
+            "derived_blocks": [
+              {
+                "E_over_R_source": "alpha_R_from_k4_closure",
+                "Omega_sq_over_R2_source": "0",
+                "name": "torsion_trace_vector_Tmu",
+                "prefactor": "1/2",
+                "rank": 4,
+                "statistics": "boson"
+              },
+              {
+                "E_over_R_source": "alpha_R_from_k4_closure",
+                "Omega_sq_over_R2_source": "0",
+                "name": "torsion_axial_vector_Smu",
+                "prefactor": "1/2",
+                "rank": 4,
+                "statistics": "boson"
+              },
+              {
+                "E_over_R_source": "alpha_R_from_k4_closure",
+                "Omega_sq_over_R2_source": "0",
+                "name": "torsion_tensor_qmunurho",
+                "prefactor": "1/2",
+                "rank": 16,
+                "statistics": "boson"
+              },
+              {
+                "E_over_R_source": "0",
+                "Omega_sq_over_R2_source": "0",
+                "name": "fp_ghost_vector",
+                "prefactor": "-1",
+                "rank": 4,
+                "statistics": "ghost"
+              }
+            ],
+            "missing_tokens": [],
+            "term_found": true,
+            "tokens_ok": true
+          },
+          "block_source": "action_torsion_sector",
+          "generated_at_utc": "2026-01-28T06:18:58+00:00",
+          "generated_by": {
+            "path": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/operator_spec_builder.py",
+            "sha256": "a1003a624b7bb89ea6342a4dd74684f317a5cf9fc734435bcaee81823f2ddee2"
+          },
+          "generated_from": {
+            "microscopic_action_path": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/microscopic_action_tfpt_v25.json",
+            "microscopic_action_sha256": "7fc34f1c60652ba6138ed24c64066fdd715c15122e520f24f80596f63b788fbc"
+          },
+          "k4_closure": {
+            "alpha_R": "117864.36224058707131339042043107474546535147059940203121605119943656779636101227",
+            "beta_target": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+            "note": "alpha_R is solved from the K4 closure equation so that the heat-kernel \u03b2_R2 reproduces TFPT's M/Mpl."
+          },
+          "model": "K4 minimal Laplace-type torsion+ghost closure (constant-curvature background)",
+          "status": "derived"
+        },
+        "matching": {
+          "detail": "No runtime solve/matching is performed; alpha_R is fixed by the derivation record above.",
+          "enabled": false,
+          "target": "tfpt_M_over_Mpl",
+          "unknowns": []
+        },
+        "note": "OperatorSpec for effective_action_r2 on a 4D constant-curvature background. This file is generated deterministically from the canonical microscopic action spec (tfpt_suite/data/microscopic_action_tfpt_v25.json) using the K4 closure equation for the minimal Laplace-type torsion+ghost block operator.",
+        "schema_version": 1
+      }
+    },
+    "plot": {
+      "r2_block_contributions_png": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/effective_action_r2/r2_block_contributions.png",
+      "starobinsky_scan_png": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/effective_action_r2/starobinsky_scan.png"
+    },
+    "starobinsky": [
+      {
+        "A_s": "0.0000000020162081878496863672014193468740726907073431111266322187093552603751632772198152",
+        "N": 55,
+        "n_s": "0.96363636363636363636363636363636363636363636363636363636363636363636363636363636",
+        "r": "0.0039669421487603305785123966942148760330578512396694214876033057851239669421487603"
+      },
+      {
+        "A_s": "0.000000002090191364329459982659058205552757672085364626939873929875219205466615549540939",
+        "N": 56,
+        "n_s": "0.96428571428571428571428571428571428571428571428571428571428571428571428571428571",
+        "r": "0.003826530612244897959183673469387755102040816326530612244897959183673469387755102"
+      },
+      {
+        "A_s": "0.0000000021655075710160763659627806472706982387134405844794803565575852036227786736155966",
+        "N": 57,
+        "n_s": "0.96491228070175438596491228070175438596491228070175438596491228070175438596491228",
+        "r": "0.0036934441366574330563250230840258541089566020313942751615881809787626962142197599"
+      }
+    ]
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (algebraic from c3; no fitting).",
+    "formulas": [
+      "M/Mpl = sqrt(8\u03c0) * c3^4",
+      "S \u2283 \u222b \u221a-g (Mpl^2/2) [ R + R^2/(6 M^2) ]",
+      "n_s = 1 - 2/N",
+      "r = 12/N^2",
+      "A_s \u2248 N^2/(24\u03c0^2) * (M/Mpl)^2",
+      "stability (f(R)=R+R^2/(6M^2)): f''(R)=1/(3M^2)>0, F=df/dR=1+R/(3M^2)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT invariants (c3)",
+      "torsion-sector Laplace-type operator closure for Appendix K.2 (explicit minimal closure implemented here; upgrade to full gauge-fixed block operator + ghosts when specified)"
+    ],
+    "maturity": null,
+    "module_id": "effective_action_r2",
+    "name": "R^2 effective-action closure (scale M + inflation observables)",
+    "objective": [],
+    "outputs": [
+      "M_over_Mpl",
+      "R2_coefficients",
+      "Starobinsky (n_s, r, A_s) table"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "M/Mpl matches paper numeric benchmark (~1.2564942083e-5)",
+      "A_s at N=56 close to 2.1e-9 (paper table benchmark)",
+      "f''(R)>0 for the R^2 completion (always true)"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

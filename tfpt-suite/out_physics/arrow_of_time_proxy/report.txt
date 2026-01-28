@@ -1,0 +1,10 @@
+Arrow of time proxy (alias to arrow_mechanism)
+
+mode=physics
+
+Delegated result (from arrow_mechanism):
+- reheating_inputs: PASS (T_reh=1e+13 GeV, g*=120, g*s=120)
+- entropy_proxy: PASS (s≈5.26e+40 GeV^3, H≈7.47e+08 GeV, S_H=s/H^3≈1.26e+14 (log10≈14.1))
+- arrow_mechanism_non_invertible: PASS (m_max=1 (source=assumed_default, S_flux≈0.693))
+- arrow_prediction_falsifiable: PASS (torsion_flux_entropy_increase: sign of APS spectral-flow index m (torsion seam transitions))
+- entropy_production_testable: PASS (log10(S_H)≈14.1 > 0 (entropy per Hubble volume at reheating))

@@ -1,0 +1,10 @@
+*.o
+*.so
+*.log
+
+__pycache__/
+.ipynb_checkpoints
+.spyderproject
+.spyproject
+
+src/PyLie/*.hd5f.gz

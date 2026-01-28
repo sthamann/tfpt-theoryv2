@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "vetted": true,
+  "note": "Vetted reference values and uncertainties for the global_consistency_test module (with explicit sources/definitions). Optional fields: enabled, sigma_theory (Gaussian theory error, combined in quadrature), sigma_floor (engineering floor to prevent single-observable dominance; strict z-scores are still reported). No covariance matrix is provided (treat as a dashboard, not a publication-grade global likelihood).",
+  "observables": {
+    "alpha_inv_0": {
+      "definition": "inverse fine-structure constant α^{-1}(0) in the Thomson limit (diagnostic; not the primary TFPT α truth test under the MSbar-at-MZ policy)",
+      "mean": 137.035999177,
+      "sigma": 2.1e-8,
+      "units": "dimensionless",
+      "sigma_theory": 0.0,
+      "sigma_floor": 0.0,
+      "enabled": false,
+      "source": "NIST CODATA 2022: inverse fine-structure constant α^{-1}=137.035999177(21) (`https://physics.nist.gov/cgi-bin/cuu/Value?alphinv`)",
+      "snapshot_date": "2022-12"
+    },
+    "alpha_bar5_inv_MZ": {
+      "definition": "inverse electromagnetic coupling ᾱ^{(5)}(MZ)^{-1} (primary TFPT α truth test; MSbar at MZ; compared via explicit α(0)→MZ running map)",
+      "mean": 127.930,
+      "sigma": 0.008,
+      "units": "dimensionless",
+      "sigma_theory": 0.0,
+      "sigma_floor": 0.0,
+      "enabled": true,
+      "source": "PDG 2024 electroweak review: α̂^{(5)}(MZ)^{-1} = 127.930 ± 0.008 (MSbar; see tfpt_suite/data/alpha_running_pdg.json).",
+      "snapshot_date": "2024-04"
+    },
+    "beta_deg": {
+      "definition": "CMB cosmic birefringence global rotation angle β (deg), z≈1100",
+      "mean": 0.35,
+      "sigma": 0.14,
+      "units": "degrees",
+      "sigma_theory": 0.0,
+      "sigma_floor": 0.0,
+      "enabled": true,
+      "source": "Minami & Komatsu (2020), Phys. Rev. Lett. 125, 221301: β = 0.35° ± 0.14° (Planck 2018 polarization, accounting for calibration) (`https://doi.org/10.1103/PhysRevLett.125.221301`)"
+    },
+    "cabibbo_lambda": {
+      "definition": "Cabibbo angle proxy λ ≈ |V_us| (dimensionless)",
+      "mean": 0.22501,
+      "sigma": 0.00068,
+      "units": "dimensionless",
+      "sigma_theory": 0.0,
+      "sigma_floor": 0.0,
+      "enabled": true,
+      "source": "PDG 2024 CKM review (global fit, Eq. 12.27): |V_us| = 0.22501 ± 0.00068 (`https://pdg.lbl.gov/2024/reviews/rpp2024-rev-ckm-matrix.pdf`)",
+      "snapshot_date": "2024-04"
+    },
+    "n_s": {
+      "definition": "scalar spectral index n_s at pivot k0=0.05 Mpc^{-1} (Planck base-ΛCDM)",
+      "mean": 0.9649,
+      "sigma": 0.0042,
+      "units": "dimensionless",
+      "sigma_theory": 0.0,
+      "sigma_floor": 0.0,
+      "enabled": true,
+      "source": "Planck 2018 results VI (2020), base-ΛCDM TT,TE,EE+lowE+lensing: n_s = 0.9649 ± 0.0042 (`https://arxiv.org/abs/1807.06209`)",
+      "snapshot_date": "2018-07"
+    },
+    "A_s": {
+      "definition": "scalar amplitude A_s at pivot k0=0.05 Mpc^{-1} derived from ln(10^{10} A_s) (Planck base-ΛCDM)",
+      "mean": 2.0989031673e-9,
+      "sigma": 2.938464434e-11,
+      "units": "dimensionless",
+      "sigma_theory": 0.0,
+      "sigma_floor": 0.0,
+      "enabled": true,
+      "source": "Planck 2018 results VI (2020), base-ΛCDM TT,TE,EE+lowE+lensing: ln(10^{10} A_s)=3.044 ± 0.014 ⇒ A_s=exp(3.044)/1e10 (`https://arxiv.org/abs/1807.06209`)",
+      "snapshot_date": "2018-07"
+    },
+    "r_upper_95": {
+      "definition": "tensor-to-scalar ratio r at pivot k0=0.05 Mpc^{-1} (95% CL upper bound)",
+      "upper": 0.036,
+      "units": "dimensionless",
+      "cl": 0.95,
+      "enabled": true,
+      "source": "BICEP/Keck XIII (BK18) + Planck/WMAP: r_0.05 < 0.036 (95% CL) (`https://arxiv.org/abs/2110.00483`)",
+      "snapshot_date": "2021-10"
+    }
+  }
+}
+

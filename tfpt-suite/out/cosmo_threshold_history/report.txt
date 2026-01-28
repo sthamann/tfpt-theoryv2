@@ -1,0 +1,35 @@
+Threshold-driven reheating history (policy-derived)
+mode = engineering
+threshold file: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/rge_thresholds_v25.json
+policy file: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/cosmo_reheating_policy_v106.json
+reference file: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json
+
+Thresholds used:
+- MSigma = 1.000e+03 GeV
+- MG8 = 1.800e+10 GeV
+- MNR1 = 1.000e+14 GeV
+- MNR2 = 3.000e+14 GeV
+- MNR3 = 8.000e+14 GeV
+
+Derived reheating:
+- T_reh = 1.000e+03 GeV (source=MSigma)
+- w_reh = 0.0
+- g* = 120.0, g*_s = 120.0
+- N_reh = 38.0340
+- DeltaN = -9.5085
+- a0/a_transition = 2.4485807685210785e+57
+
+Regime summary (effective w):
+- MNR3_to_MNR2: T_high=8.000e+14 GeV, T_low=3.000e+14 GeV, w=0.0
+- MNR2_to_MNR1: T_high=3.000e+14 GeV, T_low=1.000e+14 GeV, w=0.0
+- MNR1_to_MG8: T_high=1.000e+14 GeV, T_low=1.800e+10 GeV, w=0.0
+- MG8_to_MSigma: T_high=1.800e+10 GeV, T_low=1.000e+03 GeV, w=0.0
+- MSigma_to_Treh: T_high=1.000e+03 GeV, T_low=1.000e+03 GeV, w=0.0
+- post_reheat_radiation: T_high=1.000e+03 GeV, T_low=0.000e+00 GeV, w=0.3333333333333333
+
+Checks:
+- thresholds_loaded: PASS (thresholds=['MSigma', 'MG8', 'MNR1', 'MNR2', 'MNR3'])
+- T_reh_from_thresholds: PASS (T_reh=1.000e+03 GeV (source=MSigma))
+- N_reh_finite: PASS (N_reh=38.0340, DeltaN=-9.5085)
+- a0_over_a_transition_estimated: PASS (a0/a_transition = (a0/a_reh)*(a_reh/a_end)*exp(N_inflation_from_transition); transition=horizon_exit_of_pivot; a0/a_t=2.449e+57)
+- threshold_policy: PASS (policy=min_threshold, threshold_keys=['MSigma', 'MG8', 'MNR1', 'MNR2', 'MNR3'])

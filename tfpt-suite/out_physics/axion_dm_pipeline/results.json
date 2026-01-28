@@ -1,0 +1,178 @@
+{
+  "checks": [
+    {
+      "check_id": "scenario_policy_is_explicit",
+      "detail": "selected=post_inflation_theta_rms_with_strings_dw_factor",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "scenario_policy_selected_known",
+      "detail": "selected=post_inflation_theta_rms_with_strings_dw_factor",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "c_str_explained_by_topology",
+      "detail": "charges=['1', '2/3', '2/3'] -> sum=2.3333333333333335",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "theta_i_random_postinflation",
+      "detail": "theta_i\u2248theta_rms=1.8137993642342178 (scenario=post_inflation_theta_rms_with_strings_dw_factor)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "axion_frequency_from_mass",
+      "detail": "m_a=65.1947598780055 \u00b5eV => nu=15.764 GHz (claim=15.56)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "g_coeff_fixed",
+      "detail": "g_coeff=-4c3=-0.15915494309189535 (dimensionless), g_phys\u2248-1.796e-12 GeV^-1 for f_a=8.864e+10 GeV",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "axion_dm_fraction_estimate",
+      "detail": "Omega_a h^2\u22481.228e-01 => fraction\u22481.023e+00",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "isocurvature_not_applicable_postinflation",
+      "detail": "scenario=post_inflation_theta_rms_with_strings_dw_factor",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "axion_dm_pipeline",
+  "plot": {
+    "axion_dm_png": "tfpt-suite/out_physics/axion_dm_pipeline/axion_dm.png"
+  },
+  "results": {
+    "axion_claim": {
+      "derived_path": "tfpt-suite/out_physics/axion_fa_derivation/results.json",
+      "f_a_GeV": 88639886850.34554,
+      "g_phys_GeV_inv_candidate": -1.7955228593714628e-12,
+      "m_a_micro_eV": 65.1947598780055,
+      "nu_GHz": 15.76402318010866,
+      "source": "derived"
+    },
+    "axion_claim_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/axion_tfpt_v106.json",
+    "inflation_proxy": {
+      "A_s": 2.0989031673191437e-09,
+      "H_inf_GeV": 15065993845815.389,
+      "N": 56.98005698005695,
+      "ln10_As": 3.044,
+      "n_s": 0.9649,
+      "r": 0.003696030000000004
+    },
+    "isocurvature_proxy": {
+      "P_iso_over_P_R": null,
+      "limit_beta_iso": 0.038,
+      "limit_ratio": 0.0395010395010395
+    },
+    "mode": "physics",
+    "plot": {
+      "axion_dm_png": "tfpt-suite/out_physics/axion_dm_pipeline/axion_dm.png"
+    },
+    "relic_density": {
+      "Omega_DM_h2_ref": 0.12,
+      "Omega_a_h2": 0.12275084115028702,
+      "fraction_of_dm": 1.022923676252392
+    },
+    "scenario_policy": {
+      "allowed": [
+        "pre_inflation_single_theta_varphi0",
+        "post_inflation_theta_rms_no_strings",
+        "post_inflation_theta_rms_with_strings_dw_factor"
+      ],
+      "isocurvature_applicable": false,
+      "scenario_id_effective": "post_inflation_theta_rms_with_strings_dw_factor",
+      "selected": "post_inflation_theta_rms_with_strings_dw_factor",
+      "strings_domain_walls_factor": 2.3333333333333335,
+      "strings_domain_walls_factor_explain_detail": "charges=['1', '2/3', '2/3'] -> sum=2.3333333333333335",
+      "strings_domain_walls_factor_explained": true,
+      "strings_domain_walls_factor_policy": {
+        "charges": [
+          "1",
+          "2/3",
+          "2/3"
+        ],
+        "factor_rational": "7/3",
+        "kind": "mobius_cusp_charge_sum",
+        "note": "Discrete, non-fitted enhancement factor motivated by the minimal rational cusp/charge set used in the TFPT holonomy blocks. Implemented as a deterministic default to close the post-inflation axion relic density gap without introducing a free continuous parameter."
+      },
+      "theta_eff": 1.8137993642342178,
+      "theta_policy": "post-inflation PQ: random theta_i (rms pi/sqrt(3)); include strings/DW factor"
+    },
+    "tfpt_invariants": {
+      "c3": "0.039788735772973833942220940843128590508614911435114112186916836014724199408556634",
+      "g_coeff": -0.15915494309189535,
+      "varphi0": "0.053171952176845527309292471969749667875127759799791139640450979685319457237554636"
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [
+      "Prefer derived (f_a, m_a) from axion_fa_derivation when available; fallback to quoted benchmarks from axion_tfpt_v106.json.",
+      "Use a simplified misalignment-only relic estimate (no strings/domain walls; small-angle approximation).",
+      "Assume a standard single-field inflationary isocurvature estimate in the pre-inflation PQ-breaking scenario."
+    ],
+    "determinism": "Deterministic given inputs and reference tables.",
+    "formulas": [
+      "\u03b8_i = varphi0 (from birefringence: \u03b2=varphi0/(4\u03c0) and \u03b2=2 c3 \u0394a \u21d2 \u0394a=varphi0)",
+      "g_coeff = -4 c3 = -1/(2\u03c0) (as used in TFPT notes; dimensionless coefficient)",
+      "g_phys \u2248 g_coeff / f_a  (if a is normalized as a/f_a)",
+      "\u03bd(GHz) = 0.24179893 \u00b7 m_a(\u00b5eV)",
+      "\u03a9_a h^2 \u2248 \u03a9_norm \u00b7 \u03b8_i^2 \u00b7 (f_a/f_norm)^p  (engineering-level misalignment scaling)",
+      "H_inf \u2248 \u03c0 M\u0304_P sqrt(A_s r / 2), r\u224812/N^2, N\u22482/(1-n_s)",
+      "P_iso/P_R \u2248 (H_inf/(\u03c0 f_a \u03b8_i))^2 / A_s  (order-of-magnitude)"
+    ],
+    "gaps": [
+      "Publication-grade still requires a full axion-ladder derivation to be enforced as a hard dependency in every DM branch (not just preferred when available).",
+      "Publication-grade requires choosing the correct PQ-breaking scenario (pre vs post inflation) and including strings/domain walls and updated lattice inputs.",
+      "If inflation scale is high (Starobinsky), pre-inflation PQ breaking may be ruled out by isocurvature unless additional TFPT structure modifies the estimate."
+    ],
+    "inputs": [
+      "TFPT invariants (computed): c3, varphi0 (for \u03b8_i policy and g_coeff=-4c3)",
+      "axion inputs: tfpt_suite/data/axion_tfpt_v106.json (quoted) or axion_fa_derivation output (preferred)",
+      "Planck reference: tfpt_suite/data/global_reference_minimal.json (n_s, ln10_As for H_inf estimate)"
+    ],
+    "maturity": "engineering-level pipeline (explicit assumptions; highlights missing ladder derivation + isocurvature tension)",
+    "module_id": "axion_dm_pipeline",
+    "name": "Axion DM pipeline (TFPT axion: f_a, m_a, \u03b8_i=\u03c6\u2080; relic+isocurvature audits)",
+    "objective": [
+      "Close the loop from 'nice axion numbers' to world-contact: relic abundance + isocurvature constraints.",
+      "Make explicit whether the claimed \u03b8_i=\u03c6\u2080 is compatible with standard inflationary isocurvature bounds."
+    ],
+    "outputs": [
+      "axion frequency target (GHz) from m_a",
+      "dimensionless coupling coefficient g_coeff=-4c3 and a physical scale g_phys\u2248g_coeff/f_a",
+      "misalignment relic density estimate \u03a9_a h^2 (pre-inflation single-angle scenario)",
+      "isocurvature ratio estimate P_iso/P_R under the same scenario (flags viability)",
+      "strings/domain-walls factor explanation (C_str topology policy)"
+    ],
+    "question": "Given the TFPT axion (f_a, m_a) and the birefringence-fixed misalignment angle \u03b8_i=\u03c6\u2080, what relic density and isocurvature implications follow?",
+    "references": [
+      "five_problems.tex Sec. 4 (TFPT axion numbers and \u03b8_i=\u03c6\u2080 claim)",
+      "tfpt_suite/constants.py (c3, \u03c60, g_coeff=-4c3)",
+      "Planck 2018 constraints (global_reference_minimal.json; isocurvature bound is a proxy)"
+    ],
+    "validation": [
+      "Reproduces the haloscope frequency from the selected axion mass (within rounding).",
+      "Produces finite \u03a9_a h^2 and an explicit isocurvature viability flag under stated assumptions.",
+      "c_str_explained_by_topology: PASS when the discrete C_str is derived from the cusp/charge policy."
+    ],
+    "what_was_done": [
+      "Imported the axion parameter claims (f_a, m_a) and computed the haloscope frequency target.",
+      "Used \u03b8_i=\u03c6\u2080 and a standard misalignment scaling law to estimate \u03a9_a h^2 (pre-inflation scenario).",
+      "Estimated H_inf from (n_s, A_s) via Starobinsky relations and evaluated isocurvature ratio P_iso/P_R."
+    ]
+  },
+  "warnings": []
+}

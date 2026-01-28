@@ -1,0 +1,157 @@
+{
+  "checks": [
+    {
+      "check_id": "ledger_emitted",
+      "detail": "QFT completeness ledger emitted",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "paper_source_present",
+      "detail": "path=/Users/stefanhamann/Projekte/wolfram_latex_attachments/latex/tfpt-theory-fullv25.tex",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "operator_spec_present",
+      "detail": "path=/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/effective_action_r2_operator_spec.json",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "qft_completeness_ledger",
+  "plot": null,
+  "results": {
+    "ghost_operator_status": {
+      "has_ghost_block": true,
+      "has_multiple_blocks": true,
+      "note": "Full effective_action_r2 robustness milestone requires explicit gauge-fixing + ghost blocks in the operator spec.",
+      "operator_spec_blocks": 4
+    },
+    "key_files": {
+      "ckm_reference": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/ckm_reference.json",
+      "effective_action_r2_operator_spec": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/effective_action_r2_operator_spec.json",
+      "global_reference": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference.json",
+      "microscopic_action_tfpt_v25": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/microscopic_action_tfpt_v25.json",
+      "pyrate3_e8_pythonoutput": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput",
+      "pyrate3_sm_yaml": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/Pyrate3/models/SM_TFPT_2loop_v25.yaml",
+      "sm_inputs_mz": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/sm_inputs_mz.json"
+    },
+    "ledger": [
+      {
+        "area": "7.1.1 Microscopic action",
+        "evidence": [
+          "paper: /Users/stefanhamann/Projekte/wolfram_latex_attachments/latex/tfpt-theory-fullv25.tex",
+          "birefringence letter action (explicit Riemann\u2013Cartan + anomaly normalization): /Users/stefanhamann/Projekte/wolfram_latex_attachments/alessandro.tex",
+          "canonical action spec: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/microscopic_action_tfpt_v25.json",
+          "PyR@TE model configs: /Users/stefanhamann/Projekte/wolfram_latex_attachments/Pyrate3/models",
+          "E8 2-loop PythonOutput (RGEs): /Users/stefanhamann/Projekte/wolfram_latex_attachments/Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput"
+        ],
+        "next_steps": [
+          "If/when a first-principles torsionful connection derivation is required: replace the closure-level torsion quadratic operator by an operator derived from the microscopic torsion action + gauge fixing."
+        ],
+        "requirement": "Fields, symmetries, gauge group, representations; explicit Lagrangian including fermions, Yukawas, gauge + gravity couplings.",
+        "status": "COMPLETE (canonical action spec exists; torsion-sector quadratic closure is explicit; no placeholder action terms)"
+      },
+      {
+        "area": "7.1.2 Quantization",
+        "evidence": [
+          "effective_action_r2 operator spec: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/effective_action_r2_operator_spec.json",
+          "effective_action_r2 module: tfpt-suite/tfpt_suite/modules/effective_action_r2.py"
+        ],
+        "next_steps": [
+          "If needed for publication-grade QFT: provide a BRST-complete derivation from the torsionful microscopic action (beyond closure-level specification)."
+        ],
+        "requirement": "Gauge fixing + ghosts; path-integral measure + explicit regularization.",
+        "status": "COMPLETE (closure-level gauge fixing + FP ghost block are encoded; OperatorSpec derivation.status=derived)"
+      },
+      {
+        "area": "7.1.3 Renormalization",
+        "evidence": [
+          "two_loop_rg_fingerprints: tfpt-suite/tfpt_suite/modules/two_loop_rg_fingerprints.py",
+          "PyR@TE3 baseline SM YAML: /Users/stefanhamann/Projekte/wolfram_latex_attachments/Pyrate3/models/SM_TFPT_2loop_v25.yaml",
+          "PyR@TE3 SM PythonOutput: Pyrate3/pyrate/results/SM_TFPT_2loop_v25/SM_TFPT_2Loop_v25/PythonOutput",
+          "paper v1.06 threshold blueprint (G8, NR1..3, PQ field, R3 spurion): /Users/stefanhamann/Projekte/wolfram_latex_attachments/paper_v1_06_01_09_2025.tex",
+          "PyR@TE-driven 2-loop engine (complex Yukawas, thresholds): tfpt-suite/tfpt_suite/rge_pyrate_2loop.py",
+          "CKM pipeline (mt boundary + 2-loop RG + thresholds): tfpt-suite/tfpt_suite/modules/ckm_full_pipeline.py",
+          "PMNS pipeline (\u03ba EFT + N_R thresholds): tfpt-suite/tfpt_suite/modules/pmns_full_pipeline.py",
+          "Matching bridge (PDG-style inputs \u2192 MSbar boundary; uncertainty hooks): tfpt-suite/tfpt_suite/modules/msbar_matching_map.py",
+          "RG thresholds table: tfpt-suite/tfpt_suite/data/rge_thresholds_v25.json",
+          "SM inputs @ MZ: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/sm_inputs_mz.json"
+        ],
+        "next_steps": [
+          "Upgrade the matching layer to publication-grade: fully sourced PDG inputs \u2192 MSbar parameters at MZ (incl. finite EW/QCD pieces) and a below-mt EFT cascade (QCD+QED, decoupling policy).",
+          "Promote uncertainty propagation to a first-class pipeline: Monte Carlo over PDG priors through matching + thresholds + RG (\u03b1s(MZ), mt, mH, etc.)."
+        ],
+        "requirement": "Fix scheme (e.g. MSbar), implement beta functions + running for relevant couplings, and threshold matching (MZ, mt, new scales).",
+        "status": "COMPLETE (suite-level engineering closure: MSbar scheme is declared; 2-loop gauge+Yukawa RGEs are integrated via PyR@TE3-generated beta functions with complex Yukawas supported in-suite; mt\u2192\u03bcUV threshold bookkeeping is explicit (MSigma, MG8; PMNS adds stepwise N_R activation at MNR1..3 with \u03ba EFT running). A matching/bridge pipeline exists (`msbar_matching_map`) with explicit assumptions + deterministic \u03b1s(MZ) sensitivity and an optional Monte Carlo uncertainty hook, and a dedicated below-mt EFT audit trail exists (`below_mt_eft_cascade`). Remaining work is publication-grade refinement: fully sourced finite EW/QCD pieces, explicit QED/EW decoupling policy below MZ, and end-to-end uncertainty propagation across all thresholds.)"
+      },
+      {
+        "area": "7.1.4 Anomalies + consistency",
+        "evidence": [
+          "aps_eta_gluing module (\u03b7 / spectral-flow seam term): tfpt-suite/tfpt_suite/modules/aps_eta_gluing.py",
+          "discrete_consistency_uniqueness module: tfpt-suite/tfpt_suite/modules/discrete_consistency_uniqueness.py",
+          "anomaly_cancellation_audit module: tfpt-suite/tfpt_suite/modules/anomaly_cancellation_audit.py",
+          "stability_unitarity_audit module: tfpt-suite/tfpt_suite/modules/stability_unitarity_audit.py",
+          "canonical action spec (field content): /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/microscopic_action_tfpt_v25.json"
+        ],
+        "next_steps": [
+          "Extend anomaly audit beyond the SM baseline if/when TFPT introduces chiral charged fields beyond the anomaly-neutral list.",
+          "Add publication-grade vacuum metastability and perturbative unitarity checks (beyond red-flag proxies), and apply them to any effective operators used in extensions."
+        ],
+        "requirement": "Anomaly freedom, unitarity + causality (perturbatively).",
+        "status": "COMPLETE (suite-level automation: SM gauge anomalies + SU(2) Witten global check are audited from the canonical field-content spec; a stability/perturbativity red-flag detector exists (`stability_unitarity_audit`). Remaining work is publication-grade refinement: generalized anomaly scanning for arbitrary chiral extensions, and systematic perturbative unitarity / vacuum metastability lifetime analysis beyond proxy checks.)"
+      },
+      {
+        "area": "7.1.5 Derivation vs parametrization",
+        "evidence": [
+          "CKM pipeline module: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/modules/ckm_full_pipeline.py",
+          "CKM reference table: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/ckm_reference.json",
+          "PMNS Z3 breaking module: tfpt-suite/tfpt_suite/modules/pmns_z3_breaking.py",
+          "PMNS full pipeline module: tfpt-suite/tfpt_suite/modules/pmns_full_pipeline.py",
+          "Z3 texture utility + fixed coefficients rule: tfpt-suite/tfpt_suite/flavor_textures.py",
+          "Z3 texture config (explicit conventions): tfpt-suite/tfpt_suite/data/flavor_texture_v24.json",
+          "M\u00f6bius \u03b4 calibration module: tfpt-suite/tfpt_suite/modules/mobius_delta_calibration.py",
+          "Seesaw anchor block module: tfpt-suite/tfpt_suite/modules/seesaw_block.py",
+          "paper v1.06 flavor anchors (\u03b4 from \u03c4/\u03bc, \u03b4\u22c6 from varphi0, seesaw block): /Users/stefanhamann/Projekte/wolfram_latex_attachments/paper_v1_06_01_09_2025.tex",
+          "update TFPT v1.07SM: Z3 Yukawa texture formula Y(y)=y\u22c6[C(\u03b4)+a_y varphi0 D + b c3 1]: /Users/stefanhamann/Projekte/wolfram_latex_attachments/update_tfptv1_07sm.tex",
+          "predictions dashboard module: tfpt-suite/tfpt_suite/modules/predictions_dashboard.py"
+        ],
+        "next_steps": [
+          "Replace \u03bb-power 'texture layer' with a M\u00f6bius/Z3-monodromy-derived Yukawa texture generator (mechanism).",
+          "Quantize/derive CP phase input (or label discrete phase choices explicitly and expose falsifiable outputs)."
+        ],
+        "requirement": "Yukawa textures/phases derived from topology structure or explicitly marked as Ansatz; same for any 'magic number'.",
+        "status": "COMPLETE (suite-level mechanism contract: the flavor pipelines are driven by TFPT invariants + explicit M\u00f6bius/Z3 rules with \u03b4 defaulting to the geometric closure \u03b4\u22c6 (not \u03c4/\u03bc), cusps/classification fixed, and an explicit phase map reported to prevent convention drift. Remaining work is theory-grade derivation: replace the mechanism contract by an operator/holonomy-level derivation of the topology\u2192phase map and the Yukawa generator.)"
+      }
+    ],
+    "paper_source": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/latex/tfpt-theory-fullv25.tex"
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (static repo inspection; no network).",
+    "formulas": [],
+    "gaps": [],
+    "inputs": [
+      "paper conventions: best-effort from latex/ (prefers tfpt-theory-fullv25.tex, otherwise falls back to tfpt-theory-fullv24.tex)",
+      "suite code + data tables under tfpt-suite/",
+      "PyR@TE3 artifacts under Pyrate3/"
+    ],
+    "maturity": null,
+    "module_id": "qft_completeness_ledger",
+    "name": "QFT completeness ledger (7.1): what is specified vs. still missing (paper v2.5)",
+    "objective": [],
+    "outputs": [
+      "A structured checklist aligned with 7.1 (microscopic action, quantization, renorm, anomalies, derivation-vs-input)",
+      "Concrete engineering next steps aligned with 7.2"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "Ledger is produced deterministically from repo state (presence of configs/spec files)."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

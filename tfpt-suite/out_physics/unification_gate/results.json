@@ -1,0 +1,550 @@
+{
+  "checks": [
+    {
+      "check_id": "unification_gate",
+      "detail": "mismatch_rel=0.00382043 @ mu*=2.806e+15 GeV (tol=0.005, mode=physics)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "unification_gate",
+  "plot": null,
+  "results": {
+    "best_unification_point": {
+      "alpha1_gut": 0.025941054132908023,
+      "alpha2": 0.025871507351098548,
+      "alpha3": 0.025970562249999843,
+      "alphaY": 0.015564632479744813,
+      "log10_mu": 15.448046392964256,
+      "mismatch_rel": 0.0038204263654940565,
+      "mu_GeV": 2805733340894862.0
+    },
+    "boundary": {
+      "lambda_mt": 0.12961499851279001,
+      "mode": "mt",
+      "mu_GeV": 172.76,
+      "route": "pyrate_2loop",
+      "yb_mt": 0.01665860318819457,
+      "yt_mt": 0.9406174836767976,
+      "ytau_mt": 0.010214876058692106
+    },
+    "config": {
+      "path": "tfpt-suite/tfpt_suite/data/two_loop_rg_fingerprints.json",
+      "sha256": "375c076b26e91ce29b8a404bf9cdb920c210ad5bc0a5f1dbec5f453729f0e65f"
+    },
+    "policy": {
+      "apply_g8_delta_b3_2loop": true,
+      "boundary_route": "pyrate_2loop",
+      "delta_b3_candidates": [
+        0.0,
+        1.0,
+        2.0,
+        2.25,
+        2.5,
+        2.75,
+        3.0,
+        4.0
+      ],
+      "loaded": true,
+      "mu_end_GeV": 1e+19,
+      "path": "tfpt-suite/tfpt_suite/data/unification_gate_policy.json",
+      "use_mt_boundary": true
+    },
+    "policy_scan": {
+      "best_variant": {
+        "apply_g8_delta_b3": true,
+        "apply_g8_delta_b3_2loop": true,
+        "apply_gravity_alpha3": false,
+        "best": {
+          "alpha1_gut": 0.025941054132908023,
+          "alpha2": 0.025871507351098548,
+          "alpha3": 0.025970562249999843,
+          "alphaY": 0.015564632479744813,
+          "log10_mu": 15.448046392964256,
+          "mismatch_rel": 0.0038204263654940565,
+          "mu_GeV": 2805733340894862.0
+        },
+        "delta_b3_g8": 2.5,
+        "label": "policy_g8=on_db3=2.5_g8_2l=on_grav=off"
+      },
+      "variants": [
+        {
+          "apply_g8_delta_b3": false,
+          "apply_g8_delta_b3_2loop": true,
+          "apply_gravity_alpha3": false,
+          "best": {
+            "alpha1_gut": 0.024758299928191126,
+            "alpha2": 0.02640298683253582,
+            "alpha3": 0.024761560927372476,
+            "alphaY": 0.014854979956914675,
+            "log10_mu": 14.232414523101411,
+            "mismatch_rel": 0.06498782465726032,
+            "mu_GeV": 170771157889003.75
+          },
+          "delta_b3_g8": 0.0,
+          "label": "policy_g8=off_g8_2l=on_grav=off"
+        },
+        {
+          "apply_g8_delta_b3": true,
+          "apply_g8_delta_b3_2loop": true,
+          "apply_gravity_alpha3": false,
+          "best": {
+            "alpha1_gut": 0.024758299926455802,
+            "alpha2": 0.026402986833372992,
+            "alpha3": 0.02476156092783828,
+            "alphaY": 0.01485497995587348,
+            "log10_mu": 14.232414521247826,
+            "mismatch_rel": 0.06498782475927942,
+            "mu_GeV": 170771157160145.8
+          },
+          "delta_b3_g8": 0.0,
+          "label": "policy_g8=on_db3=0_g8_2l=on_grav=off"
+        },
+        {
+          "apply_g8_delta_b3": true,
+          "apply_g8_delta_b3_2loop": true,
+          "apply_gravity_alpha3": false,
+          "best": {
+            "alpha1_gut": 0.02516278494674083,
+            "alpha2": 0.02621303260167071,
+            "alpha3": 0.025131812876497656,
+            "alphaY": 0.015097670968044496,
+            "log10_mu": 14.661099166568594,
+            "mismatch_rel": 0.042396544730303146,
+            "mu_GeV": 458246510531143.8
+          },
+          "delta_b3_g8": 1.0,
+          "label": "policy_g8=on_db3=1_g8_2l=on_grav=off"
+        },
+        {
+          "apply_g8_delta_b3": true,
+          "apply_g8_delta_b3_2loop": true,
+          "apply_gravity_alpha3": false,
+          "best": {
+            "alpha1_gut": 0.02566988994694641,
+            "alpha2": 0.025987069378172693,
+            "alpha3": 0.0256251691262295,
+            "alphaY": 0.015401933968167846,
+            "log10_mu": 15.179334390459296,
+            "mismatch_rel": 0.014048535898090103,
+            "mu_GeV": 1511243306969486.8
+          },
+          "delta_b3_g8": 2.0,
+          "label": "policy_g8=on_db3=2_g8_2l=on_grav=off"
+        },
+        {
+          "apply_g8_delta_b3": true,
+          "apply_g8_delta_b3_2loop": true,
+          "apply_gravity_alpha3": false,
+          "best": {
+            "alpha1_gut": 0.02581122521232531,
+            "alpha2": 0.02592638360671861,
+            "alpha3": 0.02578067455923222,
+            "alphaY": 0.015486735127395186,
+            "log10_mu": 15.320103871055462,
+            "mismatch_rel": 0.005639019898390489,
+            "mu_GeV": 2089795891633035.5
+          },
+          "delta_b3_g8": 2.25,
+          "label": "policy_g8=on_db3=2.25_g8_2l=on_grav=off"
+        },
+        {
+          "apply_g8_delta_b3": true,
+          "apply_g8_delta_b3_2loop": true,
+          "apply_gravity_alpha3": false,
+          "best": {
+            "alpha1_gut": 0.025941054132908023,
+            "alpha2": 0.025871507351098548,
+            "alpha3": 0.025970562249999843,
+            "alphaY": 0.015564632479744813,
+            "log10_mu": 15.448046392964256,
+            "mismatch_rel": 0.0038204263654940565,
+            "mu_GeV": 2805733340894862.0
+          },
+          "delta_b3_g8": 2.5,
+          "label": "policy_g8=on_db3=2.5_g8_2l=on_grav=off"
+        },
+        {
+          "apply_g8_delta_b3": true,
+          "apply_g8_delta_b3_2loop": true,
+          "apply_gravity_alpha3": false,
+          "best": {
+            "alpha1_gut": 0.026113776401434894,
+            "alpha2": 0.025799640892184703,
+            "alpha3": 0.02613842228130252,
+            "alphaY": 0.015668265840860937,
+            "log10_mu": 15.616302109901719,
+            "mismatch_rel": 0.013021399276283065,
+            "mu_GeV": 4133349317367630.5
+          },
+          "delta_b3_g8": 2.75,
+          "label": "policy_g8=on_db3=2.75_g8_2l=on_grav=off"
+        },
+        {
+          "apply_g8_delta_b3": true,
+          "apply_g8_delta_b3_2loop": true,
+          "apply_gravity_alpha3": false,
+          "best": {
+            "alpha1_gut": 0.02628530096053463,
+            "alpha2": 0.02572962106061539,
+            "alpha3": 0.026334560745702087,
+            "alphaY": 0.015771180576320775,
+            "log10_mu": 15.781193970406889,
+            "mismatch_rel": 0.023163127453700343,
+            "mu_GeV": 6042184332336632.0
+          },
+          "delta_b3_g8": 3.0,
+          "label": "policy_g8=on_db3=3_g8_2l=on_grav=off"
+        },
+        {
+          "apply_g8_delta_b3": true,
+          "apply_g8_delta_b3_2loop": true,
+          "apply_gravity_alpha3": false,
+          "best": {
+            "alpha1_gut": 0.02718602139962119,
+            "alpha2": 0.025382177386504744,
+            "alpha3": 0.02725676246555555,
+            "alphaY": 0.016311612839772713,
+            "log10_mu": 16.612850806241333,
+            "mismatch_rel": 0.07045108633903602,
+            "mu_GeV": 4.100632092298162e+16
+          },
+          "delta_b3_g8": 4.0,
+          "label": "policy_g8=on_db3=4_g8_2l=on_grav=off"
+        }
+      ]
+    },
+    "runner": {
+      "g8_patch": {
+        "apply_g8_delta_b3_2loop": true,
+        "delta_b3_2loop_mode": "weyl_adjoint_match",
+        "delta_b3_g8": 2.5,
+        "delta_b3_g8_2loop": 60.0,
+        "note": "2-loop \u0394b3 patch assumes Weyl adjoint if delta_b3_g8_2loop is not explicitly provided."
+      },
+      "gravity_alpha3_patch": {
+        "alpha_definition_for_U1": "alphaY",
+        "c3": 0.039788735772973836,
+        "enabled": false,
+        "kappa_vector": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "matching": {
+        "enabled": true,
+        "finite_delta_alpha_by_threshold": null,
+        "loop_order": 1
+      },
+      "segments": [
+        {
+          "delta_b3_active": false,
+          "model": "sm_tfpt_2loop_v25",
+          "mu_end": 1000.0,
+          "mu_end_GeV": 1000.0,
+          "mu_start": 172.76,
+          "mu_start_GeV": 172.76,
+          "patches": [],
+          "patches_active": [],
+          "threshold_actions_at_start": [],
+          "threshold_match": null
+        },
+        {
+          "delta_b3_active": false,
+          "model": "e8_sigma_yN_2loop",
+          "mu_end": 18000000000.0,
+          "mu_end_GeV": 18000000000.0,
+          "mu_start": 1000.0,
+          "mu_start_GeV": 1000.0,
+          "patches": [],
+          "patches_active": [],
+          "threshold_actions_at_start": [
+            {
+              "action": "beta_source_switch(sm\u2194e8)",
+              "affected_parameters": [
+                "g",
+                "Yu",
+                "Yd",
+                "Ye",
+                "lambda"
+              ],
+              "note": "Switch beta source SM\u2192E8 at \u03bc=MSigma (Sigma integrated in). Matching enabled (loop_order=1; 1-loop is identity at \u03bc=threshold).",
+              "scale_GeV": 1000.0,
+              "status": "matched_1loop_log_only_identity",
+              "threshold_id": "MSigma"
+            }
+          ],
+          "threshold_match": {
+            "gauge": {
+              "deltas": {},
+              "details": {
+                "active_fields_after": [
+                  "SM",
+                  "Sigma"
+                ],
+                "active_fields_before": [
+                  "SM"
+                ],
+                "direction": "up",
+                "finite_delta_alpha_applied": {},
+                "finite_delta_alpha_input": {},
+                "loop_order": 1,
+                "mu_thr_GeV": 1000.0,
+                "scheme": "MSbar",
+                "threshold_id": "MSigma"
+              },
+              "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); finite pieces require explicit inputs or higher-loop decoupling constants",
+              "status": "matched_1loop_log_only_identity"
+            },
+            "loop_order": 1,
+            "matching_active": true,
+            "quartic": {
+              "deltas": {},
+              "details": {
+                "active_fields_after": [
+                  "SM",
+                  "Sigma"
+                ],
+                "active_fields_before": [
+                  "SM"
+                ],
+                "direction": "up",
+                "finite_delta_quartic_applied": {},
+                "finite_delta_quartic_input": {},
+                "loop_order": 1,
+                "mu_thr_GeV": 1000.0,
+                "scheme": "MSbar",
+                "threshold_id": "MSigma"
+              },
+              "note": "identity matching at \u03bc=threshold (explicit); finite quartic matching not implemented yet",
+              "status": "matched_1loop_log_only_identity"
+            },
+            "scheme": "MSbar",
+            "threshold_id": "MSigma",
+            "yukawa": {
+              "deltas": {},
+              "details": {
+                "active_fields_after": [
+                  "SM",
+                  "Sigma"
+                ],
+                "active_fields_before": [
+                  "SM"
+                ],
+                "direction": "up",
+                "finite_delta_yukawa_applied": {},
+                "finite_delta_yukawa_input": {},
+                "loop_order": 1,
+                "mu_thr_GeV": 1000.0,
+                "scheme": "MSbar",
+                "threshold_id": "MSigma",
+                "yukawa_maxabs_input": {
+                  "Yd": 0.014803411614757575,
+                  "Ye": 0.010341832601011848,
+                  "Yu": 0.8590102788949092
+                }
+              },
+              "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); top pole\u2192MSbar(mt) is handled in rge_sm.sm_boundary_conditions_at_mt",
+              "status": "matched_1loop_log_only_identity"
+            }
+          },
+          "threshold_transition_at_start": {
+            "action": "beta_source_switch(sm\u2194e8)",
+            "affected_parameters": [
+              "g",
+              "Yu",
+              "Yd",
+              "Ye",
+              "lambda"
+            ],
+            "note": "Switch beta source SM\u2192E8 at \u03bc=MSigma (Sigma integrated in). Matching enabled (loop_order=1; 1-loop is identity at \u03bc=threshold).",
+            "scale_GeV": 1000.0,
+            "status": "matched_1loop_log_only_identity",
+            "threshold_id": "MSigma"
+          }
+        },
+        {
+          "delta_b3_active": true,
+          "model": "e8_sigma_yN_2loop",
+          "mu_end": 1e+19,
+          "mu_end_GeV": 1e+19,
+          "mu_start": 18000000000.0,
+          "mu_start_GeV": 18000000000.0,
+          "patches": [
+            "delta_b3_g8",
+            "delta_b3_g8_2loop"
+          ],
+          "patches_active": [
+            "delta_b3_g8",
+            "delta_b3_g8_2loop"
+          ],
+          "threshold_actions_at_start": [
+            {
+              "action": "beta_patch(\u0394b3)",
+              "affected_parameters": [
+                "g3"
+              ],
+              "note": "Apply \u0394b3 patch above MG8 (paper v1.06 note). 2-loop adjoint patch enabled (Weyl adjoint assumption). Matching enabled (loop_order=1; 1-loop is identity at \u03bc=threshold).",
+              "scale_GeV": 18000000000.0,
+              "status": "matched_1loop_log_only_identity",
+              "threshold_id": "MG8"
+            }
+          ],
+          "threshold_match": {
+            "gauge": {
+              "deltas": {},
+              "details": {
+                "active_fields_after": [
+                  "SM",
+                  "Sigma",
+                  "G8"
+                ],
+                "active_fields_before": [
+                  "SM",
+                  "Sigma"
+                ],
+                "direction": "up",
+                "finite_delta_alpha_applied": {},
+                "finite_delta_alpha_input": {},
+                "loop_order": 1,
+                "mu_thr_GeV": 18000000000.0,
+                "scheme": "MSbar",
+                "threshold_id": "MG8"
+              },
+              "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); finite pieces require explicit inputs or higher-loop decoupling constants",
+              "status": "matched_1loop_log_only_identity"
+            },
+            "loop_order": 1,
+            "matching_active": true,
+            "quartic": {
+              "deltas": {},
+              "details": {
+                "active_fields_after": [
+                  "SM",
+                  "Sigma",
+                  "G8"
+                ],
+                "active_fields_before": [
+                  "SM",
+                  "Sigma"
+                ],
+                "direction": "up",
+                "finite_delta_quartic_applied": {},
+                "finite_delta_quartic_input": {},
+                "loop_order": 1,
+                "mu_thr_GeV": 18000000000.0,
+                "scheme": "MSbar",
+                "threshold_id": "MG8"
+              },
+              "note": "identity matching at \u03bc=threshold (explicit); finite quartic matching not implemented yet",
+              "status": "matched_1loop_log_only_identity"
+            },
+            "scheme": "MSbar",
+            "threshold_id": "MG8",
+            "yukawa": {
+              "deltas": {},
+              "details": {
+                "active_fields_after": [
+                  "SM",
+                  "Sigma",
+                  "G8"
+                ],
+                "active_fields_before": [
+                  "SM",
+                  "Sigma"
+                ],
+                "direction": "up",
+                "finite_delta_yukawa_applied": {},
+                "finite_delta_yukawa_input": {},
+                "loop_order": 1,
+                "mu_thr_GeV": 18000000000.0,
+                "scheme": "MSbar",
+                "threshold_id": "MG8",
+                "yukawa_maxabs_input": {
+                  "Yd": 0.008023176304471946,
+                  "Ye": 0.010301664411954922,
+                  "Yu": 0.5309039840195275
+                }
+              },
+              "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); top pole\u2192MSbar(mt) is handled in rge_sm.sm_boundary_conditions_at_mt",
+              "status": "matched_1loop_log_only_identity"
+            }
+          },
+          "threshold_transition_at_start": {
+            "action": "beta_patch(\u0394b3)",
+            "affected_parameters": [
+              "g3"
+            ],
+            "note": "Apply \u0394b3 patch above MG8 (paper v1.06 note). 2-loop adjoint patch enabled (Weyl adjoint assumption). Matching enabled (loop_order=1; 1-loop is identity at \u03bc=threshold).",
+            "scale_GeV": 18000000000.0,
+            "status": "matched_1loop_log_only_identity",
+            "threshold_id": "MG8"
+          }
+        }
+      ]
+    },
+    "sm_inputs": {
+      "path": "tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+      "sha256": "f46b08eb6c06c7b4b4a52f81f7f7ce63b5b9c5fcc2a1752418c82817f155bcfe"
+    },
+    "thresholds": {
+      "path": "tfpt-suite/tfpt_suite/data/rge_thresholds_v25.json",
+      "sha256": "864896e83cf5b40b078ce461ba18d1aea34d800a13cf65405e49a8c3b7e5c834"
+    },
+    "tolerance": {
+      "mismatch_rel_tol": 0.005,
+      "mode": "physics"
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [
+      "This gate is an EFT+threshold diagnostic: it follows the declarative TFPT segment policy (SM\u2194E8 switch, \u0394b3 patch) rather than a single monolithic model.",
+      "Finite matching pieces beyond 1-loop identity are not assumed unless explicitly provided in matching_finite_delta_alpha.",
+      "Yukawa/quartic initial values are deterministic seeds (same spirit as rg_fingerprints) or mt-boundary outputs (if enabled) to keep the gate reproducible.",
+      "Optional 2-loop \u0394b3 patch assumes a Weyl adjoint G8 unless explicit \u0394b3(2-loop) is provided."
+    ],
+    "determinism": "Deterministic given config + PyR@TE model.",
+    "formulas": [
+      "\u03b1_i = g_i^2/(4\u03c0); \u03b11_GUT=(5/3)\u03b1Y",
+      "mismatch(\u03bc) = max(|\u03b11-\u03b12|, |\u03b11-\u03b13|, |\u03b12-\u03b13|) / ((\u03b11+\u03b12+\u03b13)/3)"
+    ],
+    "gaps": [
+      "Publication-grade unification would require full scheme-consistent finite matching (EW/QED) and a derivation of the threshold policy from the microscopic TFPT ladder (discrete threshold candidates)."
+    ],
+    "inputs": [
+      "SM inputs at MZ: tfpt_suite/data/sm_inputs_mz.json (for initial gauge couplings)",
+      "unification policy: tfpt_suite/data/unification_gate_policy.json (mt boundary + G8 patch policy)",
+      "threshold policy: tfpt_suite/data/rge_thresholds_v25.json (segment boundaries)",
+      "beta sources: tfpt_suite/data/pyrate_pythonoutputs.json (SM + E8)",
+      "optional runner patch: tfpt_suite/data/two_loop_rg_fingerprints.json (gravity \u03b1^3 patch config)"
+    ],
+    "maturity": null,
+    "module_id": "unification_gate",
+    "name": "Unification gate (explicit 2-loop PyR@TE RG check)",
+    "objective": [
+      "Replace vague 'near unification' statements by an explicit numeric gate.",
+      "Force loop-order consistency: use a single PyR@TE 2-loop run (no parallel gauge-only runner)."
+    ],
+    "outputs": [
+      "best-fit unification scale \u03bc* (minimizes max pairwise |\u0394\u03b1|)",
+      "relative mismatch at \u03bc* (gate metric)",
+      "PASS/FAIL gate for unification within a declared tolerance"
+    ],
+    "question": "Do the gauge couplings unify at a single scale (2-loop, declared model, declared tolerance)?",
+    "references": [],
+    "validation": [
+      "PyR@TE RGE solve succeeds and produces finite \u03b1 arrays",
+      "gate is FAIL unless mismatch_rel is below the declared tolerance"
+    ],
+    "what_was_done": [
+      "Run the TFPT segment runner (SM\u2192E8 at MSigma; \u0394b3 patch above MG8) with matching enabled (1-loop identity at thresholds).",
+      "Sample the gauge-coupling trajectory on a log grid (plus exact segment boundaries).",
+      "Compute the best-fit unification point \u03bc* by minimizing the maximum pairwise \u03b1 mismatch.",
+      "Emit a PASS/FAIL gate based on a fixed mismatch tolerance.",
+      "Apply mt-boundary and optional G8 2-loop patch policies if enabled."
+    ]
+  },
+  "warnings": []
+}

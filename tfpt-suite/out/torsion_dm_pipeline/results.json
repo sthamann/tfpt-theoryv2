@@ -1,0 +1,70 @@
+{
+  "checks": [
+    {
+      "check_id": "torsion_dm_not_required",
+      "detail": "axion-first DM closure passes within 20%; torsion DM optional (Omega_a h^2\u22480.123, fraction\u22481.02)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "dm_branching_policy",
+      "detail": "Torsion DM is optional unless axion-first closure fails under the declared discrete policy.",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "torsion_dm_constraints_documented",
+      "detail": "constraints checklist recorded in report",
+      "passed": true,
+      "severity": "INFO"
+    }
+  ],
+  "module_id": "torsion_dm_pipeline",
+  "plot": null,
+  "results": {
+    "axion_first_closure": {
+      "closes_dm_within_tolerance": true,
+      "config_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/axion_tfpt_v106.json",
+      "fraction_of_dm": 1.022923676252392,
+      "scenario_selected": "post_inflation_theta_rms_with_strings_dw_factor",
+      "strings_domain_walls_factor_effective": 2.3333333333333335,
+      "tolerance_rel": 0.2
+    },
+    "mode": "engineering",
+    "status": "optional_branch"
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (no computation).",
+    "formulas": [
+      "\\rho_T \\sim \\frac12 m_T^2 S^2 + \\cdots \\;\\; (model-dependent; requires a torsion excitation spectrum)"
+    ],
+    "gaps": [
+      "Requires a torsion excitation spectrum (mass/couplings), production mechanism, relic density, and comparison to bounds."
+    ],
+    "inputs": [
+      "(optional) torsion regimes: tfpt_suite/data/torsion_regimes.json",
+      "(optional) torsion bounds: tfpt_suite/data/torsion_bounds_vetted.json"
+    ],
+    "maturity": null,
+    "module_id": "torsion_dm_pipeline",
+    "name": "Torsion DM pipeline (optional; explicit placeholder)",
+    "objective": [
+      "Make the optional torsion-as-DM branch explicit and testable (avoid narrative-only scope creep)."
+    ],
+    "outputs": [
+      "explicit status record (implemented vs not implemented)",
+      "dependency ledger for a future torsion-as-DM closure module",
+      "explicit constraints checklist (\u03a9_DM target, direct detection, torsion bounds)"
+    ],
+    "question": "Is a torsion-excitation dark-matter channel implemented and constrained as part of TFPT\u2019s DM closure?",
+    "references": [],
+    "validation": [
+      "Physics mode must not allow this to be silently green if DM closure depends on it.",
+      "Constraints are documented explicitly (\u03a9_DM target, direct detection, torsion bounds)."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

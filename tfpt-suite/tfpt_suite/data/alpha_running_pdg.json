@@ -1,0 +1,56 @@
+{
+  "schema_version": 2,
+  "note": "External SM/QED inputs for the secondary ᾱ^(5)(MZ) consistency check: alpha(0) → alpha(MZ) conversion via Δα(MZ)=Δα_lept+Δα_had^(5)+finite EW decoupling pieces. This is a comparison layer, not a TFPT prediction.",
+  "MZ_GeV": 91.1876,
+  "MW_GeV": 80.3946,
+  "alpha_s_MZ": {
+    "mean": 0.1187,
+    "sigma": 0.0017,
+    "units": "dimensionless",
+    "source": "PDG 2024 electroweak review (used in Eq. 10.13 for the MSbar↔on-shell shift)."
+  },
+  "alpha_bar5_inv_MZ": {
+    "mean": 127.930,
+    "sigma": 0.008,
+    "units": "dimensionless",
+    "source": "PDG 2024 electroweak review: α̂^(5)(MZ)^{-1} = 127.930 ± 0.008 (MSbar)."
+  },
+  "delta_alpha_had5_MZ": {
+    "mean": 0.02783,
+    "sigma": 0.00006,
+    "units": "dimensionless",
+    "source": "PDG 2024 electroweak review Eq. (10.12): Δα_had^(5)(MZ) = 0.02783 ± 0.00006 (on-shell)."
+  },
+  "delta_alpha_msbar_on_shell_shift_MZ": {
+    "mean": 0.007122,
+    "sigma": 0.000005,
+    "units": "dimensionless",
+    "source": "PDG 2024 electroweak review Eq. (10.13): Δα̂(MZ) − Δα(MZ) = 0.007122(2)(5).",
+    "note": "Finite MSbar↔on-shell shift including W-loop and QCD terms; used explicitly as an EW decoupling piece."
+  },
+  "delta_alpha_top_decoupling_MZ": {
+    "mean": 0.0,
+    "sigma": 0.0,
+    "units": "dimensionless",
+    "source": "α̂^(5)(MZ) is defined in the five-flavor scheme; top is decoupled by definition.",
+    "note": "Set to 0 unless a six-flavor scheme is adopted explicitly."
+  },
+  "delta_alpha_extra_msbar_MZ": {
+    "mean": 0.0,
+    "sigma": 0.0,
+    "units": "dimensionless",
+    "source": "Deprecated legacy field retained for backwards compatibility.",
+    "deprecated": true
+  },
+  "lepton_masses_GeV": {
+    "m_e": { "value": 0.00051099895, "source": "PDG lepton mass (electron), GeV" },
+    "m_mu": { "value": 0.1056583755, "source": "PDG lepton mass (muon), GeV" },
+    "m_tau": { "value": 1.77686, "source": "PDG lepton mass (tau), GeV" }
+  },
+  "leptonic_vacuum_polarization_model": {
+    "order": "1-loop",
+    "formula": "Δα_l(MZ^2) = (α(0)/(3π)) * ( ln(MZ^2/m_l^2) - 5/3 )",
+    "note": "Sufficient for an assumption-explicit secondary check. For precision EW fits, include higher-order QED/EW corrections and scheme-specific definitions."
+  }
+}
+

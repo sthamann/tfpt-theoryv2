@@ -1,0 +1,49 @@
+PMNS mechanism bridge (Z3-breaking angles → κ(mt) → yN+MNR reconstruction)
+
+sm inputs file: tfpt-suite/tfpt_suite/data/sm_inputs_mz.json (sha256=f46b08eb6c06c7b4b4a52f81f7f7ce63b5b9c5fcc2a1752418c82817f155bcfe)
+flavor texture config: tfpt-suite/tfpt_suite/data/flavor_texture_v24.json (sha256=d58eaeead900b40d8bd3235d1d20d97845d23f74b6577614b28591c9785abaa3)
+lepton masses file: tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json (sha256=4c992c392766d6944c5bd53f4d91c369de53c8616513939e79b0ee1f890de386)
+thresholds file: tfpt-suite/tfpt_suite/data/rge_thresholds_v25.json (sha256=864896e83cf5b40b078ce461ba18d1aea34d800a13cf65405e49a8c3b7e5c834)
+
+Z3-breaking constraint (pmns_z3_breaking logic, deterministic selection):
+- baseline: θ12=34.3225°, θ13=8.7437°, θ23=45.0000°, δ=90.00°
+- epsilon = varphi0/6 = 0.00886199 rad = 0.508°
+- selected variant: L_R23(+eps)
+  angles: θ12=34.3225°, θ13=8.7437°, θ23=45.5078°, δ=90.00°
+
+Charged-lepton basis (Ye texture, mt):
+- delta_source=delta_star, delta_M=0.607909037, delta_star=0.608861992, delta_used=0.608861992
+- phase_mode=2pi_delta, theta(delta_used)=3.82559 rad, zeta=exp(i theta)=(-0.7750512892950255-0.6318983296085839j)
+- ytau(mt) target=0.0102149 => y*_e=0.00351024
+
+SM boundary @ mt (matching layer):
+- v(mt)=246 GeV, g2(mt)=0.648334, lambda(mt)=0.129615
+- (diag approx for κ beta traces) yt(mt)=0.940617, yb(mt)=0.0166586
+
+Reconstructed κ(mt) (Majorana EFT; mν=v^2 κ):
+- neutrino masses used (normal ordering, m1=0): m(eV)=[0.0, 0.008602325267042627, 0.05]
+- max|kappa|(mt)=5.728e-16 GeV^-1
+- PMNS from (Ye,κ) @ mt: θ12=34.3225°, θ13=8.7437°, θ23=45.5078°, δ=90.00°
+- neutrino masses proxy from SVD(mν) (eV, sorted): [2.1200330388525304e-18, 0.008602325267042634, 0.05000000000000002]
+
+κ running stability (EFT below MNR1; couplings frozen at mt):
+- run: mu_start=mt=172.76 GeV → mu_end=0.99*MNR1=9.9e+13 GeV
+- PMNS from (Ye,κ) @ mu_end: θ12=34.3229°, θ13=8.7438°, θ23=45.5068°, δ=90.00°
+
+Seesaw inversion / reconstruction (tree-level):
+- MNR (GeV) = [100000000000000.0, 300000000000000.0, 800000000000000.0]
+- reconstructed yN (perm=(2, 0, 1)) max|yN|=2.365e-01
+- kappa_rec dev: max|kappa_rec-kappa|=9.872e-32 GeV^-1
+- kappa decoupling residual above MNR3: max|kappa_above_MNR3|=1.120e-31 GeV^-1
+
+Checks:
+- selected_variant_defined: PASS (selected=L_R23(+eps) (selection: min|Δδ|, prefer Δθ23>0, then max Δθ23))
+- kappa_symmetric: PASS (max|kappa-kappa^T|(mt)=0.000e+00)
+- pmns_angles_reproduced_at_mt: PASS (max angle mismatch at mt = 2.274e-13 deg)
+- kappa_factorization_recovers_kappa: PASS (max|kappa_rec-kappa|(mt)=9.872e-32 GeV^-1 (perm=(2, 0, 1), max|yN|=2.365e-01))
+- kappa_decouples_above_MNR3_tree_level: PASS (max|kappa_above_MNR3|=1.120e-31 GeV^-1)
+- pmns_angles_stable_under_kappa_running: PASS (max drift (mt→0.99 MNR1) = 9.192e-04 deg)
+
+Notes:
+- This is a bridge layer: it takes Z3-breaking angle constraints and produces a consistent κ(mt) and a (yN,MNR) factorization.
+- The (yN,MNR) reconstruction is not unique (Casas–Ibarra freedom); here we choose a minimal Takagi/SVD factorization and a permutation that minimizes max|yN|.

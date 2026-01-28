@@ -1,0 +1,158 @@
+{
+  "checks": [
+    {
+      "check_id": "thresholds_loaded",
+      "detail": "thresholds=['MSigma', 'MG8', 'MNR1', 'MNR2', 'MNR3']",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "T_reh_from_thresholds",
+      "detail": "T_reh=1.000e+03 GeV (source=MSigma)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "N_reh_finite",
+      "detail": "N_reh=38.0340, DeltaN=-9.5085",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "a0_over_a_transition_estimated",
+      "detail": "a0/a_transition = (a0/a_reh)*(a_reh/a_end)*exp(N_inflation_from_transition); transition=horizon_exit_of_pivot; a0/a_t=2.449e+57",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "threshold_policy",
+      "detail": "policy=min_threshold, threshold_keys=['MSigma', 'MG8', 'MNR1', 'MNR2', 'MNR3']",
+      "passed": true,
+      "severity": "INFO"
+    }
+  ],
+  "module_id": "cosmo_threshold_history",
+  "plot": null,
+  "results": {
+    "mode": "engineering",
+    "pivot": {
+      "N_pivot": 56.98005698005695,
+      "ln10_As": 3.044,
+      "n_s": 0.9649,
+      "r": 0.003696030000000004
+    },
+    "policy": {
+      "T_reh_policy": "min_threshold",
+      "threshold_keys": [
+        "MSigma",
+        "MG8",
+        "MNR1",
+        "MNR2",
+        "MNR3"
+      ]
+    },
+    "regimes": [
+      {
+        "T_high_GeV": 800000000000000.0,
+        "T_low_GeV": 300000000000000.0,
+        "label": "MNR3_to_MNR2",
+        "w_eff": 0.0
+      },
+      {
+        "T_high_GeV": 300000000000000.0,
+        "T_low_GeV": 100000000000000.0,
+        "label": "MNR2_to_MNR1",
+        "w_eff": 0.0
+      },
+      {
+        "T_high_GeV": 100000000000000.0,
+        "T_low_GeV": 18000000000.0,
+        "label": "MNR1_to_MG8",
+        "w_eff": 0.0
+      },
+      {
+        "T_high_GeV": 18000000000.0,
+        "T_low_GeV": 1000.0,
+        "label": "MG8_to_MSigma",
+        "w_eff": 0.0
+      },
+      {
+        "T_high_GeV": 1000.0,
+        "T_low_GeV": 1000.0,
+        "label": "MSigma_to_Treh",
+        "w_eff": 0.0
+      },
+      {
+        "T_high_GeV": 1000.0,
+        "T_low_GeV": 0.0,
+        "label": "post_reheat_radiation",
+        "w_eff": 0.3333333333333333
+      }
+    ],
+    "reheating": {
+      "N_reheat": 38.033964763325855,
+      "T_reheat_GeV": 1000.0,
+      "T_reheat_source": "MSigma",
+      "a0_note": "a0/a_transition = (a0/a_reh)*(a_reh/a_end)*exp(N_inflation_from_transition); transition=horizon_exit_of_pivot",
+      "a0_over_a_transition": 2.4485807685210785e+57,
+      "deltaN": -9.508491190831464,
+      "g_star_reheat": 120.0,
+      "g_star_s_reheat": 120.0,
+      "w_reh": 0.0
+    },
+    "thresholds": {
+      "MG8": 18000000000.0,
+      "MNR1": 100000000000000.0,
+      "MNR2": 300000000000000.0,
+      "MNR3": 800000000000000.0,
+      "MSigma": 1000.0
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [
+      "Default threshold policy uses the minimum of (MSigma, MG8, MNR1..3) as T_reh.",
+      "Use a single effective reheating w_reh from the v1.06 policy for the pre-radiation stage.",
+      "Entropy conservation is used to estimate a0/a_transition once T_reh is fixed."
+    ],
+    "determinism": "Deterministic given thresholds + declared reheating policy inputs.",
+    "formulas": [
+      "T_reh := min(MSigma, MG8, MNR1..3) under the default threshold policy",
+      "rho_reh = (pi^2/30) g* T_reh^4",
+      "DeltaN = (1-3w)/(12(1+w)) ln(rho_reh/rho_end)",
+      "N_reh = (1/(3(1+w))) ln(rho_end/rho_reh)"
+    ],
+    "gaps": [
+      "A full first-principles reheating history would derive w(t) and g*(T) from microphysics; this module encodes a deterministic policy using available thresholds."
+    ],
+    "inputs": [
+      "thresholds: tfpt_suite/data/rge_thresholds_v25.json",
+      "reheating policy: tfpt_suite/data/cosmo_reheating_policy_v106.json",
+      "external refs: tfpt_suite/data/global_reference_minimal.json (n_s, ln10_As)"
+    ],
+    "maturity": "policy-derived, threshold-anchored (deterministic but still simplified)",
+    "module_id": "cosmo_threshold_history",
+    "name": "Cosmology threshold history \u2192 derived reheating temperature and expansion",
+    "objective": [
+      "Make reheating a deterministic function of TFPT thresholds (MSigma/MG8/MNR).",
+      "Provide derived N_reh and a0/a_transition for k-calibration without manual tuning."
+    ],
+    "outputs": [
+      "threshold-derived T_reh, N_reh, and DeltaN",
+      "entropy-based a0/a_transition estimate using derived reheating inputs",
+      "explicit threshold regime table with effective w"
+    ],
+    "question": "Can the reheating temperature and expansion be derived from the TFPT threshold ladder instead of being a free input?",
+    "references": [
+      "tfpt_suite/data/rge_thresholds_v25.json",
+      "tfpt_suite/data/cosmo_reheating_policy_v106.json",
+      "tfpt_suite/cosmo_scale_map.py"
+    ],
+    "validation": [
+      "Derived T_reh is sourced from TFPT thresholds when available.",
+      "Derived N_reh and a0/a_transition are finite under the declared policy."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

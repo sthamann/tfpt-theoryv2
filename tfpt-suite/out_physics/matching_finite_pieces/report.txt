@@ -1,0 +1,29 @@
+Matching finite pieces (QCD + QED/EW proof points)
+
+Inputs: mu_MZ=91.1876 GeV, mc=1.27 GeV, mb=4.18 GeV, mt=172.76 GeV, mH=125.25 GeV, mW=80.379 GeV
+
+α_s at μ=mc with/without finite matching at thresholds:
+- α_s(mc) no finite matching: 0.346914414088
+- α_s(mc) with finite matching: 0.347983505121
+- Δα_s(mc) = 1.069e-03
+
+QED/EW on-shell → MSbar-at-MZ bridge (finite pieces; comparison layer):
+- α_inv_0 (CODATA ref) = 137.035999177
+- ᾱ^(5)(MZ)^-1 (from α(0) + Δα pieces) = 127.94051866958587331001953134021674783329612966553202673731794505784319969841618
+- Δα parts: {'delta_alpha_lept_1loop': mpf('0.031420928004604968313219574283859436953210739856391110106044678474499917438463260219'), 'delta_alpha_had5': mpf('0.027830000000000000000000000000000000000000000000000000000000000000000000000000000004'), 'delta_alpha_msbar_on_shell_shift': mpf('0.0071220000000000000000000000000000000000000000000000000000000000000000000000000000021'), 'delta_alpha_top_decoupling': mpf('0.0'), 'delta_alpha_extra_msbar': mpf('0.0'), 'delta_alpha_extra_total': mpf('0.0071220000000000000000000000000000000000000000000000000000000000000000000000000000021'), 'delta_alpha_total': mpf('0.06637292800460496831321957428385943695321073985639111010604467847449991743846326025')}
+- Δα̂−Δα (PDG Eq. 10.13, recomputed) = 0.007101303575582142 (diff=0.000020696424417858000000000000000000000000000000000000000000000000000000000000000002)
+
+Top/Higgs EW finite pieces (1-loop threshold formulas):
+- v_ev = 246.0 GeV (from sm_inputs or default)
+- Δy_t^EW(μ=mt) = 0.00941488917612811
+- Δλ_H^EW(μ=mH) = 0.007106953534740329
+
+Metamorphic invertibility (2-loop decoupling primitive):
+- alpha=0.347983505121 => up => 0.347334862366 => down => 0.347983505121 (error=0.000e+00)
+
+Checks:
+- finite_alpha3_matching_nontrivial: PASS (Δα_s(mc)=1.069e-03 (matching-on minus matching-off))
+- alpha3_matching_invertible: PASS (down(up(alpha)) - alpha = 0.000e+00)
+- matching_finite_pieces_EW_QED_present: PASS (Δα_total=0.06637292800460496831321957428385943695321073985639111010604467847449991743846326 (lept=0.03142092800460496831321957428385943695321073985639111010604467847449991743846326, had5=0.02783, msbar_shift=0.007122); Δα̂−Δα diff=0.000020696424417858000000000000000000000000000000000000000000000000000000000000000002; Δy_t=0.00941488917612811, Δλ_H=0.007106953534740329)
+- matching_finite_pieces_top_higgs_present: PASS (Δy_t^EW(μ=mt)=0.00941488917612811, Δλ_H^EW(μ=mH)=0.007106953534740329 (v=246.0 GeV))
+- below_MZ_policy_explicit_and_applied: PASS (policy file=/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/alpha_running_pdg.json (Δα_had5 + leptonic 1-loop + explicit EW MSbar shift))

@@ -1,0 +1,38 @@
+Defect partition derivation (Gap A): δ₂ candidate from discrete defect combinatorics
+
+TFPT constants: delta_top=0.00012030447954708205299788417891154719697454455297232339122853166568719135947912407
+
+δ₂ derivation:
+- model_id: two_defect_partition_g5_over_4
+- delta2: 0.000000018091459748867855014525576506215873427709357460729151458474190949106463016708746
+- delta2/(delta_top^2): 1.25
+- note: δ₂=(5/4)·δ_top² (g from two-defect sector enumeration; no continuous fit parameter)
+
+Two-defect sector enumeration:
+- effective multiplicity g: 5
+- equivalence classes:
+  - bound_color: category=bound, pair_count=3
+  - bound_weak: category=bound, pair_count=2
+  - seam_coupled_color_weak: category=seam_coupled, pair_count=6
+  - separated_color: category=separated, pair_count=3
+  - separated_weak: category=separated, pair_count=1
+
+Assumptions (explicit):
+- defect partition sector expansion is valid at the required order
+- two-defect occupancy retains the 1/2! combinatoric factor
+- two-defect multiplicity g is derived from SU(5) holonomy channel enumeration
+- two-defect sectors are classified by SU(5) holonomy channels and SM block structure
+- within-block permutations define equivalence classes (no continuous weights)
+- cross-block (color-weak) pairs encode APS seam coupling as a distinct sector
+- all equivalence classes contribute with equal discrete weight (no tuning)
+
+Metrology diagnostic (strict σ, CODATA α^{-1}(0)):
+- ref mean: 137.035999177 (sigma=0.000000021)
+- pred (self-consistent CFE+backreaction incl. δ₂): 137.03599921615843479026171751711397398605568500258186146747743646328176776397918
+- diff: 0.000000039158434790261717517113973986055685002581861467477436463281767763979177498090436
+- z: 1.8646873709648436912911416183836040477419934032132112601562746554275798808614493
+
+Checks:
+- delta2_is_derived_not_fitted: PASS (PASS: model_id=two_defect_partition_g5_over_4, delta2=0.000000018091459748867855014525576506215873427709357460729151458474190949106463016708746 (no continuous parameter))
+- delta2_multiplicity_derived_from_enumeration: PASS (PASS: g=5 from two-defect sector equivalence classes)
+- alpha_inv_0_within_2sigma: PASS (|z|=1.8646873709648436912911416183836040477419934032132112601562746554275798808614493 ≤ 2 (pred=137.03599921615843479026171751711397398605568500258186146747743646328176776397918, ref=137.035999177))

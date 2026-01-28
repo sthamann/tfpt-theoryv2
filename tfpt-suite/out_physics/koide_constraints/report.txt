@@ -1,0 +1,10 @@
+Koide constraints (charged leptons; diagnostic)
+
+input: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json
+m_e=0.0005109989461 GeV, m_mu=0.1056583745 GeV, m_tau=1.77686 GeV
+
+Q = 0.666660512411
+Q - 2/3 = -6.154e-06
+
+Checks:
+- koide_leptons_close_to_2_over_3: PASS (Q=0.666660512411, Q-2/3=-6.154e-06 (|dev|≤0.0001))

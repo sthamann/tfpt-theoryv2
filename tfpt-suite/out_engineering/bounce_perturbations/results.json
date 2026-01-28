@@ -1,0 +1,402 @@
+{
+  "checks": [
+    {
+      "check_id": "stability_F_positive",
+      "detail": "min F: full=0.826674, base=0.82668",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "background_constraint_residual_small",
+      "detail": "max |constraint|: full=5.329e-15, base=1.137e-13",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "scalar_T_high_k",
+      "detail": "high-k threshold uses k>=max(k_max/5,5*k_bounce_s)=5; mean=1, max|T_s-1|=0.0001287",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "tensor_T_high_k",
+      "detail": "high-k threshold uses k>=max(k_max/5,5*k_bounce_t)=5; mean=1.005, max|T_t-1|=0.006939",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "Wronskian_scalar",
+      "detail": "max |W_s/i - 1| (all k)=3.553e-15; (\u03c9^2>0 interval subset n=7)=2.220e-16",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "Wronskian_tensor",
+      "detail": "max |W_t/i - 1| (all k)=4.441e-16; (\u03c9^2>0 interval subset n=6)=2.220e-16",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "results": {
+    "T_scalar": [
+      4.0946573876242045,
+      1.7442386359650195,
+      0.10614543423614956,
+      0.00044788282288331876,
+      0.04003371900346194,
+      0.7406193742201974,
+      1.0232808080558207,
+      0.9945232440125472,
+      1.0055671593350006,
+      0.9996083862497241,
+      1.0001165239812677,
+      1.0001287411890198
+    ],
+    "T_tensor": [
+      392.1394715867728,
+      76.63274310424963,
+      9.315343603857109,
+      1.3098714426567832,
+      0.9695993812461268,
+      1.0219633262827892,
+      0.9983641042205876,
+      1.0018060525997965,
+      1.0000221465425017,
+      1.0023363080889538,
+      1.0069388750540451,
+      1.0021991983551168
+    ],
+    "Wronskian_scalar_over_i": [
+      1.0,
+      1.0,
+      1.0,
+      1.0000000000000036,
+      1.0000000000000004,
+      1.0000000000000002,
+      1.0000000000000002,
+      1.0,
+      1.0,
+      1.0,
+      1.0000000000000002,
+      1.0000000000000002
+    ],
+    "Wronskian_tensor_over_i": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0000000000000004,
+      1.0000000000000002,
+      1.0000000000000002,
+      1.0,
+      1.0,
+      1.0000000000000002,
+      1.0
+    ],
+    "background_baseline": {
+      "F_min": 0.8266800470881461,
+      "a_range": [
+        0.45852297186462465,
+        123.4607205335171
+      ],
+      "max_constraint_abs": 1.1368683772161603e-13,
+      "rho0": 0.0,
+      "tau_range": [
+        0.0,
+        120.0
+      ],
+      "tau_transition": 24.560000000000002
+    },
+    "background_full": {
+      "F_min": 0.8266739013658578,
+      "a_range": [
+        1.0,
+        123.46070894621006
+      ],
+      "max_constraint_abs": 5.329070518200751e-15,
+      "rho0": -12.0,
+      "tau_range": [
+        -25.0,
+        120.0
+      ],
+      "tau_transition": 24.560000000000002
+    },
+    "diagnostics": {
+      "U_s_max": 4424925.698064211,
+      "U_t_max": 60.96548308688132,
+      "high_k_max_abs_Ts_minus_1": 0.0001287411890198431,
+      "high_k_max_abs_Tt_minus_1": 0.006938875054045113,
+      "high_k_mean_Ts": 1.0001226325851438,
+      "high_k_mean_Tt": 1.004569036704581,
+      "ic_status_counts_scalar_full": {
+        "adiabatic": 12
+      },
+      "ic_status_counts_tensor_full": {
+        "adiabatic": 12
+      },
+      "k_bounce_s_est_raw": 2103.5507357951246,
+      "k_bounce_t_est_raw": 7.808039644294931,
+      "max_abs_Ws_over_i_minus_1": 3.552713678800501e-15,
+      "max_abs_Ws_over_i_minus_1_safe": 2.220446049250313e-16,
+      "max_abs_Wt_over_i_minus_1": 4.440892098500626e-16,
+      "max_abs_Wt_over_i_minus_1_safe": 2.220446049250313e-16,
+      "safe_scalar_k_count": 7,
+      "safe_tensor_k_count": 6,
+      "solver_counts_scalar_full": {
+        "symplectic": 12
+      }
+    },
+    "ic_status_scalar_baseline": [
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic"
+    ],
+    "ic_status_scalar_full": [
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic"
+    ],
+    "ic_status_tensor_baseline": [
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic"
+    ],
+    "ic_status_tensor_full": [
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic",
+      "adiabatic"
+    ],
+    "k_grid": [
+      0.1,
+      0.1519911082952934,
+      0.23101297000831597,
+      0.3511191734215131,
+      0.533669923120631,
+      0.8111308307896873,
+      1.232846739442066,
+      1.8738174228603839,
+      2.848035868435802,
+      4.328761281083059,
+      6.5793322465756825,
+      10.0
+    ],
+    "omega0_scalar_baseline": [
+      0.10005024434478199,
+      0.1520241704278704,
+      0.2310347240254453,
+      0.3511334864943205,
+      0.5336793402756291,
+      0.8111370266798446,
+      1.2328508159328864,
+      1.8738201049216494,
+      2.8480376330537354,
+      4.32876244208403,
+      6.579333010436853,
+      10.000000502569659
+    ],
+    "omega0_scalar_full": [
+      0.09952962898455689,
+      0.1516820491905194,
+      0.22998474759682133,
+      0.35044352720419464,
+      0.5316225578536331,
+      0.8089979110859249,
+      1.2298786197662261,
+      1.8668897448336932,
+      2.8576530686256874,
+      4.335094806498789,
+      6.583501011130745,
+      10.002743261362301
+    ],
+    "omega0_tensor_baseline": [
+      0.10049121243050176,
+      0.1512686000742394,
+      0.23053824992753733,
+      0.3501826063178,
+      0.5314917475405315,
+      0.8096993982446056,
+      1.2319054240537466,
+      1.8668009949966875,
+      2.841787948869833,
+      4.341857633968027,
+      6.587956154671432,
+      10.005676063367362
+    ],
+    "omega0_tensor_full": [
+      0.09988326724651224,
+      0.1519143313735402,
+      0.23096246315776353,
+      0.35108594534678367,
+      0.5355039862498767,
+      0.8083275653207027,
+      1.231004188113371,
+      1.872605661215104,
+      2.847238756426408,
+      4.328236876235353,
+      6.578987235056042,
+      9.999773008833737
+    ],
+    "plot": {
+      "T_of_k_png": "tfpt-suite/out_engineering/bounce_perturbations/T_of_k.png"
+    },
+    "solver_scalar_full": [
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic"
+    ],
+    "solver_tensor_full": [
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic",
+      "symplectic"
+    ],
+    "tfpt": {
+      "M_over_Mpl": 1.2564942083228448e-05
+    },
+    "x_end_scalar": 600.0,
+    "x_end_tensor": 9.355008180896753,
+    "x_start_scalar_baseline": [
+      -4625.695283780687,
+      -4625.695283780687,
+      -4625.695283780687,
+      -4625.695283780687,
+      -4625.695283780687,
+      -4625.695283780687,
+      -4625.695283780687,
+      -4625.695283780687,
+      -4625.695283780687,
+      -4625.695283780687,
+      -4625.695283780687,
+      -4625.695283780687
+    ],
+    "x_start_scalar_full": [
+      -4355.52758781652,
+      -4355.52758781652,
+      -4351.056947356153,
+      -4351.056947356153,
+      -4337.645025975048,
+      -4333.17438551468,
+      -4328.703745054311,
+      -4324.233104593943,
+      -4315.291823673207,
+      -4315.291823673207,
+      -4315.291823673207,
+      -4315.291823673207
+    ],
+    "x_start_tensor_baseline": [
+      3.103255197920717,
+      -6.088626097931996,
+      -6.088626097931996,
+      -13.62469505873503,
+      -15.089452124355901,
+      -15.089452124355901,
+      -15.089452124355901,
+      -16.405610647087702,
+      -16.883248820659723,
+      -17.169831724802936,
+      -17.169831724802936,
+      -17.169831724802936
+    ],
+    "x_start_tensor_full": [
+      -28.579544406056822,
+      -28.579544406056822,
+      -28.579544406056822,
+      -28.579544406056822,
+      -21.14530099301927,
+      -21.012546646357883,
+      -21.012546646357883,
+      -21.012546646357883,
+      -21.012546646357883,
+      -21.012546646357883,
+      -21.012546646357883,
+      -21.012546646357883
+    ]
+  },
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given the fixed background and solver tolerances.",
+    "formulas": [
+      "T(k) = |v_k(x_end)| / |v_k^{(R2)}(x_end)| (Appendix L definition, mapped to x)",
+      "tensor: z_t = a * sqrt(F)",
+      "scalar (f(R)): z_s = a * sqrt(Q_s), Q_s = 3 F'^2 / (2 F (H + F'/(2F))^2) (c_s^2=1)",
+      "adiabatic ICs at x_start: v=1/sqrt(2\u03c90), v'=-i \u03c90 v with \u03c90=sqrt(k^2-U(x_start))",
+      "Checks: T(k)->1 for k >> k_bounce; Wronskian ~ i conserved"
+    ],
+    "gaps": [],
+    "inputs": [
+      "Background (dimensionless): Starobinsky f(R)=R+R^2/(6M^2) in terms of F=df/dR plus a torsion proxy \u03c1~a^{-6}",
+      "Mode equation: v'' + (k^2 - z''/z) v = 0 (Appendix L); scalar and tensor z as in f(R)"
+    ],
+    "maturity": null,
+    "module_id": "bounce_perturbations",
+    "name": "Bounce perturbations (f(R) z(\u03b7) + background ODE + transfer function T(k))",
+    "objective": [],
+    "outputs": [
+      "transfer function T(k)",
+      "Wronskian conservation diagnostics"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "T(k) approaches 1 for large k (numerically)",
+      "Wronskian deviation small across k-grid",
+      "stability: F>0 and f''(R)>0 (Starobinsky)"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

@@ -1,0 +1,117 @@
+{
+  "checks": [
+    {
+      "check_id": "aps_spectral_flow_m1",
+      "detail": "m=1 periodic: numeric_sf=1, winding=1",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "delta_gamma_equals_2pi",
+      "detail": "\u0394\u0393=2\u03c0\u00b7SF with SF=1 \u21d2 \u0394\u0393=6.28318530717958647692528676655900576839433879875021164194989",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "K_candidate_equals_4pi_minus_1",
+      "detail": "K_candidate=2\u0394\u0393\u22121=11.5663706143591729538505735331180115367886775975004232838998 (vs 4\u03c0\u22121)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "omega_b_pred_positive",
+      "detail": "\u03a9_b_pred=0.0489406626654501122005456537609446514800549520731074138705566",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "omega_b_pred_close_to_planck_ref_diagnostic",
+      "detail": "\u03a9_b_ref=0.0493016923285244384764247549946118561732330555571227876168607 \u00b1 0.000856811427471409315098354041123786357060934999646892375524002; z=0.421364201618766770003679733207974465875667567538595875138153",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "ux_omega_b_aps_bridge",
+  "plot": {
+    "omega_b_aps_bridge_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/unconventional/ux_omega_b_aps_bridge/omega_b_aps_bridge.png"
+  },
+  "results": {
+    "aps_seam": {
+      "delta_gamma": "6.28318530717958647692528676655900576839433879875021164194989",
+      "epsilon": 0.001,
+      "m": 1,
+      "spectral_flow": 1,
+      "spin": "periodic",
+      "winding": 1
+    },
+    "bridge": {
+      "K_candidate": "11.5663706143591729538505735331180115367886775975004232838998",
+      "assumptions": [
+        {
+          "id": "aps_seam_term_toy_model",
+          "statement": "Use the 1D Dirac-family toy model of the seam operator (Appendix seam) where \u0394\u0393 := 2\u03c0\u00b7SF(U_\u0393) for U_\u0393(\u03b8)=exp(i m \u03b8).",
+          "status": "implemented (see aps_eta_gluing)"
+        },
+        {
+          "id": "minimal_nontrivial_class_m_eq_1",
+          "statement": "Use the minimal nontrivial winding class m=1 (so SF=1 in the toy model).",
+          "status": "checked in aps_eta_gluing (minimal m with SF>0 is 1)"
+        },
+        {
+          "id": "omega_b_coeff_equals_2_delta_gamma_minus_1",
+          "statement": "Bridge postulate: the baryon coefficient K := \u03a9_b/\u03b2_rad equals (2\u00b7\u0394\u0393 \u2212 1) in the same normalization.",
+          "status": "conditional / to be replaced by an operator/anomaly-level derivation"
+        }
+      ],
+      "conditional": true,
+      "omega_b_pred": "0.0489406626654501122005456537609446514800549520731074138705566"
+    },
+    "plot": {
+      "omega_b_aps_bridge_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/unconventional/ux_omega_b_aps_bridge/omega_b_aps_bridge.png"
+    },
+    "reference": {
+      "file": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/tfpt_suite/data/global_reference_minimal.json",
+      "implied_K": "11.6516944056294290437972588436586479652968822192758501048575",
+      "omega_b_ref": "0.0493016923285244384764247549946118561732330555571227876168607",
+      "sigma_implied_K": "0.202494162870185146181656267093038443729599797285532791967331",
+      "sigma_omega_b_ref": "0.000856811427471409315098354041123786357060934999646892375524002",
+      "z_score": "0.421364201618766770003679733207974465875667567538595875138153"
+    },
+    "tfpt": {
+      "beta_rad": "0.00423128951139541510874681820880501639507280772668372576989442"
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic; no randomness.",
+    "formulas": [
+      "APS seam term (toy-model): \u0394\u0393 = 2\u03c0 \u00b7 SF(U_\u0393), with minimal nontrivial class m=1 \u21d2 SF=1 \u21d2 \u0394\u0393=2\u03c0",
+      "bridge (conditional): K_candidate = 2\u00b7\u0394\u0393 \u2212 1  (\u21d2 4\u03c0 \u2212 1)",
+      "\u03a9_b_pred = K_candidate \u00b7 beta_rad"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT beta_rad = varphi0/(4\u03c0) from constants.py",
+      "APS seam toy-model: spectral flow SF(U_\u0393) for U_\u0393(\u03b8)=exp(i m \u03b8) (module `aps_eta_gluing`)",
+      "Planck 2018 reference (\u03a9_b h^2 and H0) for a diagnostic implied coefficient K := \u03a9_b/beta_rad"
+    ],
+    "maturity": null,
+    "module_id": "ux_omega_b_aps_bridge",
+    "name": "Unconventional: \u03a9_b coefficient bridge via APS seam term (\u0394\u0393)",
+    "objective": [],
+    "outputs": [
+      "\u0394\u0393 from APS spectral flow (m=1)",
+      "candidate coefficient K_candidate := 2\u00b7\u0394\u0393 \u2212 1",
+      "\u03a9_b prediction using K_candidate (diagnostic vs Planck-derived \u03a9_b)"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "show numerically that K_candidate equals (4\u03c0\u22121) once \u0394\u0393=2\u03c0 is fixed by the spectral-flow computation",
+      "report agreement vs Planck-derived \u03a9_b as diagnostic only"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

@@ -1,0 +1,152 @@
+{
+  "checks": [
+    {
+      "check_id": "upstream_ckm_present",
+      "detail": "ckm_full_pipeline/results.json present",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "upstream_pmns_present",
+      "detail": "pmns_full_pipeline/results.json present",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "topology_phase_map_present",
+      "detail": "topology_phase_map/results.json present",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "ckm_variants_present",
+      "detail": "4 CKM variants available",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "pmns_chi2_present",
+      "detail": "chi2_pmns_mt=5.522808653313003",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "joint_objective_computed",
+      "detail": "4 rows; best=topology_delta_cp_1",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "joint_search_space_is_discrete",
+      "detail": "objective aggregates discrete upstream scans; no continuous fitter",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "joint_pvalue_ok",
+      "detail": "p=0.40589333014494705 chi2=13.55525062137716 dof=13",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "results": {
+    "best": {
+      "chi2_ckm_refscale": 8.032441968064157,
+      "chi2_pmns_mt": 5.522808653313003,
+      "delta_mode": "external_delta_cp_override",
+      "label": "topology_delta_cp_1",
+      "objective": 13.55525062137716,
+      "s13_mode": "A_lam3_times_1_minus_delta",
+      "w_pmns": 1.0
+    },
+    "ckm": {
+      "variants": [
+        {
+          "chi2_ckm_refscale": 8.032441968064157,
+          "chi2_pmns_mt": 5.522808653313003,
+          "delta_mode": "external_delta_cp_override",
+          "label": "topology_delta_cp_1",
+          "objective": 13.55525062137716,
+          "s13_mode": "A_lam3_times_1_minus_delta",
+          "w_pmns": 1.0
+        },
+        {
+          "chi2_ckm_refscale": 8.032441968064157,
+          "chi2_pmns_mt": 5.522808653313003,
+          "delta_mode": "external_delta_cp_override",
+          "label": "topology_delta_cp_2",
+          "objective": 13.55525062137716,
+          "s13_mode": "A_lam3_times_1_minus_delta",
+          "w_pmns": 1.0
+        },
+        {
+          "chi2_ckm_refscale": 362.26400002609626,
+          "chi2_pmns_mt": 5.522808653313003,
+          "delta_mode": "external_delta_cp_override",
+          "label": "topology_delta_cp_4",
+          "objective": 367.78680867940926,
+          "s13_mode": "A_lam3_times_1_minus_delta",
+          "w_pmns": 1.0
+        },
+        {
+          "chi2_ckm_refscale": 362.2640000262289,
+          "chi2_pmns_mt": 5.522808653313003,
+          "delta_mode": "external_delta_cp_override",
+          "label": "topology_delta_cp_3",
+          "objective": 367.78680867954193,
+          "s13_mode": "A_lam3_times_1_minus_delta",
+          "w_pmns": 1.0
+        }
+      ]
+    },
+    "joint": {
+      "chi2": 13.55525062137716,
+      "dof_proxy": 13,
+      "p_value": 0.40589333014494705
+    },
+    "mode": "engineering",
+    "pmns": {
+      "chi2_mt": 5.522808653313003
+    },
+    "topology_docking": {
+      "pairs": 14
+    },
+    "weights": {
+      "w_pmns": 1.0
+    }
+  },
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given upstream artifacts.",
+    "formulas": [
+      "objective = chi2_ckm_refscale + w_pmns * chi2_pmns_mt + penalties"
+    ],
+    "gaps": [
+      "Full topology\u2192phase map integration requires wiring topology_phase_map candidates into the CKM/PMNS generators (currently this module aggregates the existing discrete scans)."
+    ],
+    "inputs": [
+      "upstream module outputs in out/: ckm_full_pipeline/results.json, pmns_full_pipeline/results.json",
+      "topology_phase_map/results.json (discrete candidate set size; docking point)"
+    ],
+    "maturity": null,
+    "module_id": "flavor_joint_objective_scan",
+    "name": "Flavor joint objective scan (CKM + PMNS \u03c7\u00b2 aggregation; discrete wiring)",
+    "objective": [
+      "Provide a single joint score used by Physics-mode gates (prevents two separate heuristic narratives).",
+      "Keep the search space strictly discrete (no free floats)."
+    ],
+    "outputs": [
+      "joint objective table over discrete CKM variants (\u03c7\u00b2_CKM + w\u00b7\u03c7\u00b2_PMNS + penalties)",
+      "best candidate under the declared objective",
+      "diagnostic joint p-value"
+    ],
+    "question": "Given the discrete CKM variants and the PMNS best convention, what is the joint objective and which discrete variant wins?",
+    "references": [],
+    "validation": [
+      "objective is finite and computed from discrete upstream variants (no continuous fitter)",
+      "module is explicit about missing upstream artifacts"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

@@ -1,0 +1,217 @@
+{
+  "checks": [
+    {
+      "check_id": "bounce_scale_loaded",
+      "detail": "k_bounce_s_raw=2103.5507357951246, k_bounce_t_raw=7.808039644294931 (live output: tfpt-suite/out_engineering/bounce_perturbations/results.json)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "chi_star_computed",
+      "detail": "chi_star(z*=1090.0) = 13867.328 Mpc (flat \u039bCDM)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "ell_bounce_finite",
+      "detail": "ell_bounce_naive scalar=1.396e+59, tensor=5.180e+56",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "expansion_budget_estimate_present",
+      "detail": "a0/a_transition = (a0/a_reh)*(a_reh/a_end)*exp(N_inflation_from_transition); transition=horizon_exit_of_pivot; a0/a_transition(est)=1.137e+54 (N_infl=56.98005698005695, N_reh=7.332830190071914, T_reh=1.000e+13 GeV)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "ell_range_covers_cmb_scales_scalar_est",
+      "detail": "scalar ell range \u2248[0.0123, 1.23e+06] from k_hat\u2208[1e-07, 10.0] (source=config) vs target [2.0,2500.0]",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "ell_range_covers_cmb_scales_tensor_est",
+      "detail": "tensor ell range \u2248[4.56e-05, 4.56e+03] from k_hat\u2208[1e-07, 10.0] (source=config) vs target [2.0,2500.0]",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "results": {
+    "assumptions": {
+      "N_inflation_from_transition": 56.98005698005695,
+      "N_reheat": 7.332830190071914,
+      "T_reheat_GeV": 10000000000000.0,
+      "a0_over_a_transition": null,
+      "ell_targets": [
+        2.0,
+        30.0,
+        700.0
+      ],
+      "g_star_s_reheat": 120.0,
+      "g_star_s_today": 3.91,
+      "reheating_policy_v106": {
+        "A_s": 2.0989031673191437e-09,
+        "N_pivot": 56.98005698005695,
+        "c_end": 0.35,
+        "deltaN": -1.8332075475179785,
+        "g_star_reheat": 120.0,
+        "ln10_As": 3.044,
+        "n_s": 0.9649,
+        "r": 0.003696030000000004,
+        "reference_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json",
+        "rho_end_GeV4": 1.4131322296364145e+63,
+        "rho_reh_GeV4": 3.9478417604357435e+53,
+        "w_reh": 0.0
+      },
+      "transition": "horizon_exit_of_pivot"
+    },
+    "bounce": {
+      "k_bounce_s_est_raw": 2103.5507357951246,
+      "k_bounce_t_est_raw": 7.808039644294931
+    },
+    "bounce_source": "live output: tfpt-suite/out_engineering/bounce_perturbations/results.json",
+    "calibrated": {
+      "ell_bounce_s": null,
+      "ell_bounce_t": null
+    },
+    "config_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json",
+    "constants": {
+      "GeV_to_Mpc_inv": 1.563738306457847e+38,
+      "M_GeV": 30595633972661.273,
+      "M_over_Mpl": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+      "Mpl_reduced_GeV": 2.435e+18
+    },
+    "cosmology": {
+      "H0_km_s_Mpc": 67.36,
+      "Omega_L": 0.684608,
+      "Omega_m": 0.3153,
+      "Omega_r": 9.2e-05,
+      "chi_star_Mpc": 13867.328294431452,
+      "z_star": 1090.0
+    },
+    "expansion_budget_estimate": {
+      "N_inflation_from_transition": 56.98005698005695,
+      "N_reheat": 7.332830190071914,
+      "T_reheat_GeV": 10000000000000.0,
+      "a0_over_a_end": 2.039185694937043e+29,
+      "a0_over_a_reheat": 1.3330581290412308e+26,
+      "a0_over_a_transition": 1.1365305153366452e+54,
+      "ell_bounce_s": 122797.13075793507,
+      "ell_bounce_t": 455.80306138953443,
+      "ell_range_est": {
+        "ell_scalar_range": [
+          0.012279713075793505,
+          1227971.307579351
+        ],
+        "ell_tensor_range": [
+          4.558030613895344e-05,
+          4558.030613895345
+        ],
+        "k_hat_grid": [
+          1e-07,
+          10.0
+        ],
+        "k_hat_grid_source": "config"
+      },
+      "g_star_s_reheat": 120.0,
+      "g_star_s_today": 3.91,
+      "note": "a0/a_transition = (a0/a_reh)*(a_reh/a_end)*exp(N_inflation_from_transition); transition=horizon_exit_of_pivot",
+      "transition": "horizon_exit_of_pivot"
+    },
+    "naive": {
+      "ell_bounce_s": 1.3956268630217736e+59,
+      "ell_bounce_t": 5.180340882530681e+56,
+      "k_bounce_s_Mpc_inv": 1.0064136605045975e+55,
+      "k_bounce_t_Mpc_inv": 3.7356445109984827e+52
+    },
+    "plot": {
+      "k_calibration_scaling_png": "tfpt-suite/out_engineering/k_calibration/k_calibration_scaling.png"
+    },
+    "required_scaling": {
+      "scalar": [
+        {
+          "N_needed": 135.49271698460154,
+          "a0_over_a_transition_needed": 6.978134315108868e+58,
+          "ell_target": 2.0
+        },
+        {
+          "N_needed": 132.78466678349935,
+          "a0_over_a_transition_needed": 4.652089543405912e+57,
+          "ell_target": 30.0
+        },
+        {
+          "N_needed": 129.6347838301181,
+          "a0_over_a_transition_needed": 1.9937526614596766e+56,
+          "ell_target": 700.0
+        }
+      ],
+      "tensor": [
+        {
+          "N_needed": 129.89648888865113,
+          "a0_over_a_transition_needed": 2.5901704412653403e+56,
+          "ell_target": 2.0
+        },
+        {
+          "N_needed": 127.18843868754894,
+          "a0_over_a_transition_needed": 1.7267802941768936e+55,
+          "ell_target": 30.0
+        },
+        {
+          "N_needed": 124.03855573416769,
+          "a0_over_a_transition_needed": 7.400486975043829e+53,
+          "ell_target": 700.0
+        }
+      ]
+    }
+  },
+  "spec": {
+    "assumptions": [
+      "Flat \u039bCDM distance model for \u03c7_* (no full Boltzmann transfer function).",
+      "Bounce solver outputs k_bounce in x=M\u03b7 units; absolute normalization requires a0/a_transition policy.",
+      "Reheating policy (when enabled) uses v1.06 \u0394N/N_reh formulas and Planck (n_s, A_s) as external anchors."
+    ],
+    "determinism": "Deterministic given inputs (no stochastic sampling).",
+    "formulas": [
+      "x = M \u03b7, so dimensionless k = k_com/M in the mode equation in x-units",
+      "\u2113 \u2248 k(Mpc^{-1}) \u00b7 \u03c7_*(Mpc)",
+      "If absolute scale-factor normalization is unknown, infer the required a0/a_transition to map \u2113_bounce to a target \u2113"
+    ],
+    "gaps": [
+      "Full TFPT closure requires deriving reheating temperature/history from TFPT thresholds (MSigma/MG8/\u2026) instead of assuming it.",
+      "A publication-grade \u2113 prediction needs a full transfer-function calculation and explicit observational target policy (CMB vs small-scale probes)."
+    ],
+    "inputs": [
+      "bounce diagnostics: out/bounce_perturbations/results.json (preferred) or tfpt_suite/data/k_calibration.json (fallback)",
+      "TFPT R^2 scale: M/Mpl (to set x=M\u03b7 units)",
+      "flat \u039bCDM distance model for \u03c7_*"
+    ],
+    "maturity": "assumption-explicit bridge (policy-derived; not yet threshold-derived)",
+    "module_id": "k_calibration",
+    "name": "k calibration: map bounce k-scale to CMB multipoles (assumption-explicit)",
+    "objective": [
+      "Quantify the missing scale-factor budget needed to place bounce features into a chosen \u2113 window (e.g. CMB).",
+      "Provide an assumption-explicit a0/a_transition estimate; optionally derive (N, N_reh) via the v1.06 reheating policy."
+    ],
+    "outputs": [
+      "\u03c7_*(z_*)",
+      "naive \u2113_bounce estimate",
+      "required a0/a_transition scaling to place bounce features at target \u2113"
+    ],
+    "question": "How do the dimensionless bounce k-scales map to observable CMB multipoles once we make the scale-factor normalization (a0/a_transition) explicit?",
+    "references": [
+      "tfpt_suite/cosmo_scale_map.py (entropy mapping + v1.06 reheating helpers)",
+      "tfpt_suite/data/k_calibration.json (explicit assumptions incl. reheating_policy_v106)"
+    ],
+    "validation": [
+      "produces \u03c7_* and a finite \u2113_bounce estimate",
+      "reports required scaling for target multipoles"
+    ],
+    "what_was_done": [
+      "Load bounce diagnostics (preferred: live module output) and compute the naive \u2113 mapping.",
+      "Compute \u03c7_* in a flat \u039bCDM snapshot and translate k to \u2113 via \u2113\u2248k\u03c7_*.",
+      "Optionally derive reheating expansion using `assumptions.reheating_policy_v106` (n_s\u2192N and \u03c1_end/\u03c1_reh\u2192N_reh), then compute an entropy-based a0/a_transition estimate."
+    ]
+  },
+  "warnings": []
+}

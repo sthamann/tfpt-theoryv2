@@ -1,0 +1,74 @@
+{
+  "checks": [
+    {
+      "check_id": "cgb_tensor_ratio_below_cmb_bound",
+      "detail": "r(N=56.9801)=0.00369603 < r_95%=0.056 (declared bound)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "pta_gw_background_below_bound_proxy",
+      "detail": "Omega_gw\u22482.97e-17 < PTA bound~1e-09 (baseline)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "ligo_gw_background_below_bound_proxy",
+      "detail": "Omega_gw\u22482.97e-17 < LIGO bound~1e-08 (baseline)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "gw_background_bounds",
+  "plot": null,
+  "results": {
+    "bounds_proxy": {
+      "ligo": 1e-08,
+      "pta": 1e-09
+    },
+    "inputs": {
+      "global_reference_minimal_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json",
+      "k_calibration_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json"
+    },
+    "mode": "engineering",
+    "omega_gw_baseline": 2.97375014484419e-17,
+    "policy": {
+      "A_s_ref": 2.0989031673191437e-09,
+      "N": 56.98005698005695,
+      "n_s_ref": 0.9649,
+      "r_formula": "12/N^2 (Starobinsky large-N)"
+    },
+    "r": {
+      "bound_95": 0.056,
+      "passes": true,
+      "value": 0.003696030000000004
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given declared N and bound.",
+    "formulas": [
+      "Starobinsky (R^2) inflation: r \\approx 12/N^2 (for large N)."
+    ],
+    "gaps": [
+      "A publication-grade GW background module must map k\u2192f, include transfer functions, reheating history, and compare \u2126_gw(f) to PTA/LIGO/CMB constraints."
+    ],
+    "inputs": [],
+    "maturity": null,
+    "module_id": "gw_background_bounds",
+    "name": "GW background bounds (CMB r check + PTA placeholder; bounce-aware ledger)",
+    "objective": [],
+    "outputs": [
+      "CMB tensor-ratio bound check (r)",
+      "PTA\u2192CMB stochastic GW background bound ledger (placeholder; requires transfer function + cosmology history)"
+    ],
+    "question": "Are TFPT\u2019s tensor predictions consistent with current CMB bounds, and are GW background bounds implemented?",
+    "references": [],
+    "validation": [
+      "r must satisfy the declared CMB upper bound."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

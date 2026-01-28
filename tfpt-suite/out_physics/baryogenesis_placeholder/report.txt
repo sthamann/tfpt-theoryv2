@@ -1,0 +1,11 @@
+Baryogenesis placeholder (alias to baryogenesis_mechanism)
+
+mode=physics
+
+Status: implemented via baryogenesis_mechanism
+
+Delegated result (from baryogenesis_mechanism):
+- inputs_loaded: PASS (M1=1e+14 GeV, m_eV=[0.0, 0.008602325267042627, 0.05], beta_rad=0.00423129)
+- leptogenesis_proxy: PASS (eps1_max≈0.00493, eps1≈2.09e-05, K≈46.3, kappa≈0.00289)
+- eta_b_target: PASS (eta_b(obs)≈6.13e-10 from Ω_b h^2=0.02237)
+- eta_b_match: PASS (eta_b≈5.79e-10 matches within 0.5 dex (log10 ratio≈-0.0243, z≈-0.109))

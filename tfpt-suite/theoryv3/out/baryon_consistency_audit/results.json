@@ -1,0 +1,136 @@
+{
+  "checks": [
+    {
+      "check_id": "omega_b_within_2sigma",
+      "detail": "z=-0.42136420161877963",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "eta_b_within_0p5_dex",
+      "detail": "log10 mismatch=-0.024251277714995013",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "H0_within_2sigma",
+      "detail": "z_planck=-2.9880212073872032",
+      "passed": true,
+      "severity": "WARN"
+    },
+    {
+      "check_id": "H0_tension_indicator",
+      "detail": "z_alt=-7.013011011527977 (alt=73.04 \u00b1 1.04; planck=67.36 \u00b1 0.54)",
+      "passed": true,
+      "severity": "INFO"
+    }
+  ],
+  "module_id": "baryon_consistency_audit",
+  "plot": {
+    "baryon_consistency_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/baryon_consistency_audit/baryon_consistency.png"
+  },
+  "results": {
+    "H0_pred": 65.74646854801091,
+    "H0_ref_set": {
+      "alt": {
+        "sigma": 1.04,
+        "value": 73.04
+      },
+      "planck": {
+        "sigma": 0.54,
+        "value": 67.36
+      }
+    },
+    "H0_z_alt": -7.013011011527977,
+    "H0_z_planck": -2.9880212073872032,
+    "eta10_pred": 5.794376870756092,
+    "eta_b_log10_mismatch": -0.024251277714995013,
+    "eta_b_pred": 5.794376870756092e-10,
+    "eta_b_ref": 6.127143e-10,
+    "h_pred": 0.6574646854801091,
+    "omega_b_h2_pred": 0.021155081674903587,
+    "omega_b_pred": 0.04894066266545011,
+    "omega_b_ref": 0.049301692328524445,
+    "omega_b_sigma": 0.0008568114274714094,
+    "omega_b_z": -0.42136420161877963,
+    "plot": {
+      "baryon_consistency_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/baryon_consistency_audit/baryon_consistency.png"
+    },
+    "references": {
+      "H0_planck2018": {
+        "dataset_id": "H0_planck2018",
+        "notes": "H0 from Planck 2018 base LCDM.",
+        "sigma": 0.54,
+        "source": "global_reference_minimal.json:observables.H0_planck2018_km_s_Mpc",
+        "units": "km s^-1 Mpc^-1",
+        "value": 67.36,
+        "version": "Planck 2018"
+      },
+      "H0_sh0es_2022": {
+        "dataset_id": "H0_sh0es_2022",
+        "notes": "Local distance-ladder H0 from SH0ES 2022.",
+        "sigma": 1.04,
+        "source": "Riess et al. 2022 (ApJ 934 L7)",
+        "units": "km s^-1 Mpc^-1",
+        "value": 73.04,
+        "version": "SH0ES 2022"
+      },
+      "omega_b_h2_planck2018": {
+        "dataset_id": "omega_b_h2_planck2018",
+        "notes": "Omega_b h^2 (base LCDM).",
+        "sigma": 0.00015,
+        "source": "global_reference_minimal.json:observables.omega_b_h2_planck2018",
+        "units": "dimensionless",
+        "value": 0.02237,
+        "version": "Planck 2018"
+      }
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given inputs.",
+    "formulas": [
+      "Omega_b = (4*pi - 1) * beta_rad",
+      "eta10 = 273.9 * omega_b_h2",
+      "eta_b = 0.96e-2 * eps1 * kappa_eff",
+      "eta10_pred = 1e10 * eta_b_pred",
+      "omega_b_h2_pred = eta10_pred / 273.9",
+      "H0 = 100 * sqrt((eta10_pred/273.9) / Omega_b_pred)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT invariants (beta_rad)",
+      "Planck omega_b_h2 and H0 references",
+      "Alternative H0 reference (SH0ES)",
+      "seesaw thresholds and neutrino masses (eta_b proxy)"
+    ],
+    "maturity": null,
+    "module_id": "baryon_consistency_audit",
+    "name": "Baryon consistency audit (Omega_b, eta_b, derived H0)",
+    "objective": [
+      "Expose the Omega_b identity and baryogenesis proxy in one audit.",
+      "Quantify the implied H0 from internal TFPT quantities."
+    ],
+    "outputs": [
+      "Omega_b = (4*pi - 1) * beta_rad",
+      "eta_b proxy (leptogenesis-style)",
+      "eta10_pred = 1e10 * eta_b_pred",
+      "omega_b_h2_pred = eta10_pred / 273.9",
+      "derived H0 from Omega_b and eta_b"
+    ],
+    "question": "Do baryon observables self-consistently close using beta_rad?",
+    "references": [
+      "H0_planck2018",
+      "H0_sh0es_2022",
+      "omega_b_h2_planck2018"
+    ],
+    "validation": [
+      "Omega_b within 2 sigma of reference",
+      "eta_b within 0.5 dex of Planck anchor",
+      "H0 within 2 sigma of Planck anchor (derived check)"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

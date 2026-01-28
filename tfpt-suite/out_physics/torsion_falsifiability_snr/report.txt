@@ -1,0 +1,22 @@
+Torsion falsifiability (explicit source + noise model; SNR gate)
+
+mode=physics
+policy=/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/torsion_falsifiability_noise_v1.json
+M_eff(TFPT_M)≈3.060e+13 GeV, k=3/4, GeV→Hz=2.418e+23
+noise_policy: {'lab_frequency_shift_proxy': {'kind': 'frequency_shift', 'sigma_nu_Hz': 1e-09, 'sigma_nu_ref_Hz': None, 'f_ref_Hz': None, 'gamma': None, 'f_signal_Hz': None, 'bandwidth_Hz': None, 'note': 'Lab proxy: nHz-level frequency shift sensitivity (order-of-magnitude). Replace with a real comagnetometer / NMR noise model when available.'}, 'magnetar_timing_proxy': {'kind': 'frequency_psd', 'sigma_nu_Hz': 3.16227766016838e-10, 'sigma_nu_ref_Hz': 1e-05, 'f_ref_Hz': 1e-08, 'gamma': 4.33, 'f_signal_Hz': 1e-08, 'bandwidth_Hz': 1e-09, 'note': 'Astro noise model: frequency-dependent PSD inspired by PTA timing-residual spectra. sigma_nu_ref is defined at f_ref, with sigma_nu(f)=sigma_nu_ref*(f/f_ref)^(-gamma/2)*sqrt(bandwidth). Parameters are anchored to NANOGrav/PPTA red-noise slopes (γ≈13/3) as an explicit, replaceable proxy.'}}
+
+Derived source model (magnetar electron polarization):
+- B=1.000e+15 G (1.000e+11 T), T=1.000e+06 K => μ_B B/(k_B T)≈6.717e+04 => P≈tanh(...)=1
+- n_b≈0.16 fm^-3, Y_e≈0.1 => n_e≈0.016 fm^-3 => 1.229e-04 GeV^3
+
+Channels:
+- lab_frequency_shift_proxy: Δν≈2.084e-23 Hz, σν≈1.000e-09 Hz => SNR≈2.08e-14 (Lab (He-3 benchmark) — frequency shift proxy)
+- magnetar_timing_proxy: Δν≈2.382e-08 Hz, σν≈3.162e-10 Hz => SNR≈75.3 (Magnetar proxy (electron polarization) — timing/polarimetry frequency shift)
+
+Checks:
+- torsion_falsifiability_snr_table_present: PASS (rows=2 policy=/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/torsion_falsifiability_noise_v1.json)
+- noise_psd_frequency_dependent: PASS (channels=['magnetar_timing_proxy'])
+- source_model_derived_not_benchmark: PASS (magnetar P=tanh(mu_B*B/(k_B*T)) => P≈1 (B=1.000e+15 G, T=1.000e+06 K, Ye=0.1))
+- lab_channel_measurable_under_realistic_noise: PASS (SNR≈2.084e-14 (<5; lab channel not measurable under current TFPT-scale coupling assumptions))
+- astro_channel_measurable_under_realistic_noise: PASS (SNR≈75.3 (≥5))
+- go_no_go_snr_ge_5: PASS (PASS: at least one channel has SNR≥5)

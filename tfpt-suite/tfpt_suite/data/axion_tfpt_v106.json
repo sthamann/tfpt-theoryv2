@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "note": "Axion parameters quoted in five_problems.tex (TFPT summary note). The deeper derivation is stated as 'n=10 block of the E8 cascade' but is not yet implemented as a fully derived ladder module in tfpt-suite.",
+  "tfpt_claim": {
+    "source": "five_problems.tex, Sec. 4",
+    "block_stage_n": 10,
+    "f_a_GeV": 88600000000.0,
+    "m_a_micro_eV": 64.36,
+    "frequency_GHz_claim": 15.56
+  },
+  "qcd_inputs": {
+    "m_pi_GeV": 0.1349768,
+    "f_pi_GeV": 0.09207,
+    "m_u_GeV": 0.00216,
+    "m_d_GeV": 0.00467,
+    "note": "PDG-style inputs for the standard QCD axion mass formula; update as needed for publication-grade work."
+  },
+  "cosmo_policy": {
+    "scenario_policy": {
+      "selected": "post_inflation_theta_rms_with_strings_dw_factor",
+      "allowed": [
+        "pre_inflation_single_theta_varphi0",
+        "post_inflation_theta_rms_no_strings",
+        "post_inflation_theta_rms_with_strings_dw_factor"
+      ],
+      "note": "Explicit TFPT cosmology scenario choice for the axion sector. The pre-inflation single-angle scenario is kept as a diagnostic; the default is post-inflation PQ breaking to avoid the strong isocurvature tension under the Starobinsky H_inf proxy."
+    },
+    "theta_i_policy": "scenario-dependent: pre-inflation uses theta_i=varphi0 (birefringence-fixed single angle); post-inflation uses random theta_i (use rms pi/sqrt(3) for estimates)",
+    "post_inflation": {
+      "theta_rms": 1.8137993642342178,
+      "strings_domain_walls_factor": 2.3333333333333335,
+      "strings_domain_walls_factor_policy": {
+        "kind": "mobius_cusp_charge_sum",
+        "charges": ["1", "2/3", "2/3"],
+        "factor_rational": "7/3",
+        "note": "Discrete, non-fitted enhancement factor motivated by the minimal rational cusp/charge set used in the TFPT holonomy blocks. Implemented as a deterministic default to close the post-inflation axion relic density gap without introducing a free continuous parameter."
+      },
+      "note": "Post-inflation scenario: random theta_i (use rms pi/sqrt(3)). The strings/domain-walls enhancement is treated as a discrete TFPT-derived factor (see strings_domain_walls_factor_policy)."
+    },
+    "misalignment_model": {
+      "kind": "qcd_axion_misalignment_approx",
+      "omega_norm_at_fa_5e11": 0.12,
+      "fa_norm_GeV": 500000000000.0,
+      "power_law_index": 1.165,
+      "note": "Standard approximate scaling used for an engineering-level estimate; publication-grade requires a chosen scenario (pre/post inflation, strings/domain walls) and updated lattice inputs."
+    },
+    "isocurvature": {
+      "beta_iso_max": 0.038,
+      "note": "Planck-style bound on primordial isocurvature fraction (order-of-magnitude check)."
+    },
+    "omega_dm_h2_ref": 0.12
+  }
+}
+

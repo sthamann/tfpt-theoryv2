@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "vetted": true,
+  "mode": "data",
+  "note": "Configuration and dataset for the birefringence_tomography module. This file ships with published CMB cosmic birefringence (global rotation) angle constraints. For publication-grade work, extend with a documented likelihood model (correlations/systematics) and additional tomographic points once vetted multi-z constraints are available.",
+  "tfpt_prior": {
+    "note": "Placeholder TFPT prior for the step location/width (z_c, w). Until a ladder/holonomy mechanism fixes a physical z_c, treat this as a *structured hypothesis* rather than a derivation.",
+    "z_c": 0.7,
+    "w": 0.15
+  },
+  "synthetic": {
+    "z_max": 5.0,
+    "n_pts": 60,
+    "truth_model": "step",
+    "truth_params": { "z_c": 0.7, "w": 0.15 },
+    "noise_sigma_fraction_of_beta_inf": 0.06,
+    "calibration_prior_sigma_deg": 0.05
+  },
+  "data": {
+    "units": "degrees",
+    "calibration_prior_mean_deg": 0.0,
+    "calibration_prior_sigma_deg": 0.10,
+    "points": [
+      {
+        "dataset": "Radio source 3C 47 S (Galaverni et al. 2014, Table 3)",
+        "z": 0.425,
+        "beta_deg": 2.0,
+        "sigma_deg": 2.0,
+        "source": "Galaverni et al. 2014, Table 3 (radio source single-point constraint)."
+      },
+      {
+        "dataset": "Radio source 3C 244.1 (Galaverni et al. 2014, Table 3)",
+        "z": 0.428,
+        "beta_deg": 1.0,
+        "sigma_deg": 9.0,
+        "source": "Galaverni et al. 2014, Table 3 (radio source single-point constraint)."
+      },
+      {
+        "dataset": "Radio source 3C 228 (Galaverni et al. 2014, Table 3)",
+        "z": 0.5524,
+        "beta_deg": 13.0,
+        "sigma_deg": 20.0,
+        "source": "Galaverni et al. 2014, Table 3 (radio source single-point constraint)."
+      },
+      {
+        "dataset": "Radio source 3C 34 (Galaverni et al. 2014, Table 3)",
+        "z": 0.6897,
+        "beta_deg": -8.0,
+        "sigma_deg": 12.0,
+        "source": "Galaverni et al. 2014, Table 3 (radio source single-point constraint)."
+      },
+      {
+        "dataset": "Radio source 3C 265 (Galaverni et al. 2014, Table 3)",
+        "z": 0.8108,
+        "beta_deg": 0.0,
+        "sigma_deg": 10.0,
+        "source": "Galaverni et al. 2014, Table 3 (radio source single-point constraint)."
+      },
+      {
+        "dataset": "ACT DR6",
+        "z": 1100.0,
+        "beta_deg": 0.215,
+        "sigma_deg": 0.074,
+        "source": "ACT DR6 cosmic birefringence (2025): β = 0.215° ± 0.074° (68% CL) (`https://arxiv.org/abs/2509.13654`)",
+        "provenance": { "arxiv": "2509.13654" }
+      },
+      {
+        "dataset": "Planck 2018 (Minami & Komatsu 2020)",
+        "z": 1100.0,
+        "beta_deg": 0.35,
+        "sigma_deg": 0.14,
+        "source": "Planck 2018 polarization, with calibration marginalized (Minami & Komatsu 2020): β = 0.35° ± 0.14° (`https://doi.org/10.1103/PhysRevLett.125.221301`)",
+        "provenance": { "doi": "10.1103/PhysRevLett.125.221301" }
+      },
+      {
+        "dataset": "Planck PR4/NPIPE (Diego-Palazuelos et al. 2022)",
+        "z": 1100.0,
+        "beta_deg": 0.30,
+        "sigma_deg": 0.11,
+        "source": "Planck PR4/NPIPE (Diego-Palazuelos et al. 2022): β = 0.30° ± 0.11° (`https://doi.org/10.1103/PhysRevLett.128.091302`)",
+        "provenance": { "doi": "10.1103/PhysRevLett.128.091302", "arxiv": "2201.07682" }
+      },
+      {
+        "dataset": "WMAP+Planck combined (symmetrized)",
+        "z": 1100.0,
+        "beta_deg": 0.342,
+        "sigma_deg": 0.093,
+        "source": "WMAP+Planck combined analysis: β = 0.342^{+0.094}_{-0.091} deg (symmetrized here to σ=0.093) (`https://arxiv.org/abs/2205.13962`)",
+        "provenance": { "arxiv": "2205.13962", "note": "asymmetric errors symmetrized for this simple Gaussian likelihood" }
+      }
+    ]
+  }
+}
+

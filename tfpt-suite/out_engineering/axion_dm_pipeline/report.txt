@@ -1,0 +1,40 @@
+Axion DM pipeline (TFPT; engineering-level closure)
+mode = engineering
+axion config: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/axion_tfpt_v106.json
+
+TFPT invariants:
+- c3 = 0.039788735772973833942220940843128590508614911435114112186916836014724199408556634
+- varphi0 = 0.053171952176845527309292471969749667875127759799791139640450979685319457237554636
+- scenario_policy.selected = post_inflation_theta_rms_with_strings_dw_factor
+- scenario_id (effective) = post_inflation_theta_rms_with_strings_dw_factor
+- theta_i policy: post-inflation PQ: random theta_i (rms pi/sqrt(3)); include strings/DW factor
+- g_coeff = -4 c3 = -0.15915494309189535
+
+TFPT axion claim inputs:
+- f_a = 8.86e+10 GeV (quoted; n=10 block claim)
+- m_a = 64.36 µeV (quoted)
+- nu = 15.5622 GHz (computed) vs claim 15.56
+- g_phys ≈ g_coeff / f_a = -1.796e-12 GeV^-1 (normalization-dependent; recorded as a candidate)
+
+Relic density (scenario policy; misalignment scaling):
+- strings/domain-walls factor = 2.33333
+- Ω_a h^2 ≈ 1.227e-01
+- DM fraction vs Ω_DM h^2≈0.12: 1.022e+00
+
+Inflation/isocurvature proxy (Starobinsky relations with Planck refs):
+- n_s(ref)=0.9649 => N≈56.980, r≈0.003696, A_s≈2.099e-09
+- H_inf≈1.507e+13 GeV
+- P_iso/P_R ≈ nan (limit≈3.950e-02)  [proxy; only meaningful for pre-inflation PQ]
+
+Checks:
+- scenario_policy_is_explicit: PASS (selected=post_inflation_theta_rms_with_strings_dw_factor)
+- scenario_policy_selected_known: PASS (selected=post_inflation_theta_rms_with_strings_dw_factor)
+- theta_i_random_postinflation: PASS (theta_i≈theta_rms=1.8137993642342178 (scenario=post_inflation_theta_rms_with_strings_dw_factor))
+- axion_frequency_from_mass: PASS (m_a=64.36 µeV => nu=15.562 GHz (claim=15.56))
+- g_coeff_fixed: PASS (g_coeff=-4c3=-0.15915494309189535 (dimensionless), g_phys≈-1.796e-12 GeV^-1 for f_a=8.860e+10 GeV)
+- axion_dm_fraction_estimate: PASS (Omega_a h^2≈1.227e-01 => fraction≈1.022e+00)
+- isocurvature_not_applicable_postinflation: PASS (scenario=post_inflation_theta_rms_with_strings_dw_factor)
+
+Notes:
+- This module intentionally separates (a) TFPT-claimed axion parameters from (b) standard cosmology closure checks.
+- A publication-grade TFPT DM claim requires: (i) in-suite derivation of f_a (ladder/block), (ii) scenario selection (pre vs post inflation), (iii) strings/domain walls, (iv) astrophysical bounds, (v) g_{aγγ} normalization unambiguously tied to f_a.

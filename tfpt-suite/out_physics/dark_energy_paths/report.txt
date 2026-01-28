@@ -1,0 +1,42 @@
+Dark energy (Λ) targets — UFE torsion condensate vs cascade terminal stage
+mode = physics
+cosmology source: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json
+
+Flat ΛCDM snapshot:
+- H0 = 67.36 km/s/Mpc => H0 = 1.437e-42 GeV
+- Ω_m = 0.3153, Ω_r = 9.2e-05 => Ω_Λ = 0.684608
+
+Observed targets (derived from the snapshot):
+- Λ_obs = 3 Ω_Λ H0^2 = 4.240e-84 GeV^2
+- ρ_c = 3 H0^2 M̄_P^2 = 3.672e-47 GeV^4 (M̄_P=2.435e+18 GeV)
+- ρ_Λ = Ω_Λ ρ_c = 2.514e-47 GeV^4
+
+TFPT path A (five_problems: torsion condensate):
+- Λ_eff = (1/4)⟨K^2⟩  ⇒  ⟨K^2⟩_target = 4 Λ_obs
+- ⟨K^2⟩_target = 1.696e-83 GeV^2  ⇒  K_rms = 4.118e-42 GeV
+
+TFPT path B (five_problems / v1.06: terminal cascade magnitude):
+- ρ_Λ ≈ (M̄_P φ_*)^4  ⇒  φ_* = (ρ_Λ)^{1/4} / M̄_P
+- φ_* target ≈ 9.196e-31
+
+E8 ladder terminal stage (extrapolated):
+- varphi_n sequence (n=1..26) available (26 points)
+- n_terminal ≈ 29.99999999999999999999999999999999999999999999998741890168293136484371848877209 (D≈2.516219663413727031256302245581961112196372391842817760403419547962246103475846e-47, mismatch≈1.4650938860405846741631529168082268535777804438414126212072152589518432148690295e-80)
+
+torsion_condensate (if available in output_dir):
+- results.json: tfpt-suite/out_physics/torsion_condensate/results.json (present=True)
+- best: {'K2_GeV2': '2.7797860560444854478500250003694537051908411304171715433006816758197259080037664e-83', 'Lambda_GeV2': '6.9494651401112136196250625009236342629771028260429288582517041895493147700094159e-84', 'log10_mismatch_rho_L': '0.21455355509911626902658254673038911850149085090690692077350828598941462363659002', 'mu_K2_GeV2': '2.9345339582236214572922786999182110992056856565618455877914823470246627730319584e-74', 'n': 1, 'phi_star': '1.0404910824024174045206729549934797881697583266203605455240786134724420579484905e-30', 'rho_L_GeV4': '4.1204942445375910573821411207038935362900412503744384859567460773280535867209079e-47', 'z_score_rho_L': '2.1403530198484351956856249171986807549266690574189652264117407874776932146992054'}
+- log10 mismatch vs rho_L target: 0.21455355509911628
+
+Checks:
+- computed_lambda_targets: PASS (Omega_L=0.684608, H0_GeV=1.437e-42)
+- lambda_obs: PASS (Lambda_obs≈4.240e-84 GeV^2 (from 3 Ω_L H0^2))
+- rho_lambda_obs: PASS (rho_L≈2.514e-47 GeV^4 (from Ω_L ρ_c))
+- ufe_K_rms_target: PASS (<K^2>_target=4Λ => K_rms≈4.118e-42 GeV)
+- torsion_condensate_prediction_available: PASS (found torsion_condensate best n=1 (log10 mismatch vs rho_L target≈0.21455355509911628))
+- derivation_interface: PASS (Λ targets are computed here; the shipped prediction candidate lives in torsion_condensate (gap equation; no continuous tuning).)
+- ladder_terminal_stage_identified: PASS (n_terminal≈29.99999999999999999999999999999999999999999999998741890168293136484371848877209 (D≈2.516219663413727031256302245581961112196372391842817760403419547962246103475846e-47))
+
+Notes:
+- This module is intentionally an engineering target: it translates cosmology into required TFPT mechanism magnitudes.
+- To upgrade to a prediction, implement either (A) a computable ⟨K^2⟩ from the UFE/microscopic torsion sector, or (B) a deterministic E8 ladder/block model producing φ_n at the claimed terminal stage.

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "note": "Explicit below-MZ EFT policy for QED running: EW gauge bosons integrated out at MZ, charged-fermion thresholds applied with 1-loop MSbar running (log-only, continuous at μ=m_f).",
+  "ew_decoupling": {
+    "mu_match_GeV": 91.1876,
+    "assumption": "W/Z/H integrated out at μ=MZ for the QED-only EFT used by below_mt_eft_cascade."
+  },
+  "qed_running": {
+    "beta_function": "dα/d ln μ = (2/(3π)) α^2 Σ_f N_c Q_f^2",
+    "threshold_matching": "1-loop MSbar, log-only; matching at μ=m_f is continuous at this order",
+    "active_fields": [
+      { "id": "e", "mass_GeV": 0.00051099895, "Nc": 1, "charge": -1.0, "source": "tfpt_suite/data/lepton_masses_pdg.json:masses.electron.mean" },
+      { "id": "mu", "mass_GeV": 0.1056583755, "Nc": 1, "charge": -1.0, "source": "tfpt_suite/data/lepton_masses_pdg.json:masses.muon.mean" },
+      { "id": "tau", "mass_GeV": 1.77686, "Nc": 1, "charge": -1.0, "source": "tfpt_suite/data/lepton_masses_pdg.json:masses.tau.mean" },
+      { "id": "u", "mass_GeV": 0.0, "Nc": 3, "charge": 0.6666666666666666, "source": "massless EFT light-quark placeholder below MZ" },
+      { "id": "d", "mass_GeV": 0.0, "Nc": 3, "charge": -0.3333333333333333, "source": "massless EFT light-quark placeholder below MZ" },
+      { "id": "s", "mass_GeV": 0.0, "Nc": 3, "charge": -0.3333333333333333, "source": "massless EFT light-quark placeholder below MZ" },
+      { "id": "c", "mass_GeV": 1.27, "Nc": 3, "charge": 0.6666666666666666, "source": "tfpt_suite/data/sm_inputs_mz.json:mc_GeV" },
+      { "id": "b", "mass_GeV": 4.18, "Nc": 3, "charge": -0.3333333333333333, "source": "tfpt_suite/data/sm_inputs_mz.json:mb_GeV" }
+    ]
+  }
+}

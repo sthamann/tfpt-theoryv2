@@ -1,0 +1,34 @@
+{
+  "note": "Minimal SM inputs at μ = MZ for initializing 1-loop RG running. Values are typical MSbar/PDG-era central values; adjust to your preferred scheme/likelihood.",
+  "scheme": "MSbar-ish (inputs interpreted at μ=MZ unless stated otherwise)",
+  "mu_GeV": 91.1876,
+  "mW_GeV": 80.379,
+  "mH_GeV": 125.25,
+  "mc_GeV": 1.27,
+  "mb_GeV": 4.18,
+  "mt_GeV": 172.76,
+  "mt_sigma_GeV": 0.3,
+  "alpha_em_inv": 127.955,
+  "alpha_em_inv_sigma": 0.01,
+  "sin2_thetaW": 0.23122,
+  "sin2_thetaW_sigma": 0.00004,
+  "alpha_s": 0.1179,
+  "alpha_s_sigma": 0.0011,
+  "matching_mc_samples": 120,
+  "sources": {
+    "alpha_em_inv": "PDG (α_em(MZ) in MSbar is ~1/127.95; check your preferred value)",
+    "sin2_thetaW": "PDG (sin^2 θ_W(MZ) in MSbar is ~0.23122; check your preferred value)",
+    "sin2_thetaW_sigma": "Typical MSbar sin^2 θ_W uncertainty scale (order 1e-4); replace by your preferred likelihood for publication",
+    "alpha_s": "PDG (α_s(MZ) ~ 0.1179)",
+    "alpha_s_sigma": "PDG-era uncertainty (order 1e-3); adjust to your preferred likelihood",
+    "alpha_em_inv_sigma": "Typical α_em^{-1}(MZ) MSbar uncertainty scale (order 1e-2); replace by your preferred likelihood for publication",
+    "mW_GeV": "PDG (W pole mass, for threshold bookkeeping if desired)",
+    "mH_GeV": "PDG (Higgs pole mass, for threshold bookkeeping if desired)",
+    "mc_GeV": "PDG-ish (charm threshold scale for αs matching; scheme-dependent)",
+    "mb_GeV": "PDG-ish (bottom threshold scale for αs matching; scheme-dependent)",
+    "mt_GeV": "PDG-ish (top threshold scale; pole vs MSbar is scheme-dependent)",
+    "mt_sigma_GeV": "Typical top pole mass uncertainty scale (order 0.3 GeV); replace by your preferred likelihood for publication",
+    "matching_mc_samples": "Monte Carlo sample size for msbar_matching_map uncertainty propagation (deterministic via SuiteConfig.seed)"
+  }
+}
+

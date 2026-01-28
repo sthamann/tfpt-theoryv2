@@ -1,0 +1,1257 @@
+{
+  "checks": [
+    {
+      "check_id": "phase_set_derived_not_searched",
+      "detail": "mode=filter_only; variants=4 (all sourced from topology_phase_map)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "tfpt_rg_dressed_texture_pipeline_present",
+      "detail": "PASS: mt boundary Yukawas (Z3 texture) + upward-only RG evolution mt\u2192mu_uv using PyR@TE 2-loop beta functions (integrated here with complex Yukawas) + CKM extraction at mt and mu_uv",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "threshold_matching_publication_grade",
+      "detail": "threshold_matching_ok=True, blocked_thresholds=[]",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "matching_mc_present",
+      "detail": "enabled=True, samples=120, success=120, failed=0",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "g1_gut_over_gY_convention",
+      "detail": "g1_GUT/gY=1.29099444873581 vs sqrt(5/3)=1.29099444873581",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "sm_boundary_1loop_vs_2loop_close",
+      "detail": "diffs (2L-1L) @ mt: \u0394gY=2.5723155397283648e-05, \u0394g2=0.00012867895065693524, \u0394g3=-0.0014918758850732683, \u0394yt=0.00014967384947628393",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "texture_config_loaded",
+      "detail": "path=tfpt-suite/tfpt_suite/data/flavor_texture_v24.json delta_source=delta_star phase_mode=2pi_delta coeff_rule=v107sm_fixed coeff_source=update_tfptv1_07sm.tex (v1.07SM) + paper_v1_06_01_09_2025.tex (v1.06) conventions a_u=0.6666666666666666 a_d=1.0 a_e=1.0 b=1.0",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "rg_chi2_finite",
+      "detail": "chi2(mt, boundary proxy)=8.0940294718324770906441549550628532118015173457094481828686995465830411307830294",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "rg_chi2_refscale_finite",
+      "detail": "chi2(refscale=MZ@91.1876 GeV)=8.0324419680640895012564678061783043334048834693252451910303469882420955057613414",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "lambda_in_physical_range",
+      "detail": "lambda_TFPT=0.22445997051897373245511597747748194821840297007791297390969270711773328122860166",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "ckm_unitarity",
+      "detail": "max|V\u2020V-I|(mt)=6.661e-16, max|V\u2020V-I|(mu_uv,2-loop)=4.138e-16",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "ckm_phase_map_consistent_with_generator",
+      "detail": "|delta_ckm(map)-delta_ckm(generator)|=0.000e+00 rad",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "results": {
+    "alpha_s_sensitivity": {
+      "abs_half_range": {
+        "Vcb": "0.000045192056960455000000000000000000000000000000000000000000000000000000000000000026",
+        "Vcd": "0.0000000094139934049999999999999999999999999999999999999999999999999999999999999999917269",
+        "Vcs": "0.0000021853305129000000000000000000000000000000000000000000000000000000000000000001224",
+        "Vtb": "0.0000021480793814999999999999999999999999999999999999999999999999999999999999999999795",
+        "Vtd": "0.0000095775351792889999999999999999999999999999999999999999999999999999999999999999933",
+        "Vts": "0.000044343361569568000000000000000000000000000000000000000000000000000000000000000002",
+        "Vub": "0.0000039674673118057500000000000000000000000000000000000000000000000000000000000000001",
+        "Vud": "0.000000095879985399999999999999999999999999999999999999999999999999999999999999999686603",
+        "Vus": "0.00000034308127240500000000000000000000000000000000000000000000000000000000000000000517"
+      },
+      "alpha_s_central": 0.1179,
+      "alpha_s_sigma": 0.0011,
+      "matrix_abs_mu_uv": {
+        "central": {
+          "Vcb": "0.047115476069418086",
+          "Vcd": "0.2243119170236572",
+          "Vcs": "0.9733777765060826",
+          "Vtb": "0.9988808843935065",
+          "Vtd": "0.00997570422927661",
+          "Vts": "0.04623271696944317",
+          "Vub": "0.004136509156128144",
+          "Vud": "0.9744663407251695",
+          "Vus": "0.22449552353153795"
+        },
+        "minus_sigma": {
+          "Vcb": "0.04716107755093607",
+          "Vcd": "0.22431190750197816",
+          "Vcs": "0.9733755703309277",
+          "Vtb": "0.9988787158208547",
+          "Vtd": "0.009985368545976937",
+          "Vts": "0.04627746206396674",
+          "Vub": "0.0041405125667554185",
+          "Vud": "0.9744662439345065",
+          "Vus": "0.2244958698681549"
+        },
+        "plus_sigma": {
+          "Vcb": "0.04707069343701516",
+          "Vcd": "0.22431192632996497",
+          "Vcs": "0.9733799409919535",
+          "Vtb": "0.9988830119796177",
+          "Vtd": "0.009966213475618359",
+          "Vts": "0.046188775340827604",
+          "Vub": "0.004132577632131807",
+          "Vud": "0.9744664356944773",
+          "Vus": "0.22449518370561009"
+        }
+      },
+      "note": "Half-range across \u00b1\u03c3(\u03b1_s(MZ)) scan propagated through MZ\u2192mt gauge running and mt\u2192\u03bc_UV upward RG evolution (no running below mt).",
+      "scenario_diagnostics": {
+        "central": {
+          "alpha_s_MZ": 0.1179,
+          "alpha_s_mt": 0.10849334481583243,
+          "g1_gut_mt": 0.46309519108393543,
+          "g2_mt": 0.6483341882196387,
+          "g3_MZ": 1.2171996941475736,
+          "g3_mt": 1.167633324356244,
+          "g3_mu_uv": 0.5553792910639419,
+          "gY_mt": 0.3587119925553647,
+          "mt_msbar_mt_GeV": 163.6187822977806,
+          "yt_mt": 0.9406174836767976
+        },
+        "minus_sigma": {
+          "alpha_s_MZ": 0.1168,
+          "alpha_s_mt": 0.10756363101714982,
+          "g1_gut_mt": 0.4630949046068122,
+          "g2_mt": 0.6483331187580706,
+          "g3_MZ": 1.2115081872431368,
+          "g3_mt": 1.1626196506113615,
+          "g3_mu_uv": 0.554849153917229,
+          "gY_mt": 0.3587117706511392,
+          "mt_msbar_mt_GeV": 163.70595011966597,
+          "yt_mt": 0.941118597156118
+        },
+        "plus_sigma": {
+          "alpha_s_MZ": 0.11900000000000001,
+          "alpha_s_mt": 0.10942158820640562,
+          "g1_gut_mt": 0.46309547733734807,
+          "g2_mt": 0.6483352568458385,
+          "g3_MZ": 1.2228647116949372,
+          "g3_mt": 1.1726176830550892,
+          "g3_mu_uv": 0.5559009505458251,
+          "gY_mt": 0.3587122142863047,
+          "mt_msbar_mt_GeV": 163.53162210620025,
+          "yt_mt": 0.9401164140628465
+        }
+      }
+    },
+    "contributions_best": [
+      {
+        "chi2": "4.8048650539400165950508461501562500000000000000000000000000000000000000000000001",
+        "key": "Vtd",
+        "mean": "0.00854",
+        "pred": "0.008189279961535038",
+        "sigma": "0.00016"
+      },
+      {
+        "chi2": "2.1080588506507717889768221804325736681666424735084917985193787196980693859776455",
+        "key": "Vcb",
+        "mean": "0.04053",
+        "pred": "0.04173508993117249",
+        "sigma": "0.00083"
+      },
+      {
+        "chi2": "0.75763641698568436850459277324380165289256198347107438016528925619834710743801679",
+        "key": "Vus",
+        "mean": "0.22484",
+        "pred": "0.22445701382488603",
+        "sigma": "0.00044"
+      },
+      {
+        "chi2": "0.36188164648761674872420670234567901234567901234567901234567901234567901234567898",
+        "key": "Vub",
+        "mean": "0.00361",
+        "pred": "0.003664140939561017",
+        "sigma": "0.00009"
+      }
+    ],
+    "contributions_mt_proxy": [
+      {
+        "chi2": "3.5545175534679795580329767972265625000000000000000000000000000000000000000000002",
+        "key": "Vtd",
+        "mean": "0.00854",
+        "pred": "0.008238345148607253",
+        "sigma": "0.00016"
+      },
+      {
+        "chi2": "3.0728262626437017221035809738713891711424009290172739149368558571635941355784586",
+        "key": "Vcb",
+        "mean": "0.04053",
+        "pred": "0.04198494673865927",
+        "sigma": "0.00083"
+      },
+      {
+        "chi2": "0.75198215728766353849334598347107438016528925619834710743801652892561983471074351",
+        "key": "Vus",
+        "mean": "0.22484",
+        "pred": "0.22445844561901232",
+        "sigma": "0.00044"
+      },
+      {
+        "chi2": "0.71470349843313227201425120049382716049382716049382716049382716049382716049382712",
+        "key": "Vub",
+        "mean": "0.00361",
+        "pred": "0.003686086124472918",
+        "sigma": "0.00009"
+      }
+    ],
+    "flavor_texture": {
+      "a_d": 1.0,
+      "a_e": 1.0,
+      "a_u": 0.6666666666666666,
+      "b": 1.0,
+      "ckm_variant_scan": {
+        "best": {
+          "chi2_mt": 8.094029471832556,
+          "chi2_refscale": 8.032441968064157,
+          "delta_mode": "external_delta_cp_override",
+          "label": "topology_delta_cp_1",
+          "largest_contribution_refscale": {
+            "chi2": 4.804865053940034,
+            "key": "Vtd",
+            "mean": 0.00854,
+            "pred": 0.008189279961535038,
+            "sigma": 0.00016
+          },
+          "s13_mode": "A_lam3_times_1_minus_delta"
+        },
+        "run_all_variants": true,
+        "variants": [
+          {
+            "branch": "theta",
+            "chi2_mt": 8.094029471832556,
+            "chi2_refscale": 8.032441968064157,
+            "delta_cp_override_rad": 1.0471975511965976,
+            "delta_mode": "external_delta_cp_override",
+            "label": "topology_delta_cp_1",
+            "largest_contribution": {
+              "chi2": 3.554517553468006,
+              "key": "Vtd",
+              "mean": 0.00854,
+              "pred": 0.008238345148607253,
+              "sigma": 0.00016
+            },
+            "largest_contribution_refscale": {
+              "chi2": 4.804865053940034,
+              "key": "Vtd",
+              "mean": 0.00854,
+              "pred": 0.008189279961535038,
+              "sigma": 0.00016
+            },
+            "s13_mode": "A_lam3_times_1_minus_delta",
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "chi2_mt": 8.094029471832556,
+            "chi2_refscale": 8.032441968064157,
+            "delta_cp_override_rad": 5.235987755982989,
+            "delta_mode": "external_delta_cp_override",
+            "label": "topology_delta_cp_2",
+            "largest_contribution": {
+              "chi2": 3.554517553468006,
+              "key": "Vtd",
+              "mean": 0.00854,
+              "pred": 0.008238345148607253,
+              "sigma": 0.00016
+            },
+            "largest_contribution_refscale": {
+              "chi2": 4.804865053940034,
+              "key": "Vtd",
+              "mean": 0.00854,
+              "pred": 0.008189279961535038,
+              "sigma": 0.00016
+            },
+            "s13_mode": "A_lam3_times_1_minus_delta",
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "chi2_mt": 380.1760083671523,
+            "chi2_refscale": 362.2640000262289,
+            "delta_cp_override_rad": 4.1887902047863905,
+            "delta_mode": "external_delta_cp_override",
+            "label": "topology_delta_cp_3",
+            "largest_contribution": {
+              "chi2": 375.6364964488819,
+              "key": "Vtd",
+              "mean": 0.00854,
+              "pred": 0.011641015044963727,
+              "sigma": 0.00016
+            },
+            "largest_contribution_refscale": {
+              "chi2": 359.0288909090705,
+              "key": "Vtd",
+              "mean": 0.00854,
+              "pred": 0.01157168923329424,
+              "sigma": 0.00016
+            },
+            "s13_mode": "A_lam3_times_1_minus_delta",
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "chi2_mt": 380.1760083673015,
+            "chi2_refscale": 362.26400002609626,
+            "delta_cp_override_rad": 2.0943951023931957,
+            "delta_mode": "external_delta_cp_override",
+            "label": "topology_delta_cp_4",
+            "largest_contribution": {
+              "chi2": 375.6364964491311,
+              "key": "Vtd",
+              "mean": 0.00854,
+              "pred": 0.011641015044964755,
+              "sigma": 0.00016
+            },
+            "largest_contribution_refscale": {
+              "chi2": 359.028890908845,
+              "key": "Vtd",
+              "mean": 0.00854,
+              "pred": 0.011571689233293287,
+              "sigma": 0.00016
+            },
+            "s13_mode": "A_lam3_times_1_minus_delta",
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          }
+        ]
+      },
+      "config_file": "tfpt-suite/tfpt_suite/data/flavor_texture_v24.json",
+      "delta_M_from_tau_mu": 0.6079090366343283,
+      "delta_source": "delta_star",
+      "delta_star_from_varphi0": 0.6088619920294742,
+      "delta_used": 0.6088619920294742,
+      "lepton_masses_file": "tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json",
+      "phase_mode": "2pi_delta",
+      "quark_phase_map": {
+        "delta_ckm_rad": 1.0471975511965976,
+        "delta_mobius": 0.6079090366343283,
+        "delta_mode": "external_delta_cp_override",
+        "delta_source": "delta_star",
+        "delta_used": 0.6088619920294742,
+        "notes": [
+          "delta_mobius is the \u03c4/\u03bc-extracted M\u00f6bius deformation parameter (\u03b4_M).",
+          "theta_texture_rad is a Z3-texture layer parameter (\u03b6 = exp(i \u03b8)); it is not the CKM Dirac phase.",
+          "delta_ckm_rad is the PDG CKM Dirac CP phase \u03b4_CKM used in V_CKM; current mapping is an explicit suite convention.",
+          "delta_source=delta_star (delta_used may differ from delta_mobius if \u03b4_* is chosen)."
+        ],
+        "phase_mode": "2pi_delta",
+        "source": "paper v2.5 Sec. 7.1\u20137.3 (Flavor Structure) + update_tfptv1_07sm.tex (CKM cold-pass phase convention)",
+        "theta_texture_rad": 3.8255927224196866
+      },
+      "quark_yukawa_generation": {
+        "ckm_seed": {
+          "A": 0.8333333333333334,
+          "delta_cp_rad": 1.0471975511965976,
+          "delta_mode": "external_delta_cp_override",
+          "lambda": 0.22445997051897376,
+          "s12": 0.22445997051897376,
+          "s13": 0.0036860861244729197,
+          "s13_mode": "A_lam3_times_1_minus_delta",
+          "s23": 0.04198523197114881
+        },
+        "method": "mobius_v107sm",
+        "ratios": {
+          "m_b_over_m_s": 43.79405189623337,
+          "m_c_over_m_u": 486.9165313620135,
+          "m_mu_over_m_e": 197.84536441898265,
+          "m_s_over_m_d": 16.91911119689403,
+          "m_t_over_m_c": 133.01222546408377,
+          "m_tau_over_m_mu": 16.91911119689403
+        },
+        "reference_scale_GeV": 172.76,
+        "scheme": "MSbar",
+        "yd_diag_mt": {
+          "y_b": 0.01665860318819457,
+          "y_d": 2.2482567703576063e-05,
+          "y_s": 0.00038038506296850184
+        },
+        "yu_diag_mt": {
+          "y_c": 0.0070716618746506504,
+          "y_t": 0.9406174836767976,
+          "y_u": 1.452335548121491e-05
+        }
+      },
+      "theta_rad": 3.8255927224196866,
+      "topology_phase_atoms": {
+        "config_file": "tfpt_suite/data/chiral_index_three_cycles.json",
+        "note": "Docking point for a future topology\u2192phase derivation: Appendix J (paper_v1_06_01_09_2025.tex) sketches three boundary cycles (C1,C2,CT) on the orientable double cover. Wilson lines along these cycles can encode discrete phases. The current suite does not yet derive \u03b4/\u03b4_CP from these holonomies; it only exposes phase atoms as candidates.",
+        "source_module": "chiral_index_three_cycles",
+        "status": "not_yet_used_for_delta_derivation",
+        "wiring": {
+          "phase_selection_rule_mode": "filter_only",
+          "pmns_convention_policy": "mass_splitting_canonical",
+          "pmns_delta_cp_scan_enabled": true,
+          "pmns_delta_cp_scan_max_candidates": 6,
+          "pmns_eps_multipliers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "pmns_theta_scan_enabled": true,
+          "pmns_theta_scan_max_candidates": 6,
+          "pmns_theta_scan_note": "If topology_phase_map outputs are present under the run output dir, pmns_full_pipeline will scan a small finite set of texture phases \u03b8 derived from the Wilson-line atoms. In filter_only mode the PMNS convention is fixed by mass-splitting canonicalization (no \u03c7\u00b2-driven convention shopping)."
+        }
+      },
+      "y_star_d": null,
+      "y_star_e": 0.003510235259309804,
+      "y_star_u": null,
+      "zeta": "(-0.7750512892950255-0.6318983296085839j)"
+    },
+    "lambda_tfpt": "0.22445997051897373245511597747748194821840297007791297390969270711773328122860166",
+    "matching_mc": {
+      "chi2_dof": 4,
+      "chi2_keys": [
+        "Vus",
+        "Vub",
+        "Vcb",
+        "Vtd"
+      ],
+      "chi2_refscale_mean": 6.642693939185924,
+      "chi2_refscale_std": 0.013235330100780773,
+      "ckm_abs_refscale_mean": {
+        "Vcb": 0.04173513362966932,
+        "Vcd": 0.22431269031540427,
+        "Vcs": 0.9736231281057708,
+        "Vtb": 0.9991219908472911,
+        "Vtd": 0.00883561800065535,
+        "Vts": 0.040953379078705186,
+        "Vub": 0.0036641539721030385,
+        "Vud": 0.9744771669043492,
+        "Vus": 0.22445673337578356
+      },
+      "ckm_abs_refscale_std": {
+        "Vcb": 1.3876545202837358e-06,
+        "Vcd": 9.327956953814979e-11,
+        "Vcs": 5.946129607359328e-08,
+        "Vtb": 5.841149530652445e-08,
+        "Vtd": 2.9400071348520065e-07,
+        "Vts": 1.3616133082705766e-06,
+        "Vub": 1.2182815901384437e-07,
+        "Vud": 2.644240311830939e-09,
+        "Vus": 9.49116405571634e-09
+      },
+      "enabled": true,
+      "failed": 0,
+      "inputs_mean": {
+        "alpha_em_inv_MZ": 127.95577558086505,
+        "alpha_s_MZ": 0.11781285207052643,
+        "mb_mb_GeV": 4.18,
+        "mc_GeV": 1.2699999999999998,
+        "mt_pole_GeV": 172.75223974622415,
+        "sin2_thetaW_MZ": 0.23122521563845747
+      },
+      "inputs_sigma": {
+        "alpha_em_inv_sigma": 0.01,
+        "alpha_s_sigma": 0.0011,
+        "mb_sigma_GeV": 0.0,
+        "mc_sigma_GeV": 0.0,
+        "mt_sigma_GeV": 0.3,
+        "sin2_thetaW_sigma": 4e-05
+      },
+      "inputs_std": {
+        "alpha_em_inv_MZ": 0.010060997811218874,
+        "alpha_s_MZ": 0.001026852212799659,
+        "mb_mb_GeV": 0.0,
+        "mc_GeV": 2.2297561364112263e-16,
+        "mt_pole_GeV": 0.27118552289951575,
+        "sin2_thetaW_MZ": 3.834896726893233e-05
+      },
+      "note": "Monte Carlo over SM inputs at MZ (PDG-style priors) propagated through MZ\u2192mt boundary construction and mt\u2192ref RG evolution (SM segment; thresholds outside range). \u03c7\u00b2 is computed on the same declared subset chi2_keys as the nominal ref-scale \u03c7\u00b2 (to avoid unitarity double-counting / over-constraining).",
+      "preview": [
+        {
+          "Vcb": 0.041736287457065244,
+          "Vcd": 0.2243126902370425,
+          "Vcs": 0.9736230786643886,
+          "Vtb": 0.9991219422786218,
+          "Vtd": 0.008835862460690196,
+          "Vts": 0.04095451125297681,
+          "Vub": 0.0036642552716308952,
+          "Vud": 0.9744771647058726,
+          "Vus": 0.22445674126679277,
+          "alpha_em_inv_MZ": 127.96579224972983,
+          "alpha_s_MZ": 0.11821988397623356,
+          "chi2_refscale": 6.653697563874528,
+          "mb_mb_GeV": 4.18,
+          "mc_GeV": 1.27,
+          "mt_pole_GeV": 172.5221573316473,
+          "sin2_thetaW_MZ": 0.2312224611362723
+        },
+        {
+          "Vcb": 0.041734546534686855,
+          "Vcd": 0.22431269035485235,
+          "Vcs": 0.9736231532637833,
+          "Vtb": 0.9991220155611313,
+          "Vtd": 0.00883549361353147,
+          "Vts": 0.04095280300135557,
+          "Vub": 0.003664102428514408,
+          "Vud": 0.974477168023127,
+          "Vus": 0.22445672936007047,
+          "alpha_em_inv_MZ": 127.94379649399698,
+          "alpha_s_MZ": 0.11786510666814379,
+          "chi2_refscale": 6.637087306314962,
+          "mb_mb_GeV": 4.18,
+          "mc_GeV": 1.27,
+          "mt_pole_GeV": 172.8667478009628,
+          "sin2_thetaW_MZ": 0.231208860734861
+        },
+        {
+          "Vcb": 0.04173430760315037,
+          "Vcd": 0.22431269036918244,
+          "Vcs": 0.9736231635022995,
+          "Vtb": 0.9991220256184934,
+          "Vtd": 0.008835442991400322,
+          "Vts": 0.04095256855370305,
+          "Vub": 0.003664081451831681,
+          "Vud": 0.9744771684788134,
+          "Vus": 0.2244567277241413,
+          "alpha_em_inv_MZ": 127.97176411654067,
+          "alpha_s_MZ": 0.11896741634605137,
+          "chi2_refscale": 6.634809620239041,
+          "mb_mb_GeV": 4.18,
+          "mc_GeV": 1.27,
+          "mt_pole_GeV": 172.90119380096814,
+          "sin2_thetaW_MZ": 0.23120266863445033
+        },
+        {
+          "Vcb": 0.041736456043977334,
+          "Vcd": 0.22431269022730257,
+          "Vcs": 0.9736230714398051,
+          "Vtb": 0.9991219351819502,
+          "Vtd": 0.008835898179008244,
+          "Vts": 0.040954676676116256,
+          "Vub": 0.0036642700724949092,
+          "Vud": 0.9744771643842457,
+          "Vus": 0.22445674242150845,
+          "alpha_em_inv_MZ": 127.97304204185501,
+          "alpha_s_MZ": 0.11740767867133212,
+          "chi2_refscale": 6.6553073931216185,
+          "mb_mb_GeV": 4.18,
+          "mc_GeV": 1.27,
+          "mt_pole_GeV": 172.4980742900065,
+          "sin2_thetaW_MZ": 0.23125369264377735
+        },
+        {
+          "Vcb": 0.04173562868567295,
+          "Vcd": 0.22431269028088752,
+          "Vcs": 0.973623106893608,
+          "Vtb": 0.9991219700093513,
+          "Vtd": 0.008835722887577538,
+          "Vts": 0.040953864844324395,
+          "Vub": 0.003664197435301516,
+          "Vud": 0.9744771659613195,
+          "Vus": 0.22445673676045153,
+          "alpha_em_inv_MZ": 127.96755979337465,
+          "alpha_s_MZ": 0.11857438697405305,
+          "chi2_refscale": 6.647409222323114,
+          "mb_mb_GeV": 4.18,
+          "mc_GeV": 1.27,
+          "mt_pole_GeV": 172.6473005645221,
+          "sin2_thetaW_MZ": 0.23122078266766866
+        },
+        {
+          "Vcb": 0.04173502542920348,
+          "Vcd": 0.2243126903213419,
+          "Vcs": 0.9736231327434781,
+          "Vtb": 0.9991219954028164,
+          "Vtd": 0.008835595076345824,
+          "Vts": 0.04095327290877879,
+          "Vub": 0.00366414447283074,
+          "Vud": 0.9744771671108818,
+          "Vus": 0.22445673263422872,
+          "alpha_em_inv_MZ": 127.9634560961776,
+          "alpha_s_MZ": 0.11866088173177576,
+          "chi2_refscale": 6.6416539646350605,
+          "mb_mb_GeV": 4.18,
+          "mc_GeV": 1.27,
+          "mt_pole_GeV": 172.7643826507143,
+          "sin2_thetaW_MZ": 0.23128880146652328
+        },
+        {
+          "Vcb": 0.041733686037980715,
+          "Vcd": 0.22431269041474647,
+          "Vcs": 0.9736231901349623,
+          "Vtb": 0.9991220517818103,
+          "Vtd": 0.0088353113011218,
+          "Vts": 0.04095195865301697,
+          "Vub": 0.003664026881642701,
+          "Vud": 0.9744771696623326,
+          "Vus": 0.22445672347670997,
+          "alpha_em_inv_MZ": 127.9509650815566,
+          "alpha_s_MZ": 0.11664658216830656,
+          "chi2_refscale": 6.628886545518032,
+          "mb_mb_GeV": 4.18,
+          "mc_GeV": 1.27,
+          "mt_pole_GeV": 173.04844197290916,
+          "sin2_thetaW_MZ": 0.2312270256125967
+        },
+        {
+          "Vcb": 0.04173667126352896,
+          "Vcd": 0.2243126902110241,
+          "Vcs": 0.9736230622176798,
+          "Vtb": 0.9991219261222329,
+          "Vtd": 0.00883594377732457,
+          "Vts": 0.040954887856793756,
+          "Vub": 0.0036642889676842725,
+          "Vud": 0.9744771639745375,
+          "Vus": 0.22445674389178918,
+          "alpha_em_inv_MZ": 127.95556581762672,
+          "alpha_s_MZ": 0.11846364423832996,
+          "chi2_refscale": 6.6573628775663,
+          "mb_mb_GeV": 4.18,
+          "mc_GeV": 1.27,
+          "mt_pole_GeV": 172.4442154629881,
+          "sin2_thetaW_MZ": 0.23125251142217182
+        },
+        {
+          "Vcb": 0.04173529238421432,
+          "Vcd": 0.2243126903077363,
+          "Vcs": 0.973623121303366,
+          "Vtb": 0.9991219841656648,
+          "Vtd": 0.008835651635777207,
+          "Vts": 0.04095353485398923,
+          "Vub": 0.00366416790961515,
+          "Vud": 0.9744771666011867,
+          "Vus": 0.22445673446446954,
+          "alpha_em_inv_MZ": 127.95770912277804,
+          "alpha_s_MZ": 0.11603810004288911,
+          "chi2_refscale": 6.6442004049908885,
+          "mb_mb_GeV": 4.18,
+          "mc_GeV": 1.27,
+          "mt_pole_GeV": 172.74130840904337,
+          "sin2_thetaW_MZ": 0.23121613432115437
+        },
+        {
+          "Vcb": 0.04173340195847547,
+          "Vcd": 0.22431269043331634,
+          "Vcs": 0.9736232023075146,
+          "Vtb": 0.9991220637393345,
+          "Vtd": 0.008835251113543803,
+          "Vts": 0.04095167990464955,
+          "Vub": 0.0036640019411279187,
+          "Vud": 0.9744771702037603,
+          "Vus": 0.2244567215332336,
+          "alpha_em_inv_MZ": 127.95545337482984,
+          "alpha_s_MZ": 0.11701299405090113,
+          "chi2_refscale": 6.626180550626076,
+          "mb_mb_GeV": 4.18,
+          "mc_GeV": 1.27,
+          "mt_pole_GeV": 173.09970670244377,
+          "sin2_thetaW_MZ": 0.23117384357811577
+        },
+        {
+          "Vcb": 0.041733990801815085,
+          "Vcd": 0.2243126903935306,
+          "Vcs": 0.9736231770763109,
+          "Vtb": 0.9991220389535456,
+          "Vtd": 0.008835375871070401,
+          "Vts": 0.04095225769755192,
+          "Vub": 0.0036640536382290534,
+          "Vud": 0.9744771690817764,
+          "Vus": 0.22445672556041454,
+          "alpha_em_inv_MZ": 127.95577388951321,
+          "alpha_s_MZ": 0.11707856088566612,
+          "chi2_refscale": 6.631790321328679,
+          "mb_mb_GeV": 4.18,
+          "mc_GeV": 1.27,
+          "mt_pole_GeV": 172.9840918807274,
+          "sin2_thetaW_MZ": 0.23119462585565395
+        },
+        {
+          "Vcb": 0.04173741721094823,
+          "Vcd": 0.2243126901590005,
+          "Vcs": 0.9736230302525679,
+          "Vtb": 0.999121894721043,
+          "Vtd": 0.008836101820334138,
+          "Vts": 0.04095561980551035,
+          "Vub": 0.003664354457755283,
+          "Vud": 0.9744771625534653,
+          "Vus": 0.22445674899221665,
+          "alpha_em_inv_MZ": 127.95614078232013,
+          "alpha_s_MZ": 0.11950802132991388,
+          "chi2_refscale": 6.664490110833438,
+          "mb_mb_GeV": 4.18,
+          "mc_GeV": 1.27,
+          "mt_pole_GeV": 172.28639384166252,
+          "sin2_thetaW_MZ": 0.23119083295696763
+        }
+      ],
+      "samples": 120,
+      "sensitivities_pearson_r": {
+        "Vus": {
+          "alpha_em_inv_MZ": 0.08538241061625221,
+          "alpha_s_MZ": -0.03896614146551154,
+          "mb_mb_GeV": null,
+          "mc_GeV": 1.1257047176633952e-09,
+          "mt_pole_GeV": -0.9991096070612595,
+          "sin2_thetaW_MZ": -0.022919708805615654
+        },
+        "chi2_refscale": {
+          "alpha_em_inv_MZ": 0.0854796777999201,
+          "alpha_s_MZ": -0.03881024204010433,
+          "mb_mb_GeV": null,
+          "mc_GeV": -1.8531700617785567e-14,
+          "mt_pole_GeV": -0.9991173742662663,
+          "sin2_thetaW_MZ": -0.022978132980703673
+        }
+      },
+      "success": 120
+    },
+    "plot": {
+      "ckm_summary_png": "tfpt-suite/out_engineering/ckm_full_pipeline/ckm_summary.png"
+    },
+    "reference_file": "tfpt-suite/tfpt_suite/data/ckm_reference.json",
+    "reference_meta": {
+      "chi2_keys": [
+        "Vus",
+        "Vub",
+        "Vcb",
+        "Vtd"
+      ],
+      "chi2_note": "To avoid double-counting unitarity constraints, ckm_full_pipeline computes its diagnostic \u03c7\u00b2 on a minimal approximately-independent subset of |V_ij|. Full |V_ij| are still printed for transparency.",
+      "definition": "Absolute values |V_ij| in the PDG convention (dimensionless). While |V_ij| are often quoted as low-energy fit outputs, an explicit reference scale is still useful when comparing to RG-evolved texture pipelines.",
+      "reference_scale_GeV": 91.1876,
+      "reference_scale_label": "MZ",
+      "scheme": "PDG / global-fit style (effective low-energy parameters; not a running MSbar coupling)",
+      "source": "Replace with your preferred PDG RPP / CKMfit / UTfit snapshot and cite it explicitly."
+    },
+    "rg_upward": {
+      "alpha_s_mt": 0.10849334481583243,
+      "alpha_s_sigma": 0.0011,
+      "chi2_keys": [
+        "Vus",
+        "Vub",
+        "Vcb",
+        "Vtd"
+      ],
+      "chi2_mt": 8.094029471832478,
+      "chi2_refscale": 8.03244196806409,
+      "ckm_abs_mt": {
+        "Vcb": "0.04198494673865927",
+        "Vcd": "0.22433749287587348",
+        "Vcs": "0.9736066729113559",
+        "Vtb": "0.9991114437421057",
+        "Vtd": "0.008238345148607253",
+        "Vts": "0.04133343262756552",
+        "Vub": "0.003686086124472918",
+        "Vud": "0.9744766897978526",
+        "Vus": "0.22445844561901232"
+      },
+      "ckm_abs_mu_end_2loop": {
+        "Vcb": "0.04711549604363003",
+        "Vcd": "0.22433704340099234",
+        "Vcs": "0.9733719849012833",
+        "Vtb": "0.9988808825049287",
+        "Vtd": "0.009245990871156292",
+        "Vts": "0.046384202256641645",
+        "Vub": "0.004136737692584521",
+        "Vud": "0.974467753499782",
+        "Vus": "0.2244893868100471"
+      },
+      "ckm_abs_refscale": {
+        "Vcb": "0.04173508993117249",
+        "Vcd": "0.22433749726187469",
+        "Vcs": "0.9736174143834504",
+        "Vtb": "0.9991219927214156",
+        "Vtd": "0.008189279961535038",
+        "Vts": "0.04108745981561331",
+        "Vub": "0.003664140939561017",
+        "Vud": "0.9744771023559202",
+        "Vus": "0.22445701382488603"
+      },
+      "contributions_mt_proxy": [
+        {
+          "chi2": "3.5545175534679795580329767972265625000000000000000000000000000000000000000000002",
+          "key": "Vtd",
+          "mean": "0.00854",
+          "pred": "0.008238345148607253",
+          "sigma": "0.00016"
+        },
+        {
+          "chi2": "3.0728262626437017221035809738713891711424009290172739149368558571635941355784586",
+          "key": "Vcb",
+          "mean": "0.04053",
+          "pred": "0.04198494673865927",
+          "sigma": "0.00083"
+        },
+        {
+          "chi2": "0.75198215728766353849334598347107438016528925619834710743801652892561983471074351",
+          "key": "Vus",
+          "mean": "0.22484",
+          "pred": "0.22445844561901232",
+          "sigma": "0.00044"
+        },
+        {
+          "chi2": "0.71470349843313227201425120049382716049382716049382716049382716049382716049382712",
+          "key": "Vub",
+          "mean": "0.00361",
+          "pred": "0.003686086124472918",
+          "sigma": "0.00009"
+        }
+      ],
+      "contributions_refscale": [
+        {
+          "chi2": "4.8048650539400165950508461501562500000000000000000000000000000000000000000000001",
+          "key": "Vtd",
+          "mean": "0.00854",
+          "pred": "0.008189279961535038",
+          "sigma": "0.00016"
+        },
+        {
+          "chi2": "2.1080588506507717889768221804325736681666424735084917985193787196980693859776455",
+          "key": "Vcb",
+          "mean": "0.04053",
+          "pred": "0.04173508993117249",
+          "sigma": "0.00083"
+        },
+        {
+          "chi2": "0.75763641698568436850459277324380165289256198347107438016528925619834710743801679",
+          "key": "Vus",
+          "mean": "0.22484",
+          "pred": "0.22445701382488603",
+          "sigma": "0.00044"
+        },
+        {
+          "chi2": "0.36188164648761674872420670234567901234567901234567901234567901234567901234567898",
+          "key": "Vub",
+          "mean": "0.00361",
+          "pred": "0.003664140939561017",
+          "sigma": "0.00009"
+        }
+      ],
+      "g_mt": {
+        "g1": 0.46309519108393543,
+        "g2": 0.6483341882196387,
+        "g3": 1.167633324356244
+      },
+      "g_mu_end_gauge_2loop": {
+        "g1": 0.5772336029856442,
+        "g2": 0.5675800555584328,
+        "g3": 0.5553792910639418
+      },
+      "g_mu_end_pyrate_2loop_GUTnorm": {
+        "g1_gut": 0.5772336029856442,
+        "g2": 0.5675800555584328,
+        "g3": 0.5553792910639418
+      },
+      "g_mu_end_pyrate_2loop_SMnorm": {
+        "g2": 0.5675800555584328,
+        "g3": 0.5553792910639418,
+        "gY": 0.4471232262469408
+      },
+      "g_mz": {
+        "g1": 0.4614234244528176,
+        "g2": 0.651723832904323,
+        "g3": 1.2171996941475736
+      },
+      "gravity_alpha3_patch": {
+        "alpha_definition_for_U1": "alphaY",
+        "c3": 0.039788735772973836,
+        "enabled": false,
+        "kappa_vector": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "jarlskog_mt": 2.9289837131591244e-05,
+      "jarlskog_mu_end_2loop": 3.688088508569905e-05,
+      "jarlskog_refscale": 2.894242713571667e-05,
+      "mt_msbar_mt_GeV": 163.6187822977806,
+      "mt_pole_GeV": 172.76,
+      "mu_end_GeV": 1e+16,
+      "mu_start_GeV": 172.76,
+      "publication_grade": {
+        "blocked_thresholds": [],
+        "note": "Publication-grade threshold bookkeeping requires matching_active=True at each threshold boundary; if matching is disabled, segments are labeled 'continuous_by_assumption'.",
+        "threshold_matching_ok": true
+      },
+      "pyrate_beta_sources": {
+        "e8_pythonoutput_dir": "Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput",
+        "fingerprints": {
+          "e8": {
+            "kind": "e8_sigma_yN_2loop",
+            "model_name_expected": "E8Cascade2LoopGravityV2",
+            "pythonoutput_dir": "Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput",
+            "pythonoutput_module_file": "Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput/RGEs.py",
+            "pythonoutput_module_sha256": "00b39ed315bbfef39796707e87d697e08362836a45385bb096c14102eff83635",
+            "yaml_source": "Pyrate3/models/E8Cascade 2Loop Gravity.yaml",
+            "yaml_source_sha256": "cc8f061af5e64dc6e22baba2eb9043bdcda493c200c415fd1926501f888195ca"
+          },
+          "sm": {
+            "kind": "sm_tfpt_2loop_v25",
+            "model_name_expected": "SM_TFPT_2Loop_v25",
+            "pythonoutput_dir": "Pyrate3/pyrate/results/SM_TFPT_2loop_v25/SM_TFPT_2Loop_v25/PythonOutput",
+            "pythonoutput_module_file": "Pyrate3/pyrate/results/SM_TFPT_2loop_v25/SM_TFPT_2Loop_v25/PythonOutput/RGEs.py",
+            "pythonoutput_module_sha256": "2afd8713aecc16eb3fe45e251199019abbc9c3d6f32a4452316fcaf5e9eda72a",
+            "yaml_source": "Pyrate3/models/SM_TFPT_2loop_v25.yaml",
+            "yaml_source_sha256": "d26c9ac5db235a107425ed10233d88427c589f08359482fd88ecbb5a455141df"
+          }
+        },
+        "sm_pythonoutput_dir": "Pyrate3/pyrate/results/SM_TFPT_2loop_v25/SM_TFPT_2Loop_v25/PythonOutput"
+      },
+      "segments_pyrate_2loop": [
+        {
+          "delta_b3_active": false,
+          "model": "sm_tfpt_2loop_v25",
+          "mu_end": 1000.0,
+          "mu_end_GeV": 1000.0,
+          "mu_start": 172.76,
+          "mu_start_GeV": 172.76,
+          "patches": [],
+          "patches_active": [],
+          "threshold_actions_at_start": [],
+          "threshold_match": null
+        },
+        {
+          "delta_b3_active": false,
+          "model": "e8_sigma_yN_2loop",
+          "mu_end": 18000000000.0,
+          "mu_end_GeV": 18000000000.0,
+          "mu_start": 1000.0,
+          "mu_start_GeV": 1000.0,
+          "patches": [],
+          "patches_active": [],
+          "threshold_actions_at_start": [
+            {
+              "action": "beta_source_switch(sm\u2194e8)",
+              "affected_parameters": [
+                "g",
+                "Yu",
+                "Yd",
+                "Ye",
+                "lambda"
+              ],
+              "note": "Switch beta source SM\u2192E8 at \u03bc=MSigma (Sigma integrated in). Matching enabled (loop_order=1; 1-loop is identity at \u03bc=threshold).",
+              "scale_GeV": 1000.0,
+              "status": "matched_1loop_log_only_identity",
+              "threshold_id": "MSigma"
+            }
+          ],
+          "threshold_match": {
+            "gauge": {
+              "deltas": {},
+              "details": {
+                "active_fields_after": [
+                  "SM",
+                  "Sigma"
+                ],
+                "active_fields_before": [
+                  "SM"
+                ],
+                "direction": "up",
+                "finite_delta_alpha_applied": {},
+                "finite_delta_alpha_input": {},
+                "loop_order": 1,
+                "mu_thr_GeV": 1000.0,
+                "scheme": "MSbar",
+                "threshold_id": "MSigma"
+              },
+              "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); finite pieces require explicit inputs or higher-loop decoupling constants",
+              "status": "matched_1loop_log_only_identity"
+            },
+            "loop_order": 1,
+            "matching_active": true,
+            "quartic": {
+              "deltas": {},
+              "details": {
+                "active_fields_after": [
+                  "SM",
+                  "Sigma"
+                ],
+                "active_fields_before": [
+                  "SM"
+                ],
+                "direction": "up",
+                "loop_order": 1,
+                "mu_thr_GeV": 1000.0,
+                "scheme": "MSbar",
+                "threshold_id": "MSigma"
+              },
+              "note": "identity matching at \u03bc=threshold (explicit); finite quartic matching not implemented yet",
+              "status": "matched_1loop_log_only_identity"
+            },
+            "scheme": "MSbar",
+            "threshold_id": "MSigma",
+            "yukawa": {
+              "deltas": {},
+              "details": {
+                "active_fields_after": [
+                  "SM",
+                  "Sigma"
+                ],
+                "active_fields_before": [
+                  "SM"
+                ],
+                "direction": "up",
+                "loop_order": 1,
+                "mu_thr_GeV": 1000.0,
+                "scheme": "MSbar",
+                "threshold_id": "MSigma",
+                "yukawa_maxabs_input": {
+                  "Yd": 0.014790283625867585,
+                  "Ye": 0.003884238387560973,
+                  "Yu": 0.8590117938525708
+                }
+              },
+              "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); top pole\u2192MSbar(mt) is handled in rge_sm.sm_boundary_conditions_at_mt",
+              "status": "matched_1loop_log_only_identity"
+            }
+          },
+          "threshold_transition_at_start": {
+            "action": "beta_source_switch(sm\u2194e8)",
+            "affected_parameters": [
+              "g",
+              "Yu",
+              "Yd",
+              "Ye",
+              "lambda"
+            ],
+            "note": "Switch beta source SM\u2192E8 at \u03bc=MSigma (Sigma integrated in). Matching enabled (loop_order=1; 1-loop is identity at \u03bc=threshold).",
+            "scale_GeV": 1000.0,
+            "status": "matched_1loop_log_only_identity",
+            "threshold_id": "MSigma"
+          }
+        },
+        {
+          "delta_b3_active": true,
+          "model": "e8_sigma_yN_2loop",
+          "mu_end": 1e+16,
+          "mu_end_GeV": 1e+16,
+          "mu_start": 18000000000.0,
+          "mu_start_GeV": 18000000000.0,
+          "patches": [
+            "delta_b3_g8"
+          ],
+          "patches_active": [
+            "delta_b3_g8"
+          ],
+          "threshold_actions_at_start": [
+            {
+              "action": "beta_patch(\u0394b3)",
+              "affected_parameters": [
+                "g3"
+              ],
+              "note": "Apply \u0394b3 patch above MG8 (paper v1.06 note). Matching enabled (loop_order=1; 1-loop is identity at \u03bc=threshold).",
+              "scale_GeV": 18000000000.0,
+              "status": "matched_1loop_log_only_identity",
+              "threshold_id": "MG8"
+            }
+          ],
+          "threshold_match": {
+            "gauge": {
+              "deltas": {},
+              "details": {
+                "active_fields_after": [
+                  "SM",
+                  "Sigma",
+                  "G8"
+                ],
+                "active_fields_before": [
+                  "SM",
+                  "Sigma"
+                ],
+                "direction": "up",
+                "finite_delta_alpha_applied": {},
+                "finite_delta_alpha_input": {},
+                "loop_order": 1,
+                "mu_thr_GeV": 18000000000.0,
+                "scheme": "MSbar",
+                "threshold_id": "MG8"
+              },
+              "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); finite pieces require explicit inputs or higher-loop decoupling constants",
+              "status": "matched_1loop_log_only_identity"
+            },
+            "loop_order": 1,
+            "matching_active": true,
+            "quartic": {
+              "deltas": {},
+              "details": {
+                "active_fields_after": [
+                  "SM",
+                  "Sigma",
+                  "G8"
+                ],
+                "active_fields_before": [
+                  "SM",
+                  "Sigma"
+                ],
+                "direction": "up",
+                "loop_order": 1,
+                "mu_thr_GeV": 18000000000.0,
+                "scheme": "MSbar",
+                "threshold_id": "MG8"
+              },
+              "note": "identity matching at \u03bc=threshold (explicit); finite quartic matching not implemented yet",
+              "status": "matched_1loop_log_only_identity"
+            },
+            "scheme": "MSbar",
+            "threshold_id": "MG8",
+            "yukawa": {
+              "deltas": {},
+              "details": {
+                "active_fields_after": [
+                  "SM",
+                  "Sigma",
+                  "G8"
+                ],
+                "active_fields_before": [
+                  "SM",
+                  "Sigma"
+                ],
+                "direction": "up",
+                "loop_order": 1,
+                "mu_thr_GeV": 18000000000.0,
+                "scheme": "MSbar",
+                "threshold_id": "MG8",
+                "yukawa_maxabs_input": {
+                  "Yd": 0.00801613833308186,
+                  "Ye": 0.003869188281338172,
+                  "Yu": 0.5309111020406737
+                }
+              },
+              "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); top pole\u2192MSbar(mt) is handled in rge_sm.sm_boundary_conditions_at_mt",
+              "status": "matched_1loop_log_only_identity"
+            }
+          },
+          "threshold_transition_at_start": {
+            "action": "beta_patch(\u0394b3)",
+            "affected_parameters": [
+              "g3"
+            ],
+            "note": "Apply \u0394b3 patch above MG8 (paper v1.06 note). Matching enabled (loop_order=1; 1-loop is identity at \u03bc=threshold).",
+            "scale_GeV": 18000000000.0,
+            "status": "matched_1loop_log_only_identity",
+            "threshold_id": "MG8"
+          }
+        }
+      ],
+      "sm_inputs_mz_file": "tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+      "thresholds_file": "tfpt-suite/tfpt_suite/data/rge_thresholds_v25.json",
+      "unitarity_dev_mt": 6.661338147777995e-16,
+      "unitarity_dev_mu_end_2loop": 4.137881775480034e-16,
+      "unitarity_dev_refscale": 6.661338147789793e-16,
+      "v_ev_GeV": 246.0,
+      "wolfenstein_mt": {
+        "A": 0.8333389947376633,
+        "eta_bar": 0.3301611887340593,
+        "lambda": 0.22445844561901232,
+        "rho_bar": 0.19087502640981877
+      },
+      "wolfenstein_mu_end_2loop": {
+        "A": 0.9349150274004522,
+        "eta_bar": 0.33011998405681175,
+        "lambda": 0.2244893868100471,
+        "rho_bar": 0.19098000874298154
+      },
+      "wolfenstein_refscale": {
+        "A": 0.8283902756313136,
+        "eta_bar": 0.3301630746340131,
+        "lambda": 0.22445701382488603,
+        "rho_bar": 0.1908702209714886
+      },
+      "yb_mt_input": 0.01665860318819457,
+      "yt_mt": 0.9406174836767976,
+      "ytau_mt_input": 0.010214876058692106
+    }
+  },
+  "spec": {
+    "assumptions": [
+      "Reference CKM table is treated as a diagnostic snapshot (not a covariance-level global-fit likelihood).",
+      "Below-mt running and full finite matching pieces are not yet a publication-grade policy; residual scheme effects may impact precision elements (e.g. Vub)."
+    ],
+    "determinism": "Deterministic given the texture config + input tables.",
+    "formulas": [
+      "\u03bb_TFPT = sqrt(varphi0)*(1 - varphi0/2) (paper v2.4)",
+      "Y^(y) = y_* [ C(\u03b4) + a_y varphi0 D + b c3 I ], D=diag(1,0,-1)",
+      "C(\u03b4) = circ(1, \u03b6, \u03b6*) with \u03b6 = exp(i \u03b8(\u03b4)); \u03b8(\u03b4) configured (default \u03b8=2\u03c0\u03b4)",
+      "RG evolution: start strictly at \u03bc=mt and run upward only to \u03bc_UV (no running below mt)",
+      "RG dressing: integrate PyR@TE-generated beta functions (supports complex Yukawas); threshold bookkeeping is explicit in output segments",
+      "CKM from Yukawas: V = Uu^\u2020 Ud where Uu,Ud diagonalize YuYu^\u2020 and YdYd^\u2020",
+      "\u03c7\u00b2 = \u03a3 ((|V_ij|(mt) - mean)/sigma)^2 over the reference table (proxy; the reference carries explicit metadata but is still an effective low-energy fit input, not a running MSbar coupling)"
+    ],
+    "gaps": [
+      "A full-matrix \u03c7\u00b2 can look large if one includes redundant unitarity-constrained |V_ij| keys (double-counting). The suite therefore uses a declared `chi2_keys` subset for the diagnostic p-value gate; publication-grade still requires a consistent likelihood/covariance model.",
+      "Topology\u2192(\u03b4, \u03b4_CP) derivation is not yet implemented; `topology_phase_atoms` is a docking point only.",
+      "Publication-grade requires finalized finite matching pieces and a consistent comparison scale policy."
+    ],
+    "inputs": [
+      "TFPT Cabibbo \u03bb from varphi0",
+      "SM inputs at \u03bc=MZ: tfpt_suite/data/sm_inputs_mz.json (for RG dressing)",
+      "reference CKM |V_ij| table: tfpt_suite/data/ckm_reference.json",
+      "Z3 Yukawa texture config: tfpt_suite/data/flavor_texture_v24.json",
+      "lepton masses (\u03c4, \u03bc) for \u03b4 calibration: tfpt_suite/data/lepton_masses_pdg.json",
+      "2-loop PyR@TE beta tables (via tfpt_suite/data/pyrate_pythonoutputs.json; deterministic model selection)"
+    ],
+    "maturity": "deterministic pipeline (diagnostic \u03c7\u00b2; physics-mode p-value gate PASS under declared chi2_keys; publication-grade operator/matching derivation remains a WARN-gap)",
+    "module_id": "ckm_full_pipeline",
+    "name": "CKM full pipeline (Z3 Yukawa texture + diagonalization; upward RG mt\u2192\u03bcUV)",
+    "objective": [
+      "Run an end-to-end deterministic CKM construction (no continuous fit) with explicit phase conventions and explicit RG/threshold policy.",
+      "Quantify failure modes honestly (\u03c7\u00b2 contributions) and surface the remaining missing physics (matching finite pieces; topology\u2192phase map)."
+    ],
+    "outputs": [
+      "Yukawa texture parameters at \u03bc=mt (\u03b4, phase_mode, coefficients_rule, y_*)",
+      "CKM |V_ij| at \u03bc=mt (boundary) and at \u03bc=\u03bc_UV after upward RG running",
+      "\u03c7\u00b2 contributions at \u03bc=mt vs the reference table (proxy)",
+      "Wolfenstein + Jarlskog at \u03bc=mt and \u03bc=\u03bc_UV",
+      "optional: Monte Carlo uncertainty propagation at the reference scale (mean/std for |V_ij| and \u03c7\u00b2)"
+    ],
+    "question": "Can TFPT\u2019s deterministic M\u00f6bius/Z3 flavor generator reproduce the precision CKM matrix once scheme/scale policy is made explicit?",
+    "references": [
+      "paper_v1_06_01_09_2025.tex / update_tfptv1_07sm.tex (flavor architecture; M\u00f6bius/Z3 anchors)",
+      "tfpt_suite/data/flavor_texture_v24.json (explicit conventions + topology docking block)"
+    ],
+    "validation": [
+      "texture config loads and produces finite Yukawa matrices at mt",
+      "RG dressing runs and produces a unitary CKM matrix (numerically)"
+    ],
+    "what_was_done": [
+      "Compute \u03b4 from \u03c4/\u03bc or \u03b4\u22c6 from varphi0 (explicit in flavor_texture_v24.json).",
+      "Generate quark Yukawas via the v1.07SM M\u00f6bius/Z3 generator and run mt\u2192\u03bcUV RG with explicit thresholds.",
+      "Evaluate discrete CKM convention variants (s13_mode, delta_mode) and report \u03c7\u00b2 against a pinned reference snapshot.",
+      "Record the `topology_phase_atoms` docking block from flavor_texture_v24.json (produced by chiral_index_three_cycles) for future topology\u2192phase integration."
+    ]
+  },
+  "warnings": []
+}

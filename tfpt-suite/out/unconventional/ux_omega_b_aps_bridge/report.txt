@@ -1,0 +1,38 @@
+Unconventional: Ω_b bridge via APS seam term
+
+Idea:
+- Replace a raw (4π−1) insertion by a quantity already computed in-suite: the APS seam term ΔΓ.
+- This remains conditional until an operator/anomaly-level derivation connects Ω_b to ΔΓ.
+
+APS seam toy-model (periodic spin):
+- epsilon = 0.001
+- m = 1 ⇒ SF(U_Γ) = 1 (analytic=1), winding(det U_Γ) = 1
+- ΔΓ := 2π·SF = 6.28318530717958647692528676655900576839433879875021164194989
+
+Bridge conjecture (conditional):
+- K_candidate := 2·ΔΓ − 1 = 11.5663706143591729538505735331180115367886775975004232838998
+- beta_rad = varphi0/(4π) = 0.00423128951139541510874681820880501639507280772668372576989442
+- Ω_b_pred := K_candidate·beta_rad = 0.0489406626654501122005456537609446514800549520731074138705566
+
+Reference (Planck 2018 base-ΛCDM; derived Ω_b):
+- Ω_b h^2 = 0.02237 ± 0.00015
+- H0 = 67.36 ± 0.54 km/s/Mpc ⇒ h=0.6736 ± 0.0054
+- Ω_b_ref = Ω_b h^2 / h^2 = 0.0493016923285244384764247549946118561732330555571227876168607 ± 0.000856811427471409315098354041123786357060934999646892375524002
+- implied K = Ω_b_ref / beta_rad = 11.6516944056294290437972588436586479652968822192758501048575 ± 0.202494162870185146181656267093038443729599797285532791967331
+- |K_candidate - implied K| = 0.0853237912702560899466853105406364285082046217754268209577356 (diagnostic)
+
+Assumptions (explicit):
+- aps_seam_term_toy_model: Use the 1D Dirac-family toy model of the seam operator (Appendix seam) where ΔΓ := 2π·SF(U_Γ) for U_Γ(θ)=exp(i m θ).  [implemented (see aps_eta_gluing)]
+- minimal_nontrivial_class_m_eq_1: Use the minimal nontrivial winding class m=1 (so SF=1 in the toy model).  [checked in aps_eta_gluing (minimal m with SF>0 is 1)]
+- omega_b_coeff_equals_2_delta_gamma_minus_1: Bridge postulate: the baryon coefficient K := Ω_b/β_rad equals (2·ΔΓ − 1) in the same normalization.  [conditional / to be replaced by an operator/anomaly-level derivation]
+
+Checks:
+- aps_spectral_flow_m1: PASS (m=1 periodic: numeric_sf=1, winding=1)
+- delta_gamma_equals_2pi: PASS (ΔΓ=2π·SF with SF=1 ⇒ ΔΓ=6.28318530717958647692528676655900576839433879875021164194989)
+- K_candidate_equals_4pi_minus_1: PASS (K_candidate=2ΔΓ−1=11.5663706143591729538505735331180115367886775975004232838998 (vs 4π−1))
+- omega_b_pred_positive: PASS (Ω_b_pred=0.0489406626654501122005456537609446514800549520731074138705566)
+- omega_b_pred_close_to_planck_ref_diagnostic: PASS (Ω_b_ref=0.0493016923285244384764247549946118561732330555571227876168607 ± 0.000856811427471409315098354041123786357060934999646892375524002; z=0.421364201618766770003679733207974465875667567538595875138153)
+
+Notes:
+- This module is intentionally conservative: it does not claim an operator-level Ω_b derivation.
+- It provides a concrete *docking point*: Ω_b coefficient ↔ ΔΓ (APS seam), which can be upgraded to an anomaly/inflow computation later.

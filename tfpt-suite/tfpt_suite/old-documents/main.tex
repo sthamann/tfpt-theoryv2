@@ -1,0 +1,170 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{tikz}
+\usepackage{enumitem}
+\graphicspath{{figures/}}
+
+\title{Strukturelle Äquivalenz der Felder:\\
+von der kubischen Fixpunktgleichung zur vereinheitlichten Feldgleichung}
+\author{Stefan Hamann \and Alessandro Rizzo}
+\date{Fassung vom 27.09.2025}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Wir formulieren das \emph{Prinzip der strukturellen Äquivalenz der Felder}: die bekannten Operatorgesetze
+(Gauß, Faraday und Ampère) tragen dieselbe Form in vier Regimen ein und desselben Feldes: Elektromagnetismus,
+Gravito Elektrodynamik (schwaches Feld), thermo gravitative Antwort (sehr schwaches Feld) und eine spinoriale
+Erweiterung über ein $\beta$-Feld. Die dynamische Klammer bildet eine torsionsvolle Geometrie, deren kompakte Gleichung
+\begin{equation*}
+\big(R - \nabla\!\cdot\!K + K^2\big)_{AB}=\kappa^2\Big(T^{(a)}+T^{(\mathrm{EM})}\Big)_{AB}
+\end{equation*}
+mit modifizierten Maxwell-Gleichungen und einer festen Axion Photon-Kopplung folgt. Daraus ergibt sich eine
+parameterfreie Vorhersage für die kosmische Birefringenz und eine einfache geometrische Selbstkonsistenz auf der
+orientierbaren Doppelabdeckung, die die Genauigkeit der $\alpha$-Fixpunktlösung weiter steigert.
+\end{abstract}
+
+\section{Leitsatz: Strukturelle Äquivalenz}
+Die vier Regime sind nicht verschiedene Kräfte, sondern Operator-Folgen desselben Feldes in
+unterschiedlichen Skalenfenstern. \Cref{tab:operatoren} fasst die Struktur zusammen.
+
+\begin{table}[h]
+\centering
+\caption{Vier Regime desselben Feldes unter denselben Operatoren.}
+\label{tab:operatoren}
+\small
+\begin{tabular}{@{}llccc@{}}
+\toprule
+\textbf{Operator / Gesetz} & \textbf{Elektromagnetismus} & \textbf{Gravito EM (schwach)} & \textbf{Thermo Grav.~(sehr schwach)} & \textbf{Spinoriale Erweiterung ($\beta$)}\\
+\midrule
+Gauß ($\nabla\!\cdot$) & $\nabla\!\cdot \mathbf E=\rho_e/\varepsilon_0$
+& $\nabla\!\cdot \mathbf g=-4\pi G\rho_m$
+& Dichtefluktuationen $\to$ ``Temperatur''
+& $\beta$ koppelt Dichte $\leftrightarrow$ Polarisation \\
+Keine Monopole ($\nabla\!\cdot$) & $\nabla\!\cdot \mathbf B=0$
+& $\nabla\!\cdot \mathbf B_g=0$
+& thermische Isotropie des Vakuums
+& lokale Paritätsverletzung (axionartig) \\
+Faraday ($\nabla\!\times$) & $\nabla\!\times \mathbf E=-\partial_t\mathbf B$
+& $\nabla\!\times \mathbf g=-\partial_t\mathbf B_g$
+& Wärmefluss der Raumzeit
+& Polarisationsrotation (kosm.\ Birefringenz) \\
+Ampère ($\nabla\!\times$) & $\nabla\!\times \mathbf B=\mu_0\mathbf J+\mu_0\varepsilon_0\,\partial_t\mathbf E$
+& $\nabla\!\times \mathbf B_g=-(4\pi G/c^2)\mathbf J_m+\partial_t\mathbf g$
+& Entropieströme des Vakuums
+& neuer spinorialer Strom $\propto \beta$ \\
+Wellen ($\nabla^2$) & EM-Wellen & Gravitationswellen & thermische Wellen des Raums & spinoriale Wellen (``Übersetzung'') \\
+\midrule
+Konstanten & $\varepsilon_0,\mu_0,c$ & $G,c$ & $k_B$ & $\beta$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Kompakte Geometriegleichung und Birefringenz}
+Aus einer torsionsvollen Variation ergibt sich die vereinheitlichte Gleichung
+\begin{equation}
+\big(R-\nabla\!\cdot\!K+K^2\big)_{AB}=\kappa^2\Big(T^{(a)}+T^{(\mathrm{EM})}\Big)_{AB},
+\qquad
+\nabla_A F^{AB}+2c_3(\partial^B a)\tilde F_{AB}=0,
+\label{eq:ufe}
+\end{equation}
+wobei der axion photon Vertex durch $g_{a\gamma\gamma}= -4c_3$ fixiert ist und $c_3=\tfrac{1}{8\pi}$.
+Für ein homogenes $a(\eta)$ rotiert die Linearpolarisation um
+\begin{equation}
+\beta=\tfrac{1}{2}\,g_{a\gamma\gamma}\,\Delta a = 2c_3\,\Delta a=\frac{\varphi_0}{4\pi}\,,
+\end{equation}
+so dass mit $\varphi_0= \tfrac{1}{6\pi}+\tfrac{3}{256\pi^4}$ die geschlossene Vorhersage $\beta_{\text{th}}=0.2427^\circ$ folgt.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.78\linewidth]{birefringence_pr4.png}
+\caption{Kosmische Birefringenz: Planck PR4 Schätzungen mit Fehlerbalken im Vergleich zur \emph{parameterfreien}
+Vorhersage $\beta_{\text{th}}=0.2427^\circ$.}
+\label{fig:birefr}
+\end{figure}
+
+\section{Geometrische Selbstkonsistenz auf der Doppelabdeckung}
+Die Feldenergie, die den Logarithmus $\kappa(\varphi_0)$ erzeugt, koppelt an genau jene Geometrie, die $\varphi_0$ setzt.
+Auf der orientierbaren Doppelabdeckung addieren sich die beiden Randbeiträge; die minimal konsistente Antwort lautet
+\begin{equation}
+\varphi_0(\alpha)=\varphi_{\text{tree}}+\delta_{\text{top}}\,(1-2\alpha),\qquad
+\varphi_{\text{tree}}=\frac{1}{6\pi},\quad \delta_{\text{top}}=\frac{3}{256\pi^4}.
+\end{equation}
+Eingesetzt in die kubische Normalform
+\begin{equation}
+\alpha^3- A\,\alpha^2- A\,c_3^2\,\kappa(\varphi_0)=0,\quad
+A=2c_3^3,\quad \kappa=\frac{b_1}{2\pi}\ln\!\frac{1}{\varphi_0},\ \ b_1=\frac{41}{10},
+\end{equation}
+liefert dies eine implizite Lösung mit $\alpha^{-1}\approx 137.0359903901$, also eine Verschiebung um $\sim 3.6$ ppm
+in Richtung der CODATA-Zahl.
+
+\section{E8-Leiter als Strukturrahmen}
+Die log-exakte Leiter
+\begin{equation}
+\varphi_n=\varphi_0\,e^{-\gamma(0)}\Big(\frac{D_n}{D_1}\Big)^{\lambda},\qquad
+D_n=60-2n,\ \gamma(0)=0.834,\ \lambda=\frac{\gamma(0)}{\ln 248-\ln 60}
+\end{equation}
+ordnet Skalen ohne Fits und erzeugt einfache Verhältnisgesetze.
+\Cref{fig:ladder} zeigt die Stufen $n=1\ldots 26$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{e8_ladder.png}
+\caption{E8-Leiter: log-exakte Stufen $\varphi_n$ (siehe Text).}
+\label{fig:ladder}
+\end{figure}
+
+\section{Visual: Doppelabdeckung und Randzählung}
+Die Zahl $6\pi$ für den linearen Randkoeffizienten entsteht aus zwei echten Rändern plus der Naht $\Gamma$ der Möbius-Faser.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.0]
+% Cylindrical depiction with two boundaries and a seam
+\draw[thick] (-3,2) to[out=0,in=180] (3,2);
+\draw[thick] (-3,-2) to[out=0,in=180] (3,-2);
+\draw[very thick,red] (0,-1.8) -- (0,1.8);
+\node at (0.2,0) [right,red] {$\Gamma$ (Naht, effektiver Rand $2\pi$)};
+\node at (-2.7,2.3) {oberer Rand $2\pi$};
+\node at (-2.7,-2.3) {unterer Rand $2\pi$};
+\end{tikzpicture}
+\caption{Orientierbare Doppelabdeckung der Möbius-Faser: zwei Ränder plus Naht $\Gamma$ addieren zu $6\pi$.}
+\label{fig:doublecover}
+\end{figure}
+
+\section{Schluss}
+Ein und dieselbe Operatorstruktur spannt Elektromagnetismus, schwache Gravitation, thermo\-gravitative Antwort
+und eine spinoriale Erweiterung auf. Die torsionsvolle Geometrie bündelt diese Struktur in einer kompakten Gleichung
+und liefert über die Fixpunkte $c_3$ und $\varphi_0$ konkrete Zahlen mit Beobachtungsbezug. Die Doppelabdeckung
+schließt die letzte Selbstkonsistenzlücke in der Normalform für $\alpha$.
+
+\appendix
+\section*{Notation und feste Zahlen}
+\begin{itemize}[leftmargin=2em]
+\item $c_3=\tfrac{1}{8\pi}$,\quad $\varphi_{\text{tree}}=\tfrac{1}{6\pi}$,\quad $\delta_{\text{top}}=\tfrac{3}{256\pi^4}$,\quad
+$\varphi_0=\varphi_{\text{tree}}+\delta_{\text{top}}$.
+\item $A=2c_3^3=\tfrac{1}{256\pi^3}$,\quad $\kappa=\tfrac{b_1}{2\pi}\ln(1/\varphi_0)$,\quad $b_1=\tfrac{41}{10}$ (GUT Norm).
+\end{itemize}
+
+\section*{Literaturhinweise}
+\begin{enumerate}[label={[L\arabic*]}]
+\item Vereinheitlichte Feldgleichung, axion Photon Kopplung und Birefringenz: interne Notiz \emph{``On the Unified Field Equation as a Consequence of a Quantum Fixed-Point Condition''} (2025).
+\item Geometrische Selbstkonsistenz auf der Doppelabdeckung und ppm-Shift in $\alpha$: interne Notiz \emph{``Geometric Self Consistency on the Orientable Double Cover''} (2025).
+\item TFPT V1.06: Topologie $c_3$, Geometrie $\varphi_0$ und E8-Leiter in geschlossener Form (2025).
+\end{enumerate}
+
+\end{document}

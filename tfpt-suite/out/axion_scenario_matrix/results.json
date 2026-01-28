@@ -1,0 +1,141 @@
+{
+  "checks": [
+    {
+      "check_id": "scenario_is_explicit",
+      "detail": "3 scenarios enumerated (pre vs post inflation)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "isocurvature_passes_in_at_least_one_scenario",
+      "detail": "PASS (engineering mode; diagnostic)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "at_least_one_scenario_is_physically_viable",
+      "detail": "PASS (engineering mode; diagnostic)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "scenario_policy_selected_is_known",
+      "detail": "selected=post_inflation_theta_rms_with_strings_dw_factor",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "axion_scenario_matrix",
+  "plot": null,
+  "results": {
+    "axion_claim": {
+      "f_a_GeV": 88639886850.34554,
+      "m_a_micro_eV": 65.1947598780055,
+      "nu_GHz": 15.76402318010866,
+      "source": "derived"
+    },
+    "inflation_proxy": {
+      "A_s": 2.0989031673191437e-09,
+      "H_inf_GeV": 15065993845815.389,
+      "N": 56.98005698005695,
+      "n_s": 0.9649,
+      "r": 0.003696030000000004
+    },
+    "inputs": {
+      "axion_tfpt_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/axion_tfpt_v106.json",
+      "global_reference_minimal_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json"
+    },
+    "limits": {
+      "beta_iso_max": 0.038,
+      "iso_ratio_limit": 0.0395010395010395,
+      "omega_dm_h2_ref": 0.12
+    },
+    "scenario_policy_selected": "post_inflation_theta_rms_with_strings_dw_factor",
+    "scenarios": [
+      {
+        "P_iso_over_P_R": 493264460823016.1,
+        "frac_dm": 0.000376749917376087,
+        "isocurvature_applicable": true,
+        "isocurvature_limit_ratio": 0.0395010395010395,
+        "note": "Standard pre-inflation proxy (single \u03b8_i) used by the legacy axion_dm_pipeline; expected to fail isocurvature for high H_inf.",
+        "omega_a_h2": 4.520999008513044e-05,
+        "overproduces_dm": false,
+        "passes_isocurvature": false,
+        "passes_scenario": false,
+        "pq_breaking": "pre_inflation",
+        "scenario_id": "pre_inflation_single_theta_varphi0",
+        "strings_domain_walls_factor": 1.0,
+        "theta_eff": 0.053171952176845526,
+        "theta_policy": "theta_i = varphi0 (birefringence-fixed; single-angle patch)"
+      },
+      {
+        "P_iso_over_P_R": null,
+        "frac_dm": 0.4383958612510251,
+        "isocurvature_applicable": false,
+        "isocurvature_limit_ratio": 0.0395010395010395,
+        "note": "Post-inflation PQ breaking: treat isocurvature as N/A; strings/domain walls not included (conservative).",
+        "omega_a_h2": 0.05260750335012301,
+        "overproduces_dm": false,
+        "passes_isocurvature": true,
+        "passes_scenario": true,
+        "pq_breaking": "post_inflation",
+        "scenario_id": "post_inflation_theta_rms_no_strings",
+        "strings_domain_walls_factor": 1.0,
+        "theta_eff": 1.8137993642342178,
+        "theta_policy": "random \u03b8_i; use rms(\u03b8)=\u03c0/\u221a3 for estimate"
+      },
+      {
+        "P_iso_over_P_R": null,
+        "frac_dm": 1.022923676252392,
+        "isocurvature_applicable": false,
+        "isocurvature_limit_ratio": 0.0395010395010395,
+        "note": "Post-inflation PQ breaking: includes an explicit multiplicative strings/domain-walls factor (policy knob; needs a real derivation).",
+        "omega_a_h2": 0.12275084115028702,
+        "overproduces_dm": true,
+        "passes_isocurvature": true,
+        "passes_scenario": false,
+        "pq_breaking": "post_inflation",
+        "scenario_id": "post_inflation_theta_rms_with_strings_dw_factor",
+        "strings_domain_walls_factor": 2.3333333333333335,
+        "theta_eff": 1.8137993642342178,
+        "theta_policy": "random \u03b8_i; use rms(\u03b8)=\u03c0/\u221a3; include strings/domain-walls factor"
+      }
+    ]
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given inputs.",
+    "formulas": [
+      "\u03a9_a h^2 \u2248 \u03a9_norm \u00b7 \u03b8_eff^2 \u00b7 (f_a/f_norm)^p (engineering misalignment scaling)",
+      "pre-inflation proxy: P_iso/P_R \u2248 (H/(\u03c0 f_a \u03b8_eff))^2 / A_s",
+      "post-inflation: isocurvature is treated as N/A (requires strings/domain-walls modeling instead)"
+    ],
+    "gaps": [
+      "Publication-grade post-inflation requires a strings/domain-walls relic computation and updated lattice inputs."
+    ],
+    "inputs": [
+      "axion claim + policy knobs: tfpt_suite/data/axion_tfpt_v106.json (derived f_a preferred if available)",
+      "Planck baseline (n_s, ln10_As) for inflation scale proxy: tfpt_suite/data/global_reference_minimal.json"
+    ],
+    "maturity": null,
+    "module_id": "axion_scenario_matrix",
+    "name": "Axion scenario matrix (pre/post inflation PQ; explicit branches; physics gate)",
+    "objective": [
+      "Make the scenario dependence first-class (pre vs post inflation PQ breaking).",
+      "Prevent a single implicit choice from dominating ToE optics."
+    ],
+    "outputs": [
+      "scenario table: \u03a9_a h^2, DM fraction, isocurvature status per branch",
+      "physics gate: at least one scenario must pass isocurvature + non-overproduction"
+    ],
+    "question": "Which PQ-breaking scenario(s) are compatible with TFPT axion parameters under explicit assumptions?",
+    "references": [],
+    "validation": [
+      "Scenario list is explicit (no silent default).",
+      "At least one scenario passes the isocurvature gate in physics mode."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

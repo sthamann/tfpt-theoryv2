@@ -1,0 +1,124 @@
+{
+  "checks": [
+    {
+      "check_id": "holonomy_hypercharge_rule_system_derived_and_encoded",
+      "detail": "derived cusp magnitudes from SU(5) hypercharge: [Fraction(1, 3), Fraction(2, 3), Fraction(1, 1)]",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "stable_unique_class_all_bounds",
+      "detail": "canonical_classes == 1 for max_den in {3,6,12,24}",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "rep_matches_paper_triplet",
+      "detail": "representative matches {1,1/3,2/3} (paper v2.4)",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "results": {
+    "derived_cusps": [
+      "1/3",
+      "2/3",
+      "1"
+    ],
+    "holonomy_rule_model": {
+      "cusp_magnitudes": [
+        "1/3",
+        "2/3",
+        "1"
+      ],
+      "eigenvalues_fund": [
+        "-1/3",
+        "-1/3",
+        "-1/3",
+        "1/2",
+        "1/2"
+      ],
+      "generator": "Y (hypercharge, fundamental)",
+      "group": "SU(5)",
+      "selection_rule": "SU(5) hypercharge holonomy spectrum + SM sector separation (u,d,\u2113 singlets)"
+    },
+    "summaries": [
+      {
+        "candidates_found": 1,
+        "canonical_classes": 1,
+        "canonical_representatives": [
+          [
+            "1/3",
+            "2/3",
+            "1"
+          ]
+        ],
+        "max_den": 3
+      },
+      {
+        "candidates_found": 1,
+        "canonical_classes": 1,
+        "canonical_representatives": [
+          [
+            "1/3",
+            "2/3",
+            "1"
+          ]
+        ],
+        "max_den": 6
+      },
+      {
+        "candidates_found": 1,
+        "canonical_classes": 1,
+        "canonical_representatives": [
+          [
+            "1/3",
+            "2/3",
+            "1"
+          ]
+        ],
+        "max_den": 12
+      },
+      {
+        "candidates_found": 1,
+        "canonical_classes": 1,
+        "canonical_representatives": [
+          [
+            "1/3",
+            "2/3",
+            "1"
+          ]
+        ],
+        "max_den": 24
+      }
+    ]
+  },
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic exhaustive search (finite).",
+    "formulas": [
+      "Search space: rationals y=p/q in [0,1] with q<=max_den",
+      "Constraints (paper v2.4): rationality + SU(5) hypercharge compatibility + sector separation",
+      "Sector separation: y=1 (leptons), y=1/3 (down-type), y=2/3 (up-type)",
+      "Equivalence: S3 permutations (unordered cusp-set)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "bounded rational search max_den \u2208 {3,6,12,24}"
+    ],
+    "maturity": null,
+    "module_id": "mobius_cusp_classification",
+    "name": "M\u00f6bius cusps classification (paper v2.4 constraints; bounded rational scan)",
+    "objective": [],
+    "outputs": [
+      "candidate cusp triplets and equivalence classes (per max_den)"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "Exactly one triplet survives for all tested max_den: {1,1/3,2/3}"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

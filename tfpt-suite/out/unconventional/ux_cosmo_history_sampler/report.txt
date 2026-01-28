@@ -1,0 +1,60 @@
+Unconventional: cosmology history sampler (k→ℓ feasibility)
+
+Purpose:
+- Explore whether the bounce k-scale can plausibly map into CMB multipoles once an explicit a0/a_transition model is declared.
+- This does *not* derive the expansion history; it quantifies feasibility under explicit priors.
+
+Inputs:
+- k_calibration config: /Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/tfpt_suite/data/k_calibration.json
+- bounce diagnostics: live: /Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/bounce_perturbations/results.json
+- k_bounce_s_raw=2103.55, k_bounce_t_raw=7.80804
+- M = 3.060e+13 GeV (from TFPT M/Mpl and Mpl(reduced)=2.435e+18 GeV)
+- χ_* = 13867.328 Mpc (flat ΛCDM; H0=67.36, Ωm=0.3153, Ωr=9.2e-05, z*=1090.0)
+
+Naive projection (no absolute normalization):
+- ℓ_bounce_s(naive) ≈ 1.396e+59
+- ℓ_bounce_t(naive) ≈ 5.180e+56
+
+CMB window used for diagnostics: ℓ∈[2.0,2500.0]
+
+Scenario: policy_v106_threshold_driven
+- note: Threshold/policy-driven: N_pivot from n_s; N_reheat derived from T_reheat via ρ scaling (v1.06 ΔN model).
+- priors: N_infl∈(56.98005698005695, 56.98005698005695), N_reh∈(0.0, 0.0), log10(Treh/GeV)∈(-3.0, 15.0)
+- kept_samples: 1031
+- scalar in CMB window: 41/1031
+- tensor in CMB window: 1031/1031
+- log10 ℓ quantiles (scalar): {'0.05': 3.425091246346965, '0.5': 4.529797820084529, '0.95': 5.631850769718651}
+- log10 ℓ quantiles (tensor): {'0.05': 0.9946802648037633, '0.5': 2.099386838541326, '0.95': 3.201439788175449}
+
+Scenario: plausible
+- note: Conservative ranges around standard inflation+reheating expectations.
+- priors: N_infl∈(50.0, 70.0), N_reh∈(0.0, 15.0), log10(Treh/GeV)∈(-2.0, 15.0)
+- kept_samples: 4000
+- scalar in CMB window: 357/4000
+- tensor in CMB window: 538/4000
+- log10 ℓ quantiles (scalar): {'0.05': 0.6898529209269364, '0.5': 10.175304492146228, '0.95': 19.787130471076598}
+- log10 ℓ quantiles (tensor): {'0.05': -1.7405580606162656, '0.5': 7.744893510603026, '0.95': 17.356719489533397}
+
+Scenario: extended
+- note: Extended ranges to test whether CMB visibility requires extreme expansion budgets.
+- priors: N_infl∈(50.0, 140.0), N_reh∈(0.0, 40.0), log10(Treh/GeV)∈(-2.0, 15.0)
+- kept_samples: 6000
+- scalar in CMB window: 395/6000
+- tensor in CMB window: 347/6000
+- log10 ℓ quantiles (scalar): {'0.05': -32.54269826564835, '0.5': -10.606254335028769, '0.95': 11.096508662765748}
+- log10 ℓ quantiles (tensor): {'0.05': -34.97310924719155, '0.5': -13.036665316571971, '0.95': 8.666097681222546}
+
+Checks:
+- bounce_source_resolved: PASS (bounce_source=live: /Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/bounce_perturbations/results.json; k_bounce_s_raw=2103.5507357951246; k_bounce_t_raw=7.808039644294931)
+- chi_star_computed: PASS (chi_star(z*=1090.0)=13867.328 Mpc (flat ΛCDM))
+- naive_ell_is_huge_as_expected: PASS (ell_naive scalar=1.396e+59, tensor=5.180e+56)
+- policy_v106_threshold_driven_has_any_scalar_in_cmb_window: PASS (fraction=0.03977 (41/1031) in ℓ∈[2.0,2500.0])
+- policy_v106_threshold_driven_has_any_tensor_in_cmb_window: PASS (fraction=1 (1031/1031) in ℓ∈[2.0,2500.0])
+- plausible_has_any_scalar_in_cmb_window: PASS (fraction=0.08925 (357/4000) in ℓ∈[2.0,2500.0])
+- plausible_has_any_tensor_in_cmb_window: PASS (fraction=0.1345 (538/4000) in ℓ∈[2.0,2500.0])
+- extended_has_any_scalar_in_cmb_window: PASS (fraction=0.06583 (395/6000) in ℓ∈[2.0,2500.0])
+- extended_has_any_tensor_in_cmb_window: PASS (fraction=0.05783 (347/6000) in ℓ∈[2.0,2500.0])
+
+Notes:
+- If even the extended scenario yields zero CMB hits, TFPT bounce features are likely a small-scale prediction rather than a CMB feature.
+- If the plausible scenario yields CMB hits, the next step is not “more tuning”, but encoding a publication-grade expansion history policy (reheating + g*(T) + thresholds) as a deterministic module.

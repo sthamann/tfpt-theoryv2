@@ -1,0 +1,516 @@
+{
+  "checks": [
+    {
+      "check_id": "bounce_source_resolved",
+      "detail": "bounce_source=live: /Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/bounce_perturbations/results.json; k_bounce_s_raw=2103.5507357951246; k_bounce_t_raw=7.808039644294931",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "chi_star_computed",
+      "detail": "chi_star(z*=1090.0)=13867.328 Mpc (flat \u039bCDM)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "naive_ell_is_huge_as_expected",
+      "detail": "ell_naive scalar=1.396e+59, tensor=5.180e+56",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "policy_v106_threshold_driven_has_any_scalar_in_cmb_window",
+      "detail": "fraction=0.03977 (41/1031) in \u2113\u2208[2.0,2500.0]",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "policy_v106_threshold_driven_has_any_tensor_in_cmb_window",
+      "detail": "fraction=1 (1031/1031) in \u2113\u2208[2.0,2500.0]",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "plausible_has_any_scalar_in_cmb_window",
+      "detail": "fraction=0.08925 (357/4000) in \u2113\u2208[2.0,2500.0]",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "plausible_has_any_tensor_in_cmb_window",
+      "detail": "fraction=0.1345 (538/4000) in \u2113\u2208[2.0,2500.0]",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "extended_has_any_scalar_in_cmb_window",
+      "detail": "fraction=0.06583 (395/6000) in \u2113\u2208[2.0,2500.0]",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "extended_has_any_tensor_in_cmb_window",
+      "detail": "fraction=0.05783 (347/6000) in \u2113\u2208[2.0,2500.0]",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "ux_cosmo_history_sampler",
+  "plot": {
+    "cosmo_history_sampler_cmb_fraction_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/unconventional/ux_cosmo_history_sampler/cosmo_history_sampler_cmb_fraction.png",
+    "cosmo_history_sampler_log10ell_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/unconventional/ux_cosmo_history_sampler/cosmo_history_sampler_log10ell.png"
+  },
+  "results": {
+    "bounce": {
+      "k_bounce_s_raw": 2103.5507357951246,
+      "k_bounce_t_raw": 7.808039644294931
+    },
+    "bounce_source": "live: /Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/bounce_perturbations/results.json",
+    "config_file": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/tfpt_suite/data/k_calibration.json",
+    "constants": {
+      "GeV_to_Mpc_inv": 1.563738306457847e+38,
+      "M_GeV": 30595633972661.273,
+      "M_over_Mpl": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+      "Mpl_reduced_GeV": 2.435e+18
+    },
+    "cosmology": {
+      "H0_km_s_Mpc": 67.36,
+      "Omega_m": 0.3153,
+      "Omega_r": 9.2e-05,
+      "chi_star_Mpc": 13867.328294431452,
+      "z_star": 1090.0
+    },
+    "diagnostics": {
+      "cmb_window": {
+        "max": 2500.0,
+        "min": 2.0
+      },
+      "ell_targets": [
+        2.0,
+        30.0,
+        700.0
+      ],
+      "transition": "horizon_exit_of_pivot"
+    },
+    "naive": {
+      "ell_bounce_s": 1.3956268630217736e+59,
+      "ell_bounce_t": 5.180340882530681e+56
+    },
+    "plot": {
+      "cosmo_history_sampler_cmb_fraction_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/unconventional/ux_cosmo_history_sampler/cosmo_history_sampler_cmb_fraction.png",
+      "cosmo_history_sampler_log10ell_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/unconventional/ux_cosmo_history_sampler/cosmo_history_sampler_log10ell.png"
+    },
+    "scenarios": [
+      {
+        "best_candidates": [
+          {
+            "abs_log10_error": 2.980527275380372,
+            "ell_bounce": 1912.3054864807511,
+            "params": {
+              "N_inflation_from_transition": 56.98005698005695,
+              "N_reheat": 23.981726490655376,
+              "T_reheat_GeV": 37766536.22667426,
+              "a0_over_a_transition": 7.298137629621979e+55
+            },
+            "sector": "scalar",
+            "target_ell": 2.0
+          },
+          {
+            "abs_log10_error": 1.804436016324691,
+            "ell_bounce": 1912.3054864807511,
+            "params": {
+              "N_inflation_from_transition": 56.98005698005695,
+              "N_reheat": 23.981726490655376,
+              "T_reheat_GeV": 37766536.22667426,
+              "a0_over_a_transition": 7.298137629621979e+55
+            },
+            "sector": "scalar",
+            "target_ell": 30.0
+          },
+          {
+            "abs_log10_error": 0.43645923103009654,
+            "ell_bounce": 1912.3054864807511,
+            "params": {
+              "N_inflation_from_transition": 56.98005698005695,
+              "N_reheat": 23.981726490655376,
+              "T_reheat_GeV": 37766536.22667426,
+              "a0_over_a_transition": 7.298137629621979e+55
+            },
+            "sector": "scalar",
+            "target_ell": 700.0
+          },
+          {
+            "abs_log10_error": 0.5501162938371702,
+            "ell_bounce": 7.098168252547749,
+            "params": {
+              "N_inflation_from_transition": 56.98005698005695,
+              "N_reheat": 23.981726490655376,
+              "T_reheat_GeV": 37766536.22667426,
+              "a0_over_a_transition": 7.298137629621979e+55
+            },
+            "sector": "tensor",
+            "target_ell": 2.0
+          },
+          {
+            "abs_log10_error": 0.0007039923468332709,
+            "ell_bounce": 29.951409324935547,
+            "params": {
+              "N_inflation_from_transition": 56.98005698005695,
+              "N_reheat": 18.222768005790535,
+              "T_reheat_GeV": 2837396794.566826,
+              "a0_over_a_transition": 1.7295816788887708e+55
+            },
+            "sector": "tensor",
+            "target_ell": 30.0
+          },
+          {
+            "abs_log10_error": 0.00021439157849378887,
+            "ell_bounce": 700.3456437042189,
+            "params": {
+              "N_inflation_from_transition": 56.98005698005695,
+              "N_reheat": 5.614777563721125,
+              "T_reheat_GeV": 36274846338949.73,
+              "a0_over_a_transition": 7.396834590319125e+53
+            },
+            "sector": "tensor",
+            "target_ell": 700.0
+          }
+        ],
+        "cmb_window": {
+          "max": 2500.0,
+          "min": 2.0
+        },
+        "counts": {
+          "scalar_in_cmb": 41,
+          "scalar_total": 1031,
+          "tensor_in_cmb": 1031,
+          "tensor_total": 1031
+        },
+        "ell_minmax": {
+          "scalar": {
+            "max": 569207.9391249071,
+            "min": 1912.3054864807511
+          },
+          "tensor": {
+            "max": 2112.807682223431,
+            "min": 7.098168252547749
+          }
+        },
+        "kept_samples": 1031,
+        "log10_ell_quantiles": {
+          "scalar": {
+            "0.05": 3.425091246346965,
+            "0.5": 4.529797820084529,
+            "0.95": 5.631850769718651
+          },
+          "tensor": {
+            "0.05": 0.9946802648037633,
+            "0.5": 2.099386838541326,
+            "0.95": 3.201439788175449
+          }
+        },
+        "scenario": {
+          "N_inflation_range": [
+            56.98005698005695,
+            56.98005698005695
+          ],
+          "N_reheat_range": [
+            0.0,
+            0.0
+          ],
+          "id": "policy_v106_threshold_driven",
+          "log10_T_reheat_GeV_range": [
+            -3.0,
+            15.0
+          ],
+          "note": "Threshold/policy-driven: N_pivot from n_s; N_reheat derived from T_reheat via \u03c1 scaling (v1.06 \u0394N model).",
+          "samples": 2500
+        }
+      },
+      {
+        "best_candidates": [
+          {
+            "abs_log10_error": 0.014610663813479141,
+            "ell_bounce": 2.0684291971523825,
+            "params": {
+              "N_inflation_from_transition": 64.04258635567614,
+              "N_reheat": 10.449258109280427,
+              "T_reheat_GeV": 22536297918772.934,
+              "a0_over_a_transition": 6.747278876855637e+58
+            },
+            "sector": "scalar",
+            "target_ell": 2.0
+          },
+          {
+            "abs_log10_error": 0.0017367134079409041,
+            "ell_bounce": 29.88027164012384,
+            "params": {
+              "N_inflation_from_transition": 68.05071987860083,
+              "N_reheat": 13.278136989529541,
+              "T_reheat_GeV": 1674410481.4848073,
+              "a0_over_a_transition": 4.6707301721705134e+57
+            },
+            "sector": "scalar",
+            "target_ell": 30.0
+          },
+          {
+            "abs_log10_error": 0.003241218068501084,
+            "ell_bounce": 694.7952199791922,
+            "params": {
+              "N_inflation_from_transition": 64.64650100059349,
+              "N_reheat": 1.3960439107008833,
+              "T_reheat_GeV": 313437233043942.56,
+              "a0_over_a_transition": 2.0086880607261086e+56
+            },
+            "sector": "scalar",
+            "target_ell": 700.0
+          },
+          {
+            "abs_log10_error": 0.00563645621526121,
+            "ell_bounce": 1.9742108729358898,
+            "params": {
+              "N_inflation_from_transition": 60.301452374059714,
+              "N_reheat": 11.200631574341315,
+              "T_reheat_GeV": 1742429471781.9526,
+              "a0_over_a_transition": 2.6240058514250243e+56
+            },
+            "sector": "tensor",
+            "target_ell": 2.0
+          },
+          {
+            "abs_log10_error": 0.002548616778515145,
+            "ell_bounce": 30.17656979504113,
+            "params": {
+              "N_inflation_from_transition": 66.2082683599951,
+              "N_reheat": 12.630972864323189,
+              "T_reheat_GeV": 74197958.87807138,
+              "a0_over_a_transition": 1.7166765201331658e+55
+            },
+            "sector": "tensor",
+            "target_ell": 30.0
+          },
+          {
+            "abs_log10_error": 0.0008952450876438256,
+            "ell_bounce": 698.5585216309616,
+            "params": {
+              "N_inflation_from_transition": 61.859475046270006,
+              "N_reheat": 2.3877648331213512,
+              "T_reheat_GeV": 6967623880575.59,
+              "a0_over_a_transition": 7.415757910211822e+53
+            },
+            "sector": "tensor",
+            "target_ell": 700.0
+          }
+        ],
+        "cmb_window": {
+          "max": 2500.0,
+          "min": 2.0
+        },
+        "counts": {
+          "scalar_in_cmb": 357,
+          "scalar_total": 4000,
+          "tensor_in_cmb": 538,
+          "tensor_total": 4000
+        },
+        "ell_minmax": {
+          "scalar": {
+            "max": 3.242087022280239e+25,
+            "min": 2.9286857502311566e-05
+          },
+          "tensor": {
+            "max": 1.2034101944610144e+23,
+            "min": 1.0870807180623034e-07
+          }
+        },
+        "kept_samples": 4000,
+        "log10_ell_quantiles": {
+          "scalar": {
+            "0.05": 0.6898529209269364,
+            "0.5": 10.175304492146228,
+            "0.95": 19.787130471076598
+          },
+          "tensor": {
+            "0.05": -1.7405580606162656,
+            "0.5": 7.744893510603026,
+            "0.95": 17.356719489533397
+          }
+        },
+        "scenario": {
+          "N_inflation_range": [
+            50.0,
+            70.0
+          ],
+          "N_reheat_range": [
+            0.0,
+            15.0
+          ],
+          "id": "plausible",
+          "log10_T_reheat_GeV_range": [
+            -2.0,
+            15.0
+          ],
+          "note": "Conservative ranges around standard inflation+reheating expectations.",
+          "samples": 4000
+        }
+      },
+      {
+        "best_candidates": [
+          {
+            "abs_log10_error": 0.0008327106306941223,
+            "ell_bounce": 1.996168899854655,
+            "params": {
+              "N_inflation_from_transition": 64.40474644771383,
+              "N_reheat": 11.281636521370618,
+              "T_reheat_GeV": 7072036099024.191,
+              "a0_over_a_transition": 6.99152693503737e+58
+            },
+            "sector": "scalar",
+            "target_ell": 2.0
+          },
+          {
+            "abs_log10_error": 0.0008834547186984398,
+            "ell_bounce": 29.939035139318943,
+            "params": {
+              "N_inflation_from_transition": 63.4548117602624,
+              "N_reheat": 24.257082124711474,
+              "T_reheat_GeV": 2824170.5570849394,
+              "a0_over_a_transition": 4.661562593875634e+57
+            },
+            "sector": "scalar",
+            "target_ell": 30.0
+          },
+          {
+            "abs_log10_error": 0.0018931241110471397,
+            "ell_bounce": 703.0580157745603,
+            "params": {
+              "N_inflation_from_transition": 77.60983232611537,
+              "N_reheat": 4.483560404291165,
+              "T_reheat_GeV": 33130012.895092145,
+              "a0_over_a_transition": 1.985080650114214e+56
+            },
+            "sector": "scalar",
+            "target_ell": 700.0
+          },
+          {
+            "abs_log10_error": 0.0078116026009598105,
+            "ell_bounce": 2.036299235750234,
+            "params": {
+              "N_inflation_from_transition": 76.25020199905472,
+              "N_reheat": 2.457218093553699,
+              "T_reheat_GeV": 1254496406.7651157,
+              "a0_over_a_transition": 2.543997852369712e+56
+            },
+            "sector": "tensor",
+            "target_ell": 2.0
+          },
+          {
+            "abs_log10_error": 0.0008302428229964853,
+            "ell_bounce": 30.05740599660897,
+            "params": {
+              "N_inflation_from_transition": 68.17779295385552,
+              "N_reheat": 0.20378227625044598,
+              "T_reheat_GeV": 2593086279254.968,
+              "a0_over_a_transition": 1.723482353438989e+55
+            },
+            "sector": "tensor",
+            "target_ell": 30.0
+          },
+          {
+            "abs_log10_error": 0.00011825584902291908,
+            "ell_bounce": 699.8094200394986,
+            "params": {
+              "N_inflation_from_transition": 62.89567137050008,
+              "N_reheat": 1.325857153521035,
+              "T_reheat_GeV": 7136314963189.277,
+              "a0_over_a_transition": 7.402502358768323e+53
+            },
+            "sector": "tensor",
+            "target_ell": 700.0
+          }
+        ],
+        "cmb_window": {
+          "max": 2500.0,
+          "min": 2.0
+        },
+        "counts": {
+          "scalar_in_cmb": 395,
+          "scalar_total": 6000,
+          "tensor_in_cmb": 347,
+          "tensor_total": 6000
+        },
+        "ell_minmax": {
+          "scalar": {
+            "max": 2.0406592424292585e+24,
+            "min": 2.0879938415183938e-46
+          },
+          "tensor": {
+            "max": 7.574596606704502e+21,
+            "min": 7.750294972303976e-49
+          }
+        },
+        "kept_samples": 6000,
+        "log10_ell_quantiles": {
+          "scalar": {
+            "0.05": -32.54269826564835,
+            "0.5": -10.606254335028769,
+            "0.95": 11.096508662765748
+          },
+          "tensor": {
+            "0.05": -34.97310924719155,
+            "0.5": -13.036665316571971,
+            "0.95": 8.666097681222546
+          }
+        },
+        "scenario": {
+          "N_inflation_range": [
+            50.0,
+            140.0
+          ],
+          "N_reheat_range": [
+            0.0,
+            40.0
+          ],
+          "id": "extended",
+          "log10_T_reheat_GeV_range": [
+            -2.0,
+            15.0
+          ],
+          "note": "Extended ranges to test whether CMB visibility requires extreme expansion budgets.",
+          "samples": 6000
+        }
+      }
+    ]
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given config seed + precision.",
+    "formulas": [
+      "a0/a_transition = (a0/a_reh) * exp(N_reheat) * exp(N_inflation_from_transition)",
+      "a0/a_reh from entropy conservation (instantaneous reheating)",
+      "\u2113 \u2248 k(Mpc^{-1}) \u00b7 \u03c7_*;  k(Mpc^{-1}) = k_hat * M_GeV * (GeV\u2192Mpc^{-1}) / (a0/a_transition)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "bounce diagnostics: prefer tfpt-suite/out/bounce_perturbations/results.json; else fallback in tfpt_suite/data/k_calibration.json",
+      "cosmology assumptions: tfpt_suite/data/k_calibration.json (H0, \u03a9_m, \u03a9_r, z_*)",
+      "explicit scale-factor mapping model: tfpt_suite/cosmo_scale_map.py"
+    ],
+    "maturity": null,
+    "module_id": "ux_cosmo_history_sampler",
+    "name": "Unconventional: cosmology history sampler (k\u2192\u2113 feasibility + robustness)",
+    "objective": [],
+    "outputs": [
+      "distribution of \u2113_bounce under explicit priors over (N_inflation, N_reheat, T_reheat)",
+      "fraction of samples that land in CMB-like \u2113 windows (diagnostic)",
+      "best candidates (closest to target \u2113 in log-space)"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "report whether plausible priors allow \u2113_bounce to sit in the CMB window without hidden tuning"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

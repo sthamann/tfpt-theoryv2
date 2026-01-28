@@ -1,0 +1,223 @@
+{
+  "checks": [
+    {
+      "check_id": "mapping_within_tol",
+      "detail": "max_rel_error=0.01961",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "ratio_needs_rg:m_b_over_m_s",
+      "detail": "scheme=MSbar, scale=n/a",
+      "passed": true,
+      "severity": "WARN"
+    },
+    {
+      "check_id": "ratio_needs_rg:m_t_over_m_c",
+      "detail": "scheme=MSbar, scale=n/a",
+      "passed": true,
+      "severity": "WARN"
+    },
+    {
+      "check_id": "ratio_needs_rg:m_c_over_m_u",
+      "detail": "scheme=MSbar, scale=n/a",
+      "passed": true,
+      "severity": "WARN"
+    },
+    {
+      "check_id": "ratio_direct:m_mu_over_m_e",
+      "detail": "scale-independent reference",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "ratio_needs_rg:m_s_over_m_d",
+      "detail": "scheme=MSbar, scale=n/a",
+      "passed": true,
+      "severity": "WARN"
+    },
+    {
+      "check_id": "ratio_direct:m_tau_over_m_mu",
+      "detail": "scale-independent reference",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "yukawa_index_mapping_audit",
+  "plot": {
+    "yukawa_index_mapping.png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/yukawa_index_mapping_audit/yukawa_index_mapping.png"
+  },
+  "results": {
+    "basis": {
+      "L": "0.5",
+      "Q": "0.1666666666666666533333333333333336",
+      "d_c": "0.33333333333333326666666666666667",
+      "e_c": "1.0",
+      "u_c": "1.33333333333333306666666666666668"
+    },
+    "plot": {
+      "yukawa_index_mapping.png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/yukawa_index_mapping_audit/yukawa_index_mapping.png"
+    },
+    "ratio_policies": {
+      "m_b_over_m_s": {
+        "dataset_id": "mass_ratio_mb_over_ms",
+        "scale": "n/a",
+        "scheme": "MSbar",
+        "status": "needs_rg"
+      },
+      "m_c_over_m_u": {
+        "dataset_id": "mass_ratio_mc_over_mu_quark",
+        "scale": "n/a",
+        "scheme": "MSbar",
+        "status": "needs_rg"
+      },
+      "m_mu_over_m_e": {
+        "dataset_id": "mass_ratio_mu_over_e_pdg",
+        "scale": "pole",
+        "scheme": "pole",
+        "status": "direct"
+      },
+      "m_s_over_m_d": {
+        "dataset_id": "mass_ratio_ms_over_md",
+        "scale": "n/a",
+        "scheme": "MSbar",
+        "status": "needs_rg"
+      },
+      "m_t_over_m_c": {
+        "dataset_id": "mass_ratio_mt_over_mc",
+        "scale": "n/a",
+        "scheme": "MSbar",
+        "status": "needs_rg"
+      },
+      "m_tau_over_m_mu": {
+        "dataset_id": "mass_ratio_tau_over_mu_pdg",
+        "scale": "pole",
+        "scheme": "pole",
+        "status": "direct"
+      }
+    },
+    "ratios": {
+      "m_b_over_m_s": 43.79405189623337,
+      "m_c_over_m_u": 486.9165313620135,
+      "m_mu_over_m_e": 197.84536441898265,
+      "m_s_over_m_d": 16.91911119689403,
+      "m_t_over_m_c": 133.01222546408377,
+      "m_tau_over_m_mu": 16.91911119689403
+    },
+    "rows": [
+      {
+        "abs_error": 0.0,
+        "combo": {
+          "L": 5,
+          "Q": 2
+        },
+        "combo_value": 2.8333333333333335,
+        "q_float": 2.8282100127356213,
+        "q_target": "2.8333333333333335",
+        "ratio": "m_b_over_m_s",
+        "rel_error": 0.0,
+        "value": 43.79405189623337
+      },
+      {
+        "abs_error": 0.0,
+        "combo": {
+          "d_c": 2,
+          "e_c": 3
+        },
+        "combo_value": 3.6666666666666665,
+        "q_float": 3.6595321137896337,
+        "q_target": "3.6666666666666665",
+        "ratio": "m_t_over_m_c",
+        "rel_error": 0.0,
+        "value": 133.01222546408377
+      },
+      {
+        "abs_error": 0.041666666666665186,
+        "combo": {
+          "Q": 2,
+          "d_c": 9,
+          "u_c": 1
+        },
+        "combo_value": 4.666666666666665,
+        "q_float": 4.630568859920046,
+        "q_target": "4.625",
+        "ratio": "m_c_over_m_u",
+        "rel_error": 0.00900900900900869,
+        "value": 486.9165313620135
+      },
+      {
+        "abs_error": 0.04166666666666563,
+        "combo": {
+          "d_c": 9,
+          "e_c": 1
+        },
+        "combo_value": 3.999999999999999,
+        "q_float": 3.9566418818751004,
+        "q_target": "3.9583333333333335",
+        "ratio": "m_mu_over_m_e",
+        "rel_error": 0.010526315789473422,
+        "value": 197.84536441898265
+      },
+      {
+        "abs_error": 0.041666666666666075,
+        "combo": {
+          "L": 1,
+          "d_c": 5
+        },
+        "combo_value": 2.166666666666666,
+        "q_float": 2.1165332344821928,
+        "q_target": "2.125",
+        "ratio": "m_s_over_m_d",
+        "rel_error": 0.019607843137254624,
+        "value": 16.91911119689403
+      },
+      {
+        "abs_error": 0.041666666666666075,
+        "combo": {
+          "L": 1,
+          "d_c": 5
+        },
+        "combo_value": 2.166666666666666,
+        "q_float": 2.1165332344821928,
+        "q_target": "2.125",
+        "ratio": "m_tau_over_m_mu",
+        "rel_error": 0.019607843137254624,
+        "value": 16.91911119689403
+      }
+    ]
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (finite bounded search).",
+    "formulas": [
+      "q_ij = (c3/varphi0) * ln(ratio)",
+      "I_field = dim(SU3) * dim(SU2) * Y^2",
+      "q_target ~ sum_i n_i * I_i (integer coefficients)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "mass ratios from mass_spectrum_deriver (preferred)",
+      "TFPT invariants (c3, varphi0)",
+      "microscopic_action_tfpt_v25.json (charge-squared sums)"
+    ],
+    "maturity": null,
+    "module_id": "yukawa_index_mapping_audit",
+    "name": "Yukawa index mapping audit (q_ij -> charge-squared sums)",
+    "objective": [
+      "Tie exponent indices to explicit charge-squared sums (no continuous tuning)."
+    ],
+    "outputs": [
+      "q_ij rational targets",
+      "best charge-squared sum mapping",
+      "relative mapping errors"
+    ],
+    "question": "Can q_ij be mapped to discrete charge-squared index sums from the microscopic action?",
+    "references": [],
+    "validation": [
+      "relative mapping errors are <= 2% for the selected ratios"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

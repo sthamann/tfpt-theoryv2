@@ -1,0 +1,152 @@
+CKM full pipeline (Z3 Yukawa texture + diagonalization; upward-only RG mt→mu_uv)
+
+reference file: tfpt-suite/tfpt_suite/data/ckm_reference.json (sha256=05e35d772c494352967b8853aeb693511bfb8802047f790cc8eb55c46bc45114)
+CKM reference metadata: scale=MZ (91.1876 GeV), scheme=PDG 2024 global-fit (unitarity enforced; effective low-energy parameters; not a running MSbar coupling)
+SM inputs file: tfpt-suite/tfpt_suite/data/sm_inputs_mz.json (sha256=f46b08eb6c06c7b4b4a52f81f7f7ce63b5b9c5fcc2a1752418c82817f155bcfe)
+msbar_matching_map: used (path=tfpt-suite/out/msbar_matching_map/results.json, sha256=50d8c84f7dfc249014967237d42af634a0a3316e99939365db621419d67b7f57)
+flavor texture config: tfpt-suite/tfpt_suite/data/flavor_texture_v24.json (sha256=d58eaeead900b40d8bd3235d1d20d97845d23f74b6577614b28591c9785abaa3)
+lepton masses file: tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json (sha256=4c992c392766d6944c5bd53f4d91c369de53c8616513939e79b0ee1f890de386)
+
+TFPT input:
+- lambda_TFPT = 0.22445997051897373245511597747748194821840297007791297390969270711773328122860166
+
+Flavor texture layer (explicit conventions):
+- delta_source = delta_star
+- delta_M (from tau/mu) = 0.6079090366343283
+- delta_star (from geometry) = 0.6088619920294742
+- delta_used = 0.6088619920294742
+- phase_mode = 2pi_delta
+- theta(delta_used) = 3.8255927224196866 rad
+- zeta = exp(i theta) = (-0.7750512892950255-0.6318983296085839j)
+- C(delta) first row = (1, zeta, zeta*)
+- a_u=0.6666666666666666, a_d=1.0, a_e=1.0, b=1.0
+- topology_phase_atoms (docking): source_module=chiral_index_three_cycles, status=used_for_delta_candidates
+
+Discrete CKM variant scan (no continuous fit):
+- variants evaluated: 4 (run_all_variants=True)
+- reference scale for χ²: MZ (91.1876 GeV)
+- χ² keys (subset): ['Vus', 'Vub', 'Vcb', 'Vtd']
+- front runner: topology_delta_cp_1 (s13_mode=A_lam3_times_1_minus_delta, delta_mode=external_delta_cp_override), chi2_ref≈5.47  (mt-proxy chi2≈4.19)
+
+Quark phase map (naming hygiene; TFPT paper v2.5 flavor section):
+- δMobius := delta_M (τ/μ extraction) = 0.6079090366343283
+- θtexture := theta(delta_used; phase_mode=2pi_delta) = 3.8255927224196866 rad  (ζ=exp(iθ) in C(δ))
+- δCKM := delta_CP(PDG) = 1.0471975511965976 rad  (delta_mode=external_delta_cp_override)
+- source: paper v2.5 Sec. 7.1–7.3 (Flavor Structure) + update_tfptv1_07sm.tex (CKM cold-pass phase convention)
+
+RG integration setup (upward only):
+- mu_start = 172.76 GeV (mt), mu_end = 1.000e+16 GeV (UV benchmark)
+- SM inputs at MZ (used only to derive g_i(mt) via MZ→mt running): αs(MZ)=0.1179 ± 0.0011, MZ=91.1876 GeV
+- thresholds (for gauge running bookkeeping): (mc,mb,mt)=(1.27,4.18,173) GeV; mW=80.4 GeV (below MZ; not used in this upward-only run)
+- hypercharge convention: Q=T3+Y (SM); rge_sm uses g1_GUT=√(5/3)·gY, PyR@TE betas use gY≡g′.
+- gauge couplings at MZ (rge_sm, g1_GUT): g1_GUT=0.461423, g2=0.651724, g3=1.2172
+- gauge couplings at mt (2-loop gauge-only, g1_GUT): g1_GUT=0.463095, g2=0.648334, g3=1.16763; converted gY(mt)=0.358712
+- SM boundary scheme: MSbar-ish inputs @ MZ; MZ→mt gauge running via PyR@TE beta functions (loop-truncated); mt pole→MSbar(mt) via QCD 2-loop
+- SM boundary @ mt (matching layer): route_2loop(gY,g2,g3,yt)=(0.358712,0.648334,1.16763,0.940617), route_1loop=(0.358686,0.648206,1.16913,0.940468), diffs(2L-1L)=(ΔgY=2.57e-05,Δg2=1.29e-04,Δg3=-1.49e-03,Δyt=1.50e-04)
+- gauge couplings at mu_end (2-loop gauge-only, g1_GUT): g1_GUT=0.577234, g2=0.56758, g3=0.555379
+
+Yukawa boundary at mt (explicit inputs):
+- αs(mt) = 0.108493 (from g3(mt))
+- mt_pole = 172.76 GeV, mt_MSbar(mt) ≈ 163.619 GeV (QCD 2-loop pole→MSbar)
+- v = 246 GeV => yt(mt) ≈ 0.940617
+- yb(mt) input = 0.0166586, ytau(mt) input = 0.0102149
+- quark Yukawas are generated via the Möbius/Z3 v1.07SM rule (no y_* scaling knob):
+  Yu diag ≈ (y_u=1.45234e-05, y_c=0.00707166, y_t=0.940617)
+  Yd diag ≈ (y_d=2.24826e-05, y_s=0.000380385, y_b=0.0166586)
+  CKM seed (PDG): s12=0.22446, s23=0.0419852, s13=0.00368609, δ=1.0472 rad
+- charged-lepton Yukawa uses the Z3 texture y_* scaling: y*_e (scaled to ytau(mt)) = 0.00351024
+
+CKM |V_ij| at mt (boundary; computed from Yukawa diagonalization):
+- Vud = 0.9744766897978526
+- Vus = 0.22445844561901232
+- Vub = 0.003686086124472918
+- Vcd = 0.22433749287587348
+- Vcs = 0.9736066729113559
+- Vcb = 0.04198494673865927
+- Vtd = 0.008238345148607253
+- Vts = 0.04133343262756552
+- Vtb = 0.9991114437421057
+
+CKM |V_ij| at reference scale (MZ=91.1876 GeV; after downward mt→ref RG in SM):
+- Vud = 0.9744771023559202
+- Vus = 0.22445701382488603
+- Vub = 0.003664140939561017
+- Vcd = 0.22433749726187469
+- Vcs = 0.9736174143834504
+- Vcb = 0.04173508993117249
+- Vtd = 0.008189279961535038
+- Vts = 0.04108745981561331
+- Vtb = 0.9991219927214156
+
+CKM |V_ij| at mu_end after upward RG evolution (2-loop; PyR@TE betas; complex Yukawas supported):
+- Vud = 0.974467753499782
+- Vus = 0.2244893868100471
+- Vub = 0.004136737692584521
+- Vcd = 0.22433704340099234
+- Vcs = 0.9733719849012833
+- Vcb = 0.04711549604363003
+- Vtd = 0.009245990871156292
+- Vts = 0.046384202256641645
+- Vtb = 0.9988808825049287
+
+Largest χ² contributions (top 5):
+- Vtd: pred=0.008189279961535038 mean=0.00858 sigma=0.00019 chi2=4.2288683783396505493989379901385041551246537396121883656509695290858725761772855
+- Vus: pred=0.22445701382488603 mean=0.22501 sigma=0.00068 chi2=0.66131857670237520273029662824394463667820069204152249134948096885813148788927359
+- Vub: pred=0.003664140939561017 mean=0.003732 sigma=0.00009 chi2=0.56850025724216637835383633197530864197530864197530864197530864197530864197530864
+- Vcb: pred=0.04173508993117249 mean=0.04183 sigma=0.00079 chi2=0.014433458043330692879559045185066495753885595257170325268386476526197724723601994
+
+Derived CKM invariants:
+- at mt: Jarlskog J = 2.928984e-05, Wolfenstein (λ,A,ρ̄,η̄) = {'lambda': 0.22445844561901232, 'A': 0.8333389947376633, 'rho_bar': 0.19087502640981877, 'eta_bar': 0.3301611887340593}
+- at ref scale: Jarlskog J = 2.894243e-05, Wolfenstein (λ,A,ρ̄,η̄) = {'lambda': 0.22445701382488603, 'A': 0.8283902756313136, 'rho_bar': 0.1908702209714886, 'eta_bar': 0.3301630746340131}
+- at mu_end (2-loop): Jarlskog J = 3.688089e-05, Wolfenstein (λ,A,ρ̄,η̄) = {'lambda': 0.2244893868100471, 'A': 0.9349150274004522, 'rho_bar': 0.19098000874298154, 'eta_bar': 0.33011998405681175}
+
+α_s(MZ) sensitivity (±σ, σ=0.0011):
+  sanity: this scan must change g3(MZ), g3(mt), and g3(mu_uv); otherwise it is a placebo.
+- minus_sigma: αs=0.1168, g3(MZ)=1.21151, g3(mt)=1.16262, g3(mu_uv)=0.554849
+- central: αs=0.1179, g3(MZ)=1.2172, g3(mt)=1.16763, g3(mu_uv)=0.555379
+- plus_sigma: αs=0.119, g3(MZ)=1.22286, g3(mt)=1.17262, g3(mu_uv)=0.555901
+- Vud: central=0.974466340725 ± 9.59e-08  (half-range)
+- Vus: central=0.224495523532 ± 3.43e-07  (half-range)
+- Vub: central=0.00413650915613 ± 3.97e-06  (half-range)
+- Vcd: central=0.224311917024 ± 9.41e-09  (half-range)
+- Vcs: central=0.973377776506 ± 2.19e-06  (half-range)
+- Vcb: central=0.0471154760694 ± 4.52e-05  (half-range)
+- Vtd: central=0.00997570422928 ± 9.58e-06  (half-range)
+- Vts: central=0.0462327169694 ± 4.43e-05  (half-range)
+- Vtb: central=0.998880884394 ± 2.15e-06  (half-range)
+
+debug: Δαs=±0.01 changes Vus(mu_uv) by -6.29e-06 (should not be identically zero).
+
+Monte Carlo uncertainty propagation (ref-scale): N_success=120, N_failed=0
+- inputs σ: αs=0.0011, αem_inv=0.01, sin2=4e-05, mt=0.3, mb=0.0, mc=0.0
+- χ²(ref) = 3.05 ± 0.00168
+- |Vus|(ref) = 0.224456733376 ± 9.49e-09, |Vcb|(ref) = 0.0417351336297 ± 1.39e-06, |Vub|(ref) = 0.0036641539721 ± 1.22e-07
+
+Threshold transitions (PyR@TE 2-loop engine):
+- segment [172.76, 1000] GeV: model=sm_tfpt_2loop_v25, delta_b3_active=False (no explicit threshold at start)
+- μ=1000 GeV: MSigma → matched_1loop_log_only_identity (beta_source_switch(sm↔e8)). Segment [1000, 1.8e+10] model=e8_sigma_yN_2loop, delta_b3_active=False. Switch beta source SM→E8 at μ=MSigma (Sigma integrated in). Matching enabled (loop_order=1; 1-loop is identity at μ=threshold).
+- μ=1.8e+10 GeV: MG8 → matched_1loop_log_only_identity (beta_patch(Δb3)). Segment [1.8e+10, 1e+16] model=e8_sigma_yN_2loop, delta_b3_active=True. Apply Δb3 patch above MG8 (paper v1.06 note). Matching enabled (loop_order=1; 1-loop is identity at μ=threshold).
+
+Checks:
+- phase_set_derived_not_searched: PASS (mode=filter_only; variants=4 (all sourced from topology_phase_map))
+- tfpt_rg_dressed_texture_pipeline_present: PASS (PASS: mt boundary Yukawas (Z3 texture) + upward-only RG evolution mt→mu_uv using PyR@TE 2-loop beta functions (integrated here with complex Yukawas) + CKM extraction at mt and mu_uv)
+- matching_map_used: PASS (msbar_matching_map used (path=tfpt-suite/out/msbar_matching_map/results.json))
+- reference_scale_documented: PASS (native_scale=mt (172.76 GeV), reference_scale=MZ (91.1876 GeV))
+- chi2_scale_consistency: PASS (chi2_mt=4.19009, chi2_ref=5.47312, ratio=1.30621 (max=10.0))
+- threshold_matching_publication_grade: PASS (threshold_matching_ok=True, blocked_thresholds=[])
+- matching_mc_present: PASS (enabled=True, samples=120, success=120, failed=0)
+- g1_gut_over_gY_convention: PASS (g1_GUT/gY=1.29099444873581 vs sqrt(5/3)=1.29099444873581)
+- sm_boundary_1loop_vs_2loop_close: PASS (diffs (2L-1L) @ mt: ΔgY=2.5723155397283648e-05, Δg2=0.00012867895065693524, Δg3=-0.0014918758850732683, Δyt=0.00014967384947628393)
+- texture_config_loaded: PASS (path=tfpt-suite/tfpt_suite/data/flavor_texture_v24.json delta_source=delta_star phase_mode=2pi_delta coeff_rule=v107sm_fixed coeff_source=update_tfptv1_07sm.tex (v1.07SM) + paper_v1_06_01_09_2025.tex (v1.06) conventions a_u=0.6666666666666666 a_d=1.0 a_e=1.0 b=1.0)
+- rg_chi2_finite: PASS (chi2(mt, boundary proxy)=4.1900883365990300905567569535351595941282264294338390868793396624292541418157785)
+- rg_chi2_refscale_finite: PASS (chi2(refscale=MZ@91.1876 GeV)=5.4731206703275228233626299955428239295320486688861898242441456164455104307654698)
+- lambda_in_physical_range: PASS (lambda_TFPT=0.22445997051897373245511597747748194821840297007791297390969270711773328122860166)
+- ckm_unitarity: PASS (max|V†V-I|(mt)=6.661e-16, max|V†V-I|(mu_uv,2-loop)=4.138e-16)
+- ckm_phase_map_consistent_with_generator: PASS (|delta_ckm(map)-delta_ckm(generator)|=0.000e+00 rad)
+
+Notes:
+- This module constructs Yukawas at μ=mt from a Z3 circulant texture and computes CKM via Yukawa diagonalization (no continuous fit).
+- RG evolution is upward-only (starts at μ=mt and runs to μ_UV). No running below mt is performed in this module.
+- RG evolution uses PyR@TE-generated 2-loop beta functions, but is integrated here to support complex Yukawas (the shipped PyR@TE PythonOutput solver is real-only for Yukawas).
+- Threshold handling: switch SM→(SigmaF+yN) beta system at MSigma; apply a 1-loop Δb3=+2 patch above MG8 (paper v1.06 ‘G8 bridge’ note).
+- Phase conventions (δ source, θ(δ) mode) are explicit inputs in tfpt_suite/data/flavor_texture_v24.json; sector coefficients are fixed by tfpt_suite/flavor_textures.py:coefficients_v107sm().

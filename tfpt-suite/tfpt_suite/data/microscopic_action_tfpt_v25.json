@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "name": "TFPT v2.5 canonical microscopic action (UFE + SM sector)",
+  "source_of_truth": {
+    "paper_tex": "latex/tfpt-theory-fullv25.tex",
+    "ufe_action": {
+      "label": "UFEaction",
+      "excerpt_lines_hint": "around L930–L944 in the TeX source",
+      "action": "S = ∫ d^{4+n}x √(-ĝ) [ (1/(2 κ̂^2)) R̂(Γ̂) + L_tors(K,T) - (1/4) F_AB F^AB + (1/2) ĝ^{AB} ∂_A a ∂_B a - V(a) + c3 a F_AB \\tilde{F}^{AB} ]"
+    },
+    "r2_completion": {
+      "label": "R2scale",
+      "excerpt_lines_hint": "around L1726–L1735",
+      "action_piece": "S_grav ⊃ ∫ d^4x √(-g) (M_Pl^2/2) [ R + R^2/(6 M^2) ]"
+    },
+    "notes": [
+      "This JSON is intended as the single canonical action/field-content spec consumed by the TFPT suite.",
+      "Pieces that are not explicitly fixed in the paper are included as placeholders and must be replaced by derived expressions to reach 'robust' QFT completeness."
+    ]
+  },
+  "conventions": {
+    "spacetime": {
+      "ufe_dimension": "4+n",
+      "effective_dimension": 4
+    },
+    "hypercharge": {
+      "normalization": "SM normalization (not GUT-normalized): Q = T3 + Y",
+      "note": "RG modules may internally apply GUT normalization when needed (e.g. g1 = sqrt(5/3) g_Y)."
+    },
+    "maxwell": {
+      "field_strength_definition": "F := dA (torsion-independent), i.e. F_AB = 2 ∂_[A A_{B}]",
+      "note": "Matches paper Maxwell convention: do not use F_AB = 2 ∇̂_[A A_{B}] in the U(1) sector."
+    },
+    "torsion": {
+      "connection_decomposition": "Γ̂ = Γ(ĝ) + K, with torsion T^A_{BC} := 2 Γ̂^A_[BC]",
+      "irreps_4d": "Torsion decomposed into (S_μ axial, T_μ trace, q_{μνρ} tensor) in the 4D effective theory."
+    }
+  },
+  "gauge_groups": [
+    { "name": "SU3c", "type": "SU(3)", "note": "SM color" },
+    { "name": "SU2L", "type": "SU(2)", "note": "SM weak isospin" },
+    { "name": "U1Y", "type": "U(1)", "note": "SM hypercharge" },
+    { "name": "U1_EM", "type": "U(1)", "note": "UFE electromagnetic U(1) in the paper’s UFE Action" }
+  ],
+  "fields": {
+    "gravity": [
+      { "name": "g_hat_AB", "kind": "metric", "dimension": "4+n" },
+      { "name": "Gamma_hat^A_{BC}", "kind": "connection", "torsionful": true },
+      { "name": "K^A_{BC}", "kind": "contorsion", "dimension": "4+n" }
+    ],
+    "ufe_u1": [
+      { "name": "A_A", "kind": "gauge_boson", "group": "U1_EM", "dimension": "4+n" },
+      { "name": "F_AB", "kind": "field_strength", "group": "U1_EM", "dual": true }
+    ],
+    "axions": [
+      {
+        "name": "a_top",
+        "kind": "pseudo_scalar",
+        "dimension": "4+n",
+        "note": "Topological axion background (birefringence). In the UFE action this corresponds to the field 'a' in c3 a F\\tilde{F}."
+      },
+      {
+        "name": "a_QCD",
+        "kind": "pseudo_scalar",
+        "dimension": 4,
+        "note": "QCD axion (dark matter). Included for completeness; see paper two-field axion structure."
+      }
+    ],
+    "sm": {
+      "scalars": [
+        {
+          "name": "H",
+          "kind": "complex_scalar",
+          "lorentz": "scalar",
+          "reps": { "SU3c": "1", "SU2L": "2", "U1Y": 0.5 },
+          "note": "SM Higgs doublet (Y=+1/2)."
+        }
+      ],
+      "fermions_left_handed_weyl": [
+        {
+          "name": "Q",
+          "generations": 3,
+          "reps": { "SU3c": "fund", "SU2L": "doublet", "U1Y": 0.16666666666666666 },
+          "dims": { "SU3c": 3, "SU2L": 2 }
+        },
+        {
+          "name": "L",
+          "generations": 3,
+          "reps": { "SU3c": "singlet", "SU2L": "doublet", "U1Y": -0.5 },
+          "dims": { "SU3c": 1, "SU2L": 2 }
+        },
+        {
+          "name": "u_c",
+          "generations": 3,
+          "note": "Left-handed charge conjugate of u_R",
+          "reps": { "SU3c": "anti", "SU2L": "singlet", "U1Y": -0.6666666666666666 },
+          "dims": { "SU3c": 3, "SU2L": 1 }
+        },
+        {
+          "name": "d_c",
+          "generations": 3,
+          "note": "Left-handed charge conjugate of d_R",
+          "reps": { "SU3c": "anti", "SU2L": "singlet", "U1Y": 0.3333333333333333 },
+          "dims": { "SU3c": 3, "SU2L": 1 }
+        },
+        {
+          "name": "e_c",
+          "generations": 3,
+          "note": "Left-handed charge conjugate of e_R",
+          "reps": { "SU3c": "singlet", "SU2L": "singlet", "U1Y": 1.0 },
+          "dims": { "SU3c": 1, "SU2L": 1 }
+        }
+      ],
+      "optional_anomaly_neutral_extensions": [
+        {
+          "name": "N_R",
+          "generations": 3,
+          "kind": "singlet_fermion",
+          "reps": { "SU3c": "singlet", "SU2L": "singlet", "U1Y": 0.0 },
+          "dims": { "SU3c": 1, "SU2L": 1 },
+          "note": "Right-handed neutrinos (gauge singlets)."
+        },
+        {
+          "name": "SigmaF",
+          "generations": 1,
+          "kind": "su2_triplet_fermion",
+          "reps": { "SU3c": "singlet", "SU2L": "triplet", "U1Y": 0.0 },
+          "dims": { "SU3c": 1, "SU2L": 3 },
+          "note": "Type-III seesaw style (real rep; Y=0) => anomaly-neutral."
+        },
+        {
+          "name": "G8",
+          "generations": 1,
+          "kind": "su3_adj_fermion",
+          "reps": { "SU3c": "adj", "SU2L": "singlet", "U1Y": 0.0 },
+          "dims": { "SU3c": 8, "SU2L": 1 },
+          "note": "Color adjoint Majorana-style (real rep; Y=0) => anomaly-neutral."
+        }
+      ]
+    }
+  },
+  "parameters": {
+    "ufe": {
+      "kappa_hat": { "symbol": "kappa_hat", "kind": "gravitational_coupling", "dimension": "4+n" },
+      "c3": { "symbol": "c3", "value": "1/(8*pi)", "note": "Fixed TFPT invariant." }
+    },
+    "sm": {
+      "g1": { "symbol": "g1", "group": "U1Y" },
+      "g2": { "symbol": "g2", "group": "SU2L" },
+      "g3": { "symbol": "g3", "group": "SU3c" },
+      "Yu": { "symbol": "Y_u", "kind": "yukawa_matrix", "note": "To be derived from Möbius/Z3 mechanism; currently treated as input/ansatz in the suite." },
+      "Yd": { "symbol": "Y_d", "kind": "yukawa_matrix", "note": "To be derived from Möbius/Z3 mechanism; currently treated as input/ansatz in the suite." },
+      "Ye": { "symbol": "Y_e", "kind": "yukawa_matrix", "note": "To be derived from Möbius/Z3 mechanism; currently treated as input/ansatz in the suite." },
+      "lambda_H": { "symbol": "lambda", "kind": "quartic_coupling" },
+      "mu_H2": { "symbol": "mu^2", "kind": "mass_parameter" }
+    },
+    "gravity_effective_4d": {
+      "Mpl": { "symbol": "M_Pl", "kind": "planck_mass", "note": "Input scale; TFPT fixes ratios via invariants, not M_Pl itself." },
+      "M_R2": { "symbol": "M", "kind": "r2_scale", "note": "TFPT predicts M/M_Pl = sqrt(8*pi)*c3^4 under K1–K4 + GR renorm condition." },
+      "alpha_R_K4": {
+        "symbol": "alpha_R",
+        "kind": "torsion_operator_endomorphism_coefficient",
+        "note": "Coefficient in the Laplace-type closure E = alpha_R * R used for the torsion quadratic operator on a 4D constant-curvature background. Fixed by the K4 closure equation (see generated effective_action_r2_operator_spec.json)."
+      }
+    }
+  },
+  "quantization": {
+    "regularization": "dimensional_regularization",
+    "renormalization_scheme": "MSbar",
+    "path_integral_measure": "Dg DΓ̂ D(K,T,...) DA Da D(ghosts) (background-field quantization; local counterterms captured by heat-kernel coefficients)",
+    "gauge_fixing": {
+      "background_field": true,
+      "torsion_sector": {
+        "closure": "minimal Laplace-type operator on a 4D constant-curvature background",
+        "note": "This is the explicit closure used by the suite for Appendix K.2; a full first-principles derivation from the torsionful connection action remains a separate theory task."
+      }
+    },
+    "ghosts": [
+      {
+        "name": "fp_ghost_vector",
+        "statistics": "fermionic",
+        "note": "FP ghost associated with the chosen torsion-sector gauge fixing in the effective_action_r2 closure."
+      }
+    ],
+    "brst": {
+      "status": "derived_in_suite_at_closure_level",
+      "note": "BRST/gauge-fixing + FP ghost sector is encoded at the closure level and deterministically propagated into the generated OperatorSpec (effective_action_r2_operator_spec.json) from this canonical action spec. A deeper first-principles derivation starting from the full torsionful connection action (beyond the closure-level quadratic operator used in-suite) remains future work."
+    }
+  },
+  "lagrangian_density": {
+    "ufe_action_terms": [
+      {
+        "name": "einstein_hilbert_torsionful",
+        "density": "sqrt(-g_hat) * (1/(2*kappa_hat^2)) * R_hat(Gamma_hat)",
+        "status": "paper-fixed"
+      },
+      {
+        "name": "torsion_sector",
+        "density": "sqrt(-g) * [ 1/2 T^μ(-∇^2 + alpha_R R)T_μ + 1/2 S^μ(-∇^2 + alpha_R R)S_μ + 1/2 q^{μνρ}(-∇^2 + alpha_R R)q_{μνρ}  -  (\\bar{c}^μ ∇^2 c_μ) ]",
+        "status": "specified",
+        "note": "Explicit torsion-sector quadratic closure used by the suite for the one-loop heat-kernel evaluation (Appendix K.2). The corresponding block operator (+ FP ghost) is generated deterministically into tfpt_suite/data/effective_action_r2_operator_spec.json."
+      },
+      {
+        "name": "ufe_u1_kinetic",
+        "density": "sqrt(-g_hat) * ( -1/4 * F_AB F^AB )",
+        "status": "paper-fixed"
+      },
+      {
+        "name": "a_top_kinetic",
+        "density": "sqrt(-g_hat) * ( +1/2 * g_hat^{AB} ∂_A a_top ∂_B a_top )",
+        "status": "paper-fixed"
+      },
+      {
+        "name": "a_top_potential",
+        "density": "sqrt(-g_hat) * ( - V(a_top) )",
+        "status": "paper-fixed",
+        "note": "Concrete choice for V is model-dependent; paper provides a minimal shifted periodic completion as one realization."
+      },
+      {
+        "name": "ufe_chern_simons",
+        "density": "sqrt(-g_hat) * ( + c3 * a_top * F_AB \\tilde{F}^{AB} )",
+        "status": "paper-fixed"
+      }
+    ],
+    "sm_terms_4d": [
+      {
+        "name": "sm_gauge_kinetic",
+        "density": "-1/4 (G^a_{μν}G^{a μν} + W^i_{μν}W^{i μν} + B_{μν}B^{μν})",
+        "status": "standard"
+      },
+      {
+        "name": "sm_fermion_kinetic",
+        "density": "Σ_ψ i ψ^† \\bar{σ}^μ D_μ ψ  (left-handed Weyl basis)",
+        "status": "standard"
+      },
+      {
+        "name": "sm_higgs_kinetic",
+        "density": "(D_μ H)^† (D^μ H)",
+        "status": "standard"
+      },
+      {
+        "name": "sm_higgs_potential",
+        "density": "-mu_H2 H^† H - lambda_H (H^† H)^2",
+        "status": "standard"
+      },
+      {
+        "name": "sm_yukawas",
+        "density": "- ( Q H u_c * Y_u + Q H^† d_c * Y_d + L H^† e_c * Y_e + h.c. )",
+        "status": "parameterized",
+        "note": "The suite currently uses deterministic ansätze; mechanism-level derivation from Möbius/Z3 is still pending."
+      }
+    ],
+    "gravity_effective_4d": [
+      {
+        "name": "r2_starobinsky_completion",
+        "density": "sqrt(-g) * (M_Pl^2/2) * ( R + R^2/(6 M_R2^2) )",
+        "status": "derived-in-suite",
+        "note": "M_R2 is derived in-suite from the torsion-sector quadratic closure via heat-kernel a2 bookkeeping (effective_action_r2 module), with the closure operator generated from this microscopic spec."
+      }
+    ]
+  }
+}
+

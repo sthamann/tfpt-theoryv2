@@ -1,0 +1,8 @@
+Arrow of time proxy (alias to arrow_mechanism)
+
+mode=engineering
+
+Delegated result (from arrow_mechanism):
+- reheating_inputs: PASS (T_reh=1e+13 GeV, g*=120, g*s=120)
+- entropy_proxy: PASS (s≈5.26e+40 GeV^3, H≈7.47e+08 GeV, S_H=s/H^3≈1.26e+14 (log10≈14.1))
+- entropy_production_testable: PASS (log10(S_H)≈14.1 > 0 (entropy per Hubble volume at reheating))

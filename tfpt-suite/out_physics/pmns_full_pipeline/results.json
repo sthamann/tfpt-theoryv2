@@ -1,0 +1,3926 @@
+{
+  "checks": [
+    {
+      "check_id": "g1_gut_over_gY_convention",
+      "detail": "g1_GUT/gY=1.29099444873581 vs sqrt(5/3)=1.29099444873581",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "no_convention_shopping_possible_under_fixed_rule",
+      "detail": "phase_selection_rule_mode=filter_only, pmns_convention_policy=mass_splitting_canonical",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "sm_boundary_1loop_vs_2loop_close",
+      "detail": "diffs (2L-1L) @ mt: \u0394gY=2.5723155397283648e-05, \u0394g2=0.00012867895065693524, \u0394g3=-0.0014918758850732683, \u0394yt=0.00014967384947628393",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "pmns_unitary",
+      "detail": "max|U\u2020U-I|(mt)=8.882e-16, max|U\u2020U-I|(mu_uv)=1.554e-15",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "kappa_symmetric",
+      "detail": "max|kappa-kappa^T|(mu_uv)=0.000e+00",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "kappa_decouples_above_MNR3",
+      "detail": "max|kappa|(mu_uv)=7.843e-16 GeV^-1 (PASS expects ~0 after integrating-in all N_Ri)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "threshold_matching_publication_grade",
+      "detail": "threshold_matching_ok=True, blocked_thresholds=[]",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "matching_mc_present",
+      "detail": "enabled=True, used=12, success=12, failed=0, min_success=9",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "matching_map_used",
+      "detail": "msbar_matching_map used (path=tfpt-suite/out_physics/msbar_matching_map/results.json)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "reference_scale_documented",
+      "detail": "native_scale=mt (172.76 GeV), reference_scale=MZ (91.1876 GeV)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "chi2_scale_consistency",
+      "detail": "chi2_mt=3.20108, chi2_uv=11.4276, ratio=3.56991 (max=10.0)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "pmns_full_pipeline",
+  "plot": {
+    "pmns_residuals_sigma_png": "tfpt-suite/out_physics/pmns_full_pipeline/pmns_residuals_sigma.png"
+  },
+  "results": {
+    "gauge": {
+      "g_mt_gut": {
+        "g1": 0.46309519108393543,
+        "g2": 0.6483341882196387,
+        "g3": 1.167633324356244
+      },
+      "g_mt_sm": {
+        "g2": 0.6483341882196387,
+        "g3": 1.167633324356244,
+        "gY": 0.3587119925553647
+      },
+      "g_mu_uv_sm": {
+        "g2": 0.5672220176355144,
+        "g3": 0.5549409023134395,
+        "gY": 0.4467951238283507
+      }
+    },
+    "kappa": {
+      "mt_maxabs_GeVinv": 5.014528432506132e-16,
+      "mu_uv_maxabs_GeVinv": 7.84337643306119e-16,
+      "mu_uv_sym_dev": 0.0
+    },
+    "matching_map": {
+      "derived_yukawas_mt": {
+        "mb_mt_GeV_1loop_qcd_nf5": 2.897735174749182,
+        "v_ev_GeV": 246.0,
+        "yb_mt_1loop_qcd_nf5": 0.01665860318819457,
+        "ytau_mt_tree": 0.010214876058692106
+      },
+      "mt_boundary": {
+        "alpha_s_mt": 0.10849334481583243,
+        "g2": 0.6483341882196387,
+        "g3": 1.167633324356244,
+        "gY": 0.3587119925553647,
+        "mt_msbar_mt_GeV": 163.6187822977806,
+        "mu_GeV": 172.76,
+        "yt_mt": 0.9406174836767976
+      },
+      "path": "tfpt-suite/out_physics/msbar_matching_map/results.json",
+      "sha256": "50d8c84f7dfc249014967237d42af634a0a3316e99939365db621419d67b7f57",
+      "used": true
+    },
+    "matching_mc": {
+      "cap_note": "pmns_mc_samples = min(matching_mc_samples, 12)",
+      "chi2_uv_mean": 11.411498863437886,
+      "chi2_uv_std": 0.08434012402534234,
+      "enabled": true,
+      "failed": 0,
+      "inputs_sigma": {
+        "alpha_em_inv_sigma": 0.01,
+        "alpha_s_sigma": 0.0011,
+        "mb_sigma_GeV": 0.0,
+        "mc_sigma_GeV": 0.0,
+        "mt_sigma_GeV": 0.3,
+        "sin2_thetaW_sigma": 4e-05
+      },
+      "note": "MC varies SM inputs at MZ (PDG-style priors) and reruns mt boundary + mt\u2192\u03bcUV EFT evolution; capped for runtime.",
+      "pmns_uv_angles_mean_deg": {
+        "delta_cp_deg": 239.6531867258932,
+        "theta12_deg": 34.38383999049751,
+        "theta13_deg": 8.789981910274838,
+        "theta23_deg": 45.15698726040413
+      },
+      "pmns_uv_angles_std_deg": {
+        "delta_cp_deg": 0.0013774715607298518,
+        "theta12_deg": 0.0002412195659307891,
+        "theta13_deg": 0.0002589140979162169,
+        "theta23_deg": 0.015767498102435336
+      },
+      "preview": [
+        {
+          "alpha_s_MZ": 0.11798630471455217,
+          "chi2_uv": 11.362882570882604,
+          "delta_cp_deg": 239.65397796004416,
+          "mt_pole_GeV": 172.28009942796297,
+          "theta12_deg": 34.38370300562739,
+          "theta13_deg": 8.789832985726031,
+          "theta23_deg": 45.14791497245846,
+          "yb_mt": 0.016655330653167617,
+          "yt_mt": 0.9379451065550964
+        },
+        {
+          "alpha_s_MZ": 0.11691481428194987,
+          "chi2_uv": 11.50378225064751,
+          "delta_cp_deg": 239.65167883854716,
+          "mt_pole_GeV": 172.8605023144104,
+          "theta12_deg": 34.38410455148024,
+          "theta13_deg": 8.790265219937144,
+          "theta23_deg": 45.17423896038072,
+          "yb_mt": 0.01672964611619077,
+          "yt_mt": 0.9416179233355917
+        },
+        {
+          "alpha_s_MZ": 0.11824453427713728,
+          "chi2_uv": 11.415451901133434,
+          "delta_cp_deg": 239.6531219019821,
+          "mt_pole_GeV": 172.8319802982828,
+          "theta12_deg": 34.38385064548305,
+          "theta13_deg": 8.789994594912079,
+          "theta23_deg": 45.157764820037784,
+          "yb_mt": 0.016633026762505644,
+          "yt_mt": 0.9408554362727184
+        },
+        {
+          "alpha_s_MZ": 0.11753886717763964,
+          "chi2_uv": 11.424911892893194,
+          "delta_cp_deg": 239.65296496418375,
+          "mt_pole_GeV": 172.56750423608074,
+          "theta12_deg": 34.38387977088565,
+          "theta13_deg": 8.790023692063265,
+          "theta23_deg": 45.15953196817789,
+          "yb_mt": 0.016686112350012706,
+          "yt_mt": 0.9397256633576706
+        },
+        {
+          "alpha_s_MZ": 0.11655581313927546,
+          "chi2_uv": 11.486841017161861,
+          "delta_cp_deg": 239.65195286622054,
+          "mt_pole_GeV": 172.55908082434735,
+          "theta12_deg": 34.38405796208526,
+          "theta13_deg": 8.790213474414664,
+          "theta23_deg": 45.171084618070395,
+          "yb_mt": 0.016757568072780418,
+          "yt_mt": 0.9401269111164569
+        },
+        {
+          "alpha_s_MZ": 0.11691383592144002,
+          "chi2_uv": 11.459347890076227,
+          "delta_cp_deg": 239.65240169630331,
+          "mt_pole_GeV": 172.52969360656542,
+          "theta12_deg": 34.38397913923489,
+          "theta13_deg": 8.790129309700836,
+          "theta23_deg": 45.16596108618777,
+          "yb_mt": 0.01673177908057995,
+          "yt_mt": 0.9398026420579094
+        },
+        {
+          "alpha_s_MZ": 0.11718870446125164,
+          "chi2_uv": 11.570577345268564,
+          "delta_cp_deg": 239.65059444774278,
+          "mt_pole_GeV": 173.4454822784868,
+          "theta12_deg": 34.384292063975586,
+          "theta13_deg": 8.790468871988134,
+          "theta23_deg": 45.18664108261763,
+          "yb_mt": 0.01670609439597923,
+          "yt_mt": 0.944703653502668
+        },
+        {
+          "alpha_s_MZ": 0.11953286815705502,
+          "chi2_uv": 11.323242746652092,
+          "delta_cp_deg": 239.6546305135275,
+          "mt_pole_GeV": 172.66815891843504,
+          "theta12_deg": 34.383585901444455,
+          "theta13_deg": 8.789710662823598,
+          "theta23_deg": 45.14047081008538,
+          "yb_mt": 0.016539788809643005,
+          "yt_mt": 0.939370068086112
+        }
+      ],
+      "samples_requested": 120,
+      "samples_used": 12,
+      "sensitivities_pearson_r": {
+        "chi2_uv": {
+          "alpha_s_MZ": -0.8295061188843627,
+          "mt_pole_GeV": 0.644935873655162
+        },
+        "delta_cp_deg": {
+          "alpha_s_MZ": 0.8306452787846316,
+          "mt_pole_GeV": -0.6434602835203774
+        },
+        "theta12_deg": {
+          "alpha_s_MZ": -0.8342529778829044,
+          "mt_pole_GeV": 0.6384451863010162
+        },
+        "theta13_deg": {
+          "alpha_s_MZ": -0.8301333280091656,
+          "mt_pole_GeV": 0.6442802879763994
+        },
+        "theta23_deg": {
+          "alpha_s_MZ": -0.8300168982335738,
+          "mt_pole_GeV": 0.6444576134999517
+        }
+      },
+      "success": 12
+    },
+    "neutrino_masses_proxy_eV": {
+      "mt": [
+        4.566704329295951e-19,
+        0.008602325267042629,
+        0.050000000000000024
+      ],
+      "mu_uv": [
+        2.648556714881193e-12,
+        0.013659287659473704,
+        0.07810413409744715
+      ]
+    },
+    "plot": {
+      "pmns_residuals_sigma_png": "tfpt-suite/out_physics/pmns_full_pipeline/pmns_residuals_sigma.png"
+    },
+    "pmns_mt": {
+      "angles_deg": {
+        "delta_cp_deg": 239.99999999999963,
+        "theta12_deg": 34.322525903923726,
+        "theta13_deg": 8.74369300841119,
+        "theta23_deg": 42.46122629316276
+      },
+      "best_convention": {
+        "chi2": 3.201078401918528,
+        "contributions": [
+          {
+            "chi2": 2.3212669288424,
+            "key": "sin2_theta13",
+            "mean": 0.02224,
+            "pred": 0.02310843515888113,
+            "sigma": 0.00057
+          },
+          {
+            "chi2": 0.8292697467302962,
+            "key": "sin2_theta12",
+            "mean": 0.307,
+            "pred": 0.3179277098940795,
+            "sigma": 0.012
+          },
+          {
+            "chi2": 0.04207758053911512,
+            "key": "delta_cp_deg",
+            "mean": 232.0,
+            "pred": 239.99999999999963,
+            "sigma": 39.0
+          },
+          {
+            "chi2": 0.008464145806716901,
+            "key": "sin2_theta23",
+            "mean": 0.454,
+            "pred": 0.45574801505606355,
+            "sigma": 0.019
+          }
+        ],
+        "ordering": "NO",
+        "perm": [
+          0,
+          1,
+          2
+        ]
+      },
+      "candidates": [
+        {
+          "angles_deg": {
+            "delta_cp_deg": 239.99999999999963,
+            "theta12_deg": 34.322525903923726,
+            "theta13_deg": 8.74369300841119,
+            "theta23_deg": 42.46122629316276
+          },
+          "best_chi2": 3.201078401918528,
+          "best_ordering": "NO",
+          "chi2_by_ordering": {
+            "NO": {
+              "chi2": 3.201078401918528
+            }
+          },
+          "masses_eV": [
+            4.566704329295951e-19,
+            0.008602325267042629,
+            0.050000000000000024
+          ],
+          "perm": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "angles_deg": {
+            "delta_cp_deg": 118.5451220097924,
+            "theta12_deg": 10.549279303367344,
+            "theta13_deg": 33.86913155494883,
+            "theta23_deg": 50.444113950711206
+          },
+          "best_chi2": 256478.07120193422,
+          "best_ordering": "NO",
+          "chi2_by_ordering": {
+            "NO": {
+              "chi2": 256478.07120193422
+            }
+          },
+          "masses_eV": [
+            4.566704329295951e-19,
+            0.050000000000000024,
+            0.008602325267042629
+          ],
+          "perm": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "angles_deg": {
+            "delta_cp_deg": 60.00000000000015,
+            "theta12_deg": 55.677474096076345,
+            "theta13_deg": 8.74369300841119,
+            "theta23_deg": 42.46122629316276
+          },
+          "best_chi2": 998.7191399378896,
+          "best_ordering": "NO",
+          "chi2_by_ordering": {
+            "NO": {
+              "chi2": 998.7191399378896
+            }
+          },
+          "masses_eV": [
+            0.008602325267042629,
+            4.566704329295951e-19,
+            0.050000000000000024
+          ],
+          "perm": [
+            1,
+            0,
+            2
+          ]
+        },
+        {
+          "angles_deg": {
+            "delta_cp_deg": 299.5245693191456,
+            "theta12_deg": 15.257440636504068,
+            "theta13_deg": 54.71397861065465,
+            "theta23_deg": 41.231560645966695
+          },
+          "best_chi2": 1277180.2898245973,
+          "best_ordering": "NO",
+          "chi2_by_ordering": {
+            "NO": {
+              "chi2": 1277180.2898245973
+            }
+          },
+          "masses_eV": [
+            0.008602325267042629,
+            0.050000000000000024,
+            4.566704329295951e-19
+          ],
+          "perm": [
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "angles_deg": {
+            "delta_cp_deg": 298.5451220097922,
+            "theta12_deg": 79.45072069663287,
+            "theta13_deg": 33.86913155494883,
+            "theta23_deg": 50.444113950711206
+          },
+          "best_chi2": 258973.37780792866,
+          "best_ordering": "NO",
+          "chi2_by_ordering": {
+            "NO": {
+              "chi2": 258973.37780792866
+            }
+          },
+          "masses_eV": [
+            0.050000000000000024,
+            4.566704329295951e-19,
+            0.008602325267042629
+          ],
+          "perm": [
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "angles_deg": {
+            "delta_cp_deg": 119.52456931914575,
+            "theta12_deg": 74.74255936349631,
+            "theta13_deg": 54.71397861065465,
+            "theta23_deg": 41.231560645966695
+          },
+          "best_chi2": 1279494.9008531957,
+          "best_ordering": "NO",
+          "chi2_by_ordering": {
+            "NO": {
+              "chi2": 1279494.9008531957
+            }
+          },
+          "masses_eV": [
+            0.050000000000000024,
+            0.008602325267042629,
+            4.566704329295951e-19
+          ],
+          "perm": [
+            2,
+            1,
+            0
+          ]
+        }
+      ],
+      "unitarity_dev": 8.88180738232511e-16
+    },
+    "pmns_mu_uv": {
+      "angles_deg": {
+        "delta_cp_deg": 239.6529232116527,
+        "theta12_deg": 34.38388603088958,
+        "theta13_deg": 8.790031788219606,
+        "theta23_deg": 45.160028038357716
+      },
+      "best_convention": {
+        "chi2": 11.427560720549947,
+        "contributions": [
+          {
+            "chi2": 6.594894761735002,
+            "key": "sin2_theta23",
+            "mean": 0.454,
+            "pred": 0.5027930016394394,
+            "sigma": 0.019
+          },
+          {
+            "chi2": 3.8065325202394913,
+            "key": "sin2_theta13",
+            "mean": 0.02224,
+            "pred": 0.023352089212170413,
+            "sigma": 0.00057
+          },
+          {
+            "chi2": 0.9876276965087506,
+            "key": "sin2_theta12",
+            "mean": 0.307,
+            "pred": 0.3189255351367249,
+            "sigma": 0.012
+          },
+          {
+            "chi2": 0.03850574206670135,
+            "key": "delta_cp_deg",
+            "mean": 232.0,
+            "pred": 239.6529232116527,
+            "sigma": 39.0
+          }
+        ],
+        "ordering": "NO",
+        "perm": [
+          0,
+          1,
+          2
+        ]
+      },
+      "candidates": [
+        {
+          "angles_deg": {
+            "delta_cp_deg": 239.6529232116527,
+            "theta12_deg": 34.38388603088958,
+            "theta13_deg": 8.790031788219606,
+            "theta23_deg": 45.160028038357716
+          },
+          "best_chi2": 11.427560720549947,
+          "best_ordering": "NO",
+          "chi2_by_ordering": {
+            "NO": {
+              "chi2": 11.427560720549947
+            }
+          },
+          "masses_eV": [
+            2.648556714881193e-12,
+            0.013659287659473704,
+            0.07810413409744715
+          ],
+          "perm": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "angles_deg": {
+            "delta_cp_deg": 119.8613929092381,
+            "theta12_deg": 10.612376090184767,
+            "theta13_deg": 33.924646887061144,
+            "theta23_deg": 47.842413602619814
+          },
+          "best_chi2": 258041.71917900408,
+          "best_ordering": "NO",
+          "chi2_by_ordering": {
+            "NO": {
+              "chi2": 258041.71917900408
+            }
+          },
+          "masses_eV": [
+            2.648556714881193e-12,
+            0.07810413409744715,
+            0.013659287659473704
+          ],
+          "perm": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "angles_deg": {
+            "delta_cp_deg": 59.65292321165283,
+            "theta12_deg": 55.61611396911048,
+            "theta13_deg": 8.790031788219606,
+            "theta23_deg": 45.160028038357716
+          },
+          "best_chi2": 1001.6783186134976,
+          "best_ordering": "NO",
+          "chi2_by_ordering": {
+            "NO": {
+              "chi2": 1001.6783186134976
+            }
+          },
+          "masses_eV": [
+            0.013659287659473704,
+            2.648556714881193e-12,
+            0.07810413409744715
+          ],
+          "perm": [
+            1,
+            0,
+            2
+          ]
+        },
+        {
+          "angles_deg": {
+            "delta_cp_deg": 297.7929649330414,
+            "theta12_deg": 15.312840588410399,
+            "theta13_deg": 54.6447038590056,
+            "theta23_deg": 38.645891075076015
+          },
+          "best_chi2": 1272670.1790221767,
+          "best_ordering": "NO",
+          "chi2_by_ordering": {
+            "NO": {
+              "chi2": 1272670.1790221767
+            }
+          },
+          "masses_eV": [
+            0.013659287659473704,
+            0.07810413409744715,
+            2.648556714881193e-12
+          ],
+          "perm": [
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "angles_deg": {
+            "delta_cp_deg": 299.861392909238,
+            "theta12_deg": 79.38762390981545,
+            "theta13_deg": 33.924646887061144,
+            "theta23_deg": 47.842413602619814
+          },
+          "best_chi2": 260535.20601564963,
+          "best_ordering": "NO",
+          "chi2_by_ordering": {
+            "NO": {
+              "chi2": 260535.20601564963
+            }
+          },
+          "masses_eV": [
+            0.07810413409744715,
+            2.648556714881193e-12,
+            0.013659287659473704
+          ],
+          "perm": [
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "angles_deg": {
+            "delta_cp_deg": 117.79296493304153,
+            "theta12_deg": 74.6871594115899,
+            "theta13_deg": 54.6447038590056,
+            "theta23_deg": 38.645891075076015
+          },
+          "best_chi2": 1274982.5634847085,
+          "best_ordering": "NO",
+          "chi2_by_ordering": {
+            "NO": {
+              "chi2": 1274982.5634847085
+            }
+          },
+          "masses_eV": [
+            0.07810413409744715,
+            0.013659287659473704,
+            2.648556714881193e-12
+          ],
+          "perm": [
+            2,
+            1,
+            0
+          ]
+        }
+      ],
+      "unitarity_dev": 1.554313465031349e-15
+    },
+    "pmns_reference": {
+      "file": "tfpt-suite/tfpt_suite/data/pmns_reference.json",
+      "meta": {
+        "atmospheric_data": "SK-atm included",
+        "definition": "Mixing angles in the PDG convention (\u03b812, \u03b813, \u03b823) reported as sin\u00b2\u03b8ij, and \u03b4CP in degrees. These are effective low-energy fit parameters; they are not running MSbar couplings.",
+        "reference_scale_GeV": 91.1876,
+        "reference_scale_label": "MZ",
+        "scheme": "NuFIT 5.3 (2024) global fit; effective low-energy parameters; not a running MSbar coupling",
+        "snapshot_date": "2024-03",
+        "source": "NuFIT 5.3 (2024) table (with SK-atm): http://www.nu-fit.org/?q=node/278 (v53.tbl-parameters.pdf)"
+      },
+      "sha256": "7db8de223af56cb38a9e59f8fa7d6598a00de53b2f2ca4333151da9f10a371ba"
+    },
+    "publication_grade": {
+      "blocked_thresholds": [],
+      "note": "Publication-grade requires no 'continuous_by_assumption' threshold actions (MSigma/MG8 are matched at 1-loop identity; MNRi are tree-level matched in \u03ba).",
+      "threshold_matching_ok": true
+    },
+    "pyrate_beta_sources": {
+      "e8": {
+        "kind": "e8_sigma_yN_2loop",
+        "model_name_expected": "E8Cascade2LoopGravityV2",
+        "pythonoutput_dir": "Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput",
+        "pythonoutput_module_file": "Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput/RGEs.py",
+        "pythonoutput_module_sha256": "00b39ed315bbfef39796707e87d697e08362836a45385bb096c14102eff83635",
+        "yaml_source": "Pyrate3/models/E8Cascade 2Loop Gravity.yaml",
+        "yaml_source_sha256": "cc8f061af5e64dc6e22baba2eb9043bdcda493c200c415fd1926501f888195ca"
+      },
+      "sm": {
+        "kind": "sm_tfpt_2loop_v25",
+        "model_name_expected": "SM_TFPT_2Loop_v25",
+        "pythonoutput_dir": "Pyrate3/pyrate/results/SM_TFPT_2loop_v25/SM_TFPT_2Loop_v25/PythonOutput",
+        "pythonoutput_module_file": "Pyrate3/pyrate/results/SM_TFPT_2loop_v25/SM_TFPT_2Loop_v25/PythonOutput/RGEs.py",
+        "pythonoutput_module_sha256": "2afd8713aecc16eb3fe45e251199019abbc9c3d6f32a4452316fcaf5e9eda72a",
+        "yaml_source": "Pyrate3/models/SM_TFPT_2loop_v25.yaml",
+        "yaml_source_sha256": "d26c9ac5db235a107425ed10233d88427c589f08359482fd88ecbb5a455141df"
+      }
+    },
+    "segments": [
+      {
+        "active_cols": [
+          false,
+          false,
+          false
+        ],
+        "delta_b3_active": false,
+        "model": "sm",
+        "mu_end": 1000.0,
+        "mu_end_GeV": 1000.0,
+        "mu_start": 172.76,
+        "mu_start_GeV": 172.76,
+        "patches": [],
+        "threshold_actions_at_start": [],
+        "threshold_match": null
+      },
+      {
+        "active_cols": [
+          false,
+          false,
+          false
+        ],
+        "delta_b3_active": false,
+        "model": "e8",
+        "mu_end": 18000000000.0,
+        "mu_end_GeV": 18000000000.0,
+        "mu_start": 1000.0,
+        "mu_start_GeV": 1000.0,
+        "patches": [],
+        "threshold_actions_at_start": [
+          {
+            "action": "beta_source_switch(sm\u2192e8)",
+            "note": "Switch beta source SM\u2192E8 at \u03bc=MSigma (Sigma integrated in). Matching enabled (1-loop identity at \u03bc=threshold).",
+            "status": "matched_1loop_log_only_identity",
+            "threshold_id": "MSigma",
+            "threshold_match": {
+              "gauge": {
+                "deltas": {},
+                "details": {
+                  "active_fields_after": [
+                    "SM",
+                    "Sigma"
+                  ],
+                  "active_fields_before": [
+                    "SM"
+                  ],
+                  "direction": "up",
+                  "finite_delta_alpha_applied": {},
+                  "finite_delta_alpha_input": {},
+                  "loop_order": 1,
+                  "mu_thr_GeV": 1000.0,
+                  "scheme": "MSbar",
+                  "threshold_id": "MSigma"
+                },
+                "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); finite pieces require explicit inputs or higher-loop decoupling constants",
+                "status": "matched_1loop_log_only_identity"
+              },
+              "loop_order": 1,
+              "matching_active": true,
+              "quartic": {
+                "deltas": {},
+                "details": {
+                  "active_fields_after": [
+                    "SM",
+                    "Sigma"
+                  ],
+                  "active_fields_before": [
+                    "SM"
+                  ],
+                  "direction": "up",
+                  "finite_delta_quartic_applied": {},
+                  "finite_delta_quartic_input": {},
+                  "loop_order": 1,
+                  "mu_thr_GeV": 1000.0,
+                  "scheme": "MSbar",
+                  "threshold_id": "MSigma"
+                },
+                "note": "identity matching at \u03bc=threshold (explicit); finite quartic matching not implemented yet",
+                "status": "matched_1loop_log_only_identity"
+              },
+              "scheme": "MSbar",
+              "threshold_id": "MSigma",
+              "yukawa": {
+                "deltas": {},
+                "details": {
+                  "active_fields_after": [
+                    "SM",
+                    "Sigma"
+                  ],
+                  "active_fields_before": [
+                    "SM"
+                  ],
+                  "direction": "up",
+                  "finite_delta_yukawa_applied": {},
+                  "finite_delta_yukawa_input": {},
+                  "loop_order": 1,
+                  "mu_thr_GeV": 1000.0,
+                  "scheme": "MSbar",
+                  "threshold_id": "MSigma",
+                  "yukawa_maxabs_input": {
+                    "Yd": 0.008066268203371748,
+                    "Ye": 0.005654560472101224,
+                    "Yu": 0.46598219688331993,
+                    "yN": 0.0
+                  }
+                },
+                "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); top pole\u2192MSbar(mt) is handled in rge_sm.sm_boundary_conditions_at_mt",
+                "status": "matched_1loop_log_only_identity"
+              }
+            }
+          }
+        ],
+        "threshold_match": {
+          "gauge": {
+            "deltas": {},
+            "details": {
+              "active_fields_after": [
+                "SM",
+                "Sigma"
+              ],
+              "active_fields_before": [
+                "SM"
+              ],
+              "direction": "up",
+              "finite_delta_alpha_applied": {},
+              "finite_delta_alpha_input": {},
+              "loop_order": 1,
+              "mu_thr_GeV": 1000.0,
+              "scheme": "MSbar",
+              "threshold_id": "MSigma"
+            },
+            "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); finite pieces require explicit inputs or higher-loop decoupling constants",
+            "status": "matched_1loop_log_only_identity"
+          },
+          "loop_order": 1,
+          "matching_active": true,
+          "quartic": {
+            "deltas": {},
+            "details": {
+              "active_fields_after": [
+                "SM",
+                "Sigma"
+              ],
+              "active_fields_before": [
+                "SM"
+              ],
+              "direction": "up",
+              "finite_delta_quartic_applied": {},
+              "finite_delta_quartic_input": {},
+              "loop_order": 1,
+              "mu_thr_GeV": 1000.0,
+              "scheme": "MSbar",
+              "threshold_id": "MSigma"
+            },
+            "note": "identity matching at \u03bc=threshold (explicit); finite quartic matching not implemented yet",
+            "status": "matched_1loop_log_only_identity"
+          },
+          "scheme": "MSbar",
+          "threshold_id": "MSigma",
+          "yukawa": {
+            "deltas": {},
+            "details": {
+              "active_fields_after": [
+                "SM",
+                "Sigma"
+              ],
+              "active_fields_before": [
+                "SM"
+              ],
+              "direction": "up",
+              "finite_delta_yukawa_applied": {},
+              "finite_delta_yukawa_input": {},
+              "loop_order": 1,
+              "mu_thr_GeV": 1000.0,
+              "scheme": "MSbar",
+              "threshold_id": "MSigma",
+              "yukawa_maxabs_input": {
+                "Yd": 0.008066268203371748,
+                "Ye": 0.005654560472101224,
+                "Yu": 0.46598219688331993,
+                "yN": 0.0
+              }
+            },
+            "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); top pole\u2192MSbar(mt) is handled in rge_sm.sm_boundary_conditions_at_mt",
+            "status": "matched_1loop_log_only_identity"
+          }
+        }
+      },
+      {
+        "active_cols": [
+          false,
+          false,
+          false
+        ],
+        "delta_b3_active": true,
+        "model": "e8",
+        "mu_end": 100000000000000.0,
+        "mu_end_GeV": 100000000000000.0,
+        "mu_start": 18000000000.0,
+        "mu_start_GeV": 18000000000.0,
+        "patches": [
+          "delta_b3_g8"
+        ],
+        "threshold_actions_at_start": [
+          {
+            "action": "beta_patch(\u0394b3)",
+            "note": "Apply \u0394b3 patch above MG8 (paper v1.06 note). Matching enabled (1-loop identity at \u03bc=threshold).",
+            "status": "matched_1loop_log_only_identity",
+            "threshold_id": "MG8",
+            "threshold_match": {
+              "gauge": {
+                "deltas": {},
+                "details": {
+                  "active_fields_after": [
+                    "SM",
+                    "Sigma",
+                    "G8"
+                  ],
+                  "active_fields_before": [
+                    "SM",
+                    "Sigma"
+                  ],
+                  "direction": "up",
+                  "finite_delta_alpha_applied": {},
+                  "finite_delta_alpha_input": {},
+                  "loop_order": 1,
+                  "mu_thr_GeV": 18000000000.0,
+                  "scheme": "MSbar",
+                  "threshold_id": "MG8"
+                },
+                "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); finite pieces require explicit inputs or higher-loop decoupling constants",
+                "status": "matched_1loop_log_only_identity"
+              },
+              "loop_order": 1,
+              "matching_active": true,
+              "quartic": {
+                "deltas": {},
+                "details": {
+                  "active_fields_after": [
+                    "SM",
+                    "Sigma",
+                    "G8"
+                  ],
+                  "active_fields_before": [
+                    "SM",
+                    "Sigma"
+                  ],
+                  "direction": "up",
+                  "finite_delta_quartic_applied": {},
+                  "finite_delta_quartic_input": {},
+                  "loop_order": 1,
+                  "mu_thr_GeV": 18000000000.0,
+                  "scheme": "MSbar",
+                  "threshold_id": "MG8"
+                },
+                "note": "identity matching at \u03bc=threshold (explicit); finite quartic matching not implemented yet",
+                "status": "matched_1loop_log_only_identity"
+              },
+              "scheme": "MSbar",
+              "threshold_id": "MG8",
+              "yukawa": {
+                "deltas": {},
+                "details": {
+                  "active_fields_after": [
+                    "SM",
+                    "Sigma",
+                    "G8"
+                  ],
+                  "active_fields_before": [
+                    "SM",
+                    "Sigma"
+                  ],
+                  "direction": "up",
+                  "finite_delta_yukawa_applied": {},
+                  "finite_delta_yukawa_input": {},
+                  "loop_order": 1,
+                  "mu_thr_GeV": 18000000000.0,
+                  "scheme": "MSbar",
+                  "threshold_id": "MG8",
+                  "yukawa_maxabs_input": {
+                    "Yd": 0.005606035343942318,
+                    "Ye": 0.007624889222184927,
+                    "Yu": 0.4116296120665943,
+                    "yN": 0.0
+                  }
+                },
+                "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); top pole\u2192MSbar(mt) is handled in rge_sm.sm_boundary_conditions_at_mt",
+                "status": "matched_1loop_log_only_identity"
+              }
+            }
+          }
+        ],
+        "threshold_match": {
+          "gauge": {
+            "deltas": {},
+            "details": {
+              "active_fields_after": [
+                "SM",
+                "Sigma",
+                "G8"
+              ],
+              "active_fields_before": [
+                "SM",
+                "Sigma"
+              ],
+              "direction": "up",
+              "finite_delta_alpha_applied": {},
+              "finite_delta_alpha_input": {},
+              "loop_order": 1,
+              "mu_thr_GeV": 18000000000.0,
+              "scheme": "MSbar",
+              "threshold_id": "MG8"
+            },
+            "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); finite pieces require explicit inputs or higher-loop decoupling constants",
+            "status": "matched_1loop_log_only_identity"
+          },
+          "loop_order": 1,
+          "matching_active": true,
+          "quartic": {
+            "deltas": {},
+            "details": {
+              "active_fields_after": [
+                "SM",
+                "Sigma",
+                "G8"
+              ],
+              "active_fields_before": [
+                "SM",
+                "Sigma"
+              ],
+              "direction": "up",
+              "finite_delta_quartic_applied": {},
+              "finite_delta_quartic_input": {},
+              "loop_order": 1,
+              "mu_thr_GeV": 18000000000.0,
+              "scheme": "MSbar",
+              "threshold_id": "MG8"
+            },
+            "note": "identity matching at \u03bc=threshold (explicit); finite quartic matching not implemented yet",
+            "status": "matched_1loop_log_only_identity"
+          },
+          "scheme": "MSbar",
+          "threshold_id": "MG8",
+          "yukawa": {
+            "deltas": {},
+            "details": {
+              "active_fields_after": [
+                "SM",
+                "Sigma",
+                "G8"
+              ],
+              "active_fields_before": [
+                "SM",
+                "Sigma"
+              ],
+              "direction": "up",
+              "finite_delta_yukawa_applied": {},
+              "finite_delta_yukawa_input": {},
+              "loop_order": 1,
+              "mu_thr_GeV": 18000000000.0,
+              "scheme": "MSbar",
+              "threshold_id": "MG8",
+              "yukawa_maxabs_input": {
+                "Yd": 0.005606035343942318,
+                "Ye": 0.007624889222184927,
+                "Yu": 0.4116296120665943,
+                "yN": 0.0
+              }
+            },
+            "note": "identity matching at \u03bc=threshold (1-loop decoupling is log-only, so the step vanishes at \u03bc=M); top pole\u2192MSbar(mt) is handled in rge_sm.sm_boundary_conditions_at_mt",
+            "status": "matched_1loop_log_only_identity"
+          }
+        }
+      },
+      {
+        "active_cols": [
+          true,
+          false,
+          false
+        ],
+        "delta_b3_active": true,
+        "model": "e8",
+        "mu_end": 300000000000000.0,
+        "mu_end_GeV": 300000000000000.0,
+        "mu_start": 100000000000000.0,
+        "mu_start_GeV": 100000000000000.0,
+        "patches": [
+          "delta_b3_g8"
+        ],
+        "threshold_actions_at_start": [
+          {
+            "action": "kappa_matching+integrate_in_yN",
+            "note": "Tree-level EFT matching at \u03bc=MNRi: \u03ba \u2192 \u03ba - y_i y_i^T / MNRi, and yN column i is integrated in.",
+            "status": "matched_tree_level",
+            "threshold_id": "MNR1"
+          }
+        ],
+        "threshold_match": null
+      },
+      {
+        "active_cols": [
+          true,
+          true,
+          false
+        ],
+        "delta_b3_active": true,
+        "model": "e8",
+        "mu_end": 800000000000000.0,
+        "mu_end_GeV": 800000000000000.0,
+        "mu_start": 300000000000000.0,
+        "mu_start_GeV": 300000000000000.0,
+        "patches": [
+          "delta_b3_g8"
+        ],
+        "threshold_actions_at_start": [
+          {
+            "action": "kappa_matching+integrate_in_yN",
+            "note": "Tree-level EFT matching at \u03bc=MNRi: \u03ba \u2192 \u03ba - y_i y_i^T / MNRi, and yN column i is integrated in.",
+            "status": "matched_tree_level",
+            "threshold_id": "MNR2"
+          }
+        ],
+        "threshold_match": null
+      },
+      {
+        "active_cols": [
+          true,
+          true,
+          true
+        ],
+        "delta_b3_active": true,
+        "model": "e8",
+        "mu_end": 1e+16,
+        "mu_end_GeV": 1e+16,
+        "mu_start": 800000000000000.0,
+        "mu_start_GeV": 800000000000000.0,
+        "patches": [
+          "delta_b3_g8"
+        ],
+        "threshold_actions_at_start": [
+          {
+            "action": "kappa_matching+integrate_in_yN",
+            "note": "Tree-level EFT matching at \u03bc=MNRi: \u03ba \u2192 \u03ba - y_i y_i^T / MNRi, and yN column i is integrated in.",
+            "status": "matched_tree_level",
+            "threshold_id": "MNR3"
+          }
+        ],
+        "threshold_match": null
+      }
+    ],
+    "texture": {
+      "a_d": 1.0,
+      "a_e": 1.0,
+      "a_nu": 1.103,
+      "a_u": 0.6666666666666666,
+      "b": 1.0,
+      "coeff_rule": "v107sm_fixed",
+      "coeff_source": "update_tfptv1_07sm.tex (v1.07SM) + paper_v1_06_01_09_2025.tex (v1.06) conventions",
+      "delta_M": 0.6079090366343283,
+      "delta_source": "delta_star",
+      "delta_star": 0.6088619920294742,
+      "delta_used": 0.6088619920294742,
+      "neutrino_masses_input_eV": [
+        0.0,
+        0.008602325267042627,
+        0.05
+      ],
+      "neutrino_source": "mechanism_bridge",
+      "phase_mode": "2pi_delta",
+      "pmns_target_scan": {
+        "best": {
+          "branch": "theta",
+          "delta0_deg": 239.99999999999997,
+          "delta0_label": "topology_delta0_3",
+          "eps_deg": 2.538773706837249,
+          "eps_multiplier": 5,
+          "eps_sign": -1,
+          "fit": {
+            "angles_deg": {
+              "delta_cp_deg": 239.99999999999997,
+              "theta12_deg": 34.32252590392372,
+              "theta13_deg": 8.743693008411185,
+              "theta23_deg": 42.461226293162746
+            },
+            "chi2": 3.2010784019183567,
+            "ordering": "NO",
+            "perm": [
+              0,
+              1,
+              2
+            ]
+          },
+          "source_module": "topology_phase_map",
+          "theta_over_pi_mod2": "4/3"
+        },
+        "candidates": [
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 0.5077547413674498,
+            "eps_multiplier": 1,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 60.00000000000001,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 45.50775474136745
+              },
+              "chi2": 30.938259111656354,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 0.5077547413674498,
+            "eps_multiplier": 1,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.99999999999993,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 44.49224525863255
+              },
+              "chi2": 26.421579993243068,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 1.0155094827348996,
+            "eps_multiplier": 2,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 60.000000000000036,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 46.01550948273489
+              },
+              "chi2": 33.84819223411357,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 1.0155094827348996,
+            "eps_multiplier": 2,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.99999999999989,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 43.98449051726511
+              },
+              "chi2": 24.8162528279648,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 1.5232642241023493,
+            "eps_multiplier": 3,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.99999999999996,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 46.523264224102356
+              },
+              "chi2": 37.19066472854797,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 1.5232642241023493,
+            "eps_multiplier": 3,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 60.00000000000001,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 43.47673577589765
+              },
+              "chi2": 23.646302250319774,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 2.031018965469799,
+            "eps_multiplier": 4,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.99999999999997,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 47.0310189654698
+              },
+              "chi2": 40.963603040642305,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 2.031018965469799,
+            "eps_multiplier": 4,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.999999999999986,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 42.9689810345302
+              },
+              "chi2": 22.91107219971114,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 2.538773706837249,
+            "eps_multiplier": 5,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.99999999999997,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 47.53877370683725
+              },
+              "chi2": 45.16439076266269,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 2.538773706837249,
+            "eps_multiplier": 5,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.99999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 42.461226293162746
+              },
+              "chi2": 22.609362425587054,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 3.0465284482046986,
+            "eps_multiplier": 6,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 48.0465284482047
+              },
+              "chi2": 49.78987125356376,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 3.0465284482046986,
+            "eps_multiplier": 6,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 60.00000000000006,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 41.953471551795296
+              },
+              "chi2": 22.73943066268726,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 3.5542831895721485,
+            "eps_multiplier": 7,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 60.00000000000007,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 48.55428318957214
+              },
+              "chi2": 54.83635093869734,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 3.5542831895721485,
+            "eps_multiplier": 7,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.99999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 41.44571681042785
+              },
+              "chi2": 23.29899548645185,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 4.062037930939598,
+            "eps_multiplier": 8,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 60.00000000000002,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 49.06203793093959
+              },
+              "chi2": 60.29960328518826,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 4.062037930939598,
+            "eps_multiplier": 8,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.999999999999986,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 40.9379620690604
+              },
+              "chi2": 24.28523984479569,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 4.569792672307048,
+            "eps_multiplier": 9,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 60.000000000000036,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 49.56979267230704
+              },
+              "chi2": 66.17487344818913,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 4.569792672307048,
+            "eps_multiplier": 9,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.999999999999986,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 40.430207327692955
+              },
+              "chi2": 25.694815261602013,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 5.077547413674498,
+            "eps_multiplier": 10,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 60.00000000000006,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 50.07754741367449
+              },
+              "chi2": 72.45688358238803,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 5.077547413674498,
+            "eps_multiplier": 10,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.99999999999996,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 39.9224525863255
+              },
+              "chi2": 27.523846706445493,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 5.585302155041948,
+            "eps_multiplier": 11,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 60.00000000000001,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 50.585302155041944
+              },
+              "chi2": 79.13983881230294,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 5.585302155041948,
+            "eps_multiplier": 11,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 60.00000000000001,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 39.41469784495805
+              },
+              "chi2": 29.767938124217206,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 6.093056896409397,
+            "eps_multiplier": 12,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.999999999999986,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 51.093056896409394
+              },
+              "chi2": 86.21743385406667,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 59.99999999999999,
+            "delta0_label": "topology_delta0_1",
+            "eps_deg": 6.093056896409397,
+            "eps_multiplier": 12,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 59.99999999999991,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 38.906943103590606
+              },
+              "chi2": 32.42217861749782,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 0.5077547413674498,
+            "eps_multiplier": 1,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 299.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 45.50775474136745
+              },
+              "chi2": 14.528002701399936,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 0.5077547413674498,
+            "eps_multiplier": 1,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.00000000000006,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 44.49224525863255
+              },
+              "chi2": 10.011323582986652,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 1.0155094827348996,
+            "eps_multiplier": 2,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 299.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 46.01550948273489
+              },
+              "chi2": 17.437935823857163,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 1.0155094827348996,
+            "eps_multiplier": 2,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.0000000000001,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 43.98449051726511
+              },
+              "chi2": 8.405996417708373,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 1.5232642241023493,
+            "eps_multiplier": 3,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.00000000000006,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 46.523264224102356
+              },
+              "chi2": 20.78040831829156,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 1.5232642241023493,
+            "eps_multiplier": 3,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 299.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 43.47673577589765
+              },
+              "chi2": 7.2360458400633565,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 2.031018965469799,
+            "eps_multiplier": 4,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.0,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 47.0310189654698
+              },
+              "chi2": 24.553346630385896,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 2.031018965469799,
+            "eps_multiplier": 4,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.0,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 42.9689810345302
+              },
+              "chi2": 6.500815789454727,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 2.538773706837249,
+            "eps_multiplier": 5,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.0,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 47.53877370683725
+              },
+              "chi2": 28.754134352406282,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 2.538773706837249,
+            "eps_multiplier": 5,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.0,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 42.461226293162746
+              },
+              "chi2": 6.199106015330642,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 3.0465284482046986,
+            "eps_multiplier": 6,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.00000000000006,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 48.0465284482047
+              },
+              "chi2": 33.379614843307344,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 3.0465284482046986,
+            "eps_multiplier": 6,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 299.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 41.953471551795296
+              },
+              "chi2": 6.329174252430854,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 3.5542831895721485,
+            "eps_multiplier": 7,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 299.9999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 48.55428318957214
+              },
+              "chi2": 38.42609452844094,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 3.5542831895721485,
+            "eps_multiplier": 7,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.0,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 41.44571681042785
+              },
+              "chi2": 6.8887390761954395,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 4.062037930939598,
+            "eps_multiplier": 8,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 299.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 49.06203793093959
+              },
+              "chi2": 43.889346874931846,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 4.062037930939598,
+            "eps_multiplier": 8,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.0,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 40.9379620690604
+              },
+              "chi2": 7.874983434539278,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 4.569792672307048,
+            "eps_multiplier": 9,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 299.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 49.56979267230704
+              },
+              "chi2": 49.76461703793271,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 4.569792672307048,
+            "eps_multiplier": 9,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.0,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 40.430207327692955
+              },
+              "chi2": 9.2845588513456,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 5.077547413674498,
+            "eps_multiplier": 10,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 299.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 50.07754741367449
+              },
+              "chi2": 56.046627172131615,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 5.077547413674498,
+            "eps_multiplier": 10,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.00000000000006,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 39.9224525863255
+              },
+              "chi2": 11.113590296189079,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 5.585302155041948,
+            "eps_multiplier": 11,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 299.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 50.585302155041944
+              },
+              "chi2": 62.72958240204652,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 5.585302155041948,
+            "eps_multiplier": 11,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 299.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 39.41469784495805
+              },
+              "chi2": 13.357681713960789,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 6.093056896409397,
+            "eps_multiplier": 12,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.0,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 51.093056896409394
+              },
+              "chi2": 69.80717744381026,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 300.0,
+            "delta0_label": "topology_delta0_2",
+            "eps_deg": 6.093056896409397,
+            "eps_multiplier": 12,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 300.00000000000006,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 38.906943103590606
+              },
+              "chi2": 16.011922207241394,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 0.5077547413674498,
+            "eps_multiplier": 1,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999997,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 45.50775474136745
+              },
+              "chi2": 11.529975087987655,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 0.5077547413674498,
+            "eps_multiplier": 1,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 240.00000000000003,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 44.49224525863255
+              },
+              "chi2": 7.013295969574362,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 1.0155094827348996,
+            "eps_multiplier": 2,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 46.01550948273489
+              },
+              "chi2": 14.43990821044488,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 1.0155094827348996,
+            "eps_multiplier": 2,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 240.00000000000003,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 43.98449051726511
+              },
+              "chi2": 5.407968804296078,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 1.5232642241023493,
+            "eps_multiplier": 3,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999997,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 46.523264224102356
+              },
+              "chi2": 17.78238070487927,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 1.5232642241023493,
+            "eps_multiplier": 3,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 43.47673577589765
+              },
+              "chi2": 4.238018226651076,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 2.031018965469799,
+            "eps_multiplier": 4,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999997,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 47.0310189654698
+              },
+              "chi2": 21.555319016973613,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 2.031018965469799,
+            "eps_multiplier": 4,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 42.9689810345302
+              },
+              "chi2": 3.502788176042441,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 2.538773706837249,
+            "eps_multiplier": 5,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999997,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 47.53877370683725
+              },
+              "chi2": 25.756106738994,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 2.538773706837249,
+            "eps_multiplier": 5,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999997,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 42.461226293162746
+              },
+              "chi2": 3.2010784019183567,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 3.0465284482046986,
+            "eps_multiplier": 6,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 48.0465284482047
+              },
+              "chi2": 30.38158722989506,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 3.0465284482046986,
+            "eps_multiplier": 6,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 41.953471551795296
+              },
+              "chi2": 3.331146639018574,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 3.5542831895721485,
+            "eps_multiplier": 7,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.9999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 48.55428318957214
+              },
+              "chi2": 35.42806691502866,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 3.5542831895721485,
+            "eps_multiplier": 7,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 41.44571681042785
+              },
+              "chi2": 3.890711462783154,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 4.062037930939598,
+            "eps_multiplier": 8,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 49.06203793093959
+              },
+              "chi2": 40.89131926151957,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 4.062037930939598,
+            "eps_multiplier": 8,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999997,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 40.9379620690604
+              },
+              "chi2": 4.876955821126993,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 4.569792672307048,
+            "eps_multiplier": 9,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 49.56979267230704
+              },
+              "chi2": 46.76658942452043,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 4.569792672307048,
+            "eps_multiplier": 9,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 40.430207327692955
+              },
+              "chi2": 6.286531237933314,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 5.077547413674498,
+            "eps_multiplier": 10,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 50.07754741367449
+              },
+              "chi2": 53.04859955871934,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 5.077547413674498,
+            "eps_multiplier": 10,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 39.9224525863255
+              },
+              "chi2": 8.115562682776789,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 5.585302155041948,
+            "eps_multiplier": 11,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999997,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 50.585302155041944
+              },
+              "chi2": 59.73155478863424,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 5.585302155041948,
+            "eps_multiplier": 11,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 39.41469784495805
+              },
+              "chi2": 10.359654100548507,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 6.093056896409397,
+            "eps_multiplier": 12,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 240.00000000000003,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 51.093056896409394
+              },
+              "chi2": 66.80914983039797,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "theta",
+            "delta0_deg": 239.99999999999997,
+            "delta0_label": "topology_delta0_3",
+            "eps_deg": 6.093056896409397,
+            "eps_multiplier": 12,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 239.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411185,
+                "theta23_deg": 38.906943103590606
+              },
+              "chi2": 13.013894593829104,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 0.5077547413674498,
+            "eps_multiplier": 1,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999997,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 45.50775474136745
+              },
+              "chi2": 19.735103293115923,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 0.5077547413674498,
+            "eps_multiplier": 1,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999994,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 44.49224525863255
+              },
+              "chi2": 15.218424174702632,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 1.0155094827348996,
+            "eps_multiplier": 2,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 120.00000000000004,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 46.01550948273489
+              },
+              "chi2": 22.645036415573138,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 1.0155094827348996,
+            "eps_multiplier": 2,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999991,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 43.98449051726511
+              },
+              "chi2": 13.613097009424353,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 1.5232642241023493,
+            "eps_multiplier": 3,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 46.523264224102356
+              },
+              "chi2": 25.98750891000753,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 1.5232642241023493,
+            "eps_multiplier": 3,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 43.47673577589765
+              },
+              "chi2": 12.44314643177934,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 2.031018965469799,
+            "eps_multiplier": 4,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 47.0310189654698
+              },
+              "chi2": 29.760447222101874,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 2.031018965469799,
+            "eps_multiplier": 4,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 42.9689810345302
+              },
+              "chi2": 11.707916381170705,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 2.538773706837249,
+            "eps_multiplier": 5,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 47.53877370683725
+              },
+              "chi2": 33.96123494412226,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 2.538773706837249,
+            "eps_multiplier": 5,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 42.461226293162746
+              },
+              "chi2": 11.40620660704662,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 3.0465284482046986,
+            "eps_multiplier": 6,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 120.00000000000001,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 48.0465284482047
+              },
+              "chi2": 38.586715435023315,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 3.0465284482046986,
+            "eps_multiplier": 6,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 120.00000000000004,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 41.953471551795296
+              },
+              "chi2": 11.53627484414683,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 3.5542831895721485,
+            "eps_multiplier": 7,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 120.00000000000007,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 48.55428318957214
+              },
+              "chi2": 43.63319512015691,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 3.5542831895721485,
+            "eps_multiplier": 7,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 120.00000000000001,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 41.44571681042785
+              },
+              "chi2": 12.095839667911415,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 4.062037930939598,
+            "eps_multiplier": 8,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 120.00000000000004,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 49.06203793093959
+              },
+              "chi2": 49.096447466647824,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 4.062037930939598,
+            "eps_multiplier": 8,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 40.9379620690604
+              },
+              "chi2": 13.082084026255256,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 4.569792672307048,
+            "eps_multiplier": 9,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 120.00000000000001,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 49.56979267230704
+              },
+              "chi2": 54.97171762964869,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 4.569792672307048,
+            "eps_multiplier": 9,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 120.00000000000004,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 40.430207327692955
+              },
+              "chi2": 14.491659443061572,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 5.077547413674498,
+            "eps_multiplier": 10,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 120.00000000000001,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 50.07754741367449
+              },
+              "chi2": 61.2537277638476,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 5.077547413674498,
+            "eps_multiplier": 10,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 39.9224525863255
+              },
+              "chi2": 16.32069088790505,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 5.585302155041948,
+            "eps_multiplier": 11,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999997,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 50.585302155041944
+              },
+              "chi2": 67.93668299376252,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 5.585302155041948,
+            "eps_multiplier": 11,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 39.41469784495805
+              },
+              "chi2": 18.564782305676772,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 6.093056896409397,
+            "eps_multiplier": 12,
+            "eps_sign": 1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999997,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 51.093056896409394
+              },
+              "chi2": 75.01427803552625,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          },
+          {
+            "branch": "conjugate",
+            "delta0_deg": 120.00000000000001,
+            "delta0_label": "topology_delta0_4",
+            "eps_deg": 6.093056896409397,
+            "eps_multiplier": 12,
+            "eps_sign": -1,
+            "fit": {
+              "angles_deg": {
+                "delta_cp_deg": 119.99999999999999,
+                "theta12_deg": 34.32252590392372,
+                "theta13_deg": 8.743693008411187,
+                "theta23_deg": 38.906943103590606
+              },
+              "chi2": 21.21902279895737,
+              "ordering": "NO",
+              "perm": [
+                0,
+                1,
+                2
+              ]
+            },
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "4/3"
+          }
+        ]
+      },
+      "pmns_wiring_policy": {
+        "delta_cp_scan_enabled": true,
+        "delta_cp_scan_max_candidates": 6,
+        "eps_multipliers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "theta_baseline_rad": 3.8255927224196866,
+      "theta_rad": 5.235987755982989,
+      "theta_scan": {
+        "best": {
+          "angles_deg": {
+            "delta_cp_deg": 239.99999999999963,
+            "theta12_deg": 34.322525903923726,
+            "theta13_deg": 8.74369300841119,
+            "theta23_deg": 42.46122629316276
+          },
+          "branch": "conjugate",
+          "chi2": 3.201078401918528,
+          "label": "topology_theta_4",
+          "ordering": "NO",
+          "perm": [
+            0,
+            1,
+            2
+          ],
+          "source_module": "topology_phase_map",
+          "theta_over_pi_mod2": "1/3",
+          "theta_rad": 5.235987755982989,
+          "top_contribution": {
+            "chi2": 2.3212669288424,
+            "key": "sin2_theta13",
+            "mean": 0.02224,
+            "pred": 0.02310843515888113,
+            "sigma": 0.00057
+          }
+        },
+        "candidates": [
+          {
+            "angles_deg": {
+              "delta_cp_deg": 240.00000000000014,
+              "theta12_deg": 34.32252590392372,
+              "theta13_deg": 8.743693008411194,
+              "theta23_deg": 42.461226293162746
+            },
+            "branch": "theta",
+            "chi2": 3.201078401918581,
+            "label": "topology_theta_1",
+            "ordering": "NO",
+            "perm": [
+              0,
+              1,
+              2
+            ],
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3",
+            "theta_rad": 1.0471975511965976,
+            "top_contribution": {
+              "chi2": 2.3212669288424737,
+              "key": "sin2_theta13",
+              "mean": 0.02224,
+              "pred": 0.023108435158881144,
+              "sigma": 0.00057
+            }
+          },
+          {
+            "angles_deg": {
+              "delta_cp_deg": 240.00000000000014,
+              "theta12_deg": 34.32252590392372,
+              "theta13_deg": 8.743693008411194,
+              "theta23_deg": 42.461226293162746
+            },
+            "branch": "theta",
+            "chi2": 3.201078401918581,
+            "label": "topology_theta_2",
+            "ordering": "NO",
+            "perm": [
+              0,
+              1,
+              2
+            ],
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3",
+            "theta_rad": 1.0471975511965976,
+            "top_contribution": {
+              "chi2": 2.3212669288424737,
+              "key": "sin2_theta13",
+              "mean": 0.02224,
+              "pred": 0.023108435158881144,
+              "sigma": 0.00057
+            }
+          },
+          {
+            "angles_deg": {
+              "delta_cp_deg": 240.00000000000014,
+              "theta12_deg": 34.32252590392372,
+              "theta13_deg": 8.743693008411194,
+              "theta23_deg": 42.461226293162746
+            },
+            "branch": "theta",
+            "chi2": 3.201078401918581,
+            "label": "topology_theta_3",
+            "ordering": "NO",
+            "perm": [
+              0,
+              1,
+              2
+            ],
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3",
+            "theta_rad": 1.0471975511965976,
+            "top_contribution": {
+              "chi2": 2.3212669288424737,
+              "key": "sin2_theta13",
+              "mean": 0.02224,
+              "pred": 0.023108435158881144,
+              "sigma": 0.00057
+            }
+          },
+          {
+            "angles_deg": {
+              "delta_cp_deg": 239.99999999999963,
+              "theta12_deg": 34.322525903923726,
+              "theta13_deg": 8.74369300841119,
+              "theta23_deg": 42.46122629316276
+            },
+            "branch": "conjugate",
+            "chi2": 3.201078401918528,
+            "label": "topology_theta_4",
+            "ordering": "NO",
+            "perm": [
+              0,
+              1,
+              2
+            ],
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3",
+            "theta_rad": 5.235987755982989,
+            "top_contribution": {
+              "chi2": 2.3212669288424,
+              "key": "sin2_theta13",
+              "mean": 0.02224,
+              "pred": 0.02310843515888113,
+              "sigma": 0.00057
+            }
+          },
+          {
+            "angles_deg": {
+              "delta_cp_deg": 239.99999999999963,
+              "theta12_deg": 34.322525903923726,
+              "theta13_deg": 8.74369300841119,
+              "theta23_deg": 42.46122629316276
+            },
+            "branch": "conjugate",
+            "chi2": 3.201078401918528,
+            "label": "topology_theta_5",
+            "ordering": "NO",
+            "perm": [
+              0,
+              1,
+              2
+            ],
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3",
+            "theta_rad": 5.235987755982989,
+            "top_contribution": {
+              "chi2": 2.3212669288424,
+              "key": "sin2_theta13",
+              "mean": 0.02224,
+              "pred": 0.02310843515888113,
+              "sigma": 0.00057
+            }
+          },
+          {
+            "angles_deg": {
+              "delta_cp_deg": 239.99999999999963,
+              "theta12_deg": 34.322525903923726,
+              "theta13_deg": 8.74369300841119,
+              "theta23_deg": 42.46122629316276
+            },
+            "branch": "conjugate",
+            "chi2": 3.201078401918528,
+            "label": "topology_theta_6",
+            "ordering": "NO",
+            "perm": [
+              0,
+              1,
+              2
+            ],
+            "source_module": "topology_phase_map",
+            "theta_over_pi_mod2": "1/3",
+            "theta_rad": 5.235987755982989,
+            "top_contribution": {
+              "chi2": 2.3212669288424,
+              "key": "sin2_theta13",
+              "mean": 0.02224,
+              "pred": 0.02310843515888113,
+              "sigma": 0.00057
+            }
+          }
+        ],
+        "enabled": true,
+        "max_candidates": 6
+      },
+      "topology_phase_atoms": {
+        "config_file": "tfpt_suite/data/chiral_index_three_cycles.json",
+        "note": "Docking point for topology\u2192phase derivation: Appendix J (paper_v1_06_01_09_2025.tex) sketches three boundary cycles (C1,C2,CT) on the orientable double cover. Wilson lines along these cycles encode discrete phase atoms; topology_phase_map now emits an explicit holonomy-class \u2192 (\u03b4, \u03b4_CP) candidate map (still assumption-explicit, not an operator derivation).",
+        "source_module": "chiral_index_three_cycles",
+        "status": "used_for_delta_candidates",
+        "wiring": {
+          "phase_selection_rule_mode": "filter_only",
+          "pmns_convention_policy": "mass_splitting_canonical",
+          "pmns_delta_cp_scan_enabled": true,
+          "pmns_delta_cp_scan_max_candidates": 6,
+          "pmns_eps_multipliers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "pmns_theta_scan_enabled": true,
+          "pmns_theta_scan_max_candidates": 6,
+          "pmns_theta_scan_note": "If topology_phase_map outputs are present under the run output dir, pmns_full_pipeline will scan a small finite set of texture phases \u03b8 derived from the Wilson-line atoms. In filter_only mode the PMNS convention is fixed by mass-splitting canonicalization (no \u03c7\u00b2-driven convention shopping)."
+        }
+      },
+      "y_star_d": 0.008044525096997806,
+      "y_star_e": 0.004932816148421418,
+      "y_star_nu": 0.4821532103298118,
+      "y_star_u": 0.4565231655268224
+    },
+    "thresholds": {
+      "MG8": 18000000000.0,
+      "MNR": [
+        100000000000000.0,
+        300000000000000.0,
+        800000000000000.0
+      ],
+      "MSigma": 1000.0,
+      "mu_uv_GeV": 1e+16
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [
+      "Reference PMNS table is used for diagnostic \u03c7\u00b2 after canonicalization (not a full likelihood).",
+      "Tree-level \u03ba matching and simplified threshold actions are used; publication-grade requires finite pieces/policy finalization.",
+      "Topology-phase atoms are recorded but not yet mapped to \u03b4CP (docking point only)."
+    ],
+    "determinism": "Deterministic given inputs; finite discrete scans only (no continuous optimizer).",
+    "formulas": [
+      "Y^(y) = y_* [ C(\u03b4) + a_y varphi0 D + b c3 I ], D=diag(1,0,-1)",
+      "EFT below MR: \u03ba_total = \u03a3_i (y_i y_i^T)/M_i (tree-level matching, diagonal MR)",
+      "m\u03bd = v^2 \u03ba",
+      "RG: start strictly at \u03bc=mt and run upward only to \u03bcUV (no running below mt)",
+      "\u03ba running: 1-loop EFT beta (MSbar) + 2-loop PyR@TE betas for gauge/Yukawas"
+    ],
+    "gaps": [
+      "\u03b4CP is the dominant sensitivity; the suite addresses it via discrete candidate scans (topology_phase_map + mechanism-bridge deltas/eps), but publication-grade requires a derived topology\u2192operator/phase map and a consistent likelihood.",
+      "Publication-grade requires finalizing matching/mass-threshold policies and a derived topology\u2192phase map."
+    ],
+    "inputs": [
+      "TFPT invariants (c3, varphi0, delta_star)",
+      "texture config: tfpt_suite/data/flavor_texture_v24.json",
+      "RG thresholds: tfpt_suite/data/rge_thresholds_v25.json",
+      "SM inputs at MZ: tfpt_suite/data/sm_inputs_mz.json (for g_i(mt), yt(mt))"
+    ],
+    "maturity": "deterministic pipeline (diagnostic \u03c7\u00b2; physics-mode p-value gate PASS under declared discrete scans; publication-grade derivation remains a WARN-gap)",
+    "module_id": "pmns_full_pipeline",
+    "name": "PMNS full pipeline (Z3 Yukawa texture + seesaw \u03ba EFT + thresholds; mt\u2192\u03bcUV)",
+    "objective": [
+      "Provide a deterministic end-to-end PMNS pipeline (no continuous fit) with explicit \u03ba EFT running and explicit threshold bookkeeping.",
+      "Quantify the precision gap (\u03c7\u00b2 contributions) and surface which ingredients still lack a derivation (\u03b4CP lever, matching finite pieces, topology\u2192phase map)."
+    ],
+    "outputs": [
+      "PMNS matrix at mt and \u03bcUV",
+      "PDG angles (\u03b812,\u03b813,\u03b823,\u03b4CP) from PMNS at mt and \u03bcUV",
+      "\u03ba threshold bookkeeping (MNR1..3 activation; \u03ba\u21920 above MNR3)",
+      "optional: Monte Carlo uncertainty propagation (capped) for angles/\u03c7\u00b2 at \u03bcUV under SM input priors"
+    ],
+    "question": "Can TFPT\u2019s deterministic Z3/M\u00f6bius neutrino mechanism reproduce PMNS angles and \u03b4CP once \u03ba(threshold) and labeling conventions are made explicit?",
+    "references": [
+      "paper_v1_06_01_09_2025.tex / update_tfptv1_07sm.tex (PMNS architecture; Z3 breaking layer)",
+      "tfpt_suite/data/flavor_texture_v24.json (explicit conventions + topology docking block)"
+    ],
+    "validation": [
+      "PMNS unitarity and \u03ba symmetry (numerical)",
+      "threshold activation produces \u03ba\u21920 after integrating in all N_Ri (numerical tolerance)"
+    ],
+    "what_was_done": [
+      "Load explicit texture conventions (\u03b4 source, phase mode, fixed coefficients) and record the topology-phase docking block.",
+      "Construct \u03ba(mt) under an explicit neutrino mechanism policy, then run \u03ba with 1-loop EFT beta + 2-loop RG for gauge/Yukawas to \u03bcUV.",
+      "Apply stepwise threshold actions for N_Ri and perform PMNS canonicalization (permutations) before evaluating \u03c7\u00b2 vs a pinned reference snapshot."
+    ]
+  },
+  "warnings": []
+}

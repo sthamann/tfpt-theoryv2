@@ -1,0 +1,40 @@
+Cosmology reheating policy (v1.06 ΔN model)
+mode = physics
+policy file: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/cosmo_reheating_policy_v106.json
+reference file: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json
+
+Derived pivot parameters (Starobinsky relations):
+- n_s(ref) = 0.9649
+- ln(10^10 A_s)(ref) = 3.044 => A_s = 2.0989e-09
+- N_pivot = 2/(1-n_s) = 56.9801
+- r = 12/N^2 = 0.00369603
+
+Reheating model assumptions:
+- w_reh = 0.0
+- g_star(reheat) = 120.0
+- c_end = 0.35 (ρ_end ≈ c_end·V_*)
+
+Energy densities:
+- rho_end ≈ 1.413e+63 GeV^4 (M̄_P=2.435e+18 GeV)
+- rho_reh(T) = (π^2/30) g* T^4
+
+Window scan:
+- log10(T/GeV) in [-3.0, 15.0] with n=220
+- ΔN_floor = -6.0
+- inferred T_min satisfying ΔN>=floor: 40062654.898716986
+
+Canonical choice:
+- T_can = 1.000e+13 GeV => ΔN_can ≈ -1.833, N_reh ≈ 7.333
+- a0/a_transition(est) ≈ 1.1365305153366452e+54  (a0/a_transition = (a0/a_reh)*(a_reh/a_end)*exp(N_inflation_from_transition); transition=horizon_exit_of_pivot)
+
+Checks:
+- derived_N_pivot_from_ns: PASS (n_s=0.9649 => N_pivot≈56.9801)
+- derived_r_from_N: PASS (r≈12/N^2 => r≈0.00369603)
+- rho_end_finite: PASS (rho_end≈1.413e+63 GeV^4 (c_end=0.35))
+- deltaN_floor_eval: PASS (T_floor=6.000e-03 GeV => ΔN≈-13.516)
+- canonical_T_reh_satisfies_deltaN_floor: PASS (T_can=1.000e+13 GeV => ΔN≈-1.833 (floor=-6.0))
+- a0_over_a_transition_estimated: PASS (a0/a_transition = (a0/a_reh)*(a_reh/a_end)*exp(N_inflation_from_transition); transition=horizon_exit_of_pivot; a0/a_t≈1.137e+54)
+
+Notes:
+- This makes the reheating policy explicit and audit-able; it is not yet a unique TFPT derivation of T_reh from thresholds.
+- k_calibration can consume these derived (N_pivot, N_reh, T_reh) values to reduce free parameters in k→ℓ mapping.

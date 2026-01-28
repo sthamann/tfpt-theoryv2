@@ -1,0 +1,122 @@
+{
+  "checks": [
+    {
+      "check_id": "all_targets_matched",
+      "detail": "all selected targets have at least one match within max_cost",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "symbolic_verification_for_key_identities",
+      "detail": "symbolic verification succeeded for beta_rad and M_over_Mpl (at least one minimal match each)",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "discrete_complexity_minimizer",
+  "plot": null,
+  "results": {
+    "matches": {
+      "M_over_Mpl": {
+        "explored_unique": 3630,
+        "matches": [
+          {
+            "cost": 5,
+            "expr": "((c3)^3)*(sqrt(c3))",
+            "symbolic_ok": true,
+            "value": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637"
+          }
+        ],
+        "min_cost": 5,
+        "symbolic_target": "sqrt(8*pi)*(c3)^4",
+        "target": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637"
+      },
+      "beta_rad": {
+        "explored_unique": 2844,
+        "matches": [
+          {
+            "cost": 5,
+            "expr": "((varphi0)/(4))/(pi)",
+            "symbolic_ok": true,
+            "value": "0.0042312895113954151087468182088050163950728077266837257698944229030526732721556263"
+          }
+        ],
+        "min_cost": 5,
+        "symbolic_target": "(varphi0)/(4*pi)",
+        "target": "0.0042312895113954151087468182088050163950728077266837257698944229030526732721556263"
+      },
+      "cabibbo_lambda": {
+        "explored_unique": 116164,
+        "matches": [
+          {
+            "cost": 8,
+            "expr": "(((2)-(varphi0))*(sqrt(varphi0)))/(2)",
+            "symbolic_ok": true,
+            "value": "0.22445997051897373245511597747748194821840297007791297390969270711773328122860166"
+          }
+        ],
+        "min_cost": 8,
+        "symbolic_target": "sqrt(varphi0)*(1 - varphi0/2)",
+        "target": "0.22445997051897373245511597747748194821840297007791297390969270711773328122860166"
+      },
+      "delta_top_over_c3_4": {
+        "explored_unique": 162,
+        "matches": [
+          {
+            "cost": 3,
+            "expr": "(6)*(8)",
+            "symbolic_ok": true,
+            "value": "48.0"
+          }
+        ],
+        "min_cost": 3,
+        "symbolic_target": "(delta_top)/(c3)^4",
+        "target": "48.0"
+      }
+    },
+    "settings": {
+      "explored_unique_total": 122800,
+      "magnitude_cap": "1000000.0",
+      "max_cost": 8,
+      "rel_tol": "1.0e-30"
+    },
+    "targets": {
+      "M_over_Mpl": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+      "beta_rad": "0.0042312895113954151087468182088050163950728077266837257698944229030526732721556263",
+      "cabibbo_lambda": "0.22445997051897373245511597747748194821840297007791297390969270711773328122860166",
+      "delta_top_over_c3_4": "48.0"
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic exhaustive search with numeric deduplication.",
+    "formulas": [
+      "grammar constants: {pi, c3, varphi0, b1, small integers}",
+      "grammar ops: +,-,*,/,sqrt,powers",
+      "match criterion: relative error <= rel_tol",
+      "report minimal-cost exact/near-exact identities (proxy for MDL compression)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT constants + bounded grammar (max_cost=8)"
+    ],
+    "maturity": null,
+    "module_id": "discrete_complexity_minimizer",
+    "name": "Discrete complexity minimizer (bounded grammar search; rediscover identities)",
+    "objective": [],
+    "outputs": [
+      "minimal-cost expressions matching selected TFPT identities"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "recover beta_rad = varphi0/(4*pi)",
+      "recover g_a\u03b3\u03b3 = -4*c3 (as an equivalent expression if reachable)",
+      "recover M/Mpl = sqrt(8*pi)*c3^4",
+      "recover Cabibbo \u03bb = sqrt(varphi0)*(1-varphi0/2)"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

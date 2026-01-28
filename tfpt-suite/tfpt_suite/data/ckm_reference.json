@@ -1,0 +1,25 @@
+{
+  "note": "CKM absolute-value reference table for the ckm_full_pipeline module (PDG 2024 global fit with unitarity). Asymmetric PDG uncertainties are symmetrized using the larger of the ± errors.",
+  "reference": {
+    "definition": "Absolute values |V_ij| in the PDG convention (dimensionless). While |V_ij| are often quoted as low-energy fit outputs, an explicit reference scale is still useful when comparing to RG-evolved texture pipelines.",
+    "scheme": "PDG 2024 global-fit (unitarity enforced; effective low-energy parameters; not a running MSbar coupling)",
+    "reference_scale_label": "MZ",
+    "reference_scale_GeV": 91.1876,
+    "source": "PDG 2024 CKM review (Eq. 12.27): https://pdg.lbl.gov/2024/reviews/rpp2024-rev-ckm-matrix.pdf",
+    "snapshot_date": "2024-04",
+    "chi2_keys": ["Vus", "Vub", "Vcb", "Vtd"],
+    "chi2_note": "To avoid double-counting unitarity constraints, ckm_full_pipeline computes its diagnostic χ² on a minimal approximately-independent subset of |V_ij|. Full |V_ij| are still printed for transparency."
+  },
+  "matrix_abs": {
+    "Vud": { "mean": 0.97435, "sigma": 0.00016 },
+    "Vus": { "mean": 0.22501, "sigma": 0.00068 },
+    "Vub": { "mean": 0.003732, "sigma": 0.00009 },
+    "Vcd": { "mean": 0.22487, "sigma": 0.00068 },
+    "Vcs": { "mean": 0.97349, "sigma": 0.00016 },
+    "Vcb": { "mean": 0.04183, "sigma": 0.00079 },
+    "Vtd": { "mean": 0.00858, "sigma": 0.00019 },
+    "Vts": { "mean": 0.04111, "sigma": 0.00077 },
+    "Vtb": { "mean": 0.999118, "sigma": 0.000034 }
+  }
+}
+

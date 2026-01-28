@@ -1,0 +1,386 @@
+{
+  "checks": [
+    {
+      "check_id": "ell_mapping_computed",
+      "detail": "a0/a_tr=2.4485807685210785e+57 (note=from k_calibration expansion_budget_estimate (out/k_calibration/results.json))",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "signature_policy_declared",
+      "detail": "policy={'cmb_ell_range': [2, 2500], 'small_scale_ell_min': 2500, 'decision_rule': 'prefer_cmb_if_overlap', 'primary_signature': 'conditional_gate', 'rationale': 'TFPT delivers transfer functions in k-space. The mapping to observable \u2113 is a policy gate that depends on the expansion history (a0/a_transition). Under the current threshold-derived budget (see out_physics/k_calibration), scalar features land at \u2113_bounce^s\u224857 (CMB low-\u2113), while tensor features are super-horizon (\u2113_bounce^t\u22480.212). We therefore treat the signature class as conditional: CMB low-\u2113 scalar vs small-scale-only depending on the declared history.', 'note': 'Declare a reproducible decision rule for classifying signatures (CMB window vs small-scale). Prefer CMB if there is any overlap with the [2, 2500] window.'}",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "signature_policy_decision",
+      "detail": "decision=cmb, cmb_overlap=True, small_scale_overlap=False",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "signature_policy_consistent_with_bounce",
+      "detail": "scalar ell\u224856.9974 (in CMB=True); tensor ell\u22480.211565 (in CMB=False)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "ell_predictions_falsifiable",
+      "detail": "targets hit: [2.0, 30.0] within [2.71e-09, 542]",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "primordial_pivot_normalization",
+      "detail": "applied scale=0.992892 to match P_R(0.05)=A_s",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "planck_likelihood_evaluated",
+      "detail": "disabled (set TFPT_ENABLE_PLANCK_LIKELIHOOD=1)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "planck_lowl_evaluated",
+      "detail": "disabled (set TFPT_ENABLE_PLANCK_LIKELIHOOD=1)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "planck_lensing_evaluated",
+      "detail": "disabled (set TFPT_ENABLE_PLANCK_LIKELIHOOD=1)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "camb_power_spectra_computed",
+      "detail": "computed C_ell (TT/EE/BB/TE) up to lmax=2508",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "camb_first_peak_in_cmb_range",
+      "detail": "first TT peak at ell\u2248220 (TT\u22485863.4 \u00b5K^2)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "boltzmann_transfer_implemented",
+      "detail": "backend=camb (CAMB)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "bounce_feature_injection_wired",
+      "detail": "CAMB P(k) source: bounce_injected_table:out/primordial_spectrum_builder/results.json (pivot_normalized scale=0.992892)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "boltzmann_transfer",
+  "plot": {
+    "cl_ratio_tt_ee_png": "out/boltzmann_transfer/cl_ratio_tt_ee.png",
+    "cl_tt_ee_comparison_png": "out/boltzmann_transfer/cl_tt_ee_comparison.png"
+  },
+  "results": {
+    "M_GeV": 30595633972661.27,
+    "a0_over_a_transition": 2.4485807685210785e+57,
+    "a0_over_a_transition_note": "from k_calibration expansion_budget_estimate (out/k_calibration/results.json)",
+    "camb": {
+      "backend": "camb",
+      "samples": [
+        {
+          "BB_muK2": 5.807380200189338e-05,
+          "EE_muK2": 0.5094182831547874,
+          "TE_muK2": 48.139951220365695,
+          "TT_muK2": 10994.052788040624,
+          "ell": 2
+        },
+        {
+          "BB_muK2": 5.899813750567428e-05,
+          "EE_muK2": 0.5621820370053637,
+          "TE_muK2": 58.38864648951455,
+          "TT_muK2": 10486.332756600279,
+          "ell": 3
+        },
+        {
+          "BB_muK2": 5.258585876706204e-05,
+          "EE_muK2": 0.36630587267659315,
+          "TE_muK2": 49.26763306176042,
+          "TT_muK2": 9385.765294335317,
+          "ell": 4
+        },
+        {
+          "BB_muK2": 4.424091672746869e-05,
+          "EE_muK2": 0.16656718770971793,
+          "TE_muK2": 30.64195776373886,
+          "TT_muK2": 7182.08817878837,
+          "ell": 5
+        },
+        {
+          "BB_muK2": 4.515371668392849e-05,
+          "EE_muK2": 0.0005850428194782491,
+          "TE_muK2": 0.431044842971674,
+          "TT_muK2": 466.5297095482036,
+          "ell": 10
+        },
+        {
+          "BB_muK2": 0.00016839421516873685,
+          "EE_muK2": 0.0006453541166885943,
+          "TE_muK2": 0.040003865521635575,
+          "TT_muK2": 311.2303573438601,
+          "ell": 20
+        },
+        {
+          "BB_muK2": 0.00036823950199750245,
+          "EE_muK2": 0.004809524067120411,
+          "TE_muK2": 0.16342314376221537,
+          "TT_muK2": 647.8609341363789,
+          "ell": 30
+        },
+        {
+          "BB_muK2": 0.0009747919087911579,
+          "EE_muK2": 0.0980404881517993,
+          "TE_muK2": 0.10272609878520036,
+          "TT_muK2": 1396.4095294421256,
+          "ell": 50
+        },
+        {
+          "BB_muK2": 0.002307483988460182,
+          "EE_muK2": 0.48965268203834356,
+          "TE_muK2": -11.091198673025776,
+          "TT_muK2": 2178.001377489278,
+          "ell": 80
+        },
+        {
+          "BB_muK2": 0.0034758590504286,
+          "EE_muK2": 0.7951178047937013,
+          "TE_muK2": -23.691833565746837,
+          "TT_muK2": 2764.125992803461,
+          "ell": 100
+        },
+        {
+          "BB_muK2": 0.007648353870785022,
+          "EE_muK2": 1.1370834697086765,
+          "TE_muK2": -47.631897295167654,
+          "TT_muK2": 4513.504898528493,
+          "ell": 150
+        },
+        {
+          "BB_muK2": 0.014328211499722444,
+          "EE_muK2": 0.7069214331828105,
+          "TE_muK2": -15.837394916952745,
+          "TT_muK2": 5742.647589819521,
+          "ell": 200
+        },
+        {
+          "BB_muK2": 0.03133290384290543,
+          "EE_muK2": 9.311700761012656,
+          "TE_muK2": 121.05229881404568,
+          "TT_muK2": 4165.032244297073,
+          "ell": 300
+        },
+        {
+          "BB_muK2": 0.06292035641744452,
+          "EE_muK2": 8.492435158636333,
+          "TE_muK2": -59.77674177707491,
+          "TT_muK2": 2519.579070052744,
+          "ell": 500
+        },
+        {
+          "BB_muK2": 0.08482643714783036,
+          "EE_muK2": 38.50920371795204,
+          "TE_muK2": -100.87443806032083,
+          "TT_muK2": 1945.98114865334,
+          "ell": 700
+        },
+        {
+          "BB_muK2": 0.09856170198115949,
+          "EE_muK2": 43.99784819700467,
+          "TE_muK2": -26.536130659280403,
+          "TT_muK2": 1115.8176989036112,
+          "ell": 1000
+        },
+        {
+          "BB_muK2": 0.08381063786446083,
+          "EE_muK2": 13.621997648365307,
+          "TE_muK2": -0.3171654892799146,
+          "TT_muK2": 728.4072935973951,
+          "ell": 1500
+        },
+        {
+          "BB_muK2": 0.05110933577459727,
+          "EE_muK2": 9.189186049173854,
+          "TE_muK2": -19.338517096211383,
+          "TT_muK2": 247.8831870249328,
+          "ell": 2000
+        },
+        {
+          "BB_muK2": 0.02794785763783111,
+          "EE_muK2": 3.1547511050175356,
+          "TE_muK2": -3.2713669296016468,
+          "TT_muK2": 81.98087432686778,
+          "ell": 2508
+        }
+      ],
+      "summary": {
+        "TT_at_ell": {
+          "2": 10994.052788040624,
+          "200": 5742.647589819521,
+          "2000": 247.8831870249328,
+          "30": 647.8609341363789,
+          "700": 1945.98114865334
+        },
+        "backend": "camb",
+        "camb_version": "1.6.0",
+        "lmax": 2550,
+        "peak1": {
+          "TT_muK2": 5863.373524228549,
+          "ell": 220
+        }
+      }
+    },
+    "chi_star_Mpc": 13867.328294431452,
+    "config_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json",
+    "ell_range": {
+      "ell_max": 541.9158960387757,
+      "ell_min": 2.7095794801938785e-09,
+      "note": "computed from k_hat range + entropy/N policy"
+    },
+    "ell_targets": [
+      2.0,
+      30.0,
+      700.0
+    ],
+    "hits": [
+      2.0,
+      30.0
+    ],
+    "inputs": {
+      "cosmology": {
+        "H0_km_s_Mpc": 67.36,
+        "Omega_m": 0.3153,
+        "Omega_r": 9.2e-05,
+        "mnu_eV": 0.06,
+        "omega_b_h2": 0.02237,
+        "omega_c_h2": 0.120693263488,
+        "tau_reio": 0.054
+      },
+      "primordial_tfpt": {
+        "A_s": 2.1655075710160764e-09,
+        "N": 57,
+        "n_s": 0.9649122807017544,
+        "pivot_scalar_Mpc_inv": 0.05,
+        "r": 0.003693444136657433
+      }
+    },
+    "k_hat_range": {
+      "max": 20000.0,
+      "min": 1e-07
+    },
+    "mode": "engineering",
+    "nuisance_policy": {
+      "kind": "fixed",
+      "note": "Initial policy: keep nuisance parameters fixed to declared reference values (explicitly stated). Upgrade paths: profiling or marginalization via sampling.",
+      "planck_2018": {
+        "A_planck": 1.0,
+        "A_planck_policy": "fixed",
+        "note": "Planck likelihoods use fixed calibration (A_planck=1) under the current policy. Pivot normalization is explicit and fixed for CAMB integration; upgrade path is profiling/marginalization.",
+        "pivot_normalization": "fixed_at_pivot",
+        "pivot_scalar_Mpc_inv": 0.05
+      }
+    },
+    "planck_combined": null,
+    "planck_lensing": {
+      "enabled": false,
+      "note": "set TFPT_ENABLE_PLANCK_LIKELIHOOD=1 to evaluate Planck lensing likelihood."
+    },
+    "planck_lowl": {
+      "enabled": false,
+      "note": "set TFPT_ENABLE_PLANCK_LIKELIHOOD=1 to evaluate Planck low-\u2113 TT/EE."
+    },
+    "planck_pliklite": {
+      "A_planck": 1.0,
+      "enabled": false,
+      "note": "set TFPT_ENABLE_PLANCK_LIKELIHOOD=1 to evaluate Planck likelihoods (Cobaya-native)."
+    },
+    "plot": {
+      "cl_ratio_tt_ee_png": "out/boltzmann_transfer/cl_ratio_tt_ee.png",
+      "cl_tt_ee_comparison_png": "out/boltzmann_transfer/cl_tt_ee_comparison.png"
+    },
+    "primordial_pk_source": "bounce_injected_table:out/primordial_spectrum_builder/results.json (pivot_normalized scale=0.992892)",
+    "publication_grade_gap": {
+      "boltzmann_transfer": false,
+      "bounce_feature_injection": false
+    },
+    "signature_policy": {
+      "cmb_ell_range": [
+        2.0,
+        2500.0
+      ],
+      "cmb_overlap": true,
+      "decision": "cmb",
+      "ell_bounce_s_est": 56.99737909257206,
+      "ell_bounce_t_est": 0.2115650400072186,
+      "policy": {
+        "cmb_ell_range": [
+          2,
+          2500
+        ],
+        "decision_rule": "prefer_cmb_if_overlap",
+        "note": "Declare a reproducible decision rule for classifying signatures (CMB window vs small-scale). Prefer CMB if there is any overlap with the [2, 2500] window.",
+        "primary_signature": "conditional_gate",
+        "rationale": "TFPT delivers transfer functions in k-space. The mapping to observable \u2113 is a policy gate that depends on the expansion history (a0/a_transition). Under the current threshold-derived budget (see out_physics/k_calibration), scalar features land at \u2113_bounce^s\u224857 (CMB low-\u2113), while tensor features are super-horizon (\u2113_bounce^t\u22480.212). We therefore treat the signature class as conditional: CMB low-\u2113 scalar vs small-scale-only depending on the declared history.",
+        "small_scale_ell_min": 2500
+      },
+      "primary_signature": "conditional_gate",
+      "rationale": "TFPT delivers transfer functions in k-space. The mapping to observable \u2113 is a policy gate that depends on the expansion history (a0/a_transition). Under the current threshold-derived budget (see out_physics/k_calibration), scalar features land at \u2113_bounce^s\u224857 (CMB low-\u2113), while tensor features are super-horizon (\u2113_bounce^t\u22480.212). We therefore treat the signature class as conditional: CMB low-\u2113 scalar vs small-scale-only depending on the declared history.",
+      "small_scale_ell_min": 2500.0,
+      "small_scale_overlap": false
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given config files.",
+    "formulas": [
+      "\u2113 \\approx k(\\mathrm{Mpc}^{-1}) \\, \\chi_\\*",
+      "k(\\mathrm{Mpc}^{-1}) = k_{\\hat{}} \\, M[\\mathrm{GeV}] \\, (\\mathrm{GeV}\\to\\mathrm{Mpc}^{-1}) / (a_0/a_{\\rm tr})",
+      "P_{\\mathcal{R}}(k) = P_{\\mathcal{R},\\mathrm{base}}(k)\\,|T_s(k)|^2 \\;\\;(\\text{bounce injection via primordial_spectrum_builder})"
+    ],
+    "gaps": [
+      "Planck low-\u2113/lensing likelihoods are optional and depend on Cobaya + data availability; this module remains robust without them."
+    ],
+    "inputs": [
+      "k_calibration assumptions: tfpt_suite/data/k_calibration.json (uses reheating policy v1.06 settings)",
+      "cosmology reference: tfpt_suite/data/global_reference_minimal.json (Planck \u03a9_b h^2 anchor)",
+      "TFPT R^2 scale M from tfpt_suite/constants.py (M/Mpl)",
+      "primordial spectrum tables (optional): output of primordial_spectrum_builder (bounce injection)"
+    ],
+    "maturity": null,
+    "module_id": "boltzmann_transfer",
+    "name": "Boltzmann transfer (CAMB-backed C_\u2113 + explicit k\u0302\u2192\u2113 mapping)",
+    "objective": [
+      "Provide a falsifiable, assumption-explicit \u2113 mapping and a concrete C_\u2113 prediction backend (CAMB).",
+      "Make the 'last mile' from TFPT primordial parameters to observable spectra explicit and auditable."
+    ],
+    "outputs": [
+      "explicit k_hat\u2192\u2113 mapping under an explicit a0/a_transition policy",
+      "\u2113-range coverage diagnostics (CMB vs small-scale decision aid)",
+      "CMB power spectra C_\u2113 (TT/TE/EE/BB) computed via CAMB under explicit cosmology + TFPT primordial parameters",
+      "optional Planck high-\u2113/low-\u2113/lensing likelihood logL (Cobaya; opt-in)"
+    ],
+    "question": "Given a declared expansion-history policy (a0/a_transition), where do bounce k-hat features land in \u2113-space?",
+    "references": [],
+    "validation": [
+      "ell_predictions_falsifiable: emits a PASS/WARN/FAIL depending on whether the predicted \u2113-range intersects declared \u2113-targets.",
+      "signature_policy_declared: PASS if a CMB vs small-scale policy is present in k_calibration assumptions.",
+      "camb_power_spectra_computed: emits PASS when CAMB returns finite C_\u2113 spectra for the declared cosmology+primordial inputs.",
+      "bounce_feature_injection_wired: PASS when CAMB uses an injected P(k) table (not just power-law)."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

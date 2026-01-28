@@ -1,0 +1,11 @@
+QED anomalies audit (proxy layer; delegates to g2_and_lamb_shift_proxy)
+
+mode=physics
+
+Delegated result (from g2_and_lamb_shift_proxy):
+- tfpt_scale: PASS (M_eff≈3.06e+13 GeV (from M/Mpl=0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637))
+- np_scaling: PASS (δa_e≈2.79e-34, δa_μ≈1.19e-29, δν_Lamb≈3.45e-14 Hz (proxy))
+- precision_qed_consistency: PASS (TFPT-scale NP is negligible: δa_e<1e-12, δa_μ<1e-09, δν_Lamb<1 Hz)
+
+Audit gate:
+- within_5sigma: PASS (proxy consistency passes (TFPT-scale contributions do not overshoot anomaly scales))

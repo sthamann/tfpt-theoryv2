@@ -1,0 +1,26 @@
+Mass spectrum minimal (ledger: derived vs input)
+
+SM inputs: tfpt-suite/tfpt_suite/data/sm_inputs_mz.json (sha256=f46b08eb6c06c7b4b4a52f81f7f7ce63b5b9c5fcc2a1752418c82817f155bcfe)
+lepton masses: tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json (sha256=4c992c392766d6944c5bd53f4d91c369de53c8616513939e79b0ee1f890de386)
+
+Ledger (value + status):
+- SM_inputs_mz:
+  - MZ_GeV: 91.1876  [input]  (declared boundary scale μ=MZ)
+  - mW_GeV: 80.379  [input]  (PDG-ish pole mass (threshold bookkeeping))
+  - mH_GeV: 125.25  [input]  (PDG-ish Higgs pole mass (used for λ_tree))
+  - mc_GeV: 1.27  [input]  (threshold proxy (scheme-dependent))
+  - mb_GeV: 4.18  [input]  (interpreted as mb(mb) in GeV (scheme-dependent))
+  - mt_GeV: 172.76  [input]  (top threshold proxy (pole vs MSbar is scheme-dependent))
+- leptons_pdg:
+  - electron_GeV: 0.0005109989461  [input]  (PDG lepton pole mass (used for QED thresholds / Yukawa proxies))
+  - muon_GeV: 0.1056583745  [input]  (PDG lepton pole mass (used for Möbius δ calibration))
+  - tau_GeV: 1.77686  [input]  (PDG lepton pole mass (used for Möbius δ calibration / Yukawa proxy))
+- ew_derived:
+  - v_ev_GeV: 246.0  [input]  (suite convention; can be derived from G_F in a publication-grade pass)
+  - lambda_tree_from_mH_v: 0.12961499851279001  [derived]  (λ_tree = mH^2/(2 v^2) (explicit approximation))
+- placeholders:
+  - neutrino_mass_scale_eV: 0.05  [placeholder]  (placeholder (order-of-magnitude): requires κ/yN/MR reconstruction and a unique selection rule)
+  - proton_mass_GeV: 0.938272  [placeholder]  (placeholder (PDG): deriving hadron masses from TFPT/QCD completeness is tracked as a separate gap)
+
+Checks:
+- ledger_status_tags_present: PASS (PASS)

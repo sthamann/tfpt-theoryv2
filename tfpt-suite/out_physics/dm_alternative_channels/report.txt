@@ -1,0 +1,13 @@
+DM alternative channels (axion-first closure + optional torsion branch)
+
+mode=physics
+
+Primary DM path: axion (post-inflation policy), checked against Ω_DM h^2 target.
+
+Notes:
+- axion config: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/axion_tfpt_v106.json
+- scenario_policy.selected = post_inflation_theta_rms_with_strings_dw_factor
+- strings/domain-walls factor (effective) = 2.33333
+- Ω_a h^2 ≈ 0.123 (fraction≈1.02 of Ω_DM h^2≈0.12)
+- Ω_missing h^2 ≈ 0
+- If Ω_missing>0 in physics mode, the torsion DM branch becomes required (implement torsion_dm_pipeline).

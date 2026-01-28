@@ -1,0 +1,81 @@
+{
+  "checks": [
+    {
+      "check_id": "g_equals_5",
+      "detail": "g=5",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "delta_b3_has_g_over_2",
+      "detail": "delta_b3 includes 2.5",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "gamma0_matches_g_over_g_plus_1",
+      "detail": "gamma0=0.8333333333333334",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "g5_crosslink_audit",
+  "plot": {
+    "g5_links_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/g5_crosslink_audit/g5_links.png"
+  },
+  "results": {
+    "delta_b3_candidates": [
+      0.0,
+      1.0,
+      2.0,
+      2.25,
+      2.5,
+      2.75,
+      3.0,
+      4.0
+    ],
+    "g_over_2": 2.5,
+    "g_over_4": 1.25,
+    "g_over_g_plus_1": 0.8333333333333334,
+    "g_value": 5,
+    "gamma0_ref": 0.8333333333333334,
+    "plot": {
+      "g5_links_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/g5_crosslink_audit/g5_links.png"
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (finite comparisons).",
+    "formulas": [
+      "delta2 factor = g/4",
+      "unification patch candidate = g/2",
+      "gamma0 = g/(g+1)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "defect partition g",
+      "unification_gate_policy delta_b3 candidates",
+      "TFPT gamma0"
+    ],
+    "maturity": null,
+    "module_id": "g5_crosslink_audit",
+    "name": "g=5 crosslink audit (delta2, unification patch, gamma0)",
+    "objective": [
+      "Summarize the discrete g=5 signature across delta2, unification, and E8 ladder."
+    ],
+    "outputs": [
+      "g/4, g/2, g/(g+1) ratios",
+      "consistency checks for g=5 usage"
+    ],
+    "question": "Is g=5 consistently threaded across multiple sectors?",
+    "references": [],
+    "validation": [
+      "g resolves to 5",
+      "delta_b3 candidates include g/2",
+      "gamma0 equals g/(g+1)"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

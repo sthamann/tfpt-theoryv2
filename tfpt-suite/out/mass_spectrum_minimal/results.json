@@ -1,0 +1,140 @@
+{
+  "checks": [
+    {
+      "check_id": "ledger_status_tags_present",
+      "detail": "PASS",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "mass_spectrum_minimal",
+  "plot": null,
+  "results": {
+    "inputs": {
+      "lepton_masses_file": "tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json",
+      "lepton_masses_sha256": "4c992c392766d6944c5bd53f4d91c369de53c8616513939e79b0ee1f890de386",
+      "sm_inputs_file": "tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+      "sm_inputs_sha256": "f46b08eb6c06c7b4b4a52f81f7f7ce63b5b9c5fcc2a1752418c82817f155bcfe"
+    },
+    "ledger": {
+      "SM_inputs_mz": {
+        "MZ_GeV": {
+          "note": "declared boundary scale \u03bc=MZ",
+          "source": "tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+          "status": "input",
+          "value": 91.1876
+        },
+        "mH_GeV": {
+          "note": "PDG-ish Higgs pole mass (used for \u03bb_tree)",
+          "source": "tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+          "status": "input",
+          "value": 125.25
+        },
+        "mW_GeV": {
+          "note": "PDG-ish pole mass (threshold bookkeeping)",
+          "source": "tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+          "status": "input",
+          "value": 80.379
+        },
+        "mb_GeV": {
+          "note": "interpreted as mb(mb) in GeV (scheme-dependent)",
+          "source": "tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+          "status": "input",
+          "value": 4.18
+        },
+        "mc_GeV": {
+          "note": "threshold proxy (scheme-dependent)",
+          "source": "tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+          "status": "input",
+          "value": 1.27
+        },
+        "mt_GeV": {
+          "note": "top threshold proxy (pole vs MSbar is scheme-dependent)",
+          "source": "tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+          "status": "input",
+          "value": 172.76
+        }
+      },
+      "ew_derived": {
+        "lambda_tree_from_mH_v": {
+          "note": "\u03bb_tree = mH^2/(2 v^2) (explicit approximation)",
+          "source": "tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+          "status": "derived",
+          "value": 0.12961499851279001
+        },
+        "v_ev_GeV": {
+          "note": "suite convention; can be derived from G_F in a publication-grade pass",
+          "source": "tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+          "status": "input",
+          "value": 246.0
+        }
+      },
+      "leptons_pdg": {
+        "electron_GeV": {
+          "note": "PDG lepton pole mass (used for QED thresholds / Yukawa proxies)",
+          "source": "tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json",
+          "status": "input",
+          "value": 0.0005109989461
+        },
+        "muon_GeV": {
+          "note": "PDG lepton pole mass (used for M\u00f6bius \u03b4 calibration)",
+          "source": "tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json",
+          "status": "input",
+          "value": 0.1056583745
+        },
+        "tau_GeV": {
+          "note": "PDG lepton pole mass (used for M\u00f6bius \u03b4 calibration / Yukawa proxy)",
+          "source": "tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json",
+          "status": "input",
+          "value": 1.77686
+        }
+      },
+      "placeholders": {
+        "neutrino_mass_scale_eV": {
+          "note": "placeholder (order-of-magnitude): requires \u03ba/yN/MR reconstruction and a unique selection rule",
+          "source": null,
+          "status": "placeholder",
+          "value": 0.05
+        },
+        "proton_mass_GeV": {
+          "note": "placeholder (PDG): deriving hadron masses from TFPT/QCD completeness is tracked as a separate gap",
+          "source": null,
+          "status": "placeholder",
+          "value": 0.938272
+        }
+      }
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given inputs.",
+    "formulas": [
+      "This module is intentionally a ledger, not a fitter: it records what is treated as input vs what is derived elsewhere."
+    ],
+    "gaps": [],
+    "inputs": [
+      "SM inputs at MZ: tfpt_suite/data/sm_inputs_mz.json",
+      "Lepton masses: tfpt_suite/data/lepton_masses_pdg.json"
+    ],
+    "maturity": null,
+    "module_id": "mass_spectrum_minimal",
+    "name": "Mass spectrum minimal (ledger: derived vs input)",
+    "objective": [
+      "Provide a minimal ToE scope map without pretending missing derivations are solved.",
+      "Make it reviewer-proof which quantities are 'input' vs 'derived'."
+    ],
+    "outputs": [
+      "mass ledger with explicit status tags (input/derived/placeholder)",
+      "minimal v and Higgs \u03bb bookkeeping tags"
+    ],
+    "question": "Which masses/scales are inputs vs derived quantities in the current suite?",
+    "references": [],
+    "validation": [
+      "Every numeric entry carries an explicit status tag.",
+      "No silent 'magic' values: placeholders must be marked as such."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

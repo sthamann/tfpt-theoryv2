@@ -1,0 +1,121 @@
+---
+Author: "E8 Cascade TFPT v2.1 – G8 Adjoint Enhanced"
+Date: 2025-08-29
+Name: E8CascadeTFPTG8_v2
+# ------------------------------------------------------------
+#  ENHANCED E8 CASCADE MODEL WITH G8 ADJOINT FERMION (v2)
+#  
+#  GOALS:
+#  - Keep TFPT fingerprints SM-driven (1-loop) below 10^9 GeV
+#  - Provide clean G8 color-bridge for unification (Δb3 = +2 above MG8)
+#  - Unambiguous U(1) GUT normalization and documentation
+# ------------------------------------------------------------
+Settings:
+  LoopOrder: 3
+  ExportBetaFunctions: true
+
+# ------------------------------------------------------------
+# ENHANCED E8 CASCADE THRESHOLDS
+# ------------------------------------------------------------
+Thresholds:
+  - Scale: MSigma
+    Fields: [SigmaF]
+  - Scale: MG8
+    Fields: [G8]
+  - Scale: MNR1
+    Fields: [NR1]
+  - Scale: MNR2
+    Fields: [NR2]
+  - Scale: MNR3
+    Fields: [NR3]
+  - Scale: MPhi
+    Fields: [phiR, phiI]
+
+Groups: {U1Y: U1, SU2L: SU2, SU3c: SU3}
+
+Fermions:
+  Q   : {Gen: 3, Qnb: {U1Y:  1/6, SU2L: 2, SU3c: 3}}
+  L   : {Gen: 3, Qnb: {U1Y: -1/2, SU2L: 2}}
+  uR  : {Gen: 3, Qnb: {U1Y:  2/3, SU3c: 3}}
+  dR  : {Gen: 3, Qnb: {U1Y: -1/3, SU3c: 3}}
+  eR  : {Gen: 3, Qnb: {U1Y: -1}}
+  SigmaF : {Gen: 1, Qnb: {U1Y: 0, SU2L: 3, SU3c: 1}}
+  G8 : {Gen: 1, Qnb: {U1Y: 0, SU2L: 1, SU3c: 8}}
+  NR1 : {Gen: 1, Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}
+  NR2 : {Gen: 1, Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}
+  NR3 : {Gen: 1, Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}
+
+RealScalars:
+  phiR : {Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}
+  phiI : {Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}
+  R3   : {Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}, External: True}
+
+ComplexScalars:
+  H : {RealFields: [Pi, Sigma], Norm: 1/sqrt(2), Qnb: {U1Y: 1/2, SU2L: 2}}
+
+Potential:
+  Definitions:
+    Htilde[i]: Eps[i,j]*Hbar[j]
+
+  Yukawas:
+    Yu: Qbar[i,a] Htilde[i] uR[a]
+    Yd: Qbar[i,a] H[i]      dR[a]
+    Ye: Lbar[i]   H[i]      eR
+    # ySig (Type III): intentionally not exported to PyR@TE due to indexing;
+    # solver includes its 2-loop trace contribution explicitly.
+    # ySig: Lbar[i] SigmaF[i,j] H[j]
+    yN1: Lbar[i] Htilde[i] NR1
+    yN2: Lbar[i] Htilde[i] NR2  
+    yN3: Lbar[i] Htilde[i] NR3
+
+  QuarticTerms:
+    lambda   : (Hbar[i] H[i])**2
+    lPhi     : (phiR**2 + phiI**2)**2
+    lHphi    : (Hbar[i] H[i])*(phiR**2 + phiI**2)
+
+  TrilinearTerms:
+    cR3      : R3 * (Hbar[i] H[i])
+
+  ScalarMasses:
+    mu2      : -Hbar[i] H[i]
+    MPhi     : phiR*phiR + phiI*phiI
+
+Vevs:
+  vSM : Pi[2]
+  vPQ : phiR
+
+Parameters:
+  - {name: MPl,      value: 1.221e+19}
+  - {name: MSigma,   value: 1.0e+3}
+  - {name: MG8,      value: 1.8e+10}
+  - {name: MNR1,     value: 1.0e+14}
+  - {name: MNR2,     value: 3.0e+14}
+  - {name: MNR3,     value: 8.0e+14}
+  - {name: MPhi,     value: 1.0e+16}
+  - {name: c3,       value: 0.039788735772973836}
+  - {name: phi0,     value: 0.053171952176845526}
+  - {name: g1,       value: 0.357}
+  - {name: g2,       value: 0.652}
+  - {name: g3,       value: 1.2322690515271375}
+  - {name: Yu33,     value: 0.857375}
+  - {name: Yd33,     value: 0.024}
+  - {name: Ye33,     value: 0.010}
+  - {name: ySig,     value: 0.50}
+  - {name: yN1,      value: 0.70}
+  - {name: yN2,      value: 0.70}
+  - {name: yN3,      value: 0.70}
+  - {name: lambda,   value: 0.130}
+  - {name: lPhi,     value: 0.10}
+  - {name: lHphi,    value: 0.01}
+  - {name: cR3,      value: 0.01}
+
+Substitutions: { g_U1Y: g1, g_SU2L: g2, g_SU3c: g3 }
+
+# ------------------------------------------------------------
+# THEORY NOTES (v2):
+# - U(1) GUT normalization: g1_GUT = sqrt(5/3) * gY; b1_GUT = 41/10.
+# - ySig kept out of PyR@TE export; solver adds its 2-loop trace.
+# - LoopOrder=3 in YAML; solver uses full 2-loop + optional 3-loop SU(3).
+# - G8 bridge above MG8: Δ(α3^{-1})(μ) = -(Δb3)/(2π) ln(μ/MG8), Δb3=+2.
+# ------------------------------------------------------------
+

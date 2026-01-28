@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "note": "Central registry for PyR@TE3 PythonOutput locations used by TFPT suite RG runners. This exists to prevent silent model swaps and to provide stable fingerprints (expected name + module/YAML SHA256).",
+  "models": {
+    "sm_tfpt_2loop_v25": {
+      "model_name_expected": "SM_TFPT_2Loop_v25",
+      "pythonoutput_dir": "Pyrate3/pyrate/results/SM_TFPT_2loop_v25/SM_TFPT_2Loop_v25/PythonOutput",
+      "yaml_source": "Pyrate3/models/SM_TFPT_2loop_v25.yaml"
+    },
+    "e8_sigma_yN_2loop": {
+      "model_name_expected": "E8Cascade2LoopGravityV2",
+      "pythonoutput_dir": "Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput",
+      "yaml_source": "Pyrate3/models/E8Cascade 2Loop Gravity.yaml"
+    }
+  }
+}
+

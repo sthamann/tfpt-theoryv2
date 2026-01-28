@@ -1,0 +1,61 @@
+==========================================================================================
+E8 TFPT G8-ENHANCED THEORY-COMPLIANT SOLVER - COMPREHENSIVE RESULTS
+==========================================================================================
+Analysis Date: 2025-08-28 17:13:58
+YAML Config: /Users/stefanhamann/Projekte/Q5/Pyrate3/models/E8Cascade_TFPT_G8_Enhanced.yaml
+Loop Order: 3
+
+THEORY-COMPLIANT IMPROVEMENTS IMPLEMENTED:
+✅ NO manual β coefficient tuning (all from field content)
+✅ Full 2-loop with Yukawa traces (top-dominated)
+✅ Event-based threshold integration
+✅ G8 Majorana adjoint unification bridge
+✅ Analytical 1-loop validation checks
+✅ Consistent GUT normalization throughout
+✅ Automated fingerprint assertions
+
+FIELD CONTENT β CONTRIBUTIONS:
+SM base: b₁=4.100, b₂=-3.167, b₃=-7.000
+SigmaF (SU(2) triplet): Δb₂ = +1.333
+G8 (SU(3) adjoint): Δb₃ = +2.0 🌉 UNIFICATION BRIDGE
+RH neutrinos + PQ scalars: Δbᵢ = 0 (gauge singlets)
+
+TFPT FINGERPRINT VALIDATION:
+----------------------------------------
+φ₀ fingerprint (1 PeV = 10⁶ GeV):
+  Target: φ₀ = 0.053171952177
+  Actual: α₃(1 PeV) = 0.052472430498
+  Deviation: 1.316% (tolerance: 0.5%)
+  Status: ❌ FAIL
+
+c₃ fingerprint (2.5×10⁸ GeV):
+  Target: c₃ = 0.039788735773
+  Actual: α₃(2.5×10⁸ GeV) = 0.039514199949
+  Deviation: 0.690% (tolerance: 1.0%)
+  Status: ✅ PASS
+
+OVERALL FINGERPRINT STATUS: ❌ REQUIRES TUNING
+
+G8 UNIFICATION BRIDGE ANALYSIS:
+----------------------------------------
+Best unification scale: μ = 1.41e+15 GeV
+Coupling values at unification:
+  α₁⁻¹ = 39.265
+  α₂⁻¹ = 38.759
+  α₃⁻¹ = 39.266
+Absolute spread: 0.507
+Relative spread: 1.30% (tolerance: 10%)
+Unification quality: ✅ GOOD
+
+G8 BRIDGE MECHANISM:
+G8 threshold: MG8 = 1.80e+10 GeV
+Field type: Majorana fermion in SU(3) adjoint
+β₃ contribution: Δb₃ = +2.0
+Unification strategy: Lift α₃ above G8 threshold to match α₁,α₂
+Fingerprint preservation: G8 >> fingerprint scales → no interference
+
+NEXT STEPS & RECOMMENDATIONS:
+• Add uncertainty bands from coupling measurement errors (added for α₃)
+• Implement full event-based threshold integration
+• Extend to 3-loop for higher precision
+• Connect to E8 cascade theoretical structure

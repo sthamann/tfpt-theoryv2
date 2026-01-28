@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "note": "Inputs for the k_calibration module. This module turns the dimensionless bounce scale (as produced by bounce_perturbations diagnostics in x=Mη units) into a CMB multipole estimate ℓ≈k χ_* under explicit assumptions. If out/bounce_perturbations/results.json exists, k_calibration will prefer that live output; otherwise it falls back to the values below.",
+  "cosmology_flat_lcdm": {
+    "source": "Planck 2018 base-ΛCDM (typical central values; for publication use the exact table/likelihood): H0=67.36, Ω_m=0.3153, Ω_r≈9.2e-5, z_*=1090",
+    "H0_km_s_Mpc": 67.36,
+    "Omega_m": 0.3153,
+    "Omega_r": 9.2e-5,
+    "z_star": 1090.0
+  },
+  "assumptions": {
+    "transition": "horizon_exit_of_pivot",
+    "a0_over_a_transition": null,
+    "k_hat_grid_for_ell_range": [1e-7, 20000.0],
+    "N_inflation_from_transition": 56.0,
+    "N_reheat": 0.0,
+    "T_reheat_GeV": 10000000000000.0,
+    "g_star_s_reheat": 120.0,
+    "g_star_s_today": 3.91,
+    "reheating_policy_v106": {
+      "enabled": true,
+      "w_reh": 0.0,
+      "g_star_reheat": 120.0,
+      "g_star_s_reheat": 120.0,
+      "c_end": 0.35,
+      "T_reheat_GeV": 10000000000000.0
+    },
+    "ell_targets": [2, 30, 700],
+    "signature_policy": {
+      "cmb_ell_range": [2, 2500],
+      "small_scale_ell_min": 2500,
+      "decision_rule": "prefer_cmb_if_overlap",
+      "primary_signature": "conditional_gate",
+      "rationale": "TFPT delivers transfer functions in k-space. The mapping to observable ℓ is a policy gate that depends on the expansion history (a0/a_transition). Under the current threshold-derived budget (see out_physics/k_calibration), scalar features land at ℓ_bounce^s≈57 (CMB low-ℓ), while tensor features are super-horizon (ℓ_bounce^t≈0.212). We therefore treat the signature class as conditional: CMB low-ℓ scalar vs small-scale-only depending on the declared history.",
+      "note": "Declare a reproducible decision rule for classifying signatures (CMB window vs small-scale). Prefer CMB if there is any overlap with the [2, 2500] window."
+    }
+  },
+  "fallback_bounce_diagnostics": {
+    "k_bounce_s_est_raw": 2103.5507357951246,
+    "k_bounce_t_est_raw": 7.808039644294931,
+    "source": "fallback values copied from a reference run of bounce_perturbations (update by running the full suite)"
+  }
+}
+

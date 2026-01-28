@@ -1,0 +1,120 @@
+{
+  "checks": [
+    {
+      "check_id": "k2_is_near_zero_crossing",
+      "detail": "min_k=2.0, abs_ppm={0.0: 3.665371791638453, 1.0: 1.8074246412353618, 1.5: 0.883514212976573, 2.0: 0.03703710120260405, 2.5: 0.9542414840493093, 3.0: 1.8681110743677323}",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "monotonicity_check",
+      "detail": "monotonic=True, diffs=[-1.857947150403091, -0.9239104282587889, -0.920551314179177, -0.9172043828467052, -0.913869590318423]",
+      "passed": true,
+      "severity": "INFO"
+    }
+  ],
+  "module_id": "alpha_backreaction_sensitivity_audit",
+  "plot": {
+    "alpha_backreaction_ppm.png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/alpha_backreaction_sensitivity_audit/alpha_backreaction_ppm.png"
+  },
+  "results": {
+    "abs_ppm": {
+      "0.0": 3.665371791638453,
+      "1.0": 1.8074246412353618,
+      "1.5": 0.883514212976573,
+      "2.0": 0.03703710120260405,
+      "2.5": 0.9542414840493093,
+      "3.0": 1.8681110743677323
+    },
+    "plot": {
+      "alpha_backreaction_ppm.png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/alpha_backreaction_sensitivity_audit/alpha_backreaction_ppm.png"
+    },
+    "reference": {
+      "dataset_id": "alpha_inv_codata_2022",
+      "notes": "Inverse fine-structure constant alpha^{-1}(0).",
+      "sigma": 2.1e-08,
+      "source": "global_reference_minimal.json:observables.alpha_inv_codata_2022",
+      "units": "dimensionless",
+      "value": 137.035999177,
+      "version": "CODATA 2022"
+    },
+    "series": [
+      {
+        "alpha_inv": "137.03650146488582236606674817671213126705763898504867906796008564574330158473974",
+        "converged": true,
+        "iterations": 1,
+        "k": "0.0",
+        "ppm_vs_codata": "3.6653717916384530434821767047863224676590708978843757045191551717858770404594889"
+      },
+      {
+        "alpha_inv": "137.03624685924164881857501818925199973895132954484168783025530895596858512434876",
+        "converged": true,
+        "iterations": 5,
+        "k": "1.0",
+        "ppm_vs_codata": "1.807424641235361910409615752552998596577999114623336398055706706157294199558044"
+      },
+      {
+        "alpha_inv": "137.03612025025296232545482931399084424461536334575930345203842714142493305165818",
+        "converged": true,
+        "iterations": 6,
+        "k": "1.5",
+        "ppm_vs_codata": "0.88351421297657295972615616844384790852500502072105994396051956283428630717764477"
+      },
+      {
+        "alpha_inv": "137.03599410158383008148619622913336009409257904171246722475352841304700901323215",
+        "converged": true,
+        "iterations": 6,
+        "k": "2.0",
+        "ppm_vs_codata": "-0.037037101202604046334641968339095182025406625555948066961471526462227692903073795"
+      },
+      {
+        "alpha_inv": "137.03586841156477715958980900837709897373035925226486939152638606558964094626434",
+        "converged": true,
+        "iterations": 6,
+        "k": "2.5",
+        "ppm_vs_codata": "-0.95424148404930931699387891347520808715114269867771180292544458512138875341955186"
+      },
+      {
+        "alpha_inv": "137.03574317853235039885563948566257971151608070057762079635315414031827919749862",
+        "converged": true,
+        "iterations": 6,
+        "k": "3.0",
+        "ppm_vs_codata": "-1.8681110743677322642601797404070201280997474226137348992743768339970127248408288"
+      }
+    ]
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (fixed-point iteration).",
+    "formulas": [
+      "varphi(alpha)=varphi_tree + delta_top * exp(-k alpha)",
+      "alpha from CFE fixed point (self-consistent)",
+      "ppm = 1e6*(pred-ref)/ref"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT invariants (c3, varphi0_tree, delta_top, b1)",
+      "CODATA alpha_inv_0 reference"
+    ],
+    "maturity": null,
+    "module_id": "alpha_backreaction_sensitivity_audit",
+    "name": "Alpha backreaction sensitivity audit (k sweep)",
+    "objective": [
+      "Quantify how alpha_inv_0 depends on k and show the k=2 near-crossing."
+    ],
+    "outputs": [
+      "alpha_inv_0 for k in {0,1,1.5,2,2.5,3}",
+      "ppm deviation vs CODATA"
+    ],
+    "question": "Is k=2 a natural choice from alpha backreaction sensitivity?",
+    "references": [
+      "alpha_inv_codata_2022"
+    ],
+    "validation": [
+      "k=2 is near the minimum |ppm| in the grid"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

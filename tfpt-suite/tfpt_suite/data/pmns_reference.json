@@ -1,0 +1,25 @@
+{
+  "note": "PMNS reference values for the pmns_full_pipeline module from NuFIT 5.3 (2024) with SK-atm data. Asymmetric NuFIT uncertainties are symmetrized using the larger of the ± errors. Used only for a diagnostic χ² after PMNS canonicalization (rephasing + column permutation).",
+  "reference": {
+    "definition": "Mixing angles in the PDG convention (θ12, θ13, θ23) reported as sin²θij, and δCP in degrees. These are effective low-energy fit parameters; they are not running MSbar couplings.",
+    "scheme": "NuFIT 5.3 (2024) global fit; effective low-energy parameters; not a running MSbar coupling",
+    "reference_scale_label": "MZ",
+    "reference_scale_GeV": 91.1876,
+    "source": "NuFIT 5.3 (2024) table (with SK-atm): http://www.nu-fit.org/?q=node/278 (v53.tbl-parameters.pdf)",
+    "snapshot_date": "2024-03",
+    "atmospheric_data": "SK-atm included"
+  },
+  "normal_ordering": {
+    "sin2_theta12": { "mean": 0.307, "sigma": 0.012 },
+    "sin2_theta13": { "mean": 0.02224, "sigma": 0.00057 },
+    "sin2_theta23": { "mean": 0.454, "sigma": 0.019 },
+    "delta_cp_deg": { "mean": 232.0, "sigma": 39.0 }
+  },
+  "inverted_ordering": {
+    "sin2_theta12": { "mean": 0.307, "sigma": 0.012 },
+    "sin2_theta13": { "mean": 0.02222, "sigma": 0.00069 },
+    "sin2_theta23": { "mean": 0.568, "sigma": 0.021 },
+    "delta_cp_deg": { "mean": 273.0, "sigma": 26.0 }
+  }
+}
+

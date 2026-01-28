@@ -1,0 +1,83 @@
+---
+Author: "TFPT (v2.5) – Standard Model 2-loop baseline for RG fingerprints"
+Date: 2026-01-24
+Name: SM_TFPT_2Loop_v25
+#
+# Purpose
+# - Publication-style baseline: 2-loop SM RGEs (no BSM thresholds) for the TFPT “RG fingerprints”
+# - Inputs chosen to match the conventions used in `latex/tfpt-theory-fullv25.tex`
+#
+# Notes on hypercharge normalization
+# - PyR@TE uses the SM hypercharge normalization by default (b1 = 41/6).
+# - For TFPT’s “GUT-normalized” alpha1, apply:
+#     g1_GUT = sqrt(5/3) * g1_SM
+#     alpha1_GUT = g1_GUT^2 / (4π) = (5/3) * alpha1_SM
+#
+# Threshold matching
+# - This model file does not implement decoupling / matching (PyR@TE does not apply thresholds automatically).
+# - Threshold matching (e.g. at m_t) should be applied in the numerical runner if needed.
+
+Settings:
+  LoopOrder: 2
+  ExportBetaFunctions: true
+
+Groups: {U1Y: U1, SU2L: SU2, SU3c: SU3}
+
+Fermions:
+  Q   : {Gen: 3, Qnb: {U1Y:  1/6, SU2L: 2, SU3c: 3}}
+  L   : {Gen: 3, Qnb: {U1Y: -1/2, SU2L: 2}}
+  uR  : {Gen: 3, Qnb: {U1Y:  2/3,           SU3c: 3}}
+  dR  : {Gen: 3, Qnb: {U1Y: -1/3,           SU3c: 3}}
+  eR  : {Gen: 3, Qnb: {U1Y: -1}}
+
+RealScalars: {}
+
+ComplexScalars:
+  H : {RealFields: [Pi, Sigma], Norm: 1/sqrt(2), Qnb: {U1Y: 1/2, SU2L: 2}}
+
+Potential:
+  Definitions:
+    Htilde[i] : Eps[i,j]*Hbar[j]
+
+  Yukawas:
+    Yu : Qbar[i,a] Htilde[i] uR[a]
+    Yd : Qbar[i,a] H[i]      dR[a]
+    Ye : Lbar[i]   H[i]      eR
+
+  QuarticTerms:
+    lambda : (Hbar[i] H[i])**2
+
+  ScalarMasses:
+    mu2 : -Hbar[i] H[i]
+
+Vevs:
+  vSM : Pi[2]
+
+# Optional: numeric seeds for runners that read the YAML.
+Parameters:
+  # Reference scales / inputs (PDG-era MSbar-ish central values)
+  - {name: MZ,            value: 91.1876}
+  - {name: alpha_em_inv,  value: 127.955}
+  - {name: sin2_thetaW,   value: 0.23122}
+  - {name: alpha_s,       value: 0.1179}
+
+  # Gauge couplings at μ ≈ MZ (SM normalization for g1 = gY)
+  - {name: g1,            value: 0.357}
+  - {name: g2,            value: 0.652}
+  - {name: g3,            value: 1.221}
+
+  # Dominant Yukawas (3rd generation, used for 2-loop traces)
+  - {name: Yu33,          value: 0.94}
+  - {name: Yd33,          value: 0.017}
+  - {name: Ye33,          value: 0.010}
+
+  # Higgs sector
+  - {name: lambda,        value: 0.13}
+  - {name: vSM,           value: 2.46e+2}
+
+Substitutions: {
+  g_U1Y  : g1,
+  g_SU2L : g2,
+  g_SU3c : g3
+}
+

@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "check_id": "koide_leptons_close_to_2_over_3",
+      "detail": "Q=0.666660512411, Q-2/3=-6.154e-06 (|dev|\u22640.0001)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "koide_constraints",
+  "plot": null,
+  "results": {
+    "input_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json",
+    "koide": {
+      "Q": 0.6666605124107325,
+      "deviation": -6.1542559340876934e-06,
+      "target": 0.6666666666666666
+    },
+    "masses_GeV": {
+      "electron": 0.0005109989461,
+      "muon": 0.1056583745,
+      "tau": 1.77686
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given input table.",
+    "formulas": [
+      "Q := (m_e+m_\\mu+m_\\tau)/(\\sqrt{m_e}+\\sqrt{m_\\mu}+\\sqrt{m_\\tau})^2",
+      "Koide (empirical): Q \\approx 2/3"
+    ],
+    "gaps": [
+      "This module does not derive Koide from TFPT; it only records the diagnostic value and deviation."
+    ],
+    "inputs": [
+      "lepton masses: tfpt_suite/data/lepton_masses_pdg.json"
+    ],
+    "maturity": null,
+    "module_id": "koide_constraints",
+    "name": "Koide constraints (charged leptons; diagnostic docking check)",
+    "objective": [
+      "Provide an explicit, citeable Koide diagnostic as a docking point for future topology/mass-ratio derivations."
+    ],
+    "outputs": [
+      "Koide Q for charged leptons",
+      "deviation from 2/3 (diagnostic; not a TFPT derivation yet)"
+    ],
+    "question": "Do charged lepton pole masses satisfy the Koide relation (diagnostic)?",
+    "references": [],
+    "validation": [
+      "Reports Q and deviation; check is a diagnostic PASS/WARN only (not a ToE gate)."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

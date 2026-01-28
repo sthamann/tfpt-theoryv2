@@ -1,0 +1,16 @@
+Torsion observable designer (signal proxy table)
+
+mode=engineering
+M_eff (TFPT_M) ≈ 3.060e+13 GeV
+minimal coupling k = 3/4, GeV→Hz = 2.418e+23
+
+Scenarios:
+- lab_spin_fluid_He3: Δν≈2.084e-23 Hz (|S|≈5.746e-47 GeV; |b|≈4.309e-47 GeV) — Lab spin fluid (He-3 benchmark)
+- nuclear_spin_density_magnetar_proxy: Δν≈2.382e-07 Hz (|S|≈6.566e-31 GeV; |b|≈4.925e-31 GeV) — Nuclear spin density (magnetar proxy)
+
+Checks:
+- torsion_observable_table_present: PASS (rows=2)
+- amplitude_measurable: PASS (INFO: proxy thresholds lab/astro=1.0e-09 Hz; lab Δν≈2.084e-23 Hz, astro Δν≈2.382e-07 Hz (proxy_ok=True))
+
+Notes:
+- This is a design-phase module. Replace benchmark spin densities and coupling-scale assumptions with a derived TFPT source model + experimental/astrophysical observable model to upgrade to publication-grade falsifiability.

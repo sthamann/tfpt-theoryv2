@@ -1,0 +1,44 @@
+============================================================
+E8 CASCADE MODEL RGE SOLVER
+============================================================
+Gravity portal: ENABLED
+Output directory: /Users/stefanhamann/Projekte/Q5/Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/results
+============================================================
+c_R3 = -5.105542e-06 (b₃ = -3, M_GUT = 2.0e+17 GeV)
+
+Step 1: Solving RGEs...
+✓ Gravity portal enabled (g³ corrections active)
+  At M_GUT = 2.0e+17 GeV:
+  c_R(g1) = +1.418206e-05 (b = 8.333)
+  c_R(g2) = +3.403695e-06 (b = 2.000)
+  c_R(g3) = -5.105542e-06 (b = -3.000)
+Solving RGEs from log₁₀(M_Z) = 2 to log₁₀(M_Pl) = 19...
+  Thresholds: Σ_F at 1e+03 GeV, N_R at 1e+15 GeV, Φ at 1e+16 GeV
+System of RGEs solved in 0.230 seconds.
+✓ RGE solution complete
+✓ Results saved to results/gauge_couplings.csv
+
+Unification check:
+  Closest approach at μ = 6.31e+15 GeV
+  α₁⁻¹ (GUT) = 38.21
+  α₂⁻¹ = 38.29
+  |Δ| = 0.08
+
+Step 2: Generating plots...
+✓ Plot saved to results/gauge_running.png
+✓ Unification plot saved to results/unification.png
+
+Step 3: Running analysis...
+✓ All couplings remain perturbative
+✓ Stability analysis saved to results/stability_analysis.png
+
+============================================================
+✓ Run complete! All results saved to: /Users/stefanhamann/Projekte/Q5/Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/results
+============================================================
+
+Generated files:
+  - gauge_couplings.csv
+  - gauge_running.png
+  - results.txt
+  - stability_analysis.png
+  - unification.png

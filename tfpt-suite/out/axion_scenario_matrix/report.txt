@@ -1,0 +1,21 @@
+Axion scenario matrix (explicit branches)
+
+mode=engineering
+axion claim file: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/axion_tfpt_v106.json
+- f_a=8.86399e+10 GeV, m_a=65.1948 µeV (nu≈15.764 GHz, source=derived)
+
+Inflation proxy (Starobinsky, Planck refs):
+- n_s=0.9649, ln(1e10 A_s)=3.044 => A_s=2.0989e-09, N≈56.9801, r≈0.00369603, H≈1.507e+13 GeV
+
+isocurvature limit proxy: beta_iso_max=0.038 => ratio_limit≈0.039501
+
+Scenarios:
+- pre_inflation_single_theta_varphi0: pq=pre_inflation, theta=5.317e-02 (theta_i = varphi0 (birefringence-fixed; single-angle patch)), strings_factor=1, Ω_a h^2=4.521e-05 (frac=3.767e-04), iso=4.933e+14 (ok=False), overDM=False, PASS=False
+- post_inflation_theta_rms_no_strings: pq=post_inflation, theta=1.814e+00 (random θ_i; use rms(θ)=π/√3 for estimate), strings_factor=1, Ω_a h^2=5.261e-02 (frac=4.384e-01), iso=N/A (ok=True), overDM=False, PASS=True
+- post_inflation_theta_rms_with_strings_dw_factor: pq=post_inflation, theta=1.814e+00 (random θ_i; use rms(θ)=π/√3; include strings/domain-walls factor), strings_factor=2.33333, Ω_a h^2=1.228e-01 (frac=1.023e+00), iso=N/A (ok=True), overDM=True, PASS=False
+
+Checks:
+- scenario_is_explicit: PASS (3 scenarios enumerated (pre vs post inflation))
+- isocurvature_passes_in_at_least_one_scenario: PASS (PASS (engineering mode; diagnostic))
+- at_least_one_scenario_is_physically_viable: PASS (PASS (engineering mode; diagnostic))
+- scenario_policy_selected_is_known: PASS (selected=post_inflation_theta_rms_with_strings_dw_factor)

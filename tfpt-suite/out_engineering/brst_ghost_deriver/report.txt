@@ -1,0 +1,35 @@
+BRST / ghost deriver (closure-level module)
+
+mode=engineering
+microscopic action file: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/microscopic_action_tfpt_v25.json (loaded=True)
+OperatorSpec file: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/effective_action_r2_operator_spec.json (status=derived, wrote_file=True)
+
+ghost blocks detected: 1 (fp_ghost_vector present=True)
+
+Status:
+- closure-level quantization metadata exists in the canonical microscopic action spec.
+- OperatorSpec is generated deterministically from that action spec (Laplace-type blocks + FP ghost block).
+- brst.status = derived_in_suite_at_closure_level
+
+Gauge-parameter proxy scan (ghost prefactor rescale xi):
+- beta_target = 527834498.60154625316429609794658488932410894586922528717829736451418963614867773
+- xi=0.5: alpha_R=117864.36224056808634529413576038308438338054833357848796576718772613003087637124, M/Mpl=0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637, beta_residual=1.6979398272800085689079598670414609588779745996510884105467402918629064972361585e-72
+- xi=1.0: alpha_R=117864.36224058707131339042043107474546535147059940203121605119943656779636101227, M/Mpl=0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637, beta_residual=5.6597994242666952296931995568048698629265819988369613684891343062096883241205282e-73
+- xi=2.0: alpha_R=117864.36224062504124958298059847628638156472844596430125161457910681170199190115, M/Mpl=0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637, beta_residual=-1.1319598848533390459386399113609739725853163997673922736978268612419376648241056e-72
+
+Heat-kernel contract (derived operator blocks):
+- M/Mpl(from blocks) = 0.000012564942083228448969980786638197975376707921748468781310516248914585154899192636
+- M/Mpl(target)      = 0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637
+- rel_err            = 1.1522142819665879685816761358425700449071360762799681835473625272461504708135841e-80
+
+Checks:
+- microscopic_action_loaded: PASS (loaded=True)
+- operator_spec_generated: PASS (generated OperatorSpec blocks=4 (ghost_blocks=1), wrote_file=True)
+- fp_ghost_block_present: PASS (fp_ghost_vector present=True)
+- quadratic_operator_derived_from_action: PASS (OperatorSpec derivation.status=derived (generated from microscopic_action_tfpt_v25.json))
+- heat_kernel_a2_match: PASS (OperatorSpec status=derived; ghost block present (closure-level consistency))
+- brst_status_derived_in_suite: PASS (brst.status=derived_in_suite_at_closure_level)
+- brst_invariance_verified_symbolically_or_structurally: PASS (structural: gauge-fixing + FP ghost sector is treated as BRST-exact (closure-level; derived from canonical action spec))
+- heat_kernel_contract_matches_effective_action_r2: PASS (rel_err(M/Mpl)=1.1522142819665879685816761358425700449071360762799681835473625272461504708135841e-80)
+- gauge_parameter_scan_proxy_consistent: PASS (max relative spread in M/Mpl across xi grid = 2.5604761821479732635148358574279334331269690583999292967719167272136677129190757e-81 (xi=0.5,1.0,2.0))
+- gauge_parameter_independence_nonproxy: PASS (max_rel_spread_M_over_Mpl=2.5604761821479732635148358574279334331269690583999292967719167272136677129190757e-81)

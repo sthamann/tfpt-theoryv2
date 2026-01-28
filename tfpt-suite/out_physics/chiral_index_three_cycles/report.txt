@@ -1,0 +1,44 @@
+Chiral index on orientable double cover (three cycles)
+config: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/chiral_index_three_cycles.json
+mp.dps = 80
+
+Flux choice:
+- (nu1,nu2,nuT)=(1,1,1)
+- IndD = nu1 + nu2 + nuT = 3
+
+Gauss–Bonnet / seam bookkeeping (sketch):
+- two physical boundary cycles + one seam Γ contribute 2π each ⇒ total 6π (used in φ_tree normalization in the main theory)
+
+Wilson-line phase atoms (U(1)_Y holonomy model):
+- phase for charge Y on cycle Ci: exp(i·2π·Y·νi)
+- unique atoms (θ/π mod 2, limited denom): ['0', '1/3', '1', '4/3']
+
+Per-charge / per-cycle angles (θ/π):
+- Q_L (SU2 doublet)        Y=   1/6  C1 (nu=1): theta/pi=0.33333333333333333333333333333333333333333333333333333333333333333333333333333333
+- Q_L (SU2 doublet)        Y=   1/6  C2 (nu=1): theta/pi=0.33333333333333333333333333333333333333333333333333333333333333333333333333333333
+- Q_L (SU2 doublet)        Y=   1/6  CT (nu=1): theta/pi=0.33333333333333333333333333333333333333333333333333333333333333333333333333333333
+- u_R                      Y=   2/3  C1 (nu=1): theta/pi=1.3333333333333333333333333333333333333333333333333333333333333333333333333333333
+- u_R                      Y=   2/3  C2 (nu=1): theta/pi=1.3333333333333333333333333333333333333333333333333333333333333333333333333333333
+- u_R                      Y=   2/3  CT (nu=1): theta/pi=1.3333333333333333333333333333333333333333333333333333333333333333333333333333333
+- d_R                      Y=  -1/3  C1 (nu=1): theta/pi=1.3333333333333333333333333333333333333333333333333333333333333333333333333333333
+- d_R                      Y=  -1/3  C2 (nu=1): theta/pi=1.3333333333333333333333333333333333333333333333333333333333333333333333333333333
+- d_R                      Y=  -1/3  CT (nu=1): theta/pi=1.3333333333333333333333333333333333333333333333333333333333333333333333333333333
+- L_L (lepton doublet)     Y=  -1/2  C1 (nu=1): theta/pi=1.0
+- L_L (lepton doublet)     Y=  -1/2  C2 (nu=1): theta/pi=1.0
+- L_L (lepton doublet)     Y=  -1/2  CT (nu=1): theta/pi=1.0
+- e_R                      Y=    -1  C1 (nu=1): theta/pi=0.0
+- e_R                      Y=    -1  C2 (nu=1): theta/pi=0.0
+- e_R                      Y=    -1  CT (nu=1): theta/pi=0.0
+- nu_R (optional)          Y=     0  C1 (nu=1): theta/pi=0.0
+- nu_R (optional)          Y=     0  C2 (nu=1): theta/pi=0.0
+- nu_R (optional)          Y=     0  CT (nu=1): theta/pi=0.0
+
+Checks:
+- index_is_integer: PASS (IndD=3 from nu=(nu1,nu2,nuT)=(1,1,1))
+- minimal_flux_gives_three_families: PASS (nu=(1,1,1) => IndD=3 families)
+- wilson_line_phase_atoms_nontrivial: PASS (distinct theta/pi atoms (mod 2): ['0', '1/3', '1', '4/3'])
+- topology_to_cp_phase_map: PASS (Wilson-line phase atoms are provided here; the shipped finite δ/δ_CP candidate map is implemented in `topology_phase_map` (operator-level derivation remains future work).)
+
+Notes:
+- This module is a docking point: it makes the Appendix J mechanism explicit and machine-readable.
+- The next step is to connect these discrete holonomies to the Möbius/Z3 deformation parameter δ and the CKM/PMNS CP phases (operator/holonomy-level).

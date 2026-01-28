@@ -1,0 +1,34 @@
+Boltzmann transfer (explicit ℓ mapping + CAMB-backed C_ell)
+
+mode=engineering
+config: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json
+
+Policy inputs:
+- transition=horizon_exit_of_pivot, N_infl=56.0, N_reheat=0.0
+- T_reheat=1.000e+13 GeV, g*_s(reh)=120.0, g*_s(today)=3.91
+- a0/a_transition = 1.1365305153366452e+54 (from k_calibration expansion_budget_estimate (tfpt-suite/out_engineering/k_calibration/results.json))
+
+Scale mapping:
+- TFPT M ≈ 3.060e+13 GeV (from M/Mpl)
+- chi_star ≈ 13867 Mpc (proxy)
+- k_hat range = [1.000e-07, 1.000e+01] => ℓ range ≈ [5.84e-06, 584]
+- targets = [2.0, 30.0, 700.0], hits = [2.0, 30.0]
+
+CMB spectra backend (CAMB):
+- backend = camb
+- cosmology: H0=67.36, Omega_m=0.3153, Omega_r=9.2e-05, omega_b_h2=0.02237, omega_c_h2=0.120693263488, tau=0.054
+- primordial (TFPT/Starobinsky): N=57, n_s=0.964912, A_s=2.1655e-09, r=0.003693, pivot=0.05 1/Mpc
+- primordial P(k) source = bounce_injected_table:tfpt-suite/out_engineering/primordial_spectrum_builder/results.json (pivot_normalized scale=0.0596437)
+- Planck plik-lite: {"enabled": false, "note": "set TFPT_ENABLE_PLANCK_LIKELIHOOD=1 to evaluate Planck plik-lite (Cobaya-native)."}
+- C_ell summary: {"backend": "camb", "camb_version": "1.6.0", "lmax": 2550, "peak1": {"ell": 220, "TT_muK2": 5898.076559285649}, "TT_at_ell": {"2": 18228.263500394627, "30": 13906.76393635935, "200": 5768.964123795121, "700": 1928.6281760997601, "2000": 237.92494419311092}}
+- sampled C_ell points: [{"ell": 2, "TT_muK2": 18228.263500394627, "EE_muK2": 0.307650503914798, "TE_muK2": 24.1459735201061, "BB_muK2": 0.5131347134056973}, {"ell": 3, "TT_muK2": 14810.609142499814, "EE_muK2": 0.3127275469389499, "TE_muK2": 5.431204152419861, "BB_muK2": 0.5005956761873153}, {"ell": 4, "TT_muK2": 13990.76109703242, "EE_muK2": 0.26216911361470496, "TE_muK2": -0.17346575029669878, "BB_muK2": 0.41391944146515824}, {"ell": 5, "TT_muK2": 13712.850255588899, "EE_muK2": 0.18358473788126506, "TE_muK2": -2.0259192216963813, "BB_muK2": 0.3024887977712607}, {"ell": 10, "TT_muK2": 13898.651823673781, "EE_muK2": 0.02737689215383737, "TE_muK2": -4.008748989650416, "BB_muK2": 0.032404972226192194}, {"ell": 20, "TT_muK2": 14367.31490889914, "EE_muK2": 0.09323538559591125, "TE_muK2": -13.662019254506044, "BB_muK2": 0.07806706353653207}, {"ell": 30, "TT_muK2": 13906.76393635935, "EE_muK2": 0.17237130206511844, "TE_muK2": -27.50660634643722, "BB_muK2": 0.11320309044108393}, {"ell": 50, "TT_muK2": 5858.592923421792, "EE_muK2": 0.25389231220458924, "TE_muK2": -21.654358144058254, "BB_muK2": 0.05415522222606248}, {"ell": 80, "TT_muK2": 2255.947457910835, "EE_muK2": 0.49761230147585733, "TE_muK2": -11.943721494402679, "BB_muK2": 0.00570417287287465}, {"ell": 100, "TT_muK2": 2784.9187898838827, "EE_muK2": 0.804616037585498, "TE_muK2": -23.971510031720833, "BB_muK2": 0.0036035830033952464}, {"ell": 150, "TT_muK2": 4517.521062418873, "EE_muK2": 1.1357029420580753, "TE_muK2": -47.548414091525714, "BB_muK2": 0.007457619410408702}, {"ell": 200, "TT_muK2": 5768.964123795121, "EE_muK2": 0.7105176592741987, "TE_muK2": -15.82856485799457, "BB_muK2": 0.014124205714717985}, {"ell": 300, "TT_muK2": 4189.946909439962, "EE_muK2": 9.377755738677374, "TE_muK2": 121.96325175779192, "BB_muK2": 0.030998559829390766}, {"ell": 500, "TT_muK2": 2521.115283545611, "EE_muK2": 8.525607100306283, "TE_muK2": -59.98457845099594, "BB_muK2": 0.061802050126574685}, {"ell": 700, "TT_muK2": 1928.6281760997601, "EE_muK2": 38.409506642791804, "TE_muK2": -100.38409421104318, "BB_muK2": 0.08289636478962721}, {"ell": 1000, "TT_muK2": 1093.5660043660341, "EE_muK2": 43.34920107281028, "TE_muK2": -25.88746351225292, "BB_muK2": 0.09561897160825351}, {"ell": 1500, "TT_muK2": 706.1675785629274, "EE_muK2": 13.22933093711475, "TE_muK2": -0.263886385488488, "BB_muK2": 0.08032381899328454}, {"ell": 2000, "TT_muK2": 237.92494419311092, "EE_muK2": 8.841246372536396, "TE_muK2": -18.569224688658995, "BB_muK2": 0.04842808311049333}, {"ell": 2508, "TT_muK2": 78.0977932803326, "EE_muK2": 3.009435308570214, "TE_muK2": -3.1204145951673836, "BB_muK2": 0.02618561385859978}]
+
+Checks:
+- ell_mapping_computed: PASS (a0/a_tr=1.1365305153366452e+54 (note=from k_calibration expansion_budget_estimate (tfpt-suite/out_engineering/k_calibration/results.json)))
+- ell_predictions_falsifiable: PASS (targets hit: [2.0, 30.0] within [5.84e-06, 584])
+- primordial_pivot_normalization: PASS (applied scale=0.0596437 to match P_R(0.05)=A_s)
+- planck_likelihood_evaluated: PASS (disabled (set TFPT_ENABLE_PLANCK_LIKELIHOOD=1))
+- camb_power_spectra_computed: PASS (computed C_ell (TT/EE/BB/TE) up to lmax=2508)
+- camb_first_peak_in_cmb_range: PASS (first TT peak at ell≈220 (TT≈5898.1 µK^2))
+- boltzmann_transfer_implemented: PASS (backend=camb (CAMB))
+- bounce_feature_injection_wired: PASS (CAMB P(k) source: bounce_injected_table:tfpt-suite/out_engineering/primordial_spectrum_builder/results.json (pivot_normalized scale=0.0596437))

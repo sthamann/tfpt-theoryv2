@@ -1,0 +1,119 @@
+{
+  "checks": [
+    {
+      "check_id": "lambda_within_2sigma",
+      "detail": "z=-0.80886688386215815424120959193831144352504400306915601515778365039223348735049879",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "sin2_theta13_within_2sigma",
+      "detail": "z=1.5235704541773759531309840411189042189549082031757812647459316113233346178388335",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "cusp_set_matches",
+      "detail": "cusp_set=[Fraction(1, 3), Fraction(2, 3), Fraction(1, 1)]",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "flavor_pattern_audit",
+  "plot": {
+    "flavor_anchors_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/flavor_pattern_audit/flavor_anchors.png",
+    "mobius_ratios_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/flavor_pattern_audit/mobius_ratios.png"
+  },
+  "results": {
+    "cusp_set": [
+      "1/3",
+      "2/3",
+      "1"
+    ],
+    "delta_cp_deg": 70.40484143469463,
+    "delta_cp_rad": "1.2287962923799496748549662512123660249468066551438515074935778292191464721160134",
+    "delta_star": "0.60886199202947425455154874532829161131252129329996518994007516328088657620625911",
+    "lambda_pred": "0.22445997051897373245511597747748194821840297007791297390969270711773328122860166",
+    "lambda_ref": "0.22501",
+    "lambda_z": "-0.80886688386215815424120959193831144352504400306915601515778365039223348735049879",
+    "mobius_ratios": {
+      "m_b_over_m_s": 43.79405189623337,
+      "m_c_over_m_u": 486.9165313620135,
+      "m_mu_over_m_e": 197.84536441898265,
+      "m_s_over_m_d": 16.91911119689403,
+      "m_t_over_m_c": 133.01222546408377,
+      "m_tau_over_m_mu": 16.91911119689403
+    },
+    "plot": {
+      "flavor_anchors_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/flavor_pattern_audit/flavor_anchors.png",
+      "mobius_ratios_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/flavor_pattern_audit/mobius_ratios.png"
+    },
+    "references": {
+      "cabibbo_lambda": {
+        "dataset_id": "cabibbo_lambda_pdg2024",
+        "notes": "Cabibbo lambda ~ |Vus|.",
+        "sigma": 0.00068,
+        "source": "global_reference.json:observables.cabibbo_lambda",
+        "units": "dimensionless",
+        "value": 0.22501,
+        "version": "PDG 2024"
+      },
+      "pmns_sin2_theta13": {
+        "dataset_id": "pmns_sin2_theta13_nufit53_no",
+        "notes": "Normal ordering, PDG convention.",
+        "sigma": 0.00057,
+        "source": "pmns_reference.json:normal_ordering.sin2_theta13",
+        "units": "dimensionless",
+        "value": 0.02224,
+        "version": "NuFIT 5.3 (2024, NO)"
+      }
+    },
+    "sin2_theta13": "0.023108435158881104293284660903437775404804297675810195320905181018454300732168135",
+    "sin2_theta13_ref": "0.02224",
+    "sin2_theta13_z": "1.5235704541773759531309840411189042189549082031757812647459316113233346178388335",
+    "theta13_deg": 8.743693008411187
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given constants and reference tables.",
+    "formulas": [
+      "lambda = sqrt(varphi0) * (1 - varphi0/2)",
+      "delta_star = 3/5 + varphi0/6",
+      "delta_cp = pi * (1 - delta_star)",
+      "sin2_theta13 = varphi0 * exp(-5/6)",
+      "M_y(delta) = (y + delta)/(y - delta)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT constants (varphi0, delta_star)",
+      "CKM/PMNS reference tables",
+      "Mobius cusp set from SU(5) hypercharge"
+    ],
+    "maturity": null,
+    "module_id": "flavor_pattern_audit",
+    "name": "Flavor pattern audit (lambda, delta_star, delta_cp, PMNS theta13)",
+    "objective": [
+      "Make the flavor anchor formulas explicit and testable.",
+      "Expose Mobius ratio predictions in one place."
+    ],
+    "outputs": [
+      "lambda (Cabibbo) from varphi0",
+      "delta_star and delta_cp",
+      "PMNS sin^2 theta13 from varphi0",
+      "Mobius mass ratios for quark/lepton hierarchy"
+    ],
+    "question": "Do the compact flavor formulas reproduce the anchor observables?",
+    "references": [
+      "cabibbo_lambda",
+      "pmns_sin2_theta13"
+    ],
+    "validation": [
+      "lambda within 2 sigma of reference",
+      "sin2_theta13 within 2 sigma of NuFIT reference",
+      "cusp set equals {1, 1/3, 2/3}"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

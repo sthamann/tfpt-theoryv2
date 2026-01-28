@@ -1,0 +1,42 @@
+# YAML 1.1
+---
+Author: User
+Date: 2024
+Name: ToyU1
+Groups: {U1X: U1}
+
+Fermions: {
+    psi: {Gen: 1, Qnb: {U1X: 1}}
+}
+
+RealScalars: {
+}
+
+ComplexScalars: {
+    chi: {RealFields: [chiR, chiI], Norm: 1/sqrt(2), Qnb: {U1X: 1}}
+}
+
+Potential: {
+    
+    QuarticTerms: {
+        lam: (chibar chi)**2
+    }
+    
+}
+
+Substitutions: {
+    # Umbenennung der Eichkopplung
+    g_U1X: gX
+}
+
+Latex: {
+    # Teilchen
+    psi: \psi,
+    chi: \chi,
+    chiR: \chi_r,
+    chiI: \chi_i,
+    
+    # Kopplungen
+    gX: g_X,
+    lam: \lambda
+}

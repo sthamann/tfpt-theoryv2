@@ -1,0 +1,98 @@
+{
+  "checks": [
+    {
+      "check_id": "pq_block_stage_n",
+      "detail": "n=10 (claim_n=10)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "f_a_derived_not_quoted",
+      "detail": "f_a=88639886850.345536411516579916899051683004998407444291394776785532310383686342378 GeV (rel=0.00045019018448686694713972818170487226867944026460825502005401278002690390905618084)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "m_a_follows_from_f_a",
+      "detail": "m_a=65.1947598780054986022909602428842824900151699383980567149397550017003316598553 \u00b5eV (rel=0.012970165910588853360642638950967720478793815077657810984147840299880852390542259)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "axion_fa_derivation",
+  "plot": null,
+  "results": {
+    "block_factor": {
+      "definition": "zeta_B = (pi c3) * exp(-beta_B pi c3) * exp(-k_B/c3), beta_B=(8-r_B)/8, k_B=(3/2)I1",
+      "zeta_PQ": "0.00000039075418558239009963737352116767474045120302478478456812537025592244303833660202"
+    },
+    "claim": {
+      "block_stage_n": 10,
+      "f_a_GeV": "88600000000.0",
+      "m_a_micro_eV": "64.36"
+    },
+    "derived": {
+      "f_a_GeV": "88639886850.345536411516579916899051683004998407444291394776785532310383686342378",
+      "m_a_micro_eV": "65.1947598780054986022909602428842824900151699383980567149397550017003316598553"
+    },
+    "e8_ladder": {
+      "definition": "varphi_n = varphi0 * exp(-gamma0) * (D_n/D_1)^lambda for n>=1; D_n=60-2n, D_1=58",
+      "gamma0": "0.83333333333333333333333333333333333333333333333333333333333333333333333333333333",
+      "lambda": "0.58723319078783786839467151020185738380716231582658097939713798030003172011464798",
+      "varphi_n": "0.018578467641587450863773760800955177054464830864134683320776251457151566092090649"
+    },
+    "inputs": {
+      "Mpl_unreduced_GeV": 1.221e+19,
+      "axion_claim_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/axion_tfpt_v106.json",
+      "block_I1": 0.3333333333333333,
+      "block_rank_rB": 1.0,
+      "block_stage_n": 10
+    },
+    "publication_grade_gap": false,
+    "qcd_inputs": {
+      "f_pi_GeV": "0.09207",
+      "m_d_GeV": "0.00467",
+      "m_pi_GeV": "0.1349768",
+      "m_u_GeV": "0.00216"
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given the canonical TFPT inputs.",
+    "formulas": [
+      "varphi_n = varphi0 * exp(-gamma0) * (D_n/D_1)^lambda, D_n=60-2n",
+      "zeta_B = (pi c3) * exp(-beta_B pi c3) * exp(-k_B/c3), beta_B=(8-r_B)/8, k_B=(3/2)I1",
+      "f_a = zeta_PQ * M_Pl * varphi_10 (unreduced Planck mass)",
+      "m_a = (m_pi f_pi / f_a) * sqrt(m_u m_d / (m_u + m_d)^2)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT invariants: tfpt_suite/constants.py (c3, varphi0, gamma0, lambda)",
+      "axion claim: tfpt_suite/data/axion_tfpt_v106.json (block stage n=10, quoted f_a/m_a for cross-check)"
+    ],
+    "maturity": "derivation (deterministic; cross-checked against quoted benchmark)",
+    "module_id": "axion_fa_derivation",
+    "name": "Axion PQ block: derive f_a from E8 ladder + block constants",
+    "objective": [
+      "Compute f_a from the ladder/block rule at n=10 (no ad-hoc fit parameters).",
+      "Validate that the implied m_a matches the quoted TFPT benchmark."
+    ],
+    "outputs": [
+      "E8 ladder varphi_n at n=10",
+      "block factor zeta_PQ from (r_B, I1) and c3",
+      "derived f_a and implied m_a"
+    ],
+    "question": "Can the PQ breaking scale be derived from the E8 ladder + block constants without quoting f_a?",
+    "references": [
+      "tfpt-theory-fullv24.tex (Block constants definition; PQ block n=10)",
+      "tfpt_suite/data/axion_tfpt_v106.json (quoted benchmark for cross-check)"
+    ],
+    "validation": [
+      "f_a_derived_not_quoted: derived f_a matches the quoted TFPT benchmark within tolerance.",
+      "m_a_follows_from_f_a: derived m_a matches the quoted micro-eV value within tolerance."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

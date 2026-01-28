@@ -1,0 +1,16 @@
+Axion DM audit
+
+f_a_GeV = 88639886850.34554
+m_a_micro_eV = 65.1947598780055
+nu_GHz (reported) = 15.76402318010866
+nu_GHz (calc) = 15.76402318010866
+
+Omega_a_h2 = 0.12275084115028702 (ref=0.12)
+fraction_of_dm = 1.022923676252392
+theta_eff = 1.8137993642342178
+strings_domain_walls_factor = 2.3333333333333335
+scenario_id = post_inflation_theta_rms_with_strings_dw_factor
+
+Checks:
+- frequency_matches: PASS (nu_calc=15.76402318010866, nu_reported=15.76402318010866)
+- omega_a_near_ref: PASS (Omega_a_h2=0.12275084115028702)

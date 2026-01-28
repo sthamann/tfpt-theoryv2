@@ -1,0 +1,20 @@
+{
+  "note": "Threshold scales used by TFPT RG pipelines (mt→UV only policy). Values are taken from paper v1.06 / the E8Cascade_TFPT_G8_Enhanced_v2.yaml blueprint unless stated otherwise.",
+  "scheme": "MSbar",
+  "mu_uv_GeV": 1e16,
+  "thresholds_GeV": {
+    "MSigma": 1000.0,
+    "MG8": 18000000000.0,
+    "MNR1": 100000000000000.0,
+    "MNR2": 300000000000000.0,
+    "MNR3": 800000000000000.0,
+    "MPhi": 8.86e10
+  },
+  "notes": [
+    "In the mt→UV-only debug policy, thresholds below mt are not used.",
+    "G8 is implemented as a 1-loop Δb3=+2 patch above MG8 unless a dedicated PyR@TE model including G8 is used.",
+    "Right-handed neutrino thresholds (MNR1..3) are used for stepwise activation of Dirac Yukawa columns in the PMNS pipeline.",
+    "MPhi is set to the TFPT axion/PQ claim scale f_a≈8.86×10^10 GeV (see tfpt_suite/data/axion_tfpt_v106.json). If you need the legacy n=4 placeholder scale (~10^16 GeV), override MPhi explicitly."
+  ]
+}
+

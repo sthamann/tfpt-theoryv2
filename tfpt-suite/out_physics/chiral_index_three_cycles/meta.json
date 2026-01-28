@@ -1,0 +1,24 @@
+{
+  "config": {
+    "mp_dps": 80,
+    "output_dir": "tfpt-suite/out_physics",
+    "overwrite": true,
+    "plot": true,
+    "seed": 0,
+    "verification_mode": "physics"
+  },
+  "module": {
+    "id": "chiral_index_three_cycles",
+    "title": "Chiral index on orientable double cover (3 boundary cycles \u2192 3 families; Wilson-line phase atoms)"
+  },
+  "platform": {
+    "machine": "arm64",
+    "release": "25.1.0",
+    "system": "Darwin"
+  },
+  "python": {
+    "executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "version": "3.9.6 (default, Oct 17 2025, 17:15:53) \n[Clang 17.0.0 (clang-1700.4.4.1)]"
+  },
+  "timestamp_utc": "2026-01-28T06:20:00.143110+00:00"
+}

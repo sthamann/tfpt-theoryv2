@@ -1,0 +1,24 @@
+{
+  "config": {
+    "mp_dps": 80,
+    "output_dir": "tfpt-suite/out_engineering",
+    "overwrite": true,
+    "plot": true,
+    "seed": 0,
+    "verification_mode": "engineering"
+  },
+  "module": {
+    "id": "pmns_mechanism_bridge",
+    "title": "PMNS mechanism bridge (Z3-breaking angles \u2192 \u03ba(mt) \u2192 yN+MNR reconstruction)"
+  },
+  "platform": {
+    "machine": "arm64",
+    "release": "25.1.0",
+    "system": "Darwin"
+  },
+  "python": {
+    "executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "version": "3.9.6 (default, Oct 17 2025, 17:15:53) \n[Clang 17.0.0 (clang-1700.4.4.1)]"
+  },
+  "timestamp_utc": "2026-01-27T10:05:18.263165+00:00"
+}

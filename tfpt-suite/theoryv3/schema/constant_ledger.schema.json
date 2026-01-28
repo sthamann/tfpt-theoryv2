@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TFPT constant ledger entry (v1)",
+  "type": "object",
+  "required": [
+    "name",
+    "definition",
+    "primitives",
+    "fixed_point",
+    "sensitivity",
+    "value_pred",
+    "status"
+  ],
+  "properties": {
+    "name": { "type": "string" },
+    "label": { "type": "string" },
+    "definition": { "type": "string" },
+    "formula_text": { "type": ["string", "null"] },
+    "primitives": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "fixed_point": { "type": "boolean" },
+    "sensitivity": {
+      "type": "object",
+      "required": ["mode"],
+      "properties": {
+        "mode": { "type": "string" },
+        "Sc3": { "type": ["number", "null"] },
+        "Sphi0": { "type": ["number", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "value_pred": { "type": ["number", "null"] },
+    "value_ref": { "type": ["number", "null"] },
+    "delta_ppm": { "type": ["number", "null"] },
+    "units": { "type": ["string", "null"] },
+    "unit_system": { "type": ["string", "null"] },
+    "status": { "type": "string" },
+    "lineage": { "type": ["string", "null"] },
+    "proof_ref": { "type": ["string", "null"] },
+    "source": { "type": ["string", "null"] },
+    "latex_snippet": { "type": ["string", "null"] },
+    "reference_info": { "type": ["object", "null"] },
+    "approximation": { "type": ["string", "null"] },
+    "reference_role": { "type": ["string", "null"] },
+    "source_module_id": { "type": ["string", "null"] },
+    "source_artifact": { "type": ["string", "null"] },
+    "source_json_pointer": { "type": ["string", "null"] }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,21 @@
+Yukawa index mapping audit
+
+c3/varphi0 = 0.74830308356254779855425709117213900105867537623583363061344126774214272466442152
+basis (I = dim(SU3)*dim(SU2)*Y^2): ['Q=0.1666666666666666533333333333333336', 'L=0.5', 'u_c=1.33333333333333306666666666666668', 'd_c=0.33333333333333326666666666666667', 'e_c=1.0']
+
+Mappings:
+- m_b_over_m_s: q_target=2.8333333333333335, combo={'Q': 2, 'L': 5}, rel_error=0
+- m_t_over_m_c: q_target=3.6666666666666665, combo={'d_c': 2, 'e_c': 3}, rel_error=0
+- m_c_over_m_u: q_target=4.625, combo={'Q': 2, 'u_c': 1, 'd_c': 9}, rel_error=0.009009
+- m_mu_over_m_e: q_target=3.9583333333333335, combo={'d_c': 9, 'e_c': 1}, rel_error=0.01053
+- m_s_over_m_d: q_target=2.125, combo={'L': 1, 'd_c': 5}, rel_error=0.01961
+- m_tau_over_m_mu: q_target=2.125, combo={'L': 1, 'd_c': 5}, rel_error=0.01961
+
+Checks:
+- mapping_within_tol: PASS (max_rel_error=0.01961)
+- ratio_needs_rg:m_b_over_m_s: WARN (scheme=MSbar, scale=n/a)
+- ratio_needs_rg:m_t_over_m_c: WARN (scheme=MSbar, scale=n/a)
+- ratio_needs_rg:m_c_over_m_u: WARN (scheme=MSbar, scale=n/a)
+- ratio_direct:m_mu_over_m_e: PASS (scale-independent reference)
+- ratio_needs_rg:m_s_over_m_d: WARN (scheme=MSbar, scale=n/a)
+- ratio_direct:m_tau_over_m_mu: PASS (scale-independent reference)

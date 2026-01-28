@@ -1,0 +1,9 @@
+Observable,Theory,Experiment,Units,Agreement,Status
+Fine structure constant α,0.007239692,0.007297353,1,0.8%,⚠️ Good
+GUT unification scale,4.42e+15,(2-3)×10¹⁶,GeV,Factor ~5,⚠️ Order OK
+Neutrino mass (atmospheric),0.005,~0.05,eV,Factor ~10,✓ Order OK
+QCD axion mass,0.0,1-1000,μeV,In window,✓ Good
+Axion decay constant f_a,5.25e+14,10¹²-10¹⁶,GeV,In range,✓ Good
+Proton lifetime,10^-23.3,> 10³⁴,years,Too short,❌ Issue
+g_unified at M_GUT,0.571,~0.5-0.7,1,Perfect,✓ Excellent
+TeV scale (n=6),1.50e+13,~10¹³,GeV,Good,✓ Good

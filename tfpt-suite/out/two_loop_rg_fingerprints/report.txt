@@ -1,0 +1,42 @@
+TFPT two-loop RG fingerprints (α3 scale matching)
+
+Conventions: hypercharge Q=T3+Y (SM); α3=g3^2/(4π), αY=g′^2/(4π), α1(GUT)=(5/3)αY.
+
+Input boundary: μ0 = 91.1876 GeV (MZ), log10(μ0/GeV) = 1.95994, αs(MZ) = 0.1179
+Initial couplings @ μ0: g′=0.357417, g2=0.651724, g3=1.2172  (g1_GUT=0.461423)
+
+Source CSV: tfpt-suite/out/two_loop_rg_fingerprints/gauge_couplings.csv  (sha256=55a2cf8393d1108dde44238d59bdfc608cf9a8e5bbcd08a98337d7adea487091)
+CSV columns: mu_GeV,log10_mu,alphaY,alpha1_GUT,alpha2,alpha3,yt,yb,ytau,lambdaH
+Model expected: E8Cascade2LoopGravityV2
+PyR@TE3 PythonOutput: Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput
+PyR@TE3 module file: Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput/E8Cascade2LoopGravityV2.py  (sha256=36291dad68a103a1963d4497900fe8fb2ac0964c921d3278860d82a7ba01b0cd)
+PyR@TE3 YAML source: Pyrate3/models/E8Cascade 2Loop Gravity.yaml  (sha256=cc8f061af5e64dc6e22baba2eb9043bdcda493c200c415fd1926501f888195ca)
+Module config: tfpt-suite/tfpt_suite/data/two_loop_rg_fingerprints.json
+
+PyR@TE solve grid: Npoints=171, tmax=19
+
+Gravity α^3 patch (runner-level, optional):
+- enabled = False
+- kappa_vector = [0.0, 0.0, 0.0]
+- c3 = 0.039788735773 (TFPT constant)
+- alpha_definition_for_U1 = alphaY
+
+TFPT targets (paper v2.5):
+- c3      = 0.039788735773
+- varphi0 = 0.0531719521768
+
+Fingerprint evaluations:
+- α3(1 PeV = 1e6 GeV) = 0.052437141539
+  rel dev vs varphi0  = 1.381952%
+
+Interpolated crossing scales (linear in log10 μ):
+- α3(μ)=varphi0: μ ≈ 792006 GeV  (α3=0.053172, rel dev=0.000e+00)
+- α3(μ)=c3:      μ ≈ 2.1603e+08 GeV  (α3=0.0397887, rel dev=0.000e+00)
+
+Checks:
+- table_alpha3_monotone_decreasing: PASS (α3 decreases with μ across table (min=0.018985, max=0.1179))
+- alpha3_target_in_range_varphi0: PASS (varphi0=0.053172 within α3 range [0.018985, 0.1179])
+- alpha3_target_in_range_c3: PASS (c3=0.0397887 within α3 range [0.018985, 0.1179])
+- alpha3_1PeV_close_to_varphi0: PASS (α3(1 PeV)=0.0524371, varphi0=0.053172, rel dev=1.382%)
+- g1_gut_over_gY_convention: PASS (g1_GUT/gY=1.29099444873581 vs sqrt(5/3)=1.29099444873581)
+- alpha1_gut_over_alphaY_ratio_global: PASS (max |α1_GUT/αY - 5/3| across table = 6.661e-16)

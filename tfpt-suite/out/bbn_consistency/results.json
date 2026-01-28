@@ -1,0 +1,109 @@
+{
+  "checks": [
+    {
+      "check_id": "eta10_computed",
+      "detail": "eta10\u22486.13 from \u03a9_b h^2=0.02237",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "neff_used",
+      "detail": "N_eff=3.046 (bbn_neff_sanity marker if available)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "Yp_within_2sigma",
+      "detail": "|z|=0.639 (pred=0.24730342879999997, mean=0.245, sigma_eff\u22480.00361)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "D_over_H_within_2sigma",
+      "detail": "|z|=0.678 (pred=2.456195272160699e-05, mean=2.527e-05, sigma_eff\u22481.04e-06)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "Neff_within_2sigma",
+      "detail": "|z|=0 (pred=3.046, mean=3.046, sigma_eff\u22480.2)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "light_elements_match",
+      "detail": "Yp, D/H, N_eff all within the declared proxy tolerances",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "bbn_consistency",
+  "plot": null,
+  "results": {
+    "derived": {
+      "eta10": 6.127142999999999
+    },
+    "inputs": {
+      "N_eff": 3.046,
+      "bbn_reference_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/bbn_reference.json",
+      "global_reference_minimal_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json",
+      "omega_b_h2": {
+        "mean": 0.02237,
+        "sigma": 0.00015
+      }
+    },
+    "mode": "engineering",
+    "predictions": {
+      "D_over_H": 2.456195272160699e-05,
+      "Y_p": 0.24730342879999997
+    },
+    "theory_floors": {
+      "D_over_H": 1e-06,
+      "N_eff": 0.0,
+      "Y_p": 0.002
+    },
+    "z_scores": {
+      "D_over_H": -0.6781862944241234,
+      "N_eff": 0.0,
+      "Y_p": 0.6388562036754162
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given inputs.",
+    "formulas": [
+      "\\eta_{10} \\approx 273.9\\,\\Omega_b h^2",
+      "Y_p \\approx 0.2471 + 0.0016(\\eta_{10}-6) + 0.013(\\Delta N_{\\rm eff}) \\;\\; (\\text{proxy fit})",
+      "(D/H) \\approx 2.54\\times10^{-5}\\,(6/\\eta_{10})^{1.6}\\,(1+0.135\\Delta N_{\\rm eff}) \\;\\; (\\text{proxy fit})"
+    ],
+    "gaps": [
+      "A publication-grade BBN module would integrate weak rates and the full nuclear network and compare to a dedicated likelihood for (D/H, Y_p, N_eff)."
+    ],
+    "inputs": [
+      "Planck reference: tfpt_suite/data/global_reference_minimal.json (\u03a9_b h^2)",
+      "BBN reference: tfpt_suite/data/bbn_reference.json (Y_p, D/H, N_eff anchor values)",
+      "(optional) thermodynamic ledger: bbn_neff_sanity (g_*(T), N_eff marker)"
+    ],
+    "maturity": null,
+    "module_id": "bbn_consistency",
+    "name": "BBN consistency (light elements; engineering-level fit + reference-table check)",
+    "objective": [
+      "Close the 'BBN missing' placeholder by providing an explicit, auditable light-element consistency module.",
+      "Keep publication-grade scope explicit: this is a proxy-fit, not a full nuclear network."
+    ],
+    "outputs": [
+      "\u03b710 from \u03a9_b h^2",
+      "engineering-level BBN fit predictions for (Y_p, D/H) and a reference-table z-score ledger",
+      "light_elements_match gate (PASS/WARN/FAIL by mode)"
+    ],
+    "question": "Are BBN light-element abundances consistent with the declared \u03a9_b h^2 and N_eff under a transparent proxy model?",
+    "references": [],
+    "validation": [
+      "Computes finite \u03b710, Y_p, and D/H under the declared reference inputs.",
+      "Provides a falsifiable reference-table check (with an explicit theory-floor for the proxy-fit uncertainty)."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

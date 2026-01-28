@@ -1,0 +1,193 @@
+---
+Author: "E8 Cascade TFPT v2.0 – G8 Adjoint Enhanced"
+Date: 2025-08-28
+Name: E8CascadeTFPTG8
+# ------------------------------------------------------------
+#  ENHANCED E8 CASCADE MODEL WITH G8 ADJOINT FERMION
+#  
+#  KEY INSIGHT: TFPT fingerprints come from SM 1-loop already!
+#  φ₀ and c₃ are ~SM level, unification gap at ~2×10¹⁵ GeV needs color
+#
+#  STRATEGY: G8 Majorana Adjoint at ~1.8×10¹⁰ GeV
+#  - Δb₃ = +2 lifts α₃ to unification level
+#  - Preserves fingerprints below 10⁹ GeV  
+#  - Theory-motivated E8 cascade structure
+# ------------------------------------------------------------
+Settings:
+  LoopOrder: 3
+  ExportBetaFunctions: true
+
+# ------------------------------------------------------------
+# ENHANCED E8 CASCADE THRESHOLDS
+# φ_n ladder + G8 color unification bridge
+# ------------------------------------------------------------
+Thresholds:
+  - Scale: MSigma     # n=6 SU(2) threshold ~ 1 TeV
+    Fields: [SigmaF]
+  
+  - Scale: MG8        # NEW: Color adjoint bridge ~ 1.8×10¹⁰ GeV  
+    Fields: [G8]
+  
+  - Scale: MNR1       # n=5 Seesaw thresholds
+    Fields: [NR1]
+  - Scale: MNR2  
+    Fields: [NR2]
+  - Scale: MNR3
+    Fields: [NR3]
+  
+  - Scale: MPhi       # n=4 PQ threshold ~ 10¹⁶ GeV
+    Fields: [phiR, phiI]
+
+# ------------------------------------------------------------
+Groups: {U1Y: U1, SU2L: SU2, SU3c: SU3}
+
+# ------------------------------------------------------------
+# ENHANCED BSM FIELDS - Theory Compliant
+# ------------------------------------------------------------
+Fermions:
+  # Standard Model (unchanged)
+  Q   : {Gen: 3, Qnb: {U1Y:  1/6, SU2L: 2, SU3c: 3}}
+  L   : {Gen: 3, Qnb: {U1Y: -1/2, SU2L: 2}}
+  uR  : {Gen: 3, Qnb: {U1Y:  2/3, SU3c: 3}}
+  dR  : {Gen: 3, Qnb: {U1Y: -1/3, SU3c: 3}}
+  eR  : {Gen: 3, Qnb: {U1Y: -1}}
+  
+  # SU(2)_L Triplet (Type III Seesaw)
+  # EXPLICIT: Weyl triplet, Δb₂ = +4/3  
+  SigmaF : {Gen: 1, Qnb: {U1Y: 0, SU2L: 3, SU3c: 1}}
+  
+  # 🌟 NEW: G8 Adjoint Majorana Fermion (UNIFICATION BRIDGE)
+  # SU(3)_C adjoint, gauge singlet otherwise
+  # Δb₃ = +2 (Majorana adjoint contribution)
+  G8 : {Gen: 1, Qnb: {U1Y: 0, SU2L: 1, SU3c: 8}}
+  
+  # Right-handed Neutrinos (Gauge singlets - NO β contributions)
+  NR1 : {Gen: 1, Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}
+  NR2 : {Gen: 1, Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}
+  NR3 : {Gen: 1, Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}
+
+# ------------------------------------------------------------
+RealScalars:
+  # PQ Scalars (Gauge singlets - NO β contributions)
+  phiR : {Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}
+  phiI : {Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}}
+  
+  # Topological spurion (external)
+  R3   : {Qnb: {U1Y: 0, SU2L: 1, SU3c: 1}, External: True}
+
+ComplexScalars:
+  H : {RealFields: [Pi, Sigma], Norm: 1/sqrt(2), Qnb: {U1Y: 1/2, SU2L: 2}}
+
+# ------------------------------------------------------------
+Potential:
+  Definitions:
+    Htilde[i]: Eps[i,j]*Hbar[j]
+
+  Yukawas:
+    # SM Yukawa couplings (for 2-loop traces)
+    Yu: Qbar[i,a] Htilde[i] uR[a]
+    Yd: Qbar[i,a] H[i]      dR[a]
+    Ye: Lbar[i]   H[i]      eR
+    
+    # Type III Seesaw: L·Sigma·H (affects 2-loop gauge βs)
+    # ySig: Lbar[i] SigmaF[i,j] H[j]   # Disabled for PyR@TE export (indexing); kept in solver traces
+    
+    # RH neutrino Yukawa couplings
+    yN1: Lbar[i] Htilde[i] NR1
+    yN2: Lbar[i] Htilde[i] NR2  
+    yN3: Lbar[i] Htilde[i] NR3
+
+  QuarticTerms:
+    lambda   : (Hbar[i] H[i])**2
+    lPhi     : (phiR**2 + phiI**2)**2
+    lHphi    : (Hbar[i] H[i])*(phiR**2 + phiI**2)
+
+  TrilinearTerms:
+    cR3      : R3 * (Hbar[i] H[i])
+
+  ScalarMasses:
+    mu2      : -Hbar[i] H[i]
+    MPhi     : phiR*phiR + phiI*phiI
+
+# ------------------------------------------------------------
+Vevs:
+  vSM : Pi[2]      # 246 GeV
+  vPQ : phiR       # PQ scale
+
+# ------------------------------------------------------------
+# ENHANCED PARAMETERS - G8 Unification Bridge
+# ------------------------------------------------------------
+Parameters:
+  # Fundamental scales
+  - {name: MPl,      value: 1.221e+19}    # Planck scale
+  
+  # E8 Cascade Thresholds (GeV)
+  - {name: MSigma,   value: 1.0e+3}       # SU(2) triplet ~ 1 TeV
+  - {name: MG8,      value: 1.8e+10}      # 🌟 G8 adjoint bridge ~ 1.8×10¹⁰ GeV
+  - {name: MNR1,     value: 1.0e+14}      # Seesaw scale 1
+  - {name: MNR2,     value: 3.0e+14}      # Seesaw scale 2  
+  - {name: MNR3,     value: 8.0e+14}      # Seesaw scale 3
+  - {name: MPhi,     value: 1.0e+16}      # PQ scale
+  
+  # TFPT Fixed Points (analytical)
+  - {name: c3,       value: 0.039788735772973836}    # = 1/(8π)
+  - {name: phi0,     value: 0.053171952176845526}    # = 1/(6π) + 3/(256π⁴)
+  
+  # Gauge couplings at M_Z (SM normalization → GUT conversion in solver)
+  - {name: g1,       value: 0.357}       # U(1)_Y SM norm
+  - {name: g2,       value: 0.652}       # SU(2)_L  
+  - {name: g3,       value: 1.221}       # SU(3)_C
+  
+  # Yukawa couplings (3rd generation for 2-loop traces)
+  - {name: Yu33,     value: 0.95}        # Top Yukawa (dominant)
+  - {name: Yd33,     value: 0.024}       # Bottom Yukawa
+  - {name: Ye33,     value: 0.010}       # Tau Yukawa
+  
+  # Type III Seesaw Yukawa
+  - {name: ySig,     value: 0.50}        # L·Sigma·H coupling
+  
+  # RH neutrino Yukawa couplings
+  - {name: yN1,      value: 0.70}
+  - {name: yN2,      value: 0.70}
+  - {name: yN3,      value: 0.70}
+  
+  # Scalar quartic couplings
+  - {name: lambda,   value: 0.130}       # Higgs self-coupling
+  - {name: lPhi,     value: 0.10}        # PQ self-coupling
+  - {name: lHphi,    value: 0.01}        # Higgs-PQ mixing
+  
+  # Topological coupling (3-loop spurion)
+  - {name: cR3,      value: 0.01}        # α³ correction strength
+
+Substitutions: {
+  g_U1Y  : g1,
+  g_SU2L : g2,
+  g_SU3c : g3
+}
+
+# ------------------------------------------------------------
+# THEORY NOTES:
+#
+# 🎯 STRATEGY SUMMARY:
+# 1. TFPT fingerprints (φ₀, c₃) emerge from SM 1-loop - NO BSM tuning needed
+# 2. Unification gap at ~2×10¹⁵ GeV addressed by G8 adjoint at ~1.8×10¹⁰ GeV  
+# 3. Theory-compliant: no manual β coefficient tuning
+# 4. Full 2-loop including Yukawa traces (top-dominated)
+# 5. Event-driven threshold integration for numerical stability
+#
+# 🔧 FIELD CONTRIBUTIONS (1-loop β coefficients):
+# - SigmaF (SU(2) triplet):   Δb₂ = +4/3
+# - G8 (SU(3) adjoint):       Δb₃ = +2  
+# - NR1,2,3 (singlets):       Δbᵢ = 0
+# - PQ scalars (singlets):    Δbᵢ = 0
+#
+# 🎲 G8 UNIFICATION MECHANISM:
+# At μ* ~ 2.18×10¹⁵ GeV: α₁ = α₂ ≈ 0.0256, α₃ ≈ 0.0234 (8.7% low)  
+# Correct relation above MG8:
+#   Δ(α₃⁻¹)(μ) = -(Δb₃)/(2π) · ln(μ/MG8)  with Δb₃ = +2 → Δ(α₃⁻¹) = -(1/π) ln(μ/MG8)
+# Choose MG8 ≈ 1.8×10¹⁰ GeV → α₃(μ*) matches α₁,₂(μ*) 
+#
+# ✅ FINGERPRINT PRESERVATION:
+# G8 threshold >> 10⁹ GeV >> fingerprint scales (10⁶, 2.5×10⁸ GeV)
+# → φ₀, c₃ targets unaffected by G8
+# ------------------------------------------------------------

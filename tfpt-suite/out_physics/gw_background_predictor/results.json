@@ -1,0 +1,99 @@
+{
+  "checks": [
+    {
+      "check_id": "pta_cmb_bounds",
+      "detail": "Omega_gw\u22482.97e-17 < PTA bound~1e-09 (baseline, scale-invariant)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "ligo_bounds",
+      "detail": "Omega_gw\u22482.97e-17 < LIGO bound~1e-08 (baseline, scale-invariant)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "bbn_integrated_bound_proxy",
+      "detail": "Omega_gw\u22482.97e-17 << BBN integral bound~1e-06 (proxy)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "gw_background_predictor",
+  "plot": null,
+  "results": {
+    "baseline": {
+      "A_s_ref": 2.0989031673191437e-09,
+      "A_t": 7.757609073506583e-12,
+      "N": 56.98005698005695,
+      "Omega_r0": 9.2e-05,
+      "n_s_ref": 0.9649,
+      "r": 0.003696030000000004
+    },
+    "bounds_proxy": {
+      "bbn_integral": 1e-06,
+      "ligo": 1e-08,
+      "pta": 1e-09
+    },
+    "frequency_table": [
+      {
+        "Omega_gw": 2.97375014484419e-17,
+        "f_Hz": 7.731438287422854e-17,
+        "label": "pivot_k=0.05/Mpc"
+      },
+      {
+        "Omega_gw": 2.97375014484419e-17,
+        "f_Hz": 3.168808781402895e-08,
+        "label": "PTA ~ 1/yr"
+      },
+      {
+        "Omega_gw": 2.97375014484419e-17,
+        "f_Hz": 100.0,
+        "label": "LIGO ~ 100 Hz"
+      }
+    ],
+    "inputs": {
+      "global_reference_minimal_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json",
+      "k_calibration_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json"
+    },
+    "mode": "physics",
+    "omega_gw_baseline": 2.97375014484419e-17
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given input tables.",
+    "formulas": [
+      "\\Omega_{\\rm gw}(f) = \\frac{1}{\\rho_c}\\frac{d\\rho_{\\rm gw}}{d\\ln f}",
+      "k \\leftrightarrow f \\;\\; \\text{via transfer function + expansion history}",
+      "\\Omega_{\\rm gw,0} \\approx (\\Omega_{r,0}/24)\\, r A_s \\;\\; (\\text{radiation-era re-entry; scale-invariant baseline})"
+    ],
+    "gaps": [
+      "A publication-grade module should include transfer functions (bounce + reheating), k\u2192f mapping through the full history, and a proper likelihood against PTA/LIGO/CMB datasets."
+    ],
+    "inputs": [
+      "cosmology snapshot: tfpt_suite/data/k_calibration.json (\u03a9_r,0 used for \u03a9_gw normalization)",
+      "Planck minimal reference: tfpt_suite/data/global_reference_minimal.json (n_s, ln10(10^{10}A_s))",
+      "(optional) bounce transfer diagnostics: bounce_perturbations (future refinement)"
+    ],
+    "maturity": null,
+    "module_id": "gw_background_predictor",
+    "name": "GW background predictor (\u2126_gw(f); scale-invariant Starobinsky baseline + bounds ledger)",
+    "objective": [
+      "Provide a falsifiable \u03a9_gw(f) baseline beyond the bounds-only placeholder module."
+    ],
+    "outputs": [
+      "Starobinsky r(N) baseline and inferred tensor amplitude A_t=r\u00b7A_s at pivot",
+      "scale-invariant \u03a9_gw,0 estimate and a small frequency table (CMB pivot / PTA / LIGO)",
+      "bounds ledger (PTA/LIGO/BBN-style order-of-magnitude checks)"
+    ],
+    "question": "Is a full stochastic GW background prediction \u2126_gw(f) implemented and compared to PTA/LIGO/CMB bounds?",
+    "references": [],
+    "validation": [
+      "Produces a deterministic baseline \u03a9_gw(f) estimate from Starobinsky r and the cosmology snapshot.",
+      "Emits a PASS/FAIL ledger against conservative PTA/LIGO/BBN bounds (engineering-level; update with a full likelihood when needed)."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

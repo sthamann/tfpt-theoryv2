@@ -1,0 +1,266 @@
+{
+  "checks": [
+    {
+      "check_id": "index_is_integer",
+      "detail": "IndD=3 from nu=(nu1,nu2,nuT)=(1,1,1)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "minimal_flux_gives_three_families",
+      "detail": "nu=(1,1,1) => IndD=3 families",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "wilson_line_phase_atoms_nontrivial",
+      "detail": "distinct theta/pi atoms (mod 2): ['0', '1/3', '1', '4/3']",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "topology_to_cp_phase_map",
+      "detail": "Wilson-line phase atoms are provided here; the shipped finite \u03b4/\u03b4_CP candidate map is implemented in `topology_phase_map` (operator-level derivation remains future work).",
+      "passed": true,
+      "severity": "INFO"
+    }
+  ],
+  "module_id": "chiral_index_three_cycles",
+  "plot": null,
+  "results": {
+    "config_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/chiral_index_three_cycles.json",
+    "fluxes": {
+      "nu1": 1,
+      "nu2": 1,
+      "nuT": 1
+    },
+    "gauss_bonnet": {
+      "cycles": [
+        "C1",
+        "C2",
+        "CT"
+      ],
+      "total_boundary_curvature": "6\u03c0 (2\u03c0+2\u03c0+2\u03c0)"
+    },
+    "index": {
+      "IndD": 3,
+      "interpretation": "family number under the Appendix J sketch"
+    },
+    "wilson_line_phase_atoms": {
+      "atoms_theta_over_pi_mod2": [
+        "0",
+        "1/3",
+        "1",
+        "4/3"
+      ],
+      "example_charges_one_generation": [
+        {
+          "Y": "1/6",
+          "label": "Q_L (SU2 doublet)"
+        },
+        {
+          "Y": "2/3",
+          "label": "u_R"
+        },
+        {
+          "Y": "-1/3",
+          "label": "d_R"
+        },
+        {
+          "Y": "-1/2",
+          "label": "L_L (lepton doublet)"
+        },
+        {
+          "Y": "-1",
+          "label": "e_R"
+        },
+        {
+          "Y": "0",
+          "label": "nu_R (optional)"
+        }
+      ],
+      "per_charge_cycles": [
+        {
+          "Y": "1/6",
+          "cycle": "C1",
+          "label": "Q_L (SU2 doublet)",
+          "nu": 1,
+          "theta_over_pi": "0.33333333333333333333333333333333333333333333333333333333333333333333333333333333"
+        },
+        {
+          "Y": "1/6",
+          "cycle": "C2",
+          "label": "Q_L (SU2 doublet)",
+          "nu": 1,
+          "theta_over_pi": "0.33333333333333333333333333333333333333333333333333333333333333333333333333333333"
+        },
+        {
+          "Y": "1/6",
+          "cycle": "CT",
+          "label": "Q_L (SU2 doublet)",
+          "nu": 1,
+          "theta_over_pi": "0.33333333333333333333333333333333333333333333333333333333333333333333333333333333"
+        },
+        {
+          "Y": "2/3",
+          "cycle": "C1",
+          "label": "u_R",
+          "nu": 1,
+          "theta_over_pi": "1.3333333333333333333333333333333333333333333333333333333333333333333333333333333"
+        },
+        {
+          "Y": "2/3",
+          "cycle": "C2",
+          "label": "u_R",
+          "nu": 1,
+          "theta_over_pi": "1.3333333333333333333333333333333333333333333333333333333333333333333333333333333"
+        },
+        {
+          "Y": "2/3",
+          "cycle": "CT",
+          "label": "u_R",
+          "nu": 1,
+          "theta_over_pi": "1.3333333333333333333333333333333333333333333333333333333333333333333333333333333"
+        },
+        {
+          "Y": "-1/3",
+          "cycle": "C1",
+          "label": "d_R",
+          "nu": 1,
+          "theta_over_pi": "1.3333333333333333333333333333333333333333333333333333333333333333333333333333333"
+        },
+        {
+          "Y": "-1/3",
+          "cycle": "C2",
+          "label": "d_R",
+          "nu": 1,
+          "theta_over_pi": "1.3333333333333333333333333333333333333333333333333333333333333333333333333333333"
+        },
+        {
+          "Y": "-1/3",
+          "cycle": "CT",
+          "label": "d_R",
+          "nu": 1,
+          "theta_over_pi": "1.3333333333333333333333333333333333333333333333333333333333333333333333333333333"
+        },
+        {
+          "Y": "-1/2",
+          "cycle": "C1",
+          "label": "L_L (lepton doublet)",
+          "nu": 1,
+          "theta_over_pi": "1.0"
+        },
+        {
+          "Y": "-1/2",
+          "cycle": "C2",
+          "label": "L_L (lepton doublet)",
+          "nu": 1,
+          "theta_over_pi": "1.0"
+        },
+        {
+          "Y": "-1/2",
+          "cycle": "CT",
+          "label": "L_L (lepton doublet)",
+          "nu": 1,
+          "theta_over_pi": "1.0"
+        },
+        {
+          "Y": "-1",
+          "cycle": "C1",
+          "label": "e_R",
+          "nu": 1,
+          "theta_over_pi": "0.0"
+        },
+        {
+          "Y": "-1",
+          "cycle": "C2",
+          "label": "e_R",
+          "nu": 1,
+          "theta_over_pi": "0.0"
+        },
+        {
+          "Y": "-1",
+          "cycle": "CT",
+          "label": "e_R",
+          "nu": 1,
+          "theta_over_pi": "0.0"
+        },
+        {
+          "Y": "0",
+          "cycle": "C1",
+          "label": "nu_R (optional)",
+          "nu": 1,
+          "theta_over_pi": "0.0"
+        },
+        {
+          "Y": "0",
+          "cycle": "C2",
+          "label": "nu_R (optional)",
+          "nu": 1,
+          "theta_over_pi": "0.0"
+        },
+        {
+          "Y": "0",
+          "cycle": "CT",
+          "label": "nu_R (optional)",
+          "nu": 1,
+          "theta_over_pi": "0.0"
+        }
+      ],
+      "u1_convention": {
+        "definition": "Q = T3 + Y (SM convention; NOT GUT-normalized g1_GUT)",
+        "name": "SM hypercharge Y",
+        "wilson_line_holonomy_model": "For a U(1) connection A with \u222e_Ci A = 2\u03c0 \u03bdi, a field of charge Y picks up phase exp(i\u00b7Y\u00b7\u222eA) = exp(i\u00b72\u03c0\u00b7Y\u00b7\u03bdi)."
+      }
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [
+      "Use the schematic index relation IndD = \u03bd1+\u03bd2+\u03bdT as stated in paper_v1_06_01_09_2025.tex Appendix J.",
+      "Treat Wilson-line holonomies for U(1)_Y as exp(i\u00b72\u03c0\u00b7Y\u00b7\u03bdi) with \u222eA=2\u03c0\u03bdi.",
+      "This module exposes Wilson-line phase atoms as a docking point. The discrete \u03b4/\u03b4_CP candidate map is implemented in `topology_phase_map`; a publication-grade operator-level derivation remains future work."
+    ],
+    "determinism": "Deterministic given the JSON config and mpmath precision.",
+    "formulas": [
+      "Ind D_(M~) = (1/2\u03c0) \u222b_{M~} F = \u03bd1 + \u03bd2 + \u03bdT  (Appendix J sketch)",
+      "Gauss\u2013Bonnet on orientable double cover with seam: K_total = 2\u03c0+2\u03c0+2\u03c0 = 6\u03c0  (Appendix D/J sketch)",
+      "U(1) Wilson line: \u222e_Ci A = 2\u03c0 \u03bdi \u21d2 phase for charge Y is exp(i\u00b7Y\u00b7\u222eA)=exp(i\u00b72\u03c0\u00b7Y\u00b7\u03bdi)"
+    ],
+    "gaps": [
+      "Publication-grade operator/holonomy-level derivation of topology\u2192(\u03b4, \u03b4_CP) remains open (beyond the shipped finite candidate map).",
+      "Enforce a unique, mechanism-derived selection rule for \u03b4/\u03b4_CP (beyond finite candidate enumeration + downstream \u03c7\u00b2 gates)."
+    ],
+    "inputs": [
+      "configuration: tfpt_suite/data/chiral_index_three_cycles.json (fluxes \u03bd1,\u03bd2,\u03bdT and example hypercharges)",
+      "theory reference: paper_v1_06_01_09_2025.tex Appendix J (index theorem sketch + Wilson lines)"
+    ],
+    "maturity": "mechanism scaffold (topology\u2192family number; phase docking point; not yet a full flavor derivation)",
+    "module_id": "chiral_index_three_cycles",
+    "name": "Chiral index on orientable double cover (3 boundary cycles \u2192 3 families; Wilson-line phase atoms)",
+    "objective": [
+      "Make the Appendix J mechanism audit-able: IndD=3 from the minimal integer flux choice.",
+      "Provide a concrete, discrete 'phase atom' set from U(1) Wilson lines as a docking point for a future topology\u2192CP-phase map."
+    ],
+    "outputs": [
+      "index IndD = \u03bd1 + \u03bd2 + \u03bdT (family number under the minimal flux choice)",
+      "Gauss\u2013Bonnet boundary-cycle bookkeeping: 2\u03c0 + 2\u03c0 + 2\u03c0 = 6\u03c0 (two physical boundaries + seam \u0393)",
+      "discrete U(1) Wilson-line phase atoms exp(i\u00b72\u03c0\u00b7Y\u00b7\u03bdi) for representative SM hypercharges"
+    ],
+    "question": "Do three boundary cycles (two physical + seam \u0393) naturally yield three chiral families via an index theorem, and do Wilson lines along these cycles provide a discrete phase source?",
+    "references": [
+      "paper_v1_06_01_09_2025.tex Appendix D/J (6\u03c0 seam + index sketch)",
+      "update_tfptv1_07sm.tex (Z3 flavor architecture and phase conventions)"
+    ],
+    "validation": [
+      "index is integer and reproduces 3 families for the minimal flux choice (\u03bd1,\u03bd2,\u03bdT)=(1,1,1)",
+      "phase-atom set is nontrivial for fractional hypercharges"
+    ],
+    "what_was_done": [
+      "Parsed a small explicit config (\u03bd1,\u03bd2,\u03bdT and example SM hypercharges).",
+      "Computed IndD and the resulting family count for the default flux choice.",
+      "Computed Wilson-line phase angles for representative SM hypercharges and enumerated unique phase atoms."
+    ]
+  },
+  "warnings": []
+}

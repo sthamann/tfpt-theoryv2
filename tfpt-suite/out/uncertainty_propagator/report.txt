@@ -1,0 +1,24 @@
+Uncertainty propagator (aggregator)
+
+mode=engineering
+
+Upstream artifacts present:
+- msbar_matching_map: yes
+- ckm_full_pipeline: yes
+- pmns_full_pipeline: yes
+
+Flavor χ² (nominal):
+- chi2_ckm_refscale = 5.473120670327523
+- chi2_pmns_mt = 3.201078401918528
+- chi2_joint_nominal = 8.67419907224605
+
+Flavor χ² (MC summaries, if available):
+- ckm chi2_refscale mean±std = 3.0546867369220005 ± 0.0016771038097518414
+- pmns chi2_uv mean±std = 11.411498863437886 ± 0.08434012402534234
+- joint_mc = {'mean': 14.466185600359887, 'std': 0.08435679698636508, 'note': 'PMNS MC uses chi2_uv_*; CKM uses chi2_refscale_* (scale mismatch; treat as proxy).'}
+
+Checks:
+- uncertainty_propagator_runs: PASS (module executed)
+- flavor_joint_objective_nominal_present: PASS (chi2_joint_nominal=8.67419907224605)
+- flavor_joint_objective_with_unc_present: PASS (mean=14.4662, std=0.0844)
+- flavor_chi2_with_unc: PASS (PASS: p≈7.971e-01 chi2≈8.6742 dof=13 (nominal proxy))

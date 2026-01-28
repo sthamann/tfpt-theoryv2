@@ -1,0 +1,21 @@
+UFE gravity normalization (κ/ξ from c3 and varphi0)
+mp.dps = 80
+
+Invariants:
+- c3 = 0.039788735772973833942220940843128590508614911435114112186916836014724199408556634
+- varphi0_tree = 0.053051647697298445256294587790838120678153215246818816249222448019632265878075512
+- varphi0 = 0.053171952176845527309292471969749667875127759799791139640450979685319457237554636
+
+ξ factors:
+- xi_tree = c3/varphi0_tree = 0.75  (expected 3/4)
+- xi      = c3/varphi0      = 0.74830308356254779855425709117213900105867537623583363061344126774214272466442152
+- shift (xi/xi_tree - 1) = -0.22625552499362685943238784371479985884328316855551591820783096771430337807713103 %
+
+Interpretation (closure-level docking):
+- eliminating_k.tex proposes κ^2 = ξ · varphi0 / c3^2 and fixes ξ by imposing the Einstein limit in the torsion vacuum (K→0).
+- This module records the resulting ξ from the canonical invariants used by tfpt-suite and cross-checks that the closure-level BRST/ghost OperatorSpec chain is present.
+
+Checks:
+- xi_tree_equals_3_over_4: PASS (xi_tree=c3/varphi0_tree=0.75 (expected 3/4=0.75))
+- xi_selfconsistent_reported: PASS (xi=c3/varphi0=0.74830308356254779855425709117213900105867537623583363061344126774214272466442152; shift_vs_tree=-0.22625552499362685943238784371479985884328316855551591820783096771430337807713103%)
+- operator_derivation_closure_present: PASS (OperatorSpec status=derived, ghost_block=True, brst.status=derived_in_suite_at_closure_level (wrote_file=True))

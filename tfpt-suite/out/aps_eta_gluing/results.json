@@ -1,0 +1,314 @@
+{
+  "checks": [
+    {
+      "check_id": "sf_equals_winding_all_m",
+      "detail": "numeric_sf == analytic_sf == winding_det_u for m=0..8 and both spins",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "eta0_matches_hurwitz_zeta",
+      "detail": "\u03b7(0) numeric (Hurwitz \u03b6) matches analytic closed form for start/end points",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "minimal_nontrivial_m",
+      "detail": "min m with SF>0 (periodic) is 1",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "tfpt_seam_term_delta_gamma_2pi",
+      "detail": "\u0394_\u0393 := 2\u03c0\u00b7SF(U_\u0393) for m=1 gives 6.283185307179586 (expected 2\u03c0)",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "aps_eta_gluing",
+  "plot": {
+    "aps_eta_spectral_flow_png": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/aps_eta_gluing/aps_eta_spectral_flow.png"
+  },
+  "results": {
+    "epsilon": 0.001,
+    "plot": {
+      "aps_eta_spectral_flow_png": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/aps_eta_gluing/aps_eta_spectral_flow.png"
+    },
+    "spins": [
+      "periodic",
+      "antiperiodic"
+    ],
+    "table": [
+      {
+        "analytic_sf": 0,
+        "eta_end_analytic": 0.9996816901138162,
+        "eta_end_numeric": 0.9996816901138161,
+        "eta_start_analytic": 0.9996816901138162,
+        "eta_start_numeric": 0.9996816901138161,
+        "m": 0,
+        "numeric_sf": 0,
+        "spin": "periodic",
+        "theta_end": 0.001,
+        "theta_start": 0.001,
+        "winding_det_u": 0
+      },
+      {
+        "analytic_sf": 1,
+        "eta_end_analytic": 0.9996816901138161,
+        "eta_end_numeric": 0.9996816901138161,
+        "eta_start_analytic": 0.9996816901138162,
+        "eta_start_numeric": 0.9996816901138161,
+        "m": 1,
+        "numeric_sf": 1,
+        "spin": "periodic",
+        "theta_end": 6.284185307179587,
+        "theta_start": 0.001,
+        "winding_det_u": 1
+      },
+      {
+        "analytic_sf": 2,
+        "eta_end_analytic": 0.9996816901138166,
+        "eta_end_numeric": 0.9996816901138166,
+        "eta_start_analytic": 0.9996816901138162,
+        "eta_start_numeric": 0.9996816901138161,
+        "m": 2,
+        "numeric_sf": 2,
+        "spin": "periodic",
+        "theta_end": 12.567370614359172,
+        "theta_start": 0.001,
+        "winding_det_u": 2
+      },
+      {
+        "analytic_sf": 3,
+        "eta_end_analytic": 0.9996816901138157,
+        "eta_end_numeric": 0.9996816901138157,
+        "eta_start_analytic": 0.9996816901138162,
+        "eta_start_numeric": 0.9996816901138161,
+        "m": 3,
+        "numeric_sf": 3,
+        "spin": "periodic",
+        "theta_end": 18.85055592153876,
+        "theta_start": 0.001,
+        "winding_det_u": 3
+      },
+      {
+        "analytic_sf": 4,
+        "eta_end_analytic": 0.9996816901138157,
+        "eta_end_numeric": 0.9996816901138157,
+        "eta_start_analytic": 0.9996816901138162,
+        "eta_start_numeric": 0.9996816901138161,
+        "m": 4,
+        "numeric_sf": 4,
+        "spin": "periodic",
+        "theta_end": 25.133741228718346,
+        "theta_start": 0.001,
+        "winding_det_u": 4
+      },
+      {
+        "analytic_sf": 5,
+        "eta_end_analytic": 0.9996816901138157,
+        "eta_end_numeric": 0.9996816901138157,
+        "eta_start_analytic": 0.9996816901138162,
+        "eta_start_numeric": 0.9996816901138161,
+        "m": 5,
+        "numeric_sf": 5,
+        "spin": "periodic",
+        "theta_end": 31.416926535897932,
+        "theta_start": 0.001,
+        "winding_det_u": 5
+      },
+      {
+        "analytic_sf": 6,
+        "eta_end_analytic": 0.9996816901138175,
+        "eta_end_numeric": 0.9996816901138175,
+        "eta_start_analytic": 0.9996816901138162,
+        "eta_start_numeric": 0.9996816901138161,
+        "m": 6,
+        "numeric_sf": 6,
+        "spin": "periodic",
+        "theta_end": 37.700111843077515,
+        "theta_start": 0.001,
+        "winding_det_u": 6
+      },
+      {
+        "analytic_sf": 7,
+        "eta_end_analytic": 0.9996816901138175,
+        "eta_end_numeric": 0.9996816901138175,
+        "eta_start_analytic": 0.9996816901138162,
+        "eta_start_numeric": 0.9996816901138161,
+        "m": 7,
+        "numeric_sf": 7,
+        "spin": "periodic",
+        "theta_end": 43.9832971502571,
+        "theta_start": 0.001,
+        "winding_det_u": 7
+      },
+      {
+        "analytic_sf": 8,
+        "eta_end_analytic": 0.9996816901138175,
+        "eta_end_numeric": 0.9996816901138175,
+        "eta_start_analytic": 0.9996816901138162,
+        "eta_start_numeric": 0.9996816901138161,
+        "m": 8,
+        "numeric_sf": 8,
+        "spin": "periodic",
+        "theta_end": 50.26648245743669,
+        "theta_start": 0.001,
+        "winding_det_u": 8
+      },
+      {
+        "analytic_sf": 0,
+        "eta_end_analytic": -0.00031830988618386513,
+        "eta_end_numeric": -0.00031830988618386513,
+        "eta_start_analytic": -0.00031830988618386513,
+        "eta_start_numeric": -0.00031830988618386513,
+        "m": 0,
+        "numeric_sf": 0,
+        "spin": "antiperiodic",
+        "theta_end": 0.001,
+        "theta_start": 0.001,
+        "winding_det_u": 0
+      },
+      {
+        "analytic_sf": 1,
+        "eta_end_analytic": -0.00031830988618386513,
+        "eta_end_numeric": -0.00031830988618386513,
+        "eta_start_analytic": -0.00031830988618386513,
+        "eta_start_numeric": -0.00031830988618386513,
+        "m": 1,
+        "numeric_sf": 1,
+        "spin": "antiperiodic",
+        "theta_end": 6.284185307179587,
+        "theta_start": 0.001,
+        "winding_det_u": 1
+      },
+      {
+        "analytic_sf": 2,
+        "eta_end_analytic": -0.00031830988618342104,
+        "eta_end_numeric": -0.00031830988618342104,
+        "eta_start_analytic": -0.00031830988618386513,
+        "eta_start_numeric": -0.00031830988618386513,
+        "m": 2,
+        "numeric_sf": 2,
+        "spin": "antiperiodic",
+        "theta_end": 12.567370614359172,
+        "theta_start": 0.001,
+        "winding_det_u": 2
+      },
+      {
+        "analytic_sf": 3,
+        "eta_end_analytic": -0.0003183098861843092,
+        "eta_end_numeric": -0.0003183098861843092,
+        "eta_start_analytic": -0.00031830988618386513,
+        "eta_start_numeric": -0.00031830988618386513,
+        "m": 3,
+        "numeric_sf": 3,
+        "spin": "antiperiodic",
+        "theta_end": 18.85055592153876,
+        "theta_start": 0.001,
+        "winding_det_u": 3
+      },
+      {
+        "analytic_sf": 4,
+        "eta_end_analytic": -0.0003183098861843092,
+        "eta_end_numeric": -0.0003183098861843092,
+        "eta_start_analytic": -0.00031830988618386513,
+        "eta_start_numeric": -0.00031830988618386513,
+        "m": 4,
+        "numeric_sf": 4,
+        "spin": "antiperiodic",
+        "theta_end": 25.133741228718346,
+        "theta_start": 0.001,
+        "winding_det_u": 4
+      },
+      {
+        "analytic_sf": 5,
+        "eta_end_analytic": -0.0003183098861843092,
+        "eta_end_numeric": -0.0003183098861843092,
+        "eta_start_analytic": -0.00031830988618386513,
+        "eta_start_numeric": -0.00031830988618386513,
+        "m": 5,
+        "numeric_sf": 5,
+        "spin": "antiperiodic",
+        "theta_end": 31.416926535897932,
+        "theta_start": 0.001,
+        "winding_det_u": 5
+      },
+      {
+        "analytic_sf": 6,
+        "eta_end_analytic": -0.00031830988618253286,
+        "eta_end_numeric": -0.00031830988618253286,
+        "eta_start_analytic": -0.00031830988618386513,
+        "eta_start_numeric": -0.00031830988618386513,
+        "m": 6,
+        "numeric_sf": 6,
+        "spin": "antiperiodic",
+        "theta_end": 37.700111843077515,
+        "theta_start": 0.001,
+        "winding_det_u": 6
+      },
+      {
+        "analytic_sf": 7,
+        "eta_end_analytic": -0.00031830988618253286,
+        "eta_end_numeric": -0.00031830988618253286,
+        "eta_start_analytic": -0.00031830988618386513,
+        "eta_start_numeric": -0.00031830988618386513,
+        "m": 7,
+        "numeric_sf": 7,
+        "spin": "antiperiodic",
+        "theta_end": 43.9832971502571,
+        "theta_start": 0.001,
+        "winding_det_u": 7
+      },
+      {
+        "analytic_sf": 8,
+        "eta_end_analytic": -0.00031830988618253286,
+        "eta_end_numeric": -0.00031830988618253286,
+        "eta_start_analytic": -0.00031830988618386513,
+        "eta_start_numeric": -0.00031830988618386513,
+        "m": 8,
+        "numeric_sf": 8,
+        "spin": "antiperiodic",
+        "theta_end": 50.26648245743669,
+        "theta_start": 0.001,
+        "winding_det_u": 8
+      }
+    ]
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic; no floating randomness (\u03b5 fixed).",
+    "formulas": [
+      "D_\u0393 = i d/d\u03b8 (Appendix seam); eigenvalues \u03bb_n = n + s + \u03b8/(2\u03c0), n\u2208Z",
+      "\u03b8 \u2208 [\u03b5, 2\u03c0 m + \u03b5] to avoid endpoint zero-modes",
+      "SF = # upward crossings = m",
+      "wind(det U_\u0393) = m for U_\u0393(\u03b8)=exp(i m \u03b8)",
+      "\u03b7(0,a) = \u03b6(0,a) - \u03b6(0,1-a) = 1 - 2a for 0<a<1 (Hurwitz-zeta regularization)",
+      "TFPT bookkeeping: seam term \u0394_\u0393 = 2\u03c0 for the minimal nontrivial Z2 class (m=1)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "v2.4 Appendix seam (app:seam): D_\u0393 = i d/d\u03b8 on \u03b8\u2208[0,2\u03c0), APS gluing with matching U_\u0393",
+      "integer winding m (tested range m=0..8)",
+      "spin structure shift s \u2208 {0,1/2} (periodic vs antiperiodic)"
+    ],
+    "maturity": null,
+    "module_id": "aps_eta_gluing",
+    "name": "APS \u03b7-gluing (v2.4 Appendix seam): seam operator D_\u0393 and spectral flow of U_\u0393",
+    "objective": [],
+    "outputs": [
+      "spectral flow SF(U_\u0393), winding(det U_\u0393), \u03b7(0) values at endpoints, minimal seam term \u0394_\u0393"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "numeric spectral flow equals analytic m for all tested m and both spin structures",
+      "\u03b7(0) numeric (Hurwitz \u03b6) matches analytic closed form",
+      "minimal nontrivial flow occurs at m=1",
+      "\u0394_\u0393 = 2\u03c0 for minimal class (m=1) in TFPT normalization"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

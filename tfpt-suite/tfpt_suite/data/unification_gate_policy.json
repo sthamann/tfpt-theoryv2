@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "use_mt_boundary": true,
+  "boundary_route": "pyrate_2loop",
+  "mu_end_GeV": 1e19,
+  "delta_b3_candidates": [0.0, 1.0, 2.0, 2.25, 2.5, 2.75, 3.0, 4.0],
+  "apply_g8_delta_b3_2loop": true,
+  "notes": [
+    "Policy for unification_gate (discrete scan, no continuous tuning).",
+    "boundary_route='pyrate_2loop' uses sm_boundary_conditions_at_mt route_2loop outputs.",
+    "apply_g8_delta_b3_2loop assumes a Weyl adjoint G8; the 2-loop patch is derived from delta_b3 via C_A=3.",
+    "delta_b3_candidates are 1-loop Δb3 values applied above MG8. We allow a small discrete rational refinement near the best integer candidate (still no continuous tuning)."
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "checks": [
+    {
+      "check_id": "vetted_componentwise_bounds_dataset_present",
+      "detail": "vetted entries=4 (need >=4 with per-entry source/metadata)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "tfpt_torsion_prediction_present",
+      "detail": "prediction regime=cosmological_background_H0 (model=cosmological_H0); Toy regime: set |S_mu| \u2248 c_factor \u00b7 H0 (in GeV). This is nonzero but typically far below SME bounds.",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "nontrivial_tfpt_torsion_regime_defined",
+      "detail": "FAIL means this module is currently an ingestion/mapping layer only. Choose/define a nontrivial TFPT torsion regime in tfpt_suite/data/torsion_regimes.json.",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "tfpt_prediction_respects_bounds",
+      "detail": "max |S_mu_pred|/|S_mu_bound| = 6.842e-12",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "bounds_file_loaded",
+      "detail": "loaded 4 bound entries from /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/torsion_bounds_vetted.json",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "computed_inferred_bounds",
+      "detail": "computed 4 inferred S_mu bounds",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "torsion_bounds_mapping",
+  "plot": {
+    "torsion_bounds_png": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/torsion_bounds_mapping/torsion_bounds.png"
+  },
+  "results": {
+    "data_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/torsion_bounds_vetted.json",
+    "inferred_bounds": [
+      {
+        "abs_max_input_GeV": 2.9e-27,
+        "applies_to": "minimal coupling (\u03be4^(4)=3/4; others 0), one-component-at-a-time assumption",
+        "coefficient": "A_mu",
+        "inferred_abs_max_S_mu_GeV": 2.9e-27,
+        "label": "A_T",
+        "mapping_used": "direct (S_mu := A_mu)"
+      },
+      {
+        "abs_max_input_GeV": 2.1e-31,
+        "applies_to": "minimal coupling (\u03be4^(4)=3/4; others 0), one-component-at-a-time assumption",
+        "coefficient": "A_mu",
+        "inferred_abs_max_S_mu_GeV": 2.1e-31,
+        "label": "A_X",
+        "mapping_used": "direct (S_mu := A_mu)"
+      },
+      {
+        "abs_max_input_GeV": 2.5e-31,
+        "applies_to": "minimal coupling (\u03be4^(4)=3/4; others 0), one-component-at-a-time assumption",
+        "coefficient": "A_mu",
+        "inferred_abs_max_S_mu_GeV": 2.5e-31,
+        "label": "A_Y",
+        "mapping_used": "direct (S_mu := A_mu)"
+      },
+      {
+        "abs_max_input_GeV": 1e-29,
+        "applies_to": "minimal coupling (\u03be4^(4)=3/4; others 0), one-component-at-a-time assumption",
+        "coefficient": "A_mu",
+        "inferred_abs_max_S_mu_GeV": 1e-29,
+        "label": "A_Z",
+        "mapping_used": "direct (S_mu := A_mu)"
+      }
+    ],
+    "mapping": {
+      "k_default": 0.75,
+      "k_policy": "",
+      "mapping_raw": {
+        "convention": "b_mu = k * A_mu (minimal coupling)",
+        "description": "Minimal-coupling mapping used by Kosteleck\u00fd\u2013Russell\u2013Tasson: b_\u03bc \u2243 -(3/4) A_\u03bc (all other torsion couplings set to zero).",
+        "k": 0.75,
+        "note": "From arXiv:0712.4393 Eq. (3) and the statement 'minimal coupling is recovered for \u03be4^(4)=3/4 with other couplings zero' (page 2). Sign is irrelevant for absolute bounds."
+      },
+      "xi": "0.74830308356254779855425709117213900105867537623583363061344126774214272466442152",
+      "xi_tree": "0.75"
+    },
+    "plot": {
+      "torsion_bounds_png": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/torsion_bounds_mapping/torsion_bounds.png"
+    },
+    "tfpt_prediction": {
+      "S_mu_abs_GeV": 1.436869415091482e-42,
+      "regime": "cosmological_background_H0",
+      "regime_details": {
+        "H0_km_s_Mpc": 67.36,
+        "c_factor": 1.0,
+        "id": "cosmological_background_H0",
+        "label": "Cosmological background (order H0)",
+        "model": "cosmological_H0"
+      },
+      "theorem_basis": "vacuum torsion vanishes in minimal Einstein\u2013Cartan; nonzero requires an explicit source/propagating torsion regime (see torsion_regimes.json)"
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [
+      "Minimal coupling mapping b_mu = k S_mu is used when bounds are given in SME b_mu conventions (absolute-value mapping).",
+      "Present-day torsion is assumed to be vacuum-like unless a nontrivial source model is declared explicitly in torsion_regimes.json."
+    ],
+    "determinism": "Deterministic given the bounds file contents.",
+    "formulas": [
+      "convention: b_mu = k * S_mu  =>  |S_mu| <= |b_mu|/|k|"
+    ],
+    "gaps": [
+      "Current nonzero regime is still a toy benchmark; publication-grade falsifiability needs a computed source model (spin media, magnetars, early plasma)."
+    ],
+    "inputs": [
+      "bounds file: tfpt_suite/data/torsion_bounds_vetted.json (preferred) or tfpt_suite/data/torsion_bounds.json (fallback)",
+      "TFPT torsion regimes: tfpt_suite/data/torsion_regimes.json (explicit regime selection for falsifiability)"
+    ],
+    "maturity": "framework + falsifiability scaffold (regime model is still toy unless replaced)",
+    "module_id": "torsion_bounds_mapping",
+    "name": "Torsion bounds mapping (SME-style b_mu \u2194 axial torsion S_mu)",
+    "objective": [
+      "Provide a clean mapping/ingestion layer from literature bounds to TFPT\u2019s axial torsion variable S_mu.",
+      "Force an explicit TFPT regime choice (vacuum vs nontrivial benchmark) so the module cannot be \u2018always green\u2019 by construction.",
+      "Expose the minimal-coupling mapping constant (3/4) and its relation to TFPT invariants (\u03be_tree=c3/\u03c6_tree)."
+    ],
+    "outputs": [
+      "inferred torsion bounds (S_mu) from b_mu limits"
+    ],
+    "question": "Given vetted SME-style axial torsion bounds, what does TFPT predict for present-day torsion amplitudes under explicit regime assumptions, and is it falsifiable?",
+    "references": [
+      "torsion_bounds_vetted.json (Kosteleck\u00fd\u2013Russell\u2013Tasson 2008 axial torsion bounds)",
+      "eliminating_k.tex (\u03be normalization; \u03be_tree=3/4)"
+    ],
+    "validation": [
+      "loads bounds JSON and produces finite inferred bounds"
+    ],
+    "what_was_done": [
+      "Load vetted component-wise bounds and map them into inferred |S_mu| limits.",
+      "Evaluate the selected TFPT regime from torsion_regimes.json and compare to the bounds (ratio report).",
+      "Annotate the mapping constant k with \u03be_tree and \u03be=c3/\u03c60 for traceability to eliminating_k-style normalization factors."
+    ]
+  },
+  "warnings": []
+}

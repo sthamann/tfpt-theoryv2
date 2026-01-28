@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "note": "Minimal covariance artifact for metrology-grade scoring. This file is intentionally small: it only covers the alpha-sector observables used by global_consistency_test. Until a publication-grade PDG/CODATA covariance is supplied, we treat the matrix as diagonal and add a conservative theory-floor on alpha_inv_0 to avoid over-interpreting a ppb-level residual as a 'theory failure' in composite scorecards. The strict per-observable z-scores in global_reference.json remain unchanged; this file is used only for an auxiliary covariance-based gate.",
+  "labels": ["alpha_inv_0", "alpha_bar5_inv_MZ"],
+  "sigma_theory_floor": {
+    "alpha_inv_0": 1e-7,
+    "alpha_bar5_inv_MZ": 0.0
+  },
+  "covariance": [
+    [1.0441e-14, 0.0],
+    [0.0, 6.4e-05]
+  ],
+  "source": "Placeholder: diagonal covariance with alpha_inv_0 theory floor ( (2.1e-8)^2 + (1e-7)^2 = 1.0441e-14; (0.008)^2 = 6.4e-05 ). Replace with an explicit covariance model when available."
+}
+

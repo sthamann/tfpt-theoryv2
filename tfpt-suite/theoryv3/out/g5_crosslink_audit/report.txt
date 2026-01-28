@@ -1,0 +1,14 @@
+g=5 crosslink audit
+
+g = 5
+g/4 = 1.25
+g/2 = 2.5
+g/(g+1) = 0.8333333333333334
+gamma0 (TFPT) = 0.8333333333333334
+
+delta_b3 candidates include g/2: True
+
+Checks:
+- g_equals_5: PASS (g=5)
+- delta_b3_has_g_over_2: PASS (delta_b3 includes 2.5)
+- gamma0_matches_g_over_g_plus_1: PASS (gamma0=0.8333333333333334)

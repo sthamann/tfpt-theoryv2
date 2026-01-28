@@ -1,0 +1,33 @@
+Torsion bounds mapping (framework module)
+
+data file: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/torsion_bounds_vetted.json
+units: GeV
+
+Convention used:
+- b_mu = k * S_mu with k=0.75  =>  |S_mu| <= |b_mu|/|k|
+  (TFPT invariants: xi_tree=c3/varphi0_tree=0.75 (=3/4), xi=c3/varphi0=0.74830308356254779855425709117213900105867537623583363061344126774214272466442152)
+- direct A_mu bounds are also accepted and passed through as S_mu := A_mu
+
+TFPT prediction (local / present-day vacuum regime):
+- selected regime: cosmological_background_H0 (Cosmological background (order H0))
+- model: cosmological_H0
+- predicted |S_mu| = 1.437e-42 GeV
+- note: Toy regime: set |S_mu| ≈ c_factor · H0 (in GeV). This is nonzero but typically far below SME bounds.
+
+Inferred bounds (placeholders unless you replace the JSON table):
+- A_T: |A_mu| <= 2.900e-27 GeV  =>  |S_mu| <= 2.900e-27 GeV  (minimal coupling (ξ4^(4)=3/4; others 0), one-component-at-a-time assumption; direct (S_mu := A_mu))
+- A_X: |A_mu| <= 2.100e-31 GeV  =>  |S_mu| <= 2.100e-31 GeV  (minimal coupling (ξ4^(4)=3/4; others 0), one-component-at-a-time assumption; direct (S_mu := A_mu))
+- A_Y: |A_mu| <= 2.500e-31 GeV  =>  |S_mu| <= 2.500e-31 GeV  (minimal coupling (ξ4^(4)=3/4; others 0), one-component-at-a-time assumption; direct (S_mu := A_mu))
+- A_Z: |A_mu| <= 1.000e-29 GeV  =>  |S_mu| <= 1.000e-29 GeV  (minimal coupling (ξ4^(4)=3/4; others 0), one-component-at-a-time assumption; direct (S_mu := A_mu))
+
+Checks:
+- vetted_componentwise_bounds_dataset_present: PASS (vetted entries=4 (need >=4 with per-entry source/metadata))
+- tfpt_torsion_prediction_present: PASS (prediction regime=cosmological_background_H0 (model=cosmological_H0); Toy regime: set |S_mu| ≈ c_factor · H0 (in GeV). This is nonzero but typically far below SME bounds.)
+- nontrivial_tfpt_torsion_regime_defined: PASS (FAIL means this module is currently an ingestion/mapping layer only. Choose/define a nontrivial TFPT torsion regime in tfpt_suite/data/torsion_regimes.json.)
+- tfpt_prediction_respects_bounds: PASS (max |S_mu_pred|/|S_mu_bound| = 6.842e-12)
+- bounds_file_loaded: PASS (loaded 4 bound entries from /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/torsion_bounds_vetted.json)
+- computed_inferred_bounds: PASS (computed 4 inferred S_mu bounds)
+
+Notes:
+- This module is the ingestion/mapping layer requested in tasks.md.
+- To make this a falsification module, provide TFPT-predicted local torsion amplitudes and a vetted component-wise bounds table.

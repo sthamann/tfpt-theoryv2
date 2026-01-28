@@ -1,0 +1,184 @@
+{
+  "checks": [
+    {
+      "check_id": "table_alpha3_monotone_decreasing",
+      "detail": "\u03b13 decreases with \u03bc across table (min=0.018985, max=0.1179)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "alpha3_target_in_range_varphi0",
+      "detail": "varphi0=0.053172 within \u03b13 range [0.018985, 0.1179]",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "alpha3_target_in_range_c3",
+      "detail": "c3=0.0397887 within \u03b13 range [0.018985, 0.1179]",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "alpha3_1PeV_close_to_varphi0",
+      "detail": "\u03b13(1 PeV)=0.0524371, varphi0=0.053172, rel dev=1.382%",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "g1_gut_over_gY_convention",
+      "detail": "g1_GUT/gY=1.29099444873581 vs sqrt(5/3)=1.29099444873581",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "alpha1_gut_over_alphaY_ratio_global",
+      "detail": "max |\u03b11_GUT/\u03b1Y - 5/3| across table = 6.661e-16",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "two_loop_rg_fingerprints",
+  "plot": null,
+  "results": {
+    "alpha3": {
+      "alpha3_at_1PeV": 0.05243714153896733,
+      "crossing_c3": {
+        "alpha3": 0.039788735772973836,
+        "bracket_idx": [
+          63,
+          64
+        ],
+        "mu_GeV": 216030451.17273504,
+        "rel_dev": 0.0
+      },
+      "crossing_varphi0": {
+        "alpha3": 0.053171952176845526,
+        "bracket_idx": [
+          39,
+          40
+        ],
+        "mu_GeV": 792005.555441517,
+        "rel_dev": 0.0
+      },
+      "is_monotone_decreasing": true,
+      "range": [
+        0.018984955558255096,
+        0.1179
+      ],
+      "rel_dev_1PeV_vs_varphi0": 0.013819515887516742
+    },
+    "generation": {
+      "gravity_alpha3_patch": {
+        "alpha_definition_for_U1": "alphaY",
+        "c3": 0.039788735772973836,
+        "enabled": false,
+        "kappa_vector": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "initialScale_log10": 1.9599357855026331,
+      "initial_conditions": {
+        "Yd33": 0.017,
+        "Ye33": 0.01,
+        "Yu33": 0.94,
+        "alpha_s_MZ": 0.1179,
+        "g1_gut": 0.4614234244528176,
+        "g2": 0.651723832904323,
+        "g3": 1.2171996941475736,
+        "gY": 0.35741704769115173,
+        "lambda": 0.13,
+        "mu0_GeV": 91.1876
+      },
+      "model_module": "E8Cascade2LoopGravityV2",
+      "npoints": 171,
+      "output_csv": "tfpt-suite/out/two_loop_rg_fingerprints/gauge_couplings.csv",
+      "pythonoutput_dir": "Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput",
+      "tmax_log10": 19.0,
+      "tmin_log10": 1.9599357855026331
+    },
+    "generation_gravity": null,
+    "gravity_alpha3_patch": {
+      "alpha_definition_for_U1": "alphaY",
+      "c3": 0.039788735772973836,
+      "csv_gravity_sha256": null,
+      "diff_summary": null,
+      "enabled": false,
+      "kappa_vector": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_csv_gravity": null
+    },
+    "model_fingerprint": {
+      "config_file": "tfpt-suite/tfpt_suite/data/two_loop_rg_fingerprints.json",
+      "model_name_expected": "E8Cascade2LoopGravityV2",
+      "pyrate_pythonoutput_kind": "e8_sigma_yN_2loop",
+      "pythonoutput_module_file": "Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput/E8Cascade2LoopGravityV2.py",
+      "pythonoutput_module_sha256": "36291dad68a103a1963d4497900fe8fb2ac0964c921d3278860d82a7ba01b0cd",
+      "yaml_source": "Pyrate3/models/E8Cascade 2Loop Gravity.yaml",
+      "yaml_source_sha256": "cc8f061af5e64dc6e22baba2eb9043bdcda493c200c415fd1926501f888195ca"
+    },
+    "reproducibility": {
+      "artifacts": {
+        "config_file": "tfpt-suite/tfpt_suite/data/two_loop_rg_fingerprints.json",
+        "csv_gravity_sha256": null,
+        "csv_sha256": "55a2cf8393d1108dde44238d59bdfc608cf9a8e5bbcd08a98337d7adea487091",
+        "pyrate_pythonoutput_kind": "e8_sigma_yN_2loop",
+        "pythonoutput_dir": "Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput",
+        "pythonoutput_module_file": "Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput/E8Cascade2LoopGravityV2.py",
+        "pythonoutput_module_sha256": "36291dad68a103a1963d4497900fe8fb2ac0964c921d3278860d82a7ba01b0cd",
+        "yaml_source": "Pyrate3/models/E8Cascade 2Loop Gravity.yaml",
+        "yaml_source_sha256": "cc8f061af5e64dc6e22baba2eb9043bdcda493c200c415fd1926501f888195ca"
+      },
+      "conventions": "Conventions: hypercharge Q=T3+Y (SM); \u03b13=g3^2/(4\u03c0), \u03b1Y=g\u2032^2/(4\u03c0), \u03b11(GUT)=(5/3)\u03b1Y.",
+      "sm_boundary": {
+        "alpha_s_MZ": 0.1179,
+        "log10_mu0": 1.9599357855026331,
+        "mu0_GeV": 91.1876
+      }
+    },
+    "source_csv": "tfpt-suite/out/two_loop_rg_fingerprints/gauge_couplings.csv",
+    "targets": {
+      "c3": 0.039788735772973836,
+      "varphi0": 0.053171952176845526
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given PyR@TE3 PythonOutput + fixed numeric integration grid + TFPT constants.",
+    "formulas": [
+      "c3 = 1/(8\u03c0)",
+      "varphi0 = 1/(6\u03c0) + 3/(256\u03c0^4)",
+      "relative deviation: |\u03b13(\u03bc)-target|/target",
+      "interpolation/crossing: linear in log10(\u03bc) vs \u03b13 using the tabulated points"
+    ],
+    "gaps": [],
+    "inputs": [
+      "Two-loop gauge running table (generated from PyR@TE3 PythonOutput and cached into this module output directory as `gauge_couplings.csv`)",
+      "PyR@TE3 PythonOutput package selected via `tfpt_suite/data/two_loop_rg_fingerprints.json` (fail-fast, no silent fallback)",
+      "SM boundary conditions at \u03bc=MZ: `tfpt-suite/tfpt_suite/data/sm_inputs_mz.json`",
+      "TFPT invariants from paper v2.5: c3=1/(8\u03c0), varphi0=1/(6\u03c0)+3/(256\u03c0^4)"
+    ],
+    "maturity": null,
+    "module_id": "two_loop_rg_fingerprints",
+    "name": "Two-loop RG fingerprints (\u03b13 scale matches to TFPT invariants)",
+    "objective": [],
+    "outputs": [
+      "\u03b13(1 PeV) and its relative deviation to varphi0",
+      "scales \u03bc where \u03b13 crosses varphi0 and c3 (interpolated in log10 \u03bc)"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "table ordering: log10(\u03bc) strictly increasing",
+      "\u03b13(1 PeV) is within 2% of varphi0 (paper claim-map falsification target)",
+      "targets (varphi0, c3) lie within the table\u2019s \u03b13 range (so a crossing exists)"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

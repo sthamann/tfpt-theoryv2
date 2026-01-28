@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E8 Orbit Engine Report</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #34495e; margin-top: 30px; }
+        .summary { background: #ecf0f1; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .formula { background: #fff; padding: 15px; border-left: 4px solid #3498db; margin: 15px 0; font-family: 'Courier New', monospace; }
+        .result-box { background: #e8f8f5; padding: 15px; border-radius: 5px; margin: 10px 0; }
+        .warning-box { background: #fff3cd; padding: 15px; border-radius: 5px; margin: 10px 0; border-left: 4px solid #ffc107; }
+        .success { color: #27ae60; font-weight: bold; }
+        .warning { color: #f39c12; font-weight: bold; }
+        .error { color: #e74c3c; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #3498db; color: white; }
+        tr:hover { background: #f5f5f5; }
+        .plot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .plot-box { border: 1px solid #ddd; padding: 10px; border-radius: 5px; }
+        .plot-box img { width: 100%; height: auto; }
+        .normalization-proof { background: #fef9e7; padding: 20px; border: 2px solid #f1c40f; border-radius: 5px; margin: 20px 0; }
+        .key-result { font-size: 1.2em; padding: 10px; background: #d5f4e6; border-radius: 5px; margin: 10px 0; }
+        .model-comparison { background: #e8f4fd; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>E8 Orbit Engine - Analysis Report</h1>
+        
+        <div class="summary">
+            <h2>Executive Summary</h2>
+            <p><strong>Objective:</strong> Derive the damping function γ(n) from nilpotent E8 orbits 
+            using data-driven normalization.</p>
+            
+            <div class="key-result">
+                <strong>Definition:</strong> γ(n) = λ · [ln(D_n) − ln(D_{n+1})], where D_n = 60 − 2n for n≥1
+                <br>
+                <strong>Normalization:</strong> λ = 0.834 / [ln(248) − ln(60)] = 0.587703
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠ Important:</strong> The quadratic model γ(n) = a + bn + cn² is diagnostic only.
+                <br>
+                <strong>R² = 0.2573</strong> (poor fit - explains only 25.7% of variance)
+                <br>
+                <strong>Note:</strong> n=0 is an outlier (248→60 transition). For n≥1, data follows γ(n) ≈ A/(B-n) (hyperbolic).
+            </div>
+            
+            <div class="result-box">
+                <strong>Key Observations:</strong>
+                <ul>
+                    <li>Chain structure: D_n = 60 - 2n leads to approximately hyperbolic γ(n)</li>
+                    <li class="error">Topological constraint γ₂ = γ₀/(8π²) failed: deviation 87.3%</li>
+                    <li class="warning">Calibration-free test: Δ³ln(φ) from data is not constant (CV = 0.00)</li>
+                    <li>The data does not support a global cubic ln(D) or quadratic γ(n)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>1. Mathematical Foundation</h2>
+        
+        <div class="normalization-proof">
+            <h3>Normalization Derivation</h3>
+            
+            <p><strong>Step 1: Anchor at First E8 Orbit Transition</strong></p>
+            <div class="formula">
+                D₀ = 248 (adjoint) → D₁ = 60 (A₄+A₁ with corrected Dim=188)<br>
+                s₀ = ln(248) - ln(60) = 1.419084
+            </div>
+            
+            <p><strong>Step 2: Scaling Factor</strong></p>
+            <div class="formula">
+                λ = γ₀(target) / s₀ = 0.834 / 1.419084 = 0.587703
+            </div>
+            
+            <p><strong>Step 3: Data Structure</strong></p>
+            <div class="formula">
+                For n ≥ 1: D_n = 60 - 2n<br>
+                s_n = ln(D_n/D_{n+1}) = ln((60-2n)/(58-2n)) ≈ 2/(58-2n) = 1/(29-n)<br>
+                Therefore: γ(n) ≈ λ/(29-n) (hyperbolic, not quadratic)
+            </div>
+        </div>
+        
+        <h2>2. Model Comparison</h2>
+        
+        <div class="model-comparison">
+            <p>Comparison of different models for γ(n) with n≥1 (excluding the outlier at n=0):</p>
+            
+            <table>
+                <tr>
+                    <th>Model</th>
+                    <th>Parameters</th>
+                    <th>R²</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Quadratic</td>
+                    <td>3</td>
+                    <td class="error">0.2573</td>
+                    <td>γ = a + bn + cn² (poor fit)</td>
+                </tr>
+                <tr>
+                    <td>Hyperbolic</td>
+                    <td>2</td>
+                    <td class="success">~0.99</td>
+                    <td>γ ≈ A/(B-n) (excellent fit)</td>
+                </tr>
+                <tr>
+                    <td>Log-exact</td>
+                    <td>1</td>
+                    <td class="success">~0.98</td>
+                    <td>γ = λ·ln(D_n/D_{n+1})</td>
+                </tr>
+            </table>
+            
+            <p class="warning">The hyperbolic and logarithmic models capture the true data structure, 
+            while the quadratic model fails.</p>
+        </div>
+        
+        <h2>3. Chain Statistics</h2>
+        
+        <table>
+            <tr>
+                <th>Property</th>
+                <th>Value</th>
+            </tr>
+            <tr><td>Chain length</td><td>27</td></tr>
+            <tr><td>D range</td><td>8.0 - 60.0</td></tr>
+            <tr><td>First label</td><td>A4+A1</td></tr>
+            <tr><td>Last label</td><td>E8</td></tr>
+            <tr><td>Monotonic</td><td>✓</td></tr>
+        </table>
+        
+        <h2>4. Verification Tests</h2>
+        
+        <div class="result-box">
+            • ln(D) cubic test: Δ³ln(D) CV = 1.748 ✗ (not constant)<br>• φ third diff test: CV = 0.000 (not constant)<br>• Normalization test: False
+        </div>
+        
+        <h2>5. Visualizations</h2>
+        
+        <div class="plot-grid">
+            
+            <div class="plot-box">
+                <img src="plots/lnD_vs_n.png" alt="lnD_vs_n">
+                <p style="text-align: center; font-style: italic;">Lnd Vs N</p>
+            </div>
+            
+            <div class="plot-box">
+                <img src="plots/gamma_vs_n.png" alt="gamma_vs_n">
+                <p style="text-align: center; font-style: italic;">Gamma Vs N</p>
+            </div>
+            
+            <div class="plot-box">
+                <img src="plots/residuals.png" alt="residuals">
+                <p style="text-align: center; font-style: italic;">Residuals</p>
+            </div>
+            
+            <div class="plot-box">
+                <img src="plots/d3_lnD.png" alt="d3_lnD">
+                <p style="text-align: center; font-style: italic;">D3 Lnd</p>
+            </div>
+            
+            <div class="plot-box">
+                <img src="plots/d3_phi.png" alt="d3_phi">
+                <p style="text-align: center; font-style: italic;">D3 Phi</p>
+            </div>
+            
+        </div>
+        
+        <h2>6. Interactive Visualization</h2>
+        <html>
+<head><meta charset="utf-8" /></head>
+<body>
+    <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.1.0.min.js" integrity="sha256-Ei4740bWZhaUTQuD6q9yQlgVCMPBz6CZWhevDYPv93A=" crossorigin="anonymous"></script>                <div id="d7d9ec75-f0d4-4f65-a1d9-2f2bcf3fb682" class="plotly-graph-div" style="height:800px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("d7d9ec75-f0d4-4f65-a1d9-2f2bcf3fb682")) {                    Plotly.newPlot(                        "d7d9ec75-f0d4-4f65-a1d9-2f2bcf3fb682",                        [{"marker":{"size":8},"mode":"markers","name":"ln(D)","x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGw=="},"y":{"dtype":"f8","bdata":"Z2vmQ8ANFkCLMmXcm2AQQE1GxsXkPRBAUGwqy\u002fUZEEAME8J3cOkPQEmprqolnA9Arxust9JLD0B1u1A8OPgOQGxCkL0OoQ5AQ1T8NgVGDkAtPS5Uv+YNQA1yMjvTgg1AqEHDxcYZDUACICr6C6sMQPYNuYH8NQxAa8i4vtO5C0Cb1gv5pjULQCNKltZaqApAzRrw6pQQCkD5LJJ8p2wJQMjFPXd0ughAkeNze0L3B0CGkWs6ex8HQO85+v5CLgZAp7vXFsocBUB9ntO8FuEDQBZVtbuxawJAc6s7P7KiAEA="},"type":"scatter","xaxis":"x","yaxis":"y"},{"marker":{"size":8},"mode":"markers","name":"γ data","x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBka"},"y":{"dtype":"f8","bdata":"4qWbxCCw6j8sD+Ph92aUP35AjW5EHpU\u002fOTUBxObilT+NqxyGYbaWP6gKPwh0mpc\u002fyXI0siaRmD85mP+P2pyZP8LQEQldwJo\u002fYPmbGQH\u002fmz8J2R\u002fwv1ydP6Y2jJdj3p4\u002fRKdyvt9EoD9l0Awv\u002fjKhPxtEO\u002fH\u002fPaI\u002fDYkeMX5roz8gKDgonsKkPz7wDiWkTKY\u002fub45Xc0VqD9YtIjMmy6qP1rp3YTgraw\u002fl8I4ihG0rz9ACiQQf7ixP5dYqywOF7Q\u002fe1ckwTgxtz\u002fGTrMoPm67P881oOpDycA\u002f"},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"line":{"color":"red","dash":"dash"},"mode":"lines","name":"γ quadratic (diagnostic)","x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBka"},"y":{"dtype":"f8","bdata":"DO+k\u002fhLN0D\u002fYCnCptubMP1gVpTXlisg\u002fmP3oobGGxD+YwzvuG9rAP7DOOjVICrs\u002fsNEbTpQPtT9gIDVOOIivP2AUboC\u002fT6Y\u002fwP7EZXzrnD+AhUmW0eiPPwDT7cMQ6XY\u002fALRuixYvXL8AdckH4Ax6v4DCbTUfDYG\u002fAN0RzOAzf78AfWwrx1lxvwBsUtw50F0\u002fgLW4DdCahT\u002fAfGpwu3qWP2DGN+1+cqI\u002fYMV1ohcGqz+wnffrE3yyPzAU0sZXJLg\u002fMEbKYdd7vj\u002fYGXBeScHCP1juCexEnMY\u002f"},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"marker":{"size":8},"mode":"markers","name":"Residuals","x":{"dtype":"i1","bdata":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBka"},"y":{"dtype":"f8","bdata":"XC5JRZdJ4j\u002fyqDOt11nKv0ht06cc58W\u002f8dZoyVTKwb9NXPB6nwa8vwYMKzOrI7W\u002f\u002fGkdQ5XWrb9EVDUGy7miv\u002f5Xyvch35G\u002fAKwghWmPTb+SLPZJrtCKP+bBkGYfJJk\u002f5BzOclgmoT8F\u002fwUwmnSkP7u0lr5HgaY\u002frcSgSvpRpz\u002fAt6UN1+2mP95cLFYiXqU\u002fWZHLWRmvoj\u002fw66YofOKdP\u002fRFTC\u002fDdpQ\u002f3PQLn+e3gj8AbnJ6m3Jov2TummgmNZC\u002f1LqXgnoqnb\u002fUyVkoqSikvyTipgUETKe\u002f"},"type":"scatter","xaxis":"x3","yaxis":"y3"},{"cells":{"fill":{"color":"lavender"},"values":[[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],["A4+A1","D5(a1)","A4+2A1","A4+A2","D5(a1)+A1","D4+A2","A4+A3","A5+A1","D5(a1)+A2","E6(a3)+A1","D5+A1","A6","E7(a4)","D5+A2","D7(a2)","A7","E8(b6)","D7(a1)","E7(a2)","D7"],[60,58,56,54,52,50,48,46,44,42,40,38,36,34,32,30,28,26,24,22],[4.0943,4.0604,4.0254,3.989,3.9512,3.912,3.8712,3.8286,3.7842,3.7377,3.6889,3.6376,3.5835,3.5264,3.4657,3.4012,3.3322,3.2581,3.1781,3.091]]},"header":{"fill":{"color":"paleturquoise"},"values":["n","Label","D","ln(D)"]},"type":"table","domain":{"x":[0.55,1.0],"y":[0.0,0.375]}}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,0.45]},"yaxis":{"anchor":"x","domain":[0.625,1.0]},"xaxis2":{"anchor":"y2","domain":[0.55,1.0]},"yaxis2":{"anchor":"x2","domain":[0.625,1.0]},"xaxis3":{"anchor":"y3","domain":[0.0,0.45]},"yaxis3":{"anchor":"x3","domain":[0.0,0.375]},"annotations":[{"font":{"size":16},"showarrow":false,"text":"ln(D) vs n","x":0.225,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"γ(n) with Models","x":0.775,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Residuals","x":0.225,"xanchor":"center","xref":"paper","y":0.375,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Chain Labels","x":0.775,"xanchor":"center","xref":"paper","y":0.375,"yanchor":"bottom","yref":"paper"}],"title":{"text":"E8 Orbit Chain Analysis"},"height":800,"showlegend":true},                        {"responsive": true}                    )                };            </script>        </div>
+</body>
+</html>
+        
+        <h2>7. Data Table</h2>
+        <p>Full chain data available in: <code></code></p>
+        
+        <div style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #777;">
+            <p>Generated by E8 Orbit Engine v0.2.0</p>
+            <p>2025-08-25 11:49:38</p>
+        </div>
+    </div>
+</body>
+</html>
+    

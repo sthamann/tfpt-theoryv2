@@ -1,0 +1,149 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\geometry{margin=1in}
+\setlist[itemize]{topsep=2pt,itemsep=2pt,parsep=2pt}
+\setlist[enumerate]{topsep=2pt,itemsep=2pt,parsep=2pt}
+
+\title{TFPT Note H1: \texorpdfstring{$\kappa^2$}{kappa^2} from \texorpdfstring{$\varphi_0$}{phi0} and \texorpdfstring{$c_3$}{c3} --- a single line to Einstein}
+\author{Stefan Hamann \and ChatGPT}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We show that the gravitational coupling in the Unified Field Equation (UFE) of the TFPT framework is not independent. 
+Assuming the structural ansatz
+\begin{equation}
+\kappa^2 \;=\; \xi\,\frac{\varphi_0}{c_3^2}\,,
+\label{eq:ansatz}
+\end{equation}
+and demanding the Einstein limit in the torsion vacuum,
+\begin{equation}
+\kappa^2 \;=\; 8\pi G \,,
+\label{eq:kappa_convention}
+\end{equation}
+we obtain a unique dimensionless factor
+\begin{equation}
+\xi \;=\; \frac{8\pi\,c_3^2}{\varphi_0}\,.
+\label{eq:xi_closed}
+\end{equation}
+With the TFPT invariants $c_3=\tfrac{1}{8\pi}$ and $\varphi_0=\tfrac{1}{6\pi}+\tfrac{3}{256\,\pi^4}$ this evaluates to
+$\xi=0.7483030835625478\dots$, very close to the rational value $\tfrac{3}{4}$ that arises at tree level when the tiny topological backreaction in $\varphi_0$ is neglected. 
+This fixes the UFE to reduce exactly to Einstein gravity in the torsion vacuum and removes $G$ as an independent parameter from the TFPT point of view.
+\end{abstract}
+
+\section{Context and motivation}
+In the Einstein–Hilbert formulation of General Relativity the gravitational part of the action is written as
+\begin{equation}
+S_{\text{EH}} = \frac{1}{2\kappa^2}\int \mathrm d^4 x\,\sqrt{-g}\,R
+\quad \Longleftrightarrow \quad
+S_{\text{EH}} = \frac{1}{16\pi G}\int \mathrm d^4 x\,\sqrt{-g}\,R\,,
+\label{eq:EH}
+\end{equation}
+so that $\kappa^2=8\pi G$ and $\kappa^{-1}$ equals the reduced Planck mass $\bar M_{\mathrm P}=\bigl(8\pi G\bigr)^{-1/2}$.
+
+On the other hand, in Einstein–Cartan theory spin acts as a source for torsion and the connection acquires an antisymmetric part. A large body of work shows that torsion is a physically meaningful extension, with strong experimental bounds on its components. Within TFPT, the same topological and geometric invariants that fix the quantum–electromagnetic sector also control the gravitational coupling. This closes the system conceptually: one cause, multiple effects.
+
+\section{Definitions and structural input}
+TFPT posits two dimensionless invariants
+\begin{equation}
+c_3 \;=\; \frac{1}{8\pi}\,,
+\qquad
+\varphi_0 \;=\; \frac{1}{6\pi} + \frac{3}{256\,\pi^4}\,.
+\end{equation}
+The angle of cosmic birefringence is set by $\beta_0=\varphi_0/(4\pi)$, while $c_3$ is the Chern–Simons normalization that also fixes the axion–photon coupling $g_{a\gamma\gamma}=-4\,c_3$.
+
+The structural ansatz \eqref{eq:ansatz} states that the effective gravitational coupling in the UFE arises from a \emph{torsion compression} of metric gravity quantified by the ratio $\varphi_0/c_3^2$ up to a dimensionless factor $\xi$. The Einstein limit \eqref{eq:kappa_convention} then fixes $\xi$ uniquely as in \eqref{eq:xi_closed}.
+
+\section{Derivation and exact identities}
+Combining \eqref{eq:ansatz} and \eqref{eq:kappa_convention} yields
+\begin{equation}
+\xi \;=\; \frac{8\pi\,G\,c_3^2}{\varphi_0}\,\times\frac{1}{G}\;=\;\frac{8\pi\,c_3^2}{\varphi_0}\,.
+\end{equation}
+Thus, once $(c_3,\varphi_0)$ are fixed by the electromagnetic and geometric sectors, the UFE recovers the Einstein–Hilbert normalization without any additional free parameter. Equivalently,
+\begin{equation}
+\kappa \;=\; \frac{1}{\bar M_{\mathrm P}} \;=\; \sqrt{\frac{\varphi_0}{\xi\,c_3^2}}\,,\qquad
+\bar M_{\mathrm P}^2 \;=\; \frac{\xi\,c_3^2}{\varphi_0}\,.
+\end{equation}
+
+\paragraph{Tree and backreaction.}
+If we drop the tiny topological backreaction in $\varphi_0$ and take $\varphi_0^{\text{tree}}=1/(6\pi)$, then
+\begin{equation}
+\xi_{\text{tree}}=\frac{8\pi\,(1/64\pi^2)}{1/(6\pi)}=\frac{48\pi^2}{64\pi^2}=\frac{3}{4}\,.
+\end{equation}
+Including the $\delta_{\text{top}}=3/(256\,\pi^4)$ correction in $\varphi_0$ shifts $\xi$ slightly downward by a fraction of $\approx 2.26\times 10^{-3}$, see numbers below.
+
+\section{Numerical evaluation}
+With $(c_3,\varphi_0)$ as above,
+\begin{align}
+c_3 &\,=\, 0.0397887357729738339\dots \\
+\varphi_0 &\,=\, 0.0531719521768455273\dots \\
+\beta_0 &\,=\, \frac{\varphi_0}{4\pi} \,=\, 0.2424350309009295^\circ \\[4pt]
+\xi &\,=\, \frac{8\pi\,c_3^2}{\varphi_0} \,=\, 0.7483030835625478\dots \\
+\xi-\tfrac{3}{4} &\,=\, -1.6969164374522\times 10^{-3}\quad (\,-0.2263\%\,)\,.
+\end{align}
+Sensitivity to $\varphi_0$ is
+\begin{equation}
+\frac{\partial \xi}{\partial \varphi_0} \;=\; -\,\frac{8\pi\,c_3^2}{\varphi_0^2} \;=\; -\,\frac{\xi}{\varphi_0} \;\approx\; -14.0733\,,
+\end{equation}
+so a change $\Delta\varphi_0=10^{-4}$ would shift $\xi$ by $-1.41\times 10^{-3}$.
+
+\section{Why this strengthens the theory}
+\begin{itemize}
+\item \textbf{Fewer free inputs.} $G$ is no longer independent: the same two invariants that set $\alpha$ and $\beta_0$ also set $\kappa$.
+\item \textbf{One cause, many effects.} The topological normalization $c_3$ and the geometric scale $\varphi_0$ appear in the quantum, axionic, cosmological and now gravitational sectors with one algebraic pattern.
+\item \textbf{Sharper falsifiability.} Any hard deviation of $\beta_0$ from $\varphi_0/(4\pi)$ or of $\xi$ from the predicted near rational $3/4$ would force an inconsistency across sectors.
+\end{itemize}
+
+\section{Phenomenology and tests}
+\begin{enumerate}
+\item \textbf{Einstein limit.} By construction the UFE reproduces the Einstein–Hilbert normalization in the torsion vacuum. This makes TFPT consistent with all classic tests of GR.
+\item \textbf{Einstein–Cartan consistency.} Spin–torsion couplings are allowed but bounded. In TFPT the effective compression encapsulated by $\xi$ is small and structured, compatible with stringent laboratory limits.
+\item \textbf{Cross sector link.} Since $\beta_0=\varphi_0/(4\pi)$, any future high precision determination of cosmic birefringence refines $\varphi_0$ and thus the implied $\xi$, which can be compared to the tree value $3/4$.
+\end{enumerate}
+
+\section{Outlook}
+Two immediate next steps are natural: (i) embed the \emph{exact} expression for $\xi$ into the CFE–UFE joint fit so that uncertainties on $\beta_0$ propagate to $\kappa$; (ii) place the TFPT torsion sector on the standard parameter basis used in experimental searches to compare bounds one to one.
+
+\section*{References}
+\begin{thebibliography}{9}
+
+\bibitem{EH}
+Einstein–Hilbert action, Wikipedia, accessed 2025.
+\\\url{https://en.wikipedia.org/wiki/Einstein%E2%80%93Hilbert_action}.
+
+\bibitem{PlanckUnits}
+Planck units and reduced Planck mass conventions, Wikipedia, accessed 2025.
+\\\url{https://en.wikipedia.org/wiki/Planck_units}.
+
+\bibitem{Hehl1976}
+F. W. Hehl, P. von der Heyde, G. D. Kerlick, J. M. Nester,
+\textit{General Relativity with Spin and Torsion: Foundations and Prospects},
+Rev. Mod. Phys. \textbf{48}, 393 (1976).
+\\doi:10.1103/RevModPhys.48.393.
+
+\bibitem{Shapiro2002}
+I. L. Shapiro,
+\textit{Physical aspects of the space–time torsion},
+Phys. Rept. \textbf{357}, 113–213 (2002).
+\\doi:10.1016/S0370-1573(01)00030-8.
+\\arXiv:hep-th/0103093.
+
+\bibitem{Kostelecky2008}
+V. A. Kostelecký, N. Russell, J. D. Tasson,
+\textit{Constraints on Torsion from Bounds on Lorentz Violation},
+Phys. Rev. Lett. \textbf{100}, 111102 (2008).
+\\doi:10.1103/PhysRevLett.100.111102.
+
+\end{thebibliography}
+
+\end{document}

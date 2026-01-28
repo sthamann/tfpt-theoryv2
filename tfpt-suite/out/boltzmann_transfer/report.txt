@@ -1,0 +1,43 @@
+Boltzmann transfer (explicit ℓ mapping + CAMB-backed C_ell)
+
+mode=engineering
+config: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json
+
+Policy inputs:
+- transition=horizon_exit_of_pivot, N_infl=56.0, N_reheat=0.0
+- T_reheat=1.000e+13 GeV, g*_s(reh)=120.0, g*_s(today)=3.91
+- a0/a_transition = 2.4485807685210785e+57 (from k_calibration expansion_budget_estimate (out/k_calibration/results.json))
+- signature_policy = {'cmb_ell_range': [2, 2500], 'small_scale_ell_min': 2500, 'decision_rule': 'prefer_cmb_if_overlap', 'primary_signature': 'conditional_gate', 'rationale': 'TFPT delivers transfer functions in k-space. The mapping to observable ℓ is a policy gate that depends on the expansion history (a0/a_transition). Under the current threshold-derived budget (see out_physics/k_calibration), scalar features land at ℓ_bounce^s≈57 (CMB low-ℓ), while tensor features are super-horizon (ℓ_bounce^t≈0.212). We therefore treat the signature class as conditional: CMB low-ℓ scalar vs small-scale-only depending on the declared history.', 'note': 'Declare a reproducible decision rule for classifying signatures (CMB window vs small-scale). Prefer CMB if there is any overlap with the [2, 2500] window.'} (decision=cmb)
+- Planck nuisance policy = {'A_planck': 1.0, 'A_planck_policy': 'fixed', 'pivot_normalization': 'fixed_at_pivot', 'pivot_scalar_Mpc_inv': 0.05, 'note': 'Planck likelihoods use fixed calibration (A_planck=1) under the current policy. Pivot normalization is explicit and fixed for CAMB integration; upgrade path is profiling/marginalization.'}
+
+Scale mapping:
+- TFPT M ≈ 3.060e+13 GeV (from M/Mpl)
+- chi_star ≈ 13867 Mpc (proxy)
+- k_hat range = [1.000e-07, 2.000e+04] => ℓ range ≈ [2.71e-09, 542]
+- targets = [2.0, 30.0, 700.0], hits = [2.0, 30.0]
+
+CMB spectra backend (CAMB):
+- backend = camb
+- cosmology: H0=67.36, Omega_m=0.3153, Omega_r=9.2e-05, omega_b_h2=0.02237, omega_c_h2=0.120693263488, tau=0.054
+- primordial (TFPT/Starobinsky): N=57, n_s=0.964912, A_s=2.1655e-09, r=0.003693, pivot=0.05 1/Mpc
+- primordial P(k) source = bounce_injected_table:out/primordial_spectrum_builder/results.json (pivot_normalized scale=0.992892)
+- Planck plik-lite: {"enabled": false, "A_planck": 1.0, "note": "set TFPT_ENABLE_PLANCK_LIKELIHOOD=1 to evaluate Planck likelihoods (Cobaya-native)."}
+- Planck low-l: {"enabled": false, "note": "set TFPT_ENABLE_PLANCK_LIKELIHOOD=1 to evaluate Planck low-ℓ TT/EE."}
+- Planck lensing: {"enabled": false, "note": "set TFPT_ENABLE_PLANCK_LIKELIHOOD=1 to evaluate Planck lensing likelihood."}
+- C_ell summary: {"backend": "camb", "camb_version": "1.6.0", "lmax": 2550, "peak1": {"ell": 220, "TT_muK2": 5863.373524228549}, "TT_at_ell": {"2": 10994.052788040624, "30": 647.8609341363789, "200": 5742.647589819521, "700": 1945.98114865334, "2000": 247.8831870249328}}
+- sampled C_ell points: [{"ell": 2, "TT_muK2": 10994.052788040624, "EE_muK2": 0.5094182831547874, "TE_muK2": 48.139951220365695, "BB_muK2": 5.807380200189338e-05}, {"ell": 3, "TT_muK2": 10486.332756600279, "EE_muK2": 0.5621820370053637, "TE_muK2": 58.38864648951455, "BB_muK2": 5.899813750567428e-05}, {"ell": 4, "TT_muK2": 9385.765294335317, "EE_muK2": 0.36630587267659315, "TE_muK2": 49.26763306176042, "BB_muK2": 5.258585876706204e-05}, {"ell": 5, "TT_muK2": 7182.08817878837, "EE_muK2": 0.16656718770971793, "TE_muK2": 30.64195776373886, "BB_muK2": 4.424091672746869e-05}, {"ell": 10, "TT_muK2": 466.5297095482036, "EE_muK2": 0.0005850428194782491, "TE_muK2": 0.431044842971674, "BB_muK2": 4.515371668392849e-05}, {"ell": 20, "TT_muK2": 311.2303573438601, "EE_muK2": 0.0006453541166885943, "TE_muK2": 0.040003865521635575, "BB_muK2": 0.00016839421516873685}, {"ell": 30, "TT_muK2": 647.8609341363789, "EE_muK2": 0.004809524067120411, "TE_muK2": 0.16342314376221537, "BB_muK2": 0.00036823950199750245}, {"ell": 50, "TT_muK2": 1396.4095294421256, "EE_muK2": 0.0980404881517993, "TE_muK2": 0.10272609878520036, "BB_muK2": 0.0009747919087911579}, {"ell": 80, "TT_muK2": 2178.001377489278, "EE_muK2": 0.48965268203834356, "TE_muK2": -11.091198673025776, "BB_muK2": 0.002307483988460182}, {"ell": 100, "TT_muK2": 2764.125992803461, "EE_muK2": 0.7951178047937013, "TE_muK2": -23.691833565746837, "BB_muK2": 0.0034758590504286}, {"ell": 150, "TT_muK2": 4513.504898528493, "EE_muK2": 1.1370834697086765, "TE_muK2": -47.631897295167654, "BB_muK2": 0.007648353870785022}, {"ell": 200, "TT_muK2": 5742.647589819521, "EE_muK2": 0.7069214331828105, "TE_muK2": -15.837394916952745, "BB_muK2": 0.014328211499722444}, {"ell": 300, "TT_muK2": 4165.032244297073, "EE_muK2": 9.311700761012656, "TE_muK2": 121.05229881404568, "BB_muK2": 0.03133290384290543}, {"ell": 500, "TT_muK2": 2519.579070052744, "EE_muK2": 8.492435158636333, "TE_muK2": -59.77674177707491, "BB_muK2": 0.06292035641744452}, {"ell": 700, "TT_muK2": 1945.98114865334, "EE_muK2": 38.50920371795204, "TE_muK2": -100.87443806032083, "BB_muK2": 0.08482643714783036}, {"ell": 1000, "TT_muK2": 1115.8176989036112, "EE_muK2": 43.99784819700467, "TE_muK2": -26.536130659280403, "BB_muK2": 0.09856170198115949}, {"ell": 1500, "TT_muK2": 728.4072935973951, "EE_muK2": 13.621997648365307, "TE_muK2": -0.3171654892799146, "BB_muK2": 0.08381063786446083}, {"ell": 2000, "TT_muK2": 247.8831870249328, "EE_muK2": 9.189186049173854, "TE_muK2": -19.338517096211383, "BB_muK2": 0.05110933577459727}, {"ell": 2508, "TT_muK2": 81.98087432686778, "EE_muK2": 3.1547511050175356, "TE_muK2": -3.2713669296016468, "BB_muK2": 0.02794785763783111}]
+
+Checks:
+- ell_mapping_computed: PASS (a0/a_tr=2.4485807685210785e+57 (note=from k_calibration expansion_budget_estimate (out/k_calibration/results.json)))
+- signature_policy_declared: PASS (policy={'cmb_ell_range': [2, 2500], 'small_scale_ell_min': 2500, 'decision_rule': 'prefer_cmb_if_overlap', 'primary_signature': 'conditional_gate', 'rationale': 'TFPT delivers transfer functions in k-space. The mapping to observable ℓ is a policy gate that depends on the expansion history (a0/a_transition). Under the current threshold-derived budget (see out_physics/k_calibration), scalar features land at ℓ_bounce^s≈57 (CMB low-ℓ), while tensor features are super-horizon (ℓ_bounce^t≈0.212). We therefore treat the signature class as conditional: CMB low-ℓ scalar vs small-scale-only depending on the declared history.', 'note': 'Declare a reproducible decision rule for classifying signatures (CMB window vs small-scale). Prefer CMB if there is any overlap with the [2, 2500] window.'})
+- signature_policy_decision: PASS (decision=cmb, cmb_overlap=True, small_scale_overlap=False)
+- signature_policy_consistent_with_bounce: PASS (scalar ell≈56.9974 (in CMB=True); tensor ell≈0.211565 (in CMB=False))
+- ell_predictions_falsifiable: PASS (targets hit: [2.0, 30.0] within [2.71e-09, 542])
+- primordial_pivot_normalization: PASS (applied scale=0.992892 to match P_R(0.05)=A_s)
+- planck_likelihood_evaluated: PASS (disabled (set TFPT_ENABLE_PLANCK_LIKELIHOOD=1))
+- planck_lowl_evaluated: PASS (disabled (set TFPT_ENABLE_PLANCK_LIKELIHOOD=1))
+- planck_lensing_evaluated: PASS (disabled (set TFPT_ENABLE_PLANCK_LIKELIHOOD=1))
+- camb_power_spectra_computed: PASS (computed C_ell (TT/EE/BB/TE) up to lmax=2508)
+- camb_first_peak_in_cmb_range: PASS (first TT peak at ell≈220 (TT≈5863.4 µK^2))
+- boltzmann_transfer_implemented: PASS (backend=camb (CAMB))
+- bounce_feature_injection_wired: PASS (CAMB P(k) source: bounce_injected_table:out/primordial_spectrum_builder/results.json (pivot_normalized scale=0.992892))

@@ -1,0 +1,15 @@
+{
+  "above_MZ": "PyR@TE_2loop_only",
+  "models": {
+    "SM": "SM_TFPT_2Loop_v25",
+    "E8": "E8Cascade2LoopGravityV2"
+  },
+  "below_MZ": "EFT_only",
+  "allowed_1loop_modules": [
+    "alpha_running",
+    "below_mt_eft_cascade",
+    "weinberg_operator_kappa"
+  ],
+  "note": "Declarative policy: above MZ, RG evolution must use PyR@TE-generated beta functions (suite-integrated runner). Below MZ, EFT helpers may use dedicated 1-loop/threshold policies. This file is consumed by rg_authority checks/tests."
+}
+

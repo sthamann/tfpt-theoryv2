@@ -1,0 +1,40 @@
+APS η-gluing / spectral flow (v2.4 Appendix seam)
+
+Implements the seam boundary operator used in v2.4 (Appendix seam):
+- D_Γ = i d/dθ on θ∈[0,2π) with APS gluing and matching operator U_Γ(θ)=exp(i m θ).
+Checks:
+- spectral flow == winding(det U_Γ),
+- η(0) evaluation via Hurwitz ζ,
+- TFPT seam term Δ_Γ = 2π for minimal nontrivial class (m=1).
+
+epsilon = 0.001
+
+spin          m   theta_start      theta_end        SF   wind(det U)    eta0(start)   eta0(end)
+periodic      0          0.001         0.001   0           0      0.999682      0.999682
+periodic      1          0.001       6.28419   1           1      0.999682      0.999682
+periodic      2          0.001       12.5674   2           2      0.999682      0.999682
+periodic      3          0.001       18.8506   3           3      0.999682      0.999682
+periodic      4          0.001       25.1337   4           4      0.999682      0.999682
+periodic      5          0.001       31.4169   5           5      0.999682      0.999682
+periodic      6          0.001       37.7001   6           6      0.999682      0.999682
+periodic      7          0.001       43.9833   7           7      0.999682      0.999682
+periodic      8          0.001       50.2665   8           8      0.999682      0.999682
+antiperiodic  0          0.001         0.001   0           0   -0.00031831   -0.00031831
+antiperiodic  1          0.001       6.28419   1           1   -0.00031831   -0.00031831
+antiperiodic  2          0.001       12.5674   2           2   -0.00031831   -0.00031831
+antiperiodic  3          0.001       18.8506   3           3   -0.00031831   -0.00031831
+antiperiodic  4          0.001       25.1337   4           4   -0.00031831   -0.00031831
+antiperiodic  5          0.001       31.4169   5           5   -0.00031831   -0.00031831
+antiperiodic  6          0.001       37.7001   6           6   -0.00031831   -0.00031831
+antiperiodic  7          0.001       43.9833   7           7   -0.00031831   -0.00031831
+antiperiodic  8          0.001       50.2665   8           8   -0.00031831   -0.00031831
+
+Checks:
+- sf_equals_winding_all_m: PASS (numeric_sf == analytic_sf == winding_det_u for m=0..8 and both spins)
+- eta0_matches_hurwitz_zeta: PASS (η(0) numeric (Hurwitz ζ) matches analytic closed form for start/end points)
+- minimal_nontrivial_m: PASS (min m with SF>0 (periodic) is 1)
+- tfpt_seam_term_delta_gamma_2pi: PASS (Δ_Γ := 2π·SF(U_Γ) for m=1 gives 6.283185307179586 (expected 2π))
+
+Notes:
+- This implements the explicit seam operator D_Γ that is stated in the v2.4 TeX appendix; it is no longer a free toy choice.
+- What remains open for a full QFT completion is the embedding of D_Γ into the full 4D/6D Dirac operator and the full η-gluing evaluation on the complete TFPT geometry.

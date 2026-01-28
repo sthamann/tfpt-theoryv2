@@ -1,0 +1,31 @@
+PMNS Z3-breaking scan (ε fixed = varphi0/6)
+
+Derived operator basis (family-space Majorana mass matrices; Z3 permutation P):
+- dim(invariant) = 2, dim(breaking) = 4
+
+Baseline (TM1 + Z3 leading order):
+- sin^2(theta13) = varphi0*exp(-5/6) = 0.023108435158881104293284660903437775404804297675810195320905181018454300732168135
+- theta13 = 8.7437°
+- theta12 (TM1 sum rule) = 34.3225°
+- theta23 (LO) = 45.0000°
+- delta_CP (LO) = 90.0000°
+
+epsilon = varphi0/6 = 0.00886199 (rad proxy) ~ 0.508°
+
+Variants:
+variant                 theta23[deg]   deltaCP[deg]   Δtheta23[deg]   Δdelta[deg]
+L_R23(+eps)                45.5078       90.0000        0.5078      0.0000
+L_R23(-eps)                44.4922       90.0000       -0.5078      0.0000
+R_R23(+eps)                45.4243       88.1896        0.4243     -1.8104
+R_R23(-eps)                44.5757       91.8104       -0.4243      1.8104
+L_R23(+eps)*Z3phase        45.5078       90.0000        0.5078      0.0000
+L_R23(-eps)*Z3phase        44.4922       90.0000       -0.5078      0.0000
+
+Checks:
+- tfpt_z3_breaking_operator_basis_derived: PASS (derived Z3-invariant subspace dim=2 and breaking subspace dim=4 (expected 2 and 4); invariance checks=True)
+- epsilon_value: PASS (epsilon=varphi0/6 = 0.008861992029474254 (rad proxy), ~0.508°)
+- perturbative_shifts: PASS (max Δθ23=0.508°, max Δδ=1.810°)
+
+Notes:
+- This implements a finite discrete-operator scan with ε fixed by TFPT (no new continuous parameters).
+- The Z3-invariant vs Z3-breaking operator subspaces are derived from the family-space permutation symmetry and exposed in results.json for downstream restrictions.

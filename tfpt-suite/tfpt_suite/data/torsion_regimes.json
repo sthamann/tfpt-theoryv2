@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "note": "Explicit torsion-prediction regimes for torsion_bounds_mapping. This is a TFPT-side input: it declares which physical regime is being tested (vacuum today vs a nontrivial source model). The goal is to avoid an 'always green' bounds module by making the regime choice explicit and falsifiable.",
+  "default_regime_id": "cosmological_background_H0",
+  "regimes": [
+    {
+      "id": "vacuum_today",
+      "label": "Vacuum today (Einstein–Cartan minimal: torsion sourced by spin ⇒ vanishes in vacuum)",
+      "model": "vacuum",
+      "S_mu_abs_GeV": 0.0,
+      "compare_to_bounds": true,
+      "note": "This is the minimal local-lab/vacuum theorem regime. It is not a falsification regime because S_mu=0 always satisfies bounds."
+    },
+    {
+      "id": "cosmological_background_H0",
+      "label": "Cosmological background (order H0)",
+      "model": "cosmological_H0",
+      "H0_km_s_Mpc": 67.36,
+      "c_factor": 1.0,
+      "compare_to_bounds": true,
+      "note": "Toy regime: set |S_mu| ≈ c_factor · H0 (in GeV). This is nonzero but typically far below SME bounds."
+    },
+    {
+      "id": "benchmark_spin_lab_ferromagnet_tfpt_scale",
+      "label": "Spin-polarized lab benchmark (ferromagnet-like; TFPT scale coupling)",
+      "model": "spin_polarized_medium",
+      "number_density": { "value": 1.0e23, "unit": "cm^-3" },
+      "polarization": 0.5,
+      "spin_per_particle": 0.5,
+      "coupling_scale": { "kind": "TFPT_M", "note": "Use TFPT R^2 scale M as the effective torsion coupling scale (explicit assumption)." },
+      "c_spin": 1.0,
+      "compare_to_bounds": false,
+      "note": "Illustrative lab-scale benchmark. For realistic lab densities this typically predicts extremely small |S_mu|, but it is explicitly nonzero."
+    },
+    {
+      "id": "benchmark_spin_nuclear_tfpt_scale",
+      "label": "Spin-density benchmark (nuclear density; TFPT scale coupling)",
+      "model": "spin_polarized_medium",
+      "number_density": { "value": 0.16, "unit": "fm^-3" },
+      "polarization": 1.0,
+      "spin_per_particle": 0.5,
+      "coupling_scale": { "kind": "TFPT_M", "note": "Use TFPT R^2 scale M as the effective torsion coupling scale (explicit assumption)." },
+      "c_spin": 1.0,
+      "compare_to_bounds": false,
+      "note": "Illustrative high-density benchmark (order nuclear matter). This is not an Earth-lab environment, but it demonstrates a genuinely nontrivial torsion regime with a potentially testable magnitude under the explicit TFPT-scale coupling assumption."
+    }
+  ]
+}
+

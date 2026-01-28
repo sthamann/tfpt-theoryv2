@@ -1,0 +1,116 @@
+{
+  "checks": [
+    {
+      "check_id": "finite_alpha3_matching_nontrivial",
+      "detail": "\u0394\u03b1_s(mc)=1.069e-03 (matching-on minus matching-off)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "alpha3_matching_invertible",
+      "detail": "down(up(alpha)) - alpha = 0.000e+00",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "matching_finite_pieces_EW_QED_present",
+      "detail": "\u0394\u03b1_total=0.06637292800460496831321957428385943695321073985639111010604467847449991743846326 (lept=0.03142092800460496831321957428385943695321073985639111010604467847449991743846326, had5=0.02783, msbar_shift=0.007122); \u0394\u03b1\u0302\u2212\u0394\u03b1 diff=0.000020696424417858000000000000000000000000000000000000000000000000000000000000000002; \u0394y_t=0.00941488917612811, \u0394\u03bb_H=0.007106953534740329",
+      "passed": true,
+      "severity": "WARN"
+    },
+    {
+      "check_id": "matching_finite_pieces_top_higgs_present",
+      "detail": "\u0394y_t^EW(\u03bc=mt)=0.00941488917612811, \u0394\u03bb_H^EW(\u03bc=mH)=0.007106953534740329 (v=246.0 GeV)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "below_MZ_policy_explicit_and_applied",
+      "detail": "policy file=/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/alpha_running_pdg.json (\u0394\u03b1_had5 + leptonic 1-loop + explicit EW MSbar shift)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "matching_finite_pieces",
+  "plot": null,
+  "results": {
+    "alpha_running": {
+      "alpha_bar5_inv_MZ_from_alpha0": "127.94051866958587331001953134021674783329612966553202673731794505784319969841618",
+      "alpha_inv_0_ref": "137.035999177",
+      "delta_alpha_parts": {
+        "delta_alpha_extra_msbar": "0.0",
+        "delta_alpha_extra_total": "0.007122",
+        "delta_alpha_had5": "0.02783",
+        "delta_alpha_lept_1loop": "0.03142092800460496831321957428385943695321073985639111010604467847449991743846326",
+        "delta_alpha_msbar_on_shell_shift": "0.007122",
+        "delta_alpha_top_decoupling": "0.0",
+        "delta_alpha_total": "0.06637292800460496831321957428385943695321073985639111010604467847449991743846326"
+      }
+    },
+    "alpha_s_mc": {
+      "delta": 0.0010690910333388537,
+      "no_matching": 0.3469144140881088,
+      "with_matching": 0.34798350512144766
+    },
+    "finite_pieces_top_higgs": {
+      "delta_lambda_h_ew_mu_mH": 0.007106953534740329,
+      "delta_y_t_ew_mu_mt": 0.00941488917612811,
+      "mu_mH_GeV": 125.25,
+      "mu_mt_GeV": 172.76,
+      "v_ev_GeV": 246.0
+    },
+    "inputs": {
+      "alpha_running_pdg_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/alpha_running_pdg.json",
+      "global_reference_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference.json",
+      "sm_inputs_mz_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/sm_inputs_mz.json"
+    },
+    "invertibility": {
+      "alpha": 0.34798350512144766,
+      "alpha_back": 0.34798350512144766,
+      "alpha_up": 0.3473348623664315,
+      "error": 0.0
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given inputs.",
+    "formulas": [
+      "\u03b1_nf(\u03bc=m_Q) = \u03b1_{nf+1} [1 + (11/72)(\u03b1/\u03c0)^2]  (direction=down); inverse for direction=up",
+      "\u03b1\u0304(MZ) = \u03b1(0) / (1 - \u0394\u03b1_lept(MZ) - \u0394\u03b1_had^{(5)}(MZ) - \u0394\u03b1_msbar_shift - \u0394\u03b1_top - \u0394\u03b1_extra)",
+      "\u03b4_t^w(\u03bc) = (G_F m_t^2 / (8 \u03c0^2 \u221a2)) [-(N_c + 3/2) ln(m_t^2/\u03bc^2) + N_c/2 + 4 \u2212 r + 2 r (2 r \u2212 3) ln(4 r) \u2212 8 r^2 f(r)]",
+      "\u03bb^{(1)}(\u03bc) from Buttazzo et al. (App. A.1) using A0/B0 with A0(M)=M^2(1\u2212ln(M^2/\u03bc^2)) and B0(p;M1,M2)=-\u222b_0^1 ln[(x M1^2+(1-x)M2^2\u2212x(1-x)p^2)/\u03bc^2] dx"
+    ],
+    "gaps": [
+      "Full publication-grade matching still requires end-to-end use of EW/QED finite pieces across all declared thresholds plus a full below-MZ EFT policy; this module provides explicit proof points for QCD (\u03b1_s), QED/EW \u03b1-running, and top/Higgs EW finite pieces."
+    ],
+    "inputs": [
+      "SM inputs at MZ: tfpt_suite/data/sm_inputs_mz.json",
+      "QED comparison-layer policy: tfpt_suite/data/alpha_running_pdg.json",
+      "reference table: tfpt_suite/data/global_reference.json"
+    ],
+    "maturity": null,
+    "module_id": "matching_finite_pieces",
+    "name": "Matching finite pieces (QCD \u03b1_s 2-loop decoupling + QED/EW \u03b1(0)\u2192\u03b1\u0304^(5)(MZ) bridge)",
+    "objective": [
+      "Provide a concrete 'finite piece exists' proof point (QCD \u03b1_s threshold at 2-loop).",
+      "Make it easy to audit what changes when matching is enabled."
+    ],
+    "outputs": [
+      "explicit demonstration of a nontrivial finite matching step (\u03b1_s 2-loop heavy-quark decoupling)",
+      "side-by-side \u03b1_s(\u03bc) values with/without finite matching at thresholds (QCD-only policy)",
+      "explicit \u03b1(0)\u2192\u03b1\u0304^(5)(MZ) renorm chain (QED leptonic 1-loop + \u0394\u03b1_had^(5) + explicit MSbar remainder)",
+      "explicit top/Higgs 1-loop EW finite pieces (\u0394y_t, \u0394\u03bb_H) evaluated at threshold scales"
+    ],
+    "question": "Are finite matching pieces implemented explicitly (not silently), and are they numerically well-behaved?",
+    "references": [],
+    "validation": [
+      "finite \u03b1_s matching produces a non-zero step at heavy-quark thresholds at 2-loop",
+      "matching is invertible up\u2194down to numerical precision (metamorphic check)",
+      "QED/EW finite pieces are explicit and non-zero (\u0394\u03b1_lept, \u0394\u03b1_had, \u0394\u03b1_msbar_shift)",
+      "top/Higgs EW finite pieces are explicit and non-zero at the declared thresholds"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

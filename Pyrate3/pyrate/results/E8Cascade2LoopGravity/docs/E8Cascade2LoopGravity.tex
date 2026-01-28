@@ -1,0 +1,1286 @@
+\documentclass[12pt]{article}
+\pagestyle{empty}
+
+\usepackage[top=2cm,bottom=2cm,left=2.5cm,right=2cm,nohead,nofoot]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{booktabs}
+\usepackage[]{hyperref}
+\usepackage{autobreak}
+\setlength{\parindent}{0pt}
+
+\newcommand{\tr}{\mathrm{Tr}}
+\newcommand{\trans}{\mathrm{T}}
+
+\title{E8Cascade2LoopGravity}
+\author{PyR@TE 3.0}
+\date{2 July 2025, 19:56}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+    \clearpage
+
+\section{Model}
+
+\subsection{Gauge groups}
+
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.3}
+\centering
+\begin{tabular}{c@{\hskip .66cm}c@{\hskip .66cm}c@{\hskip .5cm}c}
+\hline
+Name & Type & Abelian & Coupling constant \\ \hline
+U1Y & $U(1)$ & True & $g_{1}$ \\
+SU2L & $SU(2)$ & False & $g_{2}$ \\
+SU3c & $SU(3)$ & False & $g_{3}$ \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Fermions}
+
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.15}
+\centering
+\begin{tabular}{c@{\hskip .66cm}c@{\hskip .66cm}c}
+\hline
+Name & Generations & U1Y $\times$ SU2L $\times$ SU3c\\ \hline \\ [-2ex]
+$Q$ & 3 & ($+\frac{1}{6}$, $\mathbf{2}$, $\mathbf{3}$) \\[.2cm]
+$L$ & 3 & ($- \frac{1}{2}$, $\mathbf{2}$, $\mathbf{1}$) \\[.2cm]
+$uR$ & 3 & ($+\frac{2}{3}$, $\mathbf{1}$, $\mathbf{3}$) \\[.2cm]
+$dR$ & 3 & ($- \frac{1}{3}$, $\mathbf{1}$, $\mathbf{3}$) \\[.2cm]
+$eR$ & 3 & ($-1$, $\mathbf{1}$, $\mathbf{1}$) \\[.2cm]
+$SigmaF$ & 1 & ($0$, $\mathbf{3}$, $\mathbf{1}$) \\[.2cm]
+$NR$ & 3 & ($0$, $\mathbf{1}$, $\mathbf{1}$) \\[.1cm] \hline
+\end{tabular}
+\end{table}
+
+\subsection{Scalars}
+
+\begin{table}[h]
+\renewcommand{\arraystretch}{1.15}
+\centering
+\begin{tabular}{c@{\hskip .66cm}c@{\hskip .66cm}ccc}
+\hline
+Name & Complex & Expression & Generations & U1Y $\times$ SU2L $\times$ SU3c\\ \hline \\ [-2ex]
+$phiR$ & False & / & 1 & ($0$, $\mathbf{1}$, $\mathbf{1}$) \\[.2cm]
+$phiI$ & False & / & 1 & ($0$, $\mathbf{1}$, $\mathbf{1}$) \\[.2cm]
+$R_{3}$ & False & / & 1 & ($0$, $\mathbf{1}$, $\mathbf{1}$) \\[.2cm]
+$H$ & True & $\frac{1}{\sqrt{2}} \left(\Pi + i\, \Sigma\right)$ & 1 & ($+\frac{1}{2}$, $\mathbf{2}$, $\mathbf{1}$) \\[.1cm] \hline
+\end{tabular}
+\end{table}
+
+\section{Lagrangian}
+
+\subsection{Definitions}
+{\allowdisplaybreaks
+\begin{align*}
+Htilde{}_{i} &= \epsilon_{i,j} H^{\dagger}_{j}\\
+\end{align*}
+}
+\subsection{Yukawa couplings}
+{\allowdisplaybreaks
+\begin{align*}
+\begin{autobreak}
+-\mathcal{L}_Y = 
+
++ Yu{}_{f_1,f_2} \tilde{H}_{i} \overline{Q}_{f_{1},i,a} uR_{f_{2},a}
+
++ Yd{}_{f_1,f_2} \overline{Q}_{f_{1},i,a} H_{i} dR_{f_{2},a}
+
++ Ye{}_{f_1,f_2} \overline{L}_{f_{1},i} H_{i} eR_{f_{2}}
+
++ yN{}_{f_1,f_2} \tilde{H}_{i} \overline{L}_{f_{1},i} NR_{f_{2}}
+ + \text{h.c.}
+\end{autobreak}
+\end{align*}
+}\subsection{Quartic couplings}
+{\allowdisplaybreaks
+\begin{align*}
+\begin{autobreak}
+-\mathcal{L}_Q = 
+
++ \lambda H^{\dagger}_{i} H_{i} H^{\dagger}_{i_{1}} H_{i_{1}}
+
++ lPhi \big(2 phiI^{2} phiR^{2} 
++ phiI phiI phiI phiI 
++ phiR phiR phiR phiR\big)
+
++ lHphi \big(phiI phiI H_{i} H^{\dagger}_{i} 
++ phiR phiR H_{i} H^{\dagger}_{i}\big)
+\end{autobreak}
+\end{align*}
+}\subsection{Trilinear couplings}
+{\allowdisplaybreaks
+\begin{align*}
+\begin{autobreak}
+-\mathcal{L}_T = 
+
++ cR_{3} R_{3} H^{\dagger}_{i} H_{i}
+\end{autobreak}
+\end{align*}
+}\subsection{Scalar mass couplings}
+{\allowdisplaybreaks
+\begin{align*}
+\begin{autobreak}
+-\mathcal{L}_{sm} = 
+
+-  \mu_{2} H^{\dagger}_{i} H_{i}
+
++ MPhi \big(phiI phiI 
++ phiR phiR\big)
+\end{autobreak}
+\end{align*}
+}
+
+\section{Renormalization Group Equations}
+\subsection{Convention}
+\begin{equation*}
+\beta\left(X\right) \equiv \mu \frac{d X}{d \mu}\equiv\frac{1}{\left(4 \pi\right)^{2}}\beta^{(1)}(X)+\frac{1}{\left(4 \pi\right)^{4}}\beta^{(2)}(X)
+\end{equation*}
+
+
+\subsection{Gauge couplings}
+{\allowdisplaybreaks
+
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(g_{1}) =\frac{41}{6} g_{1}^{3}
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(g_{1}) =
+
++ \frac{199}{18} g_{1}^{5}
+
++ \frac{9}{2} g_{1}^{3} g_{2}^{2}
+
++ \frac{44}{3} g_{1}^{3} g_{3}^{2}
+
+-  \frac{17}{6} g_{1}^{3} \tr\left(Yu^{\dagger} Yu \right)
+
+-  \frac{5}{6} g_{1}^{3} \tr\left(Yd^{\dagger} Yd \right)
+
+-  \frac{5}{2} g_{1}^{3} \tr\left(Ye^{\dagger} Ye \right)
+
+-  \frac{1}{2} g_{1}^{3} \tr\left(yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(g_{2}) =- \frac{11}{6} g_{2}^{3}
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(g_{2}) =
+
++ \frac{3}{2} g_{1}^{2} g_{2}^{3}
+
++ \frac{163}{6} g_{2}^{5}
+
++ 12 g_{2}^{3} g_{3}^{2}
+
+-  \frac{3}{2} g_{2}^{3} \tr\left(Yu^{\dagger} Yu \right)
+
+-  \frac{3}{2} g_{2}^{3} \tr\left(Yd^{\dagger} Yd \right)
+
+-  \frac{1}{2} g_{2}^{3} \tr\left(Ye^{\dagger} Ye \right)
+
+-  \frac{1}{2} g_{2}^{3} \tr\left(yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(g_{3}) =-7 g_{3}^{3}
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(g_{3}) =
+
++ \frac{11}{6} g_{1}^{2} g_{3}^{3}
+
++ \frac{9}{2} g_{2}^{2} g_{3}^{3}
+
+- 26 g_{3}^{5}
+
+- 2 g_{3}^{3} \tr\left(Yu^{\dagger} Yu \right)
+
+- 2 g_{3}^{3} \tr\left(Yd^{\dagger} Yd \right)
+\end{autobreak}
+\end{align*}
+}
+
+\subsection{Yukawa couplings}
+{\allowdisplaybreaks
+
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(Yu) =
+
++ \frac{3}{2} Yu Yu^{\dagger} Yu
+
+-  \frac{3}{2} Yd Yd^{\dagger} Yu
+
++ 3 \tr\left(Yu^{\dagger} Yu \right) Yu
+
++ 3 \tr\left(Yd^{\dagger} Yd \right) Yu
+
++ \tr\left(Ye^{\dagger} Ye \right) Yu
+
++ \tr\left(yN^{\dagger} yN \right) Yu
+
+-  \frac{17}{12} g_{1}^{2} Yu
+
+-  \frac{9}{4} g_{2}^{2} Yu
+
+- 8 g_{3}^{2} Yu
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(Yu) =
+
++ \frac{3}{2} Yu Yu^{\dagger} Yu Yu^{\dagger} Yu
+
+-  \frac{1}{4} Yu Yu^{\dagger} Yd Yd^{\dagger} Yu
+
+-  Yd Yd^{\dagger} Yu Yu^{\dagger} Yu
+
++ \frac{11}{4} Yd Yd^{\dagger} Yd Yd^{\dagger} Yu
+
+-  \frac{27}{4} \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu \right) Yu
+
+-  \frac{27}{4} \tr\left(Yu^{\dagger} Yu \right) Yu Yu^{\dagger} Yu
+
++ \frac{15}{4} \tr\left(Yu^{\dagger} Yu \right) Yd Yd^{\dagger} Yu
+
++ \frac{3}{2} \tr\left(Yu^{\dagger} Yd Yd^{\dagger} Yu \right) Yu
+
+-  \frac{27}{4} \tr\left(Yd^{\dagger} Yd \right) Yu Yu^{\dagger} Yu
+
+-  \frac{27}{4} \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd \right) Yu
+
++ \frac{15}{4} \tr\left(Yd^{\dagger} Yd \right) Yd Yd^{\dagger} Yu
+
+-  \frac{9}{4} \tr\left(Ye^{\dagger} Ye \right) Yu Yu^{\dagger} Yu
+
++ \frac{5}{4} \tr\left(Ye^{\dagger} Ye \right) Yd Yd^{\dagger} Yu
+
+-  \frac{9}{4} \tr\left(Ye^{\dagger} Ye Ye^{\dagger} Ye \right) Yu
+
++ \frac{1}{2} \tr\left(Ye^{\dagger} yN yN^{\dagger} Ye \right) Yu
+
+-  \frac{9}{4} \tr\left(yN^{\dagger} yN \right) Yu Yu^{\dagger} Yu
+
++ \frac{5}{4} \tr\left(yN^{\dagger} yN \right) Yd Yd^{\dagger} Yu
+
+-  \frac{9}{4} \tr\left(yN^{\dagger} yN yN^{\dagger} yN \right) Yu
+
+- 12 \lambda Yu Yu^{\dagger} Yu
+
++ 6 \lambda^{2} Yu
+
++ 2 lHphi^{2} Yu
+
++ \frac{223}{48} g_{1}^{2} Yu Yu^{\dagger} Yu
+
++ \frac{135}{16} g_{2}^{2} Yu Yu^{\dagger} Yu
+
++ 16 g_{3}^{2} Yu Yu^{\dagger} Yu
+
+-  \frac{43}{48} g_{1}^{2} Yd Yd^{\dagger} Yu
+
++ \frac{9}{16} g_{2}^{2} Yd Yd^{\dagger} Yu
+
+- 16 g_{3}^{2} Yd Yd^{\dagger} Yu
+
++ \frac{85}{24} g_{1}^{2} \tr\left(Yu^{\dagger} Yu \right) Yu
+
++ \frac{45}{8} g_{2}^{2} \tr\left(Yu^{\dagger} Yu \right) Yu
+
++ 20 g_{3}^{2} \tr\left(Yu^{\dagger} Yu \right) Yu
+
++ \frac{25}{24} g_{1}^{2} \tr\left(Yd^{\dagger} Yd \right) Yu
+
++ \frac{45}{8} g_{2}^{2} \tr\left(Yd^{\dagger} Yd \right) Yu
+
++ 20 g_{3}^{2} \tr\left(Yd^{\dagger} Yd \right) Yu
+
++ \frac{25}{8} g_{1}^{2} \tr\left(Ye^{\dagger} Ye \right) Yu
+
++ \frac{15}{8} g_{2}^{2} \tr\left(Ye^{\dagger} Ye \right) Yu
+
++ \frac{5}{8} g_{1}^{2} \tr\left(yN^{\dagger} yN \right) Yu
+
++ \frac{15}{8} g_{2}^{2} \tr\left(yN^{\dagger} yN \right) Yu
+
++ \frac{1187}{216} g_{1}^{4} Yu
+
+-  \frac{3}{4} g_{1}^{2} g_{2}^{2} Yu
+
++ \frac{19}{9} g_{1}^{2} g_{3}^{2} Yu
+
+-  \frac{19}{4} g_{2}^{4} Yu
+
++ 9 g_{2}^{2} g_{3}^{2} Yu
+
+- 108 g_{3}^{4} Yu
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(Yd) =
+
+-  \frac{3}{2} Yu Yu^{\dagger} Yd
+
++ \frac{3}{2} Yd Yd^{\dagger} Yd
+
++ 3 \tr\left(Yu^{\dagger} Yu \right) Yd
+
++ 3 \tr\left(Yd^{\dagger} Yd \right) Yd
+
++ \tr\left(Ye^{\dagger} Ye \right) Yd
+
++ \tr\left(yN^{\dagger} yN \right) Yd
+
+-  \frac{5}{12} g_{1}^{2} Yd
+
+-  \frac{9}{4} g_{2}^{2} Yd
+
+- 8 g_{3}^{2} Yd
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(Yd) =
+
++ \frac{11}{4} Yu Yu^{\dagger} Yu Yu^{\dagger} Yd
+
+-  Yu Yu^{\dagger} Yd Yd^{\dagger} Yd
+
+-  \frac{1}{4} Yd Yd^{\dagger} Yu Yu^{\dagger} Yd
+
++ \frac{3}{2} Yd Yd^{\dagger} Yd Yd^{\dagger} Yd
+
+-  \frac{27}{4} \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu \right) Yd
+
++ \frac{15}{4} \tr\left(Yu^{\dagger} Yu \right) Yu Yu^{\dagger} Yd
+
+-  \frac{27}{4} \tr\left(Yu^{\dagger} Yu \right) Yd Yd^{\dagger} Yd
+
++ \frac{3}{2} \tr\left(Yu^{\dagger} Yd Yd^{\dagger} Yu \right) Yd
+
++ \frac{15}{4} \tr\left(Yd^{\dagger} Yd \right) Yu Yu^{\dagger} Yd
+
+-  \frac{27}{4} \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd \right) Yd
+
+-  \frac{27}{4} \tr\left(Yd^{\dagger} Yd \right) Yd Yd^{\dagger} Yd
+
++ \frac{5}{4} \tr\left(Ye^{\dagger} Ye \right) Yu Yu^{\dagger} Yd
+
+-  \frac{9}{4} \tr\left(Ye^{\dagger} Ye \right) Yd Yd^{\dagger} Yd
+
+-  \frac{9}{4} \tr\left(Ye^{\dagger} Ye Ye^{\dagger} Ye \right) Yd
+
++ \frac{1}{2} \tr\left(Ye^{\dagger} yN yN^{\dagger} Ye \right) Yd
+
++ \frac{5}{4} \tr\left(yN^{\dagger} yN \right) Yu Yu^{\dagger} Yd
+
+-  \frac{9}{4} \tr\left(yN^{\dagger} yN \right) Yd Yd^{\dagger} Yd
+
+-  \frac{9}{4} \tr\left(yN^{\dagger} yN yN^{\dagger} yN \right) Yd
+
+- 12 \lambda Yd Yd^{\dagger} Yd
+
++ 6 \lambda^{2} Yd
+
++ 2 lHphi^{2} Yd
+
+-  \frac{79}{48} g_{1}^{2} Yu Yu^{\dagger} Yd
+
++ \frac{9}{16} g_{2}^{2} Yu Yu^{\dagger} Yd
+
+- 16 g_{3}^{2} Yu Yu^{\dagger} Yd
+
++ \frac{187}{48} g_{1}^{2} Yd Yd^{\dagger} Yd
+
++ \frac{135}{16} g_{2}^{2} Yd Yd^{\dagger} Yd
+
++ 16 g_{3}^{2} Yd Yd^{\dagger} Yd
+
++ \frac{85}{24} g_{1}^{2} \tr\left(Yu^{\dagger} Yu \right) Yd
+
++ \frac{45}{8} g_{2}^{2} \tr\left(Yu^{\dagger} Yu \right) Yd
+
++ 20 g_{3}^{2} \tr\left(Yu^{\dagger} Yu \right) Yd
+
++ \frac{25}{24} g_{1}^{2} \tr\left(Yd^{\dagger} Yd \right) Yd
+
++ \frac{45}{8} g_{2}^{2} \tr\left(Yd^{\dagger} Yd \right) Yd
+
++ 20 g_{3}^{2} \tr\left(Yd^{\dagger} Yd \right) Yd
+
++ \frac{25}{8} g_{1}^{2} \tr\left(Ye^{\dagger} Ye \right) Yd
+
++ \frac{15}{8} g_{2}^{2} \tr\left(Ye^{\dagger} Ye \right) Yd
+
++ \frac{5}{8} g_{1}^{2} \tr\left(yN^{\dagger} yN \right) Yd
+
++ \frac{15}{8} g_{2}^{2} \tr\left(yN^{\dagger} yN \right) Yd
+
+-  \frac{127}{216} g_{1}^{4} Yd
+
+-  \frac{9}{4} g_{1}^{2} g_{2}^{2} Yd
+
++ \frac{31}{9} g_{1}^{2} g_{3}^{2} Yd
+
+-  \frac{19}{4} g_{2}^{4} Yd
+
++ 9 g_{2}^{2} g_{3}^{2} Yd
+
+- 108 g_{3}^{4} Yd
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(Ye) =
+
++ \frac{3}{2} Ye Ye^{\dagger} Ye
+
+-  \frac{3}{2} yN yN^{\dagger} Ye
+
++ 3 \tr\left(Yu^{\dagger} Yu \right) Ye
+
++ 3 \tr\left(Yd^{\dagger} Yd \right) Ye
+
++ \tr\left(Ye^{\dagger} Ye \right) Ye
+
++ \tr\left(yN^{\dagger} yN \right) Ye
+
+-  \frac{15}{4} g_{1}^{2} Ye
+
+-  \frac{9}{4} g_{2}^{2} Ye
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(Ye) =
+
++ \frac{3}{2} Ye Ye^{\dagger} Ye Ye^{\dagger} Ye
+
+-  \frac{1}{4} Ye Ye^{\dagger} yN yN^{\dagger} Ye
+
+-  yN yN^{\dagger} Ye Ye^{\dagger} Ye
+
++ \frac{11}{4} yN yN^{\dagger} yN yN^{\dagger} Ye
+
+-  \frac{27}{4} \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu \right) Ye
+
+-  \frac{27}{4} \tr\left(Yu^{\dagger} Yu \right) Ye Ye^{\dagger} Ye
+
++ \frac{15}{4} \tr\left(Yu^{\dagger} Yu \right) yN yN^{\dagger} Ye
+
++ \frac{3}{2} \tr\left(Yu^{\dagger} Yd Yd^{\dagger} Yu \right) Ye
+
+-  \frac{27}{4} \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd \right) Ye
+
+-  \frac{27}{4} \tr\left(Yd^{\dagger} Yd \right) Ye Ye^{\dagger} Ye
+
++ \frac{15}{4} \tr\left(Yd^{\dagger} Yd \right) yN yN^{\dagger} Ye
+
+-  \frac{9}{4} \tr\left(Ye^{\dagger} Ye Ye^{\dagger} Ye \right) Ye
+
+-  \frac{9}{4} \tr\left(Ye^{\dagger} Ye \right) Ye Ye^{\dagger} Ye
+
++ \frac{5}{4} \tr\left(Ye^{\dagger} Ye \right) yN yN^{\dagger} Ye
+
++ \frac{1}{2} \tr\left(Ye^{\dagger} yN yN^{\dagger} Ye \right) Ye
+
+-  \frac{9}{4} \tr\left(yN^{\dagger} yN \right) Ye Ye^{\dagger} Ye
+
+-  \frac{9}{4} \tr\left(yN^{\dagger} yN yN^{\dagger} yN \right) Ye
+
++ \frac{5}{4} \tr\left(yN^{\dagger} yN \right) yN yN^{\dagger} Ye
+
+- 12 \lambda Ye Ye^{\dagger} Ye
+
++ 6 \lambda^{2} Ye
+
++ 2 lHphi^{2} Ye
+
++ \frac{129}{16} g_{1}^{2} Ye Ye^{\dagger} Ye
+
++ \frac{135}{16} g_{2}^{2} Ye Ye^{\dagger} Ye
+
+-  \frac{45}{16} g_{1}^{2} yN yN^{\dagger} Ye
+
++ \frac{9}{16} g_{2}^{2} yN yN^{\dagger} Ye
+
++ \frac{85}{24} g_{1}^{2} \tr\left(Yu^{\dagger} Yu \right) Ye
+
++ \frac{45}{8} g_{2}^{2} \tr\left(Yu^{\dagger} Yu \right) Ye
+
++ 20 g_{3}^{2} \tr\left(Yu^{\dagger} Yu \right) Ye
+
++ \frac{25}{24} g_{1}^{2} \tr\left(Yd^{\dagger} Yd \right) Ye
+
++ \frac{45}{8} g_{2}^{2} \tr\left(Yd^{\dagger} Yd \right) Ye
+
++ 20 g_{3}^{2} \tr\left(Yd^{\dagger} Yd \right) Ye
+
++ \frac{25}{8} g_{1}^{2} \tr\left(Ye^{\dagger} Ye \right) Ye
+
++ \frac{15}{8} g_{2}^{2} \tr\left(Ye^{\dagger} Ye \right) Ye
+
++ \frac{5}{8} g_{1}^{2} \tr\left(yN^{\dagger} yN \right) Ye
+
++ \frac{15}{8} g_{2}^{2} \tr\left(yN^{\dagger} yN \right) Ye
+
++ \frac{457}{24} g_{1}^{4} Ye
+
++ \frac{9}{4} g_{1}^{2} g_{2}^{2} Ye
+
+-  \frac{19}{4} g_{2}^{4} Ye
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(yN) =
+
+-  \frac{3}{2} Ye Ye^{\dagger} yN
+
++ \frac{3}{2} yN yN^{\dagger} yN
+
++ 3 \tr\left(Yu^{\dagger} Yu \right) yN
+
++ 3 \tr\left(Yd^{\dagger} Yd \right) yN
+
++ \tr\left(Ye^{\dagger} Ye \right) yN
+
++ \tr\left(yN^{\dagger} yN \right) yN
+
+-  \frac{3}{4} g_{1}^{2} yN
+
+-  \frac{9}{4} g_{2}^{2} yN
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(yN) =
+
++ \frac{11}{4} Ye Ye^{\dagger} Ye Ye^{\dagger} yN
+
+-  Ye Ye^{\dagger} yN yN^{\dagger} yN
+
+-  \frac{1}{4} yN yN^{\dagger} Ye Ye^{\dagger} yN
+
++ \frac{3}{2} yN yN^{\dagger} yN yN^{\dagger} yN
+
+-  \frac{27}{4} \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu \right) yN
+
++ \frac{15}{4} \tr\left(Yu^{\dagger} Yu \right) Ye Ye^{\dagger} yN
+
+-  \frac{27}{4} \tr\left(Yu^{\dagger} Yu \right) yN yN^{\dagger} yN
+
++ \frac{3}{2} \tr\left(Yu^{\dagger} Yd Yd^{\dagger} Yu \right) yN
+
+-  \frac{27}{4} \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd \right) yN
+
++ \frac{15}{4} \tr\left(Yd^{\dagger} Yd \right) Ye Ye^{\dagger} yN
+
+-  \frac{27}{4} \tr\left(Yd^{\dagger} Yd \right) yN yN^{\dagger} yN
+
+-  \frac{9}{4} \tr\left(Ye^{\dagger} Ye Ye^{\dagger} Ye \right) yN
+
++ \frac{5}{4} \tr\left(Ye^{\dagger} Ye \right) Ye Ye^{\dagger} yN
+
+-  \frac{9}{4} \tr\left(Ye^{\dagger} Ye \right) yN yN^{\dagger} yN
+
++ \frac{1}{2} \tr\left(Ye^{\dagger} yN yN^{\dagger} Ye \right) yN
+
++ \frac{5}{4} \tr\left(yN^{\dagger} yN \right) Ye Ye^{\dagger} yN
+
+-  \frac{9}{4} \tr\left(yN^{\dagger} yN yN^{\dagger} yN \right) yN
+
+-  \frac{9}{4} \tr\left(yN^{\dagger} yN \right) yN yN^{\dagger} yN
+
+- 12 \lambda yN yN^{\dagger} yN
+
++ 6 \lambda^{2} yN
+
++ 2 lHphi^{2} yN
+
+-  \frac{81}{16} g_{1}^{2} Ye Ye^{\dagger} yN
+
++ \frac{9}{16} g_{2}^{2} Ye Ye^{\dagger} yN
+
++ \frac{93}{16} g_{1}^{2} yN yN^{\dagger} yN
+
++ \frac{135}{16} g_{2}^{2} yN yN^{\dagger} yN
+
++ \frac{85}{24} g_{1}^{2} \tr\left(Yu^{\dagger} Yu \right) yN
+
++ \frac{45}{8} g_{2}^{2} \tr\left(Yu^{\dagger} Yu \right) yN
+
++ 20 g_{3}^{2} \tr\left(Yu^{\dagger} Yu \right) yN
+
++ \frac{25}{24} g_{1}^{2} \tr\left(Yd^{\dagger} Yd \right) yN
+
++ \frac{45}{8} g_{2}^{2} \tr\left(Yd^{\dagger} Yd \right) yN
+
++ 20 g_{3}^{2} \tr\left(Yd^{\dagger} Yd \right) yN
+
++ \frac{25}{8} g_{1}^{2} \tr\left(Ye^{\dagger} Ye \right) yN
+
++ \frac{15}{8} g_{2}^{2} \tr\left(Ye^{\dagger} Ye \right) yN
+
++ \frac{5}{8} g_{1}^{2} \tr\left(yN^{\dagger} yN \right) yN
+
++ \frac{15}{8} g_{2}^{2} \tr\left(yN^{\dagger} yN \right) yN
+
++ \frac{35}{24} g_{1}^{4} yN
+
+-  \frac{9}{4} g_{1}^{2} g_{2}^{2} yN
+
+-  \frac{19}{4} g_{2}^{4} yN
+\end{autobreak}
+\end{align*}
+}
+
+\subsection{Quartic couplings}
+{\allowdisplaybreaks
+
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(\lambda) =
+
++ 24 \lambda^{2}
+
++ 4 lHphi^{2}
+
+- 3 g_{1}^{2} \lambda
+
+- 9 g_{2}^{2} \lambda
+
++ \frac{3}{8} g_{1}^{4}
+
++ \frac{3}{4} g_{1}^{2} g_{2}^{2}
+
++ \frac{9}{8} g_{2}^{4}
+
++ 12 \lambda \tr\left(Yu^{\dagger} Yu \right)
+
++ 12 \lambda \tr\left(Yd^{\dagger} Yd \right)
+
++ 4 \lambda \tr\left(Ye^{\dagger} Ye \right)
+
++ 4 \lambda \tr\left(yN^{\dagger} yN \right)
+
+- 6 \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu \right)
+
+- 6 \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd \right)
+
+- 2 \tr\left(Ye^{\dagger} Ye Ye^{\dagger} Ye \right)
+
+- 2 \tr\left(yN^{\dagger} yN yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(\lambda) =
+
+- 312 \lambda^{3}
+
+- 40 lHphi^{2} \lambda
+
+- 32 lHphi^{3}
+
++ 36 g_{1}^{2} \lambda^{2}
+
++ 108 g_{2}^{2} \lambda^{2}
+
++ \frac{629}{24} g_{1}^{4} \lambda
+
++ \frac{39}{4} g_{1}^{2} g_{2}^{2} \lambda
+
++ \frac{7}{8} g_{2}^{4} \lambda
+
+-  \frac{379}{48} g_{1}^{6}
+
+-  \frac{559}{48} g_{1}^{4} g_{2}^{2}
+
+-  \frac{353}{48} g_{1}^{2} g_{2}^{4}
+
++ \frac{241}{16} g_{2}^{6}
+
+- 144 \lambda^{2} \tr\left(Yu^{\dagger} Yu \right)
+
+- 144 \lambda^{2} \tr\left(Yd^{\dagger} Yd \right)
+
+- 48 \lambda^{2} \tr\left(Ye^{\dagger} Ye \right)
+
+- 48 \lambda^{2} \tr\left(yN^{\dagger} yN \right)
+
++ \frac{85}{6} g_{1}^{2} \lambda \tr\left(Yu^{\dagger} Yu \right)
+
++ \frac{25}{6} g_{1}^{2} \lambda \tr\left(Yd^{\dagger} Yd \right)
+
++ \frac{25}{2} g_{1}^{2} \lambda \tr\left(Ye^{\dagger} Ye \right)
+
++ \frac{5}{2} g_{1}^{2} \lambda \tr\left(yN^{\dagger} yN \right)
+
++ \frac{45}{2} g_{2}^{2} \lambda \tr\left(Yu^{\dagger} Yu \right)
+
++ \frac{45}{2} g_{2}^{2} \lambda \tr\left(Yd^{\dagger} Yd \right)
+
++ \frac{15}{2} g_{2}^{2} \lambda \tr\left(Ye^{\dagger} Ye \right)
+
++ \frac{15}{2} g_{2}^{2} \lambda \tr\left(yN^{\dagger} yN \right)
+
++ 80 g_{3}^{2} \lambda \tr\left(Yu^{\dagger} Yu \right)
+
++ 80 g_{3}^{2} \lambda \tr\left(Yd^{\dagger} Yd \right)
+
+-  \frac{19}{4} g_{1}^{4} \tr\left(Yu^{\dagger} Yu \right)
+
++ \frac{5}{4} g_{1}^{4} \tr\left(Yd^{\dagger} Yd \right)
+
+-  \frac{25}{4} g_{1}^{4} \tr\left(Ye^{\dagger} Ye \right)
+
+-  \frac{1}{4} g_{1}^{4} \tr\left(yN^{\dagger} yN \right)
+
++ \frac{21}{2} g_{1}^{2} g_{2}^{2} \tr\left(Yu^{\dagger} Yu \right)
+
++ \frac{9}{2} g_{1}^{2} g_{2}^{2} \tr\left(Yd^{\dagger} Yd \right)
+
++ \frac{11}{2} g_{1}^{2} g_{2}^{2} \tr\left(Ye^{\dagger} Ye \right)
+
+-  \frac{1}{2} g_{1}^{2} g_{2}^{2} \tr\left(yN^{\dagger} yN \right)
+
+-  \frac{9}{4} g_{2}^{4} \tr\left(Yu^{\dagger} Yu \right)
+
+-  \frac{9}{4} g_{2}^{4} \tr\left(Yd^{\dagger} Yd \right)
+
+-  \frac{3}{4} g_{2}^{4} \tr\left(Ye^{\dagger} Ye \right)
+
+-  \frac{3}{4} g_{2}^{4} \tr\left(yN^{\dagger} yN \right)
+
+- 3 \lambda \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu \right)
+
+- 42 \lambda \tr\left(Yu^{\dagger} Yd Yd^{\dagger} Yu \right)
+
+- 3 \lambda \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd \right)
+
+-  \lambda \tr\left(Ye^{\dagger} Ye Ye^{\dagger} Ye \right)
+
+- 14 \lambda \tr\left(Ye^{\dagger} yN yN^{\dagger} Ye \right)
+
+-  \lambda \tr\left(yN^{\dagger} yN yN^{\dagger} yN \right)
+
+-  \frac{8}{3} g_{1}^{2} \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu \right)
+
++ \frac{4}{3} g_{1}^{2} \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd \right)
+
+- 4 g_{1}^{2} \tr\left(Ye^{\dagger} Ye Ye^{\dagger} Ye \right)
+
+- 32 g_{3}^{2} \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu \right)
+
+- 32 g_{3}^{2} \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd \right)
+
++ 30 \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu Yu^{\dagger} Yu \right)
+
+- 6 \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yd Yd^{\dagger} Yu \right)
+
+- 6 \tr\left(Yu^{\dagger} Yd Yd^{\dagger} Yd Yd^{\dagger} Yu \right)
+
++ 30 \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd Yd^{\dagger} Yd \right)
+
++ 10 \tr\left(Ye^{\dagger} Ye Ye^{\dagger} Ye Ye^{\dagger} Ye \right)
+
+- 2 \tr\left(Ye^{\dagger} Ye Ye^{\dagger} yN yN^{\dagger} Ye \right)
+
+- 2 \tr\left(Ye^{\dagger} yN yN^{\dagger} yN yN^{\dagger} Ye \right)
+
++ 10 \tr\left(yN^{\dagger} yN yN^{\dagger} yN yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(lPhi) =
+
++ 80 lPhi^{2}
+
++ 2 lHphi^{2}
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(lPhi) =
+
+- 3840 lPhi^{3}
+
+- 80 lHphi^{2} lPhi
+
+- 16 lHphi^{3}
+
++ 4 g_{1}^{2} lHphi^{2}
+
++ 12 g_{2}^{2} lHphi^{2}
+
+- 12 lHphi^{2} \tr\left(Yu^{\dagger} Yu \right)
+
+- 12 lHphi^{2} \tr\left(Yd^{\dagger} Yd \right)
+
+- 4 lHphi^{2} \tr\left(Ye^{\dagger} Ye \right)
+
+- 4 lHphi^{2} \tr\left(yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(lHphi) =
+
++ 12 lHphi \lambda
+
++ 32 lHphi lPhi
+
++ 8 lHphi^{2}
+
+-  \frac{3}{2} g_{1}^{2} lHphi
+
+-  \frac{9}{2} g_{2}^{2} lHphi
+
++ 6 lHphi \tr\left(Yu^{\dagger} Yu \right)
+
++ 6 lHphi \tr\left(Yd^{\dagger} Yd \right)
+
++ 2 lHphi \tr\left(Ye^{\dagger} Ye \right)
+
++ 2 lHphi \tr\left(yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(lHphi) =
+
+- 144 lHphi^{2} \lambda
+
+- 384 lHphi^{2} lPhi
+
+- 60 lHphi \lambda^{2}
+
+- 640 lHphi lPhi^{2}
+
+- 44 lHphi^{3}
+
++ 24 g_{1}^{2} lHphi \lambda
+
++ 72 g_{2}^{2} lHphi \lambda
+
++ 2 g_{1}^{2} lHphi^{2}
+
++ 6 g_{2}^{2} lHphi^{2}
+
++ \frac{557}{48} g_{1}^{4} lHphi
+
++ \frac{15}{8} g_{1}^{2} g_{2}^{2} lHphi
+
+-  \frac{65}{16} g_{2}^{4} lHphi
+
+- 72 lHphi \lambda \tr\left(Yu^{\dagger} Yu \right)
+
+- 72 lHphi \lambda \tr\left(Yd^{\dagger} Yd \right)
+
+- 24 lHphi \lambda \tr\left(Ye^{\dagger} Ye \right)
+
+- 24 lHphi \lambda \tr\left(yN^{\dagger} yN \right)
+
+- 24 lHphi^{2} \tr\left(Yu^{\dagger} Yu \right)
+
+- 24 lHphi^{2} \tr\left(Yd^{\dagger} Yd \right)
+
+- 8 lHphi^{2} \tr\left(Ye^{\dagger} Ye \right)
+
+- 8 lHphi^{2} \tr\left(yN^{\dagger} yN \right)
+
++ \frac{85}{12} g_{1}^{2} lHphi \tr\left(Yu^{\dagger} Yu \right)
+
++ \frac{25}{12} g_{1}^{2} lHphi \tr\left(Yd^{\dagger} Yd \right)
+
++ \frac{25}{4} g_{1}^{2} lHphi \tr\left(Ye^{\dagger} Ye \right)
+
++ \frac{5}{4} g_{1}^{2} lHphi \tr\left(yN^{\dagger} yN \right)
+
++ \frac{45}{4} g_{2}^{2} lHphi \tr\left(Yu^{\dagger} Yu \right)
+
++ \frac{45}{4} g_{2}^{2} lHphi \tr\left(Yd^{\dagger} Yd \right)
+
++ \frac{15}{4} g_{2}^{2} lHphi \tr\left(Ye^{\dagger} Ye \right)
+
++ \frac{15}{4} g_{2}^{2} lHphi \tr\left(yN^{\dagger} yN \right)
+
++ 40 g_{3}^{2} lHphi \tr\left(Yu^{\dagger} Yu \right)
+
++ 40 g_{3}^{2} lHphi \tr\left(Yd^{\dagger} Yd \right)
+
+-  \frac{27}{2} lHphi \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu \right)
+
+- 21 lHphi \tr\left(Yu^{\dagger} Yd Yd^{\dagger} Yu \right)
+
+-  \frac{27}{2} lHphi \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd \right)
+
+-  \frac{9}{2} lHphi \tr\left(Ye^{\dagger} Ye Ye^{\dagger} Ye \right)
+
+- 7 lHphi \tr\left(Ye^{\dagger} yN yN^{\dagger} Ye \right)
+
+-  \frac{9}{2} lHphi \tr\left(yN^{\dagger} yN yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+}
+
+\subsection{Trilinear couplings}
+{\allowdisplaybreaks
+
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(cR_{3}) =
+
+-  \frac{3}{2} cR_{3} g_{1}^{2}
+
+-  \frac{9}{2} cR_{3} g_{2}^{2}
+
++ 12 cR_{3} \lambda
+
++ 6 cR_{3} \tr\left(Yu^{\dagger} Yu \right)
+
++ 6 cR_{3} \tr\left(Yd^{\dagger} Yd \right)
+
++ 2 cR_{3} \tr\left(Ye^{\dagger} Ye \right)
+
++ 2 cR_{3} \tr\left(yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(cR_{3}) =
+
++ \frac{557}{48} cR_{3} g_{1}^{4}
+
++ \frac{15}{8} cR_{3} g_{1}^{2} g_{2}^{2}
+
+-  \frac{65}{16} cR_{3} g_{2}^{4}
+
++ 24 cR_{3} g_{1}^{2} \lambda
+
++ 72 cR_{3} g_{2}^{2} \lambda
+
+- 60 cR_{3} \lambda^{2}
+
+- 4 cR_{3} lHphi^{2}
+
++ \frac{85}{12} cR_{3} g_{1}^{2} \tr\left(Yu^{\dagger} Yu \right)
+
++ \frac{25}{12} cR_{3} g_{1}^{2} \tr\left(Yd^{\dagger} Yd \right)
+
++ \frac{25}{4} cR_{3} g_{1}^{2} \tr\left(Ye^{\dagger} Ye \right)
+
++ \frac{5}{4} cR_{3} g_{1}^{2} \tr\left(yN^{\dagger} yN \right)
+
++ \frac{45}{4} cR_{3} g_{2}^{2} \tr\left(Yu^{\dagger} Yu \right)
+
++ \frac{45}{4} cR_{3} g_{2}^{2} \tr\left(Yd^{\dagger} Yd \right)
+
++ \frac{15}{4} cR_{3} g_{2}^{2} \tr\left(Ye^{\dagger} Ye \right)
+
++ \frac{15}{4} cR_{3} g_{2}^{2} \tr\left(yN^{\dagger} yN \right)
+
++ 40 cR_{3} g_{3}^{2} \tr\left(Yu^{\dagger} Yu \right)
+
++ 40 cR_{3} g_{3}^{2} \tr\left(Yd^{\dagger} Yd \right)
+
+- 72 cR_{3} \lambda \tr\left(Yu^{\dagger} Yu \right)
+
+- 72 cR_{3} \lambda \tr\left(Yd^{\dagger} Yd \right)
+
+- 24 cR_{3} \lambda \tr\left(Ye^{\dagger} Ye \right)
+
+- 24 cR_{3} \lambda \tr\left(yN^{\dagger} yN \right)
+
+-  \frac{27}{2} cR_{3} \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu \right)
+
+- 21 cR_{3} \tr\left(Yu^{\dagger} Yd Yd^{\dagger} Yu \right)
+
+-  \frac{27}{2} cR_{3} \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd \right)
+
+-  \frac{9}{2} cR_{3} \tr\left(Ye^{\dagger} Ye Ye^{\dagger} Ye \right)
+
+- 7 cR_{3} \tr\left(Ye^{\dagger} yN yN^{\dagger} Ye \right)
+
+-  \frac{9}{2} cR_{3} \tr\left(yN^{\dagger} yN yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+}
+
+\subsection{Scalar mass couplings}
+{\allowdisplaybreaks
+
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(\mu_{2}) =
+
+-  \frac{3}{2} g_{1}^{2} \mu_{2}
+
+-  \frac{9}{2} g_{2}^{2} \mu_{2}
+
+- 2 cR_{3}^{2}
+
++ 12 \lambda \mu_{2}
+
+- 8 MPhi lHphi
+
++ 6 \mu_{2} \tr\left(Yu^{\dagger} Yu \right)
+
++ 6 \mu_{2} \tr\left(Yd^{\dagger} Yd \right)
+
++ 2 \mu_{2} \tr\left(Ye^{\dagger} Ye \right)
+
++ 2 \mu_{2} \tr\left(yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(\mu_{2}) =
+
++ \frac{557}{48} g_{1}^{4} \mu_{2}
+
++ \frac{15}{8} g_{1}^{2} g_{2}^{2} \mu_{2}
+
+-  \frac{65}{16} g_{2}^{4} \mu_{2}
+
+-  \frac{1}{2} cR_{3}^{2} g_{1}^{2}
+
+-  \frac{3}{2} cR_{3}^{2} g_{2}^{2}
+
++ 24 g_{1}^{2} \lambda \mu_{2}
+
++ 72 g_{2}^{2} \lambda \mu_{2}
+
++ 36 cR_{3}^{2} \lambda
+
+- 60 \lambda^{2} \mu_{2}
+
+- 4 lHphi^{2} \mu_{2}
+
++ 32 MPhi lHphi^{2}
+
++ \frac{85}{12} g_{1}^{2} \mu_{2} \tr\left(Yu^{\dagger} Yu \right)
+
++ \frac{25}{12} g_{1}^{2} \mu_{2} \tr\left(Yd^{\dagger} Yd \right)
+
++ \frac{25}{4} g_{1}^{2} \mu_{2} \tr\left(Ye^{\dagger} Ye \right)
+
++ \frac{5}{4} g_{1}^{2} \mu_{2} \tr\left(yN^{\dagger} yN \right)
+
++ \frac{45}{4} g_{2}^{2} \mu_{2} \tr\left(Yu^{\dagger} Yu \right)
+
++ \frac{45}{4} g_{2}^{2} \mu_{2} \tr\left(Yd^{\dagger} Yd \right)
+
++ \frac{15}{4} g_{2}^{2} \mu_{2} \tr\left(Ye^{\dagger} Ye \right)
+
++ \frac{15}{4} g_{2}^{2} \mu_{2} \tr\left(yN^{\dagger} yN \right)
+
++ 40 g_{3}^{2} \mu_{2} \tr\left(Yu^{\dagger} Yu \right)
+
++ 40 g_{3}^{2} \mu_{2} \tr\left(Yd^{\dagger} Yd \right)
+
++ 6 cR_{3}^{2} \tr\left(Yu^{\dagger} Yu \right)
+
++ 6 cR_{3}^{2} \tr\left(Yd^{\dagger} Yd \right)
+
++ 2 cR_{3}^{2} \tr\left(Ye^{\dagger} Ye \right)
+
++ 2 cR_{3}^{2} \tr\left(yN^{\dagger} yN \right)
+
+- 72 \lambda \mu_{2} \tr\left(Yu^{\dagger} Yu \right)
+
+- 72 \lambda \mu_{2} \tr\left(Yd^{\dagger} Yd \right)
+
+- 24 \lambda \mu_{2} \tr\left(Ye^{\dagger} Ye \right)
+
+- 24 \lambda \mu_{2} \tr\left(yN^{\dagger} yN \right)
+
+-  \frac{27}{2} \mu_{2} \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu \right)
+
+- 21 \mu_{2} \tr\left(Yu^{\dagger} Yd Yd^{\dagger} Yu \right)
+
+-  \frac{27}{2} \mu_{2} \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd \right)
+
+-  \frac{9}{2} \mu_{2} \tr\left(Ye^{\dagger} Ye Ye^{\dagger} Ye \right)
+
+- 7 \mu_{2} \tr\left(Ye^{\dagger} yN yN^{\dagger} Ye \right)
+
+-  \frac{9}{2} \mu_{2} \tr\left(yN^{\dagger} yN yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(MPhi) =
+
+- 4 lHphi \mu_{2}
+
++ 32 MPhi lPhi
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(MPhi) =
+
+- 8 g_{1}^{2} lHphi \mu_{2}
+
+- 24 g_{2}^{2} lHphi \mu_{2}
+
+- 4 cR_{3}^{2} lHphi
+
++ 16 lHphi^{2} \mu_{2}
+
+- 640 MPhi lPhi^{2}
+
+- 8 MPhi lHphi^{2}
+
++ 24 lHphi \mu_{2} \tr\left(Yu^{\dagger} Yu \right)
+
++ 24 lHphi \mu_{2} \tr\left(Yd^{\dagger} Yd \right)
+
++ 8 lHphi \mu_{2} \tr\left(Ye^{\dagger} Ye \right)
+
++ 8 lHphi \mu_{2} \tr\left(yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+}
+
+\subsection{Vacuum-expectation values}
+{\allowdisplaybreaks
+
+\textbf{Definitions:}
+\begin{align*}
+	H \; : \; \frac{1}{\sqrt{2}}{\Pi}_{2} &\rightarrow \frac{1}{\sqrt{2}}\left({\Pi}_{2} + vSM\right)\\
+	phiR \; : \; phiR &\rightarrow phiR + vPQ
+\end{align*}
+
+\textbf{RGEs:}
+
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(vSM) =
+
++ \frac{3}{4} g_{1}^{2} vSM
+
++ \frac{1}{4} \xi g_{1}^{2} vSM
+
++ \frac{9}{4} g_{2}^{2} vSM
+
++ \frac{3}{4} \xi g_{2}^{2} vSM
+
+- 3 vSM \tr\left(Yu^{\dagger} Yu \right)
+
+- 3 vSM \tr\left(Yd^{\dagger} Yd \right)
+
+-  vSM \tr\left(Ye^{\dagger} Ye \right)
+
+-  vSM \tr\left(yN^{\dagger} yN \right)
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(vSM) =
+
+-  \frac{431}{96} g_{1}^{4} vSM
+
++ \frac{1}{8} \xi g_{1}^{4} vSM
+
++ \frac{1}{8} \xi^{2} g_{1}^{4} vSM
+
+-  \frac{9}{16} g_{1}^{2} g_{2}^{2} vSM
+
++ \frac{3}{4} \xi g_{1}^{2} g_{2}^{2} vSM
+
++ \frac{3}{4} \xi^{2} g_{1}^{2} g_{2}^{2} vSM
+
++ \frac{191}{32} g_{2}^{4} vSM
+
++ \frac{27}{8} \xi g_{2}^{4} vSM
+
+-  \frac{85}{24} g_{1}^{2} vSM \tr\left(Yu^{\dagger} Yu \right)
+
+-  \frac{3}{2} \xi g_{1}^{2} vSM \tr\left(Yu^{\dagger} Yu \right)
+
+-  \frac{25}{24} g_{1}^{2} vSM \tr\left(Yd^{\dagger} Yd \right)
+
+-  \frac{3}{2} \xi g_{1}^{2} vSM \tr\left(Yd^{\dagger} Yd \right)
+
+-  \frac{25}{8} g_{1}^{2} vSM \tr\left(Ye^{\dagger} Ye \right)
+
+-  \frac{1}{2} \xi g_{1}^{2} vSM \tr\left(Ye^{\dagger} Ye \right)
+
+-  \frac{5}{8} g_{1}^{2} vSM \tr\left(yN^{\dagger} yN \right)
+
+-  \frac{1}{2} \xi g_{1}^{2} vSM \tr\left(yN^{\dagger} yN \right)
+
+-  \frac{45}{8} g_{2}^{2} vSM \tr\left(Yu^{\dagger} Yu \right)
+
+-  \frac{9}{2} \xi g_{2}^{2} vSM \tr\left(Yu^{\dagger} Yu \right)
+
+-  \frac{45}{8} g_{2}^{2} vSM \tr\left(Yd^{\dagger} Yd \right)
+
+-  \frac{9}{2} \xi g_{2}^{2} vSM \tr\left(Yd^{\dagger} Yd \right)
+
+-  \frac{15}{8} g_{2}^{2} vSM \tr\left(Ye^{\dagger} Ye \right)
+
+-  \frac{3}{2} \xi g_{2}^{2} vSM \tr\left(Ye^{\dagger} Ye \right)
+
+-  \frac{15}{8} g_{2}^{2} vSM \tr\left(yN^{\dagger} yN \right)
+
+-  \frac{3}{2} \xi g_{2}^{2} vSM \tr\left(yN^{\dagger} yN \right)
+
+- 20 g_{3}^{2} vSM \tr\left(Yu^{\dagger} Yu \right)
+
+- 20 g_{3}^{2} vSM \tr\left(Yd^{\dagger} Yd \right)
+
++ \frac{27}{4} vSM \tr\left(Yu^{\dagger} Yu Yu^{\dagger} Yu \right)
+
+-  \frac{3}{2} vSM \tr\left(Yu^{\dagger} Yd Yd^{\dagger} Yu \right)
+
++ \frac{27}{4} vSM \tr\left(Yd^{\dagger} Yd Yd^{\dagger} Yd \right)
+
++ \frac{9}{4} vSM \tr\left(Ye^{\dagger} Ye Ye^{\dagger} Ye \right)
+
+-  \frac{1}{2} vSM \tr\left(Ye^{\dagger} yN yN^{\dagger} Ye \right)
+
++ \frac{9}{4} vSM \tr\left(yN^{\dagger} yN yN^{\dagger} yN \right)
+
+- 6 \lambda^{2} vSM
+
+- 2 lHphi^{2} vSM
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(1)}(vPQ) =0
+\end{autobreak}
+\end{align*}
+\begin{align*}
+\begin{autobreak}
+\beta^{(2)}(vPQ) =
+
+- 64 lPhi^{2} vPQ
+
+- 4 lHphi^{2} vPQ
+\end{autobreak}
+\end{align*}
+}
+\end{document}

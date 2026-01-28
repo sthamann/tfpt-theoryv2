@@ -1,0 +1,298 @@
+{
+  "checks": [
+    {
+      "check_id": "ell_mapping_computed",
+      "detail": "a0/a_tr=1.1365305153366452e+54 (note=from k_calibration expansion_budget_estimate (tfpt-suite/out_engineering/k_calibration/results.json))",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "ell_predictions_falsifiable",
+      "detail": "targets hit: [2.0, 30.0] within [5.84e-06, 584]",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "primordial_pivot_normalization",
+      "detail": "applied scale=0.0596437 to match P_R(0.05)=A_s",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "planck_likelihood_evaluated",
+      "detail": "disabled (set TFPT_ENABLE_PLANCK_LIKELIHOOD=1)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "camb_power_spectra_computed",
+      "detail": "computed C_ell (TT/EE/BB/TE) up to lmax=2508",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "camb_first_peak_in_cmb_range",
+      "detail": "first TT peak at ell\u2248220 (TT\u22485898.1 \u00b5K^2)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "boltzmann_transfer_implemented",
+      "detail": "backend=camb (CAMB)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "bounce_feature_injection_wired",
+      "detail": "CAMB P(k) source: bounce_injected_table:tfpt-suite/out_engineering/primordial_spectrum_builder/results.json (pivot_normalized scale=0.0596437)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "results": {
+    "M_GeV": 30595633972661.27,
+    "a0_over_a_transition": 1.1365305153366452e+54,
+    "a0_over_a_transition_note": "from k_calibration expansion_budget_estimate (tfpt-suite/out_engineering/k_calibration/results.json)",
+    "camb": {
+      "backend": "camb",
+      "samples": [
+        {
+          "BB_muK2": 0.5131347134056973,
+          "EE_muK2": 0.307650503914798,
+          "TE_muK2": 24.1459735201061,
+          "TT_muK2": 18228.263500394627,
+          "ell": 2
+        },
+        {
+          "BB_muK2": 0.5005956761873153,
+          "EE_muK2": 0.3127275469389499,
+          "TE_muK2": 5.431204152419861,
+          "TT_muK2": 14810.609142499814,
+          "ell": 3
+        },
+        {
+          "BB_muK2": 0.41391944146515824,
+          "EE_muK2": 0.26216911361470496,
+          "TE_muK2": -0.17346575029669878,
+          "TT_muK2": 13990.76109703242,
+          "ell": 4
+        },
+        {
+          "BB_muK2": 0.3024887977712607,
+          "EE_muK2": 0.18358473788126506,
+          "TE_muK2": -2.0259192216963813,
+          "TT_muK2": 13712.850255588899,
+          "ell": 5
+        },
+        {
+          "BB_muK2": 0.032404972226192194,
+          "EE_muK2": 0.02737689215383737,
+          "TE_muK2": -4.008748989650416,
+          "TT_muK2": 13898.651823673781,
+          "ell": 10
+        },
+        {
+          "BB_muK2": 0.07806706353653207,
+          "EE_muK2": 0.09323538559591125,
+          "TE_muK2": -13.662019254506044,
+          "TT_muK2": 14367.31490889914,
+          "ell": 20
+        },
+        {
+          "BB_muK2": 0.11320309044108393,
+          "EE_muK2": 0.17237130206511844,
+          "TE_muK2": -27.50660634643722,
+          "TT_muK2": 13906.76393635935,
+          "ell": 30
+        },
+        {
+          "BB_muK2": 0.05415522222606248,
+          "EE_muK2": 0.25389231220458924,
+          "TE_muK2": -21.654358144058254,
+          "TT_muK2": 5858.592923421792,
+          "ell": 50
+        },
+        {
+          "BB_muK2": 0.00570417287287465,
+          "EE_muK2": 0.49761230147585733,
+          "TE_muK2": -11.943721494402679,
+          "TT_muK2": 2255.947457910835,
+          "ell": 80
+        },
+        {
+          "BB_muK2": 0.0036035830033952464,
+          "EE_muK2": 0.804616037585498,
+          "TE_muK2": -23.971510031720833,
+          "TT_muK2": 2784.9187898838827,
+          "ell": 100
+        },
+        {
+          "BB_muK2": 0.007457619410408702,
+          "EE_muK2": 1.1357029420580753,
+          "TE_muK2": -47.548414091525714,
+          "TT_muK2": 4517.521062418873,
+          "ell": 150
+        },
+        {
+          "BB_muK2": 0.014124205714717985,
+          "EE_muK2": 0.7105176592741987,
+          "TE_muK2": -15.82856485799457,
+          "TT_muK2": 5768.964123795121,
+          "ell": 200
+        },
+        {
+          "BB_muK2": 0.030998559829390766,
+          "EE_muK2": 9.377755738677374,
+          "TE_muK2": 121.96325175779192,
+          "TT_muK2": 4189.946909439962,
+          "ell": 300
+        },
+        {
+          "BB_muK2": 0.061802050126574685,
+          "EE_muK2": 8.525607100306283,
+          "TE_muK2": -59.98457845099594,
+          "TT_muK2": 2521.115283545611,
+          "ell": 500
+        },
+        {
+          "BB_muK2": 0.08289636478962721,
+          "EE_muK2": 38.409506642791804,
+          "TE_muK2": -100.38409421104318,
+          "TT_muK2": 1928.6281760997601,
+          "ell": 700
+        },
+        {
+          "BB_muK2": 0.09561897160825351,
+          "EE_muK2": 43.34920107281028,
+          "TE_muK2": -25.88746351225292,
+          "TT_muK2": 1093.5660043660341,
+          "ell": 1000
+        },
+        {
+          "BB_muK2": 0.08032381899328454,
+          "EE_muK2": 13.22933093711475,
+          "TE_muK2": -0.263886385488488,
+          "TT_muK2": 706.1675785629274,
+          "ell": 1500
+        },
+        {
+          "BB_muK2": 0.04842808311049333,
+          "EE_muK2": 8.841246372536396,
+          "TE_muK2": -18.569224688658995,
+          "TT_muK2": 237.92494419311092,
+          "ell": 2000
+        },
+        {
+          "BB_muK2": 0.02618561385859978,
+          "EE_muK2": 3.009435308570214,
+          "TE_muK2": -3.1204145951673836,
+          "TT_muK2": 78.0977932803326,
+          "ell": 2508
+        }
+      ],
+      "summary": {
+        "TT_at_ell": {
+          "2": 18228.263500394627,
+          "200": 5768.964123795121,
+          "2000": 237.92494419311092,
+          "30": 13906.76393635935,
+          "700": 1928.6281760997601
+        },
+        "backend": "camb",
+        "camb_version": "1.6.0",
+        "lmax": 2550,
+        "peak1": {
+          "TT_muK2": 5898.076559285649,
+          "ell": 220
+        }
+      }
+    },
+    "chi_star_Mpc": 13867.328294431452,
+    "config_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json",
+    "ell_range": {
+      "ell_max": 583.7612027528243,
+      "ell_min": 5.837612027528243e-06,
+      "note": "computed from k_hat range + entropy/N policy"
+    },
+    "ell_targets": [
+      2.0,
+      30.0,
+      700.0
+    ],
+    "hits": [
+      2.0,
+      30.0
+    ],
+    "inputs": {
+      "cosmology": {
+        "H0_km_s_Mpc": 67.36,
+        "Omega_m": 0.3153,
+        "Omega_r": 9.2e-05,
+        "mnu_eV": 0.06,
+        "omega_b_h2": 0.02237,
+        "omega_c_h2": 0.120693263488,
+        "tau_reio": 0.054
+      },
+      "primordial_tfpt": {
+        "A_s": 2.1655075710160764e-09,
+        "N": 57,
+        "n_s": 0.9649122807017544,
+        "pivot_scalar_Mpc_inv": 0.05,
+        "r": 0.003693444136657433
+      }
+    },
+    "k_hat_range": {
+      "max": 10.0,
+      "min": 1e-07
+    },
+    "mode": "engineering",
+    "planck_pliklite": {
+      "enabled": false,
+      "note": "set TFPT_ENABLE_PLANCK_LIKELIHOOD=1 to evaluate Planck plik-lite (Cobaya-native)."
+    },
+    "primordial_pk_source": "bounce_injected_table:tfpt-suite/out_engineering/primordial_spectrum_builder/results.json (pivot_normalized scale=0.0596437)",
+    "publication_grade_gap": {
+      "boltzmann_transfer": false,
+      "bounce_feature_injection": false
+    }
+  },
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given config files.",
+    "formulas": [
+      "\u2113 \\approx k(\\mathrm{Mpc}^{-1}) \\, \\chi_\\*",
+      "k(\\mathrm{Mpc}^{-1}) = k_{\\hat{}} \\, M[\\mathrm{GeV}] \\, (\\mathrm{GeV}\\to\\mathrm{Mpc}^{-1}) / (a_0/a_{\\rm tr})",
+      "P_{\\mathcal{R}}(k) = P_{\\mathcal{R},\\mathrm{base}}(k)\\,|T_s(k)|^2 \\;\\;(\\text{bounce injection via primordial_spectrum_builder})"
+    ],
+    "gaps": [
+      "Planck likelihood (clik/Cobaya) is not yet integrated here; this module currently produces C_\u2113 spectra and basic sanity markers."
+    ],
+    "inputs": [
+      "k_calibration assumptions: tfpt_suite/data/k_calibration.json (uses reheating policy v1.06 settings)",
+      "cosmology reference: tfpt_suite/data/global_reference_minimal.json (Planck \u03a9_b h^2 anchor)",
+      "TFPT R^2 scale M from tfpt_suite/constants.py (M/Mpl)",
+      "primordial spectrum tables (optional): output of primordial_spectrum_builder (bounce injection)"
+    ],
+    "maturity": null,
+    "module_id": "boltzmann_transfer",
+    "name": "Boltzmann transfer (CAMB-backed C_\u2113 + explicit k\u0302\u2192\u2113 mapping)",
+    "objective": [
+      "Provide a falsifiable, assumption-explicit \u2113 mapping and a concrete C_\u2113 prediction backend (CAMB).",
+      "Make the 'last mile' from TFPT primordial parameters to observable spectra explicit and auditable."
+    ],
+    "outputs": [
+      "explicit k_hat\u2192\u2113 mapping under an explicit a0/a_transition policy",
+      "\u2113-range coverage diagnostics (CMB vs small-scale decision aid)",
+      "CMB power spectra C_\u2113 (TT/TE/EE/BB) computed via CAMB under explicit cosmology + TFPT primordial parameters"
+    ],
+    "question": "Given a declared expansion-history policy (a0/a_transition), where do bounce k-hat features land in \u2113-space?",
+    "references": [],
+    "validation": [
+      "ell_predictions_falsifiable: emits a PASS/WARN/FAIL depending on whether the predicted \u2113-range intersects declared \u2113-targets.",
+      "camb_power_spectra_computed: emits PASS when CAMB returns finite C_\u2113 spectra for the declared cosmology+primordial inputs.",
+      "bounce_feature_injection_wired: PASS when CAMB uses an injected P(k) table (not just power-law)."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

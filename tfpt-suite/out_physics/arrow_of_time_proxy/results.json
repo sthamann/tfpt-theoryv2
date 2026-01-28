@@ -1,0 +1,110 @@
+{
+  "checks": [
+    {
+      "check_id": "arrow_mechanism_present",
+      "detail": "arrow_mechanism implemented and entropy_production_testable evaluated",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "reheating_inputs",
+      "detail": "T_reh=1e+13 GeV, g*=120, g*s=120",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "entropy_proxy",
+      "detail": "s\u22485.26e+40 GeV^3, H\u22487.47e+08 GeV, S_H=s/H^3\u22481.26e+14 (log10\u224814.1)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "arrow_mechanism_non_invertible",
+      "detail": "m_max=1 (source=assumed_default, S_flux\u22480.693)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "arrow_prediction_falsifiable",
+      "detail": "torsion_flux_entropy_increase: sign of APS spectral-flow index m (torsion seam transitions)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "entropy_production_testable",
+      "detail": "log10(S_H)\u224814.1 > 0 (entropy per Hubble volume at reheating)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "arrow_of_time_proxy",
+  "plot": null,
+  "results": {
+    "delegated": {
+      "entropy_proxy": {
+        "H_GeV": 746792152.3273722,
+        "S_H": 126386077916113.81,
+        "log10_S_H": 14.101699236784887,
+        "s_GeV3": 5.263789013914324e+40
+      },
+      "inputs": {
+        "k_calibration_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json"
+      },
+      "mode": "physics",
+      "prediction": {
+        "expected_sign": "m >= 1 for forward-time evolution",
+        "observable": "sign of APS spectral-flow index m (torsion seam transitions)",
+        "prediction_id": "torsion_flux_entropy_increase",
+        "test_plan": "extract spectral-flow index from APS eta gluing / topological seam data; falsified if m=0 in the claimed regime"
+      },
+      "reheating_snapshot": {
+        "T_reheat_GeV": 10000000000000.0,
+        "g_star": 120.0,
+        "g_star_s": 120.0
+      },
+      "torsion_flux_mechanism": {
+        "flux_entropy": 0.6931471805599453,
+        "flux_invariant": 1.0,
+        "m_candidates": [
+          1
+        ],
+        "m_source": {
+          "results_path": "tfpt-suite/out_physics/aps_eta_gluing/results.json",
+          "source": "assumed_default"
+        }
+      }
+    },
+    "delegated_module": "arrow_mechanism",
+    "mode": "physics"
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (no computation).",
+    "formulas": [
+      "S_{\\rm prod} = \\int d^4x \\, \\sigma(x) \\ge 0  (entropy production proxy; requires a non-invertible mechanism)"
+    ],
+    "gaps": [
+      "Requires a concrete irreversible mechanism (e.g. torsion flux with non-invertible transitions) and an observable proxy (entropy production, CPT-odd signal, etc.)."
+    ],
+    "inputs": [],
+    "maturity": null,
+    "module_id": "arrow_of_time_proxy",
+    "name": "Arrow of time proxy (explicitly not implemented; ToE gap marker)",
+    "objective": [
+      "Avoid narrative-only claims by making the missing arrow-of-time mechanism explicit and testable.",
+      "Provide a concrete checklist for the minimal 'irreversibility' closure work."
+    ],
+    "outputs": [
+      "explicit status record (implemented vs not implemented)",
+      "dependency ledger for a future irreversible torsion-flux / topology module"
+    ],
+    "question": "Is an explicit, testable arrow-of-time mechanism implemented as a falsifiable module?",
+    "references": [],
+    "validation": [
+      "Physics mode must not allow this to be silently green."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

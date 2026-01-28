@@ -1,0 +1,122 @@
+{
+  "checks": [
+    {
+      "check_id": "computed_lambda_targets",
+      "detail": "Omega_L=0.684608, H0_GeV=1.437e-42",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "lambda_obs",
+      "detail": "Lambda_obs\u22484.240e-84 GeV^2 (from 3 \u03a9_L H0^2)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "rho_lambda_obs",
+      "detail": "rho_L\u22482.514e-47 GeV^4 (from \u03a9_L \u03c1_c)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "ufe_K_rms_target",
+      "detail": "<K^2>_target=4\u039b => K_rms\u22484.118e-42 GeV",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "torsion_condensate_prediction_available",
+      "detail": "no torsion_condensate output found at tfpt-suite/out_engineering/torsion_condensate/results.json (targets only)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "derivation_interface",
+      "detail": "\u039b targets are computed here; the shipped prediction candidate lives in torsion_condensate (discrete scan; no continuous tuning).",
+      "passed": true,
+      "severity": "INFO"
+    }
+  ],
+  "results": {
+    "cosmology": {
+      "H0_km_s_Mpc": 67.36,
+      "Omega_L": 0.684608,
+      "Omega_m": 0.3153,
+      "Omega_r": 9.2e-05
+    },
+    "cosmology_source": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json",
+    "mode": "engineering",
+    "targets": {
+      "H0_GeV": 1.436869415091482e-42,
+      "Lambda_obs_GeV2": 4.240312124222023e-84,
+      "cascade_path_B": {
+        "phi_star_target": 9.196021408407447e-31
+      },
+      "rho_L_GeV4": 2.514176465474032e-47,
+      "rho_c_GeV4": 3.672432202770099e-47,
+      "ufe_path_A": {
+        "K2_target_GeV2": 1.696124849688809e-83,
+        "K_rms_target_GeV": 4.11840363452735e-42
+      }
+    },
+    "torsion_condensate_if_available": {
+      "best": null,
+      "log10_mismatch_rho_L": null,
+      "present": false,
+      "results_file": "tfpt-suite/out_engineering/torsion_condensate/results.json"
+    }
+  },
+  "spec": {
+    "assumptions": [
+      "Use flat \u039bCDM bookkeeping (\u03a9_\u039b=1\u2212\u03a9_m\u2212\u03a9_r).",
+      "Interpret five_problems.tex path A as a statement about the cosmological constant \u039b (mass^2), not directly \u03c1_\u039b; \u03c1_\u039b is derived via \u03c1_\u039b=\u039b M\u0304_P^2.",
+      "Interpret five_problems.tex path B as a magnitude relation \u03c1_\u039b\u2248(M\u0304_P \u03c6_*)^4 with an unspecified ladder-derived \u03c6_*."
+    ],
+    "determinism": "Deterministic given the input cosmology table.",
+    "formulas": [
+      "\u03a9_\u039b = 1 \u2212 \u03a9_m \u2212 \u03a9_r (flat)",
+      "H0[GeV] from H0[km/s/Mpc] via \u0127 conversion",
+      "\u039b_obs = 3 \u03a9_\u039b H0^2  (\u039bCDM)",
+      "\u03c1_c = 3 H0^2 M\u0304_P^2,  \u03c1_\u039b = \u03a9_\u039b \u03c1_c",
+      "UFE path A (five_problems): \u039b_eff = (1/4)\u27e8K^2\u27e9 \u21d2 \u27e8K^2\u27e9_target = 4 \u039b_obs",
+      "Cascade path B (five_problems): \u03c1_\u039b \u2248 (M\u0304_P \u03c6_*)^4 \u21d2 \u03c6_* = (\u03c1_\u039b)^{1/4}/M\u0304_P"
+    ],
+    "gaps": [
+      "No in-suite E8 ladder/block implementation that produces \u03c6_n up to terminal stage (n\u224830 claim).",
+      "Publication-grade microscopic derivation of \u27e8K^2\u27e9 remains future work; the suite currently ships a discrete defect-suppression candidate in `torsion_condensate`."
+    ],
+    "inputs": [
+      "cosmology reference: tfpt_suite/data/k_calibration.json (Planck-style flat \u039bCDM parameters used elsewhere in suite)",
+      "theory note: five_problems.tex Sec. 5 (two paths: torsion condensate and E8 terminal stage)",
+      "torsion condensate prediction (optional): tfpt-suite/out*/torsion_condensate/results.json when available in output_dir"
+    ],
+    "maturity": "target-setting module (makes \u039b requirements explicit; does not claim a derived prediction yet)",
+    "module_id": "dark_energy_paths",
+    "name": "Dark energy (\u039b) \u2014 target values for UFE torsion condensate and cascade terminal-stage paths",
+    "objective": [
+      "Turn 'dark energy path A/B' into explicit numerical targets (engineering constraints).",
+      "Expose a hard interface to the prediction module (`torsion_condensate`): targets here, derived candidate there."
+    ],
+    "outputs": [
+      "\u039b_obs (mass^2) from H0 and \u03a9_\u039b",
+      "\u03c1_\u039b (energy density) from \u03c1_c and \u03a9_\u039b",
+      "Target \u27e8K^2\u27e9 and K_rms implied by \u039b_eff = (1/4)\u27e8K^2\u27e9 (UFE path A)",
+      "Target \u03c6_* implied by \u03c1_\u039b \u2248 (M\u0304_P \u03c6_*)^4 (cascade magnitude path B)",
+      "best-effort comparison to the in-suite torsion-condensate prediction when available"
+    ],
+    "question": "If TFPT attributes dark energy either to a torsion condensate (UFE) or to a terminal cascade stage, what target magnitudes must those mechanisms reproduce?",
+    "references": [
+      "five_problems.tex Sec. 5 (two TFPT-consistent paths for dark energy)",
+      "paper_v1_06_01_09_2025.tex Sec. 9 / Appendix C (mentions n=30 ladder stage for \u03c1_\u039b at order-of-magnitude level)"
+    ],
+    "validation": [
+      "Produces finite \u039b_obs, \u03c1_\u039b and corresponding target values under the declared cosmology."
+    ],
+    "what_was_done": [
+      "Computed \u039b_obs and \u03c1_\u039b from the suite\u2019s Planck-style \u039bCDM parameter snapshot.",
+      "Translated the UFE identity \u039b_eff=(1/4)\u27e8K^2\u27e9 into a target K_rms scale.",
+      "Translated the cascade magnitude ansatz \u03c1_\u039b\u2248(M\u0304_P \u03c6_*)^4 into a target \u03c6_* suppression factor."
+    ]
+  },
+  "warnings": []
+}

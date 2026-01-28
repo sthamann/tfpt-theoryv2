@@ -1,0 +1,246 @@
+pi:
+  meaning: circle constant
+  type: axiom
+c3:
+  meaning: 1/(8*pi)
+  type: invariant
+varphi0_tree:
+  meaning: tree-level varphi0
+  type: invariant
+delta_top:
+  meaning: topological delta
+  type: invariant
+varphi0:
+  meaning: varphi0
+  type: invariant
+delta_star:
+  meaning: delta_star (Mobius anchor)
+  type: invariant
+beta_rad:
+  meaning: cosmic birefringence angle (radians)
+  type: derived
+beta_deg:
+  meaning: cosmic birefringence angle (degrees)
+  type: derived
+gamma0:
+  meaning: g/(g+1) crosslink
+  type: derived
+g:
+  meaning: defect multiplicity
+  type: discrete
+k:
+  meaning: backreaction cover degree
+  type: discrete
+delta2:
+  meaning: two-defect coefficient
+  type: derived
+alpha_inv0:
+  meaning: inverse fine-structure constant
+  type: derived
+alpha0:
+  meaning: fine-structure constant
+  type: derived
+alpha_bar5_inv_MZ:
+  meaning: alpha_bar5 inverse at MZ
+  type: derived_external
+alpha_s_MZ:
+  meaning: strong coupling at MZ
+  type: input
+sin2_thetaW_MZ:
+  meaning: sin^2(thetaW) at MZ
+  type: input
+sin2_thetaW_0:
+  meaning: sin^2(thetaW) in Thomson limit
+  type: pending
+alpha3_at_mu_star:
+  meaning: alpha3 at mu_star
+  type: derived_external
+mu_star_varphi0:
+  meaning: mu where alpha3=varphi0
+  type: derived_external
+g_a_gamma_gamma:
+  meaning: axion-photon coupling coefficient
+  type: derived
+Mpl_reduced:
+  meaning: reduced Planck mass
+  type: input
+Mpl_unreduced:
+  meaning: unreduced Planck mass
+  type: derived
+M_over_Mpl:
+  meaning: Starobinsky scale ratio
+  type: derived
+M_GUT:
+  meaning: unification scale
+  type: derived_external
+M_R:
+  meaning: seesaw scale
+  type: derived_external
+f_a:
+  meaning: PQ scale
+  type: derived_external
+v_ew:
+  meaning: electroweak scale
+  type: candidate
+Lambda_QCD:
+  meaning: QCD scale
+  type: candidate
+m_p:
+  meaning: proton mass
+  type: placeholder
+m_pi:
+  meaning: pion mass
+  type: pending
+G_F_Mpl2:
+  meaning: dimensionless Fermi coupling
+  type: candidate
+y_tau:
+  meaning: tau Yukawa
+  type: derived
+y_mu:
+  meaning: muon Yukawa
+  type: derived
+y_e:
+  meaning: electron Yukawa
+  type: derived
+m_e:
+  meaning: electron mass
+  type: candidate
+m_mu:
+  meaning: muon mass
+  type: candidate
+m_tau:
+  meaning: tau mass
+  type: candidate
+m_e_over_m_p:
+  meaning: electron/proton mass ratio
+  type: candidate
+m_mu_over_m_e:
+  meaning: muon/electron mass ratio
+  type: derived
+m_tau_over_m_mu:
+  meaning: tau/muon mass ratio
+  type: derived
+m_t:
+  meaning: top mass
+  type: input
+m_b:
+  meaning: bottom mass
+  type: input
+m_c:
+  meaning: charm mass
+  type: input
+m_s:
+  meaning: strange mass
+  type: pending
+m_u:
+  meaning: up mass
+  type: pending
+m_d:
+  meaning: down mass
+  type: pending
+m_nu1:
+  meaning: neutrino mass scale
+  type: placeholder
+m_nu3:
+  meaning: heaviest neutrino mass
+  type: derived_external
+sum_mnu:
+  meaning: neutrino mass sum
+  type: candidate
+delta_m_np:
+  meaning: neutron-proton mass gap
+  type: pending
+lambda_C_ratio:
+  meaning: Compton wavelength ratio
+  type: derived_external
+lambda:
+  meaning: Cabibbo lambda
+  type: derived
+sin2_theta13:
+  meaning: sin^2(theta13)
+  type: derived
+sin2_theta12:
+  meaning: sin^2(theta12)
+  type: derived
+sin2_theta23:
+  meaning: sin^2(theta23)
+  type: input
+delta_cp:
+  meaning: PMNS delta_CP
+  type: placeholder
+phi_star_base:
+  meaning: dark energy suppression factor
+  type: derived
+rho_L:
+  meaning: dark energy density
+  type: derived
+Lambda_Mpl2:
+  meaning: cosmological constant in Planck units
+  type: derived
+Omega_b:
+  meaning: baryon density fraction
+  type: derived
+eta_b_pred:
+  meaning: baryon-to-photon ratio proxy
+  type: derived_external
+H0_pred:
+  meaning: H0 proxy
+  type: derived_external
+Omega_dm:
+  meaning: dark matter density fraction
+  type: derived_external
+nu_ghz:
+  meaning: axion frequency (GHz)
+  type: derived_external
+g_phys:
+  meaning: axion coupling (GeV^-1)
+  type: derived_external
+A_s:
+  meaning: scalar amplitude
+  type: derived_external
+n_s:
+  meaning: scalar tilt
+  type: derived_external
+r:
+  meaning: tensor-to-scalar ratio
+  type: derived_external
+V_star:
+  meaning: inflationary potential scale
+  type: derived_external
+k_bounce_t:
+  meaning: bounce scale proxy
+  type: derived_external
+N_star:
+  meaning: Starobinsky e-folds (policy)
+  type: input
+x_max:
+  meaning: Planck spectrum extremum
+  type: derived
+torsion_max:
+  meaning: torsion bound
+  type: derived_external
+lambda_cross:
+  meaning: vacuum stability scale
+  type: derived_external
+a_e:
+  meaning: electron anomalous moment
+  type: candidate
+Rydberg_E:
+  meaning: Rydberg energy
+  type: candidate
+a0:
+  meaning: Bohr radius
+  type: candidate
+sigma_T:
+  meaning: Thomson cross section
+  type: candidate
+fs_2p:
+  meaning: fine-structure 2p scale
+  type: candidate
+lamb_shift:
+  meaning: Lamb shift scale
+  type: candidate
+g_p:
+  meaning: proton g-factor
+  type: candidate

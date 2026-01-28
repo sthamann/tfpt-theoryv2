@@ -1,0 +1,102 @@
+{
+  "checks": [
+    {
+      "check_id": "alpha3_threshold_up_down_near_identity",
+      "detail": "max_rel_err=2.211e-16 (tol=1.0e-05); max_abs_err=5.551e-17; samples=500",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "match_gauge_finite_delta_up_down_identity",
+      "detail": "max_rel_err=3.075e-16 (tol=1.0e-12); max_abs_err=4.441e-16; samples=400",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "ux_matching_metamorphic_audit",
+  "plot": {
+    "matching_metamorphic_errors_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/unconventional/ux_matching_metamorphic_audit/matching_metamorphic_errors.png"
+  },
+  "results": {
+    "alpha3_threshold": {
+      "max_abs_error": 5.551115123125783e-17,
+      "max_rel_error": 2.2108602039128136e-16,
+      "tolerance_rel": 1e-05,
+      "worst_case": {
+        "abs_error": 5.551115123125783e-17,
+        "inputs": {
+          "alpha3": 0.27162812562747896
+        },
+        "label": "alpha3_threshold_up_then_down",
+        "outputs": {
+          "alpha3_back": 0.2716281256274789,
+          "alpha3_up": 0.27131895313905613
+        },
+        "rel_error": 2.0436451896512334e-16
+      }
+    },
+    "gauge_finite_matching": {
+      "max_abs_error": 4.440892098500626e-16,
+      "max_rel_error": 3.0754343771801886e-16,
+      "tolerance_rel": 1e-12,
+      "worst_case": {
+        "abs_error": 4.440892098500626e-16,
+        "inputs": {
+          "dalpha2": 6.414029017107526e-06,
+          "dalpha3": 8.688986523036666e-06,
+          "dalphaY": -7.683823823665428e-06,
+          "g2": 0.4391914528944774,
+          "g3": 1.443988573273477,
+          "gY": 0.23073279472886618
+        },
+        "label": "match_gauge_finite_delta_up_then_down",
+        "outputs": {
+          "g2_back": 0.4391914528944774,
+          "g2_up": 0.43928320405101107,
+          "g3_back": 1.4439885732734774,
+          "g3_up": 1.4440263809118183,
+          "gY_back": 0.23073279472886618,
+          "gY_up": 0.23052345821084994
+        },
+        "rel_error": 3.0754343771801886e-16
+      }
+    },
+    "plot": {
+      "matching_metamorphic_errors_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/unconventional/ux_matching_metamorphic_audit/matching_metamorphic_errors.png"
+    },
+    "samples": {
+      "alpha3": 500,
+      "gauge": 400
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given config seed + precision.",
+    "formulas": [
+      "Metamorphic property examples:",
+      "- \u03b13 threshold: down(up(\u03b13)) \u2248 \u03b13 (within truncation order)",
+      "- finite gauge matching: down(up(g_i, \u03b4\u03b1)) = g_i (should be exact up to float rounding)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "`tfpt_suite/matching.py` primitives",
+      "deterministic RNG seed (SuiteConfig.seed)"
+    ],
+    "maturity": null,
+    "module_id": "ux_matching_metamorphic_audit",
+    "name": "Unconventional: matching metamorphic audit (invertibility + stability)",
+    "objective": [],
+    "outputs": [
+      "max abs/rel errors for metamorphic properties",
+      "worst-case counterexamples (if any)"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "report max observed errors and fail explicitly if they exceed conservative tolerances"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

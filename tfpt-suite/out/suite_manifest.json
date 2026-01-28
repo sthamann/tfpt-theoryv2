@@ -1,0 +1,2367 @@
+{
+  "generated_at_utc": "2026-01-28T08:03:20.850002+00:00",
+  "modules": [
+    {
+      "checks_total": 7,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "alpha_on_shell_bridge",
+      "out_dir": "out/alpha_on_shell_bridge",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "alpha_running_pdg.json",
+        "global_reference.json"
+      ],
+      "warn_count": 1
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "alpha_precision_audit",
+      "out_dir": "out/alpha_precision_audit",
+      "pass_count": 6,
+      "plot_expected": 2,
+      "plot_files": {
+        "alpha_defect_zscore_overview_png": "out/alpha_precision_audit/alpha_defect_zscore_overview.png",
+        "alpha_k_sensitivity_png": "out/alpha_precision_audit/alpha_k_sensitivity.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 2,
+      "reference_keys": [
+        "global_reference_minimal.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "anomaly_cancellation_audit",
+      "out_dir": "out/anomaly_cancellation_audit",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "microscopic_action_tfpt_v25.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "aps_eta_gluing",
+      "out_dir": "out/aps_eta_gluing",
+      "pass_count": 4,
+      "plot_expected": 1,
+      "plot_files": {
+        "aps_eta_spectral_flow_png": "out/aps_eta_gluing/aps_eta_spectral_flow.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "arrow_mechanism",
+      "out_dir": "out/arrow_mechanism",
+      "pass_count": 5,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "k_calibration.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "arrow_of_time_proxy",
+      "out_dir": "out/arrow_of_time_proxy",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 8,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "axion_dm_pipeline",
+      "out_dir": "out/axion_dm_pipeline",
+      "pass_count": 8,
+      "plot_expected": 1,
+      "plot_files": {
+        "axion_dm_png": "out/axion_dm_pipeline/axion_dm.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [
+        "axion_tfpt_v106.json",
+        "global_reference_minimal.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "axion_fa_derivation",
+      "out_dir": "out/axion_fa_derivation",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "axion_tfpt_v106.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "axion_scenario_matrix",
+      "out_dir": "out/axion_scenario_matrix",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "axion_tfpt_v106.json",
+        "global_reference_minimal.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "baryogenesis_mechanism",
+      "out_dir": "out/baryogenesis_mechanism",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "flavor_texture_v24.json",
+        "global_reference_minimal.json",
+        "rge_thresholds_v25.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "baryogenesis_placeholder",
+      "out_dir": "out/baryogenesis_placeholder",
+      "pass_count": 5,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "bbn_consistency",
+      "out_dir": "out/bbn_consistency",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "bbn_reference.json",
+        "global_reference_minimal.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "bbn_neff_sanity",
+      "out_dir": "out/bbn_neff_sanity",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "below_mt_eft_cascade",
+      "out_dir": "out/below_mt_eft_cascade",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "below_mz_policy.json",
+        "lepton_masses_pdg.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "birefringence_tomography",
+      "out_dir": "out/birefringence_tomography",
+      "pass_count": 4,
+      "plot_expected": 1,
+      "plot_files": {
+        "beta_tomography_png": "out/birefringence_tomography/beta_tomography.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [
+        "birefringence_tomography.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 13,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "boltzmann_transfer",
+      "out_dir": "out/boltzmann_transfer",
+      "pass_count": 13,
+      "plot_expected": 2,
+      "plot_files": {
+        "cl_ratio_tt_ee_png": "out/boltzmann_transfer/cl_ratio_tt_ee.png",
+        "cl_tt_ee_comparison_png": "out/boltzmann_transfer/cl_tt_ee_comparison.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 2,
+      "reference_keys": [
+        "global_reference_minimal.json",
+        "k_calibration.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "bounce_perturbations",
+      "out_dir": "out/bounce_perturbations",
+      "pass_count": 6,
+      "plot_expected": 1,
+      "plot_files": {
+        "T_of_k_png": "out/bounce_perturbations/T_of_k.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 12,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "brst_ghost_deriver",
+      "out_dir": "out/brst_ghost_deriver",
+      "pass_count": 12,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "effective_action_r2_operator_spec.json",
+        "microscopic_action_tfpt_v25.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "chiral_index_three_cycles",
+      "out_dir": "out/chiral_index_three_cycles",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "chiral_index_three_cycles.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 15,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "ckm_full_pipeline",
+      "out_dir": "out/ckm_full_pipeline",
+      "pass_count": 15,
+      "plot_expected": 2,
+      "plot_files": {
+        "ckm_residuals_sigma_png": "out/ckm_full_pipeline/ckm_residuals_sigma.png",
+        "ckm_summary_png": "out/ckm_full_pipeline/ckm_summary.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 2,
+      "reference_keys": [
+        "ckm_reference.json",
+        "flavor_texture_v24.json",
+        "lepton_masses_pdg.json",
+        "pyrate_pythonoutputs.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "core_invariants",
+      "out_dir": "out/core_invariants",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "cosmo_reheating_policy_v106",
+      "out_dir": "out/cosmo_reheating_policy_v106",
+      "pass_count": 6,
+      "plot_expected": 1,
+      "plot_files": {
+        "reheating_window_png": "out/cosmo_reheating_policy_v106/reheating_window.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [
+        "cosmo_reheating_policy_v106.json",
+        "global_reference_minimal.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "cosmo_threshold_history",
+      "out_dir": "out/cosmo_threshold_history",
+      "pass_count": 5,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "cosmo_reheating_policy_v106.json",
+        "global_reference_minimal.json",
+        "rge_thresholds_v25.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 7,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "dark_energy_paths",
+      "out_dir": "out/dark_energy_paths",
+      "pass_count": 7,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "k_calibration.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "defect_partition_derivation",
+      "out_dir": "out/defect_partition_derivation",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "global_reference.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "discrete_complexity_minimizer",
+      "out_dir": "out/discrete_complexity_minimizer",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "discrete_consistency_uniqueness",
+      "out_dir": "out/discrete_consistency_uniqueness",
+      "pass_count": 5,
+      "plot_expected": 1,
+      "plot_files": {
+        "cfe_uniqueness_png": "out/discrete_consistency_uniqueness/cfe_uniqueness.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "dm_alternative_channels",
+      "out_dir": "out/dm_alternative_channels",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 16,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "effective_action_r2",
+      "out_dir": "out/effective_action_r2",
+      "pass_count": 16,
+      "plot_expected": 2,
+      "plot_files": {
+        "r2_block_contributions_png": "out/effective_action_r2/r2_block_contributions.png",
+        "starobinsky_scan_png": "out/effective_action_r2/starobinsky_scan.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 2,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 13,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "flavor_joint_objective_scan",
+      "out_dir": "out/flavor_joint_objective_scan",
+      "pass_count": 13,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "flavor_texture_v24.json",
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "flavor_topology_mapper",
+      "out_dir": "out/flavor_topology_mapper",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "g2_and_lamb_shift_proxy",
+      "out_dir": "out/g2_and_lamb_shift_proxy",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 9,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "global_consistency_test",
+      "out_dir": "out/global_consistency_test",
+      "pass_count": 9,
+      "plot_expected": 3,
+      "plot_files": {
+        "chi2_contributions_no_alpha_png": "out/global_consistency_test/chi2_contributions_no_alpha.png",
+        "chi2_contributions_png": "out/global_consistency_test/chi2_contributions.png",
+        "global_radar_png": "out/global_consistency_test/global_radar.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 3,
+      "reference_keys": [
+        "global_reference.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "gw_background_bounds",
+      "out_dir": "out/gw_background_bounds",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "gw_background_predictor",
+      "out_dir": "out/gw_background_predictor",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "global_reference_minimal.json",
+        "k_calibration.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "k_calibration",
+      "out_dir": "out/k_calibration",
+      "pass_count": 6,
+      "plot_expected": 2,
+      "plot_files": {
+        "k_calibration_scaling_png": "out/k_calibration/k_calibration_scaling.png",
+        "k_to_ell_feasibility_png": "out/k_calibration/k_to_ell_feasibility.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 2,
+      "reference_keys": [
+        "k_calibration.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 1,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "koide_constraints",
+      "out_dir": "out/koide_constraints",
+      "pass_count": 1,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 10,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "likelihood_engine",
+      "out_dir": "out/likelihood_engine",
+      "pass_count": 10,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "likelihood_datasets_v1.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "mass_spectrum_deriver",
+      "out_dir": "out/mass_spectrum_deriver",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 1,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "mass_spectrum_minimal",
+      "out_dir": "out/mass_spectrum_minimal",
+      "pass_count": 1,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "matching_finite_pieces",
+      "out_dir": "out/matching_finite_pieces",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "alpha_running_pdg.json",
+        "global_reference.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 1
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "mobius_cusp_classification",
+      "out_dir": "out/mobius_cusp_classification",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "mobius_delta_calibration",
+      "out_dir": "out/mobius_delta_calibration",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "mobius_z3_yukawa_generator",
+      "out_dir": "out/mobius_z3_yukawa_generator",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "ckm_reference.json",
+        "flavor_texture_v24.json",
+        "lepton_masses_pdg.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 7,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "msbar_matching_map",
+      "out_dir": "out/msbar_matching_map",
+      "pass_count": 7,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "omega_b_conjecture_scan",
+      "out_dir": "out/omega_b_conjecture_scan",
+      "pass_count": 5,
+      "plot_expected": 1,
+      "plot_files": {
+        "omega_b_coeff_scan_png": "out/omega_b_conjecture_scan/omega_b_coeff_scan.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 11,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "pmns_full_pipeline",
+      "out_dir": "out/pmns_full_pipeline",
+      "pass_count": 11,
+      "plot_expected": 1,
+      "plot_files": {
+        "pmns_residuals_sigma_png": "out/pmns_full_pipeline/pmns_residuals_sigma.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [
+        "flavor_texture_v24.json",
+        "rge_thresholds_v25.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "pmns_mechanism_bridge",
+      "out_dir": "out/pmns_mechanism_bridge",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "flavor_texture_v24.json",
+        "rge_thresholds_v25.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "pmns_z3_breaking",
+      "out_dir": "out/pmns_z3_breaking",
+      "pass_count": 3,
+      "plot_expected": 1,
+      "plot_files": {
+        "pmns_z3_breaking_png": "out/pmns_z3_breaking/pmns_z3_breaking.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "predictions_dashboard",
+      "out_dir": "out/predictions_dashboard",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "global_reference.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "primordial_spectrum_builder",
+      "out_dir": "out/primordial_spectrum_builder",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "k_calibration.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "qed_anomalies_audit",
+      "out_dir": "out/qed_anomalies_audit",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "qft_completeness_ledger",
+      "out_dir": "out/qft_completeness_ledger",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "seesaw_block",
+      "out_dir": "out/seesaw_block",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "stability_unitarity_audit",
+      "out_dir": "out/stability_unitarity_audit",
+      "pass_count": 5,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "rge_thresholds_v25.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "topology_phase_map",
+      "out_dir": "out/topology_phase_map",
+      "pass_count": 5,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "chiral_index_three_cycles.json",
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "torsion_bounds_mapping",
+      "out_dir": "out/torsion_bounds_mapping",
+      "pass_count": 6,
+      "plot_expected": 1,
+      "plot_files": {
+        "torsion_bounds_png": "out/torsion_bounds_mapping/torsion_bounds.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [
+        "torsion_bounds.json",
+        "torsion_bounds_vetted.json",
+        "torsion_regimes.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 8,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "torsion_condensate",
+      "out_dir": "out/torsion_condensate",
+      "pass_count": 5,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "effective_action_r2_operator_spec.json",
+        "k_calibration.json"
+      ],
+      "warn_count": 3
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "torsion_dm_pipeline",
+      "out_dir": "out/torsion_dm_pipeline",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "torsion_bounds_vetted.json",
+        "torsion_regimes.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "torsion_falsifiability_snr",
+      "out_dir": "out/torsion_falsifiability_snr",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "torsion_falsifiability_noise_v1.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "torsion_observable_designer",
+      "out_dir": "out/torsion_observable_designer",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "torsion_observable_spin_fluid",
+      "out_dir": "out/torsion_observable_spin_fluid",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "two_loop_rg_fingerprints",
+      "out_dir": "out/two_loop_rg_fingerprints",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "sm_inputs_mz.json",
+        "two_loop_rg_fingerprints.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "ufe_gravity_normalization",
+      "out_dir": "out/ufe_gravity_normalization",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "uncertainty_propagator",
+      "out_dir": "out/uncertainty_propagator",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 1,
+      "fail_count": 0,
+      "mode": "engineering",
+      "module_id": "unification_gate",
+      "out_dir": "out/unification_gate",
+      "pass_count": 1,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "pyrate_pythonoutputs.json",
+        "rge_thresholds_v25.json",
+        "sm_inputs_mz.json",
+        "two_loop_rg_fingerprints.json",
+        "unification_gate_policy.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 7,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "alpha_on_shell_bridge",
+      "out_dir": "out_physics/alpha_on_shell_bridge",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "alpha_running_pdg.json",
+        "global_reference.json"
+      ],
+      "warn_count": 1
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "alpha_precision_audit",
+      "out_dir": "out_physics/alpha_precision_audit",
+      "pass_count": 6,
+      "plot_expected": 2,
+      "plot_files": {
+        "alpha_defect_zscore_overview_png": "out_physics/alpha_precision_audit/alpha_defect_zscore_overview.png",
+        "alpha_k_sensitivity_png": "out_physics/alpha_precision_audit/alpha_k_sensitivity.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 2,
+      "reference_keys": [
+        "global_reference_minimal.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "anomaly_cancellation_audit",
+      "out_dir": "out_physics/anomaly_cancellation_audit",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "microscopic_action_tfpt_v25.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "aps_eta_gluing",
+      "out_dir": "out_physics/aps_eta_gluing",
+      "pass_count": 4,
+      "plot_expected": 1,
+      "plot_files": {
+        "aps_eta_spectral_flow_png": "out_physics/aps_eta_gluing/aps_eta_spectral_flow.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "arrow_mechanism",
+      "out_dir": "out_physics/arrow_mechanism",
+      "pass_count": 5,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "k_calibration.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "arrow_of_time_proxy",
+      "out_dir": "out_physics/arrow_of_time_proxy",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 8,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "axion_dm_pipeline",
+      "out_dir": "out_physics/axion_dm_pipeline",
+      "pass_count": 8,
+      "plot_expected": 1,
+      "plot_files": {
+        "axion_dm_png": "out_physics/axion_dm_pipeline/axion_dm.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [
+        "axion_tfpt_v106.json",
+        "global_reference_minimal.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "axion_fa_derivation",
+      "out_dir": "out_physics/axion_fa_derivation",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "axion_tfpt_v106.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "axion_scenario_matrix",
+      "out_dir": "out_physics/axion_scenario_matrix",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "axion_tfpt_v106.json",
+        "global_reference_minimal.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "baryogenesis_mechanism",
+      "out_dir": "out_physics/baryogenesis_mechanism",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "flavor_texture_v24.json",
+        "global_reference_minimal.json",
+        "rge_thresholds_v25.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "baryogenesis_placeholder",
+      "out_dir": "out_physics/baryogenesis_placeholder",
+      "pass_count": 5,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "bbn_consistency",
+      "out_dir": "out_physics/bbn_consistency",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "bbn_reference.json",
+        "global_reference_minimal.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "bbn_neff_sanity",
+      "out_dir": "out_physics/bbn_neff_sanity",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "below_mt_eft_cascade",
+      "out_dir": "out_physics/below_mt_eft_cascade",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "below_mz_policy.json",
+        "lepton_masses_pdg.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "birefringence_tomography",
+      "out_dir": "out_physics/birefringence_tomography",
+      "pass_count": 4,
+      "plot_expected": 1,
+      "plot_files": {
+        "beta_tomography_png": "out_physics/birefringence_tomography/beta_tomography.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [
+        "birefringence_tomography.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 13,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "boltzmann_transfer",
+      "out_dir": "out_physics/boltzmann_transfer",
+      "pass_count": 13,
+      "plot_expected": 2,
+      "plot_files": {
+        "cl_ratio_tt_ee_png": "out_physics/boltzmann_transfer/cl_ratio_tt_ee.png",
+        "cl_tt_ee_comparison_png": "out_physics/boltzmann_transfer/cl_tt_ee_comparison.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 2,
+      "reference_keys": [
+        "global_reference_minimal.json",
+        "k_calibration.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "bounce_perturbations",
+      "out_dir": "out_physics/bounce_perturbations",
+      "pass_count": 6,
+      "plot_expected": 1,
+      "plot_files": {
+        "T_of_k_png": "out_physics/bounce_perturbations/T_of_k.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 12,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "brst_ghost_deriver",
+      "out_dir": "out_physics/brst_ghost_deriver",
+      "pass_count": 12,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "effective_action_r2_operator_spec.json",
+        "microscopic_action_tfpt_v25.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "chiral_index_three_cycles",
+      "out_dir": "out_physics/chiral_index_three_cycles",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "chiral_index_three_cycles.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 15,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "ckm_full_pipeline",
+      "out_dir": "out_physics/ckm_full_pipeline",
+      "pass_count": 15,
+      "plot_expected": 2,
+      "plot_files": {
+        "ckm_residuals_sigma_png": "out_physics/ckm_full_pipeline/ckm_residuals_sigma.png",
+        "ckm_summary_png": "out_physics/ckm_full_pipeline/ckm_summary.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 2,
+      "reference_keys": [
+        "ckm_reference.json",
+        "flavor_texture_v24.json",
+        "lepton_masses_pdg.json",
+        "pyrate_pythonoutputs.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "core_invariants",
+      "out_dir": "out_physics/core_invariants",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "cosmo_reheating_policy_v106",
+      "out_dir": "out_physics/cosmo_reheating_policy_v106",
+      "pass_count": 6,
+      "plot_expected": 1,
+      "plot_files": {
+        "reheating_window_png": "out_physics/cosmo_reheating_policy_v106/reheating_window.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [
+        "cosmo_reheating_policy_v106.json",
+        "global_reference_minimal.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "cosmo_threshold_history",
+      "out_dir": "out_physics/cosmo_threshold_history",
+      "pass_count": 5,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "cosmo_reheating_policy_v106.json",
+        "global_reference_minimal.json",
+        "rge_thresholds_v25.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 7,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "dark_energy_paths",
+      "out_dir": "out_physics/dark_energy_paths",
+      "pass_count": 7,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "k_calibration.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "defect_partition_derivation",
+      "out_dir": "out_physics/defect_partition_derivation",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "global_reference.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "discrete_complexity_minimizer",
+      "out_dir": "out_physics/discrete_complexity_minimizer",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "discrete_consistency_uniqueness",
+      "out_dir": "out_physics/discrete_consistency_uniqueness",
+      "pass_count": 5,
+      "plot_expected": 1,
+      "plot_files": {
+        "cfe_uniqueness_png": "out_physics/discrete_consistency_uniqueness/cfe_uniqueness.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "dm_alternative_channels",
+      "out_dir": "out_physics/dm_alternative_channels",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 16,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "effective_action_r2",
+      "out_dir": "out_physics/effective_action_r2",
+      "pass_count": 16,
+      "plot_expected": 2,
+      "plot_files": {
+        "r2_block_contributions_png": "out_physics/effective_action_r2/r2_block_contributions.png",
+        "starobinsky_scan_png": "out_physics/effective_action_r2/starobinsky_scan.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 2,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 13,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "flavor_joint_objective_scan",
+      "out_dir": "out_physics/flavor_joint_objective_scan",
+      "pass_count": 13,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "flavor_texture_v24.json",
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "flavor_topology_mapper",
+      "out_dir": "out_physics/flavor_topology_mapper",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "g2_and_lamb_shift_proxy",
+      "out_dir": "out_physics/g2_and_lamb_shift_proxy",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 13,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "global_consistency_test",
+      "out_dir": "out_physics/global_consistency_test",
+      "pass_count": 13,
+      "plot_expected": 3,
+      "plot_files": {
+        "chi2_contributions_no_alpha_png": "out_physics/global_consistency_test/chi2_contributions_no_alpha.png",
+        "chi2_contributions_png": "out_physics/global_consistency_test/chi2_contributions.png",
+        "global_radar_png": "out_physics/global_consistency_test/global_radar.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 3,
+      "reference_keys": [
+        "global_reference.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "gw_background_bounds",
+      "out_dir": "out_physics/gw_background_bounds",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "gw_background_predictor",
+      "out_dir": "out_physics/gw_background_predictor",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "global_reference_minimal.json",
+        "k_calibration.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "k_calibration",
+      "out_dir": "out_physics/k_calibration",
+      "pass_count": 6,
+      "plot_expected": 2,
+      "plot_files": {
+        "k_calibration_scaling_png": "out_physics/k_calibration/k_calibration_scaling.png",
+        "k_to_ell_feasibility_png": "out_physics/k_calibration/k_to_ell_feasibility.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 2,
+      "reference_keys": [
+        "k_calibration.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 1,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "koide_constraints",
+      "out_dir": "out_physics/koide_constraints",
+      "pass_count": 1,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 10,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "likelihood_engine",
+      "out_dir": "out_physics/likelihood_engine",
+      "pass_count": 10,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "likelihood_datasets_v1.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "mass_spectrum_deriver",
+      "out_dir": "out_physics/mass_spectrum_deriver",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 1,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "mass_spectrum_minimal",
+      "out_dir": "out_physics/mass_spectrum_minimal",
+      "pass_count": 1,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "matching_finite_pieces",
+      "out_dir": "out_physics/matching_finite_pieces",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "alpha_running_pdg.json",
+        "global_reference.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 1
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "mobius_cusp_classification",
+      "out_dir": "out_physics/mobius_cusp_classification",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "mobius_delta_calibration",
+      "out_dir": "out_physics/mobius_delta_calibration",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "mobius_z3_yukawa_generator",
+      "out_dir": "out_physics/mobius_z3_yukawa_generator",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "ckm_reference.json",
+        "flavor_texture_v24.json",
+        "lepton_masses_pdg.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 7,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "msbar_matching_map",
+      "out_dir": "out_physics/msbar_matching_map",
+      "pass_count": 7,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "lepton_masses_pdg.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "omega_b_conjecture_scan",
+      "out_dir": "out_physics/omega_b_conjecture_scan",
+      "pass_count": 5,
+      "plot_expected": 1,
+      "plot_files": {
+        "omega_b_coeff_scan_png": "out_physics/omega_b_conjecture_scan/omega_b_coeff_scan.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 11,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "pmns_full_pipeline",
+      "out_dir": "out_physics/pmns_full_pipeline",
+      "pass_count": 11,
+      "plot_expected": 1,
+      "plot_files": {
+        "pmns_residuals_sigma_png": "out_physics/pmns_full_pipeline/pmns_residuals_sigma.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [
+        "flavor_texture_v24.json",
+        "rge_thresholds_v25.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "pmns_mechanism_bridge",
+      "out_dir": "out_physics/pmns_mechanism_bridge",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "flavor_texture_v24.json",
+        "rge_thresholds_v25.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "pmns_z3_breaking",
+      "out_dir": "out_physics/pmns_z3_breaking",
+      "pass_count": 3,
+      "plot_expected": 1,
+      "plot_files": {
+        "pmns_z3_breaking_png": "out_physics/pmns_z3_breaking/pmns_z3_breaking.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "predictions_dashboard",
+      "out_dir": "out_physics/predictions_dashboard",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "global_reference.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "primordial_spectrum_builder",
+      "out_dir": "out_physics/primordial_spectrum_builder",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "k_calibration.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "qed_anomalies_audit",
+      "out_dir": "out_physics/qed_anomalies_audit",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "qft_completeness_ledger",
+      "out_dir": "out_physics/qft_completeness_ledger",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "seesaw_block",
+      "out_dir": "out_physics/seesaw_block",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "stability_unitarity_audit",
+      "out_dir": "out_physics/stability_unitarity_audit",
+      "pass_count": 5,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "rge_thresholds_v25.json",
+        "sm_inputs_mz.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 5,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "topology_phase_map",
+      "out_dir": "out_physics/topology_phase_map",
+      "pass_count": 5,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "chiral_index_three_cycles.json",
+        "lepton_masses_pdg.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "torsion_bounds_mapping",
+      "out_dir": "out_physics/torsion_bounds_mapping",
+      "pass_count": 6,
+      "plot_expected": 1,
+      "plot_files": {
+        "torsion_bounds_png": "out_physics/torsion_bounds_mapping/torsion_bounds.png"
+      },
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 1,
+      "reference_keys": [
+        "torsion_bounds.json",
+        "torsion_bounds_vetted.json",
+        "torsion_regimes.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 8,
+      "fail_count": 1,
+      "mode": "physics",
+      "module_id": "torsion_condensate",
+      "out_dir": "out_physics/torsion_condensate",
+      "pass_count": 5,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "effective_action_r2_operator_spec.json",
+        "k_calibration.json"
+      ],
+      "warn_count": 2
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "torsion_dm_pipeline",
+      "out_dir": "out_physics/torsion_dm_pipeline",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "torsion_bounds_vetted.json",
+        "torsion_regimes.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "torsion_falsifiability_snr",
+      "out_dir": "out_physics/torsion_falsifiability_snr",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "torsion_falsifiability_noise_v1.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 2,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "torsion_observable_designer",
+      "out_dir": "out_physics/torsion_observable_designer",
+      "pass_count": 2,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "torsion_observable_spin_fluid",
+      "out_dir": "out_physics/torsion_observable_spin_fluid",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 6,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "two_loop_rg_fingerprints",
+      "out_dir": "out_physics/two_loop_rg_fingerprints",
+      "pass_count": 6,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "sm_inputs_mz.json",
+        "two_loop_rg_fingerprints.json"
+      ],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 3,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "ufe_gravity_normalization",
+      "out_dir": "out_physics/ufe_gravity_normalization",
+      "pass_count": 3,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 4,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "uncertainty_propagator",
+      "out_dir": "out_physics/uncertainty_propagator",
+      "pass_count": 4,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [],
+      "warn_count": 0
+    },
+    {
+      "checks_total": 1,
+      "fail_count": 0,
+      "mode": "physics",
+      "module_id": "unification_gate",
+      "out_dir": "out_physics/unification_gate",
+      "pass_count": 1,
+      "plot_expected": 0,
+      "plot_files": {},
+      "plot_invalid": 0,
+      "plot_missing": 0,
+      "plot_present": 0,
+      "reference_keys": [
+        "pyrate_pythonoutputs.json",
+        "rge_thresholds_v25.json",
+        "sm_inputs_mz.json",
+        "two_loop_rg_fingerprints.json",
+        "unification_gate_policy.json"
+      ],
+      "warn_count": 0
+    }
+  ],
+  "out_roots": [
+    "out",
+    "out_physics"
+  ],
+  "schema_version": 1,
+  "totals": {
+    "checks_total": 688,
+    "engineering": {
+      "checks_total": 342,
+      "modules_total": 66,
+      "modules_with_fail": 0,
+      "modules_with_warn": 3,
+      "plots_expected_total": 23,
+      "plots_invalid_total": 0,
+      "plots_missing_total": 0,
+      "plots_present_total": 23
+    },
+    "module_ids_unique_engineering": 66,
+    "module_ids_unique_physics": 66,
+    "module_ids_unique_total": 66,
+    "modules_total": 132,
+    "modules_with_fail": 1,
+    "modules_with_warn": 6,
+    "physics": {
+      "checks_total": 346,
+      "modules_total": 66,
+      "modules_with_fail": 1,
+      "modules_with_warn": 3,
+      "plots_expected_total": 23,
+      "plots_invalid_total": 0,
+      "plots_missing_total": 0,
+      "plots_present_total": 23
+    },
+    "plots_expected_total": 46,
+    "plots_invalid_total": 0,
+    "plots_missing_total": 0,
+    "plots_present_total": 46
+  }
+}

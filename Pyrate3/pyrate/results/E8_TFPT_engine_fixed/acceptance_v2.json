@@ -1,0 +1,41 @@
+{
+  "one_loop_slope_alpha1": {
+    "num": -0.6525352666767507,
+    "exp": -0.6525352666767709,
+    "rel_err": 3.096546666524737e-14,
+    "pass": true
+  },
+  "g8_bridge_slope": {
+    "num": 0.8063126060756776,
+    "exp": 0.7957747154594768,
+    "rel_err": 0.013242303897675708,
+    "pass": true
+  },
+  "fingerprints": {
+    "alpha3_at_1PeV": 0.05292341108566695,
+    "alpha3_at_2p5e8": 0.03971380694665855,
+    "phi0_target": 0.05317195217684553,
+    "c3_target": 0.039788735772973836,
+    "dev_phi0": 0.004674289376322996,
+    "dev_c3": 0.0018831668023537376,
+    "pass_phi0": true,
+    "pass_c3": true
+  },
+  "unification": {
+    "mu_star": 1432923703692402.2,
+    "rel_spread": 0.012255388401247905,
+    "pass": true
+  },
+  "continuity": {
+    "max_jump_abs_alpha_inv": 0.0,
+    "jumps": {
+      "MSigma": 0.0,
+      "MG8": 0.0,
+      "MNR1": 0.0,
+      "MNR2": 0.0,
+      "MNR3": 0.0,
+      "MPhi": 0.0
+    },
+    "pass": true
+  }
+}

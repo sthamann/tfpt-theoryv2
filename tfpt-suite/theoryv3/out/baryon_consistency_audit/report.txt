@@ -1,0 +1,20 @@
+Baryon consistency audit
+
+beta_rad = 0.004231289511395415
+Omega_b_pred = 0.04894066266545011
+Omega_b_ref = 0.049301692328524445 (z=-0.42136420161877963)
+
+eta_b_pred = 5.794376870756092e-10
+eta10_pred = 5.794376870756092
+omega_b_h2_pred = 0.021155081674903587
+eta_b_ref = 6.127143e-10 (log10 mismatch=-0.024251277714995013)
+
+H0_pred = 65.74646854801091 km/s/Mpc (z_planck=-2.9880212073872032, z_alt=-7.013011011527977)
+H0_ref_planck = 67.36 ± 0.54 km/s/Mpc (Planck 2018)
+H0_ref_alt = 73.04 ± 1.04 km/s/Mpc (SH0ES 2022)
+
+Checks:
+- omega_b_within_2sigma: PASS (z=-0.42136420161877963)
+- eta_b_within_0p5_dex: PASS (log10 mismatch=-0.024251277714995013)
+- H0_within_2sigma: WARN (z_planck=-2.9880212073872032)
+- H0_tension_indicator: INFO (z_alt=-7.013011011527977 (alt=73.04 ? 1.04; planck=67.36 ? 0.54))

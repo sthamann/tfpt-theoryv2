@@ -1,0 +1,28 @@
+BBN consistency (engineering-level fit; not a full nuclear network)
+
+mode=physics
+reference: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json (Ω_b h^2), /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/bbn_reference.json (Yp, D/H, N_eff)
+
+Inputs:
+- Ω_b h^2 (Planck 2018): 0.02237 ± 0.00015
+- N_eff (marker): 3.046
+
+Derived:
+- η10 ≈ 6.12714
+
+Proxy BBN predictions:
+- Y_p(pred) ≈ 0.247303
+- D/H(pred) ≈ 2.4562e-05
+
+Theory floors (proxy-fit uncertainty; explicit):
+- sigma_theory(Y_p) = 0.002
+- sigma_theory(D/H) = 1e-06
+- sigma_theory(N_eff) = 0.0
+
+Checks:
+- eta10_computed: PASS (eta10≈6.13 from Ω_b h^2=0.02237)
+- neff_used: PASS (N_eff=3.046 (bbn_neff_sanity marker if available))
+- Yp_within_2sigma: PASS (|z|=0.639 (pred=0.24730342879999997, mean=0.245, sigma_eff≈0.00361))
+- D_over_H_within_2sigma: PASS (|z|=0.678 (pred=2.456195272160699e-05, mean=2.527e-05, sigma_eff≈1.04e-06))
+- Neff_within_2sigma: PASS (|z|=0 (pred=3.046, mean=3.046, sigma_eff≈0.2))
+- light_elements_match: PASS (Yp, D/H, N_eff all within the declared proxy tolerances)

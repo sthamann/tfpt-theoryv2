@@ -1,0 +1,75 @@
+k calibration (assumption-explicit)
+
+config: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json
+bounce diagnostics source: live output: tfpt-suite/out_engineering/bounce_perturbations/results.json
+
+Cosmology model (flat ΛCDM):
+- H0 = 67.36 km/s/Mpc
+- Ω_m = 0.3153
+- Ω_r = 9.2e-05
+- Ω_Λ = 0.684608
+- z_* = 1090.0
+- χ_* = 13867.328 Mpc
+
+TFPT scale:
+- M/Mpl = 0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637
+- Mpl(reduced) = 2.435e+18 GeV
+- M = 3.060e+13 GeV
+
+Bounce scale in x=Mη units (dimensionless):
+- k_bounce_s_raw ≈ 2103.55
+- k_bounce_t_raw ≈ 7.80804
+
+Naive projection (assumes absolute normalization already corresponds to a0=1 today):
+- k_bounce_s ≈ 1.006e+55 Mpc^-1  =>  ℓ_bounce_s ≈ 1.396e+59
+- k_bounce_t ≈ 3.736e+52 Mpc^-1  =>  ℓ_bounce_t ≈ 5.180e+56
+
+Required overall scaling to place bounce features at target multipoles:
+  (interpretation: needed a0/a_transition so that ℓ_bounce = ℓ_bounce_naive/(a0/a_transition))
+
+Scalar:
+- ℓ_target=2: a0/a_t needed=6.978e+58  (N_needed=ln(a0/a_t)=135.493)
+- ℓ_target=30: a0/a_t needed=4.652e+57  (N_needed=ln(a0/a_t)=132.785)
+- ℓ_target=700: a0/a_t needed=1.994e+56  (N_needed=ln(a0/a_t)=129.635)
+
+Tensor:
+- ℓ_target=2: a0/a_t needed=2.590e+56  (N_needed=ln(a0/a_t)=129.896)
+- ℓ_target=30: a0/a_t needed=1.727e+55  (N_needed=ln(a0/a_t)=127.188)
+- ℓ_target=700: a0/a_t needed=7.400e+53  (N_needed=ln(a0/a_t)=124.039)
+
+Expansion-budget estimate (optional assumptions):
+- transition = horizon_exit_of_pivot
+- N_inflation_from_transition = 56.980
+- N_reheat = 7.333 (a_reh/a_end = exp(N_reheat))
+- T_reheat = 1.000e+13 GeV (instantaneous reheating assumed)
+- g*_s(reheat)=120.0, g*_s(today)=3.91
+- a0/a_reh ≈ 1.333e+26
+- a0/a_end ≈ 2.039e+29
+- a0/a_transition(est) ≈ 1.137e+54  (N_est=ln(a0/a_t)=124.468)
+- ℓ_bounce_s(est) ≈ 1.228e+05
+- ℓ_bounce_t(est) ≈ 4.558e+02
+- ℓ range (est, scalar) ≈ [0.0123, 1.23e+06]
+
+Reheating policy v1.06 (derived inputs; overrides N and N_reheat when enabled):
+{
+  "A_s": 2.0989031673191437e-09,
+  "N_pivot": 56.98005698005695,
+  "c_end": 0.35,
+  "deltaN": -1.8332075475179785,
+  "g_star_reheat": 120.0,
+  "ln10_As": 3.044,
+  "n_s": 0.9649,
+  "r": 0.003696030000000004,
+  "reference_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json",
+  "rho_end_GeV4": 1.4131322296364145e+63,
+  "rho_reh_GeV4": 3.9478417604357435e+53,
+  "w_reh": 0.0
+}
+
+Checks:
+- bounce_scale_loaded: PASS (k_bounce_s_raw=2103.5507357951246, k_bounce_t_raw=7.808039644294931 (live output: tfpt-suite/out_engineering/bounce_perturbations/results.json))
+- chi_star_computed: PASS (chi_star(z*=1090.0) = 13867.328 Mpc (flat ΛCDM))
+- ell_bounce_finite: PASS (ell_bounce_naive scalar=1.396e+59, tensor=5.180e+56)
+- expansion_budget_estimate_present: PASS (a0/a_transition = (a0/a_reh)*(a_reh/a_end)*exp(N_inflation_from_transition); transition=horizon_exit_of_pivot; a0/a_transition(est)=1.137e+54 (N_infl=56.98005698005695, N_reh=7.332830190071914, T_reh=1.000e+13 GeV))
+- ell_range_covers_cmb_scales_scalar_est: PASS (scalar ell range ≈[0.0123, 1.23e+06] from k_hat∈[1e-07, 10.0] (source=config) vs target [2.0,2500.0])
+- ell_range_covers_cmb_scales_tensor_est: PASS (tensor ell range ≈[4.56e-05, 4.56e+03] from k_hat∈[1e-07, 10.0] (source=config) vs target [2.0,2500.0])

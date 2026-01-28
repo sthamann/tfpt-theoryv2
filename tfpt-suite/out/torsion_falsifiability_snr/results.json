@@ -1,0 +1,150 @@
+{
+  "checks": [
+    {
+      "check_id": "torsion_falsifiability_snr_table_present",
+      "detail": "rows=2 policy=/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/torsion_falsifiability_noise_v1.json",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "noise_psd_frequency_dependent",
+      "detail": "channels=['magnetar_timing_proxy']",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "source_model_derived_not_benchmark",
+      "detail": "magnetar P=tanh(mu_B*B/(k_B*T)) => P\u22481 (B=1.000e+15 G, T=1.000e+06 K, Ye=0.1)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "lab_channel_measurable_under_realistic_noise",
+      "detail": "SNR\u22482.084e-14 (<5; lab channel not measurable under current TFPT-scale coupling assumptions)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "astro_channel_measurable_under_realistic_noise",
+      "detail": "SNR\u224875.3 (\u22655)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "go_no_go_snr_ge_5",
+      "detail": "INFO: any_ok=True (threshold=5)",
+      "passed": true,
+      "severity": "INFO"
+    }
+  ],
+  "module_id": "torsion_falsifiability_snr",
+  "plot": null,
+  "results": {
+    "M_eff_GeV": 30595633972661.27,
+    "lab_source_model": {
+      "S_abs_GeV": 5.745641725264868e-47,
+      "delta_nu_Hz": 2.0839349820115158e-23,
+      "n_cm3": 2e+22,
+      "polarization": 0.7,
+      "spin_density_GeV3": 5.378453954907869e-20,
+      "spin_per_particle": 0.5
+    },
+    "magnetar_source_model": {
+      "B_gauss": 1000000000000000.0,
+      "S_abs_GeV": 6.566447686016991e-32,
+      "T_kelvin": 1000000.0,
+      "baryon_density_fm3": 0.16,
+      "delta_nu_Hz": 2.3816399794417316e-08,
+      "electron_fraction_Ye": 0.1,
+      "n_e_GeV3": 0.00012293609039789412,
+      "n_e_fm3": 0.016,
+      "polarization": 1.0,
+      "ratio_muB_B_over_kBT": 67171.38156330943,
+      "spin_density_GeV3": 6.146804519894706e-05
+    },
+    "mode": "engineering",
+    "noise_policy": {
+      "lab_frequency_shift_proxy": {
+        "bandwidth_Hz": null,
+        "f_ref_Hz": null,
+        "f_signal_Hz": null,
+        "gamma": null,
+        "kind": "frequency_shift",
+        "note": "Lab proxy: nHz-level frequency shift sensitivity (order-of-magnitude). Replace with a real comagnetometer / NMR noise model when available.",
+        "sigma_nu_Hz": 1e-09,
+        "sigma_nu_ref_Hz": null
+      },
+      "magnetar_timing_proxy": {
+        "bandwidth_Hz": 1e-09,
+        "f_ref_Hz": 1e-08,
+        "f_signal_Hz": 1e-08,
+        "gamma": 4.33,
+        "kind": "frequency_psd",
+        "note": "Astro noise model: frequency-dependent PSD inspired by PTA timing-residual spectra. sigma_nu_ref is defined at f_ref, with sigma_nu(f)=sigma_nu_ref*(f/f_ref)^(-gamma/2)*sqrt(bandwidth). Parameters are anchored to NANOGrav/PPTA red-noise slopes (\u03b3\u224813/3) as an explicit, replaceable proxy.",
+        "sigma_nu_Hz": 3.16227766016838e-10,
+        "sigma_nu_ref_Hz": 1e-05
+      }
+    },
+    "policy_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/torsion_falsifiability_noise_v1.json",
+    "rows": [
+      {
+        "channel_id": "lab_frequency_shift_proxy",
+        "delta_nu_Hz": 2.0839349820115158e-23,
+        "label": "Lab (He-3 benchmark) \u2014 frequency shift proxy",
+        "note": "Lab benchmark retained explicitly; expected to be far below sensitivity under TFPT-scale coupling.",
+        "sigma_nu_Hz": 1e-09,
+        "snr": 2.0839349820115158e-14,
+        "source_id": "lab_spin_fluid_He3"
+      },
+      {
+        "channel_id": "magnetar_timing_proxy",
+        "delta_nu_Hz": 2.3816399794417316e-08,
+        "label": "Magnetar proxy (electron polarization) \u2014 timing/polarimetry frequency shift",
+        "note": "Derived polarization P=tanh(\u03bc_B B/(k_B T)) with n_e=Y_e n_b at nuclear density scale; explicit proxy \u03c3\u03bd.",
+        "sigma_nu_Hz": 3.16227766016838e-10,
+        "snr": 75.31406901552465,
+        "source_id": "magnetar_electron_polarization_v1"
+      }
+    ],
+    "snr_threshold": 5.0
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given the shipped policy JSON and TFPT constants.",
+    "formulas": [
+      "P_\\mathrm{spin}=\\tanh(\\mu_B B/(k_B T)) \\;\\; (\\mathrm{magnetar\\ electron\\ polarization\\ proxy})",
+      "n_e = Y_e\\, n_b,\\;\\;\\rho_\\mathrm{spin}\\sim P\\,s\\,n_e,\\;\\; |S|\\sim \\rho_\\mathrm{spin}/M_\\mathrm{eff}^2,\\;\\; \\Delta\\nu\\approx 2k|S|\\cdot(\\mathrm{GeV}\\to\\mathrm{Hz})",
+      "\\sigma_\\nu(f)=\\sigma_{\\nu,\\mathrm{ref}}(f/f_\\mathrm{ref})^{-\\gamma/2}\\sqrt{\\Delta f}\\;\\;(\\mathrm{frequency\\ PSD\\ proxy})",
+      "\\mathrm{SNR} = |\\Delta\\nu|/\\sigma_\\nu"
+    ],
+    "gaps": [
+      "This remains a proxy until a real dataset likelihood (timing residuals, polarimetry noise PSD, lab magnetometer systematics) is wired in."
+    ],
+    "inputs": [
+      "noise + source model policy: tfpt_suite/data/torsion_falsifiability_noise_v1.json",
+      "TFPT scale M from constants (R^2 scale) used as coupling-scale proxy",
+      "minimal-coupling mapping constant k=3/4 (b_mu \u2248 k S_mu)"
+    ],
+    "maturity": null,
+    "module_id": "torsion_falsifiability_snr",
+    "name": "Torsion falsifiability (explicit source + noise model; SNR gate)",
+    "objective": [
+      "Upgrade torsion falsifiability from proxy thresholds to an explicit SNR calculation.",
+      "Provide a concrete upgrade path to publication-grade likelihoods (replace \u03c3\u03bd proxies with real instrument PSD/likelihood)."
+    ],
+    "outputs": [
+      "SNR table for declared channels (lab + astro)",
+      "go/no-go gate based on SNR \u2265 5 in at least one channel"
+    ],
+    "question": "Given an explicit source model and a noise model, is there at least one falsifiable torsion observable channel with SNR\u22655?",
+    "references": [],
+    "validation": [
+      "Emits an explicit SNR gate for at least one channel (PASS in physics mode if SNR\u22655).",
+      "noise_psd_frequency_dependent: PASS if a frequency-dependent PSD noise model is declared.",
+      "Keeps the source+noise assumptions as a machine-readable policy file."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

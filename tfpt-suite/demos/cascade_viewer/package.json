@@ -1,0 +1,39 @@
+{
+  "name": "tfpt-cascade-viewer",
+  "version": "1.0.0",
+  "description": "Interactive visualization of the TFPT E8→SM symmetry breaking cascade. Reads directly from tfpt-suite analysis outputs.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "npx ts-node index.ts",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "tfpt",
+    "visualization",
+    "physics",
+    "e8",
+    "cascade",
+    "symmetry-breaking"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-repo/tfpt-suite"
+  },
+  "private": true
+}

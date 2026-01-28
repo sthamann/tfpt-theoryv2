@@ -1,0 +1,198 @@
+{
+  "checks": [
+    {
+      "check_id": "ckm_unitarity",
+      "detail": "max|V\u2020V-I|=7.772e-16",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "ckm_chi2_finite",
+      "detail": "chi2=5.52801",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "mobius_z3_yukawa_generator",
+  "plot": null,
+  "results": {
+    "chi2": 5.528010959786383,
+    "chi2_contributions": [
+      {
+        "chi2": 2.6371352731813764,
+        "key": "Vtd",
+        "mean": 0.00858,
+        "pred": 0.008888545917752688,
+        "sigma": 0.00019
+      },
+      {
+        "chi2": 0.6717443089144252,
+        "key": "Vcd",
+        "mean": 0.22487,
+        "pred": 0.22431267193822485,
+        "sigma": 0.00068
+      },
+      {
+        "chi2": 0.6578984326168144,
+        "key": "Vus",
+        "mean": 0.22501,
+        "pred": 0.22445844561896217,
+        "sigma": 0.00068
+      },
+      {
+        "chi2": 0.6269650344864024,
+        "key": "Vud",
+        "mean": 0.97435,
+        "pred": 0.9744766897978642,
+        "sigma": 0.00016
+      },
+      {
+        "chi2": 0.5851465349760059,
+        "key": "Vcs",
+        "mean": 0.97349,
+        "pred": 0.9736123917942322,
+        "sigma": 0.00016
+      },
+      {
+        "chi2": 0.26025727974274454,
+        "key": "Vub",
+        "mean": 0.003732,
+        "pred": 0.0036860861244729197,
+        "sigma": 9e-05
+      },
+      {
+        "chi2": 0.03846898224814686,
+        "key": "Vcb",
+        "mean": 0.04183,
+        "pred": 0.041984946738659025,
+        "sigma": 0.00079
+      },
+      {
+        "chi2": 0.037183838734777465,
+        "key": "Vtb",
+        "mean": 0.999118,
+        "pred": 0.9991114437421056,
+        "sigma": 3.4e-05
+      },
+      {
+        "chi2": 0.013211274885689028,
+        "key": "Vts",
+        "mean": 0.04111,
+        "pred": 0.04119850403877635,
+        "sigma": 0.00077
+      }
+    ],
+    "ckm_mt_abs": {
+      "Vcb": 0.041984946738659025,
+      "Vcd": 0.22431267193822485,
+      "Vcs": 0.9736123917942322,
+      "Vtb": 0.9991114437421056,
+      "Vtd": 0.008888545917752688,
+      "Vts": 0.04119850403877635,
+      "Vub": 0.0036860861244729197,
+      "Vud": 0.9744766897978642,
+      "Vus": 0.22445844561896217
+    },
+    "ckm_mt_unitarity_dev": 7.771561172378251e-16,
+    "delta_M": 0.6079090366343283,
+    "delta_source": "delta_star",
+    "delta_star": 0.6088619920294742,
+    "delta_used": 0.6088619920294742,
+    "meta": {
+      "ckm": {
+        "A": 0.8333333333333334,
+        "delta_cp_rad": 1.2287962923799498,
+        "delta_mode": "pi_times_1_minus_delta",
+        "lam": 0.22445997051897376,
+        "s12": 0.22445997051897376,
+        "s13": 0.0036860861244729197,
+        "s13_mode": "A_lam3_times_1_minus_delta",
+        "s23": 0.04198523197114881
+      },
+      "phase_mode": "CKM(PDG) from TFPT invariants; see CkmConstruction fields",
+      "ratios": {
+        "m_b_over_m_s": 43.79405189623337,
+        "m_c_over_m_u": 486.9165313620135,
+        "m_mu_over_m_e": 197.84536441898265,
+        "m_s_over_m_d": 16.91911119689403,
+        "m_t_over_m_c": 133.01222546408377,
+        "m_tau_over_m_mu": 16.91911119689403
+      },
+      "reference_scale_GeV": 172.76,
+      "scheme": "MSbar"
+    },
+    "yukawas_mt": {
+      "Yd": [
+        [
+          "(2.235772978138198e-05+0j)",
+          "(8.713040721980674e-05+0j)",
+          "(2.1015569135832525e-05-5.9034359392808114e-05j)"
+        ],
+        [
+          "(-5.146476208453967e-06-3.2597413675056826e-09j)",
+          "(0.00037793741237665665-1.270355244290209e-08j)",
+          "(0.0007137440945572028+0j)"
+        ],
+        [
+          "(1.8860326611956206e-07-7.75717288433672e-08j)",
+          "(-1.5989601265726483e-05-3.023051261893028e-07j)",
+          "(0.0169848945436158+0j)"
+        ]
+      ],
+      "Yu": [
+        [
+          "(1.4664487206009991e-05+0j)",
+          "0j",
+          "0j"
+        ],
+        [
+          "0j",
+          "(0.007140381244553009+0j)",
+          "0j"
+        ],
+        [
+          "0j",
+          "0j",
+          "(0.949758+0j)"
+        ]
+      ]
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given input tables; no optimizer/scan.",
+    "formulas": [
+      "\u03b4_M = (sqrt(m\u03c4/m\u03bc)-1)/(sqrt(m\u03c4/m\u03bc)+1) (diagnostic, if delta_source=delta_star then \u03b4_* is used instead)",
+      "\u03b4_* = 3/5 + varphi0/6 (TFPT geometric closure)",
+      "\u03bb = sqrt(varphi0) * (1 - varphi0/2)",
+      "A = 5/6 (from Z3 cusp slopes 2 and 1)",
+      "s23 = A \u03bb^2; s13 = A \u03bb^3 (1-\u03b4); \u03b4_CP = \u03c0(1-\u03b4) (explicit convention)",
+      "hierarchies from M\u00f6bius relations: ms/md=(M1(\u03b4))^2, mb/ms=(M1(\u03b4)(1+\u03b4))^2, mc/mu=(M2/3(\u03b4))^2, mt/mc=(2/3/(2/3-\u03b4))^2"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT invariants (c3,varphi0,delta_star) via constants.py",
+      "flavor config: tfpt_suite/data/flavor_texture_v24.json (delta_source policy)",
+      "lepton masses: tfpt_suite/data/lepton_masses_pdg.json (\u03b4_M from \u03c4/\u03bc; diagnostic)",
+      "CKM reference: tfpt_suite/data/ckm_reference.json (for \u03c7\u00b2 diagnostic)",
+      "SM inputs: tfpt_suite/data/sm_inputs_mz.json (yt(mt), yb(mt) targets)"
+    ],
+    "maturity": null,
+    "module_id": "mobius_z3_yukawa_generator",
+    "name": "M\u00f6bius/Z3 Yukawa generator (v1.07SM-style CKM + M\u00f6bius mass hierarchies)",
+    "objective": [],
+    "outputs": [
+      "Yu(mt), Yd(mt) matrices (complex)",
+      "CKM |V_ij|(mt) from diagonalization and \u03c7\u00b2 vs reference (diagnostic)",
+      "explicit generator metadata (\u03b4 used, CKM construction modes, M\u00f6bius ratio predictions)"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "Generated CKM is unitary (numerical) and \u03c7\u00b2 is finite"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

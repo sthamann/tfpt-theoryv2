@@ -1,0 +1,27 @@
+Flavor joint objective scan (discrete aggregation)
+
+mode=engineering
+
+PMNS: chi2_mt(best_convention) = 5.522808653313003
+CKM variants considered: 4
+Objective: chi2_ckm_refscale + 1.0 * chi2_pmns_mt
+
+Best: {'label': 'topology_delta_cp_1', 's13_mode': 'A_lam3_times_1_minus_delta', 'delta_mode': 'external_delta_cp_override', 'chi2_ckm_refscale': 8.032441968064157, 'chi2_pmns_mt': 5.522808653313003, 'w_pmns': 1.0, 'objective': 13.55525062137716}
+Joint diagnostic: chi2=13.55525062137716, dof~13, p≈0.40589333014494705
+Topology docking (pairs) = 14
+
+Top rows:
+- topology_delta_cp_1: objective=13.5553 (chi2_ckm=8.03244)
+- topology_delta_cp_2: objective=13.5553 (chi2_ckm=8.03244)
+- topology_delta_cp_4: objective=367.787 (chi2_ckm=362.264)
+- topology_delta_cp_3: objective=367.787 (chi2_ckm=362.264)
+
+Checks:
+- upstream_ckm_present: PASS (ckm_full_pipeline/results.json present)
+- upstream_pmns_present: PASS (pmns_full_pipeline/results.json present)
+- topology_phase_map_present: PASS (topology_phase_map/results.json present)
+- ckm_variants_present: PASS (4 CKM variants available)
+- pmns_chi2_present: PASS (chi2_pmns_mt=5.522808653313003)
+- joint_objective_computed: PASS (4 rows; best=topology_delta_cp_1)
+- joint_search_space_is_discrete: PASS (objective aggregates discrete upstream scans; no continuous fitter)
+- joint_pvalue_ok: PASS (p=0.40589333014494705 chi2=13.55525062137716 dof=13)

@@ -1,0 +1,71 @@
+{
+  "checks": [
+    {
+      "check_id": "reheating_inputs",
+      "detail": "T_reh=1e+13 GeV, g*=120, g*s=120",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "entropy_proxy",
+      "detail": "s\u22485.26e+40 GeV^3, H\u22487.47e+08 GeV, S_H=s/H^3\u22481.26e+14 (log10\u224814.1)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "entropy_production_testable",
+      "detail": "log10(S_H)\u224814.1 > 0 (entropy per Hubble volume at reheating)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "results": {
+    "entropy_proxy": {
+      "H_GeV": 746792152.3273722,
+      "S_H": 126386077916113.81,
+      "log10_S_H": 14.101699236784887,
+      "s_GeV3": 5.263789013914324e+40
+    },
+    "inputs": {
+      "k_calibration_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json"
+    },
+    "mode": "engineering",
+    "reheating_snapshot": {
+      "T_reheat_GeV": 10000000000000.0,
+      "g_star": 120.0,
+      "g_star_s": 120.0
+    }
+  },
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given input tables.",
+    "formulas": [
+      "\\Delta S \\ge 0,\\;\\; \\sigma(x)\\ge0,\\;\\; S_{\\rm prod}=\\int d^4x\\,\\sigma(x)",
+      "s = (2\\pi^2/45)\\,g_{*s}T^3,\\;\\; H \\approx 1.66\\sqrt{g_*}\\,T^2/\\bar M_P,\\;\\; S_H := s/H^3"
+    ],
+    "gaps": [
+      "A publication-grade ToE arrow requires a microscopic, non-invertible mechanism (e.g. torsion flux / seam transitions) and a falsifiable observable; this module provides the minimal entropy-production proxy baseline."
+    ],
+    "inputs": [
+      "cosmology history policy: tfpt_suite/data/k_calibration.json (reheating snapshot: T_reh, g_*)"
+    ],
+    "maturity": null,
+    "module_id": "arrow_mechanism",
+    "name": "Arrow mechanism (entropy production proxy from reheating; explicit, auditable baseline)",
+    "objective": [
+      "Close the arrow-of-time placeholder with a concrete entropy-production proxy tied to explicit cosmology inputs.",
+      "Keep scope explicit: this is a baseline (reheating entropy), not a microscopic proof of irreversibility."
+    ],
+    "outputs": [
+      "entropy production proxy S_H \u2261 s/H^3 at reheating (dimensionless; per Hubble volume)",
+      "log10(S_H) as a robust arrow-of-time marker"
+    ],
+    "question": "Is there a concrete, testable arrow-of-time mechanism implemented (beyond a placeholder)?",
+    "references": [],
+    "validation": [
+      "Computes a deterministic entropy-production proxy from the declared reheating snapshot (no hidden fit parameters)."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

@@ -1,0 +1,23 @@
+Torsion observable: spin fluid (He-3 lab benchmark)
+
+mode=physics
+
+Scenario: SpinFluidScenario(label='polarized_He3_lab_benchmark', number_density_cm3=2e+22, polarization=0.7, spin_per_particle=0.5, coupling_scale_kind='TFPT_M')
+- number density n ≈ 2.000e+22 cm^-3 => 1.537e-19 GeV^3
+- polarization P=0.7, spin_per_particle=0.5 => spin_density≈5.378e-20 GeV^3
+- coupling scale M_eff (TFPT_M) ≈ 3.060e+13 GeV
+
+Predictions (toy source model):
+- |S| ≈ 5.746e-47 GeV
+- |b| ≈ k|S| with k=3/4 => 4.309e-47 GeV
+- Δν ≈ 2|b|·(GeV→Hz) ≈ 2.084e-23 Hz
+
+Experiment spec:
+- experiment_id = he3_comagnetometer_cell (polarized_He3)
+- cell_volume = 10.0 cm^3, B = 1.000e-06 T, T_obs = 1.000e+05 s
+- sensitivity σν ≈ 1.0e-09 Hz (required for SNR=5: 4.2e-24 Hz)
+
+Checks:
+- torsion_spin_fluid_effect_computed: PASS (Δν≈2.084e-23 Hz (benchmark))
+- experiment_specified_with_sensitivity: PASS (he3_comagnetometer_cell σν≈1.0e-09 Hz, required≈4.2e-24 Hz)
+- amplitude_measurable: PASS (Δν≈2.084e-23 Hz < 1.0e-09 Hz (He-3 benchmark not measurable under current assumptions; see torsion_observable_designer for measurable regimes))

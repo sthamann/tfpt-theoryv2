@@ -1,0 +1,132 @@
+{
+  "checks": [
+    {
+      "check_id": "alpha_bridge_leptons_1loop_explicit",
+      "detail": "lepton sum matches \u0394\u03b1_lept (|\u0394|=0.0)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "alpha_bridge_hadron_policy_declared",
+      "detail": "\u0394\u03b1_had^(5) source: PDG 2024 electroweak review Eq. (10.12): \u0394\u03b1_had^(5)(MZ) = 0.02783 \u00b1 0.00006 (on-shell).",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "alpha_bridge_EW_decoupling_included",
+      "detail": "\u0394\u03b1_msbar_on_shell=0.007122, \u0394\u03b1_top_decoupling=0.0",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "alpha_bridge_reproduces_alpha_bar5_MZ",
+      "detail": "z=1.314838421955310936502663334069275073899545737955872848013770232542889438594741 (tfpt=127.94051870737564248749202130667255420059119636590364698278411016186034311550876, ref=127.93)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "alpha_bridge_inverse_matches_alpha0_ref",
+      "detail": "z=-519030.17041507681332857167611637345135409329415180026169658365096864160007143918 (inv=137.0250995434212833869200999948015561575215640408228121945043717433296585263985, ref=137.035999177); 1-loop bridge is diagnostic only",
+      "passed": true,
+      "severity": "WARN"
+    },
+    {
+      "check_id": "alpha_bridge_metamorph_lepton_ordering",
+      "detail": "L(emu,tau)=4.3057982641796226899804686597832521667038703344679732626820549421568003015838193, L(tau,mu,e)=4.3057982641796226899804686597832521667038703344679732626820549421568003015838193",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "alpha_bridge_metamorph_precision_stable",
+      "detail": "|inv_high-inv_low|=3.0980200753595911531476316504887543088321193243093737198849237886064487124852756e-50 (low=127.94051870737564248749202130667255420059119636590361600258335656594881163919225, high=127.94051870737564248749202130667255420059119636590364698278411016186034311550876)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "alpha_on_shell_bridge",
+  "plot": null,
+  "results": {
+    "alpha0_tfpt": {
+      "alpha_inv_0": "137.03599921615843479026171751711397398605568500258186146747743646328176776397918",
+      "delta2": "0.000000018091459748867855014525576506215873427709357460729151458474190949106463016708746",
+      "delta2_model": "two_defect_partition_g5_over_4"
+    },
+    "bridge_to_mz": {
+      "alpha_bar5_inv_MZ": "127.94051870737564248749202130667255420059119636590364698278411016186034311550876",
+      "delta_alpha_parts": {
+        "delta_alpha_extra_msbar": "0.0",
+        "delta_alpha_extra_total": "0.007122",
+        "delta_alpha_had5": "0.02783",
+        "delta_alpha_lept_1loop": "0.031420927995626346875380987635627470499113578553640574145454160166886423282575224",
+        "delta_alpha_msbar_on_shell_shift": "0.007122",
+        "delta_alpha_top_decoupling": "0.0",
+        "delta_alpha_total": "0.066372927995626346875380987635627470499113578553640574145454160166886423282575224"
+      },
+      "leptonic_breakdown_1loop": {
+        "e": "0.017434662636611185523456982583397354184295565370017271709205251973806371298567468",
+        "mu": "0.0091784350550032820692477973459019533208609259608250283466295180323796149359748332",
+        "tau": "0.0048078303040118792826762077063281629939570872227982740896193901607004370480329231"
+      }
+    },
+    "inverse_from_mz_ref": {
+      "alpha_inv_0": "137.0250995434212833869200999948015561575215640408228121945043717433296585263985",
+      "parts": {
+        "L_lept_1loop": "4.3057982641796226899804686597832521667038703344679732626820549421568003015838193",
+        "delta_alpha_extra_msbar": "0.0",
+        "delta_alpha_extra_total": "0.007122",
+        "delta_alpha_had5": "0.02783",
+        "delta_alpha_msbar_on_shell_shift": "0.007122",
+        "delta_alpha_top_decoupling": "0.0"
+      }
+    },
+    "metamorph": {
+      "L_coeff": {
+        "emu_tau": "4.3057982641796226899804686597832521667038703344679732626820549421568003015838193",
+        "tau_mu_e": "4.3057982641796226899804686597832521667038703344679732626820549421568003015838193"
+      },
+      "precision": {
+        "abs_diff": "3.0980200753595911531476316504887543088321193243093737198849237886064487124852756e-50",
+        "inv_high_dps110": "127.94051870737564248749202130667255420059119636590364698278411016186034311550876",
+        "inv_low_dps50": "127.94051870737564248749202130667255420059119636590361600258335656594881163919225"
+      }
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (closed-form 1-loop chain; no numerical integration).",
+    "formulas": [
+      "\u03b1\u0304(MZ) = \u03b1(0) / (1 - \u0394\u03b1_lept(MZ) - \u0394\u03b1_had^{(5)}(MZ) - \u0394\u03b1_extra)",
+      "\u0394\u03b1_lept^l(MZ) = (\u03b1(0)/(3\u03c0)) (ln(MZ^2/m_l^2) - 5/3)",
+      "\u0394\u03b1_msbar\u2212onshell(MZ) = 0.007122(2)(5) (PDG Eq. 10.13; W-loop + QCD shift)"
+    ],
+    "gaps": [
+      "Publication-grade requires full electroweak scheme conversion and higher-loop QED/QCD contributions (this module is an explicit 1-loop bridge with finite EW decoupling pieces)."
+    ],
+    "inputs": [
+      "TFPT \u03b1^{-1}(0) prediction (from CFE+backreaction with \u03b4\u2082 from defect partition)",
+      "QED comparison layer inputs: tfpt_suite/data/alpha_running_pdg.json",
+      "reference table: tfpt_suite/data/global_reference.json"
+    ],
+    "maturity": null,
+    "module_id": "alpha_on_shell_bridge",
+    "name": "\u03b1(0) on-shell bridge (explicit renorm chain; metamorphic robustness checks)",
+    "objective": [
+      "Separate TFPT\u2019s \u03b1-sector prediction from the SM/QED comparison layer.",
+      "Make threshold ordering / precision sensitivity explicit via metamorphic checks."
+    ],
+    "outputs": [
+      "declared \u03b1(0)\u2194\u03b1\u0304^(5)(MZ) chain with explicit \u0394\u03b1 components",
+      "metamorphic robustness checks (precision + threshold ordering invariance)"
+    ],
+    "question": "Is the \u03b1(0) metrology comparison performed via a declared on-shell \u2194 MSbar-at-MZ bridge with robust numerics?",
+    "references": [],
+    "validation": [
+      "The \u03b1(0)\u2192\u03b1\u0304(MZ) bridge reproduces the PDG \u03b1\u0304^(5)(MZ) reference within \u03c3.",
+      "The inverse bridge \u03b1\u0304(MZ)\u2192\u03b1(0) is stable and scheme-consistent (under the declared 1-loop policy).",
+      "Explicit finite EW decoupling pieces are included (MSbar\u2194on-shell shift, top decoupling)."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

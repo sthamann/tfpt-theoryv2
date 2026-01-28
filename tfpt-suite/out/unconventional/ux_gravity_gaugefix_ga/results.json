@@ -1,0 +1,175 @@
+{
+  "checks": [
+    {
+      "check_id": "ga_found_laplace_type_candidate",
+      "detail": "best |c_nonmin|=0.000e+00 with genome=GaugeFixingGenome(family='lorenz', gamma=1.0, xi=1.0)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "ga_best_close_to_analytic_optimum",
+      "detail": "analytic optimum in chosen family: xi*=gamma=1.0 gives c_nonmin=0.000e+00",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "discrete_closed_form_optimum_is_laplace_type",
+      "detail": "best discrete candidate=GaugeFixingGenome(family='lorenz', gamma=1.0, xi=1.0) with c_nonmin=0.0",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "effective_action_r2_operator_spec_present",
+      "detail": "path=/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/tfpt_suite/data/effective_action_r2_operator_spec.json",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "ux_gravity_gaugefix_ga",
+  "plot": {
+    "gravity_gaugefix_ga_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/unconventional/ux_gravity_gaugefix_ga/gravity_gaugefix_ga.png"
+  },
+  "results": {
+    "analytic": {
+      "c_nonmin_star": 0.0,
+      "family": "lorenz",
+      "gamma_eff": 1.0,
+      "xi_star": 1.0
+    },
+    "discrete_optimum": {
+      "best": {
+        "c_nonmin": 0.0,
+        "family": "lorenz",
+        "gamma": 1.0,
+        "xi": 1.0
+      }
+    },
+    "docking_context": {
+      "blocks_count": 4,
+      "effective_action_r2_operator_spec": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/tfpt_suite/data/effective_action_r2_operator_spec.json",
+      "spec_note": "OperatorSpec for effective_action_r2 on a 4D constant-curvature background. This file is generated deterministically from the canonical microscopic action spec (tfpt_suite/data/microscopic_action_tfpt_v25.json) using the K4 closure equation for the minimal Laplace-type torsion+ghost block operator."
+    },
+    "ga": {
+      "best": {
+        "c_nonmin": 0.0,
+        "family": "lorenz",
+        "gamma": 1.0,
+        "score": 0.0,
+        "xi": 1.0
+      },
+      "elite": 12,
+      "generations": 40,
+      "population": 64,
+      "top10": [
+        {
+          "c_nonmin": 0.0,
+          "family": "lorenz",
+          "gamma": 1.0,
+          "score": 0.0,
+          "xi": 1.0
+        },
+        {
+          "c_nonmin": 0.0,
+          "family": "weighted",
+          "gamma": 0.5,
+          "score": 0.0,
+          "xi": 0.5
+        },
+        {
+          "c_nonmin": 0.0,
+          "family": "weighted",
+          "gamma": 1.0,
+          "score": 0.0,
+          "xi": 1.0
+        },
+        {
+          "c_nonmin": 0.0,
+          "family": "weighted",
+          "gamma": 2.0,
+          "score": 0.0,
+          "xi": 2.0
+        },
+        {
+          "c_nonmin": 0.0,
+          "family": "weighted",
+          "gamma": 3.0,
+          "score": 0.0,
+          "xi": 3.0
+        },
+        {
+          "c_nonmin": 0.0,
+          "family": "weighted",
+          "gamma": 0.5,
+          "score": 0.0,
+          "xi": 0.5
+        },
+        {
+          "c_nonmin": 0.0,
+          "family": "weighted",
+          "gamma": 3.0,
+          "score": 0.0,
+          "xi": 3.0
+        },
+        {
+          "c_nonmin": 0.0,
+          "family": "lorenz",
+          "gamma": 1.0,
+          "score": 0.0,
+          "xi": 1.0
+        },
+        {
+          "c_nonmin": 0.0,
+          "family": "weighted",
+          "gamma": 1.0,
+          "score": 0.0,
+          "xi": 1.0
+        },
+        {
+          "c_nonmin": 0.0,
+          "family": "lorenz",
+          "gamma": 1.0,
+          "score": 0.0,
+          "xi": 1.0
+        }
+      ]
+    },
+    "plot": {
+      "gravity_gaugefix_ga_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/out/unconventional/ux_gravity_gaugefix_ga/gravity_gaugefix_ga.png"
+    },
+    "toy_model": {
+      "c_nonmin_definition": "1 - gamma/xi",
+      "laplace_type_condition": "c_nonmin=0 \u21d4 xi=gamma"
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given config seed (GA uses Python's random).",
+    "formulas": [
+      "toy nonminimal coefficient: c_nonmin = 1 - \u03b3/\u03be",
+      "Laplace-type achieved when c_nonmin = 0 (\u21d2 \u03be=\u03b3)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "toy operator family for a vector torsion mode with gauge parameter \u03be",
+      "SuiteConfig.seed (deterministic GA search)",
+      "optional context: effective_action_r2 OperatorSpec (for docking narrative)"
+    ],
+    "maturity": null,
+    "module_id": "ux_gravity_gaugefix_ga",
+    "name": "Unconventional: gravitation gauge-fixing GA (toy nonminimal \u2192 Laplace-type)",
+    "objective": [],
+    "outputs": [
+      "best genome (family, \u03b3, \u03be) minimizing nonminimal coefficient",
+      "population summary and analytic optimum comparison"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "GA finds a candidate with |c_nonmin| \u226a 1",
+      "best \u03be is close to the analytic minimum \u03be=\u03b3 in the chosen family"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

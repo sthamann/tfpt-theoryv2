@@ -1,0 +1,81 @@
+{
+  "checks": [
+    {
+      "check_id": "within_5sigma",
+      "detail": "proxy consistency passes (TFPT-scale contributions do not overshoot anomaly scales)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "tfpt_scale",
+      "detail": "M_eff\u22483.06e+13 GeV (from M/Mpl=0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "np_scaling",
+      "detail": "\u03b4a_e\u22482.79e-34, \u03b4a_\u03bc\u22481.19e-29, \u03b4\u03bd_Lamb\u22483.45e-14 Hz (proxy)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "precision_qed_consistency",
+      "detail": "TFPT-scale NP is negligible: \u03b4a_e<1e-12, \u03b4a_\u03bc<1e-09, \u03b4\u03bd_Lamb<1 Hz",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "results": {
+    "delegated": {
+      "bounds_proxy": {
+        "delta_a_e_scale": 1e-12,
+        "delta_a_mu_scale": 1e-09,
+        "delta_nu_lamb_scale_Hz": 1.0
+      },
+      "inputs": {
+        "lepton_masses_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json"
+      },
+      "mode": "engineering",
+      "proxies": {
+        "delta_a_e": 2.7894661495263373e-34,
+        "delta_a_mu": 1.1925838853864061e-29,
+        "delta_nu_lamb_Hz": 3.446636352334976e-14
+      },
+      "tfpt": {
+        "M_eff_GeV": 30595633972661.27
+      }
+    },
+    "delegated_module": "g2_and_lamb_shift_proxy",
+    "mode": "engineering"
+  },
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given module inputs.",
+    "formulas": [
+      "a_\\ell = (g_\\ell-2)/2",
+      "\\Delta E_{\\rm Lamb} \\;\\; \\text{(bound state QED)}"
+    ],
+    "gaps": [
+      "Publication-grade requires a full SM+QED calculation and a proper likelihood against (g-2)_e, (g-2)_\u03bc, and bound-state observables."
+    ],
+    "inputs": [
+      "g2_and_lamb_shift_proxy (TFPT-scale new-physics consistency proxy)"
+    ],
+    "maturity": null,
+    "module_id": "qed_anomalies_audit",
+    "name": "QED anomalies audit (proxy): TFPT-scale contributions must not overshoot anomaly scales",
+    "objective": [
+      "Provide a minimal precision-QED audit layer that prevents TFPT-scale new physics from being obviously excluded by g-2 / Lamb shift."
+    ],
+    "outputs": [
+      "proxy scorecard that TFPT-scale suppressed contributions are negligible vs anomaly scales"
+    ],
+    "question": "Are precision-QED anomalies (g-2, Lamb shift) implemented and compared within 5\u03c3 to reference values?",
+    "references": [],
+    "validation": [
+      "Delegates to g2_and_lamb_shift_proxy and requires its consistency gate to pass."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

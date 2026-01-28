@@ -1,0 +1,12 @@
+{
+  "schema_version": 2,
+  "note": "Configuration for the two_loop_rg_fingerprints module. Model selection is done via the central PyR@TE registry (tfpt_suite/data/pyrate_pythonoutputs.json) to avoid duplicated paths.",
+  "pyrate_pythonoutput_kind": "e8_sigma_yN_2loop",
+  "gravity_alpha3_patch": {
+    "enabled": false,
+    "kappa_vector": [0.0, 0.0, 0.0],
+    "alpha_definition_for_U1": "alphaY",
+    "note": "Optional TFPT runner patch: add Δ(dα_i)/d ln μ = κ_i * c3 * α_i^3 (with c3=1/(8π)). When enabled, the module will also compute a gravity-on table and report the difference to the baseline."
+  }
+}
+

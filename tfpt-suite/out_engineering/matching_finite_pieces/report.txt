@@ -1,0 +1,22 @@
+Matching finite pieces (QCD + QED/EW proof points)
+
+Inputs: mu_MZ=91.1876 GeV, mc=1.27 GeV, mb=4.18 GeV, mt=172.76 GeV
+
+α_s at μ=mc with/without finite matching at thresholds:
+- α_s(mc) no finite matching: 0.346914414088
+- α_s(mc) with finite matching: 0.347983505121
+- Δα_s(mc) = 1.069e-03
+
+QED/EW on-shell → MSbar-at-MZ bridge (finite pieces; comparison layer):
+- α_inv_0 (CODATA ref) = 137.035999177
+- ᾱ^(5)(MZ)^-1 (from α(0) + Δα pieces) = 127.95099999999999995091379770421674783329612966553202673731794505784319969841618
+- Δα parts: {'delta_alpha_lept_1loop': mpf('0.031420928004604968313219574283859436953210739856391110106044678474499917438463260219'), 'delta_alpha_had5': mpf('0.027679999999999999999999999999999999999999999999999999999999999999999999999999999985'), 'delta_alpha_extra_msbar': mpf('0.007195514036624867999999999999999999999999999999999999999999999999999999999999999998'), 'delta_alpha_total': mpf('0.066296442041229836313219574283859436953210739856391110106044678474499917438463260285')}
+
+Metamorphic invertibility (2-loop decoupling primitive):
+- alpha=0.347983505121 => up => 0.347334862366 => down => 0.347983505121 (error=0.000e+00)
+
+Checks:
+- finite_alpha3_matching_nontrivial: PASS (Δα_s(mc)=1.069e-03 (matching-on minus matching-off))
+- alpha3_matching_invertible: PASS (down(up(alpha)) - alpha = 0.000e+00)
+- matching_finite_pieces_EW_QED_present: PASS (Δα_total=0.06629644204122983631321957428385943695321073985639111010604467847449991743846326 (lept=0.03142092800460496831321957428385943695321073985639111010604467847449991743846326, had5=0.02768, extra=0.007195514036624868); alpha_bar5_inv_MZ(from alpha0)=127.95099999999999995091379770421674783329612966553202673731794505784319969841618)
+- below_MZ_policy_explicit_and_applied: PASS (policy file=/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/alpha_running_pdg.json (Δα_had5 + leptonic 1-loop + Δα_extra))

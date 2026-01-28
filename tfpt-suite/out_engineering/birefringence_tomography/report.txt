@@ -1,0 +1,36 @@
+Birefringence tomography (data ingestion + calibration nuisance)
+
+beta_inf (TFPT) = varphi0/(4π) = 0.004231289511 rad
+mode = data (config file: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/birefringence_tomography.json)
+n = 9
+z range: [0.425, 1100.0]
+calibration prior: mean=0.000e+00 rad, sigma=1.745e-03 rad
+
+Data-family split:
+- low-z tomography points: n=5, z∈[0.425, 0.811]
+- CMB points (z≈1100): n=4 (treated as offset checks; no step-vs-drift discrimination)
+
+Fits (beta_inf fixed):
+- fit_scope = low_z_only
+- step: z_c=0.0000, w=0.0200, logL=4.143, BIC=-5.07
+- TFPT-prior step (fixed): z_c=0.7000, w=0.1500, logL=4.031, BIC=-8.06
+- drift: p=10.0000, logL=4.140, BIC=-6.67
+
+ΔBIC (drift - step) = -1.603
+ΔlogL (step - drift) = 0.003
+approx Bayes factor (step/drift) ≈ exp(ΔBIC/2) = 0.449
+
+CMB offset checks (each is a single z≈1100 constraint; not independent; no tomography):
+- ACT DR6: beta=0.00375246±0.00129 rad; z-score vs TFPT beta_inf = -0.371
+- Planck 2018 (Minami & Komatsu 2020): beta=0.00610865±0.00244 rad; z-score vs TFPT beta_inf = 0.768
+- Planck PR4/NPIPE (Diego-Palazuelos et al. 2022): beta=0.00523599±0.00192 rad; z-score vs TFPT beta_inf = 0.523
+- WMAP+Planck combined (symmetrized): beta=0.00596903±0.00162 rad; z-score vs TFPT beta_inf = 1.07
+- naive weighted mean (orientation only): beta=0.00490805±0.00084 rad; z-score=0.806
+
+Checks:
+- mode: PASS (mode=data (configured=data))
+- real_data_ingested: PASS (requires mode='data' with non-empty tfpt_suite/data/birefringence_tomography.json['data']['points']; synthetic mode is not considered a verification test)
+- data_families_split: PASS (n_lowz=5, n_cmb=4 (CMB treated as offset check; step-vs-drift fit uses low_z_only))
+- tomography_is_not_decisive_by_default: PASS (low-z step/drift Bayes factor is reported for orientation only (no publication-grade covariance; mixed-family points are not used for discrimination). bayes(step/drift)≈0.449)
+
+Plot: tfpt-suite/out_engineering/birefringence_tomography/beta_tomography.png

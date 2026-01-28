@@ -1,0 +1,91 @@
+{
+  "checks": [
+    {
+      "check_id": "xi_tree_equals_3_over_4",
+      "detail": "xi_tree=c3/varphi0_tree=0.75 (expected 3/4=0.75)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "xi_selfconsistent_reported",
+      "detail": "xi=c3/varphi0=0.74830308356254779855425709117213900105867537623583363061344126774214272466442152; shift_vs_tree=-0.22625552499362685943238784371479985884328316855551591820783096771430337807713103%",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "operator_derivation_closure_present",
+      "detail": "OperatorSpec status=derived, ghost_block=True, brst.status=derived_in_suite_at_closure_level (wrote_file=True)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "results": {
+    "constants": {
+      "c3": "0.039788735772973833942220940843128590508614911435114112186916836014724199408556634",
+      "varphi0": "0.053171952176845527309292471969749667875127759799791139640450979685319457237554636",
+      "varphi0_tree": "0.053051647697298445256294587790838120678153215246818816249222448019632265878075512"
+    },
+    "notes": {
+      "mode": "engineering",
+      "source_refs": {
+        "eliminating_k_tex": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/eliminating_k.tex",
+        "unified_field_equation_tex": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/unified_field_equation.tex"
+      }
+    },
+    "xi": {
+      "shift_percent": "-0.22625552499362685943238784371479985884328316855551591820783096771430337807713103",
+      "xi": "0.74830308356254779855425709117213900105867537623583363061344126774214272466442152",
+      "xi_tree": "0.75"
+    }
+  },
+  "spec": {
+    "assumptions": [
+      "Structural ansatz relating \u03ba to (c3, varphi0) as stated in eliminating_k.tex.",
+      "Einstein-limit normalization is imposed in the torsion vacuum (K\u21920).",
+      "This is a normalization closure; it does not replace a BRST-complete operator derivation."
+    ],
+    "determinism": "Deterministic given mpmath precision.",
+    "formulas": [
+      "c3 := 1/(8\u03c0)",
+      "varphi0_tree := 1/(6\u03c0), varphi0 := varphi0_tree + 3/(256\u03c0^4)",
+      "xi_tree := c3/varphi0_tree = 3/4",
+      "xi := c3/varphi0",
+      "structural ansatz (note): \u03ba^2 = xi \u00b7 varphi0 / c3^2 and Einstein limit in torsion vacuum fixes xi"
+    ],
+    "gaps": [
+      "Does not derive the quadratic torsion fluctuation operator from the microscopic torsionful action (BRST + ghosts).",
+      "Does not compute G from a first-principles renormalization condition; it provides the closure-level normalization factor."
+    ],
+    "inputs": [
+      "TFPT invariants (computed): c3, varphi0_tree, varphi0 (see constants.py / core_invariants)",
+      "theory notes: eliminating_k.tex, unified_field_equation.tex (Einstein-limit normalization + UFE action/variation context)"
+    ],
+    "maturity": "closure-level normalization (not publication-grade BRST derivation)",
+    "module_id": "ufe_gravity_normalization",
+    "name": "UFE gravity normalization (\u03ba/\u03be from c\u2083 and \u03c6\u2080; Einstein-limit docking)",
+    "objective": [
+      "Provide an explicit, reproducible \u03ba-normalization docking point for the UFE (no free G input at closure level).",
+      "Expose the small deviation of \u03be from 3/4 when \u03b4_top is included (\u03be \u2248 c3/varphi0)."
+    ],
+    "outputs": [
+      "xi_tree := c3/varphi0_tree (= 3/4 exactly)",
+      "xi := c3/varphi0 (includes \u03b4_top correction to varphi0)",
+      "relative shift of xi away from 3/4"
+    ],
+    "question": "Can the gravitational coupling \u03ba be fixed (non-input) from TFPT invariants by imposing the Einstein limit in the torsion vacuum?",
+    "references": [
+      "eliminating_k.tex (TFPT Note H1: \u03ba\u00b2 from \u03c6 and c \u2014 A Single Line to Einstein)",
+      "unified_field_equation.tex (UFE from action/variation with torsion)",
+      "tfpt_suite/constants.py (canonical invariants used by the suite)"
+    ],
+    "validation": [
+      "xi_tree matches 3/4 (algebraic identity)",
+      "xi_selfconsistent is close to 3/4 and equals c3/varphi0 at configured precision"
+    ],
+    "what_was_done": [
+      "Compute \u03be_tree and \u03be_selfconsistent from the canonical invariants used throughout the suite.",
+      "Report the fractional shift away from 3/4 and record the implied mapping factor that also appears in torsion-minimal coupling discussions."
+    ]
+  },
+  "warnings": []
+}

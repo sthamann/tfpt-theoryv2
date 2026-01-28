@@ -1,0 +1,646 @@
+Constant factory audit (hierarchical)
+Source: theoryv3/constantfactory.md
+Status counts: {'input': 9, 'derived': 34, 'candidate': 14, 'derived_external': 19, 'pending': 8, 'placeholder': 3}
+Grammar violations: 0
+
+Group 0: Discrete anchors
+-------------------------
+pi: pi
+  status: input/anchor
+  calculation:
+    formula_math: pi
+    formula_text: circle constant
+    value: 3.141592654
+g: g
+  status: derived/discrete_scan
+  calculation:
+    formula_math: g
+    formula_text: SU(5) holonomy multiplicity (two-defect)
+    value: 5
+    source: defect_partition_g5_audit
+k: k
+  status: derived/discrete_scan
+  calculation:
+    formula_math: k
+    formula_text: backreaction cover degree (min |ppm|)
+    value: 2
+    source: alpha_backreaction_sensitivity_audit
+gamma0: gamma0
+  status: derived/axiom
+  calculation:
+    formula_math: g/(g+1)
+    formula_text: crosslink signature
+    depends_on: g
+    value: 0.8333333333
+delta2: delta2
+  status: derived/discrete_scan
+  calculation:
+    formula_math: (g/4)*delta_top^2
+    depends_on: g, delta_top
+    value: 1.809145975e-08
+
+Group 1: Kernel invariants
+--------------------------
+c3: c3
+  status: derived/axiom
+  calculation:
+    formula_math: 1/(8*pi)
+    value: 0.03978873577
+varphi0_tree: varphi0_tree
+  status: derived/axiom
+  calculation:
+    formula_math: 1/(6*pi)
+    value: 0.0530516477
+delta_top: delta_top
+  status: derived/axiom
+  calculation:
+    formula_math: 3/(256*pi^4)
+    value: 0.0001203044795
+varphi0: varphi0
+  status: derived/axiom
+  calculation:
+    formula_math: varphi0_tree+delta_top
+    depends_on: varphi0_tree, delta_top
+    value: 0.05317195218
+delta_star: delta_star
+  status: derived/axiom
+  calculation:
+    formula_math: 3/5+varphi0/6
+    depends_on: varphi0
+    value: 0.608861992
+beta_rad: beta_rad
+  status: derived/axiom
+  calculation:
+    formula_math: varphi0/(4*pi)
+    depends_on: varphi0, pi
+    value: 0.004231289511
+
+Group 2: Gauge sectors (couplings)
+----------------------------------
+alpha_inv0: alpha_inv(0)
+  status: derived/axiom
+  calculation:
+    formula_math: alpha_inv0
+    formula_text: Solve CFE(alpha,varphi)=0 with varphi=varphi_tree+delta_top*exp(-2*alpha)+delta2*exp(-4*alpha), then alpha_inv0=1/alpha (k=2).
+    inputs: c3=0.0397887, varphi0=0.053172, delta2=1.80915e-08
+    depends_on: c3, varphi0, delta2
+    value: 137.0359992
+  reference: 137.035999177 ± 2.1e-08 (CODATA 2022)
+  z: 1.864686098651007
+alpha0: alpha(0)
+  status: derived/axiom
+  calculation:
+    formula_math: 1/alpha_inv0
+    depends_on: alpha_inv0
+    value: 0.007297352562
+alpha_inv0_simple: alpha_inv(0) (simple)
+  status: candidate/candidate
+  calculation:
+    formula_math: 4*pi*exp(1/varphi0)
+    depends_on: pi, varphi0
+    value: 1849039231
+    note: Simplified closure candidate.
+alpha_bar5_inv_MZ: alpha_bar5_inv(MZ)
+  status: derived_external/derived_external
+  calculation:
+    formula_math: alpha_bar5_inv_MZ
+    formula_text: alpha(0) -> MZ running (alpha_precision_audit)
+    value: 127.9405157
+    source: alpha_precision_audit
+  reference: 127.93 ± 0.008 (PDG 2024)
+  z: 1.3144682362185023
+alpha_s_MZ: alpha_s(MZ)
+  status: input/anchor
+  calculation:
+    formula_math: alpha_s_MZ
+    formula_text: SM input (MSbar)
+    value: 0.1179
+    source: sm_inputs_mz.json
+  reference: 0.1179 ± 0.0011 (PDG (MZ, MSbar))
+sin2_thetaW_MZ: sin^2(thetaW) (MZ)
+  status: input/anchor
+  calculation:
+    formula_math: sin2_thetaW_MZ
+    formula_text: SM input (MSbar)
+    value: 0.23122
+    source: sm_inputs_mz.json
+  reference: 0.23122 ± 4e-05 (PDG (MZ, MSbar))
+sin2_thetaW_0: sin^2(thetaW)(0)
+  status: pending/pending
+  calculation:
+    formula_math: sin2_thetaW_0
+    formula_text: G(c3,varphi0) (pending)
+alpha3_at_mu_star: alpha3(mu_star)
+  status: derived_external/derived_external
+  calculation:
+    formula_math: alpha3_at_mu_star
+    formula_text: alpha3(mu)=varphi0 crossing
+    value: 0.05317195218
+    source: two_loop_rg_fingerprints
+mu_star_varphi0: mu_star (alpha3=varphi0)
+  status: derived_external/derived_external
+  calculation:
+    formula_math: mu_star_varphi0
+    formula_text: alpha3(mu)=varphi0 crossing
+    value: 792005.5554
+    source: two_loop_rg_fingerprints
+g_a_gamma_gamma: g_a_gamma_gamma
+  status: derived/axiom
+  calculation:
+    formula_math: -4*c3
+    depends_on: c3
+    value: -0.1591549431
+
+Group 3: Architecture (block scales)
+------------------------------------
+Mpl_reduced: Mpl_reduced
+  status: input/anchor
+  calculation:
+    formula_math: Mpl_reduced
+    formula_text: input (reduced Planck mass)
+    value: 2.435e+18
+  reference: 2.435e+18 ± 0.0 (CODATA)
+Mpl_unreduced: Mpl (unreduced)
+  status: derived/axiom
+  calculation:
+    formula_math: sqrt(8*pi)*Mpl_reduced
+    depends_on: pi, Mpl_reduced
+    value: 1.22072797e+19
+M_over_Mpl: M/Mpl (Starobinsky)
+  status: derived/axiom
+  calculation:
+    formula_math: sqrt(8*pi)*c3^4
+    depends_on: c3, pi
+    value: 1.256494208e-05
+M_GUT: M_GUT
+  status: derived_external/derived_external
+  calculation:
+    formula_math: M_GUT
+    formula_text: mu where alpha1=alpha2=alpha3
+    value: 2.805733341e+15
+    source: unification_gate
+M_R: M_R
+  status: derived_external/derived_external
+  calculation:
+    formula_math: M_R
+    formula_text: seesaw anchor
+    value: 1.311e+15
+    source: seesaw_block
+f_a: f_a
+  status: derived_external/derived_external
+  calculation:
+    formula_math: f_a
+    formula_text: axion_dm_pipeline
+    value: 8.863988685e+10
+    source: axion_dm_pipeline
+v_ew: v (EW scale)
+  status: candidate/candidate
+  calculation:
+    formula_math: 4*pi*g*c3^2*exp(-alpha_inv0/4)*Mpl_reduced
+    formula_text: candidate EW-scale closure
+    depends_on: g, c3, alpha_inv0, Mpl_reduced, pi
+    value: 320.4088802
+    note: Candidate EW-scale formula pending discrete coefficient closure.
+  reference: 246.0 ± 0.2 (SM Higgs vev)
+  diff: 74.4088801815899
+Lambda_QCD: Lambda_QCD
+  status: pending/pending
+  calculation:
+    formula_math: Mpl_reduced*exp(-1/(2*varphi0))
+    formula_text: placeholder scaling (RG-based derivation pending)
+    depends_on: Mpl_reduced, varphi0
+    value: 2.00738574e+14
+m_p: m_p
+  status: placeholder/anchor
+  calculation:
+    formula_math: m_p
+    formula_text: PDG placeholder
+    value: 0.938272
+    source: mass_spectrum_minimal
+  reference: 0.938272 ± None (PDG pole mass)
+m_pi: m_pi
+  status: pending/pending
+  calculation:
+    formula_math: m_pi
+    formula_text: pending TFPT derivation
+G_F_Mpl2: G_F * Mpl^2
+  status: candidate/candidate
+  calculation:
+    formula_math: Mpl_reduced^2/(sqrt(2)*v_ew^2)
+    formula_text: dimensionless Fermi coupling proxy
+    depends_on: Mpl_reduced, v_ew
+    value: 4.083888206e+31
+
+Group 4: Matter (fermion masses & ratios)
+-----------------------------------------
+y_tau: y_tau
+  status: derived/axiom
+  calculation:
+    formula_math: pi*varphi0^2
+    depends_on: pi, varphi0
+    value: 0.008882088245
+y_mu: y_mu
+  status: derived/axiom
+  calculation:
+    formula_math: pi*varphi0^3
+    depends_on: pi, varphi0
+    value: 0.0004722779714
+y_e: y_e
+  status: derived/axiom
+  calculation:
+    formula_math: 2*pi*varphi0^5
+    depends_on: pi, varphi0
+    value: 2.670501927e-06
+m_e: m_e
+  status: candidate/candidate
+  calculation:
+    formula_math: v_ew*(2*pi*varphi0^5)/sqrt(2)
+    formula_text: candidate Yukawa ladder
+    depends_on: v_ew, varphi0, pi
+    value: 0.0006050377077
+    note: Depends on EW-scale candidate.
+  reference: 0.0005109989461 ± 0.0 (PDG pole mass)
+  diff: 9.403876163067233e-05
+m_mu: m_mu
+  status: candidate/candidate
+  calculation:
+    formula_math: v_ew*(pi*varphi0^3)/sqrt(2)
+    formula_text: candidate Yukawa ladder
+    depends_on: v_ew, varphi0, pi
+    value: 0.1070008519
+    note: Depends on EW-scale candidate.
+  reference: 0.1056583745 ± 0.0 (PDG pole mass)
+  diff: 0.001342477402749398
+m_tau: m_tau
+  status: candidate/candidate
+  calculation:
+    formula_math: v_ew*(pi*varphi0^2)/sqrt(2)
+    formula_text: candidate Yukawa ladder
+    depends_on: v_ew, varphi0, pi
+    value: 2.012355152
+    note: Depends on EW-scale candidate.
+  reference: 1.77686 ± 0.0 (PDG pole mass)
+  diff: 0.2354951519581867
+m_e_over_m_p: m_e/m_p
+  status: candidate/candidate
+  calculation:
+    formula_math: alpha0^2*exp(-1/varphi0)
+    depends_on: alpha0, varphi0
+    value: 3.619048444e-13
+    note: Candidate ratio from constantfactory.md.
+  reference: 0.0005446170685046554 ± None (PDG pole masses)
+  diff: -0.0005446170681427505
+m_mu_over_m_e: m_mu/m_e
+  status: derived/axiom
+  calculation:
+    formula_math: ((1+delta_star)/(1-delta_star))^2*((1/3+delta_star)/(1/3-delta_star))^2
+    depends_on: delta_star
+    value: 197.8453644
+  reference: 206.76828260879265 ± 0.0 (PDG pole masses)
+  diff: -8.922918189809991
+m_tau_over_m_mu: m_tau/m_mu
+  status: derived/axiom
+  calculation:
+    formula_math: ((1+delta_star)/(1-delta_star))^2
+    depends_on: delta_star
+    value: 16.9191112
+  reference: 16.81702949159037 ± 0.0 (PDG pole masses)
+  diff: 0.10208170530365734
+m_t: m_t (top)
+  status: input/anchor
+  calculation:
+    formula_math: m_t
+    formula_text: input (scheme dependent)
+    value: 172.76
+  reference: 172.76 ± 0.3 (PDG pole mass)
+m_b: m_b (bottom)
+  status: input/anchor
+  calculation:
+    formula_math: m_b
+    formula_text: input (scheme dependent)
+    value: 4.18
+  reference: 4.18 ± None (PDG (scheme dependent))
+m_c: m_c (charm)
+  status: input/anchor
+  calculation:
+    formula_math: m_c
+    formula_text: input (scheme dependent)
+    value: 1.27
+  reference: 1.27 ± None (PDG (scheme dependent))
+m_s: m_s (strange)
+  status: pending/pending
+  calculation:
+    formula_math: m_s
+    formula_text: pending (scheme/scale)
+m_u: m_u (up)
+  status: pending/pending
+  calculation:
+    formula_math: m_u
+    formula_text: pending (scheme/scale)
+m_d: m_d (down)
+  status: pending/pending
+  calculation:
+    formula_math: m_d
+    formula_text: pending (scheme/scale)
+m_nu1: m_nu1
+  status: placeholder/anchor
+  calculation:
+    formula_math: m_nu1
+    formula_text: placeholder (order-of-mag)
+    value: 0.05
+m_nu3: m_nu3
+  status: derived_external/derived_external
+  calculation:
+    formula_math: v_ew^2/M_R
+    depends_on: v_ew, M_R
+    value: 0.04616018307
+    source: seesaw_block
+sum_mnu: sum m_nu
+  status: pending/pending
+  calculation:
+    formula_math: sum_mnu
+    formula_text: pending (needs consistent neutrino spectrum)
+delta_m_np: Delta m_np
+  status: pending/pending
+  calculation:
+    formula_math: delta_m_np
+    formula_text: pending (EM + isospin)
+lambda_C_ratio: lambda_C^p/lambda_C^e
+  status: derived_external/derived_external
+  calculation:
+    formula_math: m_e/m_p
+    depends_on: m_e, m_p
+    value: 0.0005446170685
+    note: Ratio from PDG masses.
+
+Group 5: Flavor code (mixing angles)
+------------------------------------
+lambda: Cabibbo lambda
+  status: derived/axiom
+  calculation:
+    formula_math: sqrt(varphi0)*(1-varphi0/2)
+    depends_on: varphi0
+    value: 0.2244599705
+  reference: 0.22501 ± 0.00068 (PDG 2024)
+  z: -0.8088668838620974
+CKM_A: CKM A
+  status: derived_external/derived_external
+  calculation:
+    formula_math: Vcb/lambda^2
+    formula_text: Wolfenstein from CKM pipeline
+    value: 0.9348635188
+    source: ckm_full_pipeline
+CKM_rho: CKM rho
+  status: derived_external/derived_external
+  calculation:
+    formula_math: rho_CKM
+    formula_text: Wolfenstein from |Vub|,|Vtd|
+    value: 0.1317221622
+    source: ckm_full_pipeline
+CKM_eta: CKM eta
+  status: derived_external/derived_external
+  calculation:
+    formula_math: eta_CKM
+    formula_text: Wolfenstein from |Vub|,|Vtd|
+    value: 0.3682265686
+    source: ckm_full_pipeline
+sin2_theta13: sin^2(theta13)
+  status: derived/axiom
+  calculation:
+    formula_math: varphi0*exp(-5/6)
+    depends_on: varphi0
+    value: 0.02310843516
+  reference: 0.02224 ± 0.00057 (NuFIT 5.3 (2024, NO))
+  z: 1.5235704541773745
+sin2_theta12: sin^2(theta12)
+  status: derived/axiom
+  calculation:
+    formula_math: (1/3)*(1-2*sin2_theta13)
+    depends_on: sin2_theta13
+    value: 0.3179277099
+  reference: 0.307 ± 0.012 (NuFIT 5.3 (2024, NO))
+  z: 0.9106424911732719
+sin2_theta23: sin^2(theta23)
+  status: input/anchor
+  calculation:
+    formula_math: sin2_theta23
+    formula_text: input (NuFIT)
+    value: 0.454
+  reference: 0.454 ± 0.019 (NuFIT 5.3 (2024, NO))
+delta_cp: delta_CP (deg)
+  status: placeholder/pending
+  calculation:
+    formula_math: 180*(1-delta_star)
+    formula_text: placeholder until Z3-breaking is wired
+    value: 70.40484143
+    note: Placeholder until Z3-breaking is wired.
+  reference: 232.0 ± 39.0 (NuFIT 5.3 (2024, NO))
+
+Group 6: Cosmos (space-time & energy)
+-------------------------------------
+phi_star_base: phi_star_base
+  status: derived/axiom
+  calculation:
+    formula_math: exp(-alpha_inv0/2)
+    depends_on: alpha_inv0
+    value: 1.749890443e-30
+rho_L: rho_L
+  status: derived/scan
+  calculation:
+    formula_math: (1/2*phi_star_base*Mpl_reduced)^4
+    depends_on: phi_star_base, Mpl_reduced
+    value: 2.060247122e-47
+  reference: 2.514176465474032e-47 ± None (Planck 2018 (k_calibration))
+  diff: -4.539293432051601e-48
+Lambda_Mpl2: Lambda Mpl^-2
+  status: derived/scan
+  calculation:
+    formula_math: rho_L/Mpl_reduced^4
+    depends_on: rho_L, Mpl_reduced
+    value: 5.860348646e-121
+  reference: 7.151545310258967e-121 ± None (Planck 2018 (k_calibration))
+  diff: -1.2911966642626766e-121
+Omega_b: Omega_b
+  status: derived/axiom
+  calculation:
+    formula_math: (4*pi-1)*beta_rad
+    depends_on: beta_rad, pi
+    value: 0.04894066267
+  reference: 0.049301692328524445 ± None (Planck 2018 + Planck 2018)
+  diff: -0.0003610296630743373
+eta_b: eta_b
+  status: derived_external/derived_external
+  calculation:
+    formula_math: eta_b_pred
+    formula_text: baryon_consistency_audit proxy
+    value: 5.794376871e-10
+    source: baryon_consistency_audit
+  reference: 6.127143e-10 ± None (Planck 2018)
+  diff: -3.327661292439077e-11
+H0: H0
+  status: derived_external/derived_external
+  calculation:
+    formula_math: H0_pred
+    formula_text: baryon_consistency_audit derived
+    value: 65.74646855
+    source: baryon_consistency_audit
+  reference: 67.36 ± 0.54 (Planck 2018)
+  z: -2.9880212073872032
+Omega_dm: Omega_dm
+  status: derived_external/derived_external
+  calculation:
+    formula_math: Omega_dm
+    formula_text: (Omega_a h^2)/h^2
+    value: 0.2705330444
+    source: axion_dm_audit
+  reference: 0.26447041034523616 ± None (Planck 2018 + Planck 2018)
+  diff: 0.006062634065091388
+beta_deg: beta (deg)
+  status: derived/axiom
+  calculation:
+    formula_math: 180/pi*beta_rad
+    depends_on: beta_rad, pi
+    value: 0.2424350309
+  reference: 0.35 ± 0.14 (Minami & Komatsu 2020)
+  z: -0.7683212078505032
+beta_deg_PR: beta (deg, PR)
+  status: derived/axiom
+  calculation:
+    formula_math: beta_deg
+    formula_text: frequency independent
+    depends_on: beta_deg
+    value: 0.2424350309
+nu_ghz: axion frequency (GHz)
+  status: derived_external/derived_external
+  calculation:
+    formula_math: nu_ghz
+    formula_text: axion_dm_audit pipeline
+    value: 15.76402318
+    source: axion_dm_audit
+g_phys_axion: g_phys (axion)
+  status: derived_external/derived_external
+  calculation:
+    formula_math: g_phys
+    formula_text: g_coeff/f_a
+    value: -1.795522859e-12
+    source: axion_dm_pipeline
+
+Group 7: Inflation & origin
+---------------------------
+N_star: N_star
+  status: input/anchor
+  calculation:
+    formula_math: N_star
+    formula_text: Starobinsky e-folds (policy)
+    value: 56
+A_s: A_s
+  status: derived/axiom
+  calculation:
+    formula_math: N_star^2/(24*pi^2)*M_over_Mpl^2
+    formula_text: Starobinsky amplitude
+    depends_on: N_star, M_over_Mpl, pi
+    value: 2.090191364e-09
+  reference: 2.0989031673e-09 ± 2.938464434e-11 (Planck 2018)
+  z: -0.29647467805761374
+n_s: n_s
+  status: derived/axiom
+  calculation:
+    formula_math: 1-2/N_star
+    formula_text: Starobinsky tilt
+    depends_on: N_star
+    value: 0.9642857143
+  reference: 0.9649 ± 0.0042 (Planck 2018)
+  z: -0.146258503401352
+r: r
+  status: derived/axiom
+  calculation:
+    formula_math: 12/N_star^2
+    formula_text: Starobinsky tensor ratio
+    depends_on: N_star
+    value: 0.003826530612
+V_star: V_star
+  status: derived/axiom
+  calculation:
+    formula_math: (3/2)*pi^2*A_s*r*Mpl_reduced^4
+    depends_on: A_s, r, Mpl_reduced
+    value: 4.162728705e+63
+bounce_scale: bounce scale
+  status: derived_external/derived_external
+  calculation:
+    formula_math: k_bounce_t
+    formula_text: bounce_perturbations k_bounce_t (raw)
+    value: 7.808039644
+    source: bounce_perturbations
+x_max: x_max (Planck spectrum)
+  status: derived/axiom
+  calculation:
+    formula_math: x_max
+    formula_text: Planck spectrum extremum
+    value: 2.821439372
+
+Group 8: Exotic (bounds & tests)
+--------------------------------
+torsion_max: max torsion coupling
+  status: derived_external/derived_external
+  calculation:
+    formula_math: torsion_max
+    formula_text: max inferred |S_mu| bound
+    value: 2.9e-27
+    source: torsion_bounds_mapping
+lambda_cross: vacuum stability scale
+  status: derived_external/derived_external
+  calculation:
+    formula_math: lambda_cross
+    formula_text: lambda crossing scale
+    value: 4.529728562e+10
+    source: stability_unitarity_audit
+
+Group 9: QED derived constants
+------------------------------
+a_e: a_e
+  status: candidate/candidate
+  calculation:
+    formula_math: alpha0/(2*pi)
+    depends_on: alpha0, pi
+    value: 0.001161409732
+Rydberg_E: R_infty (energy)
+  status: candidate/candidate
+  calculation:
+    formula_math: 1/2*alpha0^2*m_e
+    depends_on: alpha0, m_e
+    value: 1.610953871e-08
+a0: Bohr radius (a0)
+  status: candidate/candidate
+  calculation:
+    formula_math: 1/(alpha0*m_e)
+    depends_on: alpha0, m_e
+    value: 226491.6673
+sigma_T: Thomson cross section
+  status: candidate/candidate
+  calculation:
+    formula_math: 8*pi/3*alpha0^2/m_e^2
+    depends_on: alpha0, m_e, pi
+    value: 1218.665115
+fs_2p: fine-structure 2p (H)
+  status: candidate/candidate
+  calculation:
+    formula_math: alpha0^4*m_e
+    depends_on: alpha0, m_e
+    value: 1.71570951e-12
+lamb_shift: Lamb shift (proxy)
+  status: candidate/candidate
+  calculation:
+    formula_math: alpha0^5*m_e*log(1/alpha0)
+    depends_on: alpha0, m_e
+    value: 6.160212562e-14
+g_p: proton g-factor
+  status: candidate/candidate
+  calculation:
+    formula_math: 2*(1+c3/pi)
+    depends_on: c3, pi
+    value: 2.025330296
+
+Checks:
+- constant_factory_ran: PASS (entries=87)
+- constant_factory_statuses: INFO (candidate=14 derived=34 derived_external=19 input=9 pending=8 placeholder=3)
+- constant_factory_symbol_registry: INFO (symbols=82)

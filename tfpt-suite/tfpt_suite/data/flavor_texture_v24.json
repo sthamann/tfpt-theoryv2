@@ -1,0 +1,67 @@
+{
+  "note": "Z3 flavor Yukawa texture inputs (v2.4/v2.5 transition). This file encodes explicit conventions that are only implicit/ambiguous in older documents.",
+  "yukawa_texture": {
+    "formula": "Y^(y) = y_* [ C(delta) + a_y * varphi0 * D + b * c3 * I ],  D=diag(1,0,-1)",
+    "delta_source": "delta_star",
+    "phase_mode": "2pi_delta",
+    "phase_modes_supported": [
+      "2pi_delta",
+      "delta_rad",
+      "koide_pi_over_12"
+    ],
+    "coefficients_rule": "v107sm_fixed",
+    "coefficients_source": "tfpt_suite/flavor_textures.py: coefficients_v107sm()",
+    "y_star_scaling": {
+      "method": "match_sigma_max_to_target_y3",
+      "targets": "third-generation Yukawas at the mt boundary (yt from mt_MSbar(mt); yb, ytau from inputs)"
+    }
+  },
+  "topology_phase_atoms": {
+    "note": "Docking point for topology→phase derivation: Appendix J (paper_v1_06_01_09_2025.tex) sketches three boundary cycles (C1,C2,CT) on the orientable double cover. Wilson lines along these cycles encode discrete phase atoms; topology_phase_map now emits an explicit holonomy-class → (δ, δ_CP) candidate map (still assumption-explicit, not an operator derivation).",
+    "source_module": "chiral_index_three_cycles",
+    "config_file": "tfpt_suite/data/chiral_index_three_cycles.json",
+    "status": "used_for_delta_candidates",
+    "wiring": {
+      "phase_selection_rule_mode": "filter_only",
+      "pmns_convention_policy": "mass_splitting_canonical",
+      "pmns_theta_scan_enabled": true,
+      "pmns_theta_scan_max_candidates": 6,
+      "pmns_delta_cp_scan_enabled": true,
+      "pmns_delta_cp_scan_max_candidates": 6,
+      "pmns_eps_multipliers": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "pmns_theta_scan_note": "If topology_phase_map outputs are present under the run output dir, pmns_full_pipeline will scan a small finite set of texture phases θ derived from the Wilson-line atoms. In filter_only mode the PMNS convention is fixed by mass-splitting canonicalization (no χ²-driven convention shopping)."
+    }
+  },
+  "ckm_variants": {
+    "note": "Discrete CKM construction variants (no continuous fit). The CKM pipeline will evaluate each variant at μ=mt and mark the lowest-χ² variant as the current front-runner.",
+    "s13_modes_supported": ["A_lam3_over_3", "A_lam3_times_1_minus_delta"],
+    "delta_modes_supported": ["pi_times_delta", "pi_times_1_minus_delta", "2pi_times_delta", "koide_pi_over_12"],
+    "include_topology_delta_cp_candidates": true,
+    "max_topology_delta_cp_candidates": 6,
+    "phase_selection_rule_mode": "filter_only",
+    "topology_delta_cp_note": "If topology_phase_map outputs are present under the run output dir, ckm_full_pipeline will (in filter_only mode) evaluate only topological δ_CP candidates (Wilson-line atoms), i.e. a derived filter, not a χ²-driven search over phases.",
+    "run_all_variants": true,
+    "variants": [
+      { "label": "v107sm_default", "s13_mode": "A_lam3_times_1_minus_delta", "delta_mode": "pi_times_1_minus_delta" },
+      { "label": "pi_times_delta", "s13_mode": "A_lam3_times_1_minus_delta", "delta_mode": "pi_times_delta" },
+      { "label": "2pi_times_delta", "s13_mode": "A_lam3_times_1_minus_delta", "delta_mode": "2pi_times_delta" },
+      { "label": "koide_pi_over_12", "s13_mode": "A_lam3_times_1_minus_delta", "delta_mode": "koide_pi_over_12" }
+    ]
+  },
+  "joint_objective_policy": {
+    "note": "Weights for the CKM+PMNS joint objective. Weights are policy inputs, not tuned. Mass-ratio penalty uses lepton ratios anchored by the Möbius δ input.",
+    "w_pmns": 1.0,
+    "w_mass_ratio": 1.0,
+    "mass_ratio_penalty": {
+      "ratios": ["m_tau_over_m_mu", "m_mu_over_m_e"],
+      "metric": "relative_error_quadrature",
+      "tolerance_rel": 0.05
+    }
+  },
+  "neutrino_mechanism": {
+    "note": "Controls how pmns_full_pipeline constructs κ(mt) and yN. Use mechanism_bridge to avoid convention/labeling artifacts and to tie PMNS angles to the Z3-breaking constraint layer (TM1 baseline + ε=varphi0/6).",
+    "kappa_source": "mechanism_bridge",
+    "neutrino_masses_input_eV": [0.0, 0.008602325267042627, 0.05]
+  }
+}
+

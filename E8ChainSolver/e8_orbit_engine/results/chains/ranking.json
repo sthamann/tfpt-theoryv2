@@ -1,0 +1,67 @@
+[
+  {
+    "rank": 1,
+    "cost": 14.339063459555451,
+    "metrics": {
+      "cv_d3": 1.748466655119194,
+      "smooth_s": 0.0121057851715423,
+      "sum_delta_height": 25.0,
+      "label_penalty": 25.416666666666664,
+      "n_jumps": 0
+    },
+    "n_steps": 27,
+    "file": "rank_1.csv"
+  },
+  {
+    "rank": 2,
+    "cost": 14.339063459555451,
+    "metrics": {
+      "cv_d3": 1.748466655119194,
+      "smooth_s": 0.0121057851715423,
+      "sum_delta_height": 25.0,
+      "label_penalty": 25.416666666666664,
+      "n_jumps": 0
+    },
+    "n_steps": 27,
+    "file": "rank_2.csv"
+  },
+  {
+    "rank": 3,
+    "cost": 14.339063459555451,
+    "metrics": {
+      "cv_d3": 1.748466655119194,
+      "smooth_s": 0.0121057851715423,
+      "sum_delta_height": 25.0,
+      "label_penalty": 25.416666666666664,
+      "n_jumps": 0
+    },
+    "n_steps": 27,
+    "file": "rank_3.csv"
+  },
+  {
+    "rank": 4,
+    "cost": 14.339063459555451,
+    "metrics": {
+      "cv_d3": 1.748466655119194,
+      "smooth_s": 0.0121057851715423,
+      "sum_delta_height": 25.0,
+      "label_penalty": 25.416666666666664,
+      "n_jumps": 0
+    },
+    "n_steps": 27,
+    "file": "rank_4.csv"
+  },
+  {
+    "rank": 5,
+    "cost": 14.339063459555451,
+    "metrics": {
+      "cv_d3": 1.748466655119194,
+      "smooth_s": 0.0121057851715423,
+      "sum_delta_height": 25.0,
+      "label_penalty": 25.416666666666664,
+      "n_jumps": 0
+    },
+    "n_steps": 27,
+    "file": "rank_5.csv"
+  }
+]

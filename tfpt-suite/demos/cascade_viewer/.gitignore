@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# OS files
+.DS_Store
+
+# IDE
+.idea/
+*.swp
+
+# Lock files (optional - uncomment if you want to track)
+# package-lock.json

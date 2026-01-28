@@ -1,0 +1,164 @@
+{
+  "checks": [
+    {
+      "check_id": "tfpt_z3_breaking_operator_basis_derived",
+      "detail": "derived Z3-invariant subspace dim=2 and breaking subspace dim=4 (expected 2 and 4); invariance checks=True",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "epsilon_value",
+      "detail": "epsilon=varphi0/6 = 0.008861992029474254 (rad proxy), ~0.508\u00b0",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "perturbative_shifts",
+      "detail": "max \u0394\u03b823=0.508\u00b0, max \u0394\u03b4=1.810\u00b0",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "results": {
+    "baseline": {
+      "delta_cp_deg": 89.99999999999996,
+      "theta12_deg": 34.322525903923726,
+      "theta13_deg": 8.743693008411187,
+      "theta23_deg": 44.99999999999999
+    },
+    "epsilon": {
+      "eps": 0.008861992029474254,
+      "eps_deg": 0.5077547413674498
+    },
+    "plot": {
+      "pmns_z3_breaking_png": "tfpt-suite/out_engineering/pmns_z3_breaking/pmns_z3_breaking.png"
+    },
+    "variants": [
+      {
+        "angles": {
+          "delta_cp_deg": 89.99999999999993,
+          "theta12_deg": 34.322525903923726,
+          "theta13_deg": 8.743693008411187,
+          "theta23_deg": 45.50775474136745
+        },
+        "delta_delta_deg": 0.0,
+        "delta_theta23_deg": 0.5077547413674566,
+        "variant": "L_R23(+eps)"
+      },
+      {
+        "angles": {
+          "delta_cp_deg": 89.99999999999999,
+          "theta12_deg": 34.322525903923726,
+          "theta13_deg": 8.743693008411187,
+          "theta23_deg": 44.49224525863255
+        },
+        "delta_delta_deg": 0.0,
+        "delta_theta23_deg": -0.5077547413674424,
+        "variant": "L_R23(-eps)"
+      },
+      {
+        "angles": {
+          "delta_cp_deg": 88.18956614699783,
+          "theta12_deg": 34.321556158383665,
+          "theta13_deg": 8.747996572300652,
+          "theta23_deg": 45.424276703025726
+        },
+        "delta_delta_deg": -1.8104338530021096,
+        "delta_theta23_deg": 0.4242767030257326,
+        "variant": "R_R23(+eps)"
+      },
+      {
+        "angles": {
+          "delta_cp_deg": 91.81043385300205,
+          "theta12_deg": 34.321556158383665,
+          "theta13_deg": 8.747996572300652,
+          "theta23_deg": 44.575723296974274
+        },
+        "delta_delta_deg": 1.8104338530021096,
+        "delta_theta23_deg": -0.4242767030257184,
+        "variant": "R_R23(-eps)"
+      },
+      {
+        "angles": {
+          "delta_cp_deg": 89.99999999999993,
+          "theta12_deg": 34.322525903923726,
+          "theta13_deg": 8.743693008411187,
+          "theta23_deg": 45.50775474136745
+        },
+        "delta_delta_deg": 0.0,
+        "delta_theta23_deg": 0.5077547413674566,
+        "variant": "L_R23(+eps)*Z3phase"
+      },
+      {
+        "angles": {
+          "delta_cp_deg": 89.99999999999999,
+          "theta12_deg": 34.322525903923726,
+          "theta13_deg": 8.743693008411187,
+          "theta23_deg": 44.49224525863255
+        },
+        "delta_delta_deg": 0.0,
+        "delta_theta23_deg": -0.5077547413674424,
+        "variant": "L_R23(-eps)*Z3phase"
+      }
+    ],
+    "z3_operator_basis": {
+      "P": [
+        [
+          "0j",
+          "(1+0j)",
+          "0j"
+        ],
+        [
+          "0j",
+          "0j",
+          "(1+0j)"
+        ],
+        [
+          "(1+0j)",
+          "0j",
+          "0j"
+        ]
+      ],
+      "breaking_basis_max_abs_entry": [
+        0.5000000000000001,
+        0.5773502691896257,
+        0.8164965809277251,
+        0.7071067811865476
+      ],
+      "dim_breaking": 4,
+      "dim_invariant": 2,
+      "invariant_basis_max_abs_entry": [
+        0.408248290463863,
+        0.5773502691896257
+      ]
+    }
+  },
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (finite variant list).",
+    "formulas": [
+      "sin^2(theta13) = varphi0 * exp(-gamma(0)) with gamma(0)=5/6 (paper identity table)",
+      "TM1 sum rule: sin^2(theta12) = (1/3)*(1 - 2 sin^2(theta13))",
+      "leading order: theta23=45\u00b0, delta=90\u00b0 (Z3 symmetry)",
+      "Z3-breaking scale: epsilon = varphi0/6 (fixed; no new continuous parameter)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT varphi0, gamma(0)=5/6, epsilon=varphi0/6 (paper v2.4)"
+    ],
+    "maturity": null,
+    "module_id": "pmns_z3_breaking",
+    "name": "PMNS Z3-breaking scan (\u03b5 = varphi0/6; discrete operator variants)",
+    "objective": [],
+    "outputs": [
+      "baseline TM1 angles and a discrete Z3-breaking variant table (\u03b823, \u03b4CP shifts)"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "perturbative shifts |\u0394\u03b823| and |\u0394\u03b4| are O(epsilon) in radians for the scanned variants"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

@@ -1,0 +1,110 @@
+{
+  "checks": [
+    {
+      "check_id": "inputs_loaded",
+      "detail": "M1=1e+14 GeV, m_eV=[0.0, 0.008602325267042627, 0.05], beta_rad=0.00423129",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "leptogenesis_proxy",
+      "detail": "eps1_max\u22480.00493, eps1\u22482.09e-05, K\u224846.3, kappa\u22480.00289",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "eta_b_target",
+      "detail": "eta_b(obs)\u22486.13e-10 from \u03a9_b h^2=0.02237",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "eta_b_match",
+      "detail": "eta_b\u22485.79e-10 matches within 0.5 dex (log10 ratio\u2248-0.0243, z\u2248-0.109)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "baryogenesis_mechanism",
+  "plot": null,
+  "results": {
+    "gate": {
+      "log10_ratio": -0.024251277714995013,
+      "sigma_theory_floor": 3.0635715e-10,
+      "tol_log10": 0.5,
+      "z_proxy": -0.1086105577358575
+    },
+    "inputs": {
+      "M1_GeV": 100000000000000.0,
+      "flavor_texture_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/flavor_texture_v24.json",
+      "global_reference_minimal_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json",
+      "masses_input_eV": [
+        0.0,
+        0.008602325267042627,
+        0.05
+      ],
+      "rge_thresholds_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/rge_thresholds_v25.json",
+      "v_GeV": 246.0
+    },
+    "mode": "physics",
+    "proxy": {
+      "K": 46.2962962962963,
+      "eps1": 2.0865266253701637e-05,
+      "eps1_max": 0.004931183791018968,
+      "eta_b_pred": 5.794376870756092e-10,
+      "kappa_eff": 0.0028927544786542738,
+      "m_star_eV": 0.00108
+    },
+    "target": {
+      "eta_b_obs": 6.127143e-10,
+      "omega_b_h2_planck": {
+        "mean": 0.02237,
+        "sigma": 0.00015
+      },
+      "sigma_eta_obs": 4.108499999999999e-12
+    },
+    "tfpt": {
+      "beta_rad": 0.004231289511395415
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given the shipped input tables.",
+    "formulas": [
+      "\\epsilon_1^{\\max} \\approx \\frac{3}{16\\pi}\\frac{M_1 (m_3-m_1)}{v^2} \\;\\; (\\text{Davidson\u2013Ibarra bound})",
+      "\\epsilon_1 \\approx \\beta_{\\rm rad}\\,\\epsilon_1^{\\max} \\;\\; (\\text{TFPT discrete CP-suppression proxy})",
+      "K \\approx m_3/m_*,\\; m_*\\approx 1.08\\times10^{-3}\\,\\mathrm{eV},\\; \\kappa\\approx 0.3/[K(\\ln K)^{0.6}]",
+      "\\eta_b \\approx 0.96\\times 10^{-2}\\,\\epsilon_1\\,\\kappa \\;\\; (\\text{order-of-magnitude leptogenesis proxy})",
+      "\\eta_{10}\\approx 273.9\\,\\Omega_b h^2,\\;\\; \\eta_b=\\eta_{10}\\times10^{-10}"
+    ],
+    "gaps": [
+      "Publication-grade requires a full flavor-aware leptogenesis computation (Boltzmann equations) and a rigorous CP source derived from the TFPT operator map."
+    ],
+    "inputs": [
+      "seesaw scales: tfpt_suite/data/rge_thresholds_v25.json (MNR1..3; use M1=MNR1 for leptogenesis proxy)",
+      "light neutrino masses input: tfpt_suite/data/flavor_texture_v24.json (m_i for \u0394m in Davidson\u2013Ibarra bound)",
+      "Planck reference: tfpt_suite/data/global_reference_minimal.json (\u03a9_b h^2 \u2192 \u03b7_b target)",
+      "TFPT invariant: \u03b2_rad=varphi0/(4\u03c0) used as a discrete CP-suppression proxy"
+    ],
+    "maturity": null,
+    "module_id": "baryogenesis_mechanism",
+    "name": "Baryogenesis mechanism (\u03b7_b; vanilla leptogenesis proxy from TFPT seesaw scales + CP suppression)",
+    "objective": [
+      "Close the explicit baryogenesis placeholder with a concrete, auditable \u03b7_b proxy (vanilla leptogenesis).",
+      "Keep publication-grade scope explicit: this is a deterministic proxy, not a full Boltzmann/leptogenesis solver."
+    ],
+    "outputs": [
+      "\u03b51 (CP asymmetry proxy) from Davidson\u2013Ibarra bound \u00d7 discrete CP suppression",
+      "\u03ba_eff (washout efficiency proxy) from K\u2248m3/m*",
+      "\u03b7_b prediction and comparison to Planck \u03b7_b(\u03a9_b h^2)"
+    ],
+    "question": "Is there an implemented, falsifiable baryogenesis mechanism that predicts \u03b7_b?",
+    "references": [],
+    "validation": [
+      "Computes a deterministic \u03b7_b proxy (no continuous fit parameters) and checks consistency against the Planck \u03a9_b h^2 anchor."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

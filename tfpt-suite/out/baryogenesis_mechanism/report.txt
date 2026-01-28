@@ -1,0 +1,31 @@
+Baryogenesis mechanism (η_b; deterministic vanilla leptogenesis proxy)
+
+mode=engineering
+inputs: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/rge_thresholds_v25.json (MNR1), /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/flavor_texture_v24.json (m_i), /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json (Ω_b h^2), TFPT β_rad
+
+Inputs:
+- M1 = MNR1 ≈ 1e+14 GeV
+- light neutrino masses (input) m_i = [0.0, 0.008602325267042627, 0.05] eV
+- v ≈ 246.0 GeV (EW vev proxy)
+
+CP + washout proxies:
+- ε1_max (Davidson–Ibarra) ≈ 0.00493118
+- β_rad (TFPT invariant) = 0.00423129 ⇒ ε1 ≈ β_rad·ε1_max ≈ 2.08653e-05
+- m* ≈ 0.00108 eV, K≈m3/m*≈46.3 ⇒ κ_eff≈0.00289
+
+η_b prediction:
+- η_b ≈ 0.96e-2 · ε1 · κ_eff ≈ 5.79438e-10
+
+η_b target (Planck Ω_b h^2 anchor):
+- Ω_b h^2 = 0.02237 ± 0.00015 ⇒ η10≈6.12714 ⇒ η_b(obs)≈6.12714e-10
+- log10(η_b/η_obs)≈-0.0242513, z(proxy)≈-0.108611 (theory floor=50%)
+
+Checks:
+- inputs_loaded: PASS (M1=1e+14 GeV, m_eV=[0.0, 0.008602325267042627, 0.05], beta_rad=0.00423129)
+- leptogenesis_proxy: PASS (eps1_max≈0.00493, eps1≈2.09e-05, K≈46.3, kappa≈0.00289)
+- eta_b_target: PASS (eta_b(obs)≈6.13e-10 from Ω_b h^2=0.02237)
+- eta_b_match: PASS (eta_b≈5.79e-10 matches within 0.5 dex (log10 ratio≈-0.0243, z≈-0.109))
+
+Notes:
+- This is an engineering-level, deterministic leptogenesis proxy (no Boltzmann solver).
+- CP suppression uses β_rad as a TFPT-discrete proxy; a publication-grade derivation should tie ε1 to a topology→operator map.

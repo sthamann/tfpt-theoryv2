@@ -1,0 +1,14 @@
+Flavor topology mapper (scaffold)
+
+mode=engineering
+
+topology_phase_map pairs: 14
+chi2_ckm_refscale: 8.03244196806409
+chi2_pmns_mt: 5.522808653313003
+chi2_joint: 13.555250621377093
+p_joint (dof≈13): 0.405893330144952
+
+Checks:
+- phase_map_is_discrete: PASS (topology_phase_map pairs=14)
+- chi2_joint_ckm_pmns: PASS (PASS: chi2=13.5553, dof≈13, p≈4.059e-01)
+- topology_phase_map_wired_into_flavor_pipelines: PASS (WIRED: CKM δ_CP scan + PMNS θ scan include topology_phase_map candidates.)

@@ -1,0 +1,108 @@
+{
+  "checks": [
+    {
+      "check_id": "reheating_inputs",
+      "detail": "T_reh=1e+13 GeV, g*=120, g*s=120",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "entropy_proxy",
+      "detail": "s\u22485.26e+40 GeV^3, H\u22487.47e+08 GeV, S_H=s/H^3\u22481.26e+14 (log10\u224814.1)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "arrow_mechanism_non_invertible",
+      "detail": "m_max=1 (source=assumed_default, S_flux\u22480.693)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "arrow_prediction_falsifiable",
+      "detail": "torsion_flux_entropy_increase: sign of APS spectral-flow index m (torsion seam transitions)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "entropy_production_testable",
+      "detail": "log10(S_H)\u224814.1 > 0 (entropy per Hubble volume at reheating)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "arrow_mechanism",
+  "plot": null,
+  "results": {
+    "entropy_proxy": {
+      "H_GeV": 746792152.3273722,
+      "S_H": 126386077916113.81,
+      "log10_S_H": 14.101699236784887,
+      "s_GeV3": 5.263789013914324e+40
+    },
+    "inputs": {
+      "k_calibration_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json"
+    },
+    "mode": "physics",
+    "prediction": {
+      "expected_sign": "m >= 1 for forward-time evolution",
+      "observable": "sign of APS spectral-flow index m (torsion seam transitions)",
+      "prediction_id": "torsion_flux_entropy_increase",
+      "test_plan": "extract spectral-flow index from APS eta gluing / topological seam data; falsified if m=0 in the claimed regime"
+    },
+    "reheating_snapshot": {
+      "T_reheat_GeV": 10000000000000.0,
+      "g_star": 120.0,
+      "g_star_s": 120.0
+    },
+    "torsion_flux_mechanism": {
+      "flux_entropy": 0.6931471805599453,
+      "flux_invariant": 1.0,
+      "m_candidates": [
+        1
+      ],
+      "m_source": {
+        "results_path": "tfpt-suite/out_physics/aps_eta_gluing/results.json",
+        "source": "assumed_default"
+      }
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given input tables.",
+    "formulas": [
+      "\\Delta S \\ge 0,\\;\\; \\sigma(x)\\ge0,\\;\\; S_{\\rm prod}=\\int d^4x\\,\\sigma(x)",
+      "s = (2\\pi^2/45)\\,g_{*s}T^3,\\;\\; H \\approx 1.66\\sqrt{g_*}\\,T^2/\\bar M_P,\\;\\; S_H := s/H^3",
+      "\\mathcal{I}_\\mathrm{flux} = m,\\;\\; S_\\mathrm{flux} = \\ln(1+m)\\;\\; (m\\in \\mathbb{Z}_{\\ge0}\\ \\mathrm{from\\ APS\\ spectral\\ flow})"
+    ],
+    "gaps": [
+      "The torsion-flux mechanism is encoded via spectral-flow quantization, but a full microscopic derivation and data-driven likelihood remain open."
+    ],
+    "inputs": [
+      "cosmology history policy: tfpt_suite/data/k_calibration.json (reheating snapshot: T_reh, g_*)"
+    ],
+    "maturity": null,
+    "module_id": "arrow_mechanism",
+    "name": "Arrow mechanism (entropy production proxy from reheating; explicit, auditable baseline)",
+    "objective": [
+      "Close the arrow-of-time placeholder with a concrete entropy-production proxy tied to explicit cosmology inputs.",
+      "Attach a torsion-flux irreversibility mechanism and a falsifiable prediction stub.",
+      "Keep scope explicit: this is a baseline (reheating entropy), not a microscopic proof of irreversibility."
+    ],
+    "outputs": [
+      "entropy production proxy S_H \u2261 s/H^3 at reheating (dimensionless; per Hubble volume)",
+      "log10(S_H) as a robust arrow-of-time marker",
+      "torsion-flux entropy increment from spectral-flow quantization (non-invertible mechanism)",
+      "falsifiable arrow-of-time prediction stub"
+    ],
+    "question": "Is there a concrete, testable arrow-of-time mechanism implemented (beyond a placeholder)?",
+    "references": [],
+    "validation": [
+      "Computes a deterministic entropy-production proxy from the declared reheating snapshot (no hidden fit parameters).",
+      "arrow_mechanism_non_invertible: PASS when spectral-flow quantization yields a monotone torsion-flux invariant."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

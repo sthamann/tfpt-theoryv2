@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "note": "Noise + source-model policy for torsion falsifiability (v1). This is an assumption-explicit design file: it turns 'measurable?' into a reproducible SNR calculation. Values are order-of-magnitude placeholders until replaced by experiment/astrophysics-grade priors and instrument models.",
+  "channels": [
+    {
+      "channel_id": "lab_frequency_shift_proxy",
+      "kind": "frequency_shift",
+      "sigma_nu_Hz": 1e-09,
+      "note": "Lab proxy: nHz-level frequency shift sensitivity (order-of-magnitude). Replace with a real comagnetometer / NMR noise model when available."
+    },
+    {
+      "channel_id": "magnetar_timing_proxy",
+      "kind": "frequency_psd",
+      "sigma_nu_ref_Hz": 1e-05,
+      "f_ref_Hz": 1e-08,
+      "gamma": 4.33,
+      "f_signal_Hz": 1e-08,
+      "bandwidth_Hz": 1e-09,
+      "note": "Astro noise model: frequency-dependent PSD inspired by PTA timing-residual spectra. sigma_nu_ref is defined at f_ref, with sigma_nu(f)=sigma_nu_ref*(f/f_ref)^(-gamma/2)*sqrt(bandwidth). Parameters are anchored to NANOGrav/PPTA red-noise slopes (γ≈13/3) as an explicit, replaceable proxy."
+    }
+  ],
+  "source_models": [
+    {
+      "source_id": "magnetar_electron_polarization_v1",
+      "kind": "spin_polarized_medium",
+      "note": "Derived (parametric) magnetar proxy using electron polarization from B,T via tanh(μ_B B/k_B T), with n_e = Y_e n_b at nuclear density scale. This is not an Earth-lab regime; it is intended to provide an explicit astrophysical forward model for SNR bookkeeping.",
+      "B_gauss": 1e15,
+      "T_kelvin": 1000000.0,
+      "baryon_density_fm3": 0.16,
+      "electron_fraction_Ye": 0.1,
+      "spin_per_particle": 0.5,
+      "polarization_model": "tanh(mu_B*B / (k_B*T))",
+      "coupling_scale": { "kind": "TFPT_M", "note": "Use TFPT R^2 scale M as the effective torsion coupling scale (explicit assumption)." }
+    }
+  ]
+}
+

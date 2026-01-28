@@ -1,0 +1,136 @@
+{
+  "checks": [
+    {
+      "check_id": "g_equals_5",
+      "detail": "g=5",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "alpha_within_2sigma",
+      "detail": "z=1.8646873709648436912911416183836040477419934032132112601562746554275798808614493",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "g5_is_best_by_z",
+      "detail": "|z5|=1.8646873709648437, others={4: 46.8455434804275, 5: 1.8646873709648437, 6: 50.5749164827739}",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "gap_to_next_best",
+      "detail": "gap=44.98085610946266",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "defect_partition_g5_audit",
+  "plot": {
+    "alpha_defect_series_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/defect_partition_g5_audit/alpha_defect_series.png",
+    "g_negative_control.png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/defect_partition_g5_audit/g_negative_control.png"
+  },
+  "results": {
+    "alpha_inv_0": {
+      "pred": "137.03599921615843479026171751711397398605568500258186146747743646328176776397918",
+      "ref": "137.035999177",
+      "sigma": "0.000000021",
+      "z": "1.8646873709648436912911416183836040477419934032132112601562746554275798808614493"
+    },
+    "delta2": {
+      "delta2": "0.000000018091459748867855014525576506215873427709357460729151458474190949106463016708746",
+      "delta2_over_delta_top2": "1.25",
+      "g_value": 5,
+      "model_id": "two_defect_partition_g5_over_4"
+    },
+    "negative_control": {
+      "g_candidates": [
+        4,
+        5,
+        6
+      ],
+      "gap_to_next_best": 44.98085610946266,
+      "z_by_g": [
+        {
+          "g": 4,
+          "z": -46.8455434804275
+        },
+        {
+          "g": 5,
+          "z": 1.8646873709648437
+        },
+        {
+          "g": 6,
+          "z": 50.5749164827739
+        }
+      ]
+    },
+    "plot": {
+      "alpha_defect_series_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/defect_partition_g5_audit/alpha_defect_series.png",
+      "g_negative_control.png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/defect_partition_g5_audit/g_negative_control.png"
+    },
+    "reference": {
+      "dataset_id": "alpha_inv_codata_2022",
+      "notes": "Inverse fine-structure constant alpha^{-1}(0).",
+      "sigma": 2.1e-08,
+      "source": "global_reference_minimal.json:observables.alpha_inv_codata_2022",
+      "units": "dimensionless",
+      "value": 137.035999177,
+      "version": "CODATA 2022"
+    },
+    "series": [
+      {
+        "alpha_inv_0": 137.03599614741378,
+        "label": "half"
+      },
+      {
+        "alpha_inv_0": 137.03599819324359,
+        "label": "one"
+      },
+      {
+        "alpha_inv_0": 137.03599921615844,
+        "label": "g_over_4"
+      }
+    ]
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (finite enumeration + root finding).",
+    "formulas": [
+      "delta2 = (g/4) * delta_top^2",
+      "alpha_inv_0 from CFE + backreaction with delta2",
+      "z = (pred - mean)/sigma"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT constants (delta_top)",
+      "defect partition g from discrete enumeration",
+      "CODATA alpha_inv_0 reference"
+    ],
+    "maturity": null,
+    "module_id": "defect_partition_g5_audit",
+    "name": "Defect partition g=5 audit (delta2 -> alpha_inv_0)",
+    "objective": [
+      "Lock delta2 to a discrete g=5 multiplicity.",
+      "Show the resulting alpha_inv_0 is within CODATA sigma."
+    ],
+    "outputs": [
+      "delta2 = (g/4) delta_top^2",
+      "alpha_inv_0 from delta2",
+      "z score vs CODATA",
+      "negative control: z(g) for g=4,5,6"
+    ],
+    "question": "Does the g=5 defect partition close alpha(0) without a fit parameter?",
+    "references": [
+      "alpha_inv_codata_2022"
+    ],
+    "validation": [
+      "g is discrete and equals 5 under current enumeration",
+      "alpha_inv_0 is within 2 sigma of CODATA",
+      "g=5 minimizes |z| among g in {4,5,6}"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

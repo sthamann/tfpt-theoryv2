@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "note": "Reference values for BBN consistency checks (light element abundances). These values are treated as an external-data anchor and should be updated with a cited dataset when preparing a publication-grade likelihood.",
+  "observables": {
+    "Y_p_primordial": {
+      "mean": 0.245,
+      "sigma_exp": 0.003,
+      "units": "mass_fraction",
+      "definition": "Primordial helium-4 mass fraction Y_p.",
+      "source": "Representative value (update with a cited dataset; used as a falsifiability anchor in the TFPT suite)."
+    },
+    "D_over_H_primordial": {
+      "mean": 2.527e-5,
+      "sigma_exp": 3.0e-7,
+      "units": "dimensionless",
+      "definition": "Primordial deuterium abundance (D/H).",
+      "source": "Representative value (update with a cited dataset; used as a falsifiability anchor in the TFPT suite)."
+    },
+    "N_eff_BBN": {
+      "mean": 3.046,
+      "sigma_exp": 0.2,
+      "units": "dimensionless",
+      "definition": "Effective number of neutrino species during BBN.",
+      "source": "SM baseline (3.046) with conservative placeholder uncertainty; replace with a dedicated likelihood if needed."
+    }
+  }
+}
+

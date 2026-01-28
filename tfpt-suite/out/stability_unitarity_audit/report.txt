@@ -1,0 +1,29 @@
+Stability & perturbativity audit (diagnostic; not a publication-grade vacuum lifetime analysis)
+
+SM inputs: tfpt-suite/tfpt_suite/data/sm_inputs_mz.json (sha256=f46b08eb6c06c7b4b4a52f81f7f7ce63b5b9c5fcc2a1752418c82817f155bcfe)
+thresholds: tfpt-suite/tfpt_suite/data/rge_thresholds_v25.json (sha256=864896e83cf5b40b078ce461ba18d1aea34d800a13cf65405e49a8c3b7e5c834)
+
+Boundary at mt (from sm_boundary_conditions_at_mt):
+- mt=172.76 GeV, g1_GUT(mt)=0.463095 ⇒ gY(mt)=0.358712, g2(mt)=0.648334, g3(mt)=1.16763
+- yt(mt)=0.940617, yb(mt)=0.0166586, yτ(mt)=0.0102149, λ(mt)=0.129615
+
+UV endpoint (mt→μUV, 2-loop PyR@TE engine with explicit thresholds):
+- μUV=1.000e+16 GeV, (gY,g2,g3)(μUV)=(0.447123,0.56758,0.555379), λ(μUV)=-0.00739571
+
+Vacuum stability proxy:
+- λ(mt)=0.129615, λ(μUV)=-0.00739571
+- λ=0 crossing: 4.530e+10 GeV (coarse bisection bracket)
+
+Perturbativity proxy:
+- ceiling=4π≈12.5664
+- max|dimless|(mt)=1.16763, max|dimless|(μUV)=0.56758
+
+Checks:
+- rg_run_succeeds: PASS (mt→μUV run completed; λ(mt)=0.129615, λ(μUV)=-0.00739571)
+- threshold_matching_publication_grade: PASS (threshold_matching_ok=True, blocked_thresholds=[])
+- lambda_crossing_reported_if_needed: PASS (crosses=True, mu_cross≈45297285617.694756 GeV (coarse bisection bracket))
+- couplings_finite: PASS (max|dimless|(mt)=1.16763, max|dimless|(μUV)=0.56758)
+- perturbative_window: PASS (ceiling=4π≈12.5664; max|dimless|(mt)=1.16763, max|dimless|(μUV)=0.56758)
+
+Notes:
+- This is a red-flag detector (engineering). A publication-grade metastability statement requires a vacuum lifetime computation and careful matching/uncertainty propagation.

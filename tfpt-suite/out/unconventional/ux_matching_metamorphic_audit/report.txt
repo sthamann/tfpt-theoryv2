@@ -1,0 +1,23 @@
+Unconventional: matching metamorphic audit
+
+Goal:
+- Harden the matching layer by verifying metamorphic properties (invertibility/stability).
+- This is a math/engineering audit; it does not add new physics content.
+
+Samples: alpha3=500, gauge=400
+
+Results:
+- alpha3 threshold: max_abs_err=5.551115e-17, max_rel_err=2.210860e-16
+- gauge finite matching: max_abs_err=4.440892e-16, max_rel_err=3.075434e-16
+
+Worst cases:
+- alpha3: _WorstCase(label='alpha3_threshold_up_then_down', inputs={'alpha3': 0.27162812562747896}, outputs={'alpha3_up': 0.27131895313905613, 'alpha3_back': 0.2716281256274789}, abs_error=5.551115123125783e-17, rel_error=2.0436451896512334e-16)
+- gauge:  _WorstCase(label='match_gauge_finite_delta_up_then_down', inputs={'gY': 0.23073279472886618, 'g2': 0.4391914528944774, 'g3': 1.443988573273477, 'dalphaY': -7.683823823665428e-06, 'dalpha2': 6.414029017107526e-06, 'dalpha3': 8.688986523036666e-06}, outputs={'gY_up': 0.23052345821084994, 'g2_up': 0.43928320405101107, 'g3_up': 1.4440263809118183, 'gY_back': 0.23073279472886618, 'g2_back': 0.4391914528944774, 'g3_back': 1.4439885732734774}, abs_error=4.440892098500626e-16, rel_error=3.0754343771801886e-16)
+
+Checks:
+- alpha3_threshold_up_down_near_identity: PASS (max_rel_err=2.211e-16 (tol=1.0e-05); max_abs_err=5.551e-17; samples=500)
+- match_gauge_finite_delta_up_down_identity: PASS (max_rel_err=3.075e-16 (tol=1.0e-12); max_abs_err=4.441e-16; samples=400)
+
+Notes:
+- `match_alpha3_quark_threshold_2loop` is a truncated series: exact invertibility is not expected.
+- `match_gauge` with `finite_delta_alpha` is explicit by construction: up+down should invert within float rounding.

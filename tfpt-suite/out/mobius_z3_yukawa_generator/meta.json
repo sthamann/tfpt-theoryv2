@@ -1,0 +1,24 @@
+{
+  "config": {
+    "mp_dps": 80,
+    "output_dir": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out",
+    "overwrite": true,
+    "plot": true,
+    "seed": 0,
+    "verification_mode": "engineering"
+  },
+  "module": {
+    "id": "mobius_z3_yukawa_generator",
+    "title": "M\u00f6bius/Z3 Yukawa generator (v1.07SM-style CKM + M\u00f6bius mass hierarchies)"
+  },
+  "platform": {
+    "machine": "arm64",
+    "release": "25.1.0",
+    "system": "Darwin"
+  },
+  "python": {
+    "executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "version": "3.9.6 (default, Oct 17 2025, 17:15:53) \n[Clang 17.0.0 (clang-1700.4.4.1)]"
+  },
+  "timestamp_utc": "2026-01-28T06:19:50.568973+00:00"
+}

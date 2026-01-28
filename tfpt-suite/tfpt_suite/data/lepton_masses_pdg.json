@@ -1,0 +1,22 @@
+{
+  "note": "Lepton masses used for Möbius δ calibration (tau/mu) and related flavor-anchoring checks. Values are PDG-era pole masses in GeV; update if you want a different scheme/scale.",
+  "units": "GeV",
+  "masses": {
+    "electron": {
+      "mean": 0.0005109989461,
+      "sigma": 0.0,
+      "source": "PDG (electron mass)"
+    },
+    "muon": {
+      "mean": 0.1056583745,
+      "sigma": 0.0,
+      "source": "PDG (muon mass)"
+    },
+    "tau": {
+      "mean": 1.77686,
+      "sigma": 0.0,
+      "source": "PDG (tau mass)"
+    }
+  }
+}
+

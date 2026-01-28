@@ -1,0 +1,34 @@
+Möbius cusp classification (bounded rational search; paper v2.4 constraints)
+
+Goal:
+- Deterministically confirm the cusp-set uniqueness claim stated in the TFPT v2.4 TeX.
+
+Holonomy → cusp rule model (explicit input):
+- holonomy group: SU(5)
+- generator: Y (hypercharge, fundamental)
+- eigenvalues (fund): [Fraction(-1, 3), Fraction(-1, 3), Fraction(-1, 3), Fraction(1, 2), Fraction(1, 2)]
+- derived cusp magnitudes: [Fraction(1, 3), Fraction(2, 3), Fraction(1, 1)]
+
+Constraints implemented (paper v2.4):
+- boundary holonomy quantization => rational cusps
+- SU(5) hypercharge compatibility => cusp magnitudes from the holonomy spectrum
+- sector separation: y=1 (leptons), y=1/3 (down-type), y=2/3 (up-type)
+- quotient by S3 permutations only (unordered cusp-set)
+
+max_den=3: candidates=1, canonical_classes=1
+  canonical reps: [('1/3', '2/3', '1')]
+max_den=6: candidates=1, canonical_classes=1
+  canonical reps: [('1/3', '2/3', '1')]
+max_den=12: candidates=1, canonical_classes=1
+  canonical reps: [('1/3', '2/3', '1')]
+max_den=24: candidates=1, canonical_classes=1
+  canonical reps: [('1/3', '2/3', '1')]
+
+Checks:
+- holonomy_hypercharge_rule_system_derived_and_encoded: PASS (derived cusp magnitudes from SU(5) hypercharge: [Fraction(1, 3), Fraction(2, 3), Fraction(1, 1)])
+- stable_unique_class_all_bounds: PASS (canonical_classes == 1 for max_den in {3,6,12,24})
+- rep_matches_paper_triplet: PASS (representative matches {1,1/3,2/3} (paper v2.4))
+
+Notes:
+- This module encodes the paper's cusp constraints exactly; it is no longer using the earlier '1/3 gaps' proxy.
+- If you want a more adversarial test, extend the constraint set and show uniqueness still holds under that larger rule system.

@@ -1,0 +1,190 @@
+{
+  "checks": [
+    {
+      "check_id": "rationalization_within_tol",
+      "detail": "max_rel_error=0.01138",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "ratio_direct:m_mu_over_m_e",
+      "detail": "scale-independent reference",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "ratio_needs_rg:m_b_over_m_s",
+      "detail": "scheme=MSbar, scale=n/a",
+      "passed": true,
+      "severity": "WARN"
+    },
+    {
+      "check_id": "ratio_needs_rg:m_c_over_m_u",
+      "detail": "scheme=MSbar, scale=n/a",
+      "passed": true,
+      "severity": "WARN"
+    },
+    {
+      "check_id": "ratio_needs_rg:m_t_over_m_c",
+      "detail": "scheme=MSbar, scale=n/a",
+      "passed": true,
+      "severity": "WARN"
+    },
+    {
+      "check_id": "ratio_needs_rg:m_s_over_m_d",
+      "detail": "scheme=MSbar, scale=n/a",
+      "passed": true,
+      "severity": "WARN"
+    },
+    {
+      "check_id": "ratio_direct:m_tau_over_m_mu",
+      "detail": "scale-independent reference",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "yukawa_exponent_index_audit",
+  "plot": {
+    "yukawa_q_errors_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/yukawa_exponent_index_audit/yukawa_q_errors.png"
+  },
+  "results": {
+    "plot": {
+      "yukawa_q_errors_png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/yukawa_exponent_index_audit/yukawa_q_errors.png"
+    },
+    "ratio_policies": {
+      "m_b_over_m_s": {
+        "dataset_id": "mass_ratio_mb_over_ms",
+        "scale": "n/a",
+        "scheme": "MSbar",
+        "status": "needs_rg"
+      },
+      "m_c_over_m_u": {
+        "dataset_id": "mass_ratio_mc_over_mu_quark",
+        "scale": "n/a",
+        "scheme": "MSbar",
+        "status": "needs_rg"
+      },
+      "m_mu_over_m_e": {
+        "dataset_id": "mass_ratio_mu_over_e_pdg",
+        "scale": "pole",
+        "scheme": "pole",
+        "status": "direct"
+      },
+      "m_s_over_m_d": {
+        "dataset_id": "mass_ratio_ms_over_md",
+        "scale": "n/a",
+        "scheme": "MSbar",
+        "status": "needs_rg"
+      },
+      "m_t_over_m_c": {
+        "dataset_id": "mass_ratio_mt_over_mc",
+        "scale": "n/a",
+        "scheme": "MSbar",
+        "status": "needs_rg"
+      },
+      "m_tau_over_m_mu": {
+        "dataset_id": "mass_ratio_tau_over_mu_pdg",
+        "scale": "pole",
+        "scheme": "pole",
+        "status": "direct"
+      }
+    },
+    "ratios": {
+      "m_b_over_m_s": 43.79405189623337,
+      "m_c_over_m_u": 486.9165313620135,
+      "m_mu_over_m_e": 197.84536441898265,
+      "m_s_over_m_d": 16.91911119689403,
+      "m_t_over_m_c": 133.01222546408377,
+      "m_tau_over_m_mu": 16.91911119689403
+    },
+    "rows": [
+      {
+        "log10_ratio": 2.296325879060772,
+        "q_float": 3.9566418818751004,
+        "q_rational": "95/24",
+        "ratio": "m_mu_over_m_e",
+        "ratio_recon": 198.29307649780313,
+        "rel_error": 0.0022629394433136027,
+        "value": 197.84536441898265
+      },
+      {
+        "log10_ratio": 1.6414151286761858,
+        "q_float": 2.8282100127356213,
+        "q_rational": "17/6",
+        "ratio": "m_b_over_m_s",
+        "ratio_recon": 44.09492037647158,
+        "rel_error": 0.006870076350804272,
+        "value": 43.79405189623337
+      },
+      {
+        "log10_ratio": 2.6874545195806525,
+        "q_float": 4.630568859920046,
+        "q_rational": "37/8",
+        "ratio": "m_c_over_m_u",
+        "ratio_recon": 483.30635619740156,
+        "rel_error": -0.00741436146050214,
+        "value": 486.9165313620135
+      },
+      {
+        "log10_ratio": 2.1238915598210766,
+        "q_float": 3.6595321137896337,
+        "q_rational": "11/3",
+        "ratio": "m_t_over_m_c",
+        "ratio_recon": 134.28646999970803,
+        "rel_error": 0.009579905389736703,
+        "value": 133.01222546408377
+      },
+      {
+        "log10_ratio": 1.2283775447300098,
+        "q_float": 2.1165332344821928,
+        "q_rational": "17/8",
+        "ratio": "m_s_over_m_d",
+        "ratio_recon": 17.111631615607397,
+        "rel_error": 0.011378873066849407,
+        "value": 16.91911119689403
+      },
+      {
+        "log10_ratio": 1.2283775447300098,
+        "q_float": 2.1165332344821928,
+        "q_rational": "17/8",
+        "ratio": "m_tau_over_m_mu",
+        "ratio_recon": 17.111631615607397,
+        "rel_error": 0.011378873066849407,
+        "value": 16.91911119689403
+      }
+    ]
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (finite rational scan).",
+    "formulas": [
+      "q_ij = (c3/varphi0) * ln(ratio)",
+      "ratio_recon = exp(q_rational * varphi0 / c3)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "mass ratios from mass_spectrum_deriver (preferred)",
+      "TFPT invariants (c3, varphi0)"
+    ],
+    "maturity": null,
+    "module_id": "yukawa_exponent_index_audit",
+    "name": "Yukawa exponent index audit (q_ij rationalization)",
+    "objective": [
+      "Quantize the exponent indices with a fixed denominator grammar.",
+      "Report which ratios are most stable under the rational map."
+    ],
+    "outputs": [
+      "q_ij = (c3/varphi0) * ln(m_i/m_j)",
+      "best rational approximation for q_ij",
+      "reconstruction error for each ratio"
+    ],
+    "question": "Do the Mobius-derived ratios align with rational exponent indices?",
+    "references": [],
+    "validation": [
+      "relative reconstruction errors are below 2% for the selected ratios"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

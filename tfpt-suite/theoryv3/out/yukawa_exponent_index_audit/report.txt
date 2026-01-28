@@ -1,0 +1,21 @@
+Yukawa exponent index audit
+
+c3/varphi0 = 0.74830308356254779855425709117213900105867537623583363061344126774214272466442152
+denominators = (2, 3, 4, 5, 6, 8, 10, 12, 16, 24), max_numerator = 200
+
+Ratios:
+- m_mu_over_m_e: q=3.956642, q_rational=95/24, rel_error=0.002263
+- m_b_over_m_s: q=2.828210, q_rational=17/6, rel_error=0.00687
+- m_c_over_m_u: q=4.630569, q_rational=37/8, rel_error=-0.007414
+- m_t_over_m_c: q=3.659532, q_rational=11/3, rel_error=0.00958
+- m_s_over_m_d: q=2.116533, q_rational=17/8, rel_error=0.01138
+- m_tau_over_m_mu: q=2.116533, q_rational=17/8, rel_error=0.01138
+
+Checks:
+- rationalization_within_tol: PASS (max_rel_error=0.01138)
+- ratio_direct:m_mu_over_m_e: PASS (scale-independent reference)
+- ratio_needs_rg:m_b_over_m_s: WARN (scheme=MSbar, scale=n/a)
+- ratio_needs_rg:m_c_over_m_u: WARN (scheme=MSbar, scale=n/a)
+- ratio_needs_rg:m_t_over_m_c: WARN (scheme=MSbar, scale=n/a)
+- ratio_needs_rg:m_s_over_m_d: WARN (scheme=MSbar, scale=n/a)
+- ratio_direct:m_tau_over_m_mu: PASS (scale-independent reference)

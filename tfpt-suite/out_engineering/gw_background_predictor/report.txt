@@ -1,0 +1,26 @@
+GW background predictor (baseline; scale-invariant Starobinsky estimate)
+
+mode=engineering
+inputs: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json (Ω_r0), /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json (n_s, A_s)
+
+Baseline inflation (Starobinsky, large-N):
+- n_s(ref)=0.9649 => N≈56.980, r≈0.003696
+- A_s(ref)≈2.099e-09 => A_t=r*A_s≈7.76e-12
+
+Scale-invariant GW background estimate (radiation-era re-entry; transfer features ignored):
+- Ω_r0≈9.2e-05 => Ω_gw,0 ≈ (Ω_r0/24) r A_s ≈ 2.97e-17
+
+Frequency table (illustrative; Ω_gw baseline is flat in this approximation):
+- pivot_k=0.05/Mpc: f≈7.73e-17 Hz, Ω_gw≈2.97e-17
+- PTA ~ 1/yr: f≈3.17e-08 Hz, Ω_gw≈2.97e-17
+- LIGO ~ 100 Hz: f≈100 Hz, Ω_gw≈2.97e-17
+
+Bounds ledger (order-of-magnitude; update with full likelihood when needed):
+- PTA bound (proxy): Ω_gw(f~1/yr) ≲ 1e-09
+- LIGO bound (proxy): Ω_gw(f~100 Hz) ≲ 1e-08
+- BBN integral bound (proxy): ∫ dln f Ω_gw ≲ 1e-06
+
+Checks:
+- pta_cmb_bounds: PASS (Omega_gw≈2.97e-17 < PTA bound~1e-09 (baseline, scale-invariant))
+- ligo_bounds: PASS (Omega_gw≈2.97e-17 < LIGO bound~1e-08 (baseline, scale-invariant))
+- bbn_integrated_bound_proxy: PASS (Omega_gw≈2.97e-17 << BBN integral bound~1e-06 (proxy))

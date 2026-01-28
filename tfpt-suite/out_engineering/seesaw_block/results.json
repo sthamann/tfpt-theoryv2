@@ -1,0 +1,78 @@
+{
+  "checks": [
+    {
+      "check_id": "varphi5_positive",
+      "detail": "varphi5=0.021179644515981565791049909910063497910749496010265653429948387054428323580155796",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "zeta_nr_finite",
+      "detail": "zeta_NR=0.0050695377483785537548304045798157799508190951694498852720872611678099775743411566",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "mnu3_order_of_magnitude_ok",
+      "detail": "mnu3_sm_eV=0.046160183066361556064073226544622425629290617848970251716247139588100686498855835",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "results": {
+    "derived": {
+      "dm31_sq_from_v_sm_eV2": "0.0021307625007200121485686158486455916928925637145295833355151883289958056019563385",
+      "mnu3_from_v_sm_eV": "0.046160183066361556064073226544622425629290617848970251716247139588100686498855835",
+      "v_from_paper_GeV": "251.03738765371185243547172116116721120622555681384802646848464546372986152768858",
+      "zeta_NR": "0.0050695377483785537548304045798157799508190951694498852720872611678099775743411566"
+    },
+    "e8_ladder": {
+      "definition": "varphi_n = varphi0 * exp(-gamma0) * (D_n/D_1)^lambda for n>=1; D_n=60-2n, D_1=58",
+      "gamma0": "0.83333333333333333333333333333333333333333333333333333333333333333333333333333333",
+      "lambda": "0.58723319078783786839467151020185738380716231582658097939713798030003172011464798",
+      "varphi5": "0.021179644515981565791049909910063497910749496010265653429948387054428323580155796"
+    },
+    "inputs": {
+      "MPl_GeV": "12210000000000000000.0",
+      "sm_inputs_mz_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+      "v_sm_GeV": "246.0"
+    },
+    "paper_v1_06_anchor": {
+      "MR_GeV": "1311000000000000.0",
+      "dm31_sq_eV2": "0.00231",
+      "mnu3_eV": "0.04807"
+    }
+  },
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (fixed inputs).",
+    "formulas": [
+      "varphi_5 = varphi0 * exp(-gamma(0)) * (D_5/D_1)^lambda, D_n=60-2n, D_1=58",
+      "MR = \u03b6_NR * M_Pl * varphi_5",
+      "m_nu3 ~ v^2 / MR  (paper v1.06 uses this normalization for y_{\u03bd3}~1)",
+      "\u0394m31^2 ~ m_nu3^2 (order-of-magnitude anchor)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT invariants (varphi0, gamma(0), lambda) from tfpt_suite/constants.py",
+      "SM v reference from tfpt_suite/data/sm_inputs_mz.json",
+      "paper v1.06 anchor numbers (MR ~ 1.311e15 GeV, mnu3 ~ 0.048 eV)"
+    ],
+    "maturity": null,
+    "module_id": "seesaw_block",
+    "name": "Seesaw block (paper v1.06 anchor): MR scale + m_nu3 order-of-magnitude",
+    "objective": [],
+    "outputs": [
+      "dimensionless ladder step varphi_5",
+      "inferred \u03b6_NR (from MR = \u03b6_NR M_Pl varphi_5)",
+      "m_nu3 and \u0394m31^2 estimates for y_nu3 ~ 1 using v^2/MR"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "Produces the paper-scale MR and m_nu3 order-of-magnitude without any fit parameters (beyond the stated anchors)."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

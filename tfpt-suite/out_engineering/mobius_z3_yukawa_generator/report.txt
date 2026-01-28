@@ -1,0 +1,35 @@
+Möbius/Z3 Yukawa generator (v1.07SM-style CKM + Möbius mass hierarchies)
+
+flavor config file: tfpt-suite/tfpt_suite/data/flavor_texture_v24.json (sha256=08140fc64ef04b200b617c5c2da2046507acbb8a80d2a514ee910fbff967353e)
+lepton masses file: tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json (sha256=4c992c392766d6944c5bd53f4d91c369de53c8616513939e79b0ee1f890de386)
+CKM reference file: tfpt-suite/tfpt_suite/data/ckm_reference.json (sha256=24ee677d61de659f4bae1a52044fe1efa4f07b77b1079e097a45cca2e429f875)
+SM inputs file: tfpt-suite/tfpt_suite/data/sm_inputs_mz.json (sha256=f46b08eb6c06c7b4b4a52f81f7f7ce63b5b9c5fcc2a1752418c82817f155bcfe)
+
+delta_source = delta_star
+delta_M (from tau/mu) = 0.6079090366343283
+delta_star (from geometry) = 0.6088619920294742
+delta_used (generator input) = 0.6088619920294742
+generator meta: YukawaGenerationMeta(scheme='MSbar', reference_scale_GeV=172.76, delta_used=0.6088619920294742, phase_mode='CKM(PDG) from TFPT invariants; see CkmConstruction fields', ckm=CkmConstruction(lam=0.22445997051897376, A=0.8333333333333334, s12=0.22445997051897376, s23=0.04198523197114881, s13=0.0036860861244729197, delta_cp_rad=1.2287962923799498, s13_mode='A_lam3_times_1_minus_delta', delta_mode='pi_times_1_minus_delta'), ratios={'m_tau_over_m_mu': 16.91911119689403, 'm_mu_over_m_e': 197.84536441898265, 'm_s_over_m_d': 16.91911119689403, 'm_b_over_m_s': 43.79405189623337, 'm_c_over_m_u': 486.9165313620135, 'm_t_over_m_c': 133.01222546408377})
+
+CKM |V_ij| (mt):
+- Vud = 0.9744766897978642
+- Vus = 0.22445844561896217
+- Vub = 0.0036860861244729197
+- Vcd = 0.22431267193822485
+- Vcs = 0.9736123917942322
+- Vcb = 0.041984946738659025
+- Vtd = 0.008888545917752688
+- Vts = 0.04119850403877635
+- Vtb = 0.9991114437421056
+
+chi2 = 49.57871108386737
+largest chi2 contributions (top 5):
+- {'key': 'Vud', 'pred': 0.9744766897978642, 'mean': 0.97401, 'sigma': 0.00011, 'chi2': 17.999947721525686}
+- {'key': 'Vcs', 'pred': 0.9736123917942322, 'mean': 0.9732, 'sigma': 0.00011, 'chi2': 14.055123301660524}
+- {'key': 'Vtd', 'pred': 0.008888545917752688, 'mean': 0.00854, 'sigma': 0.00016, 'chi2': 4.745478780549325}
+- {'key': 'Vtb', 'pred': 0.9991114437421056, 'mean': 0.99917, 'sigma': 3e-05, 'chi2': 3.809817042885877}
+- {'key': 'Vcb', 'pred': 0.041984946738659025, 'mean': 0.04053, 'sigma': 0.00083, 'chi2': 3.0728262626426814}
+
+Checks:
+- ckm_unitarity: PASS (max|V†V-I|=7.772e-16)
+- ckm_chi2_finite: PASS (chi2=49.5787)

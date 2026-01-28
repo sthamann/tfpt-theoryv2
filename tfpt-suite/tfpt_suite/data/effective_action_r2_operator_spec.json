@@ -1,0 +1,111 @@
+{
+  "background": {
+    "assumptions": [
+      "maximally symmetric 4D background: Ric^2=R^2/4, Riem^2=R^2/6",
+      "drop total derivatives in a2 (no □R term)"
+    ],
+    "type": "constant_curvature_4d"
+  },
+  "blocks": [
+    {
+      "E_over_R": "117864.362240587071313390420431074745465351470599402031216051",
+      "Omega_sq_over_R2": 0,
+      "name": "torsion_trace_vector_Tmu",
+      "prefactor": "1/2",
+      "rank": 4,
+      "statistics": "boson"
+    },
+    {
+      "E_over_R": "117864.362240587071313390420431074745465351470599402031216051",
+      "Omega_sq_over_R2": 0,
+      "name": "torsion_axial_vector_Smu",
+      "prefactor": "1/2",
+      "rank": 4,
+      "statistics": "boson"
+    },
+    {
+      "E_over_R": "117864.362240587071313390420431074745465351470599402031216051",
+      "Omega_sq_over_R2": 0,
+      "name": "torsion_tensor_qmunurho",
+      "prefactor": "1/2",
+      "rank": 16,
+      "statistics": "boson"
+    },
+    {
+      "E_over_R": 0,
+      "Omega_sq_over_R2": 0,
+      "name": "fp_ghost_vector",
+      "note": "FP ghost block (vector) for the chosen background-field gauge fixing in the torsion sector closure.",
+      "prefactor": "-1",
+      "rank": 4,
+      "statistics": "ghost"
+    }
+  ],
+  "derivation": {
+    "action_parse": {
+      "density_sha256": "8e5f61ae2cab42b23310145437e1ea7bec259ead2dd57da300b899a56e95c032",
+      "derived_blocks": [
+        {
+          "E_over_R_source": "alpha_R_from_k4_closure",
+          "Omega_sq_over_R2_source": "0",
+          "name": "torsion_trace_vector_Tmu",
+          "prefactor": "1/2",
+          "rank": 4,
+          "statistics": "boson"
+        },
+        {
+          "E_over_R_source": "alpha_R_from_k4_closure",
+          "Omega_sq_over_R2_source": "0",
+          "name": "torsion_axial_vector_Smu",
+          "prefactor": "1/2",
+          "rank": 4,
+          "statistics": "boson"
+        },
+        {
+          "E_over_R_source": "alpha_R_from_k4_closure",
+          "Omega_sq_over_R2_source": "0",
+          "name": "torsion_tensor_qmunurho",
+          "prefactor": "1/2",
+          "rank": 16,
+          "statistics": "boson"
+        },
+        {
+          "E_over_R_source": "0",
+          "Omega_sq_over_R2_source": "0",
+          "name": "fp_ghost_vector",
+          "prefactor": "-1",
+          "rank": 4,
+          "statistics": "ghost"
+        }
+      ],
+      "missing_tokens": [],
+      "term_found": true,
+      "tokens_ok": true
+    },
+    "block_source": "action_torsion_sector",
+    "generated_at_utc": "2026-01-28T12:52:38+00:00",
+    "generated_by": {
+      "path": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/tfpt_suite/operator_spec_builder.py",
+      "sha256": "a1003a624b7bb89ea6342a4dd74684f317a5cf9fc734435bcaee81823f2ddee2"
+    },
+    "generated_from": {
+      "microscopic_action_path": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/tfpt_suite/data/microscopic_action_tfpt_v25.json",
+      "microscopic_action_sha256": "7fc34f1c60652ba6138ed24c64066fdd715c15122e520f24f80596f63b788fbc"
+    },
+    "k4_closure": {
+      "alpha_R": "117864.362240587071313390420431074745465351470599402031216051",
+      "beta_target": "527834498.601546253164296097946584889324108945869225287178297",
+      "note": "alpha_R is solved from the K4 closure equation so that the heat-kernel β_R2 reproduces TFPT's M/Mpl."
+    },
+    "model": "K4 minimal Laplace-type torsion+ghost closure (constant-curvature background)",
+    "status": "derived"
+  },
+  "matching": {
+    "detail": "No runtime solve/matching is performed; alpha_R is fixed by the derivation record above.",
+    "enabled": false,
+    "target": "tfpt_M_over_Mpl",
+    "unknowns": []
+  },
+  "note": "OperatorSpec for effective_action_r2 on a 4D constant-curvature background. This file is generated deterministically from the canonical microscopic action spec (tfpt_suite/data/microscopic_action_tfpt_v25.json) using the K4 closure equation for the minimal Laplace-type torsion+ghost block operator.",
+  "schema_version": 1
+}

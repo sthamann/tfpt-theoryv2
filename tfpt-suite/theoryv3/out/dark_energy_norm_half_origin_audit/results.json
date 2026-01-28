@@ -1,0 +1,60 @@
+{
+  "checks": [
+    {
+      "check_id": "n_from_cover_equals_half",
+      "detail": "n_from_cover=0.5",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "best_candidate_is_half",
+      "detail": "best_label=n=1/2",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "dark_energy_norm_half_origin_audit",
+  "plot": {
+    "dark_energy_norm_origin.png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/dark_energy_norm_half_origin_audit/dark_energy_norm_origin.png"
+  },
+  "results": {
+    "best_candidate_label": "n=1/2",
+    "k": 2.0,
+    "n_from_cover": 0.5,
+    "plot": {
+      "dark_energy_norm_origin.png": "/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/theoryv3/out/dark_energy_norm_half_origin_audit/dark_energy_norm_origin.png"
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (no fitting).",
+    "formulas": [
+      "n_from_cover = 1 / k",
+      "k=2 corresponds to the double-cover backreaction exponent"
+    ],
+    "gaps": [],
+    "inputs": [
+      "alpha_precision_audit self_consistent.k (cover degree)",
+      "dark_energy_exponential_audit best candidate label"
+    ],
+    "maturity": null,
+    "module_id": "dark_energy_norm_half_origin_audit",
+    "name": "Dark energy norm origin audit (n=1/2 from double cover)",
+    "objective": [
+      "Tie the preferred n=1/2 normalization to the cover degree used in alpha backreaction."
+    ],
+    "outputs": [
+      "n_from_cover = 1/k",
+      "consistency with best candidate n=1/2"
+    ],
+    "question": "Is the dark-energy normalization n=1/2 fixed by the double-cover degree?",
+    "references": [],
+    "validation": [
+      "n_from_cover equals 1/2",
+      "dark_energy_exponential_audit best candidate is n=1/2"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

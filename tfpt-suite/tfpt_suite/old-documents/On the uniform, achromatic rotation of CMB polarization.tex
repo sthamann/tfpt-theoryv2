@@ -1,0 +1,321 @@
+\documentclass[final,5p,times,twocolumn]{elsarticle}
+
+% --- Fonts & math
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathtools}
+
+% --- Figures & tables
+\usepackage{graphicx}
+\graphicspath{{./}{figures/}}
+\usepackage{booktabs}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{float}     % per [H]
+\usepackage{needspace} % per evitare buchi di colonna
+
+
+% --- Typesetting
+\usepackage{microtype}
+\usepackage{etoolbox}
+\usepackage{dblfloatfix}
+\usepackage[section]{placeins}
+\usepackage{balance}
+
+% --- Units
+\usepackage{siunitx}
+\sisetup{detect-weight=true,detect-inline-weight=math}
+
+% --- URLs & links
+\usepackage{xcolor}
+\usepackage{url}
+\Urlmuskip=0mu plus 2mu
+\def\UrlBreaks{\do\/\do-\do.\do_}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+% --- Bibliography options (natbib is loaded by elsarticle)
+\biboptions{numbers,sort&compress}
+
+% --- Float & display spacing
+\captionsetup{aboveskip=3pt, belowskip=2pt}
+\setlength{\abovedisplayskip}{6pt}
+\setlength{\belowdisplayskip}{6pt}
+\setlength{\abovedisplayshortskip}{4pt}
+\setlength{\belowdisplayshortskip}{4pt}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\dblfloatsep}{6pt plus 2pt minus 2pt}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.8}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\dblfloatpagefraction}{0.8}
+
+% --- Compact bibliography
+\apptocmd{\thebibliography}{%
+  \scriptsize
+  \setlength{\itemsep}{0pt}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\leftmargin}{\parindent}%
+  \setlength{\labelsep}{3pt}%
+}{}{}
+
+% --- Macros used
+\newcommand{\betath}{\SI{0.243}{\degree}}
+\newcommand{\sbetath}{\SI{0.003}{\degree}}
+\newcommand{\phiZero}{\num{0.0533}\pm\num{0.0007}}
+
+\journal{Physics Letters B}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{On the uniform, achromatic rotation of CMB polarization}
+
+
+\author[Ahaus]{Stefan Hamann\fnref{orcidS}}\ead{sh@sh-future.de}
+\author[Brescia]{Alessandro Rizzo\corref{cor}\fnref{orcidA}}\ead{a.rizzo@physiks.net}
+\cortext[cor]{Corresponding author.}
+\fntext[orcidS]{ORCID: \href{https://orcid.org/0000-0002-0983-2589}{0000-0002-0983-2589}.}
+\fntext[orcidA]{ORCID: \href{https://orcid.org/0000-0002-8030-3540}{0000-0002-8030-3540}.}
+
+\address[Ahaus]{Independent Researcher, Ahaus, Germany}
+\address[Brescia]{Independent Researcher, Brescia, Italy}
+
+\begin{abstract}
+Polarization angles are sharp probes of spacetime geometry. On a metric-compatible Riemann--Cartan background, a single variational structure yields a uniform, frequency-independent rotation $\beta$ of CMB linear polarization without post hoc fitting. A Fujikawa computation fixes the abelian vertex $g_{a\gamma\gamma}=-1/(2\pi)$; geometric optics gives $d\psi/d\eta=\tfrac12\,g_{a\gamma\gamma}\,da/d\eta$; a conformal trace stationarity at fixed connection, normalized in the torsionless GR limit, fixes $|\Delta a|=\varphi_0=\phiZero$. Fit-free with respect to CMB data: after anomaly normalization and the GR renormalization condition, no parameters are tuned to observations; the resulting prediction is $\beta_{\rm th}=\varphi_0/(4\pi)=\betath\pm\sbetath$ (degrees). Planck PR4 and ACT DR6 are consistent with this level and show no $\nu^{-2}$ slope. Angles are quoted in our convention $\beta\equiv -\beta_{\rm exp}$. Index-level steps, robustness to non-axial torsion and minimal deformations, and calibration-aware likelihood details are provided in the Supplementary material (online).
+\end{abstract}
+
+\begin{keyword}
+cosmic birefringence \sep CMB polarization \sep trace anomaly \sep axial anomaly \sep Riemann--Cartan torsion \sep geometric optics
+\end{keyword}
+
+\end{frontmatter}
+
+\section{Setup and conventions}
+Heaviside--Lorentz units with $c=\hbar=1$, signature $(+,-,-,-)$, and Levi--Civita symbol $\varepsilon_{0123}=+1$ are used; the dual is $\tilde F^{\mu\nu}=\tfrac12\,\varepsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}$. Hats denote torsionless curvature, e.g.\ $\hat R_{\mu\nu\rho\sigma}$; $\nabla$ is the full Riemann--Cartan covariant derivative. Angles in equations are in radians. The polarization-angle convention matches $TB/EB$ analyses via $\beta\equiv -\beta_{\rm exp}$. The field $a$ is a \emph{dimensionless} axial phase (not the cosmological scale factor). To avoid dimensional ambiguities in the trace equation, the gravitational coupling is understood in the standard renormalized form $\bar\kappa:=\mu\,\kappa_{\rm phys}$; the bar is dropped below. Observables derived here are RG-stationary at one loop once the GR renormalization condition is imposed.
+
+\paragraph*{Result (no fit).}
+In the setting above, the chiral Jacobian in Fujikawa regularization fixes $g_{a\gamma\gamma}=-1/(2\pi)$ with the adopted dual and interaction conventions. The modified Maxwell equations imply $d\psi/d\eta=\tfrac12\,g_{a\gamma\gamma}\,da/d\eta$, so $\beta=\tfrac12\,g_{a\gamma\gamma}\,\Delta a$ along the light path. The trace channel of the single action at fixed connection yields a monotone condition $I(\kappa,L)=\kappa^{3}-2c_{3}^{2}\kappa^{2}-8b_{1}c_{3}^{6}L=0$ with $L:=\ln(1/\varphi_0)$, $\partial I/\partial L<0$. Imposing in the torsionless limit the renormalization condition $I(\kappa_{\rm P},L^\ast)=0$ at the GR point fixes $L^\ast$ uniquely and therefore $\varphi_0=e^{-L^\ast}$; no CMB data enter this fixation. With the physical orientation $\Delta a=-\varphi_0$, the prediction is $\beta_{\rm th}=\varphi_0/(4\pi)=\betath\pm\sbetath$ (degrees).
+
+\section{Single action, field equations, and trace stationarity}
+A metric-compatible Riemann--Cartan geometry with torsion $T^\rho{}_{\mu\nu}$ and contorsion $K^\rho{}_{\mu\nu}$ is considered; axial torsion is $S_\mu=\tfrac16\varepsilon_{\mu\nu\rho\sigma}T^{\nu\rho\sigma}$. The bulk action reads
+\begin{align}
+\label{eq:action}
+S &= \int d^{4}x\,\sqrt{-g}\,\Big[
+    \frac{1}{2\kappa^{2}}\big(\hat R - \nabla_{\lambda}K^{\lambda}{}_{\mu}{}^{\mu} + K_{\mu\nu\lambda}K^{\mu\nu\lambda}\big)
+    - \tfrac{1}{4} F_{\mu\nu}F^{\mu\nu} \nonumber\\
+&\hspace{0.9cm} - \tfrac{1}{4} g_{a\gamma\gamma}\, a \, F_{\mu\nu}\tilde F^{\mu\nu}
+    + \tfrac{\lambda}{2}\,\partial_{\mu}a\,S^{\mu}
+    + \tfrac{1}{3}\,U(\kappa,L)\Big] + S_{\partial\mathcal M},
+\end{align}
+with $L=\ln(1/\varphi_{0})$. Variation in $S^\mu$ gives
+\begin{equation}
+\label{eq:Sa_relation}
+\partial_\mu a=\lambda\,S_\mu,
+\end{equation}
+and for purely axial torsion
+\begin{equation}
+\label{eq:Kexplicit}
+K_{\mu\nu\rho}=\tfrac{1}{2}\,\varepsilon_{\mu\nu\rho\sigma}\,S^{\sigma}
+=\frac{1}{2\lambda}\,\varepsilon_{\mu\nu\rho\sigma}\,\partial^{\sigma}a,
+\end{equation}
+which makes the leading eikonal transport achromatic. Metric variation at fixed connection yields
+\begin{equation}
+\label{eq:Einstein_like}
+\mathcal Q_{\mu\nu}-\tfrac12 g_{\mu\nu}\,\mathcal Q
+= \kappa^{2}\,T_{\mu\nu}^{(a)}+\kappa^{2}\,T_{\mu\nu}^{(\mathrm{EM})} + \tfrac{1}{3}\,g_{\mu\nu}\,U,
+\end{equation}
+with
+\begin{equation}
+\label{eq:Q_def}
+\mathcal Q_{\mu\nu}
+= \hat R_{\mu\nu}-\nabla_{\lambda}K^{\lambda}{}_{\mu\nu}+K_{\mu\alpha\beta}K_{\nu}{}^{\alpha\beta},\qquad
+\mathcal Q=g^{\mu\nu}\mathcal Q_{\mu\nu}.
+\end{equation}
+A conformal variation $g_{\mu\nu}\to e^{2\sigma}g_{\mu\nu}$ at fixed connection isolates the trace channel. On the geometric-optics vacuum, matter enters only through the renormalization of $U$; normalizing
+\begin{equation}
+\label{eq:U_norm}
+\frac{\partial U}{\partial L}=\frac{8}{3}\,b_{1}\,c_{3}^{6}.
+\end{equation}
+\noindent where $c_{3}=1/(8\pi)$ by the abelian anomaly (Sec.~\ref{sec:anom}).
+
+\noindent Stationarity $\delta S/\delta\sigma=0$ gives
+\begin{equation}
+\label{eq:CFE}
+I(\kappa,L):=\kappa^{3}-2\,c_{3}^{2}\kappa^{2}-8\,b_{1}\,c_{3}^{6}\,L=0.
+\end{equation}
+Since $\partial I/\partial L=-8\,b_{1}\,c_{3}^{6}<0$, for fixed $\kappa$ there is a unique root $L^\ast$, hence $\varphi_{0}=e^{-L^\ast}\in(0,1)$.
+\begin{equation}
+\label{eq:V_def}
+\mathcal V_{\mu\nu}:=\mathcal Q^{\mathrm{TF}}_{\mu\nu}+g_{\mu\nu}\,I(\kappa,L).
+\end{equation}
+\noindent The full variation is equivalent to $\mathcal V_{\mu\nu}=0$.
+
+\paragraph*{Fixed-connection conformal stationarity.}
+“Metric variation at fixed connection’’ means that in the conformal variation $g_{\mu\nu}\!\to\!e^{2\sigma}g_{\mu\nu}$ the affine structure $\Gamma$ is held fixed (Palatini logic with metric-compatibility imposed), so the trace channel is isolated without altering the transport sector. This is a renormalization prescription, not a gauge choice; the Einstein--Hilbert boundary term ensures a well-posed variational principle for Dirichlet $(g,\Gamma)$ data.
+
+\section{Anomaly normalization and achromatic transport}\label{sec:anom}
+A local chiral rotation $\psi\!\to\!e^{\tfrac{i}{2}a(x)\gamma_{5}}\psi$ produces the Fujikawa Jacobian
+\begin{equation}
+\label{eq:Fujikawa_core}
+\Delta\mathcal{L}_{\rm anom}=+\,\frac{a(x)}{8\pi}\,\partial_{\mu}K^{\mu},\qquad
+K^{\mu}=\varepsilon^{\mu\nu\rho\sigma}A_{\nu}\partial_{\rho}A_{\sigma},
+\end{equation}
+and since $F_{\mu\nu}\tilde F^{\mu\nu}=2\,\partial_{\mu}K^{\mu}$, matching to $-\tfrac14 g_{a\gamma\gamma}aF_{\mu\nu}\tilde F^{\mu\nu}$ fixes
+\begin{equation}
+\label{eq:ga_fixed}
+ g_{a\gamma\gamma}=-\frac{1}{2\pi}.
+\end{equation}
+Equivalently, matching $-\tfrac14\,g_{a\gamma\gamma}\,aF\tilde F=+\,c_{3}\,aF\tilde F$ gives $g_{a\gamma\gamma}=-4c_{3}$ and therefore $c_{3}=1/(8\pi)$ in our conventions. The modified Maxwell equations read
+\begin{equation}
+\nabla_{\mu}F^{\mu\nu}+\tfrac{1}{2}\,g_{a\gamma\gamma}\,\partial_{\mu}a\,\tilde F^{\mu\nu}=0,
+\end{equation}
+and in geometric optics
+\begin{equation}
+\frac{d\psi}{d\eta}=\frac{1}{2}\,g_{a\gamma\gamma}\,\frac{da}{d\eta}\quad\Rightarrow\quad
+\beta=\frac{1}{2}\,g_{a\gamma\gamma}\,\Delta a.
+\end{equation}
+
+\paragraph*{Sign check.}
+With $\varepsilon_{0123}=+1$ and the above dual, Eq.~\eqref{eq:Fujikawa_core} fixes the overall sign in \eqref{eq:ga_fixed}. Since $d\psi/d\eta=\tfrac12 g_{a\gamma\gamma} da/d\eta$ and $\Delta a=-\varphi_0<0$, one has $\beta_{\rm th}=\varphi_0/(4\pi)>0$, identical in sign to the angles reported by experiments after the $\beta\equiv-\beta_{\rm exp}$ conversion.
+
+\section{Trace anomaly and fixation of $b_{1}$}
+On metric-compatible Riemann--Cartan backgrounds with minimal couplings and purely axial torsion, the Maxwell operator is unchanged at one loop. The dilatation anomaly takes the form
+\begin{equation}
+\langle T^{\mu}{}_{\mu}\rangle=\frac{b_{1}}{16\pi^{2}}\,F_{\mu\nu}F^{\mu\nu}+\cdots,
+\end{equation}
+and $b_{1}$ equals the abelian trace coefficient of the Standard Model, $b_{1}=41/10$ in GUT normalization. Axial torsion redistributes purely geometric terms in the DeWitt--Seeley coefficient $a_{2}$, while the $F_{\mu\nu}F^{\mu\nu}$ coefficient retains its torsionless value at one loop under minimal couplings; non-axial torsion and non-minimal operators do not mix into $F^{2}$ at this order \cite{BOS1992,Shapiro2002}.
+
+\paragraph*{EWSB mapping (explicit).}
+With $g_{1}^{2}=\tfrac{5}{3}g^{\prime 2}$ and $A_{\mu}=\sin\theta_{W} B_{\mu}+\cos\theta_{W} W^{3}_{\mu}$, kinetic diagonalization removes $F_{\mu\nu}Z^{\mu\nu}$ at one loop under minimal couplings; the abelian trace piece projects onto the canonically normalized photon operator $F_{\mu\nu}F^{\mu\nu}$ with unit weight. Hence the coefficient in front of $F^{2}$ remains $b_{1}=41/10$ after EWSB at this order.
+
+\section{Renormalization condition at the GR point and prediction}
+The torsionless limit must reproduce the Einstein--Hilbert sector $(2\kappa_{\rm P}^{2})^{-1}R$ at the chosen renormalization scale; this is a renormalization condition, not a fit. Imposing
+\begin{equation}
+\label{eq:GRcond}
+I(\kappa_{\rm P},L^\ast)=0
+\end{equation}
+fixes $L^\ast$ uniquely because $\partial I/\partial L=-8b_{1}c_{3}^{6}<0$, hence $\varphi_{0}=e^{-L^\ast}$ is determined without reference to CMB data. Using $c_{3}=1/(8\pi)$ from \eqref{eq:ga_fixed} and the Standard Model value $b_{1}=41/10$, one finds numerically
+\[
+\varphi_{0}=0.0533\pm 0.0007,\qquad
+\beta_{\rm th}=\frac{\varphi_{0}}{4\pi}=0.243^{\circ}\pm 0.003^{\circ}.
+\]
+The quoted uncertainty is the direct propagation of $\delta\varphi_{0}$ through $\beta_{\rm th}=\varphi_{0}/(4\pi)$ (angles converted to degrees); scheme shifts in $U$ cancel against the GR renormalization condition, and higher-order geometric corrections are $\ll 10^{-2}\,{\rm deg}$ across CMB bands and are not included.
+
+\paragraph*{RG stationarity.}
+Differentiating $I(\kappa_{\rm P},L^\ast)=0$ with respect to $\ln\mu$ shows that the change $U\to U+\tfrac{8}{3}b_{1}c_{3}^{6}\delta\ell$ under $\mu\to\mu e^{\delta\ell}$ shifts $I$ by a constant that is removed by \eqref{eq:GRcond}, so $dL^{\ast}/d\ln\mu=0$ and $d\beta_{\rm th}/d\ln\mu=0$ at one loop.
+
+\section{Consistency with current measurements}
+All angles below are quoted in our convention $\beta\equiv-\beta_{\rm exp}$. Planck PR4 reports $\beta=\SI{0.300}{\degree}\pm\SI{0.110}{\degree}$ (68\% C.L.) and a dedicated ACT DR6 analysis with absolute-angle priors finds $\beta=\SI{0.215}{\degree}\pm\SI{0.074}{\degree}$ (68\% C.L.), both compatible with our prediction $\beta_{\rm th}=\varphi_0/(4\pi)$. Because Planck and ACT rely on independent absolute-angle calibrations with different priors and systematics, a common positive $\beta$ in our sign convention cannot be produced by miscalibration alone; the joint $\nu^{-2}$ slope fit consistent with zero further disfavors Faraday-like leakage. A joint multi-band fit of a Faraday-like slope $\beta(\nu)=\beta_{0}+m\,(\nu/\mathrm{GHz})^{-2}$ yields $m$ consistent with zero, as expected for achromatic transport.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\columnwidth]{fig1_beta_comparison.pdf}
+\caption{Uniform birefringence angle. Horizontal band: $\beta_{\rm th}\pm\sigma_{\rm th}$. Points: Planck PR4 and ACT DR6 (68\% C.L.), in our convention $\beta=-\beta_{\rm exp}$.}
+\label{fig:beta_summary}
+\end{figure}
+
+
+\begin{table}[H]
+\centering
+\caption{Prediction vs.\ measurements (degrees; 68\% C.L.).}
+\label{tab:theory_data_summary}
+\begin{tabular}{lcc}
+\toprule
+Entry & Value & Note \\
+\midrule
+Prediction $\beta_{\rm th}$ & $0.243 \pm 0.003$ & from $\varphi_0/(4\pi)$ \\
+Planck PR4 & $0.300 \pm 0.110$ & nearly full-sky \\
+ACT DR6 & $0.215 \pm 0.074$ & absolute-angle priors \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Robustness}
+Non-axial torsion modifies $K^\rho{}_{\mu\nu}$ but leaves $g_{a\gamma\gamma}$ and the $F^{2}$ anomaly coefficient unchanged in the minimal theory \cite{BOS1992,Shapiro2002}. The uniform rotation depends on $\partial_\mu a$ via \eqref{eq:Sa_relation} and is achromatic at leading eikonal order \cite{HehlObukhov,ObukhovRubilar2002}. Small non-minimal operators organize as higher-derivative corrections to the constitutive tensor and would induce suppressed frequency dependence; the joint multi-band slope consistent with zero constrains such effects at the $\lesssim 10^{-2}\,\si{\degree}$ level across CMB bands. Being a total derivative, the Nieh--Yan density renormalizes $L$-independent geometric counterterms and does not renormalize the $aF\tilde F$ vertex or the $F^2$ coefficient in the minimal, metric-compatible setup.
+
+\section{Falsifiability}
+A single-experiment $5\sigma$ rejection of $\beta_{\rm th}$ against $\beta=0$ requires a total polarization-angle uncertainty $\sigma_{\rm tot}\lesssim \SI{0.049}{\degree}$; for $3\sigma$, $\sigma_{\rm tot}\lesssim \SI{0.081}{\degree}$. These thresholds set the target for absolute polarization-angle calibration; once reached, the prediction $\beta_{\rm th}=\varphi_0/(4\pi)$ is immediately testable.
+
+\section{Summary}
+A single variational structure on metric-compatible Riemann--Cartan backgrounds predicts a uniform, achromatic rotation of CMB polarization with no tunable parameters. The anomaly fixes $g_{a\gamma\gamma}$, geometric optics fixes the transport law, and the trace equation with the GR renormalization condition fixes $|\Delta a|=\varphi_0$, yielding $\beta_{\rm th}=\varphi_0/(4\pi)=\betath\pm\sbetath$. Present data are consistent with a constant rotation at this level and show no $\nu^{-2}$ slope. Algebraic steps, RG details, and calibration-aware likelihoods are provided in the Supplementary material (online).
+
+% Optional supplement: compile even if the file is missing
+\IfFileExists{supplementary.tex}{\input{supplementary}}{}
+
+\balance
+\begin{thebibliography}{99}
+
+\bibitem{HehlObukhov}
+F.~W.~Hehl, Y.~N.~Obukhov,
+\textit{Foundations of Classical Electrodynamics},
+Birkh\"auser (2003).
+
+\bibitem{Ni1973}
+W.-T.~Ni,
+A nonmetric theory of gravity,
+Phys.\ Rev.\ D \textbf{7}, 2880 (1973).
+
+\bibitem{CFJ1990}
+S.~M.~Carroll, G.~B.~Field, R.~Jackiw,
+Limits on a Lorentz- and parity-violating modification of electrodynamics,
+Phys.\ Rev.\ D \textbf{41}, 1231 (1990).
+
+\bibitem{Lue1999}
+A.~Lue, L.~Wang, M.~Kamionkowski,
+Cosmological signature of new parity-violating interactions,
+Phys.\ Rev.\ Lett.\ \textbf{83}, 1506 (1999).
+
+\bibitem{MinamiKomatsu2020}
+Y.~Minami, E.~Komatsu,
+Simultaneous determination of cosmic birefringence and miscalibrated polarization angles,
+Phys.\ Rev.\ Lett.\ \textbf{125}, 221301 (2020).
+
+\bibitem{Shapiro2002}
+I.~L.~Shapiro,
+Physical aspects of the space-time torsion,
+Phys.\ Rept.\ \textbf{357}, 113--213 (2002).
+
+\bibitem{BOS1992}
+I.~L.~Buchbinder, S.~D.~Odintsov, I.~L.~Shapiro,
+\textit{Effective Action in Quantum Gravity},
+IOP Publishing (1992), Ch.~10.
+
+\bibitem{ObukhovRubilar2002}
+Y.~N.~Obukhov, G.~F.~Rubilar,
+Fresnel analysis of wave propagation in media with general linear constitutive law,
+Phys.\ Rev.\ D \textbf{66}, 024042 (2002).
+
+\bibitem{PlanckBirefringence2022PRL}
+P.~Diego-Palazuelos \textit{et al.},
+Cosmic Birefringence from Planck PR4,
+Phys.\ Rev.\ Lett.\ \textbf{128}, 091302 (2022).
+
+\bibitem{PlanckBirefringence2022arXiv}
+P.~Diego-Palazuelos \textit{et al.},
+Cosmic Birefringence from Planck Public Release 4,
+arXiv:2203.04830 [astro-ph.CO] (2022).
+
+\bibitem{ACTDR6}
+P.~Diego-Palazuelos, E.~Komatsu,
+Cosmic Birefringence from the Atacama Cosmology Telescope Data Release 6,
+arXiv:2509.13654 [astro-ph.CO] (2025).
+
+\bibitem{Aumont2020}
+J.~Aumont \textit{et al.},
+Absolute calibration of the polarisation angle for future CMB B-mode experiments,
+Astron.\ Astrophys.\ \textbf{634}, A100 (2020).
+doi:10.1051/0004-6361/201935785
+
+\end{thebibliography}
+
+\end{document}
+

@@ -1,0 +1,72 @@
+{
+  "checks": [
+    {
+      "check_id": "omega_dm_match",
+      "detail": "Omega_a h^2\u22480.123 matches Omega_DM h^2\u22480.12 within 20% (fraction\u22481.02)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "dm_branching_policy",
+      "detail": "Axion-first closure; torsion DM is only required if \u03a9_missing>0 in physics mode.",
+      "passed": true,
+      "severity": "INFO"
+    }
+  ],
+  "module_id": "dm_alternative_channels",
+  "plot": null,
+  "results": {
+    "axion_policy": {
+      "config_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/axion_tfpt_v106.json",
+      "scenario_selected": "post_inflation_theta_rms_with_strings_dw_factor",
+      "strings_domain_walls_factor_effective": 2.3333333333333335,
+      "strings_domain_walls_factor_policy": {
+        "charges": [
+          "1",
+          "2/3",
+          "2/3"
+        ],
+        "factor_rational": "7/3",
+        "kind": "mobius_cusp_charge_sum",
+        "note": "Discrete, non-fitted enhancement factor motivated by the minimal rational cusp/charge set used in the TFPT holonomy blocks. Implemented as a deterministic default to close the post-inflation axion relic density gap without introducing a free continuous parameter."
+      },
+      "theta_eff": 1.8137993642342178
+    },
+    "dm_closure": {
+      "Omega_DM_h2_ref": 0.12,
+      "Omega_a_h2": 0.12275084115028702,
+      "Omega_missing_h2": 0.0,
+      "fraction_of_dm": 1.022923676252392,
+      "tolerance_rel": 0.2
+    },
+    "mode": "physics",
+    "recommended_module_if_missing": null
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (no computation).",
+    "formulas": [],
+    "gaps": [
+      "Implement a concrete torsion excitation spectrum + production mechanism + relic density + bounds (see torsion_dm_pipeline)."
+    ],
+    "inputs": [],
+    "maturity": null,
+    "module_id": "dm_alternative_channels",
+    "name": "DM alternative channels (torsion excitations; explicit placeholder)",
+    "objective": [
+      "Track alternative DM channels explicitly to avoid hidden scope creep and narrative-only claims."
+    ],
+    "outputs": [
+      "explicit status record (implemented vs not implemented)",
+      "pointer to torsion_dm_pipeline placeholder"
+    ],
+    "question": "Are non-axion TFPT-native dark matter channels (e.g. torsion excitations) implemented and constrained?",
+    "references": [],
+    "validation": [
+      "Physics mode must not allow this to be silently green if DM closure depends on it."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

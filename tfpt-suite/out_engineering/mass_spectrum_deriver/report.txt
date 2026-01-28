@@ -1,0 +1,21 @@
+Mass spectrum deriver (Mobius/Z3 ratios from δ⋆)
+
+delta_star (TFPT): 0.6088619920294742
+
+Measured lepton ratios (from lepton_masses_pdg.json):
+- m_tau/m_mu = 16.8170294916
+- m_mu/m_e   = 206.768282609
+
+Predicted ratios from δ⋆ via Mobius map (suite convention):
+- m_tau/m_mu(pred) = 16.9191111969  (rel=6.070e-03)
+- m_mu/m_e(pred)   = 197.845364419  (rel=-4.315e-02)
+
+Additional ratios emitted (scheme/scale dependent; not gated):
+- m_s/m_d(pred) = 16.9191111969
+- m_b/m_s(pred) = 43.7940518962
+- m_c/m_u(pred) = 486.916531362
+- m_t/m_c(pred) = 133.012225464
+
+Checks:
+- ratios_match_pdg: PASS (PASS: rel(tau/mu)=6.070e-03, rel(mu/e)=-4.315e-02 (tol=0.05))
+- mass_ratio_dictionary_present: PASS (['m_b_over_m_s', 'm_c_over_m_u', 'm_mu_over_m_e', 'm_s_over_m_d', 'm_t_over_m_c', 'm_tau_over_m_mu'])

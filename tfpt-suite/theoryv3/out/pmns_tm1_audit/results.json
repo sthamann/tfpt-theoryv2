@@ -1,0 +1,64 @@
+{
+  "checks": [
+    {
+      "check_id": "sin2_theta12_within_band",
+      "detail": "z=0.91064249117327198370640772758679025528865012912165581550526772119698329265732583",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "theta23_placeholder",
+      "detail": "theta23 and delta_CP are placeholders until Z3-breaking is wired into this audit",
+      "passed": true,
+      "severity": "INFO"
+    }
+  ],
+  "module_id": "pmns_tm1_audit",
+  "plot": null,
+  "results": {
+    "reference": {
+      "dataset_id": "pmns_sin2_theta12_nufit53_no",
+      "notes": "Normal ordering, PDG convention.",
+      "sigma": 0.012,
+      "source": "pmns_reference.json:normal_ordering.sin2_theta12",
+      "units": "dimensionless",
+      "value": 0.307,
+      "version": "NuFIT 5.3 (2024, NO)"
+    },
+    "sin2_theta12": "0.31792770989407926380447689273104148306346380154945986978606321265436379951188791",
+    "sin2_theta13": "0.023108435158881104293284660903437775404804297675810195320905181018454300732168135",
+    "z": "0.91064249117327198370640772758679025528865012912165581550526772119698329265732583"
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (closed form).",
+    "formulas": [
+      "sin2_theta12 = (1/3) * (1 - 2 * sin2_theta13)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "sin2_theta13 from flavor_pattern_audit",
+      "NuFIT sin2_theta12 reference (normal ordering)"
+    ],
+    "maturity": null,
+    "module_id": "pmns_tm1_audit",
+    "name": "PMNS TM1 audit (theta12 from theta13)",
+    "objective": [
+      "Audit the TM1 sum rule with explicit inputs and a conservative band."
+    ],
+    "outputs": [
+      "sin2_theta12 from TM1 sum rule",
+      "z score vs NuFIT reference"
+    ],
+    "question": "Does the TM1 sum rule yield a viable sin2(theta12) given sin2(theta13)?",
+    "references": [
+      "pmns_sin2_theta12_nufit53_no"
+    ],
+    "validation": [
+      "sin2_theta12 within conservative band (3 sigma)"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

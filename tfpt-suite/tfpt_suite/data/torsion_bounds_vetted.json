@@ -1,0 +1,54 @@
+{
+  "units": "GeV",
+  "source": "V.A. Kostelecký, N. Russell, J.D. Tasson, 'Constraints on Torsion from Bounds on Lorentz Violation', Phys. Rev. Lett. 100, 111102 (2008), arXiv:0712.4393. Eq. (6) gives best component-wise sensitivities for minimal coupling.",
+  "note": "Vetted component-wise bounds for the axial torsion vector A_μ in the Sun-centered celestial-equatorial frame (T,X,Y,Z), under the one-component-at-a-time assumption used for Table I / Eq. (6) in the reference.",
+  "mapping": {
+    "description": "Minimal-coupling mapping used by Kostelecký–Russell–Tasson: b_μ ≃ -(3/4) A_μ (all other torsion couplings set to zero).",
+    "convention": "b_mu = k * A_mu (minimal coupling)",
+    "k": 0.75,
+    "note": "From arXiv:0712.4393 Eq. (3) and the statement 'minimal coupling is recovered for ξ4^(4)=3/4 with other couplings zero' (page 2). Sign is irrelevant for absolute bounds."
+  },
+  "bounds": [
+    {
+      "label": "A_T",
+      "coefficient": "A_mu",
+      "component": "T",
+      "frame": "Sun-centered (T,X,Y,Z)",
+      "abs_max": 2.9e-27,
+      "abs_max_m_inverse": 1.5e-11,
+      "applies_to": "minimal coupling (ξ4^(4)=3/4; others 0), one-component-at-a-time assumption",
+      "source": "Kostelecký–Russell–Tasson 2008 (Phys. Rev. Lett. 100, 111102), arXiv:0712.4393 Eq. (6)"
+    },
+    {
+      "label": "A_X",
+      "coefficient": "A_mu",
+      "component": "X",
+      "frame": "Sun-centered (T,X,Y,Z)",
+      "abs_max": 2.1e-31,
+      "abs_max_m_inverse": 1.1e-15,
+      "applies_to": "minimal coupling (ξ4^(4)=3/4; others 0), one-component-at-a-time assumption",
+      "source": "Kostelecký–Russell–Tasson 2008 (Phys. Rev. Lett. 100, 111102), arXiv:0712.4393 Eq. (6)"
+    },
+    {
+      "label": "A_Y",
+      "coefficient": "A_mu",
+      "component": "Y",
+      "frame": "Sun-centered (T,X,Y,Z)",
+      "abs_max": 2.5e-31,
+      "abs_max_m_inverse": 1.3e-15,
+      "applies_to": "minimal coupling (ξ4^(4)=3/4; others 0), one-component-at-a-time assumption",
+      "source": "Kostelecký–Russell–Tasson 2008 (Phys. Rev. Lett. 100, 111102), arXiv:0712.4393 Eq. (6)"
+    },
+    {
+      "label": "A_Z",
+      "coefficient": "A_mu",
+      "component": "Z",
+      "frame": "Sun-centered (T,X,Y,Z)",
+      "abs_max": 1.0e-29,
+      "abs_max_m_inverse": 5.3e-13,
+      "applies_to": "minimal coupling (ξ4^(4)=3/4; others 0), one-component-at-a-time assumption",
+      "source": "Kostelecký–Russell–Tasson 2008 (Phys. Rev. Lett. 100, 111102), arXiv:0712.4393 Eq. (6)"
+    }
+  ]
+}
+

@@ -1,0 +1,44 @@
+TFPT predictions dashboard (paper v2.5)
+
+Key numbers (with status + dependencies):
+- ᾱ^{(5)}(MZ)^{-1} (primary; MSbar-at-MZ via α(0)→MZ running): 127.9509991 [dimensionless]
+  status: primary comparison observable under the MSbar-at-MZ policy (TFPT α(0) + external SM/QED running inputs)
+  depends on: TFPT α(0) (two-defect refinement), Δα_had^(5)(MZ) (PDG input), Δα_lept(MZ) (1-loop model)
+- α^{-1}(0) (self-consistent, k=2; diagnostic): 137.0359941 [dimensionless]
+  status: diagnostic IR/on-shell quantity (CFE + double-cover backreaction; interpreted as α(0))
+  depends on: c3, varphi0_tree, delta_top, b1, backreaction exponent k=2
+- α^{-1}(0) (two-defect refinement, δ2=δ_top^2; diagnostic): 137.0359982 [dimensionless]
+  status: diagnostic refinement (parameter-free next term template)
+  depends on: c3, varphi0_tree, delta_top, b1, k=2, δ2=δ_top^2
+- β (cosmic birefringence, degrees): 0.2424350309 [deg]
+  status: structural (Δa_top = varphi0, n=1)
+  depends on: varphi0
+- λ (Cabibbo proxy): 0.2244599705 [dimensionless]
+  status: structural (from varphi0)
+  depends on: varphi0
+- n_s (Starobinsky R^2, N=56): 0.9642857143 [dimensionless]
+  status: derived (assumptions K1–K3; N choice)
+  depends on: c3 via M/Mpl, N (e-folds)
+- r (Starobinsky R^2, N=56): 0.003826530612 [dimensionless]
+  status: derived (assumptions K1–K3; N choice)
+  depends on: N (e-folds)
+- A_s (Starobinsky R^2, N=56): 2.0901913643e-09 [dimensionless]
+  status: derived (assumptions K1–K3; N choice)
+  depends on: c3 via M/Mpl, N (e-folds)
+  (10^9 A_s = 2.09019)
+
+Reference comparisons (from global_reference.json):
+- alpha_bar5_inv_MZ_primary: z=-1.054942e-04, ppm=-0.0074204 (mean=127.951, sigma=0.009)
+- alpha_inv_0_selfconsistent: z=-241.686, ppm=-0.0370371 (mean=137.0359992, sigma=2.1000000000e-08)
+- alpha_inv_0_two_defect: z=-46.8455, ppm=-0.00717882 (mean=137.0359992, sigma=2.1000000000e-08)
+- beta_deg: z=-0.768321, ppm=-3.073285e+05 (mean=0.35, sigma=0.14)
+- cabibbo_lambda: z=0.319941, ppm=713.199 (mean=0.2243, sigma=5.0000000000e-04)
+- n_s_N56: z=-0.146259, ppm=-636.631 (mean=0.9649, sigma=0.0042)
+- A_s_N56: z=-0.296475, ppm=-4150.65 (mean=2.0989031673e-09, sigma=2.9384644340e-11)
+
+r (N=56) vs 95% CL upper bound: r=0.003826530612, upper=0.056 -> PASS=True, ratio=0.0683309
+
+Inflation (N scan; report 10^9 A_s):
+- N=55: n_s=0.963636, r=0.003967, 10^9 A_s=2.01621
+- N=56: n_s=0.964286, r=0.003827, 10^9 A_s=2.09019
+- N=57: n_s=0.964912, r=0.003693, 10^9 A_s=2.16551

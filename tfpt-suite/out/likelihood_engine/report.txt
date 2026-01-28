@@ -1,0 +1,51 @@
+Likelihood engine (unified dataset schema)
+spec: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/likelihood_datasets_v1.json
+predictions source: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/global_consistency_test/results.json
+nuisance_policy: {"kind": "fixed", "note": "Initial policy: keep nuisance parameters fixed to declared reference values (explicitly stated). Upgrade paths: profiling or marginalization via sampling.", "planck_2018": {"A_planck": 1.0, "A_planck_policy": "fixed", "pivot_normalization": "fixed_at_pivot", "pivot_scalar_Mpc_inv": 0.05, "note": "Planck likelihoods use fixed calibration (A_planck=1) under the current policy. Pivot normalization is explicit and fixed for CAMB integration; upgrade path is profiling/marginalization."}}
+
+Predictions:
+{
+  "A_s": 2.09019136432946e-09,
+  "alpha_bar5_inv_MZ": 127.94051870737565,
+  "alpha_inv_0": 137.03599921615844,
+  "beta_deg": 0.24243503090092952,
+  "cabibbo_lambda": 0.22445997051897373,
+  "n_s": 0.9642857142857143,
+  "r": 0.003826530612244898
+}
+
+Datasets:
+- alpha_covariance_minimal (multivariate_gaussian): chi2=1.80382, dof=2, logL=17.8491, labels=['alpha_inv_0', 'alpha_bar5_inv_MZ']
+  details: {'predictions': {'alpha_inv_0': 137.03599921615844, 'alpha_bar5_inv_MZ': 127.94051870737565}, 'means': [137.035999177, 127.93], 'covariance': [[2.0441e-14, 0.0], [0.0, 6.4e-05]], 'p_value': 0.4057948366957973, 'include_norm_constant': True}
+- r_upper_95_proxy (one_sided_upper): chi2=0, dof=1, logL=-0, labels=['r']
+  details: {'pred': 0.003826530612244898, 'upper': 0.056, 'cl': 0.95, 'likelihood': 'chi2_proxy'}
+
+Total logL (datasets) = 17.849145949002107
+Total logL (plugins) = 0.0
+Total logL (datasets + plugins) = 17.849145949002107
+
+Unified scorecard (χ² proxy):
+- alpha: chi2=1.80382, dof=2 (source=likelihood_datasets_v1.json)
+- flavor_ckm: chi2=5.47312, dof=4 (source=/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/ckm_full_pipeline/results.json)
+- flavor_pmns: chi2=3.20108, dof=4 (source=/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/pmns_full_pipeline/results.json)
+- cmb: chi2=0, dof=1 (source=r_upper_95_proxy)
+- dm: chi2=7.56713, dof=1 (source=/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/axion_dm_pipeline/results.json)
+- total chi2=18.0451, dof=12, p≈0.114327
+
+NuFIT grid plugin:
+- enabled = False
+- grid_file = nufit_pmns_grid_v53_sk_atm_NO.txt.xz
+- param_columns = ['sin2_theta12', 'sin2_theta13', 'sin2_theta23', 'delta_cp_deg', 'dm21_sq_eV2', 'dm3l_sq_eV2']
+- chi2_column = chi2
+
+Checks:
+- likelihood_engine_runs: PASS (evaluated 2 dataset(s); logL_datasets=17.849145949002107)
+- nuisance_handling_policy_explicit: PASS (policy={'kind': 'fixed', 'note': 'Initial policy: keep nuisance parameters fixed to declared reference values (explicitly stated). Upgrade paths: profiling or marginalization via sampling.', 'planck_2018': {'A_planck': 1.0, 'A_planck_policy': 'fixed', 'pivot_normalization': 'fixed_at_pivot', 'pivot_scalar_Mpc_inv': 0.05, 'note': 'Planck likelihoods use fixed calibration (A_planck=1) under the current policy. Pivot normalization is explicit and fixed for CAMB integration; upgrade path is profiling/marginalization.'}})
+- covariance_enabled_for_reference_tables: PASS (at least one multivariate covariance dataset evaluated)
+- plugins_declared: PASS (plugins=2, enabled=0)
+- planck_pliklite_included: PASS (not enabled / no logp (from /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/boltzmann_transfer/results.json))
+- planck_lowl_included: PASS (not enabled / no logp (from /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/boltzmann_transfer/results.json))
+- planck_lensing_included: PASS (not enabled / no logp (from /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/boltzmann_transfer/results.json))
+- nufit_pmns_grid_plugin_active: PASS (disabled in likelihood spec)
+- unified_score_all_sectors: PASS (all sectors contributing (alpha, flavor, cmb, dm))
+- unified_score_p_value_reported: PASS (p≈0.114327 (chi2=18.0451, dof=12))

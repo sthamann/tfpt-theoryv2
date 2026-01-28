@@ -1,0 +1,73 @@
+{
+  "checks": [
+    {
+      "check_id": "phase_map_is_discrete",
+      "detail": "topology_phase_map pairs=14",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "chi2_joint_ckm_pmns",
+      "detail": "PASS: chi2=8.6742, dof\u224813, p\u22487.971e-01",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "topology_phase_map_wired_into_flavor_pipelines",
+      "detail": "WIRED: CKM \u03b4_CP scan + PMNS \u03b8 scan include topology_phase_map candidates.",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "flavor_topology_mapper",
+  "plot": null,
+  "results": {
+    "chi2": {
+      "ckm_refscale": 5.473120670327523,
+      "dof_proxy": 13,
+      "joint": 8.67419907224605,
+      "p_joint": 0.7970805347402156,
+      "pmns_mt": 3.201078401918528
+    },
+    "mode": "engineering",
+    "topology_pairs": 14,
+    "wiring": {
+      "ckm": true,
+      "pmns": true
+    },
+    "wiring_status": "wired_ckm_and_pmns"
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given available upstream artifacts.",
+    "formulas": [
+      "\u03c7\u00b2_joint = \u03c7\u00b2_CKM + \u03c7\u00b2_PMNS (proxy)"
+    ],
+    "gaps": [
+      "Even with discrete wiring enabled, a publication-grade topology\u2192operator derivation is still missing (holonomy/APS \u03b7 \u2192 Yukawa operator; scheme-consistent matching below mt)."
+    ],
+    "inputs": [
+      "topology_phase_map (discrete phase atoms; docking): out/topology_phase_map/results.json (optional)",
+      "ckm_full_pipeline and pmns_full_pipeline outputs (optional; used to compute diagnostic joint \u03c7\u00b2)"
+    ],
+    "maturity": null,
+    "module_id": "flavor_topology_mapper",
+    "name": "Flavor topology mapper (holonomy\u2192CP phases; aggregation scaffold)",
+    "objective": [
+      "Centralize the topology\u2192phase mapping status and joint \u03c7\u00b2 as a single, explicit scaffold module.",
+      "Avoid silent convention-shopping by requiring discrete candidate sets (topology_phase_map)."
+    ],
+    "outputs": [
+      "explicit statement of whether topology-phase candidates are wired into CKM/PMNS generators",
+      "diagnostic joint \u03c7\u00b2 and p-value from current CKM+PMNS runs (if available)"
+    ],
+    "question": "Do discrete topology phase atoms map to CKM/PMNS CP phases in a way that improves joint \u03c7\u00b2 without continuous tuning?",
+    "references": [],
+    "validation": [
+      "chi2_joint_ckm_pmns check is emitted (PASS only if p>0.05 in physics mode)."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

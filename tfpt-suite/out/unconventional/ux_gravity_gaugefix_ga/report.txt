@@ -1,0 +1,47 @@
+Unconventional: gravitation gauge-fixing GA (toy model)
+
+Goal:
+- Demonstrate the *search scaffold* for finding a gauge-fixing choice that yields a Laplace-type (minimal) operator.
+- This is NOT the missing BRST-grade derivation from the microscopic torsionful action.
+
+Toy operator:
+- Δ_{μν} = -g_{μν} □ + c_nonmin ∇_μ∇_ν + E g_{μν}
+- c_nonmin = 1 - γ/ξ  (γ is a discrete normalization choice; ξ is the gauge parameter)
+- Laplace-type when c_nonmin = 0 (⇒ ξ = γ).
+
+GA result:
+- best genome: family=lorenz, gamma=1.0, xi=1.0
+- best nonminimal coefficient: c_nonmin=0.000000000000e+00
+
+Analytic comparison (same family):
+- xi* = gamma = 1.0 => c_nonmin(xi*) = 0.000000000000e+00
+
+Best discrete closed-form option (over families × γ):
+- Candidate(genome=GaugeFixingGenome(family='lorenz', gamma=1.0, xi=1.0), nonminimal_coeff=0.0, score=0.0)
+
+OperatorSpec docking context (effective_action_r2):
+- file: /Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/tfpt_suite/data/effective_action_r2_operator_spec.json
+- note: OperatorSpec for effective_action_r2 on a 4D constant-curvature background. This file is generated deterministically from the canonical microscopic action spec (tfpt_suite/data/microscopic_action_tfpt_v25.json) using the K4 closure equation for the minimal Laplace-type torsion+ghost block operator.
+- blocks in spec: 4
+
+Top-10 GA population snapshot:
+- {'family': 'lorenz', 'gamma': 1.0, 'xi': 1.0, 'c_nonmin': 0.0, 'score': 0.0}
+- {'family': 'weighted', 'gamma': 0.5, 'xi': 0.5, 'c_nonmin': 0.0, 'score': 0.0}
+- {'family': 'weighted', 'gamma': 1.0, 'xi': 1.0, 'c_nonmin': 0.0, 'score': 0.0}
+- {'family': 'weighted', 'gamma': 2.0, 'xi': 2.0, 'c_nonmin': 0.0, 'score': 0.0}
+- {'family': 'weighted', 'gamma': 3.0, 'xi': 3.0, 'c_nonmin': 0.0, 'score': 0.0}
+- {'family': 'weighted', 'gamma': 0.5, 'xi': 0.5, 'c_nonmin': 0.0, 'score': 0.0}
+- {'family': 'weighted', 'gamma': 3.0, 'xi': 3.0, 'c_nonmin': 0.0, 'score': 0.0}
+- {'family': 'lorenz', 'gamma': 1.0, 'xi': 1.0, 'c_nonmin': 0.0, 'score': 0.0}
+- {'family': 'weighted', 'gamma': 1.0, 'xi': 1.0, 'c_nonmin': 0.0, 'score': 0.0}
+- {'family': 'lorenz', 'gamma': 1.0, 'xi': 1.0, 'c_nonmin': 0.0, 'score': 0.0}
+
+Checks:
+- ga_found_laplace_type_candidate: PASS (best |c_nonmin|=0.000e+00 with genome=GaugeFixingGenome(family='lorenz', gamma=1.0, xi=1.0))
+- ga_best_close_to_analytic_optimum: PASS (analytic optimum in chosen family: xi*=gamma=1.0 gives c_nonmin=0.000e+00)
+- discrete_closed_form_optimum_is_laplace_type: PASS (best discrete candidate=GaugeFixingGenome(family='lorenz', gamma=1.0, xi=1.0) with c_nonmin=0.0)
+- effective_action_r2_operator_spec_present: PASS (path=/Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/tfpt_suite/data/effective_action_r2_operator_spec.json)
+
+Notes:
+- The real ToE gap is deriving the quadratic operator (incl. gauge fixing + ghosts) from the microscopic action.
+- This module provides a deterministic GA harness to search large discrete+continuous choice spaces once that operator family is parameterized.

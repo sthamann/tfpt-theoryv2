@@ -1,0 +1,100 @@
+{
+  "checks": [
+    {
+      "check_id": "torsion_spin_fluid_effect_computed",
+      "detail": "\u0394\u03bd\u22482.084e-23 Hz (benchmark)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "experiment_specified_with_sensitivity",
+      "detail": "he3_comagnetometer_cell \u03c3\u03bd\u22481.0e-09 Hz, required\u22484.2e-24 Hz",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "amplitude_measurable",
+      "detail": "\u0394\u03bd\u22482.084e-23 Hz < 1.0e-09 Hz (He-3 benchmark not measurable under current assumptions; see torsion_observable_designer for measurable regimes)",
+      "passed": true,
+      "severity": "INFO"
+    }
+  ],
+  "module_id": "torsion_observable_spin_fluid",
+  "plot": null,
+  "results": {
+    "M_eff_GeV": 30595633972661.27,
+    "conversion": {
+      "GeV_to_Hz": 2.417989242e+23,
+      "cm_in_GeV_inv": 50677307000000.0,
+      "k_minimal": 0.75
+    },
+    "experiment": {
+      "cell_material": "polarized_He3",
+      "cell_volume_cm3": 10.0,
+      "experiment_id": "he3_comagnetometer_cell",
+      "frequency_sensitivity_Hz": 1e-09,
+      "magnetic_field_T": 1e-06,
+      "measurement_time_s": 100000.0,
+      "note": "Representative He-3 comagnetometer cell with \u00b5T-scale bias field and long integration time; replace with a specific instrument spec when available."
+    },
+    "measurability_proxy": {
+      "measurable": false,
+      "required_sensitivity_Hz": 4.167869964023031e-24,
+      "sensitivity_Hz": 1e-09,
+      "target_snr": 5.0
+    },
+    "mode": "engineering",
+    "predicted": {
+      "S_abs_GeV": 5.745641725264868e-47,
+      "b_abs_GeV": 4.309231293948651e-47,
+      "delta_nu_Hz": 2.0839349820115158e-23
+    },
+    "scenario": {
+      "coupling_scale_kind": "TFPT_M",
+      "label": "polarized_He3_lab_benchmark",
+      "number_density_cm3": 2e+22,
+      "polarization": 0.7,
+      "spin_per_particle": 0.5
+    },
+    "spin_density_GeV3": 5.378453954907869e-20
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given the declared benchmark constants.",
+    "formulas": [
+      "\\rho_{\\rm spin} \\sim P \\, s \\, n",
+      "|S| \\sim \\rho_{\\rm spin}/M_{\\rm eff}^2 \\;\\; (\\text{toy source model; assumption-explicit})",
+      "|b| \\approx k |S|,\\;\\; \\Delta\\nu \\approx 2|b|\\cdot (1\\,\\mathrm{GeV}\\to\\mathrm{Hz})",
+      "\\sigma_\\nu^{\\rm required} = |\\Delta\\nu|/\\mathrm{SNR}_\\mathrm{target}"
+    ],
+    "gaps": [
+      "This uses a toy source model and an effective coupling scale assumption; publication-grade requires deriving the torsion response from the microscopic action and connecting to a concrete experimental observable/model."
+    ],
+    "inputs": [
+      "TFPT scale M from constants (R^2 scale)",
+      "minimal coupling mapping constant k=3/4 (torsion bounds reference)"
+    ],
+    "maturity": null,
+    "module_id": "torsion_observable_spin_fluid",
+    "name": "Torsion observable: spin fluid (He-3 lab benchmark; assumption-explicit)",
+    "objective": [
+      "Provide the requested torsion lab-test observable as a concrete, auditable calculation.",
+      "Make the coupling-scale assumption explicit (TFPT M as effective torsion scale)."
+    ],
+    "outputs": [
+      "predicted axial torsion amplitude |S| from a minimal spin-fluid source model",
+      "predicted SME-style |b| and an order-of-magnitude Larmor splitting \u0394\u03bd (Hz)",
+      "experiment specification with required sensitivity to detect \u0394\u03bd"
+    ],
+    "question": "What torsion-induced spin-precession scale does TFPT predict for a realistic spin-polarized lab medium (He-3 benchmark) under explicit assumptions?",
+    "references": [],
+    "validation": [
+      "Computes a deterministic \u0394\u03bd for a declared He-3-like benchmark.",
+      "experiment_specified_with_sensitivity: PASS when a concrete lab setup and required sensitivity are reported.",
+      "Marks measurability as WARN/FAIL depending on mode (this is a design-phase module)."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

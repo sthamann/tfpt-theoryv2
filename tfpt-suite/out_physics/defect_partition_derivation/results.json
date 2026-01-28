@@ -1,0 +1,351 @@
+{
+  "checks": [
+    {
+      "check_id": "delta2_is_derived_not_fitted",
+      "detail": "PASS: model_id=two_defect_partition_g5_over_4, delta2=0.000000018091459748867855014525576506215873427709357460729151458474190949106463016708746 (no continuous parameter)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "delta2_multiplicity_derived_from_enumeration",
+      "detail": "PASS: g=5 from two-defect sector equivalence classes",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "alpha_inv_0_within_2sigma",
+      "detail": "|z|=1.8646873709648436912911416183836040477419934032132112601562746554275798808614493 \u2264 2 (pred=137.03599921615843479026171751711397398605568500258186146747743646328176776397918, ref=137.035999177)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "defect_partition_derivation",
+  "plot": null,
+  "results": {
+    "alpha_inv_0_diagnostic": {
+      "diff": "0.000000039158434790261717517113973986055685002581861467477436463281767763979177498090436",
+      "pred": "137.03599921615843479026171751711397398605568500258186146747743646328176776397918",
+      "ref_mean": "137.035999177",
+      "ref_sigma": "0.000000021",
+      "z": "1.8646873709648436912911416183836040477419934032132112601562746554275798808614493"
+    },
+    "delta2_derivation": {
+      "assumptions": [
+        "defect partition sector expansion is valid at the required order",
+        "two-defect occupancy retains the 1/2! combinatoric factor",
+        "two-defect multiplicity g is derived from SU(5) holonomy channel enumeration",
+        "two-defect sectors are classified by SU(5) holonomy channels and SM block structure",
+        "within-block permutations define equivalence classes (no continuous weights)",
+        "cross-block (color-weak) pairs encode APS seam coupling as a distinct sector",
+        "all equivalence classes contribute with equal discrete weight (no tuning)"
+      ],
+      "delta2": "0.000000018091459748867855014525576506215873427709357460729151458474190949106463016708746",
+      "delta2_over_delta_top2": "1.25",
+      "delta_top": "0.00012030447954708205299788417891154719697454455297232339122853166568719135947912407",
+      "model_id": "two_defect_partition_g5_over_4",
+      "note": "\u03b4\u2082=(5/4)\u00b7\u03b4_top\u00b2 (g from two-defect sector enumeration; no continuous fit parameter)"
+    },
+    "delta2_justification": {
+      "assumptions": [
+        "two-defect sectors are classified by SU(5) holonomy channels and SM block structure",
+        "within-block permutations define equivalence classes (no continuous weights)",
+        "cross-block (color-weak) pairs encode APS seam coupling as a distinct sector",
+        "all equivalence classes contribute with equal discrete weight (no tuning)"
+      ],
+      "channels": [
+        {
+          "block": "color",
+          "channel_id": "Y_0",
+          "eigenvalue": "-1/3"
+        },
+        {
+          "block": "color",
+          "channel_id": "Y_1",
+          "eigenvalue": "-1/3"
+        },
+        {
+          "block": "color",
+          "channel_id": "Y_2",
+          "eigenvalue": "-1/3"
+        },
+        {
+          "block": "weak",
+          "channel_id": "Y_3",
+          "eigenvalue": "1/2"
+        },
+        {
+          "block": "weak",
+          "channel_id": "Y_4",
+          "eigenvalue": "1/2"
+        }
+      ],
+      "cusp_magnitudes": [
+        "1/3",
+        "2/3",
+        "1"
+      ],
+      "derivation_steps": [
+        {
+          "detail": "Use the SU(5) hypercharge holonomy spectrum that underlies the cusp-classification module.",
+          "source": "tfpt_suite.modules.mobius_cusp_classification",
+          "step_id": "holonomy_spectrum"
+        },
+        {
+          "detail": "Extract the SU(3)c and SU(2)L block sizes from the microscopic action fields.",
+          "source": "tfpt_suite/data/microscopic_action_tfpt_v25.json",
+          "step_id": "block_sizes_from_action"
+        },
+        {
+          "detail": "Enumerate all unordered two-defect channel pairs and classify them as bound, separated, or seam-coupled.",
+          "source": "deterministic enumeration over SU(5) eigenvalue channels",
+          "step_id": "two_defect_enumeration"
+        },
+        {
+          "detail": "Quotient by within-block permutations to form equivalence classes; the number of classes defines g.",
+          "source": "block permutation symmetry (color vs weak sectors)",
+          "step_id": "equivalence_classes"
+        }
+      ],
+      "effective_multiplicity": 5,
+      "equivalence_classes": [
+        {
+          "category": "bound",
+          "class_id": "bound_color",
+          "pair_count": 3,
+          "representative_pairs": [
+            "Y_0__Y_0",
+            "Y_1__Y_1",
+            "Y_2__Y_2"
+          ]
+        },
+        {
+          "category": "bound",
+          "class_id": "bound_weak",
+          "pair_count": 2,
+          "representative_pairs": [
+            "Y_3__Y_3",
+            "Y_4__Y_4"
+          ]
+        },
+        {
+          "category": "seam_coupled",
+          "class_id": "seam_coupled_color_weak",
+          "pair_count": 6,
+          "representative_pairs": [
+            "Y_0__Y_3",
+            "Y_0__Y_4",
+            "Y_1__Y_3"
+          ]
+        },
+        {
+          "category": "separated",
+          "class_id": "separated_color",
+          "pair_count": 3,
+          "representative_pairs": [
+            "Y_0__Y_1",
+            "Y_0__Y_2",
+            "Y_1__Y_2"
+          ]
+        },
+        {
+          "category": "separated",
+          "class_id": "separated_weak",
+          "pair_count": 1,
+          "representative_pairs": [
+            "Y_3__Y_4"
+          ]
+        }
+      ],
+      "holonomy": {
+        "eigenvalues_fund": [
+          "-1/3",
+          "-1/3",
+          "-1/3",
+          "1/2",
+          "1/2"
+        ],
+        "generator": "Y (hypercharge, fundamental)",
+        "group": "SU(5)"
+      },
+      "microscopic_action_blocks": {
+        "source_field": "Q",
+        "su2_dim": 2,
+        "su3_dim": 3
+      },
+      "sectors": [
+        {
+          "category": "bound",
+          "channels": [
+            "Y_0",
+            "Y_0"
+          ],
+          "equivalence_class": "bound_color",
+          "sector_id": "Y_0__Y_0"
+        },
+        {
+          "category": "separated",
+          "channels": [
+            "Y_0",
+            "Y_1"
+          ],
+          "equivalence_class": "separated_color",
+          "sector_id": "Y_0__Y_1"
+        },
+        {
+          "category": "separated",
+          "channels": [
+            "Y_0",
+            "Y_2"
+          ],
+          "equivalence_class": "separated_color",
+          "sector_id": "Y_0__Y_2"
+        },
+        {
+          "category": "seam_coupled",
+          "channels": [
+            "Y_0",
+            "Y_3"
+          ],
+          "equivalence_class": "seam_coupled_color_weak",
+          "sector_id": "Y_0__Y_3"
+        },
+        {
+          "category": "seam_coupled",
+          "channels": [
+            "Y_0",
+            "Y_4"
+          ],
+          "equivalence_class": "seam_coupled_color_weak",
+          "sector_id": "Y_0__Y_4"
+        },
+        {
+          "category": "bound",
+          "channels": [
+            "Y_1",
+            "Y_1"
+          ],
+          "equivalence_class": "bound_color",
+          "sector_id": "Y_1__Y_1"
+        },
+        {
+          "category": "separated",
+          "channels": [
+            "Y_1",
+            "Y_2"
+          ],
+          "equivalence_class": "separated_color",
+          "sector_id": "Y_1__Y_2"
+        },
+        {
+          "category": "seam_coupled",
+          "channels": [
+            "Y_1",
+            "Y_3"
+          ],
+          "equivalence_class": "seam_coupled_color_weak",
+          "sector_id": "Y_1__Y_3"
+        },
+        {
+          "category": "seam_coupled",
+          "channels": [
+            "Y_1",
+            "Y_4"
+          ],
+          "equivalence_class": "seam_coupled_color_weak",
+          "sector_id": "Y_1__Y_4"
+        },
+        {
+          "category": "bound",
+          "channels": [
+            "Y_2",
+            "Y_2"
+          ],
+          "equivalence_class": "bound_color",
+          "sector_id": "Y_2__Y_2"
+        },
+        {
+          "category": "seam_coupled",
+          "channels": [
+            "Y_2",
+            "Y_3"
+          ],
+          "equivalence_class": "seam_coupled_color_weak",
+          "sector_id": "Y_2__Y_3"
+        },
+        {
+          "category": "seam_coupled",
+          "channels": [
+            "Y_2",
+            "Y_4"
+          ],
+          "equivalence_class": "seam_coupled_color_weak",
+          "sector_id": "Y_2__Y_4"
+        },
+        {
+          "category": "bound",
+          "channels": [
+            "Y_3",
+            "Y_3"
+          ],
+          "equivalence_class": "bound_weak",
+          "sector_id": "Y_3__Y_3"
+        },
+        {
+          "category": "separated",
+          "channels": [
+            "Y_3",
+            "Y_4"
+          ],
+          "equivalence_class": "separated_weak",
+          "sector_id": "Y_3__Y_4"
+        },
+        {
+          "category": "bound",
+          "channels": [
+            "Y_4",
+            "Y_4"
+          ],
+          "equivalence_class": "bound_weak",
+          "sector_id": "Y_4__Y_4"
+        }
+      ]
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given TFPT constants and the fixed \u03b4\u2082 model.",
+    "formulas": [
+      "varphi0(\u03b1)=varphi_tree+\u03b4_top e^{-2\u03b1}+\u03b4\u2082 e^{-4\u03b1}",
+      "\u03b4\u2082=(g/4)\u00b7\u03b4_top\u00b2 (g from two-defect sector enumeration; see report)"
+    ],
+    "gaps": [
+      "Publication-grade still requires a first-principles topological/QFT derivation beyond the SU(5) holonomy + action-block enumeration."
+    ],
+    "inputs": [
+      "TFPT invariants (c3, varphi0_tree, delta_top) from tfpt_suite/constants.py",
+      "CODATA \u03b1^{-1}(0) reference (diagnostic) from tfpt_suite/data/global_reference.json"
+    ],
+    "maturity": null,
+    "module_id": "defect_partition_derivation",
+    "name": "Defect partition derivation (derive \u03b4\u2082 without fitting)",
+    "objective": [
+      "Turn the \u03b4\u2082 term from a debug target into an assumption-explicit discrete derivation candidate.",
+      "Provide a clear audit trail for why \u03b4\u2082 is not a free parameter."
+    ],
+    "outputs": [
+      "\u03b4\u2082 derivation record (model_id, assumptions, \u03b4\u2082 value)",
+      "two-defect sector enumeration + justification chain (JSON artifact)",
+      "diagnostic \u03b1^{-1}(0) value implied by the \u03b4\u2082 candidate (strict z-score vs CODATA)"
+    ],
+    "question": "Can the next defect-sector correction \u03b4\u2082 be generated from discrete defect combinatorics (not fitted), while improving \u03b1(0) metrology?",
+    "references": [],
+    "validation": [
+      "\u03b4\u2082 is produced by a discrete model choice (no continuous knob).",
+      "Two-defect sector enumeration yields a discrete multiplicity g with explicit justification.",
+      "\u03b1^{-1}(0) implied by the \u03b4\u2082 candidate is within 5\u03c3 of CODATA (strict \u03c3) as a metrology gate."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

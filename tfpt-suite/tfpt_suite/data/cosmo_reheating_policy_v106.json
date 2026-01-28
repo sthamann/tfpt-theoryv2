@@ -1,0 +1,18 @@
+{
+  "note": "Deterministic reheating/ΔN policy layer based on paper_v1_06_01_09_2025.tex (v1.06), Sec. 8.2 (reheating window). This file is used by cosmo_reheating_policy_v106 module to turn explicit assumptions into a0/a_transition and a reheating-temperature window.",
+  "assumptions": {
+    "w_reh": 0.0,
+    "g_star_reheat": 120.0,
+    "g_star_s_reheat": 120.0,
+    "c_end": 0.35,
+    "T_reheat_GeV_canonical": 10000000000000.0,
+    "deltaN_floor": -6.0,
+    "T_reheat_GeV_floor": 0.006
+  },
+  "scan": {
+    "log10_Tmin_GeV": -3.0,
+    "log10_Tmax_GeV": 15.0,
+    "n_points": 220
+  }
+}
+

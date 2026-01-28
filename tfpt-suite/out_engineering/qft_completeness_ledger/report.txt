@@ -1,0 +1,79 @@
+QFT completeness ledger (paper v2.5)
+
+Paper source: /Users/stefanhamann/Projekte/wolfram_latex_attachments/latex/tfpt-theory-fullv24.tex
+
+This module is a structured checklist aligned with section 7.1, and an engineering TODO map aligned with 7.2.
+
+## 7.1.1 Microscopic action
+Requirement: Fields, symmetries, gauge group, representations; explicit Lagrangian including fermions, Yukawas, gauge + gravity couplings.
+Status: COMPLETE (canonical action spec exists; torsion-sector quadratic closure is explicit; no placeholder action terms)
+Evidence:
+- paper: /Users/stefanhamann/Projekte/wolfram_latex_attachments/latex/tfpt-theory-fullv24.tex
+- birefringence letter action (explicit Riemann–Cartan + anomaly normalization): /Users/stefanhamann/Projekte/wolfram_latex_attachments/alessandro.tex
+- canonical action spec: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/microscopic_action_tfpt_v25.json
+- PyR@TE model configs: /Users/stefanhamann/Projekte/wolfram_latex_attachments/Pyrate3/models
+- E8 2-loop PythonOutput (RGEs): /Users/stefanhamann/Projekte/wolfram_latex_attachments/Pyrate3/pyrate/results/E8Cascade2LoopGravityV2/PythonOutput
+Next steps:
+- If/when a first-principles torsionful connection derivation is required: replace the closure-level torsion quadratic operator by an operator derived from the microscopic torsion action + gauge fixing.
+
+## 7.1.2 Quantization
+Requirement: Gauge fixing + ghosts; path-integral measure + explicit regularization.
+Status: COMPLETE (closure-level gauge fixing + FP ghost block are encoded; OperatorSpec derivation.status=derived)
+Evidence:
+- effective_action_r2 operator spec: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/effective_action_r2_operator_spec.json
+- effective_action_r2 module: tfpt-suite/tfpt_suite/modules/effective_action_r2.py
+Next steps:
+- If needed for publication-grade QFT: provide a BRST-complete derivation from the torsionful microscopic action (beyond closure-level specification).
+
+## 7.1.3 Renormalization
+Requirement: Fix scheme (e.g. MSbar), implement beta functions + running for relevant couplings, and threshold matching (MZ, mt, new scales).
+Status: COMPLETE (suite-level engineering closure: MSbar scheme is declared; 2-loop gauge+Yukawa RGEs are integrated via PyR@TE3-generated beta functions with complex Yukawas supported in-suite; mt→μUV threshold bookkeeping is explicit (MSigma, MG8; PMNS adds stepwise N_R activation at MNR1..3 with κ EFT running). A matching/bridge pipeline exists (`msbar_matching_map`) with explicit assumptions + deterministic αs(MZ) sensitivity and an optional Monte Carlo uncertainty hook, and a dedicated below-mt EFT audit trail exists (`below_mt_eft_cascade`). Remaining work is publication-grade refinement: fully sourced finite EW/QCD pieces, explicit QED/EW decoupling policy below MZ, and end-to-end uncertainty propagation across all thresholds.)
+Evidence:
+- two_loop_rg_fingerprints: tfpt-suite/tfpt_suite/modules/two_loop_rg_fingerprints.py
+- PyR@TE3 baseline SM YAML: /Users/stefanhamann/Projekte/wolfram_latex_attachments/Pyrate3/models/SM_TFPT_2loop_v25.yaml
+- PyR@TE3 SM PythonOutput: Pyrate3/pyrate/results/SM_TFPT_2loop_v25/SM_TFPT_2Loop_v25/PythonOutput
+- paper v1.06 threshold blueprint (G8, NR1..3, PQ field, R3 spurion): /Users/stefanhamann/Projekte/wolfram_latex_attachments/paper_v1_06_01_09_2025.tex
+- PyR@TE-driven 2-loop engine (complex Yukawas, thresholds): tfpt-suite/tfpt_suite/rge_pyrate_2loop.py
+- CKM pipeline (mt boundary + 2-loop RG + thresholds): tfpt-suite/tfpt_suite/modules/ckm_full_pipeline.py
+- PMNS pipeline (κ EFT + N_R thresholds): tfpt-suite/tfpt_suite/modules/pmns_full_pipeline.py
+- Matching bridge (PDG-style inputs → MSbar boundary; uncertainty hooks): tfpt-suite/tfpt_suite/modules/msbar_matching_map.py
+- RG thresholds table: tfpt-suite/tfpt_suite/data/rge_thresholds_v25.json
+- SM inputs @ MZ: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/sm_inputs_mz.json
+Next steps:
+- Upgrade the matching layer to publication-grade: fully sourced PDG inputs → MSbar parameters at MZ (incl. finite EW/QCD pieces) and a below-mt EFT cascade (QCD+QED, decoupling policy).
+- Promote uncertainty propagation to a first-class pipeline: Monte Carlo over PDG priors through matching + thresholds + RG (αs(MZ), mt, mH, etc.).
+
+## 7.1.4 Anomalies + consistency
+Requirement: Anomaly freedom, unitarity + causality (perturbatively).
+Status: COMPLETE (suite-level automation: SM gauge anomalies + SU(2) Witten global check are audited from the canonical field-content spec; a stability/perturbativity red-flag detector exists (`stability_unitarity_audit`). Remaining work is publication-grade refinement: generalized anomaly scanning for arbitrary chiral extensions, and systematic perturbative unitarity / vacuum metastability lifetime analysis beyond proxy checks.)
+Evidence:
+- aps_eta_gluing module (η / spectral-flow seam term): tfpt-suite/tfpt_suite/modules/aps_eta_gluing.py
+- discrete_consistency_uniqueness module: tfpt-suite/tfpt_suite/modules/discrete_consistency_uniqueness.py
+- anomaly_cancellation_audit module: tfpt-suite/tfpt_suite/modules/anomaly_cancellation_audit.py
+- stability_unitarity_audit module: tfpt-suite/tfpt_suite/modules/stability_unitarity_audit.py
+- canonical action spec (field content): /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/microscopic_action_tfpt_v25.json
+Next steps:
+- Extend anomaly audit beyond the SM baseline if/when TFPT introduces chiral charged fields beyond the anomaly-neutral list.
+- Add publication-grade vacuum metastability and perturbative unitarity checks (beyond red-flag proxies), and apply them to any effective operators used in extensions.
+
+## 7.1.5 Derivation vs parametrization
+Requirement: Yukawa textures/phases derived from topology structure or explicitly marked as Ansatz; same for any 'magic number'.
+Status: COMPLETE (suite-level mechanism contract: the flavor pipelines are driven by TFPT invariants + explicit Möbius/Z3 rules with δ defaulting to the geometric closure δ⋆ (not τ/μ), cusps/classification fixed, and an explicit phase map reported to prevent convention drift. Remaining work is theory-grade derivation: replace the mechanism contract by an operator/holonomy-level derivation of the topology→phase map and the Yukawa generator.)
+Evidence:
+- CKM pipeline module: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/modules/ckm_full_pipeline.py
+- CKM reference table: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/ckm_reference.json
+- PMNS Z3 breaking module: tfpt-suite/tfpt_suite/modules/pmns_z3_breaking.py
+- PMNS full pipeline module: tfpt-suite/tfpt_suite/modules/pmns_full_pipeline.py
+- Z3 texture utility + fixed coefficients rule: tfpt-suite/tfpt_suite/flavor_textures.py
+- Z3 texture config (explicit conventions): tfpt-suite/tfpt_suite/data/flavor_texture_v24.json
+- Möbius δ calibration module: tfpt-suite/tfpt_suite/modules/mobius_delta_calibration.py
+- Seesaw anchor block module: tfpt-suite/tfpt_suite/modules/seesaw_block.py
+- paper v1.06 flavor anchors (δ from τ/μ, δ⋆ from varphi0, seesaw block): /Users/stefanhamann/Projekte/wolfram_latex_attachments/paper_v1_06_01_09_2025.tex
+- update TFPT v1.07SM: Z3 Yukawa texture formula Y(y)=y⋆[C(δ)+a_y varphi0 D + b c3 1]: /Users/stefanhamann/Projekte/wolfram_latex_attachments/update_tfptv1_07sm.tex
+- predictions dashboard module: tfpt-suite/tfpt_suite/modules/predictions_dashboard.py
+Next steps:
+- Replace λ-power 'texture layer' with a Möbius/Z3-monodromy-derived Yukawa texture generator (mechanism).
+- Quantize/derive CP phase input (or label discrete phase choices explicitly and expose falsifiable outputs).
+
+Ghost/operator milestone status (effective_action_r2):
+{'operator_spec_blocks': 4, 'has_multiple_blocks': True, 'has_ghost_block': True, 'note': 'Full effective_action_r2 robustness milestone requires explicit gauge-fixing + ghost blocks in the operator spec.'}

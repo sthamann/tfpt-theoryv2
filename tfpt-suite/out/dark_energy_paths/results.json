@@ -1,0 +1,283 @@
+{
+  "checks": [
+    {
+      "check_id": "computed_lambda_targets",
+      "detail": "Omega_L=0.684608, H0_GeV=1.437e-42",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "lambda_obs",
+      "detail": "Lambda_obs\u22484.240e-84 GeV^2 (from 3 \u03a9_L H0^2)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "rho_lambda_obs",
+      "detail": "rho_L\u22482.514e-47 GeV^4 (from \u03a9_L \u03c1_c)",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "ufe_K_rms_target",
+      "detail": "<K^2>_target=4\u039b => K_rms\u22484.118e-42 GeV",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "torsion_condensate_prediction_available",
+      "detail": "found torsion_condensate best n=1 (log10 mismatch vs rho_L target\u22480.21455355509911628)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "derivation_interface",
+      "detail": "\u039b targets are computed here; the shipped prediction candidate lives in torsion_condensate (gap equation; no continuous tuning).",
+      "passed": true,
+      "severity": "INFO"
+    },
+    {
+      "check_id": "ladder_terminal_stage_identified",
+      "detail": "n_terminal\u224829.99999999999999999999999999999999999999999999998741890168293136484371848877209 (D\u22482.516219663413727031256302245581961112196372391842817760403419547962246103475846e-47)",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "module_id": "dark_energy_paths",
+  "plot": null,
+  "results": {
+    "cosmology": {
+      "H0_km_s_Mpc": 67.36,
+      "Omega_L": 0.684608,
+      "Omega_m": 0.3153,
+      "Omega_r": 9.2e-05
+    },
+    "cosmology_source": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/k_calibration.json",
+    "ladder_terminal_stage": {
+      "D_terminal": 2.516219663413727e-47,
+      "log10_mismatch_phi_star": 1.4650938860405846e-80,
+      "n_terminal": 30.0,
+      "phi_terminal": 9.196021408407447e-31,
+      "sequence": [
+        {
+          "D_n": 58.0,
+          "n": 1,
+          "phi_n": 0.023108435158881103
+        },
+        {
+          "D_n": 56.0,
+          "n": 2,
+          "phi_n": 0.022637117392256184
+        },
+        {
+          "D_n": 54.0,
+          "n": 3,
+          "phi_n": 0.02215879833917271
+        },
+        {
+          "D_n": 52.0,
+          "n": 4,
+          "phi_n": 0.021673108677539854
+        },
+        {
+          "D_n": 50.0,
+          "n": 5,
+          "phi_n": 0.021179644515981567
+        },
+        {
+          "D_n": 48.0,
+          "n": 6,
+          "phi_n": 0.020677962631237348
+        },
+        {
+          "D_n": 46.0,
+          "n": 7,
+          "phi_n": 0.020167574821263762
+        },
+        {
+          "D_n": 44.0,
+          "n": 8,
+          "phi_n": 0.019647941163734955
+        },
+        {
+          "D_n": 42.0,
+          "n": 9,
+          "phi_n": 0.0191184619076469
+        },
+        {
+          "D_n": 40.0,
+          "n": 10,
+          "phi_n": 0.01857846764158745
+        },
+        {
+          "D_n": 38.0,
+          "n": 11,
+          "phi_n": 0.01802720726650366
+        },
+        {
+          "D_n": 36.0,
+          "n": 12,
+          "phi_n": 0.01746383313929776
+        },
+        {
+          "D_n": 34.0,
+          "n": 13,
+          "phi_n": 0.016887382524604273
+        },
+        {
+          "D_n": 32.0,
+          "n": 14,
+          "phi_n": 0.01629675416171713
+        },
+        {
+          "D_n": 30.0,
+          "n": 15,
+          "phi_n": 0.01569067826761573
+        },
+        {
+          "D_n": 28.0,
+          "n": 16,
+          "phi_n": 0.015067677566473628
+        },
+        {
+          "D_n": 26.0,
+          "n": 17,
+          "phi_n": 0.01442601581100713
+        },
+        {
+          "D_n": 24.0,
+          "n": 18,
+          "phi_n": 0.013763628480614675
+        },
+        {
+          "D_n": 22.0,
+          "n": 19,
+          "phi_n": 0.013078027434777395
+        },
+        {
+          "D_n": 20.0,
+          "n": 20,
+          "phi_n": 0.012366166382931988
+        },
+        {
+          "D_n": 18.0,
+          "n": 21,
+          "phi_n": 0.011624245360305973
+        },
+        {
+          "D_n": 16.0,
+          "n": 22,
+          "phi_n": 0.01084741633989323
+        },
+        {
+          "D_n": 14.0,
+          "n": 23,
+          "phi_n": 0.010029320576164786
+        },
+        {
+          "D_n": 12.0,
+          "n": 24,
+          "phi_n": 0.009161321757406216
+        },
+        {
+          "D_n": 10.0,
+          "n": 25,
+          "phi_n": 0.008231145536892658
+        },
+        {
+          "D_n": 8.0,
+          "n": 26,
+          "phi_n": 0.007220237851252249
+        }
+      ]
+    },
+    "mode": "engineering",
+    "targets": {
+      "H0_GeV": 1.436869415091482e-42,
+      "Lambda_obs_GeV2": 4.240312124222023e-84,
+      "cascade_path_B": {
+        "phi_star_target": 9.196021408407447e-31
+      },
+      "rho_L_GeV4": 2.514176465474032e-47,
+      "rho_c_GeV4": 3.672432202770099e-47,
+      "ufe_path_A": {
+        "K2_target_GeV2": 1.696124849688809e-83,
+        "K_rms_target_GeV": 4.11840363452735e-42
+      }
+    },
+    "torsion_condensate_if_available": {
+      "best": {
+        "K2_GeV2": "2.7797860560444854478500250003694537051908411304171715433006816758197259080037664e-83",
+        "Lambda_GeV2": "6.9494651401112136196250625009236342629771028260429288582517041895493147700094159e-84",
+        "log10_mismatch_rho_L": "0.21455355509911626902658254673038911850149085090690692077350828598941462363659002",
+        "mu_K2_GeV2": "2.9345339582236214572922786999182110992056856565618455877914823470246627730319584e-74",
+        "n": 1,
+        "phi_star": "1.0404910824024174045206729549934797881697583266203605455240786134724420579484905e-30",
+        "rho_L_GeV4": "4.1204942445375910573821411207038935362900412503744384859567460773280535867209079e-47",
+        "z_score_rho_L": "2.1403530198484351956856249171986807549266690574189652264117407874776932146992054"
+      },
+      "log10_mismatch_rho_L": 0.21455355509911628,
+      "present": true,
+      "results_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/torsion_condensate/results.json"
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [
+      "Use flat \u039bCDM bookkeeping (\u03a9_\u039b=1\u2212\u03a9_m\u2212\u03a9_r).",
+      "Interpret five_problems.tex path A as a statement about the cosmological constant \u039b (mass^2), not directly \u03c1_\u039b; \u03c1_\u039b is derived via \u03c1_\u039b=\u039b M\u0304_P^2.",
+      "Interpret five_problems.tex path B as a magnitude relation \u03c1_\u039b\u2248(M\u0304_P \u03c6_*)^4 with an unspecified ladder-derived \u03c6_*.",
+      "Terminal stage identification uses a continuous extrapolation of the E8 ladder to n\u224830 (D_n\u21920)."
+    ],
+    "determinism": "Deterministic given the input cosmology table.",
+    "formulas": [
+      "\u03a9_\u039b = 1 \u2212 \u03a9_m \u2212 \u03a9_r (flat)",
+      "H0[GeV] from H0[km/s/Mpc] via \u0127 conversion",
+      "\u039b_obs = 3 \u03a9_\u039b H0^2  (\u039bCDM)",
+      "\u03c1_c = 3 H0^2 M\u0304_P^2,  \u03c1_\u039b = \u03a9_\u039b \u03c1_c",
+      "UFE path A (five_problems): \u039b_eff = (1/4)\u27e8K^2\u27e9 \u21d2 \u27e8K^2\u27e9_target = 4 \u039b_obs",
+      "Cascade path B (five_problems): \u03c1_\u039b \u2248 (M\u0304_P \u03c6_*)^4 \u21d2 \u03c6_* = (\u03c1_\u039b)^{1/4}/M\u0304_P",
+      "E8 ladder: \u03c6_n = \u03c6_0 e^{-\u03b3(0)} (D_n/D_1)^\u03bb, D_n=60-2n",
+      "Terminal stage: solve \u03c6_n = \u03c6_* for n (continuous) to identify n_terminal\u224830"
+    ],
+    "gaps": [
+      "Terminal-stage extrapolation is continuous; a discrete microscopic derivation of the n\u224830 endpoint remains future work.",
+      "Publication-grade microscopic derivation of \u27e8K^2\u27e9 remains future work; the suite currently ships a discrete defect-suppression candidate in `torsion_condensate`."
+    ],
+    "inputs": [
+      "cosmology reference: tfpt_suite/data/k_calibration.json (Planck-style flat \u039bCDM parameters used elsewhere in suite)",
+      "theory note: five_problems.tex Sec. 5 (two paths: torsion condensate and E8 terminal stage)",
+      "TFPT invariants: tfpt_suite/constants.py (E8 ladder parameters)",
+      "torsion condensate prediction (optional): tfpt-suite/out*/torsion_condensate/results.json when available in output_dir"
+    ],
+    "maturity": "target-setting module (makes \u039b requirements explicit; does not claim a derived prediction yet)",
+    "module_id": "dark_energy_paths",
+    "name": "Dark energy (\u039b) \u2014 target values for UFE torsion condensate and cascade terminal-stage paths",
+    "objective": [
+      "Turn 'dark energy path A/B' into explicit numerical targets (engineering constraints).",
+      "Expose a hard interface to the prediction module (`torsion_condensate`): targets here, derived candidate there."
+    ],
+    "outputs": [
+      "\u039b_obs (mass^2) from H0 and \u03a9_\u039b",
+      "\u03c1_\u039b (energy density) from \u03c1_c and \u03a9_\u039b",
+      "Target \u27e8K^2\u27e9 and K_rms implied by \u039b_eff = (1/4)\u27e8K^2\u27e9 (UFE path A)",
+      "Target \u03c6_* implied by \u03c1_\u039b \u2248 (M\u0304_P \u03c6_*)^4 (cascade magnitude path B)",
+      "E8 ladder sequence \u03c6_n and terminal-stage identification (n\u224830 extrapolation)",
+      "best-effort comparison to the in-suite torsion-condensate prediction when available"
+    ],
+    "question": "If TFPT attributes dark energy either to a torsion condensate (UFE) or to a terminal cascade stage, what target magnitudes must those mechanisms reproduce?",
+    "references": [
+      "five_problems.tex Sec. 5 (two TFPT-consistent paths for dark energy)",
+      "paper_v1_06_01_09_2025.tex Sec. 9 / Appendix C (mentions n=30 ladder stage for \u03c1_\u039b at order-of-magnitude level)"
+    ],
+    "validation": [
+      "Produces finite \u039b_obs, \u03c1_\u039b and corresponding target values under the declared cosmology."
+    ],
+    "what_was_done": [
+      "Computed \u039b_obs and \u03c1_\u039b from the suite\u2019s Planck-style \u039bCDM parameter snapshot.",
+      "Translated the UFE identity \u039b_eff=(1/4)\u27e8K^2\u27e9 into a target K_rms scale.",
+      "Translated the cascade magnitude ansatz \u03c1_\u039b\u2248(M\u0304_P \u03c6_*)^4 into a target \u03c6_* suppression factor."
+    ]
+  },
+  "warnings": []
+}

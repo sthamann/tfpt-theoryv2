@@ -1,0 +1,9 @@
+Dark energy norm origin audit
+
+k (cover degree) = 2.0
+n_from_cover = 0.5
+best candidate label = n=1/2
+
+Checks:
+- n_from_cover_equals_half: PASS (n_from_cover=0.5)
+- best_candidate_is_half: PASS (best_label=n=1/2)

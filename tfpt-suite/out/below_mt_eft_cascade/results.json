@@ -1,0 +1,192 @@
+{
+  "checks": [
+    {
+      "check_id": "below_MZ_policy_explicit_and_applied",
+      "detail": "policy=tfpt-suite/tfpt_suite/data/below_mz_policy.json; fields=['e', 'mu', 'tau', 'u', 'd', 's', 'c', 'b']",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "alpha_s_finite_positive",
+      "detail": "\u03b1s(MZ)=0.1179, \u03b1s(mt,nf5)=0.107715, \u03b1s(mb^+)=0.218967, \u03b1s(mb^-)=0.219129, \u03b1s(2GeV)=0.283513",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "alpha_s_ir_increases",
+      "detail": "\u03b1s(2GeV)=0.283513 > \u03b1s(mb^- )=0.219129 > \u03b1s(MZ)=0.1179",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "mb_running_finite_positive",
+      "detail": "mb(mb)=4.18 \u2192 mb(MZ)=3.02621, mb(mt)=2.88687, mb(2GeV)=4.73015",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "alpha_em_finite_positive",
+      "detail": "\u03b1em(MZ)=0.00781524755, \u03b1em(mb)=0.00755766511, \u03b1em(2GeV)=0.00750149685, \u03b1em(mc)=0.007471284",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "alpha_em_ir_decreases",
+      "detail": "\u03b1em(MZ)=0.00781524755 > \u03b1em(mb)=0.00755766511 > \u03b1em(2GeV)=0.00750149685 > \u03b1em(mc)=0.007471284",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "below_mt_eft_cascade",
+  "plot": null,
+  "results": {
+    "alpha_em": {
+      "MZ": {
+        "alpha_em": 0.007815247547966081,
+        "mu_GeV": 91.1876
+      },
+      "mb": {
+        "alpha_em": 0.007557665111106451,
+        "mu_GeV": 4.18
+      },
+      "mc": {
+        "alpha_em": 0.00747128399904811,
+        "mu_GeV": 1.27
+      },
+      "mu_2_GeV": {
+        "alpha_em": 0.007501496854167637,
+        "mu_GeV": 2.0
+      }
+    },
+    "alpha_s": {
+      "MZ": {
+        "alpha_s": 0.1179,
+        "mu_GeV": 91.1876
+      },
+      "mb_above_nf5": {
+        "alpha_s": 0.21896690398311963,
+        "mu_GeV": 4.18
+      },
+      "mb_below_nf4": {
+        "alpha_s": 0.21912941989044246,
+        "mu_GeV": 4.18
+      },
+      "mc_below_nf3": {
+        "alpha_s": 0.34798350512144766,
+        "mu_GeV": 1.27
+      },
+      "mt_nf5": {
+        "alpha_s": 0.10771482855563047,
+        "mu_GeV": 172.76
+      },
+      "mu_2_GeV": {
+        "alpha_s": 0.2835132312471994,
+        "mu_GeV": 2.0
+      }
+    },
+    "inputs": {
+      "below_mz_policy_file": "tfpt-suite/tfpt_suite/data/below_mz_policy.json",
+      "below_mz_policy_sha256": "9f0304f160f41b855072869b2c613c715eafd6f53684562a9e795684fc3c4bfb",
+      "lepton_masses_file": "tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json",
+      "lepton_masses_sha256": "4c992c392766d6944c5bd53f4d91c369de53c8616513939e79b0ee1f890de386",
+      "sm_inputs_file": "tfpt-suite/tfpt_suite/data/sm_inputs_mz.json",
+      "sm_inputs_sha256": "f46b08eb6c06c7b4b4a52f81f7f7ce63b5b9c5fcc2a1752418c82817f155bcfe"
+    },
+    "mb_running_lo": {
+      "mb_2GeV_GeV": 4.730152583648397,
+      "mb_MZ_GeV": 3.026209994196334,
+      "mb_mb_GeV": 4.18,
+      "mb_mt_GeV": 2.886867818251645
+    },
+    "qed_policy": {
+      "beta_1loop": "d\u03b1/d ln \u03bc = (2/(3\u03c0)) \u03b1^2 \u03a3_f N_c Q_f^2",
+      "charged_fermions": [
+        {
+          "Nc": 1,
+          "Q": -1.0,
+          "mass_GeV": 0.00051099895,
+          "name": "e"
+        },
+        {
+          "Nc": 1,
+          "Q": -1.0,
+          "mass_GeV": 0.1056583755,
+          "name": "mu"
+        },
+        {
+          "Nc": 1,
+          "Q": -1.0,
+          "mass_GeV": 1.77686,
+          "name": "tau"
+        },
+        {
+          "Nc": 3,
+          "Q": 0.6666666666666666,
+          "mass_GeV": 0.0,
+          "name": "u"
+        },
+        {
+          "Nc": 3,
+          "Q": -0.3333333333333333,
+          "mass_GeV": 0.0,
+          "name": "d"
+        },
+        {
+          "Nc": 3,
+          "Q": -0.3333333333333333,
+          "mass_GeV": 0.0,
+          "name": "s"
+        },
+        {
+          "Nc": 3,
+          "Q": 0.6666666666666666,
+          "mass_GeV": 1.27,
+          "name": "c"
+        },
+        {
+          "Nc": 3,
+          "Q": -0.3333333333333333,
+          "mass_GeV": 4.18,
+          "name": "b"
+        }
+      ],
+      "ew_integrated_out_below_MZ": true
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given the SM input table (no fitter).",
+    "formulas": [
+      "\u03b1s = g3^2/(4\u03c0)",
+      "\u03b1s matching at quark thresholds: 2-loop MSbar decoupling (implemented in rge_sm.run_sm_gauge_only_2loop_thresholds)",
+      "mb running (LO): m(\u03bc1)=m(\u03bc0)[\u03b1s(\u03bc1)/\u03b1s(\u03bc0)]^(12/(33-2nf)) (piecewise nf)",
+      "QED (1-loop, MSbar): d\u03b1/d ln \u03bc = (2/(3\u03c0)) \u03b1^2 \u03a3_f N_c Q_f^2  \u21d2  1/\u03b1(\u03bc1)=1/\u03b1(\u03bc0) - (2/(3\u03c0))\u03a3 ln(\u03bc1/\u03bc0)"
+    ],
+    "gaps": [],
+    "inputs": [
+      "SM inputs at MZ: tfpt_suite/data/sm_inputs_mz.json (MZ, \u03b1_em_inv, sin\u00b2\u03b8W, \u03b1s, mc, mb, mt)",
+      "Lepton pole masses: tfpt_suite/data/lepton_masses_pdg.json (for QED running thresholds e,\u03bc,\u03c4)",
+      "Below-MZ QED policy: tfpt_suite/data/below_mz_policy.json (explicit charged-fermion thresholds)"
+    ],
+    "maturity": null,
+    "module_id": "below_mt_eft_cascade",
+    "name": "Below-mt EFT cascade (QCD thresholds + running masses; explicit bookkeeping)",
+    "objective": [],
+    "outputs": [
+      "\u03b1s(\u03bc) across mc/mb thresholds (above+below; 2-loop matching for \u03b1s)",
+      "mb(\u03bc) at selected IR scales (LO QCD running, piecewise nf)",
+      "\u03b1_em(\u03bc) below MZ via a declared QED EFT policy (EW integrated out at MZ; 1-loop QED running with charged-fermion thresholds)",
+      "diagnostic table suitable as an EFT-cascade audit trail"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "\u03b1s values are finite/positive and show the expected monotonic increase toward the IR",
+      "mb(\u03bc) is finite/positive for all reported scales",
+      "\u03b1_em decreases toward the IR under the QED EFT policy (since QED \u03b2>0 in the UV)"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

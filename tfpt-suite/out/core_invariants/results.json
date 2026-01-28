@@ -1,0 +1,82 @@
+{
+  "checks": [
+    {
+      "check_id": "c3_definition",
+      "detail": "c3 == 1/(8\u03c0)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "varphi0_definition",
+      "detail": "varphi0 == 1/(6\u03c0) + 3/(256\u03c0^4)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "gagg_definition",
+      "detail": "g_a\u03b3\u03b3 == -1/(2\u03c0)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "beta_deg_value",
+      "detail": "beta_deg ~ 0.2424\u00b0 (paper v2.4)",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "core_invariants",
+  "plot": null,
+  "results": {
+    "constants": {
+      "M_over_Mpl": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+      "b1": "4.1",
+      "beta_deg": "0.24243503090092952849243152047951445246859512239848881592836053961070607871616298",
+      "beta_rad": "0.0042312895113954151087468182088050163950728077266837257698944229030526732721556263",
+      "c3": "0.039788735772973833942220940843128590508614911435114112186916836014724199408556634",
+      "delta_star": "0.60886199202947425455154874532829161131252129329996518994007516328088657620625911",
+      "delta_top": "0.00012030447954708205299788417891154719697454455297232339122853166568719135947912407",
+      "e8_lambda": "0.58723319078783786839467151020185738380716231582658097939713798030003172011464798",
+      "g_a_gamma_gamma": "-0.15915494309189533576888376337251436203445964574045644874766734405889679763422654",
+      "gamma0": "0.83333333333333333333333333333333333333333333333333333333333333333333333333333333",
+      "pi": "3.141592653589793238462643383279502884197169399375105820974944592307816406286209",
+      "varphi0": "0.053171952176845527309292471969749667875127759799791139640450979685319457237554636",
+      "varphi0_tree": "0.053051647697298445256294587790838120678153215246818816249222448019632265878075512"
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (mpmath precision controlled by config.mp_dps).",
+    "formulas": [
+      "c3 = 1/(8\u03c0)",
+      "varphi0 = 1/(6\u03c0) + 3/(256\u03c0^4)",
+      "g_{a\u03b3\u03b3} = -4 c3 = -1/(2\u03c0)",
+      "beta_rad = varphi0/(4\u03c0)",
+      "beta_deg = (180/\u03c0) beta_rad"
+    ],
+    "gaps": [],
+    "inputs": [
+      "(none)"
+    ],
+    "maturity": null,
+    "module_id": "core_invariants",
+    "name": "Core invariants (c3, varphi0, g_a\u03b3\u03b3, beta)",
+    "objective": [],
+    "outputs": [
+      "c3",
+      "varphi0",
+      "g_a_gamma_gamma",
+      "beta_rad",
+      "beta_deg"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "algebraic identities hold to numerical precision",
+      "beta_deg matches paper value (~0.2424\u00b0) within tight tolerance"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

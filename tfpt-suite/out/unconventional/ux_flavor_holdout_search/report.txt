@@ -1,0 +1,39 @@
+Unconventional: flavor holdout search (discrete CKM conventions)
+
+Holdout protocol:
+- fit keys: ['Vud', 'Vus', 'Vcd', 'Vcs', 'Vcb', 'Vts', 'Vtb']
+- holdout keys: ['Vub', 'Vtd']
+
+Reference: /Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/tfpt_suite/data/ckm_reference.json (mu_ref=91.1876 GeV)
+Boundary: mt=172.76 GeV; delta_M=0.607909; delta_star=0.608862
+
+Top candidates (sorted by chi2_fit, then complexity, then chi2_holdout):
+- {'delta_source': 'delta_star', 's13_mode': 'A_lam3_times_1_minus_delta', 'delta_mode': 'koide_pi_over_12', 'complexity': 6}  chi2_fit=2.475  chi2_holdout=185.887  chi2_total=188.362  unitarity_dev=8.882e-16
+- {'delta_source': 'tau_mu', 's13_mode': 'A_lam3_times_1_minus_delta', 'delta_mode': 'koide_pi_over_12', 'complexity': 7}  chi2_fit=2.475  chi2_holdout=186.888  chi2_total=189.363  unitarity_dev=3.331e-16
+- {'delta_source': 'delta_star', 's13_mode': 'A_lam3_over_3', 'delta_mode': 'koide_pi_over_12', 'complexity': 5}  chi2_fit=2.479  chi2_holdout=168.105  chi2_total=170.584  unitarity_dev=1.313e-15
+- {'delta_source': 'tau_mu', 's13_mode': 'A_lam3_over_3', 'delta_mode': 'koide_pi_over_12', 'complexity': 6}  chi2_fit=2.479  chi2_holdout=168.105  chi2_total=170.585  unitarity_dev=1.554e-15
+- {'delta_source': 'delta_star', 's13_mode': 'A_lam3_times_1_minus_delta', 'delta_mode': 'pi_times_1_minus_delta', 'complexity': 4}  chi2_fit=2.727  chi2_holdout=2.378  chi2_total=5.106  unitarity_dev=6.661e-16
+- {'delta_source': 'tau_mu', 's13_mode': 'A_lam3_times_1_minus_delta', 'delta_mode': 'pi_times_1_minus_delta', 'complexity': 5}  chi2_fit=2.729  chi2_holdout=2.399  chi2_total=5.129  unitarity_dev=1.332e-15
+- {'delta_source': 'delta_star', 's13_mode': 'A_lam3_over_3', 'delta_mode': 'pi_times_1_minus_delta', 'complexity': 3}  chi2_fit=2.822  chi2_holdout=47.518  chi2_total=50.340  unitarity_dev=8.882e-16
+- {'delta_source': 'tau_mu', 's13_mode': 'A_lam3_over_3', 'delta_mode': 'pi_times_1_minus_delta', 'complexity': 4}  chi2_fit=2.825  chi2_holdout=47.644  chi2_total=50.469  unitarity_dev=8.882e-16
+
+Best candidate details (per-entry contributions):
+- candidate: {'delta_source': 'delta_star', 's13_mode': 'A_lam3_times_1_minus_delta', 'delta_mode': 'koide_pi_over_12', 'complexity': 6}
+- contrib_fit_top: [{'key': 'Vus', 'pred': 0.2244578083725299, 'mean': 0.22501, 'sigma': 0.00068, 'chi2': 0.6594195360035883}, {'key': 'Vud', 'pred': 0.9744769194413971, 'mean': 0.97435, 'sigma': 0.00016, 'chi2': 0.629240023615196}, {'key': 'Vcs', 'pred': 0.9736012381838692, 'mean': 0.97349, 'sigma': 0.00016, 'chi2': 0.4833567793176864}, {'key': 'Vcd', 'pred': 0.22440769030604552, 'mean': 0.22487, 'sigma': 0.00068, 'chi2': 0.46221940554558144}, {'key': 'Vts', 'pred': 0.04146469905157571, 'mean': 0.04111, 'sigma': 0.00077, 'chi2': 0.2121966894732796}]
+- contrib_holdout: [{'key': 'Vtd', 'pred': 0.005993497101966396, 'mean': 0.00858, 'sigma': 0.00019, 'chi2': 185.31848314504813}, {'key': 'Vub', 'pred': 0.0036641147097178995, 'mean': 0.003732, 'sigma': 9e-05, 'chi2': 0.5689398316895139}]
+
+PMNS holdout (new; avoids silent δCP convention shopping):
+- reference: /Users/stefanhamann/Projekte/TFPT Github/tfpt-suite/tfpt_suite/data/pmns_reference.json
+- fit keys: sin2_theta12,sin2_theta13,sin2_theta23; holdout key: delta_cp_deg
+- status: OK
+- best PMNS candidate: {'perm': [0, 1, 2], 'ordering': 'normal', 'complexity': 0, 'angles_deg': {'delta_cp_deg': 90.00000000000017, 'theta12_deg': 34.322525903923726, 'theta13_deg': 8.743693008411189, 'theta23_deg': 42.46122629316274}, 'chi2_fit': 3.1590008213793546, 'chi2_holdout': 13.257067718606148, 'chi2_total': 16.416068539985503, 'contrib_fit': [{'key': 'sin2_theta12', 'pred': 0.3179277098940795, 'mean': 0.307, 'sigma': 0.012, 'chi2': 0.8292697467302962}, {'key': 'sin2_theta13', 'pred': 0.02310843515888112, 'mean': 0.02224, 'sigma': 0.00057, 'chi2': 2.321266928842344}, {'key': 'sin2_theta23', 'pred': 0.45574801505606327, 'mean': 0.454, 'sigma': 0.019, 'chi2': 0.008464145806714214}], 'contrib_holdout': [{'key': 'delta_cp_deg', 'pred': 90.00000000000017, 'mean': 232.0, 'sigma': 39.0, 'chi2': 13.257067718606148}]}
+
+Checks:
+- evaluated_all_candidates: PASS (candidates=16, rows=16)
+- best_candidate_has_finite_chi2: PASS (best chi2_fit=2.475, chi2_holdout=185.887, total=188.362)
+- pmns_holdout_evaluated: PASS (pmns_candidates=6 (from 6 permutation scan; best chi2_fit=3.159 chi2_holdout=13.257))
+
+Notes:
+- This module is diagnostic. It does not claim an operator-level topology→phase derivation.
+- It enforces a holdout split to reduce the risk of 'convention shopping' that overfits the full CKM table.
+- PMNS holdout is implemented as a best-effort scan over the discrete PMNS permutation conventions emitted by pmns_full_pipeline.

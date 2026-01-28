@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "datasets": {
+    "alpha_inv_codata_2022": {
+      "dataset_id": "alpha_inv_codata_2022",
+      "version": "CODATA 2022",
+      "value": 137.035999177,
+      "sigma": 2.1e-8,
+      "units": "dimensionless",
+      "notes": "Inverse fine-structure constant alpha^{-1}(0).",
+      "source": "global_reference_minimal.json:observables.alpha_inv_codata_2022"
+    },
+    "alpha_bar5_inv_MZ_pdg2024": {
+      "dataset_id": "alpha_bar5_inv_MZ_pdg2024",
+      "version": "PDG 2024",
+      "value": 127.93,
+      "sigma": 0.008,
+      "units": "dimensionless",
+      "notes": "MSbar alpha_hat^(5)(MZ) inverse.",
+      "source": "global_reference_minimal.json:observables.alpha_bar5_inv_MZ"
+    },
+    "omega_b_h2_planck2018": {
+      "dataset_id": "omega_b_h2_planck2018",
+      "version": "Planck 2018",
+      "value": 0.02237,
+      "sigma": 0.00015,
+      "units": "dimensionless",
+      "notes": "Omega_b h^2 (base LCDM).",
+      "source": "global_reference_minimal.json:observables.omega_b_h2_planck2018"
+    },
+    "H0_planck2018": {
+      "dataset_id": "H0_planck2018",
+      "version": "Planck 2018",
+      "value": 67.36,
+      "sigma": 0.54,
+      "units": "km s^-1 Mpc^-1",
+      "notes": "H0 from Planck 2018 base LCDM.",
+      "source": "global_reference_minimal.json:observables.H0_planck2018_km_s_Mpc"
+    },
+    "H0_sh0es_2022": {
+      "dataset_id": "H0_sh0es_2022",
+      "version": "SH0ES 2022",
+      "value": 73.04,
+      "sigma": 1.04,
+      "units": "km s^-1 Mpc^-1",
+      "notes": "Local distance-ladder H0 from SH0ES 2022.",
+      "source": "Riess et al. 2022 (ApJ 934 L7)"
+    },
+    "cabibbo_lambda_pdg2024": {
+      "dataset_id": "cabibbo_lambda_pdg2024",
+      "version": "PDG 2024",
+      "value": 0.22501,
+      "sigma": 0.00068,
+      "units": "dimensionless",
+      "notes": "Cabibbo lambda ~ |Vus|.",
+      "source": "global_reference.json:observables.cabibbo_lambda"
+    },
+    "beta_deg_minami_komatsu_2020": {
+      "dataset_id": "beta_deg_minami_komatsu_2020",
+      "version": "Minami & Komatsu 2020",
+      "value": 0.35,
+      "sigma": 0.14,
+      "units": "degrees",
+      "notes": "CMB cosmic birefringence global rotation angle beta.",
+      "source": "global_reference.json:observables.beta_deg"
+    },
+    "n_s_planck2018": {
+      "dataset_id": "n_s_planck2018",
+      "version": "Planck 2018",
+      "value": 0.9649,
+      "sigma": 0.0042,
+      "units": "dimensionless",
+      "notes": "Scalar spectral index at k0=0.05 Mpc^-1.",
+      "source": "global_reference_minimal.json:observables.n_s_planck2018"
+    },
+    "ln10_As_planck2018": {
+      "dataset_id": "ln10_As_planck2018",
+      "version": "Planck 2018",
+      "value": 3.044,
+      "sigma": 0.014,
+      "units": "dimensionless",
+      "notes": "ln(10^10 A_s) at k0=0.05 Mpc^-1.",
+      "source": "global_reference_minimal.json:observables.ln10_As_planck2018"
+    },
+    "A_s_planck2018": {
+      "dataset_id": "A_s_planck2018",
+      "version": "Planck 2018",
+      "value": 2.0989031673e-9,
+      "sigma": 2.938464434e-11,
+      "units": "dimensionless",
+      "notes": "Scalar amplitude A_s at k0=0.05 Mpc^-1.",
+      "source": "global_reference.json:observables.A_s"
+    },
+    "Omega_dm_h2_planck2018": {
+      "dataset_id": "Omega_dm_h2_planck2018",
+      "version": "Planck 2018",
+      "value": 0.12,
+      "sigma": 0.001,
+      "units": "dimensionless",
+      "notes": "Cold dark matter density Omega_c h^2 (rounded; for audit use only).",
+      "source": "Planck 2018 base LCDM"
+    },
+    "v_ew_246": {
+      "dataset_id": "v_ew_246",
+      "version": "SM Higgs vev",
+      "value": 246.0,
+      "sigma": 0.2,
+      "units": "GeV",
+      "notes": "Electroweak vev v (approx).",
+      "source": "Standard Model reference"
+    },
+    "Mpl_reduced": {
+      "dataset_id": "Mpl_reduced",
+      "version": "CODATA",
+      "value": 2.435e18,
+      "sigma": 0.0,
+      "units": "GeV",
+      "notes": "Reduced Planck mass.",
+      "source": "tfpt_suite.cosmo_scale_map.MPL_REDUCED_GEV"
+    },
+    "m_e_pdg": {
+      "dataset_id": "m_e_pdg",
+      "version": "PDG pole mass",
+      "value": 0.0005109989461,
+      "sigma": 0.0,
+      "units": "GeV",
+      "notes": "Electron pole mass.",
+      "source": "lepton_masses_pdg.json:masses.electron"
+    },
+    "m_mu_pdg": {
+      "dataset_id": "m_mu_pdg",
+      "version": "PDG pole mass",
+      "value": 0.1056583745,
+      "sigma": 0.0,
+      "units": "GeV",
+      "notes": "Muon pole mass.",
+      "source": "lepton_masses_pdg.json:masses.muon"
+    },
+    "m_tau_pdg": {
+      "dataset_id": "m_tau_pdg",
+      "version": "PDG pole mass",
+      "value": 1.77686,
+      "sigma": 0.0,
+      "units": "GeV",
+      "notes": "Tau pole mass.",
+      "source": "lepton_masses_pdg.json:masses.tau"
+    },
+    "m_c_pdg": {
+      "dataset_id": "m_c_pdg",
+      "version": "PDG (scheme dependent)",
+      "value": 1.27,
+      "sigma": null,
+      "units": "GeV",
+      "notes": "Charm mass (scheme dependent; SM input proxy).",
+      "source": "sm_inputs_mz.json:mc_GeV"
+    },
+    "m_b_pdg": {
+      "dataset_id": "m_b_pdg",
+      "version": "PDG (scheme dependent)",
+      "value": 4.18,
+      "sigma": null,
+      "units": "GeV",
+      "notes": "Bottom mass (scheme dependent; SM input proxy).",
+      "source": "sm_inputs_mz.json:mb_GeV"
+    },
+    "m_t_pdg": {
+      "dataset_id": "m_t_pdg",
+      "version": "PDG pole mass",
+      "value": 172.76,
+      "sigma": 0.3,
+      "units": "GeV",
+      "notes": "Top pole mass (scheme dependent).",
+      "source": "sm_inputs_mz.json:mt_GeV"
+    },
+    "m_p_pdg": {
+      "dataset_id": "m_p_pdg",
+      "version": "PDG pole mass",
+      "value": 0.938272,
+      "sigma": null,
+      "units": "GeV",
+      "notes": "Proton mass (PDG); placeholder in mass_spectrum_minimal.",
+      "source": "mass_spectrum_minimal:ledger.placeholders.proton_mass_GeV"
+    },
+    "alpha_s_mz_pdg": {
+      "dataset_id": "alpha_s_mz_pdg",
+      "version": "PDG (MZ, MSbar)",
+      "value": 0.1179,
+      "sigma": 0.0011,
+      "units": "dimensionless",
+      "notes": "Strong coupling at MZ (MSbar).",
+      "source": "sm_inputs_mz.json:alpha_s"
+    },
+    "sin2_thetaW_mz_pdg": {
+      "dataset_id": "sin2_thetaW_mz_pdg",
+      "version": "PDG (MZ, MSbar)",
+      "value": 0.23122,
+      "sigma": 0.00004,
+      "units": "dimensionless",
+      "notes": "Weak mixing angle sin^2(thetaW) at MZ (MSbar).",
+      "source": "sm_inputs_mz.json:sin2_thetaW"
+    },
+    "pmns_sin2_theta23_nufit53_no": {
+      "dataset_id": "pmns_sin2_theta23_nufit53_no",
+      "version": "NuFIT 5.3 (2024, NO)",
+      "value": 0.454,
+      "sigma": 0.019,
+      "units": "dimensionless",
+      "notes": "Normal ordering, PDG convention.",
+      "source": "pmns_reference.json:normal_ordering.sin2_theta23"
+    },
+    "pmns_delta_cp_deg_nufit53_no": {
+      "dataset_id": "pmns_delta_cp_deg_nufit53_no",
+      "version": "NuFIT 5.3 (2024, NO)",
+      "value": 232.0,
+      "sigma": 39.0,
+      "units": "degrees",
+      "notes": "Normal ordering, PDG convention.",
+      "source": "pmns_reference.json:normal_ordering.delta_cp_deg"
+    },
+    "pmns_sin2_theta12_nufit53_no": {
+      "dataset_id": "pmns_sin2_theta12_nufit53_no",
+      "version": "NuFIT 5.3 (2024, NO)",
+      "value": 0.307,
+      "sigma": 0.012,
+      "units": "dimensionless",
+      "notes": "Normal ordering, PDG convention.",
+      "source": "pmns_reference.json:normal_ordering.sin2_theta12"
+    },
+    "pmns_sin2_theta13_nufit53_no": {
+      "dataset_id": "pmns_sin2_theta13_nufit53_no",
+      "version": "NuFIT 5.3 (2024, NO)",
+      "value": 0.02224,
+      "sigma": 0.00057,
+      "units": "dimensionless",
+      "notes": "Normal ordering, PDG convention.",
+      "source": "pmns_reference.json:normal_ordering.sin2_theta13"
+    },
+    "mass_ratio_mu_over_e_pdg": {
+      "dataset_id": "mass_ratio_mu_over_e_pdg",
+      "version": "PDG pole masses",
+      "value": 206.76828260879265,
+      "sigma": 0.0,
+      "units": "dimensionless",
+      "notes": "Direct lepton pole-mass ratio (scale independent for this audit).",
+      "scheme": "pole",
+      "scale": "pole",
+      "source": "lepton_masses_pdg.json (mu/e)"
+    },
+    "mass_ratio_tau_over_mu_pdg": {
+      "dataset_id": "mass_ratio_tau_over_mu_pdg",
+      "version": "PDG pole masses",
+      "value": 16.81702949159037,
+      "sigma": 0.0,
+      "units": "dimensionless",
+      "notes": "Direct lepton pole-mass ratio (scale independent for this audit).",
+      "scheme": "pole",
+      "scale": "pole",
+      "source": "lepton_masses_pdg.json (tau/mu)"
+    },
+    "mass_ratio_ms_over_md": {
+      "dataset_id": "mass_ratio_ms_over_md",
+      "version": "PDG (scheme dependent)",
+      "value": null,
+      "sigma": null,
+      "units": "dimensionless",
+      "notes": "Scale/scheme dependent; reference not set. Marked needs_rg.",
+      "scheme": "MSbar",
+      "scale": "n/a",
+      "status": "needs_rg"
+    },
+    "mass_ratio_mb_over_ms": {
+      "dataset_id": "mass_ratio_mb_over_ms",
+      "version": "PDG (scheme dependent)",
+      "value": null,
+      "sigma": null,
+      "units": "dimensionless",
+      "notes": "Scale/scheme dependent; reference not set. Marked needs_rg.",
+      "scheme": "MSbar",
+      "scale": "n/a",
+      "status": "needs_rg"
+    },
+    "mass_ratio_mc_over_mu_quark": {
+      "dataset_id": "mass_ratio_mc_over_mu_quark",
+      "version": "PDG (scheme dependent)",
+      "value": null,
+      "sigma": null,
+      "units": "dimensionless",
+      "notes": "Scale/scheme dependent; reference not set. Marked needs_rg.",
+      "scheme": "MSbar",
+      "scale": "n/a",
+      "status": "needs_rg"
+    },
+    "mass_ratio_mt_over_mc": {
+      "dataset_id": "mass_ratio_mt_over_mc",
+      "version": "PDG (scheme dependent)",
+      "value": null,
+      "sigma": null,
+      "units": "dimensionless",
+      "notes": "Scale/scheme dependent; reference not set. Marked needs_rg.",
+      "scheme": "MSbar",
+      "scale": "n/a",
+      "status": "needs_rg"
+    }
+  }
+}

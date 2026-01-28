@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "note": "Unified likelihood-dataset schema (v1). This file defines explicit, machine-readable datasets (means, covariance/bounds) and nuisance-handling policy. It is intended to upgrade TFPT from independent-Gaussian scorecards to publication-grade likelihood bookkeeping (covariances + non-Gaussian pieces + external plugins).",
+  "nuisance_policy": {
+    "kind": "fixed",
+    "note": "Initial policy: keep nuisance parameters fixed to declared reference values (explicitly stated). Upgrade paths: profiling or marginalization via sampling.",
+    "planck_2018": {
+      "A_planck": 1.0,
+      "A_planck_policy": "fixed",
+      "pivot_normalization": "fixed_at_pivot",
+      "pivot_scalar_Mpc_inv": 0.05,
+      "note": "Planck likelihoods use fixed calibration (A_planck=1) under the current policy. Pivot normalization is explicit and fixed for CAMB integration; upgrade path is profiling/marginalization."
+    }
+  },
+  "datasets": [
+    {
+      "dataset_id": "alpha_covariance_minimal",
+      "kind": "multivariate_gaussian",
+      "labels": ["alpha_inv_0", "alpha_bar5_inv_MZ"],
+      "means": [137.035999177, 127.930],
+      "covariance": [
+        [1.0441e-14, 0.0],
+        [0.0, 6.4e-05]
+      ],
+      "theory_floors": {
+        "alpha_inv_0": 1e-7,
+        "alpha_bar5_inv_MZ": 0.0
+      },
+      "source": "Minimal covariance demo: diagonal cov with conservative alpha_inv_0 theory floor. For alpha_inv_0: (2.1e-8)^2 + (1e-7)^2 = 1.0441e-14. For alpha_bar5_inv_MZ: (0.008)^2 = 6.4e-05. Replace with explicit PDG/CODATA covariance model when available."
+    },
+    {
+      "dataset_id": "r_upper_95_proxy",
+      "kind": "one_sided_upper",
+      "label": "r",
+      "upper": 0.056,
+      "cl": 0.95,
+      "likelihood": "chi2_proxy",
+      "source": "BICEP/Keck + Planck: r_0.002 < 0.056 (95% CL). This is a proxy penalty (not a full likelihood)."
+    }
+  ],
+  "plugins": [
+    {
+      "plugin_id": "planck_2018_cobaya",
+      "kind": "cobaya",
+      "enabled": false,
+      "note": "Optional external Planck likelihood via Cobaya. Keep disabled by default; enable only when Cobaya + Planck likelihood/data are installed and configured."
+    },
+    {
+      "plugin_id": "nufit_pmns_grid",
+      "kind": "grid_chi2",
+      "enabled": false,
+      "grid_file": "nufit_pmns_grid_v53_sk_atm_NO.txt.xz",
+      "param_columns": ["sin2_theta12", "sin2_theta13", "sin2_theta23", "delta_cp_deg", "dm21_sq_eV2", "dm3l_sq_eV2"],
+      "chi2_column": "chi2",
+      "chi2_kind": "delta",
+      "normalize_delta_chi2": true,
+      "pmns_scale": "mt",
+      "ordering_policy": "from_pmns_full_pipeline",
+      "distance_scales": {
+        "sin2_theta12": 0.02,
+        "sin2_theta13": 0.02,
+        "sin2_theta23": 0.02,
+        "delta_cp_deg": 30.0,
+        "dm21_sq_eV2": 1.0e-5,
+        "dm3l_sq_eV2": 1.0e-3
+      },
+      "interpolation": {
+        "method": "inverse_distance",
+        "k_nearest": 8
+      },
+      "note": "Optional NuFIT interpolated chi2 grids for PMNS parameters (non-Gaussian). Expects a flat table with columns matching param_columns + chi2_column (header row optional). Supports .xz/.gz compressed files. Enable only when the NuFIT grid file is present."
+    }
+  ]
+}
+

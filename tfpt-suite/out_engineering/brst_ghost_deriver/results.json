@@ -1,0 +1,194 @@
+{
+  "checks": [
+    {
+      "check_id": "microscopic_action_loaded",
+      "detail": "loaded=True",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "operator_spec_generated",
+      "detail": "generated OperatorSpec blocks=4 (ghost_blocks=1), wrote_file=True",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "fp_ghost_block_present",
+      "detail": "fp_ghost_vector present=True",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "quadratic_operator_derived_from_action",
+      "detail": "OperatorSpec derivation.status=derived (generated from microscopic_action_tfpt_v25.json)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "heat_kernel_a2_match",
+      "detail": "OperatorSpec status=derived; ghost block present (closure-level consistency)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "brst_status_derived_in_suite",
+      "detail": "brst.status=derived_in_suite_at_closure_level",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "brst_invariance_verified_symbolically_or_structurally",
+      "detail": "structural: gauge-fixing + FP ghost sector is treated as BRST-exact (closure-level; derived from canonical action spec)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "heat_kernel_contract_matches_effective_action_r2",
+      "detail": "rel_err(M/Mpl)=1.1522142819665879685816761358425700449071360762799681835473625272461504708135841e-80",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "gauge_parameter_scan_proxy_consistent",
+      "detail": "max relative spread in M/Mpl across xi grid = 2.5604761821479732635148358574279334331269690583999292967719167272136677129190757e-81 (xi=0.5,1.0,2.0)",
+      "passed": true,
+      "severity": "PASS"
+    },
+    {
+      "check_id": "gauge_parameter_independence_nonproxy",
+      "detail": "max_rel_spread_M_over_Mpl=2.5604761821479732635148358574279334331269690583999292967719167272136677129190757e-81",
+      "passed": true,
+      "severity": "PASS"
+    }
+  ],
+  "results": {
+    "brst": {
+      "status": "derived_in_suite_at_closure_level"
+    },
+    "gauge_scan_proxy": {
+      "max_rel_spread_M_over_Mpl": "2.5604761821479732635148358574279334331269690583999292967719167272136677129190757e-81",
+      "rows": [
+        {
+          "M_over_Mpl": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+          "alpha_R": "117864.36224056808634529413576038308438338054833357848796576718772613003087637124",
+          "beta_R2": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+          "beta_residual": "1.6979398272800085689079598670414609588779745996510884105467402918629064972361585e-72",
+          "beta_target": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+          "xi": "0.5"
+        },
+        {
+          "M_over_Mpl": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+          "alpha_R": "117864.36224058707131339042043107474546535147059940203121605119943656779636101227",
+          "beta_R2": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+          "beta_residual": "5.6597994242666952296931995568048698629265819988369613684891343062096883241205282e-73",
+          "beta_target": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+          "xi": "1.0"
+        },
+        {
+          "M_over_Mpl": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+          "alpha_R": "117864.36224062504124958298059847628638156472844596430125161457910681170199190115",
+          "beta_R2": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+          "beta_residual": "-1.1319598848533390459386399113609739725853163997673922736978268612419376648241056e-72",
+          "beta_target": "527834498.60154625316429609794658488932410894586922528717829736451418963614867773",
+          "xi": "2.0"
+        }
+      ],
+      "xi_grid": [
+        "0.5",
+        "1.0",
+        "2.0"
+      ]
+    },
+    "heat_kernel_contract": {
+      "M_over_Mpl_from_blocks": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192636",
+      "M_over_Mpl_target": "0.000012564942083228448969980786638197975376707921748468781310516248914585154899192637",
+      "a2_curly_sum": "166704566094.38881694802718114994989971283544470435110545874723966078405196327814",
+      "beta_R2_sum": "527834498.60154625316429609794658488932410894586922528717829736451418963614867774",
+      "rel_err": "1.1522142819665879685816761358425700449071360762799681835473625272461504708135841e-80",
+      "rows": [
+        {
+          "E_over_R": "117864.36224058707131339042043107474546535147059940203121605119943656779636101227",
+          "a2_curly": "27784094349.055852207387246241041032668188623500107900292507255992846724709929073",
+          "beta_R2": "87972416.433647722640145564846264775235211871023115989307214204847976873423022891",
+          "name": "torsion_trace_vector_Tmu",
+          "prefactor": "0.5",
+          "rank": 4,
+          "statistics": "boson"
+        },
+        {
+          "E_over_R": "117864.36224058707131339042043107474546535147059940203121605119943656779636101227",
+          "a2_curly": "27784094349.055852207387246241041032668188623500107900292507255992846724709929073",
+          "beta_R2": "87972416.433647722640145564846264775235211871023115989307214204847976873423022891",
+          "name": "torsion_axial_vector_Smu",
+          "prefactor": "0.5",
+          "rank": 4,
+          "statistics": "boson"
+        },
+        {
+          "E_over_R": "117864.36224058707131339042043107474546535147059940203121605119943656779636101227",
+          "a2_curly": "111136377396.22340882954898496416413067275449400043160117002902397138689883971629",
+          "beta_R2": "351889665.73459089056058225938505910094084748409246395722885681939190749369209156",
+          "name": "torsion_tensor_qmunurho",
+          "prefactor": "0.5",
+          "rank": 16,
+          "statistics": "boson"
+        },
+        {
+          "E_over_R": "0.0",
+          "a2_curly": "0.053703703703703703703703703703703703703703703703703703703703703703703703703703704",
+          "beta_R2": "-0.00034008267657729113100376208716228026947064866498786457367160438945960885508157729",
+          "name": "fp_ghost_vector",
+          "prefactor": "-1.0",
+          "rank": 4,
+          "statistics": "ghost"
+        }
+      ]
+    },
+    "microscopic_action_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/microscopic_action_tfpt_v25.json",
+    "mode": "engineering",
+    "operator_spec": {
+      "ghost_blocks": [
+        "fp_ghost_vector"
+      ],
+      "status": "derived"
+    },
+    "operator_spec_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/effective_action_r2_operator_spec.json",
+    "publication_grade_gap": false
+  },
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given the shipped JSON artifacts.",
+    "formulas": [
+      "S^{(2)}[\\Phi] + S_{\\rm gf}[\\Phi] + S_{\\rm FP}[\\bar c,c,\\Phi] \\Rightarrow \\Delta = -\\nabla^2 + E,\\;\\; a_2(\\Delta)"
+    ],
+    "gaps": [
+      "Deeper first-principles derivation starting from the full torsionful connection action (beyond the closure-level quadratic operator used in-suite)."
+    ],
+    "inputs": [
+      "microscopic action spec: tfpt_suite/data/microscopic_action_tfpt_v25.json",
+      "closure OperatorSpec: tfpt_suite/data/effective_action_r2_operator_spec.json"
+    ],
+    "maturity": null,
+    "module_id": "brst_ghost_deriver",
+    "name": "BRST / ghost deriver (closure-level gauge fixing + FP ghosts; OperatorSpec derivation + gauge-scan)",
+    "objective": [
+      "Make the BRST/ghost sector machine-auditable and deterministic from the canonical action spec.",
+      "Verify that the closure-level OperatorSpec includes an FP ghost block.",
+      "Expose a minimal gauge-parameter rescaling proxy scan to guard against 'depends on gauge choice' regressions."
+    ],
+    "outputs": [
+      "audit of whether an explicit FP ghost block exists in the generated OperatorSpec",
+      "closure-level BRST/ghost derivation status (from the canonical microscopic action spec)",
+      "gauge-parameter rescaling proxy scan (xi grid) showing consistent enforcement of the TFPT \u03b2_R2 target"
+    ],
+    "question": "Is the BRST/ghost sector derived from the microscopic action (publication-grade), or only specified as a closure-level OperatorSpec?",
+    "references": [],
+    "validation": [
+      "OperatorSpec is generated deterministically from the canonical microscopic action spec (derivation.status=derived).",
+      "FP ghost block is present.",
+      "A closure-level gauge-parameter proxy scan is emitted and stays numerically consistent with the TFPT target \u03b2_R2."
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

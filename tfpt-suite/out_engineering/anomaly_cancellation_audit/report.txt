@@ -1,0 +1,20 @@
+Anomaly cancellation audit (SM + TFPT anomaly-neutral extensions)
+
+Field content file: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/microscopic_action_tfpt_v25.json
+
+Anomaly sums (SM hypercharge normalization):
+- U(1)_Y^3            = 0.0
+- SU(2)_L^2-U(1)_Y    = 0.0
+- SU(3)_c^2-U(1)_Y    = 0.0
+- grav^2-U(1)_Y       = 0.0
+- SU(3)_c^3           = 0.0
+
+SU(2) Witten global check: #doublets = 12 (even required) -> PASS
+
+Checks:
+- u1_cubed_cancels: PASS (U(1)^3 = 0.0)
+- su2_sq_u1_cancels: PASS (SU(2)^2-U(1) = 0.0)
+- su3_sq_u1_cancels: PASS (SU(3)^2-U(1) = 0.0)
+- grav_sq_u1_cancels: PASS (grav^2-U(1) = 0.0)
+- su3_cubed_cancels: PASS (SU(3)^3 = 0.0)
+- su2_witten_even_doublets: PASS (SU(2) doublets count (color×gen) = 12)

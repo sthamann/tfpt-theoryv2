@@ -1,0 +1,216 @@
+{
+  "checks": [
+    {
+      "check_id": "mode",
+      "detail": "mode=data (configured=data)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "real_data_ingested",
+      "detail": "requires mode='data' with non-empty tfpt_suite/data/birefringence_tomography.json['data']['points']; synthetic mode is not considered a verification test",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "data_families_split",
+      "detail": "n_lowz=5, n_cmb=4 (CMB treated as offset check; step-vs-drift fit uses low_z_only)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "tomography_is_not_decisive_by_default",
+      "detail": "low-z step/drift Bayes factor is reported for orientation only (no publication-grade covariance; mixed-family points are not used for discrimination). bayes(step/drift)\u22480.449",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "birefringence_tomography",
+  "plot": {
+    "beta_tomography_png": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/birefringence_tomography/beta_tomography.png"
+  },
+  "results": {
+    "cmb_offset_checks": {
+      "naive_weighted_mean_rad": 0.004908048567022347,
+      "naive_weighted_sigma_rad": 0.0008398187588680819,
+      "rows": [
+        {
+          "beta_inf_rad": 0.004231289511395415,
+          "beta_obs_rad": 0.0037524578917878084,
+          "dataset": "ACT DR6",
+          "sigma_rad": 0.0012915436464758037,
+          "z": 1100.0,
+          "z_score_vs_tfpt_beta_inf": -0.37074366082337196
+        },
+        {
+          "beta_inf_rad": 0.004231289511395415,
+          "beta_obs_rad": 0.006108652381980153,
+          "dataset": "Planck 2018 (Minami & Komatsu 2020)",
+          "sigma_rad": 0.0024434609527920616,
+          "z": 1100.0,
+          "z_score_vs_tfpt_beta_inf": 0.7683212078505033
+        },
+        {
+          "beta_inf_rad": 0.004231289511395415,
+          "beta_obs_rad": 0.005235987755982988,
+          "dataset": "Planck PR4/NPIPE (Diego-Palazuelos et al. 2022)",
+          "sigma_rad": 0.0019198621771937625,
+          "z": 1100.0,
+          "z_score_vs_tfpt_beta_inf": 0.5233179009006405
+        },
+        {
+          "beta_inf_rad": 0.004231289511395415,
+          "beta_obs_rad": 0.005969026041820607,
+          "dataset": "WMAP+Planck combined (symmetrized)",
+          "sigma_rad": 0.0016231562043547264,
+          "z": 1100.0,
+          "z_score_vs_tfpt_beta_inf": 1.0705910655814033
+        }
+      ]
+    },
+    "comparison": {
+      "bayes_factor_step_over_drift": 0.44863291452901827,
+      "delta_bic_drift_minus_step": -1.6031005758447536,
+      "delta_bic_drift_minus_tfpt_prior_step": 1.3907669629646593,
+      "delta_bic_step_minus_tfpt_prior_step": 2.993867538809413,
+      "delta_logL_step_minus_drift": 0.003168668294673438,
+      "fit_scope": "low_z_only"
+    },
+    "config_file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/birefringence_tomography.json",
+    "data": {
+      "beta_obs_rad": [
+        0.03490658503988659,
+        0.017453292519943295,
+        0.22689280275926285,
+        -0.13962634015954636,
+        0.0,
+        0.0037524578917878084,
+        0.006108652381980153,
+        0.005235987755982988,
+        0.005969026041820607
+      ],
+      "calibration_prior_mean_rad": 0.0,
+      "calibration_prior_sigma_rad": 0.0017453292519943296,
+      "datasets": [
+        "Radio source 3C 47 S (Galaverni et al. 2014, Table 3)",
+        "Radio source 3C 244.1 (Galaverni et al. 2014, Table 3)",
+        "Radio source 3C 228 (Galaverni et al. 2014, Table 3)",
+        "Radio source 3C 34 (Galaverni et al. 2014, Table 3)",
+        "Radio source 3C 265 (Galaverni et al. 2014, Table 3)",
+        "ACT DR6",
+        "Planck 2018 (Minami & Komatsu 2020)",
+        "Planck PR4/NPIPE (Diego-Palazuelos et al. 2022)",
+        "WMAP+Planck combined (symmetrized)"
+      ],
+      "families": {
+        "cmb": {
+          "indices": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "n": 4
+        },
+        "low_z": {
+          "indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "n": 5
+        }
+      },
+      "sigma_rad": [
+        0.03490658503988659,
+        0.15707963267948966,
+        0.3490658503988659,
+        0.20943951023931956,
+        0.17453292519943295,
+        0.0012915436464758037,
+        0.0024434609527920616,
+        0.0019198621771937625,
+        0.0016231562043547264
+      ],
+      "z": [
+        0.425,
+        0.428,
+        0.5524,
+        0.6897,
+        0.8108,
+        1100.0,
+        1100.0,
+        1100.0,
+        1100.0
+      ]
+    },
+    "fit_drift": {
+      "bic": -6.670260662994461,
+      "logL": 4.139849287714281,
+      "params": {
+        "p": 10.0
+      }
+    },
+    "fit_step": {
+      "bic": -5.067160087149707,
+      "logL": 4.143017956008954,
+      "params": {
+        "w": 0.02,
+        "z_c": 0.0
+      }
+    },
+    "fit_step_tfpt_prior": {
+      "bic": -8.06102762595912,
+      "logL": 4.03051381297956,
+      "params": {
+        "w": 0.15,
+        "z_c": 0.7
+      }
+    },
+    "mode": "data",
+    "plot": {
+      "beta_tomography_png": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/out/birefringence_tomography/beta_tomography.png"
+    },
+    "synthetic_truth": null,
+    "tfpt": {
+      "beta_inf_rad": 0.004231289511395415
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic given config seed (synthetic noise) and solver bounds.",
+    "formulas": [
+      "step: beta(z)=beta_inf * 0.5*(1 + tanh((z-z_c)/w))  (so beta(0)=0, beta(\u221e)=beta_inf)",
+      "drift: beta(z)=beta_inf * (1 - (1+z)^(-p))  (so beta(0)=0, beta(\u221e)=beta_inf)",
+      "likelihood: beta_obs = beta_model + beta_cal + noise, with beta_cal as calibration nuisance",
+      "beta_cal prior: N(beta_cal_mean, beta_cal_sigma^2) and analytic marginalization",
+      "BIC = k ln(n) - 2 log L_max",
+      "approx Bayes factor (step over drift): exp(0.5*(BIC_drift - BIC_step))"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT beta_inf = varphi0/(4\u03c0) (radians, n=1)",
+      "dataset/config: tfpt_suite/data/birefringence_tomography.json (mode=data|synthetic)",
+      "two phenomenological models: step vs drift"
+    ],
+    "maturity": null,
+    "module_id": "birefringence_tomography",
+    "name": "Birefringence tomography: step vs drift (data ingestion + calibration nuisance)",
+    "objective": [],
+    "outputs": [
+      "best-fit parameters (step/drift)",
+      "BIC comparison",
+      "approx Bayes factor"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "on synthetic step-generated data, step should be preferred by BIC/logL for reasonable noise"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

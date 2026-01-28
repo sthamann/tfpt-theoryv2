@@ -1,0 +1,19 @@
+Torsion DM pipeline (optional)
+
+mode=physics
+
+Status: OPTIONAL BRANCH (only required if axion sector does not close Ω_DM)
+
+If implemented, this module should:
+- define a torsion excitation spectrum (mass m_T, degrees of freedom, coupling to SM)
+- compute a relic density (misalignment / freeze-in / freeze-out) under an explicit cosmology history
+- compare to Ω_DM target and report the remaining DM fraction
+- compare to torsion bounds (lab + astro) and direct-detection limits
+- document the observable channel(s) used for constraints (timing residuals, polarimetry, PSD, etc.)
+- emit a PASS/FAIL scorecard and a scenario matrix (torsion-only vs mixed DM)
+
+Axion-first closure diagnostic (same scaling law as axion_dm_pipeline; policy-driven):
+- axion config: /Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/axion_tfpt_v106.json
+- scenario_policy.selected = post_inflation_theta_rms_with_strings_dw_factor
+- strings/domain-walls factor (effective) = 2.33333
+- Ω_a h^2 ≈ 0.123 (fraction≈1.02 of Ω_DM h^2≈0.12)

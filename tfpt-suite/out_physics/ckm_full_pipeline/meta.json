@@ -1,0 +1,24 @@
+{
+  "config": {
+    "mp_dps": 80,
+    "output_dir": "out_physics",
+    "overwrite": true,
+    "plot": true,
+    "seed": 0,
+    "verification_mode": "physics"
+  },
+  "module": {
+    "id": "ckm_full_pipeline",
+    "title": "CKM full pipeline (Z3 Yukawa texture + diagonalization; upward RG mt\u2192\u03bcUV)"
+  },
+  "platform": {
+    "machine": "arm64",
+    "release": "25.1.0",
+    "system": "Darwin"
+  },
+  "python": {
+    "executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "version": "3.9.6 (default, Oct 17 2025, 17:15:53) \n[Clang 17.0.0 (clang-1700.4.4.1)]"
+  },
+  "timestamp_utc": "2026-01-28T07:22:30.634825+00:00"
+}

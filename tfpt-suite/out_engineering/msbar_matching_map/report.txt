@@ -1,0 +1,50 @@
+MSbar matching map (explicit, deterministic; EFT-cascade diagnostics + uncertainty propagation hooks)
+
+SM inputs: tfpt-suite/tfpt_suite/data/sm_inputs_mz.json (sha256=f46b08eb6c06c7b4b4a52f81f7f7ce63b5b9c5fcc2a1752418c82817f155bcfe)
+lepton masses: tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json (sha256=4c992c392766d6944c5bd53f4d91c369de53c8616513939e79b0ee1f890de386)
+
+Gauge couplings at MZ (from α_em(MZ), sin²θW(MZ), αs(MZ)):
+- gY(MZ)=0.35741705, g2(MZ)=0.65172383, g3(MZ)=1.2171997
+- αs(MZ) input = 0.1179 ± 0.0011
+
+mt boundary (suite policy; includes αs threshold matching + mt pole→MSbar(mt) QCD 2-loop):
+- gY(mt)=0.35871199, g2(mt)=0.64833419, g3(mt)=1.1676333  (αs(mt)=0.108493)
+- mt_pole=172.76 GeV → mt_MSbar(mt)≈163.619 GeV ⇒ yt(mt)≈0.940617 (v=246 GeV)
+
+Derived Yukawas (phase-1 placeholders for full matching):
+- mb(mt)≈2.89774 GeV from mb(mb)=4.18 GeV via 1-loop QCD (nf=5) ⇒ yb(mt)≈0.0166586
+- yτ(mt)≈0.0102149 from mτ=1.77686 GeV (no QED running yet)
+
+EFT cascade (QCD-focused diagnostics; gauge-only running policy, no EW decoupling below MZ):
+- αs(mc=1.27 GeV) ≈ 0.347984 (incl. 2-loop finite αs matching at mb threshold)
+- αs(mb=4.18 GeV) ≈ 0.218967
+- αs(MZ=91.1876 GeV) = 0.1179 (input)
+- αs(mt=172.76 GeV) ≈ 0.108493 (nf=5, no top-threshold matching)
+
+αs(MZ) sensitivity (±σ):
+- 0.1168: g3(MZ)=1.21151, g3(mt)=1.16262, yt(mt)=0.941119, yb(mt)=0.0167386
+- 0.1179: g3(MZ)=1.2172, g3(mt)=1.16763, yt(mt)=0.940617, yb(mt)=0.0166586
+- 0.119: g3(MZ)=1.22286, g3(mt)=1.17262, yt(mt)=0.940116, yb(mt)=0.0165783
+- half-range: Δyt≈5.011e-04, Δyb≈8.017e-05
+
+Uncertainty propagation (Monte Carlo; deterministic):
+- samples = 120 (seed=0)
+- yt(mt): mean=0.940929, std=1.875e-03
+- yb(mt): mean=0.0166743, std=8.557e-05
+
+Uncertainty propagation (linear Jacobian):
+- gY_mt±1.733e-05, g2_mt±6.159e-05, g3_mt±5.001e-03, yt_mt±1.721e-03, yb_mt±8.019e-05
+
+Checks:
+- inputs_loaded: PASS (sm=tfpt-suite/tfpt_suite/data/sm_inputs_mz.json lep=tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json)
+- gauge_couplings_finite: PASS ((gY,g2,g3)(MZ)=(0.357417,0.651724,1.2172), (gY,g2,g3)(mt)=(0.358712,0.648334,1.16763))
+- top_msbar_positive: PASS (mt_MSbar(mt)=163.619 GeV, yt(mt)=0.940617 (from sm_boundary_conditions_at_mt))
+- bottom_running_finite: PASS (mb(mb)=4.18 GeV → mb(mt)≈2.89774 GeV (1-loop nf=5), yb(mt)≈0.0166586)
+- alpha_s_sensitivity_nonzero: PASS (half-range: Δyb_mt≈8.017e-05, Δyt_mt≈5.011e-04 for αs(MZ)±σ)
+- matching_mc_present: PASS (samples=120, σ(yt_mt)≈1.875e-03, σ(yb_mt)≈8.557e-05)
+- covariance_propagated_end_to_end: PASS (linear Jacobian covariance computed for mt-boundary outputs)
+
+Notes:
+- This module is a bookkeeping bridge: it makes the PDG-style input policy explicit and reproducible.
+- EFT cascade here is QCD-focused and does not implement a full electroweak decoupling policy below MZ (W/Z/H thresholds).
+- The bottom and tau Yukawas here use explicit approximations (LO QCD for mb, tree-level yτ). Upgrade to higher-loop running + finite EW/QCD pieces for publication-grade matching.

@@ -1,0 +1,190 @@
+{
+  "checks": [
+    {
+      "check_id": "baseline_matches_paper",
+      "detail": "alpha_inv_baseline=137.03650146488582236606674817671213126705763898504867906796008564574330158473974 vs paper=137.03650146",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "selfconsistent_k2_matches_paper",
+      "detail": "alpha_inv_k2=137.03599410158383008148619622913336009409257904171246722475352841304700901323215 vs paper=137.0359941 (iters=6, converged=True)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "codata_ppm_residual_reproduced",
+      "detail": "ppm(k=2 vs CODATA)=-0.037037101202604046334641968339095182025406625555948066961471526462227692903073795 (paper ~ -0.037 ppm)",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "codata_primary_reference_present",
+      "detail": "alpha_inv_CODATA(0)=137.035999177",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "alpha_bar5_MZ_primary_reference_present",
+      "detail": "alpha_bar5_inv(MZ)=127.93 \u00b1 0.008",
+      "passed": true,
+      "severity": null
+    },
+    {
+      "check_id": "alpha_bar5_MZ_within_5sigma",
+      "detail": "alpha_bar5_inv(MZ) pred=127.94051574588975237575597444353510021974456512094373031810385305362533848241133, ref=127.93 \u00b1 0.008 => z=1.3144682362190469694968054418875274680706401179662897629816317031673103014156989",
+      "passed": true,
+      "severity": null
+    }
+  ],
+  "module_id": "alpha_precision_audit",
+  "plot": {
+    "alpha_defect_zscore_overview_png": "out/alpha_precision_audit/alpha_defect_zscore_overview.png",
+    "alpha_k_sensitivity_png": "out/alpha_precision_audit/alpha_k_sensitivity.png"
+  },
+  "results": {
+    "baseline": {
+      "alpha_inv": "137.03650146488582236606674817671213126705763898504867906796008564574330158473974",
+      "ppm_vs_codata": "3.6653717916384530434821767047863224676590708978843757045191551717858770404594889",
+      "varphi0_fixed": "0.053171952176845527309292471969749667875127759799791139640450979685319457237554636"
+    },
+    "diagnostics": {
+      "C_int_required_in_delta2_half_factor": "2.4808593865149625188891487702354534932177231934909181375019509386578726922722663",
+      "delta2_match_codata_at_k2": "0.000000017952947093494577867652632107006325584938335560979124272836187545142163313899246",
+      "delta2_over_delta_top": "0.00014922924866208791895658192850055964365609331712114737911178963258862495422363281",
+      "gamma_defect_required": "-0.020152006287075868938343137998041062054852684548578167778032366186380386352539063",
+      "k_match_codata": "1.9798479937129241310616568620019589379451473154514218322219676338136196136474609"
+    },
+    "k_sensitivity": [
+      {
+        "alpha_inv": "137.03650146488582236606674817671213126705763898504867906796008564574330158473974",
+        "converged": true,
+        "iterations": 1,
+        "k": "0.0",
+        "ppm_vs_codata": "3.6653717916384530434821767047863224676590708978843757045191551717858770404594889"
+      },
+      {
+        "alpha_inv": "137.03624685924164881857501818925199973895132954484168783025530895596858512434876",
+        "converged": true,
+        "iterations": 5,
+        "k": "1.0",
+        "ppm_vs_codata": "1.807424641235361910409615752552998596577999114623336398055706706157294199558044"
+      },
+      {
+        "alpha_inv": "137.03612025025296232545482931399084424461536334575930345203842714142493305165818",
+        "converged": true,
+        "iterations": 6,
+        "k": "1.5",
+        "ppm_vs_codata": "0.88351421297657295972615616844384790852500502072105994396051956283428630717764477"
+      },
+      {
+        "alpha_inv": "137.03599410158383008148619622913336009409257904171246722475352841304700901323215",
+        "converged": true,
+        "iterations": 6,
+        "k": "2.0",
+        "ppm_vs_codata": "-0.037037101202604046334641968339095182025406625555948066961471526462227692903073795"
+      },
+      {
+        "alpha_inv": "137.03586841156477715958980900837709897373035925226486939152638606558964094626434",
+        "converged": true,
+        "iterations": 6,
+        "k": "2.5",
+        "ppm_vs_codata": "-0.95424148404930931699387891347520808715114269867771180292544458512138875341955186"
+      },
+      {
+        "alpha_inv": "137.03574317853235039885563948566257971151608070057762079635315414031827919749862",
+        "converged": true,
+        "iterations": 6,
+        "k": "3.0",
+        "ppm_vs_codata": "-1.8681110743677322642601797404070201280997474226137348992743768339970127248408288"
+      }
+    ],
+    "plot": {
+      "alpha_defect_zscore_overview_png": "out/alpha_precision_audit/alpha_defect_zscore_overview.png",
+      "alpha_k_sensitivity_png": "out/alpha_precision_audit/alpha_k_sensitivity.png"
+    },
+    "reference": {
+      "alpha_bar5_inv_MZ": "127.93",
+      "alpha_bar5_inv_MZ_sigma": "0.008",
+      "alpha_inv_codata_2022": "137.035999177",
+      "file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/global_reference_minimal.json"
+    },
+    "secondary_alpha_bar5_MZ": {
+      "alpha_bar5_inv_MZ_pred": "127.94051574588975237575597444353510021974456512094373031810385305362533848241133",
+      "alpha_inv_0_used": "137.03599614741378155877888260824161325286248503225922812210989297504594464109054",
+      "alpha_inv_0_used_model": "k=2, delta2=(1/2)delta_top^2 (non-interacting two-defect)",
+      "delta_alpha_extra_msbar_MZ": "0.0",
+      "delta_alpha_extra_total_MZ": "0.007122",
+      "delta_alpha_had5_MZ": "0.02783",
+      "delta_alpha_lept_1loop": "0.031420928699257564197469311636190085360499568073695121495773328424234971498332594",
+      "delta_alpha_msbar_on_shell_shift_MZ": "0.007122",
+      "delta_alpha_top_decoupling_MZ": "0.0",
+      "delta_alpha_total_MZ": "0.066372928699257564197469311636190085360499568073695121495773328424234971498332594"
+    },
+    "secondary_running_inputs": {
+      "file": "/Users/stefanhamann/Projekte/wolfram_latex_attachments/tfpt-suite/tfpt_suite/data/alpha_running_pdg.json"
+    },
+    "self_consistent": {
+      "alpha_inv": "137.03599410158383008148619622913336009409257904171246722475352841304700901323215",
+      "converged": true,
+      "iterations": 6,
+      "k": "2.0",
+      "ppm_vs_codata": "-0.037037101202604046334641968339095182025406625555948066961471526462227692903073795"
+    },
+    "self_consistent_two_defect": {
+      "alpha_inv": "137.0359981932435869110224146843726714996000114935956757208545827539450219077872",
+      "converged": true,
+      "delta2": "0.000000014473167799094284011620461204972698742167485968583321166779352759285170413366996",
+      "delta2_over_delta_top": "0.00012030447954708205299788417891154719697454455297232339122853166568719135947912407",
+      "iterations": 6,
+      "k": "2.0",
+      "ppm_vs_codata": "-0.0071788173837323352413040312917307695904786165477907034361613291839588627323760663"
+    },
+    "self_consistent_two_defect_half": {
+      "alpha_inv": "137.03599614741378155877888260824161325286248503225922812210989297504594464109054",
+      "converged": true,
+      "delta2": "0.0000000072365838995471420058102306024863493710837429842916605833896763796425852066834982",
+      "delta2_over_delta_top": "0.000060152239773541026498942089455773598487272276486161695614265832843595679739562033",
+      "delta2_over_delta_top_sq": "0.5",
+      "iterations": 6,
+      "k": "2.0",
+      "ppm_vs_codata": "-0.022107958760005189708368819264533960197898289608191879904308876620779320160493231"
+    }
+  },
+  "schema_version": 1,
+  "spec": {
+    "assumptions": [],
+    "determinism": "Deterministic (root finding + fixed-point iteration).",
+    "formulas": [
+      "CFE: alpha^3 - 2 c3^3 alpha^2 - 8 b1 c3^6 ln(1/varphi)=0",
+      "backreaction: varphi(alpha)=varphi_tree + delta_top exp(-k alpha)",
+      "next correction template: + delta2 exp(-2k alpha) (no claim; used as a debug target)",
+      "ppm := 1e6*(pred-ref)/ref"
+    ],
+    "gaps": [],
+    "inputs": [
+      "TFPT invariants (c3, varphi0_tree, delta_top, b1)",
+      "CODATA 2022 alpha_inv reference (from global_reference_minimal.json)",
+      "canonical backreaction model (suite/paper v2.5 policy): varphi(alpha)=varphi_tree+delta_top*exp(-k alpha), with k=2 (double cover) as the baseline exponent"
+    ],
+    "maturity": null,
+    "module_id": "alpha_precision_audit",
+    "name": "\u03b1 precision audit: canonical self-consistency + defect-expansion diagnostics (assumption-explicit)",
+    "objective": [],
+    "outputs": [
+      "baseline alpha_inv (fixed varphi0)",
+      "self-consistent alpha_inv (k=2)",
+      "k-sensitivity table (k grid as in paper)",
+      "defect-expansion diagnostics: derived candidate delta2 factors + required delta2 term to match CODATA exactly (target for next derivation)",
+      "effective k needed to match CODATA (diagnostic)"
+    ],
+    "question": null,
+    "references": [],
+    "validation": [
+      "reproduces the paper\u2019s baseline and self-consistent alpha_inv benchmarks (within tolerance)",
+      "produces a stable monotone k-sensitivity table"
+    ],
+    "what_was_done": []
+  },
+  "warnings": []
+}

@@ -1,0 +1,36 @@
+Unification gate (explicit 2-loop PyR@TE RG check)
+
+config: tfpt-suite/tfpt_suite/data/two_loop_rg_fingerprints.json (sha256=375c076b26e91ce29b8a404bf9cdb920c210ad5bc0a5f1dbec5f453729f0e65f)
+SM inputs: tfpt-suite/tfpt_suite/data/sm_inputs_mz.json (sha256=f46b08eb6c06c7b4b4a52f81f7f7ce63b5b9c5fcc2a1752418c82817f155bcfe)
+thresholds: tfpt-suite/tfpt_suite/data/rge_thresholds_v25.json (sha256=864896e83cf5b40b078ce461ba18d1aea34d800a13cf65405e49a8c3b7e5c834)
+policy: tfpt-suite/tfpt_suite/data/unification_gate_policy.json (loaded=True)
+
+Runner policy:
+- segment switch: SM→E8 at MSigma; Δb3 patch above MG8
+- matching: enabled (1-loop identity at thresholds unless finite pieces are provided)
+- gravity α^3 patch (runner-level): configured enabled=False kappa=(0.0,0.0,0.0) alpha_def_u1=alphaY
+- G8 Δb3 2-loop patch: enabled (assumption=Weyl adjoint)
+
+boundary: mode=mt route=pyrate_2loop mu0=172.76 GeV
+boundary mt seeds: yt=0.940617, yb=0.0166586, ytau=0.0102149, lambda=0.129615
+initial @ mu0: gY=0.358712, g2=0.648334, g3=1.16763 (g1_GUT=0.463095, g1_GUT/gY=1.29099444873581 vs sqrt(5/3)=1.29099444873581)
+
+Discrete policy scan (best per variant):
+- policy_g8=on_db3=2.5_g8_2l=on_grav=off: mismatch_rel=0.0038204263654940565 @ mu*=2805733340894862.0 GeV (g8_delta_b3=True, delta_b3_g8=2.5, g8_delta_b3_2loop=True, gravity_alpha3=False)
+- policy_g8=on_db3=2.25_g8_2l=on_grav=off: mismatch_rel=0.005639019898390489 @ mu*=2089795891633035.5 GeV (g8_delta_b3=True, delta_b3_g8=2.25, g8_delta_b3_2loop=True, gravity_alpha3=False)
+- policy_g8=on_db3=2.75_g8_2l=on_grav=off: mismatch_rel=0.013021399276283065 @ mu*=4133349317367630.5 GeV (g8_delta_b3=True, delta_b3_g8=2.75, g8_delta_b3_2loop=True, gravity_alpha3=False)
+- policy_g8=on_db3=2_g8_2l=on_grav=off: mismatch_rel=0.014048535898090103 @ mu*=1511243306969486.8 GeV (g8_delta_b3=True, delta_b3_g8=2.0, g8_delta_b3_2loop=True, gravity_alpha3=False)
+- policy_g8=on_db3=3_g8_2l=on_grav=off: mismatch_rel=0.023163127453700343 @ mu*=6042184332336632.0 GeV (g8_delta_b3=True, delta_b3_g8=3.0, g8_delta_b3_2loop=True, gravity_alpha3=False)
+- policy_g8=on_db3=1_g8_2l=on_grav=off: mismatch_rel=0.042396544730303146 @ mu*=458246510531143.8 GeV (g8_delta_b3=True, delta_b3_g8=1.0, g8_delta_b3_2loop=True, gravity_alpha3=False)
+- policy_g8=off_g8_2l=on_grav=off: mismatch_rel=0.06498782465726032 @ mu*=170771157889003.75 GeV (g8_delta_b3=False, delta_b3_g8=0.0, g8_delta_b3_2loop=True, gravity_alpha3=False)
+- policy_g8=on_db3=0_g8_2l=on_grav=off: mismatch_rel=0.06498782475927942 @ mu*=170771157160145.8 GeV (g8_delta_b3=True, delta_b3_g8=0.0, g8_delta_b3_2loop=True, gravity_alpha3=False)
+- policy_g8=on_db3=4_g8_2l=on_grav=off: mismatch_rel=0.07045108633903602 @ mu*=4.100632092298162e+16 GeV (g8_delta_b3=True, delta_b3_g8=4.0, g8_delta_b3_2loop=True, gravity_alpha3=False)
+
+Best-fit unification point (min over grid + quadratic refinement):
+- mu* = 2.805733e+15 GeV (log10 mu* = 15.448046)
+- alpha1_GUT(mu*) = 0.0259411
+- alpha2(mu*)      = 0.0258715
+- alpha3(mu*)      = 0.0259706
+- mismatch_rel(mu*) = 0.00382043
+
+Gate: PASS (tol=0.01, mode=engineering)

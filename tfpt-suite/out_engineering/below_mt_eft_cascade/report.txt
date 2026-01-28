@@ -1,0 +1,37 @@
+Below-mt EFT cascade (QCD thresholds + running masses; explicit bookkeeping)
+
+SM inputs: tfpt-suite/tfpt_suite/data/sm_inputs_mz.json (sha256=f46b08eb6c06c7b4b4a52f81f7f7ce63b5b9c5fcc2a1752418c82817f155bcfe)
+lepton masses: tfpt-suite/tfpt_suite/data/lepton_masses_pdg.json (sha256=4c992c392766d6944c5bd53f4d91c369de53c8616513939e79b0ee1f890de386)
+
+Gauge initialization at MZ:
+- MZ=91.1876 GeV, αs(MZ)=0.1179 (input), αem(MZ)=0.00781524755 (input), gY(MZ)=0.357417
+
+αs across thresholds (policy: 2-loop gauge-only running with optional 2-loop αs matching at thresholds):
+- αs(mt=172.76 GeV) [nf=5, no top matching] ≈ 0.107715
+- αs(mb=4.18 GeV)^+ [nf=5, above threshold] ≈ 0.218967
+- αs(mb=4.18 GeV)^- [matched down, below threshold] ≈ 0.219129
+- αs(mc=1.27 GeV)^- [matched down] ≈ 0.347984
+- αs(2 GeV) [matched down] ≈ 0.283513
+
+αem below MZ (policy: EW integrated out at MZ; QED 1-loop running with charged-fermion thresholds):
+- Σ_f N_c Q_f^2 at MZ: 6.66667 (active: e,μ,τ,u,d,s,c,b)
+- αem(mb=4.18 GeV) ≈ 0.00755766511
+- αem(2 GeV) ≈ 0.00750149685
+- αem(mc=1.27 GeV) ≈ 0.007471284 (includes τ threshold at mτ=1.77686 GeV)
+
+mb running (LO QCD; explicit approximation):
+- mb(mb) input = 4.18 GeV
+- mb(MZ) (nf=5 LO) ≈ 3.02621 GeV
+- mb(mt) (nf=5 LO) ≈ 2.88687 GeV
+- mb(2 GeV) (nf=4 LO; continuity at mb assumed) ≈ 4.73015 GeV
+
+Checks:
+- alpha_s_finite_positive: PASS (αs(MZ)=0.1179, αs(mt,nf5)=0.107715, αs(mb^+)=0.218967, αs(mb^-)=0.219129, αs(2GeV)=0.283513)
+- alpha_s_ir_increases: PASS (αs(2GeV)=0.283513 > αs(mb^- )=0.219129 > αs(MZ)=0.1179)
+- mb_running_finite_positive: PASS (mb(mb)=4.18 → mb(MZ)=3.02621, mb(mt)=2.88687, mb(2GeV)=4.73015)
+- alpha_em_finite_positive: PASS (αem(MZ)=0.00781524755, αem(mb)=0.00755766511, αem(2GeV)=0.00750149685, αem(mc)=0.007471284)
+- alpha_em_ir_decreases: PASS (αem(MZ)=0.00781524755 > αem(mb)=0.00755766511 > αem(2GeV)=0.00750149685 > αem(mc)=0.007471284)
+
+Notes:
+- This module is an audit trail for the below-mt EFT cascade. It is intentionally explicit about what is matched and what is still approximated.
+- Publication-grade upgrades: higher-loop QCD running for masses, explicit mass matching at thresholds, and (if needed) higher-loop QED matching/decoupling beyond the 1-loop identity-at-μ=m_f policy used here.

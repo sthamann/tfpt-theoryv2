@@ -1,0 +1,22 @@
+{
+  "note": "Schema for the chiral index / family-number mechanism sketched in paper_v1_06_01_09_2025.tex (Appendix J): orientable double cover of Möbius fiber with three effective boundary cycles C1,C2,CT; integer fluxes/holonomies νi yield Ind D = ν1+ν2+νT. Wilson lines along cycles can encode discrete phases without breaking the 4D gauge group.",
+  "default_fluxes": {
+    "nu1": 1,
+    "nu2": 1,
+    "nuT": 1
+  },
+  "u1_convention": {
+    "name": "SM hypercharge Y",
+    "definition": "Q = T3 + Y (SM convention; NOT GUT-normalized g1_GUT)",
+    "wilson_line_holonomy_model": "For a U(1) connection A with ∮_Ci A = 2π νi, a field of charge Y picks up phase exp(i·Y·∮A) = exp(i·2π·Y·νi)."
+  },
+  "example_charges_one_generation": [
+    { "label": "Q_L (SU2 doublet)", "Y": "1/6" },
+    { "label": "u_R", "Y": "2/3" },
+    { "label": "d_R", "Y": "-1/3" },
+    { "label": "L_L (lepton doublet)", "Y": "-1/2" },
+    { "label": "e_R", "Y": "-1" },
+    { "label": "nu_R (optional)", "Y": "0" }
+  ]
+}
+
